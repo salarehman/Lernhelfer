@@ -26,6 +26,36 @@ Prüfe die Trennung inhaltlich, nicht nur anhand der Dateinamen. Besonders bei
 konkreten Ansatz bereits verraten. Ein vorhandenes Beispiel ist kein Beweis,
 dass es diese Regeln erfüllt.
 
+## Übungsblätter und Lernhelfer
+
+- **Ein Übungsblatt, ein eigener Lernhelfer.** Wenn ein neues Blatt zur
+  Bearbeitung bereitgestellt wird, erstelle dafür ein separates PDF mit genau
+  den Aufgaben dieses Blatts. Mische keine Aufgaben verschiedener Blätter in
+  denselben Lernhelfer, ausser der Nutzer verlangt ausdrücklich eine Sammlung.
+- Bearbeite grundsätzlich alle Aufgaben und Teilaufgaben des Blatts. Wenn der
+  Nutzer einen kleineren Umfang wünscht oder Angaben fehlen, kennzeichne den
+  Bearbeitungsstand und die offenen Punkte; gib einen Entwurf nicht als
+  vollständig aus. Theorie und Lösungen stehen auch hier in getrennten Teilen.
+- Kennzeichne jede Aufgabe durch **Blatt und Aufgabennummer**, zum Beispiel
+  `Blatt 8, A1`. Dieselbe Aufgabennummer auf einem anderen Blatt bezeichnet
+  eine andere Aufgabe. Bewahre vorhandene Aufgaben, Quellen und Lernhelfer
+  anderer Blätter unverändert auf.
+- Benenne den fertigen Lernhelfer eindeutig, zum Beispiel
+  `out/blatt08-lernhelfer.pdf`. Eine zusätzliche Fassung nur mit Theorie,
+  etwa `out/blatt08-theorie.pdf`, ist eine ergänzende Ansicht desselben
+  Lernhelfers, kein Ersatz für das vollständige PDF. Verlinke die Ergebnisse
+  und den Bearbeitungsstand im README.
+- Prüfe vor dem Bauen, dass tatsächlich nur Aufgaben des gewünschten Blatts
+  aufgenommen werden, und danach das PDF auf Vollständigkeit und fremde
+  Aufgaben. Der aktuelle Build sammelt alle nummerierten Aufgabenordner und
+  filtert nicht nach Blatt. Passe ihn bei Bedarf so an, dass eine Blattauswahl
+  zuverlässig funktioniert, und teste diese Auswahl; behaupte nicht, dass ein
+  Filter bereits existiert. Auch der nummernbasierte Index unterscheidet
+  Blätter mit gleichen Aufgabennummern nicht zuverlässig.
+- Bei einer aktualisierten Fassung desselben Blatts Aufgaben und bestehende
+  Bearbeitung zuerst vergleichen; anschließend nur den zugehörigen Lernhelfer
+  gezielt aktualisieren. Neue Blätter dürfen bisherige PDFs nicht überschreiben.
+
 ## Quellen und fachliche Qualität
 
 - Verwende das aktuelle Vorlesungsskript und den vollständigen Aufgabentext als
@@ -69,9 +99,10 @@ Eine gleichbleibende Nummer beweist nicht, dass eine Aufgabe unverändert ist.
 - `python3 werkzeuge/neue_aufgabe.py NUMMER "Titel" --skript "Fundstelle"`
   erzeugt Platzhalter, keine fertig bearbeitete Aufgabe. Der Build nimmt auch
   Platzhalter auf; vor Veröffentlichung sicherstellen, dass keine enthalten sind.
-- `python3 werkzeuge/build.py` baut das vollständige PDF, `--nur-theorie` und
-  `--nur-loesungen` bauen getrennte Fassungen. Der Build erzeugt `generated/`
-  neu und kompiliert zweimal mit `pdflatex`.
+- `python3 werkzeuge/build.py` baut zurzeit aus allen nummerierten Aufgabenordnern;
+  `--nur-theorie` und `--nur-loesungen` wählen nur den Dokumentteil, nicht das
+  Übungsblatt. Der Build erzeugt `generated/` neu und kompiliert zweimal mit
+  `pdflatex`. Für blattweise PDFs erst eine verlässliche Auswahl sicherstellen.
 - `python3 werkzeuge/build.py --offen` zeigt den nummernbasierten Abgleich,
   sofern ein Index existiert. Existenz eines Ordners oder zweier Dateien bedeutet
   nicht, dass Inhalt geprüft oder abgeschlossen ist.
