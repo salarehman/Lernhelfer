@@ -1,0 +1,67 @@
+% Blatt 7, A4. Aufgabenstellung und Skizze: aufgaben/Blatt07.pdf, S. 2.
+
+\subsection*{Geometrie und Modell}
+Das L-förmige Gefäss ist bis zur Oberkante mit Wasser gefüllt. Die Skizze
+zeigt die Höhe \(3d\) und den Abstand \(2d\) von der Oberkante bis zur Stufe.
+Die quadratische Fläche A ist die \emph{waagerechte Deckfläche} des niedrigen
+Arms, mit Wasser darunter. Sie liegt somit durchgehend in der Tiefe \(2d\).
+Die ebenfalls quadratische Fläche B ist die \emph{senkrechte rechte
+Stirnfläche} des Arms und reicht von der Tiefe \(2d\) bis \(3d\). Beide
+haben den Flächeninhalt \(d^2\).
+
+Wir betrachten ruhendes Wasser konstanter Dichte \(\rho\) in einem homogenen
+Schwerefeld \(g\). Der Druck an der offenen Wasseroberfläche sei \(p_0\).
+Zuerst bestimmen wir die Druckkräfte, die das Wasser auf die jeweiligen
+Flächen ausübt. Da \(d\), \(\rho\), \(g\) und \(p_0\) nicht numerisch
+vorgegeben sind, bleiben die Ergebnisse allgemein.
+
+\subsection*{a) Kraft auf die waagerechte Fläche A}
+Auf A ist die Tiefe und damit der Druck überall gleich. Das Wasser drückt von
+unten nach oben. Die reine Wasserkraft ist
+\begin{equation}
+  F_{A,\mathrm{Wasser}}=(p_0+2\rho gd)d^2
+  \quad\text{nach oben}.
+\end{equation}
+Ist die Oberseite von A Luft mit dem Druck \(p_0\) ausgesetzt, drückt diese
+entgegengesetzt. Die resultierende \emph{Druckkraft} auf das Wandstück ist
+\begin{ergebnis}[a) Kraft aus der Druckdifferenz]
+\begin{equation*}
+  F_{A,\mathrm{netto}}=2\rho gd^3\quad\text{nach oben}.
+\end{equation*}
+\end{ergebnis}
+
+\subsection*{b) Kraft auf die senkrechte Fläche B}
+Auf B nimmt der Druck mit der Tiefe zu. Ein horizontaler Streifen in der Tiefe
+\(h\) hat die Höhe \(\mathrm dh\) und die Breite \(d\), also
+\(\mathrm dA=d\,\mathrm dh\). Die reine Wasserkraft nach rechts ist daher
+\begin{align}
+  F_{B,\mathrm{Wasser}}
+  &=\int_{2d}^{3d}(p_0+\rho gh)\,d\,\mathrm dh\\
+  &=p_0d^2+\rho gd\left[\frac{h^2}{2}\right]_{2d}^{3d}
+    =p_0d^2+\frac52\rho gd^3.
+\end{align}
+Wenn aussen gleichmässig der Druck \(p_0\) wirkt, ist die resultierende
+Druckkraft auf das Wandstück
+\begin{ergebnis}[b) Kraft aus der Druckdifferenz]
+\begin{equation*}
+  F_{B,\mathrm{netto}}=\frac52\rho gd^3\quad\text{nach rechts}.
+\end{equation*}
+\end{ergebnis}
+Ohne gleichen Aussendruck gelten diese Nettoergebnisse nicht unverändert:
+Bei konstantem Aussendruck \(p_{\mathrm{a}}\) ersetzt man in beiden
+Wasserkräften den Term \(p_0d^2\) durch \((p_0-p_{\mathrm{a}})d^2\).
+Die Kräfte von Befestigungen und das Eigengewicht der Wandstücke sind dabei
+nicht enthalten.
+
+\begin{kontrolle}[Plausibilität]
+Für B ist die mittlere Tiefe \(\tfrac52d\). Wegen des linear mit der Tiefe
+wachsenden Schweredrucks ist der mittlere Überdruck dort
+\(\tfrac52\rho gd\); mal \(d^2\) bestätigt er das Integral. Die
+Kraftformeln haben die Einheit \(\si{\newton}\). Im Grenzfall \(g=0\)
+verschwindet bei gleichem Umgebungsdruck die resultierende Druckkraft.
+\end{kontrolle}
+
+\begin{merksatz}
+Bei räumlich veränderlichem Druck addiert man die lokalen Druckkräfte. Für
+eine ebene Fläche ist dabei auch die Druckbelastung der Rückseite zu prüfen.
+\end{merksatz}

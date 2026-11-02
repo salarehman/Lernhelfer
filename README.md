@@ -35,14 +35,19 @@ Formeln und Erklärungen bleiben allgemein.
   Maxwell-Rad, Zug und Dehnung, Staumauer, Druck, Eisberg und
   Oberflächenspannung. Die Abgabe ist auf dem Blatt mit 5. November 2026,
   13:00 Uhr angegeben.
-- **Erste Fassung fertig:** Blatt 7, A1, Maxwell-Rad. Der [Lernhelfer mit
-  Theorie und Lösungen](out/blatt07-a1-lernhelfer.pdf) behandelt a bis e;
-  die [Theorie ohne Lösungen](out/blatt07-a1-theorie.pdf) ist separat verfügbar.
-  Die Umkehrkraft in Teil d ist ohne weitere Angaben zur Umkehr nicht als
-  eindeutiger Zahlenwert bestimmbar. Die verwendeten Annahmen stehen im PDF.
-- A2 bis A6 sind noch nicht bearbeitet. Es gibt noch keinen vollständigen
-  Aufgabenindex; die Import- und Abdeckungswerkzeuge bleiben Prototypen. Das
-  künstliche Federpendel-Beispiel liegt im Archiv und wird nicht mitgebaut.
+- **Blatt 7, A1 bis A6:** Für alle sechs Aufgaben gibt es eine erste Fassung
+  mit allgemeiner Theorie und getrennten Lösungen.
+  [Lernhelfer mit Theorie und Lösungen](out/blatt07-lernhelfer.pdf) ·
+  [Nur Theorie](out/blatt07-theorie.pdf). Die frühere Fassung nur zu A1 bleibt
+  [hier](out/blatt07-a1-lernhelfer.pdf) erhalten.
+- Die Lösungen nennen ihre Modellannahmen und Grenzen: Insbesondere lässt sich
+  die mittlere Umkehrkraft in A1 ohne zusätzliche Angaben nicht eindeutig
+  beziffern. In A5 hängt die Meeresspiegeländerung von der Dichte des
+  Schmelzwassers und vom Mischungsmodell ab. In A6 wird für die Münze ein
+  vereinfachtes Oberflächenkraftmodell ohne hydrostatischen Auftrieb verwendet.
+- Ein vollständiger Aufgabenindex existiert noch nicht; Import und
+  Abdeckungsprüfung sind Prototypen. Das künstliche Federpendel-Beispiel liegt
+  im Archiv und wird nicht mitgebaut.
 
 Die erste Fassung soll zum Lernen dienen und kann nach Rückmeldung verbessert
 werden. Ihre Rechnungen beruhen auf einem ausdrücklich gekennzeichneten idealen
@@ -92,7 +97,7 @@ weitere Hinweise in [docs/arbeitsweise.md](docs/arbeitsweise.md).
 ```text
 skript/             Vorlesungsskript und gegebenenfalls erzeugter Index/Text
 aufgaben/           ein Ordner je Aufgabe mit theorie.tex und loesung.tex
-  01-blatt07-maxwell-rad/  erste bearbeitete Aufgabe
+  01-blatt07-maxwell-rad/  bis 06-blatt07-oberflaechenspannung/: Blatt 7
   archiv/           aufbewahrtes Beispiel, wird nicht mitgebaut
 tex/                LaTeX-Hauptdatei und Layout
 werkzeuge/          Prototypen für Build, Aufgabengerüst und Skriptübernahme

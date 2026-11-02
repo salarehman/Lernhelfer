@@ -1,0 +1,55 @@
+% Blatt 7, A3. Aufgabenstellung: aufgaben/Blatt07.pdf, S. 2.
+
+\subsection*{Gegeben und Modell}
+Die bis zum Rand gefüllte Mauer ist \(H=\qty{50}{\metre}\) hoch. Die
+Seeoberfläche wird von \(\qty{0.80}{\kilo\metre\squared}\) auf
+\(\qty{1.2}{\kilo\metre\squared}\) vergrössert; der Wasserstand bleibt
+gleich. Gesucht sind die örtlichen Drücke am Fuss und auf halber Mauerhöhe.
+
+Wir nehmen ruhendes Wasser mit konstanter Dichte
+\(\rho=\qty{1000}{\kilogram\per\metre\cubed}\) und
+\(g=\qty{9.81}{\metre\per\second\squared}\) an. Diese Näherungswerte
+sind nicht auf dem Aufgabenblatt vorgegeben. Der Luftdruck an der freien
+Oberfläche sei \(p_0\). Mit der Tiefe \(h\) gilt \(p=p_0+\rho gh\).
+
+\subsection*{Druck am Fuss und auf halber Höhe}
+Der Fuss liegt \(H\), die halbe Höhe \(H/2\) unter dem Wasserspiegel. Für
+den Schweredruck, also den Überdruck gegenüber \(p_0\), ergibt sich
+\begin{align}
+  \Delta p_{\mathrm{Fuss}}&=\rho gH
+    =\qty{490500}{\pascal}\approx\qty{491}{\kilo\pascal},\\
+  \Delta p_{\mathrm{halb}}&=\rho g\frac{H}{2}
+    =\qty{245250}{\pascal}\approx\qty{245}{\kilo\pascal}.
+\end{align}
+Die zugehörigen absoluten Drücke sind \(p_0+\qty{490500}{\pascal}\) und
+\(p_0+\qty{245250}{\pascal}\). Wählt man \emph{beispielhaft} den
+Normluftdruck \(p_0=\qty{101325}{\pascal}\), so ergeben sich etwa
+\(\qty{592}{\kilo\pascal}\) beziehungsweise \(\qty{347}{\kilo\pascal}\) absolut.
+Der tatsächliche Luftdruck am Stausee ist nicht angegeben.
+
+Steht auf der trockenen Mauerseite derselbe Luftdruck an, sind die obigen
+Überdrücke zugleich die lokalen Druckdifferenzen über die Mauer. Andernfalls
+ist jeweils der tatsächliche äussere Druck vom inneren absoluten Druck
+abzuziehen.
+
+\subsection*{Vergrösserung des Sees}
+\begin{ergebnis}[Unveränderter Druck]
+An beiden Stellen bleiben die Schweredrücke und bei unverändertem
+Oberflächen- und Aussendruck auch die absoluten Drücke und Druckdifferenzen
+unverändert. Die Vergrösserung der Seeoberfläche ändert die jeweilige Tiefe
+nicht.
+\end{ergebnis}
+Die zusätzlich enthaltene Wassermenge bestimmt nicht den örtlichen Druck bei
+vorgegebenem Füllstand. Daraus folgt allein keine Aussage über eine veränderte
+Gesamtkraft, falls sich etwa die benetzte Mauerfläche ändern sollte.
+
+\begin{kontrolle}[Plausibilität]
+Die halbe Tiefe ergibt den halben Schweredruck. Die Einheit
+\(\rho gh\) ist \(\si{\newton\per\metre\squared}\). Bei \(h=0\) ist
+der Schweredruck null, der absolute Druck aber \(p_0\).
+\end{kontrolle}
+
+\begin{merksatz}
+Entscheidend für den hydrostatischen Druck sind die vertikale Tiefe und der
+Druck an der Oberfläche, nicht die gesamte Wassermenge.
+\end{merksatz}

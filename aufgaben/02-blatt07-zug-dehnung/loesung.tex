@@ -1,0 +1,110 @@
+% Werte und Aufgabenstellung: aufgaben/Blatt07.pdf, S. 1.
+
+\subsection*{Gegeben und Modell}
+Der Draht hat die ungedehnte Länge $l$, den überall gleichen Querschnitt $A$,
+die homogene Dichte $\rho$ im ungedehnten Zustand und den Elastizitätsmodul
+$E$. Gesucht sind die Verlängerung durch das Eigengewicht und die kritische
+Länge für Stahl. Für die Zahlenrechnung verwenden wir
+$g=\qty{9.81}{\metre\per\second\squared}$; dieser Näherungswert steht nicht
+auf dem Aufgabenblatt.
+
+Wir betrachten den Draht im statischen Gleichgewicht in einem konstanten
+Schwerefeld, ohne zusätzliche Last. Material und Querschnitt sind homogen;
+die Querkontraktion wird wie vorgegeben vernachlässigt. Die lokale Dehnung
+folgt dem linearen Hooke'schen Gesetz. Für die Verlängerung am Bruch nehmen
+wir zusätzlich an, dass dieses Gesetz bis zur angegebenen Grenzspannung gilt.
+Bei realem Stahl kann vorher plastische Verformung auftreten.
+
+\subsection*{a) Verlängerung durch das Eigengewicht}
+Wir messen die \emph{ungedehnte Materialkoordinate} $x$ vom oberen Ende nach
+unten. Ein Schnitt bei $x$ trägt den darunter befindlichen Draht der
+ungedehnten Länge $l-x$. Weil dessen Masse $\rho A(l-x)$ beträgt, ist die
+Zugkraft im statischen Gleichgewicht
+\begin{equation}
+  F(x)=\rho A g(l-x), \qquad
+  \sigma(x)=\frac{F(x)}{A}=\rho g(l-x).
+\end{equation}
+Die Kraft ist also entlang des Drahts nicht konstant. Die auf einem
+ursprünglich $\mathrm dx$ langen Stück lokal entstehende Längenänderung folgt
+aus $\varepsilon(x)=\sigma(x)/E$:
+\begin{equation}
+  \mathrm d(\Delta l)=\varepsilon(x)\,\mathrm dx
+  =\frac{\rho g}{E}(l-x)\,\mathrm dx.
+\end{equation}
+Aufsummieren über alle \emph{ursprünglichen} Stücke liefert
+\begin{align}
+  \Delta l
+    &=\frac{\rho g}{E}\int_0^l(l-x)\,\mathrm dx
+      =\frac{\rho g}{E}\left[lx-\frac{x^2}{2}\right]_0^l
+      =\frac{\rho g l^2}{2E}.
+\end{align}
+\begin{ergebnis}[a) Verlängerung]
+\begin{equation*}
+  \boxed{\Delta l=\frac{\rho g l^2}{2E}}, \qquad
+  L_{\mathrm{gedehnt}}=l+\Delta l.
+\end{equation*}
+\end{ergebnis}
+Der Querschnitt kürzt sich heraus: Ein grösserer Querschnitt trägt zwar mehr
+Gewicht, verteilt die Kraft aber auf eine entsprechend grössere Fläche.
+
+\subsection*{b) Grenzlänge des Stahldrahts}
+Mit zunehmendem Abstand vom unteren Ende nimmt das getragene Gewicht zu.
+Daher ist die Spannung am oberen Ende maximal; dort wird die Grenzspannung
+zuerst erreicht. Bei $x=0$ gilt
+\begin{equation}
+  \sigma_{\mathrm{oben}}=\rho g l.
+\end{equation}
+An der idealisierten Bruchgrenze setzen wir $\sigma_{\mathrm{oben}}=\sigma_{\max}$
+und erhalten für die \emph{ungedehnte} Grenzlänge
+\begin{equation}
+  l_{\mathrm{krit}}=\frac{\sigma_{\max}}{\rho g}.
+\end{equation}
+Für Stahl sind gegeben:
+\begin{align*}
+  \rho&=\qty{7.85}{\gram\per\centi\metre\cubed}
+       =\qty{7850}{\kilogram\per\metre\cubed},\\
+  E&=\qty{210}{\kilo\newton\per\milli\metre\squared}
+    =\qty{210e9}{\pascal},\\
+  \sigma_{\max}&=\qty{320}{\newton\per\milli\metre\squared}
+    =\qty{320e6}{\pascal}.
+\end{align*}
+Einsetzen ergibt
+\begin{ergebnis}[b) Ungedehnte Grenzlänge]
+\begin{equation*}
+  l_{\mathrm{krit}}
+  =\frac{\qty{320e6}{\pascal}}
+         {\qty{7850}{\kilogram\per\metre\cubed}\,
+          \qty{9.81}{\metre\per\second\squared}}
+  \approx\qty{4.16}{\kilo\metre}.
+\end{equation*}
+\end{ergebnis}
+$E$ geht in diese Grenzlänge nicht ein, wohl aber in die zugehörige
+Verlängerung. Unter der zusätzlichen Annahme linearer Elastizität bis zur
+Grenze folgt aus Teil a
+\begin{equation}
+  \Delta l_{\mathrm{krit}}
+  =\frac{\sigma_{\max}}{2E}\,l_{\mathrm{krit}}
+  \approx\qty{3.17}{\metre}, \qquad
+  L_{\mathrm{krit}}=l_{\mathrm{krit}}+\Delta l_{\mathrm{krit}}
+  \approx\qty{4158.55}{\metre}.
+\end{equation}
+Hier bezeichnet $L_{\mathrm{krit}}$ die Länge im gedehnten Zustand unmittelbar
+an der idealisierten Grenze. Die letzte Zahl ist nur eine rechnerische
+Modellgrösse, keine Aussage über zentimetergenaue reale Bruchlängen.
+
+\begin{kontrolle}[Einheiten und Modellprüfung]
+$\rho g l^2/E$ und $\sigma_{\max}/(\rho g)$ haben beide die Einheit Länge.
+Für $g\to0$ oder $E\to\infty$ verschwindet die Verlängerung. Die lokale
+Dehnung ist unten null und oben maximal; ihr Mittelwert beträgt die Hälfte
+des oberen Wertes. An der Grenze ist
+$\varepsilon_{\mathrm{oben}}=\sigma_{\max}/E\approx\num{0.00152}$,
+die mittlere Dehnung also ungefähr $\num{0.000762}$. Das bestätigt die
+kleine Dehnung im Modell. Reale Werte können unter anderem durch plastisches
+Verhalten, Querkontraktion und Materialfehler abweichen.
+\end{kontrolle}
+
+\begin{merksatz}
+Bei veränderlicher Belastung zuerst die lokale Schnittkraft bestimmen. Das
+Stoffgesetz gilt lokal; die gesamte Längenänderung entsteht durch Addition
+über die Abschnitte in ihrer ursprünglichen Geometrie.
+\end{merksatz}

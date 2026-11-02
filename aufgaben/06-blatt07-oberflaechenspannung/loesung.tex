@@ -1,0 +1,98 @@
+% Werte und Aufgabenstellung: aufgaben/Blatt07.pdf, S. 2.
+\subsection*{Gegeben und Modell}
+Für Wasser ist $\sigma=\qty{0.0721}{\newton\per\metre}$ gegeben, für
+Kupfer $\rho_\mathrm{Cu}=\qty{8.96}{\gram\per\centi\metre\cubed}
+=\qty{8960}{\kilogram\per\metre\cubed}$. Als zusätzliche Näherung
+verwenden wir $g=\qty{9.81}{\metre\per\second\squared}$.
+
+Für b und c betrachten wir eine homogene, horizontale Kreisscheibe mit
+Radius $R$ und Dicke $d$. Wir interpretieren den Hinweis des Blattes so, dass
+an der gesamten kreisförmigen Kontaktlinie eine einzige Flüssigkeitsoberfläche
+mit voller Stärke $\sigma$ senkrecht nach oben zieht. Dies ist eine idealisierte
+maximale Vertikalkomponente, nicht eine Kraft entlang der Umfangsrichtung.
+Hydrostatischen Auftrieb vernachlässigen wir ausdrücklich, um das einfache
+Oberflächenkraftmodell des Hinweises zu erhalten. Das ist eine zusätzliche
+Modellannahme und keine allgemeine Folge des Hinweises. Bei Kupfer und Wasser
+ist das Gewicht der Flüssigkeit mit dem Volumen der Münze nur etwa ein Neuntel
+des Münzgewichts; die verdrängte Flüssigkeit und der Meniskus können jedoch
+mehr zur Druckkraft beitragen. Ohne Meniskus- und Benetzungsmodell ist die
+Vernachlässigung nicht genau überprüfbar. Reale Schwimmgrenzen können daher
+abweichen.
+
+\subsection*{a) Druck im kugelförmigen Tropfen}
+Ein Tropfen mit Radius $r$ hat eine Flüssigkeitsoberfläche. Für eine kleine
+Radiusänderung gilt
+\begin{align}
+  A&=4\pi r^2, & \mathrm dA&=8\pi r\,\mathrm dr,\\
+  V&=\frac43\pi r^3, & \mathrm dV&=4\pi r^2\,\mathrm dr.
+\end{align}
+Die Netto-Druckarbeit $\Delta p\,\mathrm dV$ gleicht bei quasistatischer
+Änderung die Oberflächenenergie $\sigma\,\mathrm dA$ aus. Für $r>0$ folgt
+\begin{ergebnis}[a) Überdruck]
+\begin{equation*}
+  \Delta p=p_\mathrm{innen}-p_\mathrm{aussen}
+  =\sigma\frac{\mathrm dA}{\mathrm dV}=\frac{2\sigma}{r},
+  \qquad p_\mathrm{innen}=p_\mathrm{aussen}+\frac{2\sigma}{r}.
+\end{equation*}
+\end{ergebnis}
+Das $p$ in der auf dem Blatt angegebenen Arbeitsgleichung ist also der
+Überdruck, nicht der absolute Innendruck. Der Aussendruck ist nicht angegeben.
+Eine Seifenblase hat dagegen zwei Grenzflächen und deshalb einen anderen Faktor.
+
+\subsection*{b) Zulässige Münzabmessungen}
+Das Gewicht und die nach oben gerichtete ideale Oberflächenkraft sind
+\begin{equation}
+  F_g=\rho_\mathrm{Cu}\pi R^2 d g,
+  \qquad F_\sigma=\sigma\,2\pi R.
+\end{equation}
+Für $R,d>0$ muss $F_g\leq F_\sigma$ gelten. Division durch $\pi R$ gibt
+\begin{ergebnis}[b) Bedingung für Radius und Dicke]
+\begin{equation*}
+  R d\leq\frac{2\sigma}{\rho_\mathrm{Cu}g}
+  \approx\qty{1.6405e-6}{\metre\squared}.
+\end{equation*}
+\end{ergebnis}
+Die Grenzwerte liegen auf der Gleichheitskurve. Ein einzelnes unabhängiges
+Paar aus maximalem Radius und maximaler Dicke existiert nicht: Wird eines
+vorgegeben, erhält man den Grenzwert des anderen,
+\begin{equation}
+  R_\mathrm{max}(d)=\frac{2\sigma}{\rho_\mathrm{Cu}g d},
+  \qquad d_\mathrm{max}(R)=\frac{2\sigma}{\rho_\mathrm{Cu}g R}.
+\end{equation}
+Dünnere Scheiben können in diesem Modell einen grösseren Radius haben.
+
+\subsection*{c) Fünfräppler}
+Für den vorgegebenen Durchmesser $D=\qty{17.15}{\milli\metre}$ gilt
+$R=\qty{8.575}{\milli\metre}$; die Dicke ist
+$d=\qty{1.25}{\milli\metre}$. Mit der vorgegebenen Kupferdichte ist die
+Masse im Scheibenmodell
+\begin{equation}
+  m=\rho_\mathrm{Cu}\pi R^2d\approx\qty{2.587}{\gram},
+  \qquad F_g=mg\approx\qty{0.02538}{\newton}.
+\end{equation}
+Im Grenzfall $2\pi R\sigma_\mathrm{min}=F_g$ ergibt sich
+\begin{ergebnis}[c) Erforderliche Oberflächenspannung]
+\begin{equation*}
+  \sigma_\mathrm{min}=\frac{\rho_\mathrm{Cu}gRd}{2}
+  \approx\qty{0.4711}{\newton\per\metre}.
+\end{equation*}
+\end{ergebnis}
+Für Wasser liefert das Modell nur $F_\sigma=2\pi R\sigma
+\approx\qty{0.003885}{\newton}$ und damit rund \qty{15.3}{\percent} des
+Münzgewichts. Die Münze schwimmt nach diesem vereinfachten Modell nicht auf
+Wasser. Alternativ ergibt b bei dieser Dicke $R_\mathrm{max}\approx
+\qty{1.312}{\milli\metre}$, also $D_\mathrm{max}\approx
+\qty{2.625}{\milli\metre}$, deutlich weniger als der vorgegebene Durchmesser.
+
+\begin{kontrolle}[Einheiten und Grenzen]
+$\sigma/r$ hat die Einheit Druck, $Rd$ die Einheit Fläche und
+$\rho gRd$ die Einheit \si{\newton\per\metre}. Der in b und c berechnete
+Grenzwert gilt nur bei voller vertikaler Oberflächenkraft und ohne Auftrieb.
+Die Bewegung oder Stabilität einer realen Münze kann damit nicht vollständig
+vorhergesagt werden.
+\end{kontrolle}
+
+\begin{merksatz}
+Für Grenzflächenkräfte ist die Kontaktlänge entscheidend, für das Gewicht das
+Volumen. Bei Druckarbeit zählt die Druckdifferenz über der Grenzfläche.
+\end{merksatz}

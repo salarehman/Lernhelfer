@@ -1,0 +1,72 @@
+% Werte und Aufgabenstellung: aufgaben/Blatt07.pdf, S. 2.
+\subsection*{Gegeben und Modell}
+Der schwimmende Eisberg habe vor dem Schmelzen das Gesamtvolumen $V$ und die
+Dichte $\rho_\mathrm E=\qty{920}{\kilogram\per\metre\cubed}$. Für das Meer
+ist $\rho_\mathrm M=\qty{1030}{\kilogram\per\metre\cubed}$ gegeben. Die
+Luftdichte und damit der Luftauftrieb werden gemäss Blatt vernachlässigt.
+Die Meeresoberfläche $A_\mathrm M$ sei konstant.
+
+\subsection*{a) Volumen oberhalb der Oberfläche}
+Sei $V_\mathrm{u}$ das eingetauchte Volumen. Im Gleichgewicht ist die
+Gewichtskraft des Eises gleich dem Auftrieb des verdrängten Meerwassers:
+\begin{equation}
+  \rho_\mathrm E Vg=\rho_\mathrm M V_\mathrm{u}g,
+  \qquad \frac{V_\mathrm{u}}{V}=\frac{\rho_\mathrm E}{\rho_\mathrm M}.
+\end{equation}
+Das Volumen oberhalb der Oberfläche ist $V-V_\mathrm{u}$. Daher
+\begin{ergebnis}[a) Oberhalb der Oberfläche]
+\begin{equation*}
+  \frac{V-V_\mathrm{u}}{V}
+  =1-\frac{920}{1030}\approx \num{0.1068}=\qty{10.68}{\percent}.
+\end{equation*}
+\end{ergebnis}
+Die übrigen rund \qty{89.32}{\percent} sind eingetaucht. Diese Anteile
+beziehen sich auf Volumina, nicht auf Höhen oder Längen.
+
+\subsection*{b) Änderung des Meeresspiegels}
+Die Masse $m=\rho_\mathrm E V$ bleibt beim Schmelzen erhalten. Die Dichte
+$\rho_\mathrm S$ des Schmelzwassers ist auf dem Blatt nicht angegeben. Wir
+nehmen an, dass der Eisberg aus praktisch salzfreiem Eis besteht und zu
+Süsswasser schmilzt. Dann ist das Schmelzwasservolumen $m/\rho_\mathrm S$,
+nicht automatisch $m/\rho_\mathrm M$.
+
+Wir modellieren das Meerwasser als inkompressibel mit unveränderter Dichte
+$\rho_\mathrm M$ und nehmen additive Volumina ohne Mischungs- oder
+Temperaturkontraktion an. Das Schmelzwasser kann sich verteilen, ohne dass
+sein beitragendes Volumen durch Mischung verändert wird. Die reale
+Salzgehaltsänderung und ihre Wirkung auf die Dichte sind damit nicht erfasst.
+Vor dem Schmelzen belegt der Eisberg unter der Oberfläche das Volumen
+$V_\mathrm{u}=m/\rho_\mathrm M$. Anschliessend entfällt diese Verdrängung,
+und das Schmelzwasser nimmt das Volumen $m/\rho_\mathrm S$ ein. Bei
+konstanter Oberfläche folgt aus $A_\mathrm M h=\Delta V$:
+\begin{ergebnis}[b) Meeresspiegeländerung]
+\begin{equation*}
+  h=\frac{\rho_\mathrm E V}{A_\mathrm M}
+    \left(\frac{1}{\rho_\mathrm S}-\frac{1}{\rho_\mathrm M}\right).
+\end{equation*}
+\end{ergebnis}
+Für $\rho_\mathrm S<\rho_\mathrm M$ ist $h>0$. Ein Zahlenkoeffizient ist
+nicht allein aus den Angaben des Blattes bestimmbar. Als ausdrücklich
+zusätzliche Näherung wählen wir $\rho_\mathrm S=\qty{1000}{\kilogram\per\metre\cubed}$;
+damit ergibt sich
+\begin{equation}
+  h=\left(\frac{920}{1000}-\frac{920}{1030}\right)\frac{V}{A_\mathrm M}
+    \approx \num{0.02680}\,\frac{V}{A_\mathrm M}.
+\end{equation}
+Ohne konkrete Angaben zu $V$ und $A_\mathrm M$ folgt keine absolute Höhe.
+Falls die Flüssigkeiten vollständig durchmischt werden und dabei ihr Volumen
+ändern, benötigt man stattdessen die Enddichte beziehungsweise ein
+Mischungsgesetz; das Ergebnis oben ist dann nicht ohne Weiteres exakt.
+
+\begin{kontrolle}[Einheit und Grenzfall]
+$V/A_\mathrm M$ hat die Einheit einer Länge. Für gleiche Dichten von
+Schmelzwasser und Meerwasser verschwindet $h$: Das Schmelzwasser ersetzt dann
+genau das zuvor verdrängte Volumen. Dieser Sonderfall darf für Süsswasser in
+Meerwasser nicht ungeprüft vorausgesetzt werden.
+\end{kontrolle}
+
+\begin{merksatz}
+Bei schwimmenden Körpern bestimmt die Masse die Verdrängung. Für die
+Pegeländerung nach einem Phasenwechsel ist zusätzlich das Endvolumen des
+Materials und gegebenenfalls das Mischungsverhalten entscheidend.
+\end{merksatz}
