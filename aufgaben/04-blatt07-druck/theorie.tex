@@ -2,41 +2,39 @@
 % skript: Physik I, Kapitel 8.1.1--8.1.2, Seiten 129--133
 % stand: Übungsblatt 7, Aufgabe A4
 
+Wie gross ist die Kraft, die eine Flüssigkeit auf eine Fläche ausübt, zum
+Beispiel auf den Boden eines Gefässes? Ausgangspunkt ist der Druck an einem
+Ort; daraus gewinnt man die Kraft auf eine ausgedehnte Fläche.
+
 \begin{werkzeugkasten}[Druck und Tiefe]
-In einer ruhenden Flüssigkeit konstanter Dichte \(\rho\) im homogenen
-Schwerefeld ist der absolute Druck in der Tiefe \(h\)
+In ruhender Flüssigkeit konstanter Dichte $\rho$ ist der Druck in der Tiefe
+$h$ unter der freien Oberfläche
 \begin{equation}
-  p(h)=p_0+\rho gh.
+  p(h)=p_0+\rho gh,
 \end{equation}
-\(p_0\) ist der Druck an der freien Oberfläche. Druck ist lokal und wirkt
-senkrecht auf eine benetzte Fläche, unabhängig von deren Orientierung.
-Der Schweredruck \(\rho gh\) ist ein Überdruck gegenüber \(p_0\).
+mit dem Oberflächendruck $p_0$. Druck ist ein lokaler, richtungsunabhängiger
+Wert und wirkt senkrecht auf jede benetzte Fläche, egal wie sie orientiert
+ist. Damit ist $p$ überall im Gefäss an der Stelle $h$ gleich, unabhängig von
+Gefässform.
 
 \textit{Skript:} Kap. 8.1.1--8.1.2, S. 129--132, Gl. (8.1) und (8.4).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Von lokalem Druck zur Kraft]
-Für eine ebene Fläche mit konstanter Normalenrichtung addieren sich die
-senkrechten Beiträge \(\mathrm dF=p\,\mathrm dA\). Ist der Druck überall
-gleich, vereinfacht sich das zum Produkt aus Druck und Fläche. Ändert er sich
-über die Fläche, muss man die Beiträge integrieren oder den flächengemittelten
-Druck verwenden. Druck hat die Einheit \(\si{\pascal}\), Kraft die Einheit
-\(\si{\newton}\).
+\begin{werkzeugkasten}[Druck in eine Kraft umrechnen]
+Aus dem Druck folgt die Kraft über $F=pA$. Für den Boden mit konstantem $p$
+ist das direkt das Produkt. Ist der Druck über die Fläche nicht konstant,
+muss man die Beiträge über die Fläche addieren (mittleren Druck oder
+Integration verwenden). Für die gesamte Belastung zählt der Druckunterschied
+zwischen Innen- und Aussenseite, nicht der absolute Innen-Druck allein.
 
-Für die resultierende Belastung eines Wandstücks müssen die Drücke auf beiden
-Seiten berücksichtigt werden. Ist der Aussendruck überall gleich \(p_0\),
-trägt bei einer offenen Flüssigkeitsoberfläche nur der Schweredruck zur
-Druckdifferenz bei. Die reine Kraft der Flüssigkeit auf die Wand umfasst dagegen
-auch den Oberflächendruck. Weitere Kräfte wie Halterungen gehören nicht zur
-reinen Druckkraft.
-
-\textit{Skript:} Kap. 8.1.1--8.1.2, S. 129--133. Die Integration von
-Druckbeiträgen ist eine allgemeine Ergänzung zum dort eingeführten Druckbegriff.
+\textit{Skript:} Kap. 8.1.1--8.1.2, S. 129--133.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
-Die Tiefe ist eine vertikale Strecke unter der freien Oberfläche. Für Richtung
-und Betrag der Kraft sind die Lage der Fläche und ihre benetzte Seite wichtig;
-Fläche und Druck sind nicht dieselbe Grösse. Bei unterschiedlichen Drücken
-innen und aussen darf der Luftdruck nicht pauschal weggelassen werden.
+\begin{itemize}
+  \item Druck und Fläche sind verschiedene Grössen: erst das Produkt $F=pA$
+        ergibt eine Kraft.
+  \item Beim Druckunterschied überlegen, ob der Umgebungsdruck beidseitig
+        gleich ist und sich aufhebt.
+\end{itemize}
 \end{achtung}

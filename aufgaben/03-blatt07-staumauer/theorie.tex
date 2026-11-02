@@ -2,34 +2,39 @@
 % skript: Physik I, Kapitel 8.1.1--8.1.2, Seiten 129--133
 % stand: Übungsblatt 7, Aufgabe A3
 
+Wasser drückt auf die Mauer, die das Becken hält. Gesucht wird, wie gross
+diese Kraft ist und wo sie angreift. Es genügt die Hydrostatik einer ruhenden
+Flüssigkeit; Bewegung oder Strömung spielen keine Rolle.
+
 \begin{werkzeugkasten}[Druck in einer ruhenden Flüssigkeit]
-Druck ist Kraft pro Fläche und wirkt senkrecht auf die benetzte Fläche. In
-ruhender Flüssigkeit konstanter Dichte \(\rho\) gilt für die vertikale Tiefe
-\(h\) unter der freien Oberfläche im homogenen Schwerefeld
+Druck ist Kraft senkrecht auf die Fläche. In ruhender Flüssigkeit konstanter
+Dichte $\rho$ wächst er mit der Tiefe $h$ unter der freien Oberfläche linear an:
 \begin{equation}
   p(h)=p_0+\rho gh.
 \end{equation}
-Dabei ist \(p_0\) der Oberflächendruck und \(\rho gh\) der Schweredruck. Der
-Druck wirkt in alle Richtungen, auch auf Seitenwände. Seine Einheit ist
-\(\si{\pascal}=\si{\newton\per\metre\squared}\).
+$p_0$ ist der Druck an der Oberfläche, $\rho gh$ der Schweredruck. Der Druck
+wirkt in alle Richtungen, auch auf Seitenwände, und wächst mit der Tiefe.
+Deshalb ist er an der Mauer nicht konstant, sondern unten am grössten.
 
-\textit{Skript:} Kap. 8.1.1--8.1.2, S. 129--132, insbesondere Gl. (8.4).
+\textit{Skript:} Kap. 8.1.1--8.1.2, S. 129--132, Gl. (8.4).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Bezugsdruck und Geometrie]
-Absoluter Druck bezieht sich auf das Vakuum, Überdruck auf einen angegebenen
-Bezugsdruck. Für die Belastung einer Wand zählt die Druckdifferenz zwischen
-beiden Seiten. Gleicher Umgebungsdruck auf beiden Seiten hebt sich dabei auf.
+\begin{werkzeugkasten}[Vom Druck zur Kraft auf die Mauer]
+Für die Belastung zählt der Druckunterschied zwischen den beiden Seiten. Die
+Kraft auf ein Flächenstück ist Druck mal Fläche; da der Druck über die Höhe
+variiert, muss man die Beiträge über die benetzte Fläche aufsummieren
+(integrieren), statt pauschal ``Druck mal Gesamtfläche'' zu rechnen. Der
+Druck selbst ist von der Gefässform unabhängig; die Kraft auf die Wand hängt
+von deren Gesamtfläche und der Verteilung ab.
 
-Bei gleicher Tiefe und gleichem Oberflächendruck ist der Druck unabhängig von
-Gefässform und Flüssigkeitsmenge, solange hydrostatisches Gleichgewicht gilt.
-Der Druck an einem Ort ist keine Gesamtkraft auf eine ausgedehnte Wand.
-
-\textit{Skript:} Kap. 8.1.2, S. 131--133, hydrostatisches Paradoxon.
+\textit{Skript:} Kap. 8.1.2, S. 131--133.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
-Die Höhe über dem Boden und die Tiefe unter dem Wasserspiegel sind
-verschiedene Grössen. Bei Zahlenwerten müssen die verwendete Dichte und
-Erdbeschleunigung sowie der Druckbezug klar bezeichnet werden.
+\begin{itemize}
+  \item Tiefe unter dem Wasserspiegel und Höhe über dem Boden sauber trennen;
+        $p$ hängt nur von der senkrechten Tiefe ab.
+  \item Absolute Höhe und Wasserspiegelhöhe passend einsetzen; an der Mauer
+        beginnt die Tiefe oben bei null.
+\end{itemize}
 \end{achtung}
