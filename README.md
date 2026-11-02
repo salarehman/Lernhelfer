@@ -20,6 +20,10 @@ Formeln und Erklärungen bleiben allgemein.
 
 ## Stand und vorhandene Unterlagen
 
+- **Mathe:** Mathematische Aufgaben und Lernhelfer liegen im Unterordner
+  [`mathe/`](mathe/README.md) mit eigener Build-Pipeline (`mathe/werkzeuge`),
+  gleiche Trennung von Theorie und Lösung wie bei der Physik.
+
 - Vorlesung: **Physik I, Mechanik und Thermodynamik**, Prof. Patrick Maletinsky,
   Herbstsemester 2026. Das bereitgestellte [Skript](skript/Skript_Physik_I_HS2026_Maletinsky-2.pdf)
   hat 176 PDF-Seiten; die Seiten im Text sind separat nummeriert. Die vorliegende

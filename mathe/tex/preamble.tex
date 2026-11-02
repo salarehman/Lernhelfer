@@ -1,0 +1,173 @@
+% tex/preamble.tex
+% Layout, Kästen und Makros für beide Teile des Dokuments.
+% Wird von tex/main.tex eingebunden. Nie direkt kompilieren: immer
+% python3 werkzeuge/build.py aus dem Repo-Wurzelverzeichnis.
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage[most]{tcolorbox}
+
+% Farben: ruhige Palette, Theorie kühl, Lösungen warm, Warnungen deutlich.
+\definecolor{phblau}{HTML}{1F4E79}
+\definecolor{phblauhell}{HTML}{EAF1F8}
+\definecolor{phgruen}{HTML}{2E6F4E}
+\definecolor{phgruenhell}{HTML}{EAF4EE}
+\definecolor{phorange}{HTML}{9C4A11}
+\definecolor{phorangehell}{HTML}{FDF1E7}
+\definecolor{phgrau}{HTML}{5A5A5A}
+\definecolor{phgrauhell}{HTML}{F2F2F2}
+
+\usepackage[colorlinks=true,
+            linkcolor=phblau,
+            urlcolor=phblau,
+            citecolor=phblau,
+            bookmarksnumbered=true,
+            bookmarksopen=true,
+            pdftitle={Physik: Theorie und Lösungen},
+            pdfsubject={Theorie und Lösungen zu den Übungsaufgaben}]{hyperref}
+\usepackage{cleveref}
+
+% Schalter für die PDF-Varianten; generated/modus.tex setzt die Werte.
+\newif\ifzeigetheorie   \zeigetheorietrue
+\newif\ifzeigeloesungen \zeigeloesungentrue
+
+% ---------------------------------------------------------------- Seite
+
+\geometry{a4paper, top=2.4cm, bottom=2.4cm, left=2.5cm, right=2.5cm,
+          headheight=14pt}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+\linespread{1.05}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{\small\color{phgrau}\nouppercase{\rightmark}}
+\fancyhead[R]{\small\color{phgrau}%
+  \ifzeigetheorie\ifzeigeloesungen Theorie und Lösungen\else Theorie\fi
+  \else Lösungen\fi}
+\fancyfoot[C]{\small\color{phgrau}\thepage}
+
+\titleformat{\part}[display]
+  {\normalfont\huge\bfseries\color{phblau}}{}{0pt}{\Huge}
+\titlespacing*{\part}{0pt}{0pt}{24pt}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{phblau}}{\thesection}{0.6em}{}
+  [\vspace{-0.5em}{\color{phblau!35}\rule{\linewidth}{0.8pt}}]
+\titlespacing*{\section}{0pt}{1.6em}{0.9em}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{phgrau}}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{1.1em}{0.5em}
+
+\captionsetup{font=small,labelfont={bf,color=phgrau}}
+
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.15em,topsep=0.2em}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=0.15em,topsep=0.2em}
+
+% ---------------------------------------------------------------- Zahlen
+
+\sisetup{
+  per-mode=symbol,
+  detect-all,
+  quantity-product = \,,
+  range-phrase = { bis },
+  list-final-separator = { und },
+  separate-uncertainty = true,
+  output-decimal-marker = {,},
+}
+
+% ---------------------------------------------------------------- Makros
+
+% Ableitungen und Differentiale: \dd{x}, \dv{x}{t}, \ddv{2}{x}{t}, \pdv{f}{x}
+\newcommand*{\dd}[1]{\mathop{}\!\mathrm{d}#1}
+\newcommand*{\dv}[2]{\frac{\dd{#1}}{\dd{#2}}}
+\newcommand*{\ddv}[3]{\frac{\dd^{#1}{#2}}{\dd{#3}^{#1}}}
+\newcommand*{\pdv}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\betrag}{\lvert}{\rvert}
+\newcommand*{\vektor}[1]{\vec{#1}}
+\newcommand*{\mittel}[1]{\overline{#1}}
+\newcommand*{\Hin}{\text{Hinweis}}
+\newcommand*{\konst}{\text{const.}}
+
+% ---------------------------------------------------------------- Kästen
+
+\tcbset{
+  rahmen/.style={
+    enhanced, breakable,
+    boxrule=0.6pt,
+    arc=2pt,
+    left=8pt, right=8pt, top=7pt, bottom=7pt,
+    fonttitle=\bfseries\small,
+    before skip=0.6em, after skip=0.6em,
+  },
+}
+
+% Werkzeugkasten: das, was man zum Selberlösen braucht, in Teil I.
+\newtcolorbox{werkzeugkasten}[1][Werkzeuge]{rahmen,
+  colback=phblauhell, colframe=phblau, coltitle=white,
+  title={#1}}
+
+% Typische Falle, Vorzeichen- und Einheitenfehler.
+\newtcolorbox{achtung}[1][Typische Falle]{rahmen,
+  colback=phorangehell, colframe=phorange, coltitle=white,
+  title=#1}
+
+% Ergebnis einer Rechnung, hervorgehoben.
+\newtcolorbox{ergebnis}[1][Ergebnis]{rahmen,
+  colback=phgruenhell, colframe=phgruen, coltitle=white,
+  title=#1}
+
+% Kontrolle: Einheit, Grenzfall, Größenordnung.
+\newtcolorbox{kontrolle}[1][Kontrolle]{rahmen,
+  colback=phgrauhell, colframe=phgrau, coltitle=white,
+  title=#1}
+
+% Merksatz zum Übertragen auf andere Aufgaben.
+\newtcolorbox{merksatz}[1][Merksatz]{rahmen,
+  colback=phgruenhell, colframe=phgruen!70!black, coltitle=white,
+  title=#1}
+
+% -------------------------------------------------- Kopf und Querverweise
+
+% Kopfzeile einer Aufgabe in Teil I: Fundstelle im Skript.
+\newcommand{\aufgabenkopf}[1]{%
+  \par\vspace{-0.6em}\noindent{\small\color{phgrau}Skript: #1}\par\vspace{0.4em}}
+
+% Verweis von der Theorie zur Lösung derselben Aufgabe.
+\newcommand{\loesungsverweis}[1]{%
+  \ifzeigeloesungen
+    \par\vspace{0.4em}\noindent{\small\color{phblau}%
+    \hyperref[loes:#1]{$\rightarrow$ Lösung dieser Aufgabe}}%
+    \par\vspace{0.2em}%
+  \fi}
+
+% Verweis von der Lösung zurück in den Theorieteil.
+\newcommand{\theorieverweis}[1]{%
+  \ifzeigetheorie
+    \par\vspace{0.4em}\noindent{\small\color{phblau}%
+    \hyperref[aufg:#1]{$\leftarrow$ Werkzeuge dazu in Teil I}}%
+    \par\vspace{0.2em}%
+  \fi}
+
+% Rückfallwerte, die generated/meta.tex überschreibt.
+\providecommand{\SkriptStand}{Skript noch nicht hinterlegt}
+\providecommand{\SkriptQuelle}{}
+\providecommand{\StandDatum}{\today}
