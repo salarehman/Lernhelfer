@@ -27,8 +27,8 @@ docs/, tex/, werkzeuge/        Regeln, Layout, Build-Werkzeuge
 
 Gebaute PDFs liegen unter `out/` und heißen z. B.:
 
-- `out/physik-blatt07-lernhelfer.pdf` — Physik Blatt 7, **Theorie + Lösung**
-- `out/physik-blatt07-theorie.pdf` — Physik Blatt 7, nur **Theorie**
+- `out/physik/blatt07-lernhelfer.pdf` — Physik Blatt 7, **Theorie + Lösung**
+- `out/physik/blatt07-theorie.pdf` — Physik Blatt 7, nur **Theorie**
 
 ## Die wöchentliche Routine
 

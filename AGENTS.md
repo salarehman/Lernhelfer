@@ -39,8 +39,8 @@ generated/                vom Build erzeugt, nicht bearbeiten/einchecken
 ```
 
 Ein **Übungsblatt** = ein `blattNN`-Ordner in einem Fach. Ein **Lernhelfer** =
-das gebaute PDF `out/<fach>-<blattNN>-lernhelfer.pdf` (Theorie + Lösung); die
-Fassung nur mit Theorie heisst `out/<fach>-<blattNN>-theorie.pdf` und ist eine
+das gebaute PDF `out/<fach>/<blattNN>-lernhelfer.pdf` (Theorie + Lösung); die
+Fassung nur mit Theorie heisst `out/<fach>/<blattNN>-theorie.pdf` und ist eine
 ergänzende Ansicht, kein Ersatz. Pro Fach und Blatt werden beide gebaut.
 
 ## Übungsblätter und Lernhelfer
@@ -73,8 +73,8 @@ Lernhelfer:
    der tatsächlichen PDF übernehmen — nichts erfinden.
 4. **Bauen.** `python3 werkzeuge/build.py` im Repo-Wurzelverzeichnis (baut
    alle Fächer+Blätter) bzw. `--fach <fach>` für eines. Das Ergebnis liegt in
-   `out/<fach>-<blattNN>-lernhelfer.pdf` (Theorie+Lösung) und
-   `out/<fach>-<blattNN>-theorie.pdf` (nur Theorie).
+   `out/<fach>/<blattNN>-lernhelfer.pdf` (Theorie+Lösung) und
+   `out/<fach>/<blattNN>-theorie.pdf` (nur Theorie).
 5. **Prüfen.** Jede Datei beim Build automatisch prüfen; die Theorie lösungsfrei
    lassen; Inhalte aus dem Skript verifizieren.
 6. **Commit + Push** im Git (private Dateien nicht in öffentliche Repos).

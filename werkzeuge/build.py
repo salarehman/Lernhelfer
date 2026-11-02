@@ -4,8 +4,8 @@
 Aufbau: aufgaben/<fach>/<blattNN>/<NN-slug>/  mit theorie.tex und loesung.tex.
 Für jede gefundene Kombination aus Fach und Blatt wird erzeugt:
 
-    out/<fach>-<blattNN>-lernhelfer.pdf   (Teil I Theorie + Teil II Lösung)
-    out/<fach>-<blattNN>-theorie.pdf      (nur Teil I Theorie)
+    out/<fach>/<blattNN>-lernhelfer.pdf   (Teil I Theorie + Teil II Lösung)
+    out/<fach>/<blattNN>-theorie.pdf      (nur Teil I Theorie)
 
 Der Build erzeugt generated/*.tex und kompiliert tex/main.tex mit pdflatex;
 fehlt pdflatex, wird Tectonic verwendet (GLEICHES VERHALTEN wie pdflatex,
@@ -361,7 +361,9 @@ def main() -> int:
     ziele: list[Path] = []
     for fach, blaetter in baetterpro_fach.items():
         for blatt in blaetter:
-            stamm = OUT / f"{fach}-{blatt['name']}"
+            fach_dir = OUT / fach
+            fach_dir.mkdir(exist_ok=True)
+            stamm = fach_dir / blatt["name"]
 
             schreibe_generated(fach, blatt, nur_theorie=False)
             if not args.kein_pdf:
