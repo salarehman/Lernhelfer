@@ -1,0 +1,44 @@
+% titel: Blatt 7, A6: Umkehrregel
+% skript: Kap. 4.1 (Umkehrfunktion, Umkehrregel)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Für die Ableitung einer Umkehrfunktion braucht man die Umkehrregel. Sie
+verbindet $f'$ und $(f^{-1})'$ — dort, wo $f'$ nicht verschwindet und die
+Umkehrfunktion differenzierbar ist.
+
+\begin{werkzeugkasten}[Umkehrregel]
+Ist $f$ auf einem Intervall streng monoton und differenzierbar mit $f'\neq0$
+auf dem Intervall, so ist $f^{-1}$ differenzierbar und
+\begin{equation}
+  (f^{-1})'(y)=\frac{1}{f'(f^{-1}(y))}
+  \qquad\text{bzw.}\qquad
+  \dv{}{y}f^{-1}(y)=\frac{1}{f'(x)},\quad x=f^{-1}(y).
+\end{equation}
+Man leitet die Identität $f^{-1}(f(x))=x$ nach $x$ ab und löst auf; das ist
+der Kern des Beweises.
+
+\textit{Skript:} Kap. 4.1, Umkehrregel.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Kosinus und arccos]
+$\cos$ ist auf $[0,\pi]$ streng monoton fallend und bildet $[0,\pi]$ auf
+$[-1,1]$ ab; die Umkehrfunktion
+$\arccos:[-1,1]\to[0,\pi]$ ist die Umkehrung. Für $|y|<1$ gilt die
+Pythagoras-Beziehung im Einheitskreis: ist $x=\arccos y$, so ist $\cos x=y$
+und $\sin x=\sqrt{1-y^2}$.
+
+\textit{Skript:} Kap. 2.4 (Umkehrfunktionen) und Kap. 4.1.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item $\cos'=-\sin$ — das Minuszeichen nicht vergessen; es bewirkt das
+        Minus in der arccos-Ableitung.
+  \item Die Umkehrregel versagt, wo $f'=0$ ist. Hier: $\sin x=0$ bei
+        $x=0,\pi$, also $y=\pm1$; dort ist arccos nicht differenzierbar
+        (der Nenner $\sqrt{1-y^2}$ wird null).
+  \item Argument und Definitionsbereich: arccos ist nur auf $[-1,1]$ definiert;
+        die Formel gilt nur für $|y|<1$.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,36 @@
+% Teil II: der durchgerechnete Weg. Reihenfolge beibehalten.
+
+\subsection*{Gegeben und gesucht}
+Vier Grenzwerte von Brüchen bzw.\ unbestimmten Formen, z. B.\ bei $0/0$ oder
+$\infty/\infty$. Gesucht: die jeweiligen Grenzwerte.
+
+\subsection*{Ansatz}
+In jedem Teil zuerst prüfen, welche unbestimmte Form vorliegt. Dann Zähler
+und Nenner getrennt ableiten und den neuen Bruch auswerten; bei Bedarf die
+Regel wiederholen. Typische Resultate dabei sind bekannte Grenzwerte wie
+$\lim_{u\to0}\frac{\sin u}{u}=1$ oder $\lim_{u\to0}\frac{\mathrm e^u-1}{u}=1$.
+
+\subsection*{Rechnung (Methode)}
+Für einen Bruch $\lim\frac{f}{g}$ mit $0/0$ oder $\infty/\infty$:
+\begin{equation}
+  \lim_{x\to x_0}\frac{f(x)}{g(x)}
+  =\lim_{x\to x_0}\frac{f'(x)}{g'(x)},
+  \qquad
+  \text{ggf.\ erneut anwenden.}
+\end{equation}
+Für Formen wie $0\cdot\infty$ oder $1^\infty$ zuerst umformen
+(Kehrwert, Logarithmus), dann ableiten.
+
+\begin{achtung}[Genaue Angaben im Original prüfen]
+Die vier konkreten Grenzwerte auf dem Aufgabenblatt sind im eingescannten
+Bild für das Textlesen schlecht erkennbar. Die Methode oben ist die prüfbare
+Vorgehensweise; die konkreten Brüche bitte am Blatt ablesen und damit
+nachrechnen, statt die (nicht sicher lesbaren) Ausdrücke aus diesem Hilfsblatt
+zu übernehmen.
+\end{achtung}
+
+\begin{merksatz}
+Vor jedem l'Hôpital-Schritt die unbestimmte Form prüfen, dann Zähler und
+Nenner getrennt ableiten. Andere unbestimmte Formen erst auf $0/0$ oder
+$\infty/\infty$ bringen.
+\end{merksatz}

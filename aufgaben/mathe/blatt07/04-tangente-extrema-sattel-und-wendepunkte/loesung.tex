@@ -1,0 +1,56 @@
+% Teil II: der durchgerechnete Weg. Reihenfolge beibehalten.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $f(x)=\sqrt{1+2x^2}$ für $x\in\mathbb R$; gesucht die Tangente bei
+$x_0=2$ und deren Achsenschnittpunkte. Zusätzlich Kurvendiskussion von
+$f(x)=3(x+1)^2$ und $f(x)=x^2\ln x$ ($x>0$) sowie, sofern im Original so
+gestellt, die Wendepunkte von $f(x)=\mathrm e^{-x^2}$ (Angabe im Scan
+unvollständig — bitte am Blatt prüfen).
+
+\subsection*{a) Tangente an $f(x)=\sqrt{1+2x^2}$ bei $x_0=2$}
+Funktionswert und Steigung mit der Kettenregel:
+\begin{equation}
+  f(2)=\sqrt{1+8}=3,
+  \qquad
+  f'(x)=\frac{4x}{2\sqrt{1+2x^2}}=\frac{2x}{\sqrt{1+2x^2}},
+  \qquad
+  f'(2)=\frac{4}{3}.
+\end{equation}
+Damit ist die Tangentengleichung $t(x)=f(2)+f'(2)(x-2)$.
+
+\begin{ergebnis}
+\begin{equation*}
+  t(x)=3+\frac43(x-2)=\frac43 x+\frac13.
+\end{equation*}
+\end{ergebnis}
+Achsenschnittpunkte:
+\begin{equation}
+  x\text{-Achse: }t(x)=0 \;\Rightarrow\; x=-\frac14,\qquad
+  y\text{-Achse: }t(0)=\frac13.
+\end{equation}
+
+\subsection*{b) Kurvendiskussion}
+\emph{i) $f(x)=3(x+1)^2$.} Nullstelle: $3(x+1)^2=0$ bei $x=-1$ (doppelt). Ableitung
+$f'=6(x+1)$, also Kandidat $x=-1$; dort ist $f''=6>0$, daher lokales (und
+globales) Minimum, kein Sattelpunkt. Da der eventuell führende Faktor im Scan
+nicht sicher lesbar war, die ursprüngliche Funktion am Blatt nachprüfen.
+
+\emph{ii) $f(x)=x^2\ln x$, $x>0$.} Nullstellen: $x^2\ln x=0$ mit $x>0$
+$\Rightarrow\ln x=0 \Rightarrow x=1$. Lokale Extrema und Sattelpunkte über
+$f'=2x\ln x + x^2\cdot\frac1x = x(2\ln x+1)$. Nullsetzen ergibt $2\ln x+1=0$,
+also $\ln x=-\frac12 \Rightarrow x=\mathrm e^{-1/2}$. Vorzeichenprüfung von
+$f'$ an beiden Seiten entscheidet, ob Minimum oder Maximum; da der Hinweis sagt,
+dass $f''$ nicht gebraucht wird, genügt der Vorzeichenwechsel von $f'$.
+
+\subsection*{c) Wendepunkte}
+\begin{kontrolle}
+Wendepunkt-Kandidaten über $f''$. Für eine Form wie $f(x)=\mathrm e^{-x^2}$
+verschwindet $f''$ bei $x=\pm\frac{1}{\sqrt2}$ und wechselt dort das Vorzeichen;
+das genaue $f$ bitte am Blatt bestätigen, da der Exponent im Scan unlesbar war.
+\end{kontrolle}
+
+\begin{merksatz}
+Tangente: Punkt und Steigung bestimmen, dann $t(x)=f(x_0)+f'(x_0)(x-x_0)$.
+Extrema/Sattelpunkte über das Vorzeichen von $f'$, Wendepunkte über $f''$.
+Definitionsbereich (z. B.\ $x>0$ bei $\ln$) immer zuerst klären.
+\end{merksatz}

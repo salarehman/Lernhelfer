@@ -1,0 +1,49 @@
+% Teil II: der durchgerechnete Weg. Reihenfolge beibehalten.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $f(x)=\cos x$ auf $[0,\pi]$, mit Umkehrfunktion
+$\arccos:[-1,1]\to[0,\pi]$. Gesucht: die Ableitung $\arccos'(y)$ für
+$|y|<1$, und die Begründung, warum arccos bei $y=\pm1$ nicht differenzierbar
+ist.
+
+\subsection*{Ansatz}
+Umkehrregel anwenden. Da $\cos$ auf $[0,\pi]$ streng monoton fallend ist und
+$\cos'\neq0$ im offenen Intervall, ist arccos dort differenzierbar. Den
+Zusammenhang im Einheitskreis nutzen, um $\sin$ in $\cos x$ umzuschreiben.
+
+\subsection*{Rechnung}
+Für $x=\arccos y$ gilt $\cos x=y$ und $x\in[0,\pi]$, also
+$\sin x=\sqrt{1-\cos^2 x}=\sqrt{1-y^2}$ (positiv, da $x\in(0,\pi)$). Mit der
+Umkehrregel:
+\begin{equation}
+  \arccos'(y)=\frac{1}{\cos'(\arccos y)}
+  =\frac{1}{-\sin(\arccos y)}
+  =-\frac{1}{\sqrt{1-y^2}}.
+\end{equation}
+\begin{ergebnis}
+\begin{equation*}
+  \arccos'(y)=-\frac{1}{\sqrt{1-y^2}},
+  \qquad |y|<1.
+\end{equation*}
+\end{ergebnis}
+
+\subsection*{Nichtdifferenzierbarkeit bei $y=\pm1$}
+Bei $y=\pm1$ ist $x=0$ bzw.\ $x=\pi$, wo $\cos'=-\sin x=0$ ist. Der Nenner
+$\sqrt{1-y^2}$ verschwindet; die Umkehrregel ist nicht anwendbar, und der
+Differenzenquotient hat dort keinen endlichen Grenzwert.
+
+\begin{kontrolle}
+\textbf{Vorzeichen:} arccos fällt, daher ist die Ableitung negativ — das Minus
+ist korrekt (im Gegensatz zu arcsin mit $+$).
+\textbf{Grenzfall:} Für $y\to\pm1$ strebt $|\arccos'|\to\infty$
+(vertikale Tangente), konsistent mit der Nichtdifferenzierbarkeit.
+\textbf{Anknüpfung:} $\sin^2 x+\cos^2 x=1$ liefert die Wurzel; nur das
+Vorzeichen hängt von $x\in(0,\pi)$ ab.
+\end{kontrolle}
+
+\begin{merksatz}
+Die Umkehrregel $(f^{-1})'=1/(f'\circ f^{-1})$ braucht $f'\neq0$. Bei
+trigonometrischen Umkehrfunktionen führt man den Sinus über
+$\sin^2+\cos^2=1$ auf den Kosinus zurück; das Vorzeichen folgt aus der
+Monotonie.
+\end{merksatz}

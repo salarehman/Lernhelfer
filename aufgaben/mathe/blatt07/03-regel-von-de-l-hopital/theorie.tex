@@ -1,0 +1,51 @@
+% titel: Blatt 7, A3: Regel von de l'Hopital
+% skript: Kap. 4 (Grenzwerte und Differentialrechnung)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Die Regel von de l'Hôpital vereinfacht Grenzwerte von Brüchen, bei denen Zähler
+und Nenner gleichzeitig gegen null oder gegen unendlich streben
+(unbestimmte Formen $0/0$ bzw. $\infty/\infty$). Sie ersetzt den Quotienten
+durch den Quotienten der Ableitungen.
+
+\begin{werkzeugkasten}[Regel von de l'Hopital]
+Sind $f$ und $g$ differenzierbar, $g'\neq 0$ in einer Umgebung von $x_0$
+(außer evtl.\ $x_0$ selbst), und gilt
+\begin{equation}
+  \lim_{x\to x_0}f(x)=0,\quad \lim_{x\to x_0}g(x)=0
+  \quad\text{oder}\quad
+  \lim_{x\to x_0}|f(x)|=\lim_{x\to x_0}|g(x)|=\infty,
+\end{equation}
+so ist, falls der rechte Grenzwert existiert,
+\begin{equation}
+  \lim_{x\to x_0}\frac{f(x)}{g(x)}
+  =\lim_{x\to x_0}\frac{f'(x)}{g'(x)}.
+\end{equation}
+Die Regel lässt sich mehrfach anwenden und gilt auch für einseitige
+Grenzwerte und $x_0=\pm\infty$. Sie ist nur für unbestimmte Formen gültig.
+
+\textit{Skript:} Kap. 4, Grenzwerte von Funktionen; Herkunft über den
+verallgemeinerten Mittelwertsatz.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Typische unbestimmte Formen und Umformungen]
+Nicht immer liegt ein Bruch vor. Weitere Formen sind $0\cdot\infty$,
+$\infty-\infty$, $1^\infty$, $0^0$, $\infty^0$. Sie werden durch Umformen
+(kehrwert bilden, Logarithmus) auf $0/0$ oder $\infty/\infty$ gebracht, bevor
+de l'Hôpital anwendbar wird. Vor dem Ableiten die Voraussetzung prüfen.
+
+\textit{Skript:} Kap. 4.
+\end{werkzeugkasten}
+
+\begin{achtung}[Wichtig]
+\begin{itemize}
+  \item Erst feststellen, ob wirklich $0/0$ oder $\infty/\infty$ vorliegt;
+        bei $\text{konst}/0$ gilt die Regel nicht.
+  \item Ableiten von Zähler und Nenner getrennt — nicht die
+        Quotientenregel verwenden.
+  \item Die Regel ggf.\ mehrfach anwenden, aber nach jedem Schritt die Form
+        neu prüfen.
+  \item Alleine das Verschwinden von Zähler und Nenner am Punkt reicht; die
+        Stetigkeit der Ableitungen ist nicht erforderlich.
+\end{itemize}
+\end{achtung}

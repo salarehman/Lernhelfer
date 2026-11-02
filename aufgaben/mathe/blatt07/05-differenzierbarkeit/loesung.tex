@@ -1,0 +1,59 @@
+% Teil II: der durchgerechnete Weg. Reihenfolge beibehalten.
+
+\subsection*{a) $f(x)=\frac{\sin x}{x}$ mit $f(0)$ passend}
+Die Funktion ist für $x\neq0$ durch $\sin x/x$ gegeben; gesucht ist die
+Fortsetzung an $x=0$, damit $f\in C^1(\mathbb R)$ liegt. Die Fortsetzung
+$f(0)=1$ ergibt sich aus
+\begin{equation}
+  \lim_{x\to0}\frac{\sin x}{x}=1
+\end{equation}
+(bekannter Standardgrenzwert bzw.\ de l'Hôpital). Für $x\neq0$ ist mit der
+Quotientenregel
+\begin{equation}
+  f'(x)=\frac{x\cos x-\sin x}{x^2}.
+\end{equation}
+An der Stelle $0$ prüfen wir die Ableitung über die Definition (bzw.\ als
+Grenzwert von $f'$). Wegen $\sin x = x-\frac{x^3}{6}+\cdots$ und
+$\cos x=1-\frac{x^2}{2}+\cdots$ ist
+\begin{equation}
+  x\cos x-\sin x
+  = x\left(1-\frac{x^2}{2}\right)-\left(x-\frac{x^3}{6}\right)
+  = -\frac{x^3}{3}+\frac{x^3}{6}
+  = -\frac{x^3}{6}
+  \;\text{(führender Term)}.
+\end{equation}
+Damit folgt für den Grenzwert der Ableitungsfunktion
+\begin{equation}
+  \lim_{x\to0} f'(x)
+  =\lim_{x\to0}\frac{x\cos x-\sin x}{x^2}
+  =\lim_{x\to0}\frac{-x^3/6}{x^2}
+  =0.
+\end{equation}
+\begin{ergebnis}
+\begin{equation*}
+  f(0)=1,\qquad f'(0)=0,\qquad f\in C^1(\mathbb R).
+\end{equation*}
+\end{ergebnis}
+Die konkrete Ableitung in $0$ über die Definition 4.1.1 (Differenzenquotient)
+nachrechnen; das Ergebnis $0$ macht $f'$ stetig.
+
+\subsection*{b) Fallunterscheidung an der Nahtstelle}
+Die genaue Vorschrift der zweiten Funktion ist im eingescannten Bild unlesbar.
+Methode: Für jede Seite die Ableitung über die Regeln bilden und an der
+Nahtstelle beide einseitigen Ableitungswerte über die Definition vergleichen;
+stimmen sie überein, ist $f'$ da (eindeutig) definiert. Zusätzlich die
+Stetigkeit von $f'$ an der Nahtstelle prüfen. Bitte die konkreten Funktionsteile
+am Blatt bestätigen und damit durchrechnen.
+
+\begin{kontrolle}
+\textbf{Querprobe:} $f'$ an der Nahtstelle einmal als Grenzwert der Formel,
+einmal über den Differenzenquotienten — beide müssen denselben Wert liefern.
+\textbf{Größenordnung:} $\sin x/x\to1$ und $f'(0)\to0$ sind bekannte,
+plausible Grenzwerte.
+\end{kontrolle}
+
+\begin{merksatz}
+$C^1$ heißt: differenzierbar überall \emph{und} Ableitung stetig. An
+Nahtstellen über die Definition der Ableitung prüfen; hebbare Lücken
+(z. B. $\sin x/x$) durch den passenden Funktionswert schließen.
+\end{merksatz}

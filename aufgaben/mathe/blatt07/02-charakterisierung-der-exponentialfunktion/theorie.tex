@@ -1,0 +1,50 @@
+% titel: Blatt 7, A2: Charakterisierung der Exponentialfunktion
+% skript: Kap. 4 (Differentialrechnung)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Eine differenzierbare Funktion, deren Ableitung ein Vielfaches ihrer selbst
+ist, hat eine ganz bestimmte Gestalt. Der übliche Beweisweg nutzt eine
+Hilfsfunktion und die Tatsache, dass eine Funktion mit Ableitung null konstant
+ist.
+
+\begin{werkzeugkasten}[Ableitungsregeln mit der Exponentialfunktion]
+Für festes $a\in\mathbb R$ ist $\mathrm e^{ax}$ nach $x$ abgeleitet
+$a\mathrm e^{ax}$:
+\begin{equation}
+  \dv{}{x}\mathrm e^{ax}=a\,\mathrm e^{ax}.
+\end{equation}
+Zusammen mit der Produktregel $(uv)'=u'v+uv'$ lässt sich daraus die Ableitung
+von Produkten der Form $f(x)\mathrm e^{ax}$ oder $f(x)\mathrm e^{-ax}$
+berechnen. Entscheidend ist das Vorzeichen im Exponenten, denn die innere
+Ableitung von $-ax$ ist $-a$.
+
+\textit{Skript:} Kap. 4, Ableitungsregeln und Exponentialfunktion.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Konstante Funktion und Hauptsatz]
+Ist eine differenzierbare Funktion $g$ auf einem Intervall in allen Punkten
+mit $g'=0$ versehen, so ist $g$ dort konstant. Das ist die Brücke zwischen
+der Differentialrechnung und der Aussage, dass die Gestalt von $f$ durch
+$f'=af$ eindeutig bestimmt ist.
+
+Für eine Funktion $g(x)=f(x)\mathrm e^{-ax}$ folgt mit $f'=af$, dass $g'=0$
+ist; damit ist $g$ gleich einer Konstante und man kann $f$ daraus
+zurückrechnen. Die Umkehrung — dass $f(x)=\lambda\mathrm e^{ax}$ tatsächlich
+$f'=af$ erfüllt — klärt, obund jede solche Funktion wirklich so aussieht.
+
+\textit{Skript:} Kap. 4, Mittelwertsatz bzw. Konstanz folgt aus $g'=0$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Produktregel vollständig anwenden: Ableitung von $f(x)\mathrm e^{-ax}$
+        ist $f'(x)\mathrm e^{-ax}-a f(x)\mathrm e^{-ax}$, nicht ohne den
+        inneren Term.
+  \item Vorzeichen: $-a$ bei $\mathrm e^{-ax}$; ein Vorzeichenfehler verändert
+        das Ergebnis vollständig.
+  \item Aus $g'=0$ folgt $g=\text{konst}$, nicht sofort ein bestimmter Wert;
+        die Konstante bestimmt man über einen geeigneten Funktionswert (z. B.
+        $x=0$).
+\end{itemize}
+\end{achtung}

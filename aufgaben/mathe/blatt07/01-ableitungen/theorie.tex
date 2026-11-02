@@ -1,0 +1,38 @@
+% titel: Blatt 7, A1: Ableitungen
+% skript: Kap. 4.1 (Ableitungsregeln, Regel 4.1.8)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Ableiten komplexer Funktionen mit den Standard-Regeln (Produkt-, Quotienten-,
+Kettenregel) sowie Kurvendiskussion von $f(x)=\ln(x^2+1)$.
+
+\begin{werkzeugkasten}[Kettenregel]
+Für Verkettungen $h(x)=u(v(x))$ gilt
+\begin{equation}
+  h'(x)=u'(v(x))\cdot v'(x).
+\end{equation}
+Wichtige Fälle: $(\ln g)'=\frac{g'}{g}$, $(\mathrm e^{g})'=g'\mathrm e^{g}$,
+$(\sqrt{g})'=\frac{g'}{2\sqrt g}$, $(\sin g)'=g'\cos g$. Die äußere Ableitung
+wird an $v(x)$ ausgewertet, dann mit der inneren Ableitung $v'$ multipliziert.
+
+\textit{Skript:} Kap. 4.1, Regel 4.1.8.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Kurvendiskussion von $f(x)=\ln(x^2+1)$]
+Der Definitionsbereich folgt aus dem Logarithmusargument: $x^2+1>0$ gilt für
+alle $x\in\mathbb R$, also ist $f$ überall definiert. Für Nullstellen löst man
+$f(x)=0$, für Extrema $f'=0$ (mit Vorzeichenprüfung), für Wendepunkte $f''=0$.
+
+\textit{Skript:} Kap. 4.2--4.3.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Kettenregel vollständig: äußere Ableitung \emph{an der inneren Funktion}
+        plus innere Ableitung. Bei $\ln(x^2+1)$ nicht $\ln$ allein ableiten.
+  \item Vorzeichen des Arguments beim $\ln$: $x^2+1$ ist stets positiv — keine
+        Definitionslücken erfinden.
+  \item Bei Extrema und Wendepunkten das Vorzeichen der Ableitung beidseitig
+        prüfen, nicht nur das Verschwinden.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,56 @@
+% Teil II: der durchgerechnete Weg. Reihenfolge beibehalten.
+
+\subsection*{Gegeben und gesucht}
+Einige Funktionen zum Üben der Ableitungsregeln (Teil a) sowie Kurvendiskussion
+von $f(x)=\ln(x^2+1)$ (Teil b). Einzelne konkrete Funktionen in Teil a sind im
+eingescannten Blatt unlesbar; die Methode zeigt der lesbare Teil.
+
+\subsection*{a) Ableiten — lesbarer Teil}
+Mit der Kettenregel, z. B. für $g(x)=\ln(\cos x)$ mit $x\in(-\tfrac\pi2,\tfrac\pi2)$:
+\begin{equation}
+  g'(x)=\frac{1}{\cos x}\cdot(-\sin x)=-\tan x.
+\end{equation}
+Für einen Term wie $x^2\ln x$ von Typ Produkt hilft die Produktregel, für einen
+Quotienten wie $\frac{1}{1+x^2}$ die Quotienten- bzw.\ Potenz-Kettenregel:
+\begin{equation}
+  \dv{}{x}\frac{1}{1+x^2}=-\frac{2x}{(1+x^2)^2}.
+\end{equation}
+Die restlichen Funktionen (deren genaue Gestalt der Scan nicht sicher zeigt)
+ebenso mit den passenden Regeln ableiten — bitte die ursprünglichen Ausdrücke
+vom Blatt übernehmen.
+
+\subsection*{b) Kurvendiskussion von $f(x)=\ln(x^2+1)$}
+Definitionsbereich: $x^2+1>0$ für alle $x$, also $\mathbb D_f=\mathbb R$.
+Nullstellen:
+\begin{equation}
+  \ln(x^2+1)=0 \;\Longleftrightarrow\; x^2+1=1 \;\Longleftrightarrow\; x=0.
+\end{equation}
+Ableitungen:
+\begin{equation}
+  f'(x)=\frac{2x}{x^2+1},\qquad
+  f''(x)=\frac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}
+  =\frac{2-2x^2}{(x^2+1)^2}.
+\end{equation}
+Extrema: $f'=0$ bei $x=0$; dort $f''(0)=2>0$, also lokales Minimum $f(0)=0$,
+zugleich globales Minimum. Wendepunkte: $f''=0$ bei $2-2x^2=0$, also
+$x=\pm1$; dort wechselt $f''$ das Vorzeichen, daher sind $\pm1$ Wendestellen.
+
+\begin{ergebnis}
+\begin{equation*}
+  f\ \text{überall definiert},\quad
+  \text{Min}\ (0,0),\quad
+  \text{Wende st.}\ x=\pm1.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Symmetrie:} $f(x)=f(-x)$ (gerade), also Min bei $0$ und symmetrische
+Wendestellen bei $\pm1$ — plausibel.
+\textbf{Grenzfall:} $f''$ ist für $|x|<1$ positiv, für $|x|>1$ negativ;
+Vorzeichenwechsel bei $\pm1$ bestätigt die Wendestellen.
+\end{kontrolle}
+
+\begin{merksatz}
+Kettenregel zuerst; bei $\ln(x^2+1)$ ist $x^2+1$ stets positiv, daher keine
+Definitionslücken. Extrema über $f'=0$ mit Vorzeichen, Wendepunkte über $f''=0$.
+\end{merksatz}

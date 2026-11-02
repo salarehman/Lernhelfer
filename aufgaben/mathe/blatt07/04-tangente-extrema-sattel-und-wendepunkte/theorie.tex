@@ -1,0 +1,51 @@
+% titel: Blatt 7, A4: Tangente, lok. Extrema, Sattelpunkte und Wendepunkte
+% skript: Kap. 4.2--4.3
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Die Aufgabe verbindet Tangentengleichung mit der Kurvendiskussion (Nullstellen,
+lokale Extrema, Sattelpunkte, Wendepunkte) endlicher Funktionen.
+
+\begin{werkzeugkasten}[Tangentengleichung]
+Die Tangente an $f$ im Punkt $x_0$ hat die Steigung $f'(x_0)$ und läuft durch
+$(x_0,f(x_0))$:
+\begin{equation}
+  t(x)=f(x_0)+f'(x_0)(x-x_0).
+\end{equation}
+Wurzelfunktionen der Form $f(x)=\sqrt{g(x)}$ leitet man mit der Kettenregel ab:
+$f'(x)=\frac{g'(x)}{2\sqrt{g(x)}}$. Gesucht ist oft, wo $t$ die $x$-Achse
+($t(x)=0$) bzw.\ die $y$-Achse ($x=0$) schneidet.
+
+\textit{Skript:} Kap. 4.2.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Lokale Extrema und Sattelpunkte]
+Kandidaten für lokale Extrema liefert $f'=0$ (notwendige Bedingung). Ob ein
+Extremum oder Sattelpunkt vorliegt, entscheidet das Vorzeichen von $f'$:
+wechselt $f'$ das Vorzeichen, ist es ein Extremum; verschwindet $f'$ ohne
+Vorzeichenwechsel, ist es ein Sattelpunkt. Alternativ die zweite Ableitung
+heranziehen, falls der Aufgabenhinweis sie nicht ausdrücklich spart.
+
+\textit{Skript:} Kap. 4.2--4.3.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Wendepunkte]
+Ein Wendepunkt ist eine Stelle mit Krümmungswechsel, also wo $f''$ das
+Vorzeichen wechselt (bzw.\ $f''=0$ als Kandidat). Man bestimmt $f''$, setzt
+null und prüft das Vorzeichen beidseitig.
+
+\textit{Skript:} Kap. 4.3.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Definitionsbereich beachten: Logarithmus $x^2\ln x$ nur für $x>0$;
+        Wurzelinhalte nicht negativ.
+  \item Bei Extrema auch die Rand- und Definitionslücken einbeziehen, nicht nur
+        $f'=0$-Kandidaten.
+  \item Sattelpunkt $\neq$ Wendepunkt: Sattelpunkt betrifft $f'$, Wendepunkt
+        Krümmung ($f''$). Nicht verwechseln.
+  \item Vorzeichenwechsel von $f'$ bzw.\ $f''$ prüfen, nicht nur das
+        Verschwinden der Ableitung.
+\end{itemize}
+\end{achtung}

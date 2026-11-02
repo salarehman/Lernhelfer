@@ -1,0 +1,42 @@
+% titel: Blatt 7, A5: Differenzierbarkeit
+% skript: Kap. 4.1 (Definition der Ableitung)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Eine Funktion liegt in $C^1(\mathbb R)$, wenn sie überall differenzierbar ist
+und ihre Ableitung stetig ist. Die Schwierigkeit liegt meist an
+Nahtstellen, wo eine Fallunterscheidung oder eine hebbare Definitionslücke
+(z. B. $\sin x / x$ bei $x=0$) auftritt.
+
+\begin{werkzeugkasten}[Definition der Ableitung]
+Die Ableitung an der Stelle $x_0$ ist der Grenzwert des Differenzenquotienten,
+\begin{equation}
+  f'(x_0)=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}
+  =\lim_{h\to0}\frac{f(x_0+h)-f(x_0)}{h},
+\end{equation}
+sofern er existiert. Für $C^1$ muss zusätzlich der \emph{Grenzwert der
+Ableitungsfunktion} stetig sein: $\lim_{x\to x_0} f'(x)=f'(x_0)$.
+
+\textit{Skript:} Kap. 4.1, Definition 4.1.1.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Nahtstellen und $\sin x/x$ bei 0]
+An Nahtstellen (Fallunterscheidung) separat die Ableitung über die Definition
+berechnen und beide Seiten vergleichen. Für Quotienten, die bei $0$ zunächst
+undefiniert sind, hilft die Regel von de l'Hôpital, z. B.
+$\lim_{x\to0}\frac{\sin x}{x}=1$; die Definition setzt dann den Wert $1$
+für $f(0)$ voraus, damit $f$ stetig und differenzierbar wird.
+
+\textit{Skript:} Kap. 4.1 und Kap. auf Grenzwerte.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item An der Nahtstelle nicht nur beide Ableitungsformeln vergleichen, sondern
+        die Ableitung über die Definition am Punkt selbst prüfen.
+  \item Stetigkeit von $f$ und Existenz von $f'$ sind nötig, aber nicht
+        hinreichend für $C^1$; zusätzlich die Stetigkeit von $f'$ verlangen.
+  \item $\sin x/x$ ist bei $x=0$ zunächst nicht definiert; der Wert dort wird
+        durch den Grenzwert festgelegt.
+\end{itemize}
+\end{achtung}

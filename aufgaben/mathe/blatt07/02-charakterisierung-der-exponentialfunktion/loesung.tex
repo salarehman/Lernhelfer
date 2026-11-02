@@ -1,0 +1,58 @@
+% Teil II: der durchgerechnete Weg. Reihenfolge beibehalten.
+
+\subsection*{Gegeben und gesucht}
+Sei $a\in\mathbb R$ fest. Gegeben ist eine auf $\mathbb R$ differenzierbare
+Funktion $f$ mit $f'=af$. Gesucht: Herleitung der Gestalt aller solchen
+Funktionen über die Hilfsfunktion $g(x)=f(x)\mathrm e^{-ax}$.
+
+\subsection*{Ansatz}
+Man bildet $g$, von der man − dank Produktregel und $f'=af$ − zeigen kann,
+dass $g'=0$ ist. Nach dem Satz, dass $g'=0$ Konstanz bedeutet, ist $g$
+konstant; das stellt man nach $f$ um.
+
+\subsection*{Rechnung}
+Die Ableitung von $g(x)=f(x)\mathrm e^{-ax}$ mit der Produktregel:
+\begin{equation}
+  g'(x)=f'(x)\,\mathrm e^{-ax}+f(x)\,\frac{\mathrm d}{\mathrm dx}\mathrm e^{-ax}
+  = f'(x)\,\mathrm e^{-ax}-a f(x)\,\mathrm e^{-ax}.
+\end{equation}
+Wegen $f'=af$ kürzt sich der zweite Term:
+\begin{equation}
+  g'(x)=a f(x)\,\mathrm e^{-ax}-a f(x)\,\mathrm e^{-ax}=0.
+\end{equation}
+Da $g$ differenzierbar und überall die Ableitung null hat, ist $g$ konstant.
+Es gibt also ein $\lambda\in\mathbb R$ mit $f(x)\mathrm e^{-ax}=\lambda$.
+Umstellen nach $f$ ergibt die gesuchte Gestalt.
+
+\subsection*{a) Ableitung und b) Konstanz}
+\begin{ergebnis}
+\begin{equation*}
+  \frac{\mathrm d}{\mathrm dx}\left(f(x)\mathrm e^{-ax}\right)=0
+  \qquad\Rightarrow\qquad
+  f(x)\mathrm e^{-ax}\ \text{ist konstant}.
+\end{equation*}
+\end{ergebnis}
+
+\subsection*{c) Allgemeine Gestalt}
+Aus $f(x)\mathrm e^{-ax}=\lambda$ folgt durch Multiplikation mit $\mathrm e^{ax}$:
+\begin{ergebnis}
+\begin{equation*}
+  f(x)=\lambda\,\mathrm e^{ax},\qquad \lambda\in\mathbb R.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Umkehrung:} Für $f(x)=\lambda\mathrm e^{ax}$ ist $f'(x)=a\lambda\mathrm e^{ax}=af(x)$,
+die Bedingung ist also nicht nur nötig, sondern auch hinreichend.
+\textbf{Konstante:} Bei $x=0$ ist $g(0)=f(0)\mathrm e^{0}=f(0)$, also
+$\lambda=f(0)$; die Konstante ist der Funktionswert im Nullpunkt.
+\textbf{Grenzfall:} Für $a=0$ bleibt $f$ konstant, wie es die Formel
+$f(x)=\lambda\mathrm e^{0}=\lambda$ liefert.
+\end{kontrolle}
+
+\begin{merksatz}
+Differentialgleichungen des Typs $f'=af$ löst man über eine
+Hilfsfunktion $\mathrm e^{-ax}$, deren Ableitung null man nachweist. Das
+Muster „Ableitung null $\Rightarrow$ konstant“ taucht bei allen Charakterisierungen
+von Exponentialfunktionen auf.
+\end{merksatz}
