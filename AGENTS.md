@@ -1,130 +1,137 @@
 # Arbeitsregeln für dieses Repository
 
 Diese Regeln gelten für Menschen und Agenten. Ziel ist ein Lernwerkzeug für
-universitäre Physikaufgaben, nicht das bloße Produzieren von Musterlösungen.
-Vor Änderungen README.md, diese Datei und die relevanten Quellen lesen.
+universitäre Aufgaben aus mehreren Fächern (Physik, Mathematik, …), nicht das
+bloße Produzieren von Musterlösungen. Vor Änderungen README.md, diese Datei und
+die relevanten Quellen lesen.
 
 ## Ziel und Trennung
 
-Das Lern-PDF hat zwei getrennte Teile, jeweils nach Aufgaben gegliedert:
+Jede Aufgabe liegt als LaTeX-Ordner unter `aufgaben/<fach>/<blattNN>/` und hat
+zwei getrennte Teile, in zwei Dateien:
 
-- **Teil I: Theorie.** Erkläre verständlich und präzise nur die Konzepte,
-  Gesetze, allgemeinen Gleichungen, Voraussetzungen, Einheiten und typischen
-  Fehler, die für die Aufgabe nützlich sind. Verweise auf die Fundstelle im
-  Skript. Die Theorie soll das Suchen erleichtern und Verständnis aufbauen.
-  Keine aufgabenspezifischen Zahlen, keine konkrete Reihenfolge der
-  Rechenschritte, kein versteckter Lösungsweg und kein Ergebnis. Allgemeine
-  Beziehungen dürfen erklärt werden, ohne die konkrete Aufgabe zu lösen.
-- **Teil II: Lösung.** Führe nachvollziehbar durch den Lösungsweg: Gegebenes
-  und Gesuchtes, begründeter Ansatz, verständliche Rechnung, Ergebnis und
-  passende Prüfung. Erläutere den entscheidenden Gedankenschritt und, wo es
-  sinnvoll ist, was auf ähnliche Aufgaben übertragbar ist. Nicht unnötig
-  ausschweifen und keine entscheidenden Zwischenschritte überspringen.
+- **Teil I: Theorie** (`theorie.tex`). Erkläre verständlich und präzise nur die
+  Begriffe, Sätze, Definitionen, allgemeinen Gleichungen, Voraussetzungen und
+  typischen Fehler, die für die Aufgabe nützlich sind. Verweise auf die
+  Fundstelle im Skript. Keine aufgabenspezifischen Zahlen, keine konkrete
+  Reihenfolge der Rechenschritte, kein versteckter Lösungsweg und kein Ergebnis.
+  Der Ansatz bleibt eigene Denkarbeit. **Knapp halten** — der Nutzer will selbst
+  denken lernen; Über-erklären zerstört den Zweck.
+- **Teil II: Lösung** (`loesung.tex`). Führe nachvollziehbar durch den
+  Lösungsweg: Gegebenes und Gesuchtes, begründeter Ansatz, verständliche
+  Rechnung, Ergebnis und passende Prüfung. Erkläre den entscheidenden
+  Gedankenschritt und, wo sinnvoll, was auf ähnliche Aufgaben übertragbar ist.
+  Nicht unnötig ausschweifen.
 
-Prüfe die Trennung inhaltlich, nicht nur anhand der Dateinamen. Besonders bei
-ähnlichen Standardaufgaben kann eine allgemeine Formel oder ein Beispiel den
-konkreten Ansatz bereits verraten. Ein vorhandenes Beispiel ist kein Beweis,
-dass es diese Regeln erfüllt.
+Prüfe die Trennung inhaltlich, nicht nur anhand der Dateinamen.
+
+## Struktur
+
+```text
+eingang/                  Ablage für neue Skripte + Aufgabenblätter (Eingang)
+aufgaben/<fach>/<blattNN>/NN-slug/   je Aufgabe: theorie.tex + loesung.tex
+aufgaben/archiv/          aufbewahrte Beispiele, werden nicht mitgebaut
+skript/<fach>/            Vorlesungsskript + aktuell.md (Fassung, Prüfsumme)
+tex/                      geteiltes Layout + Hauptdatei
+werkzeuge/                Build, Gerüst-Generator, Skriptübernahme
+out/                      <fach>-<blattNN>-lernhelfer.pdf und -theorie.pdf
+generated/                vom Build erzeugt, nicht bearbeiten/einchecken
+```
+
+Ein **Übungsblatt** = ein `blattNN`-Ordner in einem Fach. Ein **Lernhelfer** =
+das gebaute PDF `out/<fach>-<blattNN>-lernhelfer.pdf` (Theorie + Lösung); die
+Fassung nur mit Theorie heisst `out/<fach>-<blattNN>-theorie.pdf` und ist eine
+ergänzende Ansicht, kein Ersatz. Pro Fach und Blatt werden beide gebaut.
 
 ## Übungsblätter und Lernhelfer
 
-- **Ein Übungsblatt, ein eigener Lernhelfer.** Wenn ein neues Blatt zur
-  Bearbeitung bereitgestellt wird, erstelle dafür ein separates PDF mit genau
-  den Aufgaben dieses Blatts. Mische keine Aufgaben verschiedener Blätter in
-  denselben Lernhelfer, ausser der Nutzer verlangt ausdrücklich eine Sammlung.
-- Bearbeite grundsätzlich alle Aufgaben und Teilaufgaben des Blatts. Wenn der
-  Nutzer einen kleineren Umfang wünscht oder Angaben fehlen, kennzeichne den
-  Bearbeitungsstand und die offenen Punkte; gib einen Entwurf nicht als
-  vollständig aus. Theorie und Lösungen stehen auch hier in getrennten Teilen.
-- Kennzeichne jede Aufgabe durch **Blatt und Aufgabennummer**, zum Beispiel
-  `Blatt 8, A1`. Dieselbe Aufgabennummer auf einem anderen Blatt bezeichnet
-  eine andere Aufgabe. Bewahre vorhandene Aufgaben, Quellen und Lernhelfer
-  anderer Blätter unverändert auf.
-- Benenne den fertigen Lernhelfer eindeutig, zum Beispiel
-  `out/blatt08-lernhelfer.pdf`. Eine zusätzliche Fassung nur mit Theorie,
-  etwa `out/blatt08-theorie.pdf`, ist eine ergänzende Ansicht desselben
-  Lernhelfers, kein Ersatz für das vollständige PDF. Verlinke die Ergebnisse
-  und den Bearbeitungsstand im README.
-- Prüfe vor dem Bauen, dass tatsächlich nur Aufgaben des gewünschten Blatts
-  aufgenommen werden, und danach das PDF auf Vollständigkeit und fremde
-  Aufgaben. Der aktuelle Build sammelt alle nummerierten Aufgabenordner und
-  filtert nicht nach Blatt. Passe ihn bei Bedarf so an, dass eine Blattauswahl
-  zuverlässig funktioniert, und teste diese Auswahl; behaupte nicht, dass ein
-  Filter bereits existiert. Auch der nummernbasierte Index unterscheidet
-  Blätter mit gleichen Aufgabennummern nicht zuverlässig.
-- Bei einer aktualisierten Fassung desselben Blatts Aufgaben und bestehende
-  Bearbeitung zuerst vergleichen; anschließend nur den zugehörigen Lernhelfer
-  gezielt aktualisieren. Neue Blätter dürfen bisherige PDFs nicht überschreiben.
+- **Ein Blatt, ein eigener Lernhelfer.** Keine Aufgaben verschiedener Blätter
+  oder Fächer in denselben Lernhelfer mischen, ausser der Nutzer verlangt
+  ausdrücklich eine Sammlung.
+- Bearbeite grundsätzlich alle Aufgaben und Teilaufgaben eines Blatts.
+  Kennzeichne jede Aufgabe durch **Fach, Blatt und Aufgabennummer**, z. B.
+  `Physik Blatt 7, A1` (Metadaten `% titel:` in `theorie.tex`).
+- Verlinke Ergebnisse und Bearbeitungsstand in `out/` und im README.
+- Bevor du baust, prüfe, dass nur Aufgaben des gewünschten Fach/Blatts
+  aufgenommen werden; prüfe danach das PDF auf Vollständigkeit.
+
+## Wöchentlicher Ablauf (das ist die Kernaufgabe)
+
+Der Nutzer legt jede Woche neue Unterlagen in `eingang/` ab (Skript und/oder
+Übungsblatt als PDF, pro Fach). Der Agent übernimmt die Sortierung und baut die
+Lernhelfer:
+
+1. **Eingang sichten.** In `eingang/` den neuen Aufgabentext und ggf. das neue
+   Skript lesen. Fach zuordnen (physik, mathe, …).
+2. **Sortieren.** Das Blatt nach `aufgaben/<fach>/blattNN/` legen; je Aufgabe
+   einen Ordner `NN-slug/` mit `theorie.tex` und `loesung.tex` anlegen (oder
+   `neue_aufgabe.py <fach> <blatt> <nummer> "Titel" --skript "Fundstelle"`).
+   Das Skript unter `skript/<fach>/` ablegen und `aktuell.md` mit Fassung,
+   Datum und sha256-Prüfsumme versehen.
+3. **Ausfüllen.** Für jede Aufgabe Theorie (Teil I, knapp, **lösungsfrei**) und
+   Lösung (Teil II) schreiben. Konkrete Zahlen und die Aufgabenstellung nur aus
+   der tatsächlichen PDF übernehmen — nichts erfinden.
+4. **Bauen.** `python3 werkzeuge/build.py` im Repo-Wurzelverzeichnis (baut
+   alle Fächer+Blätter) bzw. `--fach <fach>` für eines. Das Ergebnis liegt in
+   `out/<fach>-<blattNN>-lernhelfer.pdf` (Theorie+Lösung) und
+   `out/<fach>-<blattNN>-theorie.pdf` (nur Theorie).
+5. **Prüfen.** Jede Datei beim Build automatisch prüfen; die Theorie lösungsfrei
+   lassen; Inhalte aus dem Skript verifizieren.
+6. **Commit + Push** im Git (private Dateien nicht in öffentliche Repos).
+
+**Zwei Lernhelfer pro Woche:** der Nutzer erwartet pro Fach genau einen
+Lernhelfer (physik + mathe), jeder mit zwei Teilen. Es sei denn, ein Fach hat
+diese Woche kein Blatt — dann bleibt es bei dem Fach mit Blatt.
+
+## Kommunikation mit dem Nutzer (wichtig)
+
+- Nachrichten kommen per Chat (z. B. Telegram). **Kein laufender Kommentar.**
+  Keine Extra-Nachrichten pro Teilschritt; arbeiten und erst melden, wenn etwas
+  fertig ist oder ein echter Blocker auftritt.
+- Nicht jeder Zwischenschritt wird bestätigt: Bauen im Hintergrund machen,
+  kein Fortschritts-Ticker.
+- Bei mehrdeutiger Aufgabe auf den vernünftigen Standard zurückgreifen (das
+  Fach/Blatt, das wirklich vorhanden ist) und die Annahme einmal in der
+  Abschlussmeldung nennen. Nur bei echten Blocker (fehlende Angaben,
+  unlesbares PDF, fehlende Rechte) nachfragen.
+- LMS-Links (z. B. ADAM/ILIAS) sind hinter Login: nicht versuchen zu scrapen.
+  Auf Anlage in `eingang/` verweisen; nie nach Passwort im Chat fragen und
+  Inhalte nie erfinden.
 
 ## Quellen und fachliche Qualität
 
-- Verwende das aktuelle Vorlesungsskript und den vollständigen Aufgabentext als
-  maßgebliche Quellen. Beachte den vom Nutzer genannten Vorlesungsstand und
-  dessen Notation und Vorgaben. Nenne Kapitel und Seiten, soweit sicher bekannt.
-- Erfinde keine Aufgaben, Werte, Abbildungen, Fundstellen oder Aussagen über
-  das Skript. Kennzeichne ergänzende Standardkenntnisse und Annahmen als solche.
-  Bei fehlenden Daten, unlesbaren Formeln oder mehrdeutiger Aufgabenstellung
-  nachfragen oder die Unsicherheit ausdrücklich festhalten; keine scheinbar
-  vollständige Lösung ausgeben.
-- Aus PDF-Text extrahierte Formeln, Abbildungen und die Nummerierung anhand des
-  Originals prüfen. Eine leere oder fehlerhafte Textextraktion ist kein Beweis,
-  dass der Inhalt nicht existiert.
-- Rechne sorgfältig, prüfe Vorzeichen, Maßeinheiten, Gültigkeitsbedingungen und
-  nach Möglichkeit Grenzfälle oder Größenordnungen. Runde erst am Ende und
-  erläutere, wenn eine unabhängige Kontrolle nicht möglich ist.
+- Verwende das aktuelle Skript des Fachs (`skript/<fach>/`) und den
+  vollständigen Aufgabentext als maßgebliche Quellen. Nenne Kapitel und Seiten,
+  soweit sicher bekannt.
+- Erfinde keine Aufgaben, Werte, Sätze, Abbildungen oder Fundstellen.
+  Kennzeichne ergänzende Annahmen als solche. Bei fehlenden Daten oder
+  mehrdeutiger Aufgabenstellung nachfragen oder die Unsicherheit festhalten;
+  keine scheinbar vollständige Lösung ausgeben.
+- Aus PDF-Text extrahierte Formeln, Abbildungen und Nummerierung anhand des
+  Originals prüfen. Rechne sorgfältig, prüfe Vorzeichen, Einheiten,
+  Gültigkeitsbedingungen und nach Möglichkeit Grenzfälle oder Gegenbeispiele.
 
-## Neue Skriptversionen
+## Werkzeuge
 
-Der Nutzer erwartet, dass jede neue Version die alte vollständig enthält und
-neuen Stoff ergänzt. Das ist eine Erwartung, keine bereits verifizierte
-Eigenschaft. Neue und alte Version anhand der Quellen vergleichen, einschließlich
-geänderter Aufgaben und möglicher Umnummerierung. Unklare Abweichungen melden,
-nicht stillschweigend löschen oder als erledigt markieren. Frühere Materialien
-und Bearbeitungen erhalten, bis ihre Herkunft und Wiederherstellbarkeit geklärt
-sind. Archivierung erfolgt nur bewusst nach Prüfung, nicht automatisch.
-
-`werkzeuge/skript_uebernehmen.py` ist ein Prototyp: Es kopiert die Datei,
-extrahiert Text und erkennt nur bestimmte Nummernmuster. Es ersetzt den Index,
-kann Dateien bei gleichem Datum überschreiben und entfernt keine alten
-Skriptdateien. Vor der Ausführung Eingabe und vorhandene Dateien prüfen und
-bei Bedarf sichern. Den erzeugten Index und die Fundstellen manuell gegen das
-Original abgleichen. `--offen` prüft Ordnernummern, nicht fachliche Vollständigkeit.
-Eine gleichbleibende Nummer beweist nicht, dass eine Aufgabe unverändert ist.
-
-## Aufbau und Werkzeuge
-
-- Je Aufgabe ein Ordner `aufgaben/NN-titel/` mit `theorie.tex` und
-  `loesung.tex`. Metadaten `% titel: ...` und `% skript: ...` stehen in
-  `theorie.tex`. Eine Fundstelle nur angeben, wenn sie verifiziert ist.
-- `python3 werkzeuge/neue_aufgabe.py NUMMER "Titel" --skript "Fundstelle"`
-  erzeugt Platzhalter, keine fertig bearbeitete Aufgabe. Der Build nimmt auch
-  Platzhalter auf; vor Veröffentlichung sicherstellen, dass keine enthalten sind.
-- `python3 werkzeuge/build.py` baut zurzeit aus allen nummerierten Aufgabenordnern;
-  `--nur-theorie` und `--nur-loesungen` wählen nur den Dokumentteil, nicht das
-  Übungsblatt. Der Build erzeugt `generated/` neu und kompiliert zweimal mit
-  `pdflatex`. Für blattweise PDFs erst eine verlässliche Auswahl sicherstellen.
-- `python3 werkzeuge/build.py --offen` zeigt den nummernbasierten Abgleich,
-  sofern ein Index existiert. Existenz eines Ordners oder zweier Dateien bedeutet
-  nicht, dass Inhalt geprüft oder abgeschlossen ist.
-- Das Federpendel unter `aufgaben/archiv/00-beispiel/` ist ein künstliches
-  Beispiel ohne Skriptbezug und wird nicht mitgebaut. Es nicht als
-  Vorlesungsinhalt ausgeben.
+- `python3 werkzeuge/build.py [--fach <fach>] [--offen] [--kein-pdf]` baut alle
+  (oder nur die eines Fachs) Lernhelfer nach `out/`. `--offen` zeigt nur den
+  Überblick. Fehlt `pdflatex`, kompiliert der Build automatisch mit `tectonic`.
+- Neue Aufgabe: `python3 werkzeuge/neue_aufgabe.py <fach> <blatt> <nummer> "Titel"
+  --skript "Kap. 3, S. 14"` erzeugt Platzhalter, keine fertige Bearbeitung.
+  Entwürfe vor einem fertigen PDF kontrollieren.
+- Skriptübernahme: `werkzeuge/skript_uebernehmen.py` (Prototyp) kopiert einen
+  Import nach `skript/<fach>/` und schreibt `aktuell.md`. Die Erkennung ist grob
+  — Index und Fundstellen manuell gegen das Original prüfen.
 
 ## Sprache, Sicherheit und Abschluss
 
-- Dokument und Lerninhalte auf Deutsch; verständlich, knapp und fachlich genau.
-  Keine Gedankenstriche als Satztrenner, keine Emojis, keine Signaturen oder
-  KI- und Werkzeug-Bylines im Dokument oder in Commits.
-- Größen mit Einheiten korrekt ausweisen, LaTeX-Einheiten mit `siunitx`
-  setzen, z. B. `\qty{9.81}{\metre\per\second\squared}`. Dimensionslose
-  Zahlen und rein symbolische Gleichungen benötigen keine erfundene Einheit.
+- Dokument und Lerninhalte auf Deutsch; verständlich, knapp, fachlich genau.
+  Keine Emojis, keine KI- oder Werkzeug-Bylines im Dokument oder in Commits.
+- Größen mit `siunitx` (`\qty{}{}`) ausweisen; dimensionslose Zahlen und rein
+  symbolische Gleichungen brauchen keine erfundene Einheit.
 - Vor dem Teilen von Vorlesungsunterlagen Nutzungsrechte und Privatsphäre
-  beachten. Keine Zugangsdaten einchecken. Git-Historie bewahrt auch gelöschte
-  Dateien; private Repository-Sichtbarkeit nicht als Geheimhaltung garantieren.
+  beachten. Keine Zugangsdaten einchecken.
 - Vor Abschluss fachliche Aussagen und Aufgabenabdeckung prüfen, den passenden
-  Build ausführen und betroffene PDF-Seiten ansehen. Fehler, Warnungen,
-  ungeprüfte Inhalte und fehlende Quellen offen melden. Ein erfolgreicher
-  LaTeX-Build ersetzt keine inhaltliche oder visuelle Prüfung.
-- Bestehende Änderungen respektieren. Keine fremden Dateien überschreiben,
-  keine Historie umschreiben und keine unnötigen Änderungen außerhalb des
-  Auftrags vornehmen. Sachliche Commits ohne Co-Author-Signatur.
+  Build ausführen und betroffene PDF-Seiten ansehen. Ein erfolgreicher LaTeX-Build
+  ersetzt keine inhaltliche Prüfung. Bestehende Änderungen respektieren, keine
+  Historie umschreiben, sachliche Commits ohne Co-Author-Signatur.

@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
-"""Baut das Lern-PDF aus den Aufgaben-Ordnern unter aufgaben/.
+"""Baut die Lernhelfer-PDFs aus den Aufgaben-Ordnern.
 
-Teil I sammelt alle theorie.tex, Teil II alle loesung.tex. Der Build erzeugt
-generated/*.tex, kompiliert tex/main.tex zweimal mit pdflatex und legt das PDF
-in out/ ab.
+Aufbau: aufgaben/<fach>/<blattNN>/<NN-slug>/  mit theorie.tex und loesung.tex.
+Für jede gefundene Kombination aus Fach und Blatt wird erzeugt:
 
-Aufrufe (immer aus dem Repo-Wurzelverzeichnis bzw. egal, das Skript findet es):
+    out/<fach>-<blattNN>-lernhelfer.pdf   (Teil I Theorie + Teil II Lösung)
+    out/<fach>-<blattNN>-theorie.pdf      (nur Teil I Theorie)
 
-    python3 werkzeuge/build.py                  # out/physik-uebungen.pdf
-    python3 werkzeuge/build.py --nur-theorie    # out/physik-theorie.pdf
-    python3 werkzeuge/build.py --nur-loesungen  # out/physik-loesungen.pdf
-    python3 werkzeuge/build.py --offen          # nur Abdeckung, nichts bauen
+Der Build erzeugt generated/*.tex und kompiliert tex/main.tex mit pdflatex;
+fehlt pdflatex, wird Tectonic verwendet (GLEICHES VERHALTEN wie pdflatex,
+Temperatur-Kopie _bm.tex im Repo-Wurzelverzeichnis).
+
+Aufrufe (immer aus dem Repo-Wurzelverzeichnis):
+
+    python3 werkzeuge/build.py                  # alle Fächer/Blätter bauen
+    python3 werkzeuge/build.py --fach physik    # nur ein Fach
+    python3 werkzeuge/build.py --offen          # nur Überblick, nichts bauen
     python3 werkzeuge/build.py --kein-pdf       # nur generated/ schreiben
 """
 
 from __future__ import annotations
 
 import argparse
-import hashlib
 import re
 import shutil
 import subprocess
@@ -33,6 +37,8 @@ SKRIPT = WURZEL / "skript"
 ARCHIVNAME = "archiv"
 
 META_RE = re.compile(r"^\s*%\s*(titel|skript|stand|schlagworte)\s*:\s*(.+?)\s*$", re.I)
+FACH_RE = re.compile(r"^([a-záéöü]+)$")
+BLATT_RE = re.compile(r"^blatt(\d+)$")
 ORDNER_RE = re.compile(r"^(\d+)-(.+)$")
 
 
@@ -55,12 +61,51 @@ def titel_aus_slug(slug: str) -> str:
     return slug.replace("-", " ").strip().capitalize()
 
 
-def sammle_aufgaben() -> list[dict]:
-    """Alle Aufgaben-Ordner mit Nummernpräfix, nach Nummer sortiert."""
+def sammle_faecher() -> list[str]:
+    """Fach-Ordnernamen unter aufgaben/, sortiert (physik, mathe, ...)."""
     if not AUFGABEN.is_dir():
         return []
+    return sorted(
+        d.name for d in AUFGABEN.iterdir()
+        if d.is_dir() and d.name != ARCHIVNAME and FACH_RE.match(d.name)
+    )
+
+
+def sammle_blaetter(fach: str) -> list[dict]:
+    """Blätter eines Fachs: aufgaben/<fach>/blattNN/."""
+    fach_pfad = AUFGABEN / fach
+    if not fach_pfad.is_dir():
+        return []
+    blaetter: list[dict] = []
+    for pfad in sorted(fach_pfad.iterdir()):
+        if not pfad.is_dir():
+            continue
+        treffer = BLATT_RE.match(pfad.name)
+        if not treffer:
+            print(f"  Hinweis: wird übersprungen (kein blattNN): {pfad.name}")
+            continue
+        aufgaben = sammle_aufgaben(fach, pfad.name)
+        if not aufgaben:
+            continue
+        blaetter.append(
+            {
+                "nr": int(treffer.group(1)),
+                "name": pfad.name,
+                "pfad": pfad,
+                "aufgaben": aufgaben,
+            }
+        )
+    blaetter.sort(key=lambda b: b["nr"])
+    return blaetter
+
+
+def sammle_aufgaben(fach: str, blatt: str) -> list[dict]:
+    """Aufgaben in aufgaben/<fach>/<blatt>/ mit Nummernpräfix."""
+    blatt_pfad = AUFGABEN / fach / blatt
     gefunden: list[dict] = []
-    for pfad in sorted(AUFGABEN.iterdir()):
+    if not blatt_pfad.is_dir():
+        return gefunden
+    for pfad in sorted(blatt_pfad.iterdir()):
         if not pfad.is_dir() or pfad.name == ARCHIVNAME:
             continue
         treffer = ORDNER_RE.match(pfad.name)
@@ -72,6 +117,7 @@ def sammle_aufgaben() -> list[dict]:
             {
                 "nr": int(treffer.group(1)),
                 "key": pfad.name,
+                "rel": f"{fach}/{blatt}/{pfad.name}",
                 "pfad": pfad,
                 "titel": meta.get("titel") or titel_aus_slug(treffer.group(2)),
                 "skript": meta.get("skript", ""),
@@ -83,32 +129,9 @@ def sammle_aufgaben() -> list[dict]:
     return gefunden
 
 
-def skript_index() -> list[dict]:
-    """Liest die Aufgaben-Tabelle aus skript/aufgaben.md."""
-    datei = SKRIPT / "aufgaben.md"
-    if not datei.is_file():
-        return []
-    eintraege: list[dict] = []
-    for zeile in datei.read_text(encoding="utf-8").splitlines():
-        zeile = zeile.strip()
-        if not zeile.startswith("|"):
-            continue
-        zellen = [z.strip() for z in zeile.strip("|").split("|")]
-        if len(zellen) < 2 or not zellen[0].isdigit():
-            continue
-        eintraege.append(
-            {
-                "nr": int(zellen[0]),
-                "titel": zellen[1],
-                "fundstelle": zellen[2] if len(zellen) > 2 else "",
-            }
-        )
-    return eintraege
-
-
-def skript_stand() -> dict[str, str]:
-    """Liest skript/aktuell.md (Version, Datum, Prüfsumme)."""
-    datei = SKRIPT / "aktuell.md"
+def skript_stand(fach: str) -> dict[str, str]:
+    """Liest skript/<fach>/aktuell.md (Version, Datum, Prüfsumme)."""
+    datei = SKRIPT / fach / "aktuell.md"
     stand: dict[str, str] = {}
     if not datei.is_file():
         return stand
@@ -139,10 +162,12 @@ def tex_sicher(text: str) -> str:
     return "".join(ersatz.get(z, z) for z in text)
 
 
-def schreibe_generated(aufgaben: list[dict], nur_theorie: bool, nur_loesungen: bool) -> None:
+def schreibe_generated(fach: str, blatt: dict, nur_theorie: bool) -> None:
+    """Schreibt generated/ für ein Fach+Blatt in die gewünschte Variante."""
     GENERIERT.mkdir(exist_ok=True)
+    aufgaben = blatt["aufgaben"]
 
-    stand = skript_stand()
+    stand = skript_stand(fach)
     beschriftung = stand.get("titel") or "Skript der Vorlesung"
     teile = [beschriftung]
     if stand.get("version"):
@@ -151,15 +176,21 @@ def schreibe_generated(aufgaben: list[dict], nur_theorie: bool, nur_loesungen: b
         teile.append(f"({stand['pruefsumme']})")
     stand_text = " ".join(teile) if stand else "Skript noch nicht hinterlegt"
 
+    fach_titel = {
+        "physik": "Physik",
+        "mathe": "Mathematik",
+    }.get(fach, fach.capitalize())
+
     (GENERIERT / "meta.tex").write_text(
         "% Automatisch erzeugt von werkzeuge/build.py. Nicht bearbeiten.\n"
         f"\\renewcommand{{\\SkriptStand}}{{{tex_sicher(stand_text)}}}\n"
         f"\\renewcommand{{\\SkriptQuelle}}{{{tex_sicher(stand.get('datei', ''))}}}\n"
-        f"\\renewcommand{{\\StandDatum}}{{{date.today().strftime('%d.%m.%Y')}}}\n",
+        f"\\renewcommand{{\\StandDatum}}{{{date.today().strftime('%d.%m.%Y')}}}\n"
+        f"\\renewcommand{{\\Fachtitel}}{{{fach_titel}, Blatt {blatt['nr']}}}\n",
         encoding="utf-8",
     )
 
-    zeigetheorie = "false" if nur_loesungen else "true"
+    zeigetheorie = "true"
     zeigeloesungen = "false" if nur_theorie else "true"
     (GENERIERT / "modus.tex").write_text(
         "% Automatisch erzeugt von werkzeuge/build.py. Nicht bearbeiten.\n"
@@ -181,16 +212,16 @@ def schreibe_generated(aufgaben: list[dict], nur_theorie: bool, nur_loesungen: b
         if aufgabe["hat_theorie"]:
             theorie_zeilen.append(
                 f"\\section{{{tex_sicher(aufgabe['titel'])}}}\n"
-                f"\\label{{aufg:{aufgabe['key']}}}\n"
+                f"\\label{{aufg:{fach}/{aufgabe['key']}}}\n"
                 f"{kopfzeile}"
-                f"\\input{{aufgaben/{aufgabe['key']}/theorie.tex}}\n"
+                f"\\input{{aufgaben/{aufgabe['rel']}/theorie.tex}}\n"
                 f"\\loesungsverweis{{{aufgabe['key']}}}\n\n"
             )
         if aufgabe["hat_loesung"]:
             loesung_zeilen.append(
                 f"\\section{{Lösung: {tex_sicher(aufgabe['titel'])}}}\n"
-                f"\\label{{loes:{aufgabe['key']}}}\n"
-                f"\\input{{aufgaben/{aufgabe['key']}/loesung.tex}}\n"
+                f"\\label{{loes:{fach}/{aufgabe['key']}}}\n"
+                f"\\input{{aufgaben/{aufgabe['rel']}/loesung.tex}}\n"
                 f"\\theorieverweis{{{aufgabe['key']}}}\n\n"
             )
 
@@ -203,59 +234,11 @@ def schreibe_generated(aufgaben: list[dict], nur_theorie: bool, nur_loesungen: b
     (GENERIERT / "teil-loesungen.tex").write_text("".join(loesung_zeilen), encoding="utf-8")
 
 
-# ------------------------------------------------------------- Berichte
-
-
-def abdeckung(aufgaben: list[dict], schreiben: bool = True) -> tuple[list[dict], list[dict]]:
-    """Vergleicht Skript-Index mit den vorhandenen Ordnern."""
-    index = skript_index()
-    vorhanden = {a["nr"] for a in aufgaben}
-    fehlend = [e for e in index if e["nr"] not in vorhanden]
-    ueberzaehlig = [a for a in aufgaben if index and a["nr"] not in {e["nr"] for e in index}]
-
-    if schreiben and index:
-        zeilen = [
-            "# Offene Aufgaben",
-            "",
-            "Aufgaben aus dem Skript, für die es unter `aufgaben/` noch nichts gibt.",
-            "Erzeugt von `werkzeuge/build.py`, wird bei jedem Build neu geschrieben.",
-            "",
-            "| Nr | Titel | Fundstelle |",
-            "|----|-------|------------|",
-        ]
-        for eintrag in fehlend:
-            zeilen.append(f"| {eintrag['nr']} | {eintrag['titel']} | {eintrag['fundstelle']} |")
-        if not fehlend:
-            zeilen.append("| - | alles bearbeitet | - |")
-        zeilen.append("")
-        (SKRIPT / "offen.md").write_text("\n".join(zeilen), encoding="utf-8")
-
-    return fehlend, ueberzaehlig
-
-
-def bericht(aufgaben: list[dict], fehlend: list[dict], ueberzaehlig: list[dict]) -> None:
-    index = skript_index()
-    print(f"Aufgaben im Skript-Index: {len(index)}" if index else "Kein Skript-Index vorhanden")
-    print(f"Aufgaben-Ordner: {len(aufgaben)}")
-    for aufgabe in aufgaben:
-        luecken = []
-        if not aufgabe["hat_theorie"]:
-            luecken.append("theorie.tex fehlt")
-        if not aufgabe["hat_loesung"]:
-            luecken.append("loesung.tex fehlt")
-        marke = "ok" if not luecken else "UNVOLLSTÄNDIG: " + ", ".join(luecken)
-        print(f"  {aufgabe['nr']:02d} {aufgabe['titel']} [{marke}]")
-    if fehlend:
-        print("Noch offen (im Skript, hier ohne Ordner):")
-        for eintrag in fehlend:
-            print(f"  {eintrag['nr']:02d} {eintrag['titel']} ({eintrag['fundstelle']})")
-    if ueberzaehlig:
-        print("Ohne Skript-Eintrag (Nummer im Index prüfen):")
-        for aufgabe in ueberzaehlig:
-            print(f"  {aufgabe['nr']:02d} {aufgabe['titel']}")
-
-
 # ------------------------------------------------------------- Kompilieren
+
+
+def habe_prog(name: str) -> bool:
+    return shutil.which(name) is not None
 
 
 def pdflatex_ausschnitt(protokoll: str) -> str:
@@ -266,7 +249,33 @@ def pdflatex_ausschnitt(protokoll: str) -> str:
     return "\n".join(wichtig[-25:])
 
 
-def kompilieren(ziel: Path) -> bool:
+def kompilieren_tectonic(ziel: Path) -> bool:
+    """pdflatex fehlt: Tectonic kompiliert tex/main.tex über eine Kopie an der
+    Repo-Wurzel (path resolution und --outdir-Konflikt umgehen)."""
+    t = shutil.which("tectonic") or str(WURZEL.parent / "bin" / "tectonic")
+    kopie = WURZEL / "_bm.tex"
+    shutil.copyfile(WURZEL / "tex" / "main.tex", kopie)
+    OUT.mkdir(exist_ok=True)
+    ergebnis = subprocess.run(
+        [t, "--outdir", str(OUT), str(kopie)],
+        cwd=WURZEL,
+        capture_output=True,
+        text=True,
+    )
+    kopie.unlink(missing_ok=True)
+    if ergebnis.returncode != 0:
+        print("tectonic abgebrochen:")
+        print(pdflatex_ausschnitt(ergebnis.stdout or ergebnis.stderr))
+        return False
+    gebaut = OUT / "_bm.pdf"
+    if not gebaut.is_file():
+        print("Tectonic hat kein PDF erzeugt.")
+        return False
+    shutil.move(str(gebaut), str(ziel))
+    return True
+
+
+def kompilieren_pdflatex(ziel: Path) -> bool:
     OUT.mkdir(exist_ok=True)
     for lauf in (1, 2):
         ergebnis = subprocess.run(
@@ -286,7 +295,6 @@ def kompilieren(ziel: Path) -> bool:
             print(f"pdflatex ist im Durchlauf {lauf} abgebrochen:")
             print(pdflatex_ausschnitt(ergebnis.stdout))
             return False
-
     gebaut = OUT / "main.pdf"
     if not gebaut.is_file():
         print("pdflatex hat kein PDF erzeugt.")
@@ -297,42 +305,84 @@ def kompilieren(ziel: Path) -> bool:
     return True
 
 
+def kompilieren(ziel: Path) -> bool:
+    OUT.mkdir(exist_ok=True)
+    if habe_prog("pdflatex"):
+        return kompilieren_pdflatex(ziel)
+    return kompilieren_tectonic(ziel)
+
+
+# ---------------------------------------------------------------- Berichte
+
+
+def bericht(baetterpro_fach: dict[str, list[dict]]) -> None:
+    for fach, blaetter in baetterpro_fach.items():
+        print(f"\nFach: {fach}")
+        if not blaetter:
+            print("  (keine Blätter hinterlegt)")
+            continue
+        for blatt in blaetter:
+            luecken = []
+            for a in blatt["aufgaben"]:
+                if not a["hat_theorie"]:
+                    luecken.append(f"{a['nr']:02d} theorie fehlt")
+                if not a["hat_loesung"]:
+                    luecken.append(f"{a['nr']:02d} loesung fehlt")
+            marke = "ok" if not luecken else "UNVOLLSTÄNDIG: " + ", ".join(luecken)
+            print(f"  {blatt['name']}: {len(blatt['aufgaben'])} Aufgaben [{marke}]")
+
+
 # ----------------------------------------------------------------- Haupt
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Baut das Lern-PDF aus aufgaben/.")
-    modus = parser.add_mutually_exclusive_group()
-    modus.add_argument("--nur-theorie", action="store_true", help="nur Teil I bauen")
-    modus.add_argument("--nur-loesungen", action="store_true", help="nur Teil II bauen")
-    parser.add_argument("--offen", action="store_true", help="nur Abdeckung prüfen, nichts bauen")
+    parser = argparse.ArgumentParser(description="Baut Lernhelfer-PDFs aus aufgaben/<fach>/<blatt>/.")
+    parser.add_argument("--fach", default=None, help="nur dieses Fach bauen (z. B. physik, mathe)")
+    parser.add_argument("--offen", action="store_true", help="nur Überblick, nichts bauen")
     parser.add_argument("--kein-pdf", action="store_true", help="generated/ schreiben, nicht kompilieren")
     args = parser.parse_args()
 
-    aufgaben = sammle_aufgaben()
-    fehlend, ueberzaehlig = abdeckung(aufgaben, schreiben=not args.offen)
-    bericht(aufgaben, fehlend, ueberzaehlig)
+    faecher = sammle_faecher()
+    if args.fach:
+        if args.fach not in faecher:
+            print(f"Unbekanntes Fach: {args.fach}. Verfügbar: {faecher}")
+            return 1
+        faecher = [args.fach]
+
+    baetterpro_fach: dict[str, list[dict]] = {}
+    for fach in faecher:
+        baetterpro_fach[fach] = sammle_blaetter(fach)
+
+    bericht(baetterpro_fach)
 
     if args.offen:
         return 0
 
-    schreibe_generated(aufgaben, args.nur_theorie, args.nur_loesungen)
-    print("generated/ neu geschrieben")
+    ziele: list[Path] = []
+    for fach, blaetter in baetterpro_fach.items():
+        for blatt in blaetter:
+            stamm = OUT / f"{fach}-{blatt['name']}"
+
+            schreibe_generated(fach, blatt, nur_theorie=False)
+            if not args.kein_pdf:
+                ziel = Path(str(stamm) + "-lernhelfer.pdf")
+                if not kompilieren(ziel):
+                    return 1
+                ziele.append(ziel)
+
+            schreibe_generated(fach, blatt, nur_theorie=True)
+            if not args.kein_pdf:
+                ziel = Path(str(stamm) + "-theorie.pdf")
+                if not kompilieren(ziel):
+                    return 1
+                ziele.append(ziel)
 
     if args.kein_pdf:
+        print("generated/ neu geschrieben (zuletzt: Theorie-Variante).")
         return 0
 
-    if args.nur_theorie:
-        ziel = OUT / "physik-theorie.pdf"
-    elif args.nur_loesungen:
-        ziel = OUT / "physik-loesungen.pdf"
-    else:
-        ziel = OUT / "physik-uebungen.pdf"
-
-    if not kompilieren(ziel):
-        return 1
-    groesse = ziel.stat().st_size / 1024
-    print(f"gebaut: {ziel.relative_to(WURZEL)}  ({groesse:.0f} KiB)")
+    for ziel in ziele:
+        print(f"gebaut: {ziel.relative_to(WURZEL)}  ({ziel.stat().st_size / 1024:.0f} KiB)")
     return 0
 
 

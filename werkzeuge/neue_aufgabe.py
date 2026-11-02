@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Legt für eine neue Aufgabe den Ordner mit den beiden Gerüstdateien an.
 
-    python3 werkzeuge/neue_aufgabe.py 3 "Schiefer Wurf" --skript "Kap. 3, S. 14"
+    python3 werkzeuge/neue_aufgabe.py physik 7 "Maxwell-Rad" --skript "Kap. 6, S. 96"
 
-Erzeugt aufgaben/03-schiefer-wurf/theorie.tex und loesung.tex aus den Vorlagen
-in werkzeuge/vorlagen/. Die Nummer bestimmt die Sortierung und muss zur Nummer
-im Skript-Index passen.
+Erzeugt aufgaben/<fach>/blatt<N>/NN-<slug>/theorie.tex und loesung.tex aus den
+Vorlagen in werkzeuge/vorlagen/. Die Nummer bestimmt die Sortierung und muss
+zur Nummer im Skript-Index passen. Fächer und Blätter folgen den Ordnern unter
+aufgaben/, z. B. physik und 7 → aufgaben/physik/blatt07/.
 """
 
 from __future__ import annotations
@@ -28,9 +29,13 @@ def slug_bauen(titel: str) -> str:
     return text or "aufgabe"
 
 
-def freie_nummer() -> int:
+def blatt_ordner(fach: str, blatt: int) -> Path:
+    return AUFGABEN / fach / f"blatt{blatt:02d}"
+
+
+def freie_nummer(fach: str, blatt: int) -> int:
     hoechste = 0
-    for pfad in AUFGABEN.iterdir() if AUFGABEN.is_dir() else []:
+    for pfad in sorted(blatt_ordner(fach, blatt).iterdir()) if blatt_ordner(fach, blatt).is_dir() else []:
         treffer = re.match(r"^(\d+)-", pfad.name)
         if pfad.is_dir() and treffer:
             hoechste = max(hoechste, int(treffer.group(1)))
@@ -39,28 +44,42 @@ def freie_nummer() -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Neue Aufgabe anlegen.")
+    parser.add_argument("fach", nargs="?", help="Fach, z. B. physik, mathe")
+    parser.add_argument("blatt", nargs="?", type=int, help="Blattnummer der Woche")
     parser.add_argument("nummer", nargs="?", type=int, help="Aufgabennummer aus dem Skript")
     parser.add_argument("titel", nargs="?", help="Titel der Aufgabe")
     parser.add_argument("--skript", default="", help="Fundstelle, z. B. 'Kap. 3, S. 14'")
+    parser.add_argument("--fach-liste", action="store_true", help="verfügbare Fächer anzeigen")
     args = parser.parse_args()
 
-    if args.nummer is None or not args.titel:
-        print(f"Nächste freie Nummer wäre {freie_nummer()}.")
-        print('Aufruf: python3 werkzeuge/neue_aufgabe.py 3 "Schiefer Wurf" --skript "Kap. 3, S. 14"')
+    if args.fach_liste:
+        print("Verfügbare Fächer unter aufgaben/:")
+        for pfad in sorted(AUFGABEN.iterdir()) if AUFGABEN.is_dir() else []:
+            if pfad.is_dir() and pfad.name != "archiv":
+                print(f"  {pfad.name}")
+        return 0
+
+    if None in (args.fach, args.blatt, args.nummer, args.titel):
+        print(
+            'Aufruf: python3 werkzeuge/neue_aufgabe.py <fach> <blatt> <nummer> "<Titel>" '
+            '--skript "Kap. 3, S. 14"'
+        )
+        if args.fach and args.blatt is not None:
+            print(f"Nächste freie Nummer wäre {freie_nummer(args.fach, args.blatt)}.")
         return 1
 
-    ordner = AUFGABEN / f"{args.nummer:02d}-{slug_bauen(args.titel)}"
-    if ordner.exists():
-        print(f"Gibt es schon: {ordner.relative_to(WURZEL)}")
+    ziel = blatt_ordner(args.fach, args.blatt) / f"{args.nummer:02d}-{slug_bauen(args.titel)}"
+    if ziel.exists():
+        print(f"Gibt es schon: {ziel.relative_to(WURZEL)}")
         return 1
 
-    ordner.mkdir(parents=True)
+    ziel.mkdir(parents=True)
     for name in ("theorie.tex", "loesung.tex"):
         vorlage = (VORLAGEN / name).read_text(encoding="utf-8")
         vorlage = vorlage.replace("@TITEL@", args.titel).replace("@SKRIPT@", args.skript)
-        (ordner / name).write_text(vorlage, encoding="utf-8")
+        (ziel / name).write_text(vorlage, encoding="utf-8")
 
-    print(f"angelegt: {ordner.relative_to(WURZEL)}")
+    print(f"angelegt: {ziel.relative_to(WURZEL)}")
     print("  theorie.tex  Werkzeuge und typische Fallen, kein Lösungsweg")
     print("  loesung.tex  Gegeben/Gesucht, Ansatz, Rechnung, Kontrolle, Merksatz")
     print("Danach: python3 werkzeuge/build.py")

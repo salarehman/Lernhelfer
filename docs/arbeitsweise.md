@@ -63,12 +63,12 @@ Stoff enthalten. Das wird anhand der Quellen geprueft:
 - Eine neue Version wird manuell mit der vorherigen verglichen. Alte Dateien
   bleiben erhalten, bis ihr Verbleib bewusst geklärt ist. Der Import entfernt
   sie nicht automatisch.
-- `skript/aktuell.md` nennt Version, Datum und eine gekürzte Prüfsumme der
-  aktuellen Datei. Das Importwerkzeug schreibt diese Datei.
+- `skript/<fach>/aktuell.md` nennt Version, Datum und eine gekürzte Prüfsumme der
+  aktuellen Datei je Fach. Das Importwerkzeug schreibt diese Datei.
 - Das Werkzeug meldet anhand erkannter Nummern, welche Aufgaben neu sind oder
   scheinbar fehlen. Erkennung, Änderungen und mögliche Umnummerierungen müssen
   mit dem Original geprüft werden. Ordner werden nicht automatisch verschoben.
-- Erkannte Aufgaben ohne passenden Ordner erscheinen in `skript/offen.md`.
+- Erkannte Aufgaben ohne passenden Ordner erscheinen in `skript/<fach>/offen.md`.
   Ein Ordner beweist jedoch nicht, dass Theorie oder Lösung fertig sind.
 
 ## Qualitaetskontrolle vor dem Commit
