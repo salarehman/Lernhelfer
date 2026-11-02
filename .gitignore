@@ -1,0 +1,18 @@
+# LaTeX-Zwischendateien
+*.aux
+*.log
+*.toc
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log
+*.blg
+*.bbl
+
+# vom Build erzeugt
+generated/
+
+# Betriebssystem
+.DS_Store
+Thumbs.db

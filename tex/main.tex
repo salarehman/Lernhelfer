@@ -1,0 +1,50 @@
+% tex/main.tex
+% Das Dokument: Teil I (Theorie) und Teil II (Lösungen).
+% Bauen mit: python3 werkzeuge/build.py   (aus dem Repo-Wurzelverzeichnis)
+
+\documentclass[11pt,a4paper]{article}
+\input{tex/preamble}
+\input{generated/meta}
+\input{generated/modus}
+
+\begin{document}
+
+% ------------------------------------------------------------- Titelseite
+\begin{titlepage}
+  \centering
+  \vspace*{3cm}
+  {\color{phblau}\rule{\linewidth}{1.2pt}}\par\vspace{1.2em}
+  {\Huge\bfseries\color{phblau} Theorie und Lösungen\par}
+  \vspace{0.6em}
+  {\large\color{phgrau} Werkzeugkasten und Rechenwege zu den Übungsaufgaben\par}
+  \vspace{1.2em}
+  {\color{phblau}\rule{\linewidth}{1.2pt}}\par
+  \vfill
+  {\large \SkriptStand\par}
+  \vspace{0.4em}
+  {\small\color{phgrau} Stand: \StandDatum\par}
+  \vspace{0.4em}
+  {\small\color{phgrau} Teil I: Werkzeuge je Aufgabe. Teil II: durchgerechnete
+   Lösungen.\par}
+  \vfill
+  {\small\color{phgrau} Gebaut aus dem Vorlesungsskript mit
+   \texttt{werkzeuge/build.py}.\par}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+% ----------------------------------------------------------------- Teil I
+\ifzeigetheorie
+  \part{Theorie}
+  \input{generated/teil-theorie}
+\fi
+
+% ---------------------------------------------------------------- Teil II
+\ifzeigeloesungen
+  \clearpage
+  \part{Lösungen}
+  \input{generated/teil-loesungen}
+\fi
+
+\end{document}
