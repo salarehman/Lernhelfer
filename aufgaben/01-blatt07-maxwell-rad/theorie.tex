@@ -1,0 +1,85 @@
+% titel: Blatt 7, A1: Maxwell-Rad
+% skript: Physik I, Kapitel 6, Seiten 96--100 und 102--110
+% stand: Übungsblatt 7, Aufgabe A1
+
+Diese Werkzeuge beschreiben die Bewegung ausgedehnter Körper, bei denen sich
+Schwerpunktbewegung und Drehung überlagern. Die Beziehungen gelten zunächst
+allgemein. Wähle die passenden Kräfte, Achsen und Vorzeichen selbst.
+
+\begin{werkzeugkasten}[Kräfte und Drehmomente]
+Die Bewegung des Schwerpunkts folgt aus der Summe der äusseren Kräfte. Ein
+Drehmoment hängt dagegen auch vom Angriffspunkt der Kraft und der gewählten
+Drehachse ab:
+\begin{equation}
+  \sum \vec F_{\mathrm{ext}}=m\vec a_S,
+  \qquad
+  \vec M_S=\vec r\times\vec F,
+  \qquad
+  \sum M_S=I_S\alpha.
+\end{equation}
+Hier bezeichnet $S$ den Schwerpunkt, $I_S$ das Trägheitsmoment um die
+Schwerpunktachse und $\alpha$ die Winkelbeschleunigung. Die letzte Beziehung
+gilt für die hier relevante Rotation um eine feste Hauptrichtung. Der Betrag des
+Drehmoments ist Kraft mal senkrechter Hebelarm. Bei mehreren Kräften müssen
+ihre Beiträge addiert werden. Kräfte auf verschiedene Körper nicht in derselben
+Kräftebilanz zusammenzählen.
+
+\textit{Skript:} Kap. 6.1 und 6.2.4, S. 96--98 und 102.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Trägheit und Bewegungsenergie]
+Für einen homogenen Vollzylinder beziehungsweise eine homogene Scheibe um die
+Symmetrieachse gilt $I_S=\tfrac12 mR^2$. Das Trägheitsmoment misst, wie die
+Masse bezüglich der Drehachse verteilt ist. Die kinetische Energie eines starren
+Körpers setzt sich aus Schwerpunkt- und Rotationsenergie zusammen:
+\begin{equation}
+  E_{\mathrm{kin}}=\frac12 mv_S^2+\frac12 I_S\omega^2.
+\end{equation}
+In einem homogenen Schwerefeld ist die potenzielle Energie $mgh_S$. Ohne
+Energieverluste und äussere Arbeit bleibt die Summe dieser Beiträge erhalten.
+Die Rotationsenergie darf nicht mit der Energie der Schwerpunktbewegung
+verwechselt werden.
+
+\textit{Skript:} Kap. 6.2.1--6.2.2 und 6.3, S. 99--101 und 109--110.
+\end{werkzeugkasten}
+
+\clearpage
+\begin{werkzeugkasten}[Kinematik und Impuls]
+Wenn eine Schnur ohne Gleiten an einer zylindrischen Oberfläche mit Radius
+$b$ abläuft, sind die \emph{Beträge} von Verschiebung und Drehwinkel durch
+$s=b\varphi$ verbunden. Entsprechend gilt $v=b\omega$; während einer Phase
+mit unverändertem Kontakt gilt für die Beträge auch $a=b\alpha$. Die
+Vorzeichen müssen zur jeweils gewählten Orientierung passen. Der wirksame
+Radius ist der Radius am Kontakt, nicht automatisch der äussere Körperradius.
+
+Für eine gleichmässig beschleunigte geradlinige Bewegung gilt
+$v^2-v_0^2=2a\Delta s$, mit vorzeichenrichtig gewählter Koordinate. Für einen
+Vorgang über ein Zeitintervall $\Delta t$ verknüpft der Impulssatz die
+\emph{resultierende} Kraft mit der Impulsänderung:
+\begin{equation}
+  \int_{t_1}^{t_2}\sum F_{\mathrm{ext}}\,\mathrm dt
+    = m(v_2-v_1),
+  \qquad
+  \overline{\sum F_{\mathrm{ext}}}
+    =\frac{m(v_2-v_1)}{\Delta t}.
+\end{equation}
+Eine mittlere Kraft benötigt also Informationen über die Dauer und die
+Geschwindigkeiten des betrachteten Vorgangs. Der Kraftstoss und eine mittlere
+Kraft sind unterschiedliche Grössen.
+
+\textit{Skript:} Kap. 6.2.5 und 6.3, S. 106 und 109--110; Impulssatz
+Kap. 2.2.2, S. 27--28, und Kap. 3.2, S. 52--53.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Bezeichne die Kraft einer einzelnen Schnur und die Gesamtkraft mehrerer
+        Schnüre eindeutig. Kraft und Gegenkraft wirken auf verschiedene Körper.
+  \item Bewegung und Beschleunigung müssen nicht in dieselbe Richtung zeigen.
+        Für unterschiedliche Bewegungsphasen die Kräfte und den Kontakt neu
+        prüfen, statt eine Vorzeichenkonvention ungeprüft zu übernehmen.
+  \item Eine ideale, verlustfreie Bewegung ist ein Modell. Ein kurzer
+        Umkehrvorgang benötigt gegebenenfalls zusätzliche Angaben; fehlende
+        Grössen dürfen nicht durch eine beliebige Zahl ersetzt werden.
+\end{itemize}
+\end{achtung}

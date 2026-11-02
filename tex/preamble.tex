@@ -41,6 +41,10 @@
             pdfsubject={Theorie und Lösungen zu den Übungsaufgaben}]{hyperref}
 \usepackage{cleveref}
 
+% Schalter für die PDF-Varianten; generated/modus.tex setzt die Werte.
+\newif\ifzeigetheorie   \zeigetheorietrue
+\newif\ifzeigeloesungen \zeigeloesungentrue
+
 % ---------------------------------------------------------------- Seite
 
 \geometry{a4paper, top=2.4cm, bottom=2.4cm, left=2.5cm, right=2.5cm,
@@ -53,7 +57,9 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyhead[L]{\small\color{phgrau}\nouppercase{\rightmark}}
-\fancyhead[R]{\small\color{phgrau}Theorie und Lösungen}
+\fancyhead[R]{\small\color{phgrau}%
+  \ifzeigetheorie\ifzeigeloesungen Theorie und Lösungen\else Theorie\fi
+  \else Lösungen\fi}
 \fancyfoot[C]{\small\color{phgrau}\thepage}
 
 \titleformat{\part}[display]
@@ -83,6 +89,7 @@
   range-phrase = { bis },
   list-final-separator = { und },
   separate-uncertainty = true,
+  output-decimal-marker = {,},
 }
 
 % ---------------------------------------------------------------- Makros
@@ -146,19 +153,19 @@
 
 % Verweis von der Theorie zur Lösung derselben Aufgabe.
 \newcommand{\loesungsverweis}[1]{%
-  \par\vspace{0.4em}\noindent{\small\color{phblau}%
-  \hyperref[loes:#1]{$\rightarrow$ Lösung dieser Aufgabe}}%
-  \par\vspace{0.2em}}
+  \ifzeigeloesungen
+    \par\vspace{0.4em}\noindent{\small\color{phblau}%
+    \hyperref[loes:#1]{$\rightarrow$ Lösung dieser Aufgabe}}%
+    \par\vspace{0.2em}%
+  \fi}
 
 % Verweis von der Lösung zurück in den Theorieteil.
 \newcommand{\theorieverweis}[1]{%
-  \par\vspace{0.4em}\noindent{\small\color{phblau}%
-  \hyperref[aufg:#1]{$\leftarrow$ Werkzeuge dazu in Teil I}}%
-  \par\vspace{0.2em}}
-
-% Schalter, die generated/modus.tex setzt (welche Teile ins PDF kommen).
-\newif\ifzeigetheorie   \zeigetheorietrue
-\newif\ifzeigeloesungen \zeigeloesungentrue
+  \ifzeigetheorie
+    \par\vspace{0.4em}\noindent{\small\color{phblau}%
+    \hyperref[aufg:#1]{$\leftarrow$ Werkzeuge dazu in Teil I}}%
+    \par\vspace{0.2em}%
+  \fi}
 
 % Rückfallwerte, die generated/meta.tex überschreibt.
 \providecommand{\SkriptStand}{Skript noch nicht hinterlegt}

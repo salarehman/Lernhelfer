@@ -75,8 +75,9 @@ Eine gleichbleibende Nummer beweist nicht, dass eine Aufgabe unverändert ist.
 - `python3 werkzeuge/build.py --offen` zeigt den nummernbasierten Abgleich,
   sofern ein Index existiert. Existenz eines Ordners oder zweier Dateien bedeutet
   nicht, dass Inhalt geprüft oder abgeschlossen ist.
-- Das Federpendel unter `aufgaben/00-beispiel/` ist ein künstliches Beispiel ohne
-  Skriptbezug, keine echte Aufgabe. Es nicht als Vorlesungsinhalt ausgeben.
+- Das Federpendel unter `aufgaben/archiv/00-beispiel/` ist ein künstliches
+  Beispiel ohne Skriptbezug und wird nicht mitgebaut. Es nicht als
+  Vorlesungsinhalt ausgeben.
 
 ## Sprache, Sicherheit und Abschluss
 

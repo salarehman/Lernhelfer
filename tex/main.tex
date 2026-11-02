@@ -10,13 +10,20 @@
 \begin{document}
 
 % ------------------------------------------------------------- Titelseite
+\hypersetup{pageanchor=false}
 \begin{titlepage}
   \centering
   \vspace*{3cm}
   {\color{phblau}\rule{\linewidth}{1.2pt}}\par\vspace{1.2em}
-  {\Huge\bfseries\color{phblau} Theorie und Lösungen\par}
+  {\Huge\bfseries\color{phblau}%
+   \ifzeigetheorie\ifzeigeloesungen Theorie und Lösungen\else Theorie\fi
+   \else Lösungen\fi\par}
   \vspace{0.6em}
-  {\large\color{phgrau} Werkzeugkasten und Rechenwege zu den Übungsaufgaben\par}
+  {\large\color{phgrau}%
+   \ifzeigetheorie\ifzeigeloesungen
+     Werkzeugkasten und Rechenwege zu den Übungsaufgaben
+   \else Werkzeuge zum selbstständigen Lösen\fi
+   \else Verständlich erklärte Rechenwege\fi\par}
   \vspace{1.2em}
   {\color{phblau}\rule{\linewidth}{1.2pt}}\par
   \vfill
@@ -24,12 +31,15 @@
   \vspace{0.4em}
   {\small\color{phgrau} Stand: \StandDatum\par}
   \vspace{0.4em}
-  {\small\color{phgrau} Teil I: Werkzeuge je Aufgabe. Teil II: durchgerechnete
-   Lösungen.\par}
+  {\small\color{phgrau}%
+   \ifzeigetheorie\ifzeigeloesungen
+     Teil I: Werkzeuge je Aufgabe. Teil II: durchgerechnete Lösungen.
+   \else Theorie ohne Lösungsweg.\fi
+   \else Durchgerechnete Lösungen.\fi\par}
   \vfill
-  {\small\color{phgrau} Gebaut aus dem Vorlesungsskript mit
-   \texttt{werkzeuge/build.py}.\par}
+  {\small\color{phgrau} Physik I: Mechanik und Thermodynamik\par}
 \end{titlepage}
+\hypersetup{pageanchor=true}
 
 \tableofcontents
 \clearpage

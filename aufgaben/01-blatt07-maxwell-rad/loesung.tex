@@ -1,0 +1,145 @@
+% Blatt 7, A1. Werte und Aufgabenstellung: aufgaben/Blatt07.pdf, S. 1.
+
+\subsection*{Gegeben, Modell und Vorzeichen}
+Die Scheibe hat die Masse $m=\qty{0.50}{\kilogram}$ und den Radius
+$R=\qty{0.050}{\metre}$. Der praktisch masselose Stab hat den Radius
+$r=\qty{0.0050}{\metre}$, die Schnüre haben die Länge
+$l=\qty{0.50}{\metre}$. Wir verwenden $g=\qty{9.81}{\metre\per\second\squared}$.
+Der Zahlenwert für $g$ ist eine verwendete Näherung, keine zusätzliche Angabe
+des Aufgabenblatts.
+
+Für die Bewegung ausserhalb des Umkehrvorgangs nehmen wir masselose,
+undehnbare Schnüre, schlupffreies Ab- und Aufrollen und vernachlässigbare
+Reibung an. Die Absenkung des Schwerpunkts bis kurz vor dem Ende des Abrollens
+setzen wir gleich der abgewickelten Länge $l$. Die Umkehr selbst betrachten wir
+getrennt, denn ihre Dauer und ihr Mechanismus sind nicht angegeben.
+
+$T$ sei die \emph{gesamte} nach oben auf das Rad wirkende Zugkraft beider
+Schnüre. Bei symmetrischer Aufhängung trägt jede Schnur $T/2$. Die Kraft des
+Rades auf die Stativstange zeigt entgegengesetzt, also nach unten, und hat bei
+masselosen Schnüren den Betrag $T$.
+
+\subsection*{a) Beschleunigung beim Abrollen}
+Als positive Richtung für die Schwerpunktbewegung wählen wir nach unten und
+für die Drehbeschleunigung die Abrollrichtung. Gewicht und Schnurzug wirken auf
+den Schwerpunkt entgegengesetzt. Die Schnüre greifen am Stabradius $r$ an und
+üben dort ein Drehmoment aus. Damit gelten
+\begin{equation}
+  mg-T=ma, \qquad Tr=I_S\alpha, \qquad a=r\alpha,
+  \qquad I_S=\frac12 mR^2.
+\end{equation}
+Der letzte Zusammenhang ist das Trägheitsmoment einer homogenen Scheibe um
+ihre Symmetrieachse. Die Gewichtskraft selbst erzeugt um den Schwerpunkt kein
+Drehmoment. Mit $\alpha=a/r$ ergibt die Drehgleichung $T=I_Sa/r^2$. Einsetzen
+in die Schwerpunktgleichung liefert
+\begin{align}
+  mg&=a\left(m+\frac{I_S}{r^2}\right),\\
+  a&=\frac{g}{1+I_S/(mr^2)}
+    =\frac{g}{1+R^2/(2r^2)}.
+\end{align}
+Daraus folgt
+\begin{ergebnis}[a) Beschleunigung]
+\begin{equation*}
+  a=\frac{\qty{9.81}{\metre\per\second\squared}}{51}
+   \approx\qty{0.192}{\metre\per\second\squared}\quad\text{abwärts}.
+\end{equation*}
+\end{ergebnis}
+Das Rad fällt langsamer als im freien Fall: Ein Teil der Bewegung ist Rotation.
+
+\subsection*{b) Kraft auf die Stativstange}
+Aus der Schwerpunktgleichung folgt $T=m(g-a)$. Die beiden Schnurkräfte
+zusammen ziehen die Stange nach unten:
+\begin{ergebnis}[b) Gesamtkraft auf die Stange]
+\begin{equation*}
+  F_{\mathrm{Stange}}=T
+    =\qty{0.50}{\kilogram}\,
+      (\qty{9.81}{\metre\per\second\squared}
+       -\qty{0.19235}{\metre\per\second\squared})
+    \approx\qty{4.81}{\newton}\quad\text{abwärts}.
+\end{equation*}
+\end{ergebnis}
+Bei gleicher Lastverteilung sind das ungefähr \qty{2.40}{\newton} pro Schnur.
+Die angegebene Gesamtkraft ist kleiner als die Gewichtskraft
+$mg=\qty{4.905}{\newton}$, weil das Rad abwärts beschleunigt. Das Eigengewicht
+von Stange und Schnüren ist nicht Teil dieser Kraft.
+
+\subsection*{c) Geschwindigkeit kurz vor dem Ende des Abrollens}
+Das Rad startet aus der Ruhe. Da $a$ im idealisierten Abrollmodell konstant
+ist und der Schwerpunkt die Strecke $l$ zurücklegt, gilt
+\begin{equation}
+  v^2=2al
+  =\frac{2gl}{1+R^2/(2r^2)}.
+\end{equation}
+\begin{ergebnis}[c) Geschwindigkeit]
+\begin{equation*}
+  v=\sqrt{2\cdot\qty{0.19235}{\metre\per\second\squared}
+              \cdot\qty{0.50}{\metre}}
+    \approx\qty{0.439}{\metre\per\second}\quad\text{abwärts}.
+\end{equation*}
+\end{ergebnis}
+Als unabhängige Kontrolle dient die Energiegleichung
+$mgl=\tfrac12 mv^2+\tfrac12 I_S(v/r)^2$: Sie berücksichtigt sowohl die
+Geschwindigkeit des Schwerpunkts als auch die Drehung der Scheibe.
+
+\subsection*{d) Mittlere zusätzliche Kraft bei der Umkehr}
+Hier reichen die Angaben des Blattes für keinen eindeutigen Zahlenwert der
+mittleren Kraft. Weder die Dauer des Umkehrvorgangs noch die Geschwindigkeit
+danach oder die Energieverluste sind angegeben. Je kürzer die Umkehr bei gleicher
+Impulsänderung dauert, desto grösser ist die mittlere Kraft.
+
+Sei $\Delta t$ die Dauer, $v_-$ der Betrag der Geschwindigkeit unmittelbar
+vor der Umkehr und $v_+$ der Betrag unmittelbar danach. Mit positiver
+Aufwärtsrichtung ist die Impulsänderung des Rades
+$\Delta p=m(v_+ + v_-)$. Im Modell, in dem vertikal nur die gesamte
+Schnurkraft $T(t)$ und die Gewichtskraft wirken, folgt
+\begin{equation}
+  (\overline T-mg)\Delta t=m(v_+ + v_-),
+  \qquad
+  \overline T=mg+\frac{m(v_+ + v_-)}{\Delta t}.
+\end{equation}
+Die gleich grosse mittlere Zugkraft wirkt nach unten auf die Stativstange.
+\emph{Zusätzlich zum statischen Gewicht $mg$} ist sie daher
+$m(v_+ + v_-)/\Delta t$. Wenn stattdessen die Last während des Abrollens aus
+Teil b als Bezug gemeint ist, beträgt die Zunahme
+$ma+m(v_+ + v_-)/\Delta t$.
+
+Unter der \emph{zusätzlichen} idealisierten Annahme einer symmetrischen,
+verlustfreien Umkehr mit gleichen Geschwindigkeitsbeträgen unmittelbar davor
+und danach wäre $v_+=v_-=v$. Dann wäre der zusätzliche Kraftstoss relativ zum
+Gewicht $2mv\approx\qty{0.439}{\newton\second}$. Eine mittlere Zusatzkraft
+folgt daraus erst, wenn $\Delta t$ bekannt ist. Der Kraftstoss ist kein
+Kraftwert. Im Grenzmodell einer sprungartigen Umkehr ist keine endliche mittlere
+Kraft für eine verschwindende Zeitdauer bestimmbar.
+
+\subsection*{e) Bonus: Kraft beim anschliessenden Aufrollen}
+Nach dem eigentlichen Umkehrvorgang bewegt sich der Schwerpunkt aufwärts,
+während das Rad durch die Schwerkraft abgebremst wird. Für die ideale
+Aufrollphase nehmen wir wieder eine gespannte, schlupffrei auf der anderen
+Seite der Achse auflaufende Schnur und vernachlässigbare Reibung an. Dann
+zeigt die Schwerpunktbeschleunigung erneut nach unten und hat den gleichen
+Betrag wie in Teil a. Mit $mg-T_{\mathrm{auf}}=ma$ folgt
+\begin{ergebnis}[e) Gesamtkraft beim Aufrollen]
+\begin{equation*}
+  F_{\mathrm{Stange,auf}}=T_{\mathrm{auf}}=m(g-a)
+   \approx\qty{4.81}{\newton}\quad\text{abwärts}.
+\end{equation*}
+\end{ergebnis}
+Das gilt für die reguläre Aufrollphase, \emph{nicht} für die kurzzeitige
+Umkehr. In dieser Phase sind Geschwindigkeit und Beschleunigung
+entgegengesetzt gerichtet. Verluste, Schlupf oder ein anderer Kontaktmechanismus
+können die reale Kraft ändern.
+
+\begin{kontrolle}[Plausibilität und Geltungsbereich]
+Das Ergebnis für $a$ liegt zwischen null und $g$; $T$ ist positiv und kleiner
+als $mg$. Die Energiegleichung reproduziert die Geschwindigkeit aus der
+Kinematik. Die Zahl in Teil d lässt sich ohne Angaben zur Umkehrzeit und zum
+Verlauf nicht bestimmen. Die Werte für die übrigen Teilaufgaben sind Aussagen
+über das angegebene ideale Modell, nicht über jede reale Apparatur.
+\end{kontrolle}
+
+\begin{merksatz}
+Bei rollenden oder aufgewickelten Körpern müssen Schwerpunktbewegung und
+Rotation zusammenpassen. Bestimme zuerst Kräfte und wirksame Hebelarme; eine
+Kraft während eines kurzen Stosses erfordert zusätzlich eine Aussage über die
+Dauer oder den zeitlichen Verlauf.
+\end{merksatz}
