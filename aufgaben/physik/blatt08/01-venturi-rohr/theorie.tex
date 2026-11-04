@@ -1,0 +1,59 @@
+% titel: Venturi-Rohr
+% skript: Kap. Hydrodynamik
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+% Ein Venturi-Messrohr wandelt eine Geschwindigkeitsdifferenz (wegen verengtem
+% Querschnitt) in eine Druckdifferenz um; gesucht ist der Volumenstrom aus dem
+% gemessenen Druckunterschied (hier über ein Quecksilbermanometer).
+
+Ein reibungsfrei, inkompressibel strömendes Fluid passiert eine Verengung; die
+Druckdifferenz zwischen zwei Querschnitten wird gemessen (hier über ein
+U-Rohr-Manometer mit Quecksilber). Gesucht ist der Volumenstrom als Funktion
+der Durchmesser und der Manometer-Höhendifferenz.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Kontinuitätsgleichung} (Masseerhalt, inkompressibel):
+\begin{equation}
+  A_1 v_1 = A_2 v_2 = \dot V \;,\qquad A=\frac{\pi d^2}{4}\;.
+\end{equation}
+
+\textbf{Bernoulli-Gleichung} (Energieerhaltung, stationär, reibungsfrei):
+\begin{equation}
+  p_1+\frac{\rho}{2}\,v_1^2+\rho g z_1
+  =\; p_2+\frac{\rho}{2}\,v_2^2+\rho g z_2\;.
+\end{equation}
+Bei horizontalem Rohr ($z_1=z_2$) bleibt nur die Umwandlung
+Druckenergie $\leftrightarrow$ kinetische Energie:
+\begin{equation}
+  p_1-p_2=\frac{\rho}{2}\left(v_2^2-v_1^2\right)\;.
+\end{equation}
+
+\textbf{U-Rohr-Manometer:} Die Druckdifferenz wird über eine Säulenhöhe
+$\Delta h$ der Manometer-Flüssigkeit (Dichte $\rho_\mathrm{m}$) abgelesen,
+\begin{equation}
+  p_1-p_2=\rho_\mathrm{m}\,g\,\Delta h\;.
+\end{equation}
+
+\textbf{Einheiten und Bezeichner:} $\dot V$ in \unit{\cubic\metre\per\second},
+Durchmesser $d$ in \unit{\metre}, $\rho$ in \unit{\kilogram\per\cubic\metre},
+$g\approx\qty{9.81}{\metre\per\square\second}$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+Aus Bernoulli folgt der Geschwindigkeitsunterschied aus der Druckdifferenz,
+aus der Kontinuität der Zusammenhang der beiden Querschnitts-Geschwindigkeiten.
+Kombiniert man beide und löst nach einer Geschwindigkeit auf, hängt diese nur
+von Querschnittsverhältnis und Manometerhöhe ab. Der Volumenstrom ist
+Geschwindigkeit mal Fläche.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Zwei Dichten nicht verwechseln: $\rho$ des \emph{strömenden Gases} gegen
+       $\rho_\mathrm{m}$ des \emph{Manometer-Quecksilbers}.
+  \item Die Druckdifferenz des Manometers ist $p_1-p_2$, nicht $p_2-p_1$.
+  \item Im Volumenstrom-Ausdruck erscheint $d_1$ und $d_2$ als Quotient,
+       also über $A_2/A_1=(d_2/d_1)^2$.
+\end{itemize}
+\end{achtung}

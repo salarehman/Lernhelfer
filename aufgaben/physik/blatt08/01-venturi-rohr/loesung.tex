@@ -1,0 +1,57 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Durchmesser $d_1,d_2$ der Querschnitte 1 und 2, Höhendifferenz
+$\Delta h$ des Quecksilbermanometers, Dichten $\rho$ (Gas) und
+$\rho_\mathrm{m}$ (Quecksilber), $g$.
+Gesucht: Volumenstrom $\dot V$ durch das Rohr.
+
+\subsection*{Ansatz}
+Kontinuität verknüpft die Geschwindigkeiten, Bernoulli die Geschwindigkeits-
+mit der Druckdifferenz, das Manometer gibt die Druckdifferenz. Zwei
+Unbekannte ($v_1,v_2$), drei Gleichungen — also nach der einen Geschwindigkeit
+auflösen und mit $A_1$ zum Volumenstrom multiplizieren.
+
+\subsection*{Rechnung}
+Kontinuität: $v_2 = v_1\frac{A_1}{A_2}$. Einsetzen in Bernoulli
+(horizontal, reibungsfrei):
+\begin{equation}
+  p_1-p_2=\frac{\rho}{2}\,v_1^2\left[\left(\frac{A_1}{A_2}\right)^2-1\right]
+  =\frac{\rho}{2}\,v_1^2\left[\left(\frac{d_1}{d_2}\right)^4-1\right]\;.
+\end{equation}
+Andererseits $p_1-p_2=\rho_\mathrm{m}g\Delta h$, also
+\begin{equation}
+  v_1=\sqrt{\frac{2\,\rho_\mathrm{m}\,g\,\Delta h}
+        {\rho\left[\left(\frac{d_1}{d_2}\right)^4-1\right]}}\;.
+\end{equation}
+Mit $A_1=\pi d_1^2/4$:
+
+\begin{ergebnis}
+\begin{equation*}
+  \dot V = A_1 v_1
+  =\frac{\pi d_1^2}{4}
+   \sqrt{\frac{2\,\rho_\mathrm{m}\,g\,\Delta h}
+        {\rho\left[\left(\frac{d_1}{d_2}\right)^4-1\right]}}\;.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\sqrt{\rho_\mathrm{m}g\Delta h/\rho}
+\Rightarrow\sqrt{\frac{kg/m^3\cdot m/s^2\cdot m}{kg/m^3}}
+=\sqrt{m^2/s^2}=m/s$; mal $m^2$ ergibt $m^3/s$. \checkmark
+
+\textbf{Grenzfall:} Für $d_1=d_2$ (keine Verengung) divergiert der
+Volumenstrom — es gibt keinen Geschwindigkeitsunterschied, das Venturi-Prinzip
+versagt. Für $d_2\to 0$ wird $\dot V\to 0$. Plausibel.
+
+\textbf{Größenordnung:} Mit $\Delta h$ im \unit{\centi\metre}-Bereich, Gas
+$\rho\!\approx\!\qty{1}{\kg\per\cubic\metre}$, $\rho_\mathrm{m}\!\approx\!\qty{13600}{\kg\per\cubic\metre}$
+entsteht ein Volumenstrom im Bereich einiger $\unit{\litre\per\second}$
+— realistisch für ein Venturi-Rohr.
+\end{kontrolle}
+
+\begin{merksatz}
+Venturi-Messung = Bernoulli (Druck/kinetische Energie) + Kontinuität
+(Querschnitt/Geschwindigkeit) + Manometer (Druckdifferenz); die Verengung
+übersetzt Strömung in ein messbares Druckzeichen.
+\end{merksatz}

@@ -1,0 +1,106 @@
+% Teil II: durchgerechneter Weg, Teile a–e.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $r_1=\qty{10}{cm}$, $z_0=\qty{30}{cm}$, $r_2=\qty{2.5}{mm}$,
+$l=\qty{10}{cm}$, $\eta=\qty{100}{mPa\,s}=\qty{0.1}{Pa\,s}$,
+$\rho=\qty{920}{kg/m^3}$, $g=\qty{9.81}{m/s^2}$.
+Gesucht: $v_2(z)$ (a), DGL+AB für $z(t)$ (b), Halbentleerungszeit ideal (c),
+Anfangs-$\bar u_2$ (d), Halbentleerungszeit mit Reibung (e).
+
+\subsection*{Ansatz}
+(a) Bernoulli/Torricelli aufs offene Gefäß angewandt; wegen $r_2\ll r_1$ ist
+die Oberflächengeschwindigkeit vernachlässigbar. (b)–(c) Kontinuität
+$A_1\dot z=-A_2 v_2$ mit $v_2=\sqrt{2gz}$; Trennung der Variablen. (d)–(e)
+Hagen-Poiseuille statt Torricelli; mittlere Geschwindigkeit $\bar u\propto z$,
+daraus lineare DGL und Exponentialgesetz.
+
+\subsection*{Rechnung}
+\textbf{a) Ausflussgeschwindigkeit.} Torricelli mit aktueller Höhe $z$:
+\begin{equation}
+  v_2=\sqrt{2gz}\;.
+\end{equation}
+
+\textbf{b) DGL für $z(t)$.} Einsetzen in die Kontinuität:
+\begin{equation}
+  -\pi r_1^2\,\dot z \;=\; \pi r_2^2\sqrt{2gz}
+  \;\Rightarrow\;
+  \boxed{\;\dot z=-\frac{r_2^2}{r_1^2}\sqrt{2gz}\;},\qquad z(0)=z_0=\qty{0.30}{m}\;.
+\end{equation}
+
+\textbf{c) Halbentleerungszeit (ideal).} Trennung der Variablen:
+\begin{equation}
+  \frac{\mathrm dz}{\sqrt z}=\frac{\mathrm{d}z}{\sqrt z}=\sqrt{\frac{r_2^2}{r_1^2}\cdot 2g}\,(-\mathrm dt)
+  \;\Rightarrow\;
+  2\sqrt z=2\sqrt{z_0}-\frac{r_2^2}{r_1^2}\sqrt{2g}\,t\;.
+\end{equation}
+Für $z=z_0/2$:
+\begin{equation}
+  t_{\tfrac12}
+  =\frac{2\left(\sqrt{z_0}-\sqrt{z_0/2}\right)}{\frac{r_2^2}{r_1^2}\sqrt{2g}}\;.
+\end{equation}
+Zahlen: $\frac{r_2^2}{r_1^2}=\left(\frac{0.0025}{0.10}\right)^2=6.25\times10^{-4}$,
+$\sqrt{z_0}=0.5477$, $\sqrt{z_0/2}=0.3873$, $\sqrt{2g}=4.429$:
+\begin{equation*}
+  t_{\tfrac12}=\frac{2(0.5477-0.3873)}{6.25\times10^{-4}\cdot4.429}
+  \approx \qty{116}{s}\approx\qty{1.9}{min}.
+\end{equation*}
+
+\textbf{d) Mittlere Ausflussgeschwindigkeit bei $t=0$ (mit Reibung).}
+Hagen-Poiseuille, $\Delta p=\rho g z_0$ (hydrostatischer Druck der Säule):
+\begin{equation}
+  \bar u(t{=}0)=\frac{r_2^2}{8\eta l}\,\rho g z_0
+  =\frac{(0.0025)^2\cdot 920\cdot 9.81\cdot 0.30}
+        {8\cdot 0.1\cdot 0.10}
+  \approx \qty{0.21}{m/s}\;.
+\end{equation}
+
+\textbf{e) Warum quadratische Terme entfallen; lineare DGL und Halbzeit.}
+Dynamischer Druck $\tfrac\rho2 \bar u^2\approx \tfrac{920}{2}(0.21)^2
+\approx\qty{20}{Pa}$ gegen hydrostatisch $\rho g z_0\approx\qty{2710}{Pa}$ —
+Faktor $\sim100$ kleiner, also $\tfrac\rho2 v^2$ vernachlässigbar. Dann gilt
+linear $\bar u(z)=\frac{r_2^2}{8\eta l}\rho g\, z\equiv C z$ mit
+$C=\frac{\bar u(t{=}0)}{z_0}=\frac{0.21}{0.30}=\qty{0.71}{s^{-1}}$.
+Kontinuität ergibt
+\begin{equation}
+  \dot z=-\frac{r_2^2}{r_1^2}\,C\,z
+  \;\Rightarrow\;
+  z(t)=z_0\,e^{-k t},\qquad
+  k=\frac{r_2^2}{r_1^2}\,C=6.25\times10^{-4}\cdot 0.71
+    \approx 4.4\times10^{-4}\,\mathrm{s^{-1}}\;.
+\end{equation}
+Halbentleerung:
+\begin{equation*}
+  t_{\tfrac12}=\frac{\ln 2}{k}\approx\frac{0.693}{4.4\times10^{-4}}
+  \approx \qty{1570}{s}\approx\qty{26}{min}.
+\end{equation*}
+
+\begin{ergebnis}
+\begin{equation*}
+  v_2=\sqrt{2gz}\;;\quad
+  \dot z=-\frac{r_2^2}{r_1^2}\sqrt{2gz},\ z(0)=z_0\;;\quad
+  t_{\tfrac12}^{\mathrm{ideal}}\approx\qty{116}{s}\;;\quad
+  \bar u(0)\approx\qty{0.21}{m/s}\;;\quad
+  t_{\tfrac12}^{\mathrm{Reib}}\approx\qty{26}{min}.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $t_{\tfrac12}$
+$\to\sqrt{m}/(m^2/m^2\cdot \sqrt{m/s^2}\,\mathrm{s})$, richtig $\mathrm{s}$;
+$k$ in $\mathrm{s^{-1}}$, $\ln2/k$ in $\mathrm{s}$. \checkmark
+
+\textbf{Grenzfall/Querprobe:} Ideal $t_{\tfrac12}\propto\sqrt{z_0}$ (längere
+Säule → länger), reibend $t_{\tfrac12}\propto 1/\eta$ (zäher → viel länger);
+mit Reibung deutlich länger als ideal — physikalisch sinnvoll.
+
+\textbf{Größenordnung:} Ohne Reibung ~2 min, mit dem dünnen Rohr ~26 min —
+plausibel für Ausströmen durch eine 2.5-mm-Kapillare.
+\end{kontrolle}
+
+\begin{merksatz}
+Eine Entleerungsaufgabe läuft immer auf eine DGL aus Kontinuität
+$A_1\dot z=-A_2 v_2(z)$ hinaus; Torricelli liefert eine $\sqrt z$-DGL
+(Integral über $1/\sqrt z$), Hagen-Poiseuille eine lineare (Exponentiallösung).
+Ob der dynamische Term zählt, entscheidet der Vergleich
+$\rho v^2/2$ gegen $\rho g z$.
+\end{merksatz}

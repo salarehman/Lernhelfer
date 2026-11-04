@@ -1,0 +1,68 @@
+% titel: Kanal
+% skript: Kap. Hydrodynamik
+
+% Eine leicht geneigte, offene Ölrinnen (sehr breit) wird von einer
+% gravitationsgetriebenen Schichtenströmung durchflossen. Gefragt sind die
+% Bedeutung der Reynoldszahl, das Oberflächen-Geschwindigkeitsprofil und die
+% Reynoldszahl der Strömung (laminar oder turbulent?).
+
+Eine sehr breite, leicht geneigte Rinne der Tiefe $d$ wird von Öl durchströmt
+(seitliche Reibung vernachlässigbar). Gesucht sind die Charakteristik der
+Reynoldszahl, das Geschwindigkeitsprofil an der Oberfläche und die
+Reynoldszahl der Strömung.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Reynoldszahl:} dimensionsloses Verhältnis von Trägheits- zu
+Viskosenkräften,
+\begin{equation}
+  \mathrm{Re}=\frac{\rho\, \bar v\, L}{\eta}\;,
+\end{equation}
+$\bar v$ = mittlere Geschwindigkeit, $L$ = charakteristische Länge (hier die
+Tiefe $d$). Sie entscheidet, ob die Strömung laminar oder turbulent ist
+(laminar für kleine $\mathrm{Re}$, turbulent ab $\sim$Kritischer Zahl).
+
+\textbf{Geschwindigkeitsprofil einer Schichtenströmung:} Die Newtonsche
+Viskositätsbeziehung $F_R=\eta A\,\mathrm dv/\mathrm dy$ (Schubspannung
+$\tau=\eta\,\mathrm dv/\mathrm dy$) wird mit den antreibenden Kräften
+gleichgesetzt. Bei geneigter, gravitationsgetriebener Strömung treibt die
+Hangabtriebskomponente $\rho g A (d-y)\sin\alpha$ die darüberliegende Schicht
+an, was nach Integration ein parabelförmiges Profil liefert,
+\begin{equation}
+  v(y)=\frac{\rho g\sin\alpha}{\eta}\Big(d\,y-\frac{y^2}{2}\Big)\;,
+  \qquad \text{mit } v(0)=0\ \Rightarrow\
+  v(d)=\frac{\rho g\sin\alpha\, d^2}{2\eta}\;.
+\end{equation}
+
+\textbf{Mittlere Geschwindigkeit (Parabelprofil):}
+\begin{equation}
+  \bar v=\frac{1}{d}\int_0^d v(y)\,\mathrm dy
+  =\frac{2}{3}\,v(d)\;.
+\end{equation}
+
+\textbf{Einheiten:} $\eta$ in \unit{\pascal\second}, $\rho$ in
+\unit{\kilogram\per\cubic\metre}, $g\approx\qty{9.81}{m/s^2}$; $\sin\alpha$
+dimensionslos.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+\begin{enumerate}
+  \item (a) Reynoldszahl definieren und ihre Bedeutung benennen.
+  \item (b) Schubspannungsgleichgewicht für eine lamellare Schicht
+       aufstellen, nach $\mathrm dv/\mathrm dy$ auflösen, mit $v(0)=0$
+       integrieren — Ergebnis ist das Profil, an der Oberfläche $y=d$.
+  \item (c) Mittlere (über die Tiefe gemittelte) Geschwindigkeit bilden, in
+       $\mathrm{Re}$ einsetzen, mit der kritischen Zahl vergleichen.
+\end{enumerate}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $\sin\alpha$ aus der Höhendifferenz $\Delta h$ über die Länge $L$:
+       $\sin\alpha\approx \Delta h/L$ (kleine Neigung).
+  \item Mittlere Geschwindigkeit $\neq$ Profil an der Oberfläche: für ein
+       Parabelprofil ist $\bar v=\frac23 v(d)$.
+  \item Viskosität umrechnen ($\mathrm{mPa\,s}\to\mathrm{Pa\,s}$); Dichte in
+       $\mathrm{kg/m^3}$ (nicht $\mathrm{kg/l}$).
+  \item $d$ als charakteristische Länge, nicht die Rinnenbreite.
+\end{itemize}
+\end{achtung}

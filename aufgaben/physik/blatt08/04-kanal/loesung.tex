@@ -1,0 +1,87 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Öldichte $\rho=\qty{900}{kg/m^3}$ (aus dem Blatt),
+Höhendifferenz $\Delta h=\qty{0.8}{cm}$ auf $L=\qty{10}{m}$,
+Tiefe $d=\qty{6}{cm}$, $g=\qty{9.81}{m/s^2}$. Die Viskosität $\eta$ des Öls
+ist auf dem eingescannten Blatt \emph{nicht lesbar} (siehe Merksatz unten).
+Gesucht: (a) Bedeutung von $\mathrm{Re}$; (b) $\mathrm v(d)$; (c)
+$\mathrm{Re}$ und laminar/turbulent.
+
+\subsection*{Ansatz}
+(a) Konzeptfrage. (b) Gleichgewicht Schubspannung $\leftrightarrow$
+Hangabtrieb für eine Schicht. (c) Mittelwert + Definitionsformel, Zahlen
+soweit verfügbar.
+
+\subsection*{Rechnung}
+\textbf{a)}\quad$\mathrm{Re}=\rho\bar v d/\eta$ charakterisiert das Verhältnis
+Trägheits- zu Viskosenkräften und damit den Übergang laminar/turbulent.
+
+\textbf{b) Profil und Oberflächengeschwindigkeit.} Für eine Schicht der Dicke
+$d-y$ mit Grundfläche $A$ gilt im stationären Fall: Reibungskraft
+$F_R=\eta A \frac{\mathrm dv}{\mathrm dy}$ gleich der Hangabtriebskraft
+$\rho g A(d-y)\sin\alpha$. Kürzen von $A$, auflösen und integrieren
+($v(0)=0$):
+\begin{equation}
+  \eta\frac{\mathrm dv}{\mathrm dy}=\rho g (d-y)\sin\alpha
+  \;\Rightarrow\;
+  v(y)=\frac{\rho g\sin\alpha}{\eta}\Big(d\,y-\frac{y^2}{2}\Big)\;.
+\end{equation}
+An der Oberfläche $y=d$:
+\begin{equation}
+  v(d)=\frac{\rho g\sin\alpha\, d^2}{2\,\eta}\;.
+\end{equation}
+(macht die geforderte Formel plausibel.) Neigung:
+$\sin\alpha\approx\frac{0.008}{10}=8\times10^{-4}$.
+
+\textbf{c) Reynoldszahl.} Mittelwert des Parabelprofils:
+\begin{equation}
+  \bar v=\frac{2}{3}v(d)
+  =\frac{\rho g\sin\alpha\, d^2}{3\,\eta}\;,\qquad
+  \mathrm{Re}=\frac{\rho\,\bar v\,d}{\eta}
+  =\frac{\rho^2 g\sin\alpha\, d^3}{3\,\eta^2}\;.
+\end{equation}
+Mit den gegebenen Werten:
+\begin{equation}
+  \mathrm{Re}
+  =\frac{(900)^2\cdot 9.81\cdot 8\times10^{-4}\cdot(0.06)^3}{3\,\eta^2}
+  \approx \frac{4.57\times10^{4}\ \mathrm{Pa^2\,s^{-2}}}{\eta^2}\;.
+\end{equation}
+Ohne den Zahlenwert der Viskosität $\eta$ lässt sich $\mathrm{Re}$ nicht
+abschliessend bewerten; für typische Öle ($\eta\approx10^{-1}\,$--$10^1\,
+\mathrm{Pa\,s}$) ergäbe sich laminare Strömung — das ist aber die
+anzugebende Zahlenaussage.
+
+\begin{ergebnis}
+\begin{equation*}
+  v(d)=\frac{\rho g\sin\alpha\, d^2}{2\eta}\;,\quad
+  \bar v=\frac23 v(d)\;,\quad
+  \mathrm{Re}=\frac{\rho\,\bar v\,d}{\eta}
+  =\frac{\rho^2 g\sin\alpha\, d^3}{3\eta^2}\;.
+\end{equation*}
+Der finale Zahlenwert von $\mathrm{Re}$ (und damit die laminar/turbulent-
+Aussage) benötigt $\eta$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $v(d)$:
+$\frac{kg/m^3\cdot m/s^2\cdot m^2}{Pa\cdot s}
+=\frac{kg\,m^2/s^2}{kg/(m\,s^2)\,\cdot s}=m/s$. \checkmark
+
+\textbf{Querprobe:} $v(d)\propto\sin\alpha$ — stärkere Neigung, schneller;
+$\bar v=\frac23 v(d)$ korrekt für Parabel (nicht für lineares Profil).
+
+\textbf{Größenordnung:} Mit $d=6\,\mathrm{cm}$ und kleiner Neigung erwartet
+man Oberflächengeschwindigkeiten im Bereich weniger
+$\mathrm{cm/s}$ bei typischer Ölviskosität — langsame, stratifizierte
+Strömung.
+\end{kontrolle}
+
+\begin{merksatz}
+\textbf{Nicht lesbarer Wert:} Die Viskosität $\eta$ für Aufgabe A4 ist auf
+dem eingescannten Blatt nicht lesbar (OCR konnte sie nicht auflösen). Die
+Formeln und der Rechenweg sind vollständig; setze den Zahlenwert von $\eta$
+aus dem Original ein, um $\mathrm{Re}$ zu einem konkreten Wert zu bringen.
+Die allgemeine Aussage bleibt: kleine Neigung und hohe Viskosität
+$\Rightarrow$ laminar.
+\end{merksatz}

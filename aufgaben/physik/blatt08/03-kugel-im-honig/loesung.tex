@@ -1,0 +1,61 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $r=\qty{2}{mm}=\qty{2e-3}{m}$, $m=\qty{0.263}{g}=\qty{2.63e-4}{kg}$,
+$\eta_{\text{Honig}}=\qty{10}{Pa\,s}$,
+$\rho_f=\qty{1.4}{kg/L}=\qty{1400}{kg/m^3}$, $g=\qty{9.81}{m/s^2}$.
+Gesucht: (a) Kräfte, (b) Zeit bis $v=0.99\,v_\infty$.
+
+\subsection*{Ansatz}
+Lineare (Stoke'sche) Reibung $\Rightarrow$ DGL $\dot v=A-Bv$; Endwert
+$v_\infty=A/B$, Einschwingzeit durch die Lösung $v(t)=v_\infty(1-e^{-Bt})$.
+
+\subsection*{Rechnung}
+\textbf{a) Kräfte}\quad $F_g$ (Gewicht, abwärts), $F_A=\rho_f V g$
+(Auftrieb, aufwärts), $F_R=6\pi\eta r v$ (Stokes, aufwärts).
+
+\textbf{b) Zeitskala.} Volumen
+$V=\frac43\pi r^3=\frac43\pi(2\times10^{-3})^3\approx 3.35\times10^{-8}\,\mathrm{m^3}$.
+\begin{align}
+  A&=g\Big(1-\frac{\rho_f V}{m}\Big)
+  =\ qty{9.81}{m/s^2}\Big(1-\frac{1400\cdot 3.35e-8}{2.63e-4}\Big)\\
+    &\approx 9.81\big(1-0.178\big)\approx \qty{8.06}{m/s^2}\;,\\
+  B&=\frac{6\pi\eta r}{m}
+  =\frac{6\pi\cdot 10\cdot 2\times10^{-3}}{2.63\times10^{-4}}
+  \approx 1.43\times10^{3}\,\mathrm{s^{-1}}\;.
+\end{align}
+Mit $v(0)=0$: $v(t)=v_\infty(1-e^{-Bt})$. Forderung $v=0.99\,v_\infty$:
+\begin{equation}
+  1-e^{-Bt_*}=0.99\;\Rightarrow\;
+  e^{-Bt_*}=0.01\;\Rightarrow\;
+  t_*=\frac{\ln 100}{B}\;.
+\end{equation}
+
+\begin{ergebnis}
+\begin{equation*}
+  v_\infty=\frac{A}{B}\approx\frac{8.06}{1.43\times10^{3}}
+  \approx \qty{5.6}{mm/s}\;,\qquad
+  t_*=\frac{\ln 100}{1.43\times10^{3}}
+  \approx\qty{3.2}{ms}\;.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $B=6\pi\eta r/m$:
+$\frac{Pa\,s\cdot m}{kg}=\frac{kg\,m\,s}{s^2\,m^2}\cdot\frac{m}{kg}
+=\mathrm{s^{-1}}$; $t_*=\ln100/B$ in $\mathrm{s}$. \checkmark
+
+\textbf{Grenzfall/Querprobe:} $v_\infty\propto (m-\rho_fV)/\eta$: schwerere
+Kugel, weniger zähes Medium $\Rightarrow$ grössere Endgeschwindigkeit.
+$t_*\propto m/(\eta r)$: kleiner $r$ $\Rightarrow$ schnelleres Einschwingen.
+Beides plausibel.
+
+\textbf{Größenordnung:} mm/s-Endgeschwindigkeit in zähem Honig und
+ms-Einschwingzeit — typisch für Stokes.
+\end{kontrolle}
+
+\begin{merksatz}
+Lineare Reibung erzeugt stets eine RelaXierung $v\to v_\infty$ mit
+Zeitkonstante $\tau=1/B$; die Zeit bis zum Bruchteil $p$ ist
+$t_*=\ln\big(1/(1-p)\big)/B$, unabhängig von $v_\infty$.
+\end{merksatz}
