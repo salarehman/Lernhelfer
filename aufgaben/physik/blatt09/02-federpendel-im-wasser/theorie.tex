@@ -1,0 +1,73 @@
+% titel: Federpendel im Wasser
+% skript: Kap. Schwingungen
+
+% Kugel an Feder im Wasserbad: statische Dehnung (Auftrieb), Stokes-Reibung,
+% gedämpfte Schwingung, Periodizitätsbedingung, Energiedissipation,
+% getriebener Oszillator.
+
+Eine Kugel hängt an einer Feder und schwingt ganz in Wasser
+(Auftrieb + Stokes-Reibung berücksichtigt; die Ruhelage ist der neue
+Gleichgewichtspunkt um die Dehnung $x_R$).
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Statisches Gleichgewicht} an der Feder (Kraft = Gewicht minus
+Auftrieb), Kugelvolumen $V=\frac43\pi R^3$:
+\begin{equation}
+  D\,x_R=(m g-F_A),\qquad F_A=\rho_{\mathrm W}V g\;,
+  \quad m=\rho_{\mathrm K}V\;.
+\end{equation}
+
+\textbf{Stoke'sche Reibung} (laminare Kugelumströmung):
+\begin{equation}
+  F=-\alpha\, v\;,\qquad \alpha=6\pi\eta R\;.
+\end{equation}
+
+\textbf{Gedämpfte Schwingung} um die Ruhelage ($\ddot x$ relativ zur Ruhelage):
+\begin{equation}
+  \ddot x+2\beta\,\dot x+\omega_0^2 x=0,\qquad
+  \omega_0=\sqrt{\tfrac{D}{m}},\quad
+  \beta=\frac{\alpha}{2m}=\frac{3\pi\eta R}{m}\;.
+\end{equation}
+\textbf{Periodisch} (unterkritisch) genau dann, wenn $\beta<\omega_0$;
+überkritisch ($\beta>\omega_0$) gibt es keine Schwingung.
+
+\textbf{Energie} bei schwacher Dämpfung: $E(t)\approx E_0\,e^{-2\beta t}$;
+Verlust pro Periode $\approx 2\beta T$.
+
+\textbf{Getriebener Oszillator} mit Bewegung $z(t)$ der Aufhängung:
+\begin{equation}
+  \ddot x+2\beta\,\dot x+\omega_0^2 x=\omega_0^2 z(t)\;.
+\end{equation}
+Amplitudenverhältnis und Phase bei Kreisfrequenz $\omega$:
+\begin{equation}
+  \frac{x_0}{z_0}=\frac{\omega_0^2}{\sqrt{(\omega_0^2-\omega^2)^2+(2\beta\omega)^2}},
+  \qquad \tan\delta=\frac{2\beta\omega}{\omega_0^2-\omega^2}\;.
+\end{equation}
+
+\textbf{Einheiten:} $\alpha$ in \unit{\kilogram\per\second},
+$\eta$ in \unit{\pascal\second}, $\beta,\omega$ in \unit{\per\second}.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Statik: Dehnung aus Kraftgleichgewicht --- Auftrieb nicht vergessen.
+  \item Reibungskoeffizient bei Kugeln laminar direkt $\alpha=6\pi\eta R$.
+  \item Bewegungsgleichung um die (neue) Ruhelage schreiben, dann $\omega_0$
+       und $\beta$ ablesen.
+  \item Periodizität: $\beta<\omega_0$; dabei $m$ als Funktion von $R$ einsetzen.
+  \item Energiefrage: $E\propto e^{-2\beta t}$; im Ansatz für das getriebene
+       Pendel die Aufhängung $z(t)$ als Inhomogenität.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Auftrieb nutzt die \emph{Wasser}-Dichte, nicht die Kugeldichte.
+  \item $m$ der Kugel hängt von $R^3$ ab --- bei der Periodizitätsbedingung
+       nicht als Konstante behandeln.
+  \item Die Ruhelage unter Wasser (um die gedehnte Feder) ist der Ursprung;
+       die Schwingung ist \emph{relativ} zu ihr.
+  \item Phasendifferenz: bei Resonanz läuft die Auslenkung der Anregung um
+       $\pi/2$ nach.
+\end{itemize}
+\end{achtung}

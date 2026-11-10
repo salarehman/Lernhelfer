@@ -1,0 +1,72 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Rechnung}
+\textbf{a) Periodendauer.} Die Reihe benutzt Basisfunktionen $\cos(nt)$,
+$\sin(nt)$ mit ganzzahligem $n$; die Grundfrequenz ist $n=1$, also
+\begin{equation}
+  \boxed{\;T=2\pi\;}.
+\end{equation}
+
+\textbf{b) $f(t)=\cos(2t)\,\sin(3t)$.} Mit der Produkt-zu-Summe-Formel:
+\begin{equation}
+  \cos(2t)\sin(3t)=\tfrac12\big[\sin(3t+2t)-\sin(3t-2t)\big]
+  =\tfrac12\sin(5t)-\tfrac12\sin(t)\;.
+\end{equation}
+Jeder Term ist bereits eine Basisfunktion:
+\begin{equation}
+  a_0=a_n=0,\qquad
+  \boxed{\;b_1=-\tfrac12,\quad b_5=+\tfrac12\;},\quad
+  \text{alle übrigen }b_n=0\;.
+\end{equation}
+
+\textbf{c) $f(t)=\cos(2t)+\sin(3t)$.} Direkt ablesbar:
+\begin{equation}
+  \boxed{\;a_2=1,\qquad b_3=1\;},\qquad
+  a_0=0,\; \text{alle anderen }a_n=b_n=0\;.
+\end{equation}
+
+\textbf{d) $f(t)=\cos(2t)+\cos(t/\pi)$.}
+$\cos(2t)$ liefert sofort $a_2=1$. Der Term $\cos(t/\pi)$ hat die Periode
+$2\pi^2$: Das Verhältnis zur Grundperiode $2\pi$ ist $\pi$ (irrational),
+die Frequenz $1/\pi$ ist \emph{kein ganzzahliges Vielfaches} von $1$. Deshalb
+lässt sich $\cos(t/\pi)$ durch die $2\pi$-Basis \emph{nicht endlich} darstellen;
+seine Anteile streuen auf alle Koeffizienten:
+\begin{equation}
+  a_n^{\,\mathrm{inkom}}
+  =\frac1\pi\int_0^{2\pi}\cos\!\big(\tfrac{t}{\pi}\big)\cos(nt)\,\mathrm dt
+  \neq 0 \quad(\forall n),\qquad
+  b_n=0\;.
+\end{equation}
+Zusammengefasst:
+\begin{equation}
+  \boxed{\;a_2=1,\quad a_n=\frac1\pi\int_0^{2\pi}\cos\!\big(\tfrac{t}{\pi}\big)
+  \cos(nt)\,\mathrm dt\ \text{für alle }n\neq2,\quad a_0=0,\ b_n=0\;}.
+\end{equation}
+Die eigentliche Aussage von (d): Nicht jede Funktion ist durch eine
+gegebene Fourier-Basis mit \emph{ganzzahligen} Frequenzen darstellbar ---
+frequenzinkommensurable Anteile brauchen unendlich viele (kleine) Terme.
+
+\begin{ergebnis}
+(a) $T=2\pi$; (b) $b_1=-\tfrac12$, $b_5=+\tfrac12$;
+(c) $a_2=1$, $b_3=1$; (d) $a_2=1$, der $\cos(t/\pi)$-Anteil ist inkommensurabel
+und für alle $n$ über die angegebenen Integrale bestimmt.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Querprobe (b):} Rückeinsetzen $-\tfrac12\sin t+\tfrac12\sin5t
+=\tfrac12(\sin5t-\sin t)=\cos2t\,\sin3t$ --- korrekt. \checkmark
+
+\textbf{(c):} Die Summe ist bereits ihre eigene Reihe --- konsistent mit
+$a_2=1$, $b_3=1$. \checkmark
+
+\textbf{(d):} Mit $n=1$ ist $\cos t\cos(t/\pi)$ über $[0,2\pi]$ nicht
+orthogonal zu null, also $a_1\neq0$ --- wie erwartet für eine inkommensurable
+Frequenz.
+\end{kontrolle}
+
+\begin{merksatz}
+Wenn $f$ bereits als Summe von Basisfunktionen $\cos(nt)$/$\sin(nt)$ vorliegt,
+liest man die Koeffizienten direkt ab; nur Frequenzen, die zur Periode
+inkommensurabel sind (kein ganzzahliges Vielfaches der Grundfrequenz),
+machen echte Integral-Rechnung nötig.
+\end{merksatz}

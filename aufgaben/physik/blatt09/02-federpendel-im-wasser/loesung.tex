@@ -1,0 +1,111 @@
+% Teil II: durchgerechneter Weg, Teile a--g.
+
+\subsection*{Gegeben und gesucht}
+Kugel $R$, $\rho_{\mathrm K}$ an Feder $D$, in Wasser ($\rho_{\mathrm W}$,
+Viskosität $\eta$). Gesucht: (a) $x_R$, (b) $\alpha$, (c) DGL, $\omega_0$,
+$\beta$, (d) $R$ für periodische Schwingung, (e) Energieverlust pro Oszillation,
+(f) DGL des getriebenen Systems, (g) $x_0/z_0$ und Phase bei $\omega_0$.
+
+\subsection*{Ansatz}
+(a) Kräftegleichgewicht in Ruhe (mit Auftrieb). (b) Stoke'sche Kugelreibung.
+(c) DGL um die Ruhelage, $\omega_0^2=D/m$, $\beta=\alpha/2m$. (d) unterkritisch
+$\beta<\omega_0$ mit $m=\frac43\pi R^3\rho_{\mathrm K}$. (e) $E(t)=E_0e^{-2\beta t}$.
+(f)--(g) getriebener Oszillator mit $z(t)$; Ausschwingverhalten aus der
+Übertragungsfunktion bei $\omega_0$.
+
+\subsection*{Rechnung}
+\textbf{a) Statische Dehnung.} Gewicht $-$ Auftrieb $=$ Federkraft:
+\begin{equation}
+  D\,x_R=\rho_{\mathrm K}Vg-\rho_{\mathrm W}Vg
+  =(\rho_{\mathrm K}-\rho_{\mathrm W})\,\tfrac43\pi R^3\,g
+  \;\Rightarrow\;\boxed{\,x_R=\frac{(\rho_{\mathrm K}-\rho_{\mathrm W})\tfrac43\pi R^3 g}{D}\;}.
+\end{equation}
+
+\textbf{b) Reibungskoeffizient (laminar).} Stokessche Kugelformel:
+\begin{equation}
+  \boxed{\;\alpha=6\pi\eta R\;},\qquad F=-\alpha v\;.
+\end{equation}
+
+\textbf{c) Bewegungsgleichung und Kenngrößen.} Um die Ruhelage (Auftrieb und
+$G$ heben sich auf):
+\begin{equation}
+  m\,\ddot x=-D\,x-\alpha\,\dot x
+  \;\Rightarrow\;
+  \boxed{\;\ddot x+2\beta\,\dot x+\omega_0^2 x=0\;},
+  \qquad
+  \boxed{\;\omega_0=\sqrt{\frac{D}{m}}\;},\quad
+  \boxed{\;\beta=\frac{\alpha}{2m}=\frac{3\pi\eta R}{m}\;}.
+\end{equation}
+
+\textbf{d) Periodizitätsbedingung.} Unterkritisch $\beta<\omega_0$. Mit
+$m=\frac43\pi R^3\rho_{\mathrm K}$:
+\begin{equation}
+  \frac{3\pi\eta R}{m}<\sqrt{\frac{D}{m}}
+  \;\Longleftrightarrow\;
+  9\pi^2\eta^2 R^2<D\,m=\frac43\pi\rho_{\mathrm K}D\,R^3
+  \;\Rightarrow\;
+  \boxed{\;R>\frac{27\,\pi\,\eta^2}{4\,\rho_{\mathrm K}D}\;}.
+\end{equation}
+Zu kleine Kugeln ($\beta>\omega_0$) kriechen aperiodisch; ab einem
+Mindestradius $R_{\min}=27\pi\eta^2/(4\rho_{\mathrm K}D)$ schwingt das Pendel.
+
+\textbf{e) Energieverlust in der ersten Oszillation (schwache Dämpfung).}
+$E(t)=E_0e^{-2\beta t}$; nach einer Periode $T_0\approx2\pi/\omega_0$:
+\begin{equation}
+  \frac{\Delta E}{E_0}=1-e^{-2\beta T_0}
+  \;\approx\;\boxed{\;2\beta T_0\;}
+  \qquad(\text{klein für } \beta T_0\ll1)\;.
+\end{equation}
+
+\textbf{f) Getriebenes System.} Aufhängung bewegt sich um $z(t)$; die
+Federkraft ist $-D(x-z)$, die Reibung $- \alpha\dot x$ (Wasser ruht):
+\begin{equation}
+  m\,\ddot x=-D(x-z)-\alpha\,\dot x
+  \;\Longrightarrow\;
+  \boxed{\;\ddot x+2\beta\,\dot x+\omega_0^2 x=\omega_0^2\, z(t)\;}.
+\end{equation}
+
+\textbf{g) Resonanz: Amplituden- und Phasenverhältnis.} Mit $z(t)=z_0e^{i(\omega_0 t+\varphi)}$
+und $x(t)=x_0e^{i\omega_0t}$ ist die Übertragungsfunktion bei $\omega=\omega_0$:
+\begin{equation}
+  H(\omega_0)=\frac{x_0}{z_0}=
+  \frac{\omega_0^2}{\omega_0^2-\omega_0^2+2i\beta\omega_0}
+  =\frac{\omega_0}{2\beta}\,e^{-i\pi/2}\;,
+\end{equation}
+also
+\begin{equation}
+  \boxed{\;\frac{x_0}{z_0}=\frac{\omega_0}{2\beta}=Q\;},\qquad
+  \boxed{\;\text{Phasendifferenz }\delta=\frac{\pi}{2}\;}
+  \quad(\text{Auslenkung hinkt der Anregung nach}).
+\end{equation}
+Mit $\beta=\frac{9\pi\eta}{4\rho_{\mathrm K}R^2}\propto R^{-2}$ wird für
+\emph{größeres} $R$ die Dämpfung kleiner und damit $Q$ größer; für dieselbe
+Auslenkung $x_0$ braucht man dann eine \boxed{\;\emph{kleinere}\;} Amplitude $z_0$.
+
+\begin{ergebnis}
+$x_R=\frac{(\rho_{\mathrm K}-\rho_{\mathrm W})Vg}{D}$, $\alpha=6\pi\eta R$,
+$\omega_0=\sqrt{D/m}$, $\beta=3\pi\eta R/m$,
+$R>27\pi\eta^2/(4\rho_{\mathrm K}D)$,
+$\Delta E/E_0\approx2\beta T_0$,
+$\ddot x+2\beta\dot x+\omega_0^2x=\omega_0^2 z$,
+$x_0/z_0=\omega_0/2\beta$, $\delta=\pi/2$; größeres $R\Rightarrow$ kleineres $z_0$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $x_R$: $\dfrac{\mathrm{kg/m^3\cdot m^3\cdot m/s^2}}{N/m}=\dfrac{\mathrm{kg\,m\,s^{-2}}}{N/m}=\mathrm{m}$. \checkmark
+$\alpha=6\pi\eta R$: $\mathrm{Pa\,s\cdot m}=kg/s$ --- es ist $[F]=[\alpha][v]$, also
+$[\alpha]=[F]/[v]=\tfrac{kg\,m/s^2}{m/s}=kg/s$. \checkmark
+$R_{\min}$: $\dfrac{\eta^2}{\rho D}$:
+$\dfrac{(kg\,m^{-1}s^{-1})^2}{kg/m^3\cdot kg\,s^{-2}}=\mathrm m$. \checkmark
+
+\textbf{Grenzfall:} $\eta\to0\Rightarrow R_{\min}\to0$: beliebige Kugel schwingt
+ungedämpft --- plausibel. $Q=\omega_0/2\beta$: große $Q$ $\Leftrightarrow$
+schwache Dämpfung, große Resonanzüberhöhung. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Die Periodizitätsbedingung $\beta<\omega_0$ ist hier eine \emph{Minimal-}Bedingung
+an $R$, weil die Kugelmasse mit $R^3$ wächst: mehr Masse überwiegt die
+lineare Stokes-Reibung. Bei Resonanz ist die Auslenkung um $\pi/2$ verzögert
+und um $Q=\omega_0/2\beta$ überhöht.
+\end{merksatz}

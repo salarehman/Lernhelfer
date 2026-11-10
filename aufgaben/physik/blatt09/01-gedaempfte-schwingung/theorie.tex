@@ -1,0 +1,56 @@
+% titel: Gedämpfte Schwingung
+% skript: Kap. Schwingungen
+
+% Gedämpfte harmonische Schwingung: Amplitude nimmt exponentiell ab
+% (logarithmisches Dekrement), Energie quadratisch.
+
+Eine gedämpfte harmonische Schwingung: die Amplitude klingt exponentiell ab,
+die Schwingungsfrequenz ist gegenüber der ungedämpften leicht erniedrigt.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{DGL der gedämpften Schwingung} (mit Masse $m$, Dämpfer $c$, Feder $D$,
+$\beta=c/2m$, $\omega_0^2=D/m$):
+\begin{equation}
+  \ddot x + 2\beta\,\dot x + \omega_0^2 x = 0
+  \qquad\Rightarrow\qquad
+  x(t)=A\,e^{-\beta t}\cos(\omega' t+\varphi), \quad
+  \omega'=\sqrt{\omega_0^2-\beta^2}\;.
+\end{equation}
+
+\textbf{Logarithmisches Dekrement} $\Lambda$ (Verhältnis zweier aufeinander
+folgender Maxima im Abstand $T=2\pi/\omega'$):
+\begin{equation}
+  \Lambda=\ln\frac{x(t)}{x(t+T)}=\beta T\;.
+\end{equation}
+
+\textbf{Amplituden-Abfall über $n$ Perioden:}
+\begin{equation}
+  x(t_0+nT)=x(t_0)\,e^{-n\beta T}=x(t_0)\,e^{-n\Lambda}\;.
+\end{equation}
+
+\textbf{Energie} (proportional zu $x^2$ bzw.\ $v^2$): $E(t)=E_0e^{-2\beta t}$.
+
+\textbf{Einheiten:} $\beta,\omega'$ in \unit{\per\second}, $T$ in
+\unit{\second}, $\Lambda$ dimensionslos.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Aus der Abnahme über $n$ Perioden sofort $\beta T=n^{-1}\ln(x_0/x_n)$;
+       das ist bereits $\Lambda$.
+  \item $T$ erst aus der gegebenen Schwingungsfrequenz $f=1/T$ berechnen, dann
+       $\beta=\Lambda/T$.
+  \item Für einen Zeitpunkt setzt man $x(t)=0.7\,x_0$ und löst
+       $e^{-\beta t}=0.7$ (Wachstumsgrößen umformen: $t=-\ln(0.7)/\beta$).
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $\Lambda$ ist ein \emph{Verhältnis pro Periode} (dimensionslos), nicht
+       pro Zeit --- erst mit $T$ wird daraus $\beta$.
+  \item $f$ ist die Schwingungsfrequenz, nicht die Kreisfrequenz; $T=1/f$.
+  \item ``auf die Hälfte'' nach $n$ Perioden hei\ss t
+       $e^{-n\beta T}=\tfrac12$, also $n\Lambda=\ln 2$.
+\end{itemize}
+\end{achtung}

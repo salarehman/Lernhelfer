@@ -1,0 +1,61 @@
+% titel: Gekoppelte Pendel
+% skript: Kap. Schwingungen
+
+% Zwei gleiche Federpendel, durch Feder k gekoppelt; Entkopplung in
+% Normalschwingungen (symmetrisch/antisymmetrisch), Energietransfer.
+
+Zwei gleiche Oszillatoren, durch eine Koppelfeder verbunden: Die Bewegung ist
+eine Überlagerung zweier Normalschwingungen, in denen beide Massen mit
+derselben Frequenz schwingen.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Bewegungsgleichungen} (Kräfte der Koppelfeder beachten):
+\begin{equation}
+  m\,\ddot x_1=-D\,x_1+k(x_2-x_1),\qquad
+  m\,\ddot x_2=-D\,x_2-k(x_2-x_1)\;.
+\end{equation}
+
+\textbf{Normalkoordinaten}:
+\begin{equation}
+  y_\pm\equiv\tfrac12(x_1\pm x_2)
+  \;\Rightarrow\;
+  \ddot y_++\omega_+^2 y_+=0,\quad
+  \ddot y_--+\omega_-^2 y_-=0,
+\end{equation}
+mit $\omega_+=\sqrt{D/m}$ (gleichphasig, Koppelfeder ungedehnt) und
+$\omega_-=\sqrt{(D+2k)/m}$ (gegenphasig).
+
+\textbf{Lösung und Rücktransformation:}
+\begin{equation}
+  x_1=y_++y_-,\qquad x_2=y_+-y_-\;.
+\end{equation}
+Überlagerung zweier naher Frequenzen $\Rightarrow$ Schwebung: Die Energie
+schwappt zwischen den Oszillatoren hin und her mit der Differenzfrequenz
+$\omega_--\omega_+$.
+
+\textbf{Einheiten:} $\omega_\pm$ in \unit{\per\second}, $D,k$ in
+\unit{\newton\per\metre}.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Gleichungen aufstellen: Federkräfte der \emph{eigenen} Feder $D\,x_i$
+       plus Koppelfeder $k(x_2-x_1)$ mit Vorzeichen.
+  \item Summe und Differenz der Gleichungen bilden $\Rightarrow$
+       entkoppelte Gleichungen für $y_\pm$.
+  \item Anfangsbedingungen auf $y_\pm(0)$, $\dot y_\pm(0)$ übertragen;
+       Rücktransformieren liefert $x_1(t),x_2(t)$.
+  \item Energietransfer: nach der Differenz der Normalfrequenzen fragen.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Die Koppelfeder zieht an \emph{beiden} Massen: Kraft $+k(x_2-x_1)$
+       an Masse 1, $+k(x_1-x_2)=-k(x_2-x_1)$ an Masse 2.
+  \item $\omega_-\neq\omega_+$: Nur bei gleicher Masse und Feder sind beide
+       Pendel identisch.
+  \item Energietransfer-Frequenz ist $\omega_--\omega_+$, nicht $\omega_+$
+       oder $\omega_-$ allein.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,48 @@
+% titel: Schwebung
+% skript: Kap. Schwingungen
+
+% Schwebung zweier nahezu gleicher Frequenzen; Schwebungsfrequenz = Differenz.
+
+Zwei Töne mit nahe beieinanderliegenden Frequenzen erzeugen ein periodisches
+Lauter-/Leiserwerden --- die Schwebung. Die Zeit zwischen zwei Lautstärke-Maxima
+ist die halbe Schwebungsperiode.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Überlagerung} zweier Kosinus-Schwingungen gleicher Amplitude, nahe
+Frequenzen $f_1,f_2$ (mit Mittel $f_m=(f_1+f_2)/2$ und Differenz
+$\Delta f=|f_1-f_2|$):
+\begin{equation}
+  \cos(2\pi f_1t)+\cos(2\pi f_2t)
+  =2\cos(2\pi f_m t)\cos(\pi\,\Delta f\, t)\;.
+\end{equation}
+
+\textbf{Schwebungsfrequenz} $=$ Frequenz, mit der die \emph{Lautstärke}
+(Envelope $|\cos(\pi\Delta f\,t)|$) maximal wird:
+\begin{equation}
+  f_{\mathrm{Schwebung}}=\Delta f=|f_1-f_2|\;,
+  \qquad
+  T_{\mathrm{Maximum}}=\frac{1}{\Delta f}\;.
+\end{equation}
+Der Envelope hat die Periode $2/\Delta f$, die beiden Maxima pro Envelope
+liegen also $\Delta f^{-1}$ auseinander.
+
+\textbf{Einheiten:} Frequenzen in \unit{\hertz}, Zeiten in \unit{\second}.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Aus dem Abstand $T_{\max}$ zweier Lautstärke-Maxima direkt
+       $\Delta f=1/T_{\max}$.
+  \item Nicht mit der Mittelfrequenz verwechseln: Die Töne selbst schwingen
+       mit $\approx f_m$, hörbar wird nur die Envelope-Frequenz $\Delta f$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $T_{\max}$ ist der Abstand zweier Maxima, also $\Delta f^{-1}$
+       (nicht $2\Delta f^{-1}$, das wäre die Envelope-Periode).
+  \item $\Delta f$ ist stets die \emph{Differenz} der beiden Frequenzen,
+       unabhängig von der Tonhöhe.
+\end{itemize}
+\end{achtung}

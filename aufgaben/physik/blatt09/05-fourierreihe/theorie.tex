@@ -1,0 +1,58 @@
+% titel: Fourierreihe
+% skript: Kap. Fourier-Analyse
+
+% Fourierreihe periodischer Funktionen: Koeffizienten über Orthogonalität;
+% Erkennen von Termen bereits in der Basis, Inkommensurabilität.
+
+Periodische Funktionen werden in harmonische Anteile zerlegt:
+$f(t)=a_0+\sum_{n=1}^\infty\big[a_n\cos(nt)+b_n\sin(nt)\big]$.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Basis / Orthogonalität} über eine volle Periode $T=2\pi$:
+\begin{equation}
+  \int_0^{2\pi}\cos(mt)\cos(nt)\,\mathrm dt
+  =\pi\,\delta_{mn},\quad
+  \int_0^{2\pi}\sin(mt)\sin(nt)\,\mathrm dt
+  =\pi\,\delta_{mn},\quad
+  \int_0^{2\pi}\cos(mt)\sin(nt)\,\mathrm dt=0\;.
+\end{equation}
+
+\textbf{Koeffizienten}:
+\begin{equation}
+  a_0=\frac1{2\pi}\int_0^{2\pi}f(t)\,\mathrm dt,\qquad
+  a_n=\frac1\pi\int_0^{2\pi}f(t)\cos(nt)\,\mathrm dt,\qquad
+  b_n=\frac1\pi\int_0^{2\pi}f(t)\sin(nt)\,\mathrm dt .
+\end{equation}
+
+\textbf{Produkt-Regel} (nützlich für $f$ als Produkt):
+\begin{equation}
+  \cos(a)\sin(b)=\tfrac12\big[\sin(b+a)-\sin(b-a)\big]\;.
+\end{equation}
+
+\textbf{Einheiten:} $t$ dimensionslos bzw.\ die Argumente $nt$ in Radiant;
+$T=2\pi$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Periodendauer ablesen: Grundfunktion ist $\cos(t)$/$\sin(t)$,
+       $n=1$ $\Rightarrow$ $T=2\pi$.
+  \item Oft muss man nicht integrieren: Terme, die bereits von der Form
+       $\cos(nt)$/$\sin(nt)$ sind, sind ihre eigenen Koeffizienten.
+  \item Produkte mit Produkt-zu-Summe-Formel in Basisfunktionen zerlegen.
+  \item Vorsicht vor Frequenzen, die kein ganzzahliges Vielfaches der
+       Grundfrequenz sind (inkommensurabel) --- die lassen sich in dieser
+       Basis \emph{nicht} endlich darstellen.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $\cos(2t)\sin(3t)$ ist nicht von der Form $\cos(nt)$ --- erst
+       produkt-zu-summe zerlegen.
+  \item Ein Term wie $\cos(t/\pi)$ hat die Periode $2\pi^2$ und ist zur
+       $2\pi$-Basis inkommensurabel; er streut auf \emph{alle} Koeffizienten.
+  \item $a_0$ ist der Mittelwert über die Periode; für reine Sinus/Kosinus
+       ohne Offset ist $a_0=0$.
+\end{itemize}
+\end{achtung}

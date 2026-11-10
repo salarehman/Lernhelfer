@@ -1,0 +1,56 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+Nach $n=100$ Perioden ist die Amplitude auf die Hälfte abgesunken
+$x(100T)=\tfrac12 x(0)$; Schwingungsfrequenz $f=\qty{50}{Hz}$.
+Gesucht: (a) $\Lambda$, (b) $\beta$, (c) Zeit bis $x=0.7\,x_0$.
+
+\subsection*{Ansatz}
+Amplitudenverhältnis pro Periode: $x(t+T)=e^{-\Lambda}x(t)$; über $n$ Perioden
+also Faktor $e^{-n\Lambda}$. Aus ``Hälfte nach 100'' folgt $100\Lambda=\ln 2$.
+Mit $T=1/f$ erhält man $\beta=\Lambda/T$; der 70\,\%-Zeitpunkt folgt aus
+$e^{-\beta t}=0.7$.
+
+\subsection*{Rechnung}
+\textbf{a) Logarithmisches Dekrement.}
+\begin{equation}
+  x(100T)=\tfrac12 x(0)
+  \;\Rightarrow\;
+  e^{-100\Lambda}=\tfrac12
+  \;\Rightarrow\;
+  \boxed{\;\Lambda=\frac{\ln 2}{100}\approx6.93\times10^{-3}\;}.
+\end{equation}
+
+\textbf{b) Dämpfungskonstante.} Mit $T=1/f=\qty{0.02}{s}$:
+\begin{equation}
+  \beta=\frac{\Lambda}{T}=\Lambda\, f
+  =\frac{6.93\times10^{-3}}{0.02}
+  \approx \boxed{\;\qty{0.347}{s^{-1}}\;}.
+\end{equation}
+
+\textbf{c) Zeit für 70\,\%.} $x(t)=0.7\,x_0\Rightarrow e^{-\beta t}=0.7$:
+\begin{equation}
+  t=-\frac{\ln 0.7}{\beta}
+  =\frac{0.3567}{0.3466}
+  \approx\boxed{\;\qty{1.03}{s}\;}.
+\end{equation}
+
+\begin{ergebnis}
+$\Lambda=\ln2/100\approx6.93\times10^{-3}$, $\beta=\qty{0.347}{s^{-1}}$,
+$t_{0.7}\approx\qty{1.03}{s}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\beta=\Lambda/T$ ist \unit{\per\second}; $t=\ln 0.7/\beta$
+in \unit{\second}. \checkmark
+
+\textbf{Querprobe:} Nach $t\approx1\,\mathrm s$ ($\approx50$ Perioden) ist die
+Amplitude $e^{-0.3466}\approx0.71$ --- knapp über 70\,\%. Nach 100 Perioden
+$e^{-0.693}\approx0.50$ --- passt zur Aufgabenangabe. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Das Logarithmische Dekrement ist die Dämpfung pro Periode ($\Lambda=\beta T$);
+die Amplitude fällt über $n$ Perioden um den Faktor $e^{-n\Lambda}$, die
+Energie um $e^{-2n\Lambda}$.
+\end{merksatz}

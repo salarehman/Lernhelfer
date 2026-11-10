@@ -1,0 +1,79 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+Zwei gleiche Pendel ($m_1=m_2=m$, $D_1=D_2=D$), gekoppelt über Feder $k$.
+Gesucht: (a) Bewegungsgleichungen, (b) Normalschwingungen, (c) $x_1(t),x_2(t)$
+für die Anfangsbedingung $x_1(0)=x_{1,0}$, $x_2(0)=\dot x_1(0)=\dot x_2(0)=0$
+und die Energietransfer-Frequenz.
+
+\subsection*{Rechnung}
+\textbf{a) Bewegungsgleichungen.} Kräfte: eigene Feder $D\,x_i$ (rücktreibend)
+und Koppelfeder $k(x_2-x_1)$:
+\begin{equation}
+  m\,\ddot x_1=-D\,x_1+k(x_2-x_1),\qquad
+  m\,\ddot x_2=-D\,x_2-k(x_2-x_1)= -D\,x_2+k(x_1-x_2)\;.
+\end{equation}
+
+\textbf{b) Entkopplung und Normalschwingungen.} Addieren der beiden
+Gleichungen: $m(\ddot x_1+\ddot x_2)=-D(x_1+x_2)$. Subtrahieren:
+$m(\ddot x_1-\ddot x_2)=-D(x_1-x_2)+2k(x_2-x_1)=-(D+2k)(x_1-x_2)$. Mit
+$y_\pm=\tfrac12(x_1\pm x_2)$:
+\begin{equation}
+  \ddot y_++\omega_+^2y_+=0,\qquad \ddot y_--+\omega_-^2y_-=0,
+  \quad
+  \boxed{\;\omega_+=\sqrt{\frac{D}{m}}\;},\quad
+  \boxed{\;\omega_-=\sqrt{\frac{D+2k}{m}}\;}.
+\end{equation}
+Allgemein: $y_\pm(t)=A_\pm\cos(\omega_\pm t+\varphi_\pm)$
+(gleichphasiger Oszillator $\omega_+$: Koppelfeder bleibt ungedehnt;
+gegenphasiger Oszillator $\omega_-$: beide Koppelfedern wirken).
+
+\textbf{c) Anfangsbedingungen.} $y_+(0)=\tfrac{x_{1,0}}2$, $y_-(0)=\tfrac{x_{1,0}}2$,
+$\dot y_+(0)=\dot y_-(0)=0$, also $A_\pm=x_{1,0}/2$, $\varphi_\pm=0$:
+\begin{equation}
+  y_\pm(t)=\frac{x_{1,0}}2\cos(\omega_\pm t)\;.
+\end{equation}
+Rücktransformation mit $\omega_{\mathrm m}=\frac{\omega_-+\omega_+}2$ und
+$\Delta=\frac{\omega_--\omega_+}2$:
+\begin{align}
+  x_1(t)&=y_++y_-=\frac{x_{1,0}}2\big[\cos\omega_+t+\cos\omega_-t\big]
+         =\boxed{\;x_{1,0}\,\cos(\omega_{\mathrm m}t)\,\cos(\Delta t)\;},\\
+  x_2(t)&=y_+-y_-=\frac{x_{1,0}}2\big[\cos\omega_+t-\cos\omega_-t\big]
+         =\boxed{\;-x_{1,0}\,\sin(\omega_{\mathrm m}t)\,\sin(\Delta t)\;}.
+\end{align}
+
+\textbf{Energietransfer.} Die Amplitude von $x_1$ moduliert mit
+$|\cos\Delta t|$, die zugehörige Energie wie $\cos^2\Delta t$; die Energie
+schwappt also periodisch mit
+\begin{equation}
+  \boxed{\;\omega_{\text{Energie}}=2\Delta=\omega_- -\omega_+\;}
+  \qquad\text{bzw.}\quad
+  f_{\text{Energie}}=\frac{\omega_--\omega_+}{2\pi}
+  =\Big(\sqrt{\tfrac{D+2k}{m}}-\sqrt{\tfrac{D}{m}}\Big)\frac1{2\pi}\;.
+\end{equation}
+Anfang: ganze Energie in Masse 1; nach $T=\pi/\Delta=2\pi/(\omega_--\omega_+)$
+ist sie vollständig zur Masse 2 gewandert und kommt mit derselben Periode
+zurück.
+
+\begin{ergebnis}
+$\omega_+=\sqrt{D/m}$, $\omega_-=\sqrt{(D+2k)/m}$;
+$x_1=x_{1,0}\cos(\omega_{\mathrm m}t)\cos(\Delta t)$,
+$x_2=-x_{1,0}\sin(\omega_{\mathrm m}t)\sin(\Delta t)$;
+Energietransfer-Frequenz $=(\omega_--\omega_+)/2\pi$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Grenzfall $k=0$:} $\omega_+=\omega_-=\sqrt{D/m}$, die Massen schwingen
+ungestört; $x_1=x_{1,0}\cos\omega_0t$, $x_2=0$ --- die Anfangsbedingung.
+\textbf{Querprobe:} $x_1(0)=x_{1,0}$ und $x_2(0)=0$ erfüllt; $\dot x_1(0)$ und
+$\dot x_2(0)$ verschwinden (Kosinus-/Sinus-Anfang). \checkmark
+
+\textbf{Einheiten:} $\omega_\pm$ in \unit{\per\second}, Frequenz in
+\unit{\hertz}. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Gekoppelte Oszillatoren löst man über Summe/Differenz (Normalkoordinaten). Die
+Schwebung der Einzelmassen und der hin- und herwandernde Energieanteil
+laufen mit der \emph{Differenz} der beiden Normalfrequenzen $\omega_--\omega_+$.
+\end{merksatz}
