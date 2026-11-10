@@ -265,7 +265,7 @@ def kompilieren_tectonic(ziel: Path) -> bool:
     kopie.unlink(missing_ok=True)
     if ergebnis.returncode != 0:
         print("tectonic abgebrochen:")
-        print(pdflatex_ausschnitt(ergebnis.stdout or ergebnis.stderr))
+        print(pdflatex_ausschnitt(ergebnis.stderr or ergebnis.stdout))
         return False
     gebaut = OUT / "_bm.pdf"
     if not gebaut.is_file():
