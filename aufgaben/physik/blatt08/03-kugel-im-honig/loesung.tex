@@ -1,61 +1,107 @@
-% Teil II: der durchgerechnete Weg.
+% Teil II: der durchgerechnete Weg, mit Begründung jedes Schrittes.
 
 \subsection*{Gegeben und gesucht}
-Gegeben: $r=\qty{2}{mm}=\qty{2e-3}{m}$, $m=\qty{0.263}{g}=\qty{2.63e-4}{kg}$,
+Gegeben: $r=\qty{2}{mm}=\qty{2e-3}{m}$,
+$m=\qty{0.263}{g}=\qty{2.63e-4}{kg}$,
 $\eta_{\text{Honig}}=\qty{10}{Pa\,s}$,
 $\rho_f=\qty{1.4}{kg/L}=\qty{1400}{kg/m^3}$, $g=\qty{9.81}{m/s^2}$.
-Gesucht: (a) Kräfte, (b) Zeit bis $v=0.99\,v_\infty$.
+Gesucht: (a) die wirkenden Kräfte, (b) die Zeit $t_*$, bis $v=0.99\,v_\infty$.
 
-\subsection*{Ansatz}
-Lineare (Stoke'sche) Reibung $\Rightarrow$ DGL $\dot v=A-Bv$; Endwert
-$v_\infty=A/B$, Einschwingzeit durch die Lösung $v(t)=v_\infty(1-e^{-Bt})$.
+\subsection*{Logik in einem Satz}
+Die Reibung ist proportional zur Geschwindigkeit ($F_R=6\pi\eta r\,v$); darum ist
+die Beschleunigung ``Antrieb minus etwas Ständig proportional zu $v$'' --- eine
+lineare DGL mit Endgeschwindigkeit $v_\infty=A/B$ und
+Einschwingzeit $t_*=\ln(100)/B$ für $99\,\%$.
 
-\subsection*{Rechnung}
-\textbf{a) Kräfte}\quad $F_g$ (Gewicht, abwärts), $F_A=\rho_f V g$
-(Auftrieb, aufwärts), $F_R=6\pi\eta r v$ (Stokes, aufwärts).
+\subsection*{Schritt 1 --- Kräfte benennen (Teil a)}
+\begin{itemize}
+  \item $F_g=mg$, nach unten ($+$):
+        $F_g=\qty{0.263e-3}{kg}\cdot\qty{9.81}{m/s^2}\approx\qty{2.58}{mN}$.
+  \item $F_A=\rho_f\,V\,g$, nach oben: Auftrieb.
+  \item $F_R=6\pi\eta r\,v$, nach oben: Stokes-Reibung, wächst mit $v$.
+\end{itemize}
+Newton: $m\dot v=F_g-F_A-F_R$. Der Auftrieb schwächt das Gewicht; die Reibung
+wächst mit der Geschwindigkeit an, bis der Nettowert auf null zurückgeht.
 
-\textbf{b) Zeitskala.} Volumen
-$V=\frac43\pi r^3=\frac43\pi(2\times10^{-3})^3\approx 3.35\times10^{-8}\,\mathrm{m^3}$.
+\subsection*{Schritt 2 --- Volumen und die Konstanten $A$, $B$}
+Kugelvolumen:
+\[
+ V=\frac43\pi r^3=\frac43\pi (2\times10^{-3})^3
+   \approx 3.35\times10^{-8}\,\mathrm{m^3}.
+\]
+Damit die zwei Konstanten der DGL $\dot v = A - Bv$:
 \begin{align}
   A&=g\Big(1-\frac{\rho_f V}{m}\Big)
-  =\ qty{9.81}{m/s^2}\Big(1-\frac{1400\cdot 3.35e-8}{2.63e-4}\Big)\\
-    &\approx 9.81\big(1-0.178\big)\approx \qty{8.06}{m/s^2}\;,\\
+    = \qty{9.81}{m/s^2}\Big(1-\frac{1400\cdot 3.35e-8}{2.63e-4}\Big)\\
+    &\approx 9.81\,(1-0.178)\approx \qty{8.06}{m/s^2},\\[2mm]
   B&=\frac{6\pi\eta r}{m}
-  =\frac{6\pi\cdot 10\cdot 2\times10^{-3}}{2.63\times10^{-4}}
-  \approx 1.43\times10^{3}\,\mathrm{s^{-1}}\;.
+    =\frac{6\pi\cdot 10\cdot 2\times10^{-3}}{2.63\times10^{-4}}
+    \approx 1.43\times10^{3}\,\mathrm{s^{-1}}.
 \end{align}
-Mit $v(0)=0$: $v(t)=v_\infty(1-e^{-Bt})$. Forderung $v=0.99\,v_\infty$:
-\begin{equation}
-  1-e^{-Bt_*}=0.99\;\Rightarrow\;
-  e^{-Bt_*}=0.01\;\Rightarrow\;
-  t_*=\frac{\ln 100}{B}\;.
-\end{equation}
+
+\subsection*{Schritt 3 --- Endgeschwindigkeit}
+Für $t\to\infty$ verschwindet $e^{-Bt}$, also
+\[
+ v_\infty=\frac{A}{B}
+   \approx \frac{8.06}{1.43\times10^3}
+   \approx \qty{5.6e-3}{m/s}
+   =\qty{5.6}{mm/s}.
+\]
+Bedeutung: Bei etwa $5.6\,\mathrm{mm/s}$ heben sich Antrieb und Reibung exakt
+auf --- die Kugel sinkt danach konstant langsam.
+
+\subsection*{Schritt 4 --- Zeit bis $99\,\%$ der Endgeschwindigkeit}
+Mit $v(0)=0$ ist $v(t)=v_\infty\big(1-e^{-Bt}\big)$. Gefordert
+$v=v_\infty\cdot 0.99$:
+\[
+ 1-e^{-Bt_*}=0.99
+ \;\Rightarrow\;
+ e^{-Bt_*}=0.01
+ \;\Rightarrow\;
+ t_*=\frac{\ln(100)}{B}
+   \approx \frac{4.605}{1.43\times10^3}
+   \approx \qty{3.2}{ms}.
+\]
+Interpretation: Bei zähem Honig ``einschwingt'' die Kugel in gut
+$3\,\mathrm{ms}$ praktisch vollständig auf ihre Endgeschwindigkeit.
 
 \begin{ergebnis}
 \begin{equation*}
-  v_\infty=\frac{A}{B}\approx\frac{8.06}{1.43\times10^{3}}
-  \approx \qty{5.6}{mm/s}\;,\qquad
-  t_*=\frac{\ln 100}{1.43\times10^{3}}
-  \approx\qty{3.2}{ms}\;.
+ F_g\approx\qty{2.58}{mN},\quad
+ F_A=\rho_f V g\approx\qty{0.46}{mN},\quad
+ F_R=6\pi\eta r\,v\ (\text{wächst mit } v),
+\end{equation*}
+\begin{equation*}
+ v_\infty\approx\qty{5.6}{mm/s},
+ \qquad
+ t_*\approx\qty{3.2}{ms}.
 \end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
 \textbf{Einheiten:} $B=6\pi\eta r/m$:
-$\frac{Pa\,s\cdot m}{kg}=\frac{kg\,m\,s}{s^2\,m^2}\cdot\frac{m}{kg}
-=\mathrm{s^{-1}}$; $t_*=\ln100/B$ in $\mathrm{s}$. \checkmark
+$\frac{Pa\cdot m}{kg}=\frac{kg\,m\,s}{s^2\,m^2}\,\frac{m}{kg}=\mathrm{s^{-1}}$;
+damit ist $t_*=\ln100/B$ in $\mathrm{s}$. \checkmark
 
-\textbf{Grenzfall/Querprobe:} $v_\infty\propto (m-\rho_fV)/\eta$: schwerere
-Kugel, weniger zähes Medium $\Rightarrow$ grössere Endgeschwindigkeit.
-$t_*\propto m/(\eta r)$: kleiner $r$ $\Rightarrow$ schnelleres Einschwingen.
-Beides plausibel.
+\textbf{Querprobe (Grenzfall):} $v_\infty\propto (m-\rho_f V)/\eta$ --- schwerere
+Kugel oder dünneres Medium $\Rightarrow$ grössere Endgeschwindigkeit;
+$t_*\propto m/(\eta r)$ --- kleinere Kugel oder grössere Viskosität
+$\Rightarrow$ schnelleres Einschwingen. Beides passt zur Intuition.
 
-\textbf{Größenordnung:} mm/s-Endgeschwindigkeit in zähem Honig und
-ms-Einschwingzeit --- typisch für Stokes.
+\textbf{Auftriebs-Anteil:} $\rho_f V/m = 1400\cdot 3.35e-8 / 2.63e-4\approx
+0.178$ --- der Auftrieb schwächt den Antrieb um $\sim 18\,\%$; ohne ihn wäre
+$v_\infty$ entsprechend grösser.
+
+\textbf{Grössenordnung:} mm/s und ms bei zähem Honig --- typisch für eine
+Stokes-Bewegung. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Lineare Reibung erzeugt stets eine RelaXierung $v\to v_\infty$ mit
-Zeitkonstante $\tau=1/B$; die Zeit bis zum Bruchteil $p$ ist
-$t_*=\ln\big(1/(1-p)\big)/B$, unabhängig von $v_\infty$.
+Lineare Reibung erzeugt eine Relaxierung $v\to v_\infty$ mit der
+Zeitkonstanten $\tau=1/B=m/(6\pi\eta r)$. Die Zeit bis zum Bruchteil $p$ ist
+\[
+ t_*=\frac{1}{B}\ln\frac{1}{1-p},
+\]
+und hängt nur von $B$ und $p$ ab --- nicht von $v_\infty$. Genau das steckt
+in der Übungs-Gleichung $x'=A-Bx$ (dort ist $x$ die Geschwindigkeit $v$).
 \end{merksatz}

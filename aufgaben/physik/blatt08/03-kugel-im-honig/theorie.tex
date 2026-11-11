@@ -4,48 +4,137 @@
 % Eine Stahlkugel sinkt in einem zähen Medium. Gefragt sind die wirkenden
 % Kräfte (Stoke'sche Reibung, Auftrieb) und die Zeit bis fast zur
 % Endgeschwindigkeit --- die klassische, durch lineare Reibung gedämpfte
-% Fallbewegung.
+% Fallbewegung. Dieser Teil erklärt die Physik von Grund auf; die Aufgabe
+% wird NICHT durchgerechnet (das macht Teil II).
 
 Eine Stahlkugel (Radius $r$, Masse $m$) sinkt in Honig (Viskosität $\eta$,
-Dichte $\rho_f$). Gesucht werden die wirkenden Kräfte und die Zeit, bis die
-Kugel einen Anteil $p$ (hier $99\%$) ihrer Endgeschwindigkeit erreicht hat.
+Dichte $\rho_f$). Gesucht sind die wirkenden Kräfte und die Zeit, bis die
+Kugel einen Anteil $p$ (hier $p=99\%$) ihrer Endgeschwindigkeit erreicht hat.
 
-\begin{werkzeugkasten}[Werkzeuge]
-\textbf{Kräfte am sinkenden Körper:}
-\begin{equation}
-  F_g=m g\quad(\text{abwärts}),\qquad
-  F_A=\rho_f V g\quad(\text{Auftrieb, aufwärts}),\qquad
-  F_R=6\pi\eta r\, v\quad(\text{Stokes, aufwärts}),
-\end{equation}
-mit $V=\frac43\pi r^3$ als Kugelvolumen. Stoke'sche Reibung gilt für kleine
-Reynoldszahlen (schleichende Strömung) --- hier wegen hoher Viskosität erfüllt.
+\begin{werkzeugkasten}[Das physikalische Bild --- was passiert wirklich?]
+Sobald die Kugel losgelassen wird, zieht die Schwerkraft nach unten. Aber sie
+fällt \emph{nicht} frei und immer schneller wie im Vakuum, weil das zähe Honig
+sie permanent bremst. Am sinkenden Körper greifen drei Kräfte an:
 
-\textbf{Bewegungsgleichung} (2. Newton, nach unten positiv):
-\begin{equation}
-  m\,\dot v = m g-\rho_f V g - 6\pi\eta r\, v
-  \;=\; A-B\,v\;,\qquad
-  A=g\Big(1-\frac{\rho_f V}{m}\Big),\quad B=\frac{6\pi\eta r}{m}\;.
-\end{equation}
-\textbf{Lösung} (lineare DGL, $v(0)=v_0$):
-\begin{equation}
-  v(t)=\frac{A}{B}+\Big(v_0-\frac{A}{B}\Big)e^{-Bt}\;.
-\end{equation}
-Endgeschwindigkeit bei $\dot v=0$: $v_{\infty}=A/B$.
+\begin{itemize}
+  \item \textbf{Gewicht} $F_g = m g$ --- wirkt immer nach unten.
+  \item \textbf{Auftrieb} $F_A=\rho_f V g$ --- nach Archimedes drückt das
+        verdrängte Medium nach oben. Die Kugel verdrängt das Volumen
+        $V=\frac43\pi r^3$; je dichter das Medium ($\rho_f$) und je grösser die
+        Kugel ($V$), desto stärker der Auftrieb.
+  \item \textbf{Strömungswiderstand (Stokes)} $F_R=6\pi\eta r\, v$ --- das Honig
+        klebt an der Kugeloberfläche und zieht zurück gegen die Bewegung.
+        \emph{Das Entscheidende:} dieser Widerstand wächst \textbf{linear mit
+        der Geschwindigkeit} $v$. Langsam --- wenig Widerstand; schnell --- viel.
+\end{itemize}
+Vereinbart man \emph{nach unten als positiv}, so ist die Gesamtkraft
+\[
+  F_{\text{ges}} = m g - \rho_f V g - 6\pi\eta r\, v .
+\]
 
-\textbf{Einheiten und Bezeichner:} $\eta$ in \unit{\pascal\second},
-$\rho_f$ in \unit{\kilogram\per\cubic\metre}, $B$ in \unit{\per\second}. Bei
-Umbauten $1\,\unit{\kilogram\per\litre}=1000\,\unit{\kilogram\per\cubic\metre}$.
+\textbf{Warum es eine Endgeschwindigkeit gibt:} Am Anfang ist $v$ klein, die
+Reibung vernachlässigbar, die Netto-Kraft zeigt nach unten --- die Kugel wird
+schneller. Mit wachsender Geschwindigkeit wächst $6\pi\eta r\,v$, bis die
+Reibung Gewicht und Auftrieb exakt aufhebt. Dann ist die Netto-Kraft null,
+die Beschleunigung null, und die Kugel sinkt mit \textbf{konstanter
+Geschwindigkeit} weiter: der Endgeschwindigkeit $v_\infty$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Bewegungsgleichung und die Notation der Übung]
+2.~Newton: \emph{Masse $\times$ Beschleunigung = Summe der Kräfte}. Die
+Beschleunigung ist die Ableitung der Geschwindigkeit, $\dot v=\mathrm dv/\mathrm dt$
+(nach unten positiv):
+\begin{equation}
+  m\,\dot v = m g - \rho_f V g - 6\pi\eta r\, v .
+\end{equation}
+Teilt man durch $m$ und zieht zusammen, erhält man
+\begin{equation}
+  \dot v
+  =\underbrace{g\Big(1-\frac{\rho_f V}{m}\Big)}_{=A}
+   -\underbrace{\frac{6\pi\eta r}{m}}_{=B}\,v
+  \;=\; A - B\, v .
+\end{equation}
+Dabei sind $A$ und $B$ \textbf{Konstanten}: $A$ ist der ``effektive Antrieb pro
+Masse'' (Gewicht minus Auftrieb), $B$ die \textbf{Dämpfungsrate}. Die Grösse
+$B$ hat die Einheit $\mathrm{s^{-1}}$, ist also ein Mass dafür, \emph{wie schnell
+sich das System an die Endgeschwindigkeit angleich}.
+
+\textbf{Warum die Übung $x'=A-Bx$ schreibt:} Das ist \emph{dieselbe} Gleichung,
+nur ein anderer Buchstabe für dieselbe Grösse. Die Notation $x$ ist ein
+allgemeiner Platzhalter für \emph{``die Grösse, die sich ändert''}. Bei der Kugel
+ist diese Grösse die \textbf{Geschwindigkeit}, also ist $x=v$. Es gilt
+\[
+  x'=A-Bx \quad\Longleftrightarrow\quad v'=A-Bv ,
+\]
+gelesen als ``Änderungsrate = Antrieb minus Dämpfung $\times$ aktueller Wert''.
+Weder am Rechenweg noch an der Lösung ändert sich etwas, wenn man $x$ durch
+$v$ ersetzt.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Lösung der DGL --- was sie bedeutet]
+Die Gleichung $\dot v + Bv = A$ ist linear erster Ordnung mit konstanten
+Koeffizienten. Mit dem integrierenden Faktor $e^{Bt}$ und der
+Anfangsbedingung $v(0)=v_0$ erhält man
+\begin{equation}
+  v(t)=\frac{A}{B}+\Big(v_0-\frac{A}{B}\Big)e^{-Bt}.
+\end{equation}
+\begin{itemize}
+  \item \textbf{Endwert (Endgeschwindigkeit):} Für $t\to\infty$ verschwindet
+        $e^{-Bt}$, und es bleibt
+        \[ v_\infty=\frac{A}{B}=\frac{\text{Antrieb}}{\text{Dämpfung}}. \]
+        Genau dort gleichen Antrieb $A$ und Dämpfung $B v$ einander aus.
+  \item \textbf{Einschwingen:} Von $v_0$ aus nähert sich die Geschwindigkeit
+        \emph{exponentiell} $v_\infty$. Das Tempo bestimmt die
+        \textbf{Zeitkonstante}
+        \[ \tau=\frac{1}{B}=\frac{m}{6\pi\eta r}. \]
+        Nach der Zeit $\tau$ ist die Restdifferenz $v_\infty-v(t)$ auf
+        $e^{-1}\approx 37\%$ ihres Anfangswerts gesunken.
+  \item \textbf{Zeit bis zum Bruchteil $p$:} Gesucht ist $t_*$ mit
+        $v(t_*)=p\,v_\infty$. Mit $v_0=0$:
+        \[ 1-e^{-Bt_*}=p \;\Rightarrow\;
+           e^{-Bt_*}=1-p \;\Rightarrow\;
+           \boxed{\;t_*=\frac1B\,\ln\frac{1}{1-p}\;} .
+        \]
+        Für $p=0.99$ wird $\ln\frac{1}{1-p}=\ln100$. Wichtig: $t_*$ hängt nur
+        von $B$ (und $p$) ab, \emph{nicht} von $v_\infty$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Einheiten, Grössenordnung, Intuition]
+\textbf{Einheiten:}
+\[
+ [B]=\frac{\mathrm{Pa\cdot m}}{\mathrm{kg}}
+ =\frac{\mathrm{kg/(m\,s)\cdot m}}{\mathrm{kg}}=\mathrm{s^{-1}},
+ \qquad (\text{also }) t_* \text{ in } \mathrm{s}.
+\]
+Umbauten: $1\,\mathrm{mPa\,s}=0.001\,\mathrm{Pa\,s}$;
+$1\,\mathrm{kg/L}=1000\,\mathrm{kg/m^3}$.
+
+\textbf{Intuition (Grenzfälle):}
+\begin{itemize}
+  \item \emph{Schwerere, dichtere Kugel} (grösseres $A$): grössere $v_\infty$.
+        Für $\rho_f V = m$ (Kugel hat dieselbe Dichte wie das Medium) ist
+        $A=0$ und $v_\infty=0$ --- sie ``schwimmt''.
+  \item \emph{Zäheres Medium oder grössere Kugel} (grösseres $B$): kleinere
+        $v_\infty$, aber auch kürzeres $\tau$ --- die (kleinere)
+        Endgeschwindigkeit wird in kürzerer Zeit erreicht.
+  \item Zusammengefasst: $v_\infty\propto (m-\rho_f V)/\eta$ und
+        $t_*\propto m/(\eta r)$.
+\end{itemize}
+Stokes gilt für kleine Reynoldszahlen (schleichende Strömung); bei hoher
+Viskosität (Honig) ist das erfüllt.
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
 \begin{enumerate}
-  \item Namen und Richtung der drei Kräfte festlegen (Gewicht, Auftrieb,
-       Reibung).
-  \item Bewegungsgleichung in der Form $\dot v=A-Bv$ schreiben und $v_\infty$
-       ablesen.
-  \item $v(t)$ mit Anfangsbedingung $v(0)=0$ in die gegebene Lösung
-       einsetzen, dann die Zeit für $v=p\,v_\infty$ aus
-       $e^{-Bt_*}=1-p$ bestimmen.
+  \item Die drei Kräfte benennen und die Richtung festlegen (nach unten $+$):
+        $F_g - F_A - F_R$.
+  \item $F_A=\rho_f\frac43\pi r^3 g$ und $F_R=6\pi\eta r\,v$ einsetzen und auf
+        die Form $\dot v = A - B v$ bringen; $A$ und $B$ herauslesen.
+  \item Endgeschwindigkeit $v_\infty=A/B$ bilden.
+  \item Mit $v(0)=0$ die Lösung $v(t)=v_\infty(1-e^{-Bt})$ nutzen und aus
+        $1-e^{-Bt_*}=p$ die Zeit $t_*=\ln(1/(1-p))/B$ bestimmen.
+  \item Einheiten jedes Zwischenergebnisses prüfen.
 \end{enumerate}
 \end{werkzeugkasten}
 
@@ -53,10 +142,13 @@ Umbauten $1\,\unit{\kilogram\per\litre}=1000\,\unit{\kilogram\per\cubic\metre}$.
 \begin{itemize}
   \item Vorzeichen: Auftrieb und Reibung wirken \emph{entgegen} der Bewegung
        (nach oben), Gewicht nach unten.
-  \item Dichte (Honig) von Dichte (Stahl) unterscheiden; Auftrieb nutzt
-       $\rho_f$, nicht $\rho_{\text{Kugel}}$.
-  \item $100\,\mathrm{mPa\,s} = 0.1\,\mathrm{Pa\,s}$ --- Faktor 1000 nicht
-       vergessen; $1\,\mathrm{kg/L}=10^3\,\mathrm{kg/m^3}$.
-  \item Für $v(0)=0$ ist $C=-A/B$ (sonst Anfangsbedingung vergessen).
+  \item Dichte: den Auftrieb mit der \emph{Honig}-Dichte $\rho_f$ rechnen
+       (nicht mit der der Kugel).
+  \item Einheiten: $100\,\mathrm{mPa\,s}=0.1\,\mathrm{Pa\,s}$;
+       $1\,\mathrm{kg/L}=10^3\,\mathrm{kg/m^3}$ --- Faktor 1000 nicht vergessen.
+  \item Anfangswert: für $v(0)=0$ ist die Konstante in der Lösung
+       $C=-A/B$; fehlt sie, stimmt $v(t)$ nicht.
+  \item $v_\infty$ in $\mathrm{m/s}$ erst am Schluss in $\mathrm{mm/s}$
+       umrechnen.
 \end{itemize}
 \end{achtung}
