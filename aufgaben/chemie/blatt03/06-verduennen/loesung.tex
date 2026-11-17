@@ -1,0 +1,47 @@
+% titel: Blatt 3, A6: Verdünnen (Massen- und Stoffmengenkonzentration)
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Ziel: $V = \qty{50}{mL}$ einer Lösung mit
+$c(\mathrm{HNO_3}) = \qty{6}{mmol/L}$. Stammlösung mit
+$b = \qty{750}{mg/L}$. Gesucht: das mit der Pipette zu entnehmende
+Volumen $V_0$.
+
+$M(\mathrm{HNO_3}) \approx \qty{63.01}{g/mol}$.
+
+\subsection*{Rechnung}
+1. Ziel-Stoffmenge:
+\begin{equation}
+  n = c\,V = 6\times10^{-3}\ \frac{\mathrm{mol}}{\mathrm{L}}
+  \times 0.050\ \mathrm{L} = 3.00\times10^{-4}\ \mathrm{mol}.
+\end{equation}
+2. Konzentration der Stammlösung in $\mathrm{mol/L}$ umrechnen:
+\begin{equation}
+  c_0 = \frac{b}{M}
+  = \frac{0.750\ \mathrm{g/L}}{63.01\ \mathrm{g/mol}}
+  = 1.190\times10^{-2}\ \mathrm{mol/L}.
+\end{equation}
+3. Entnahmevolumen:
+\begin{equation}
+  V_0 = \frac{n}{c_0} = \frac{3.00\times10^{-4}}{1.190\times10^{-2}}
+  = 2.52\times10^{-2}\ \mathrm{L} = \qty{25.2}{mL}.
+\end{equation}
+
+\begin{ergebnis}
+Es müssen $V_0 \approx \qty{25.2}{mL}$ der Stammlösung entnommen und auf
+$\qty{50}{mL}$ aufgefüllt werden.
+\end{ergebnis}
+
+\begin{kontrolle}
+Massen-Check: $3.00\times10^{-4}\ \mathrm{mol}$ entsprechen
+$3.00\times10^{-4}\times 63.01 = 1.89\times10^{-2}\ \mathrm{g} =
+\qty{18.9}{mg}$. Bei $b = 0.750\ \mathrm{g/L}$ liefern
+$25.2\ \mathrm{mL}$ gerade $0.750\times 0.0252 = 1.89\times10^{-2}\ \mathrm{g}$
+--- konsistent. Ausserdem ist $25.2\ \mathrm{mL} < 50\ \mathrm{mL}$,
+also eine echte Verdünnung.
+\end{kontrolle}
+
+\begin{merksatz}
+Beim Verdünnen bleibt $n = cV$ konstant; Konzentrationen zuerst auf
+gemeinsame Einheiten bringen (über $c = b/M$), dann $V_0 = n/c_0$.
+\end{merksatz}

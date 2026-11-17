@@ -1,0 +1,55 @@
+% titel: Blatt 8, A3: Enthalpieänderung Eis -25°C $\to$ Wasserdampf 125°C
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+1.00\,mol H$_2$O. Eis bei $-25\,$°C $\rightarrow$ Gas bei $125\,$°C. Konst.
+Druck 1 atm. Gesucht: Gesamt-$\Delta H$.
+\begin{align*}
+c_{\text{Eis}}&=2.09\ Jg^{-1}K^{-1}, &
+c_{\text{Wasser}}&=4.18\ Jg^{-1}K^{-1},\\
+c_{\text{Dampf}}&=1.84\ Jg^{-1}K^{-1}, &
+\Delta H_{\text{fus}}&=6.01\ kJ\,mol^{-1},\\
+\Delta H_{\text{vap}}&=40.67\ kJ\,mol^{-1}, &
+M(\mathrm{H_2O})&=18.02\ g\,mol^{-1}.
+\end{align*}
+
+\subsection*{Ansatz}
+In der Reihenfolge: Eis aufwärmen ($-25\to0$), Schmelzen (bei $0\,$°C),
+Wasser aufwärmen ($0\to100$), Verdampfen (bei $100\,$°C), Dampf aufwärmen
+($100\to125$). Alle Beiträge addieren.
+
+\subsection*{Rechnung}
+Masse $m = n\,M = 1.00 \cdot 18.02 = 18.02$ g.
+\begin{align*}
+q_1 &= m\,c_{\text{Eis}}\,\Delta T
+      = 18.02\cdot 2.09\cdot 25 \approx 941\ J = 0.941\ kJ,\\
+q_2 &= n\,\Delta H_{\text{fus}} = 1.00\cdot 6.01 = 6.01\ kJ,\\
+q_3 &= m\,c_{\text{Wasser}}\,(100-0)
+      = 18.02\cdot 4.18\cdot 100 \approx 7530\ J = 7.53\ kJ,\\
+q_4 &= n\,\Delta H_{\text{vap}} = 1.00\cdot 40.67 = 40.67\ kJ,\\
+q_5 &= m\,c_{\text{Dampf}}\,\Delta T
+      = 18.02\cdot 1.84\cdot 25 \approx 829\ J = 0.829\ kJ.
+\end{align*}
+Summe:
+\[
+  \Delta H_{\text{ges}} = 0.941 + 6.01 + 7.53 + 40.67 + 0.829
+  \approx 55.98\ kJ .
+\]
+
+\begin{ergebnis}
+$\Delta H_{\text{ges}} \approx 56\ kJ$ (für 1.00 mol H$_2$O, stets bei 1 atm).
+\end{ergebnis}
+
+\begin{kontrolle}
+Der Verdampfungsbeitrag (40.67 kJ) dominiert - erwartbar, denn das
+Überwinden aller intermolekularen Kräfte beim Übergang in die Gasphase
+kostet am meisten. Die Aufwärm-Beiträge (zusammen $\approx 9$ kJ) machen
+den Rest. Vorzeichen: alle positiv (endotherm), passend zur Aufnahme von
+Wärme.
+\end{kontrolle}
+
+\begin{merksatz}
+Zustandsänderungen berechnet man streckenweise: erst aufwärmen bis zur
+Umwandlungstemperatur, dann Phasenwechsel (T konstant), weiter aufwärmen,
+usw. Gesamt-Enthalpie = Summe aller Einzelbeiträge.
+\end{merksatz}

@@ -1,0 +1,51 @@
+% titel: Blatt 4, A4: de-Broglie-Wellenlänge und Heisenberg-Unschärfe
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+a) de-Broglie-Wellenlänge: Auto $m = \qty{1.35}{t}$, $v = \qty{130}{km/h}$;
+Elektron $m_e = \qty{9.109e-31}{kg}$, $v = c/1000$.
+b) Mindest-Unschärfe $\Delta v$: Elektron bei $\Delta x = \qty{10}{pm}$;
+Auto bei $\Delta x = \qty{1.00}{m}$.
+
+\subsection*{Ansatz}
+a) $\lambda = h/(mv)$; b) $\Delta v = \hbar/(2\,m\,\Delta x)$.
+
+\subsection*{Rechnung}
+\textbf{a) de-Broglie:}
+\begin{align*}
+  \lambda_{\text{Auto}} &=
+  \frac{6.626\times10^{-34}}{1350 \times 36.11}
+  = 1.36\times10^{-38}\ \mathrm{m}, \\[2pt]
+  \lambda_{e} &=
+  \frac{6.626\times10^{-34}}{9.109\times10^{-31}\times 2.998\times10^5}
+  = 2.43\times10^{-9}\ \mathrm{m} = \qty{2.43}{nm}.
+\end{align*}
+
+\textbf{b) Mindest-Unschärfe ($\hbar= h/2\pi$):}
+\begin{align*}
+  \Delta v_{e} &= \frac{1.055\times10^{-34}}{2\times 9.109\times10^{-31}
+        \times 10^{-11}}
+  = 5.79\times10^{6}\ \mathrm{m/s}, \\[2pt]
+  \Delta v_{\text{Auto}} &= \frac{1.055\times10^{-34}}{2\times 1350 \times 1.00}
+  = 3.9\times10^{-38}\ \mathrm{m/s}.
+\end{align*}
+
+\begin{ergebnis}
+a) $\lambda_{\text{Auto}} \approx \qty{1.4e-38}{m}$,
+$\lambda_{e} \approx \qty{2.4}{nm}$.
+b) $\Delta v_{e} \approx \qty{5.8e6}{m/s}$,
+$\Delta v_{\text{Auto}} \approx \qty{3.9e-38}{m/s}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+Das Elektron hat eine $\approx 10^{29}$ mal grössere de-Broglie-Wellenlänge
+als das Auto --- konsistent mit dem umgekehrten Verhältnis der Impulse.
+Entsprechend ist $\Delta v$ des Elektrons riesig (grösser als seine
+Geschwindigkeit), während das Auto praktisch scharf bleibt. Die
+$2.43\ \mathrm{nm}$-Wellenlänge liegt im atomaren Bereich.
+\end{kontrolle}
+
+\begin{merksatz}
+$\lambda_{dB} = h/(mv)$ und $\Delta v \ge \hbar/(2m\Delta x)$: je kleiner die
+Masse und je genauer der Ort, desto grösser die Geschwindigkeitsunschärfe.
+\end{merksatz}

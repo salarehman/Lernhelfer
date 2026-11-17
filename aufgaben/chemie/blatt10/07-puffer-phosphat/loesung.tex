@@ -1,0 +1,44 @@
+% titel: Blatt 10, A7: Na2HPO4/KH2PO4-Puffer, Menge KH2PO4
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Puffer aus Na$_2$HPO$_4$ (Base, HPO$_4^{2-}$) und KH$_2$PO$_4$ (Säure,
+H$_2$PO$_4^-$), $pK_s=7.21$, Ziel-pH $=7.0$. 50 mL einer 0.5 M
+Na$_2$HPO$_4$-Lösung. Gesucht: Masse KH$_2$PO$_4$.
+
+\subsection*{Ansatz}
+$pH=pK_s+\lg\frac{[\text{Base}]}{[\text{Säure}]}$;
+$M(\mathrm{KH_2PO_4})\approx136.09\ g\,mol^{-1}$.
+
+\subsection*{Rechnung}
+Stoffmenge Base: $n_{\text{Base}}=0.5\cdot0.050=0.025$ mol.
+\begin{align*}
+  7.0 &= 7.21 + \lg\frac{[\text{Base}]}{[\text{Säure}]}
+    \Rightarrow \lg\frac{[\text{Base}]}{[\text{Säure}]} = -0.21,\\
+  \frac{[\text{Base}]}{[\text{Säure}]} &= 10^{-0.21} \approx 0.617 .
+\end{align*}
+Da gleiches Volumen, gilt das Verhältnis auch für die Mengen:
+\[
+  n_{\text{Säure}} = \frac{n_{\text{Base}}}{0.617}
+    = \frac{0.025}{0.617} \approx 0.0405\ mol .
+\]
+\[
+  m(\mathrm{KH_2PO_4}) = n\,M = 0.0405\cdot136.09 \approx 5.5\ g .
+\]
+
+\begin{ergebnis}
+Man benötigt ca.\ $5.5$ g Kaliumhydrogenphosphat (KH$_2$PO$_4$) zur
+Na$_2$HPO$_4$-Lösung, um pH 7.0 zu erreichen.
+\end{ergebnis}
+
+\begin{kontrolle}
+$pH<pK_s$ $\Rightarrow$ im Puffer überwiegt die Säure; $n_{\text{Säure}}>
+n_{\text{Base}}$ (0.0405 > 0.025) bestätigt das. Probe:
+$7.21+\lg\frac{0.025}{0.0405} = 7.21+\lg 0.617 =7.21-0.21=7.0$. Passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Henderson-Hasselbalch: $pH=pK_s+\lg\frac{[\text{Base}]}{[\text{Säure}]}$.
+Aus $pH<pK_s$ folgt Säure-überschuss; Mengenverhältnis $=10^{pH-pK_s}$
+verwenden.
+\end{merksatz}

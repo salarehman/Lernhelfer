@@ -1,0 +1,49 @@
+% titel: Blatt 9, A12: Welche Sulfide fallen aus?
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$pH=0.5$ enthält $c(Ni^{2+})=0.15$, $c(Co^{2+})=0.10$, $c(Cd^{2+})=0.5$
+mol$L^{-1}$. Gesättigt mit H$_2$S (0.1 mol$L^{-1}$).
+$pK_{a1}=7$, $pK_{a2}=14$. $L(NiS)=3\cdot10^{-21}$, $L(CoS)=5\cdot10^{-22}$,
+$L(CdS)=1\cdot10^{-28}$. Fällt NiS, CoS, CdS aus?
+
+\subsection*{Ansatz}
+Erst $[S^{2-}]$, dann je Ionenprodukt $Q$, vergleichen mit $L$.
+
+\subsection*{Rechnung}
+\[
+  [H^+] = 10^{-0.5} \approx 0.316\ mol\,L^{-1},\qquad
+  K_{a1}=10^{-7},\ K_{a2}=10^{-14}.
+\]
+\[
+  [S^{2-}] = \frac{K_{a1}K_{a2}\,[\mathrm{H_2S}]}{[H^+]^2}
+    = \frac{10^{-7}\,10^{-14}\,0.1}{ (0.316)^2}
+    = \frac{10^{-22}}{10^{-1}} = 10^{-21}\ mol\,L^{-1}.
+\]
+Ionenprodukte (jeweils $[M^{2+}]\cdot[S^{2-}]$):
+\begin{align*}
+  Q_{\text{Ni}} &= 0.15\cdot10^{-21} = 1.5\cdot10^{-22} < L(NiS)=3\cdot10^{-21}
+    \Rightarrow \text{keine Fällung},\\
+  Q_{\text{Co}} &= 0.10\cdot10^{-21} = 1\cdot10^{-22} < L(CoS)=5\cdot10^{-22}
+    \Rightarrow \text{keine Fällung},\\
+  Q_{\text{Cd}} &= 0.5\cdot10^{-21} = 5\cdot10^{-22} \gg L(CdS)=1\cdot10^{-28}
+    \Rightarrow \textbf{Fällung}.
+\end{align*}
+
+\begin{ergebnis}
+Nur \textbf{CdS fällt aus}; NiS und CoS bleiben gelöst (Ionenprodukt $Q$
+unter dem jeweiligen $L$).
+\end{ergebnis}
+
+\begin{kontrolle}
+Das extrem kleine $L(CdS)=10^{-28}$ macht CdS das mit Abstand
+schwerlöslichste; selbst die nur mäßige $[S^{2-}]$ reicht für Fällung.
+Die Reihenfolge $L(Sulfid)$: CdS $\ll$ CoS $\lesssim$ NiS erklärt das
+Verhalten. Physikalisch plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Sulfide fällen selektiv: $[S^{2-}]$ aus $K_{a1}K_{a2}[\mathrm{H_2S}]/[H^+]^2$,
+dann $Q=[M^{2+}][S^{2-}]$ mit $L$ vergleichen. $Q>L$ $\Rightarrow$
+Fällung.
+\end{merksatz}

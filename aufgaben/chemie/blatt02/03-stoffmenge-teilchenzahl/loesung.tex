@@ -1,0 +1,59 @@
+% titel: Blatt 2, A3: Stoffmenge und Teilchenzahl in 42 g
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Masse $m = \qty{42}{g}$ je Verbindung. Gesucht die Stoffmenge $n$ (mol) und die
+Anzahl Moleküle $N$. Konstante $N_\mathrm{A} = \qty{6.022e23}{mol^{-1}}$.
+
+\subsection*{Molmassen}
+\begin{align*}
+  M_{\mathrm{HCl}} &= 1.008 + 35.453 = 36.46\ \mathrm{g/mol},\\
+  M_{\mathrm{NaCl}} &= 22.99 + 35.453 = 58.44\ \mathrm{g/mol},\\
+  M_{\mathrm{CaSO_4}} &= 40.08 + 32.06 + 4\cdot 15.999 = 136.14\ \mathrm{g/mol},\\
+  M_{\mathrm{C_{12}H_{22}O_{11}}} &= 12\cdot 12.011 + 22\cdot 1.008
+      + 11\cdot 15.999 = 342.30\ \mathrm{g/mol}.
+\end{align*}
+
+\subsection*{Stoffmenge und Teilchenzahl}
+\begin{itemize}
+  \item[a)] $\mathrm{HCl}$:
+    $n = \frac{42}{36.46} = 1.152\ \mathrm{mol}$,
+    $N = 1.152 \cdot 6.022\cdot10^{23} = 6.94\cdot10^{23}$.
+  \item[b)] Kochsalz $\mathrm{NaCl}$:
+    $n = \frac{42}{58.44} = 0.719\ \mathrm{mol}$,
+    $N = 0.719 \cdot 6.022\cdot10^{23} = 4.33\cdot10^{23}$.
+  \item[c)] Gips $\mathrm{CaSO_4}$:
+    $n = \frac{42}{136.14} = 0.309\ \mathrm{mol}$,
+    $N = 0.309 \cdot 6.022\cdot10^{23} = 1.86\cdot10^{23}$.
+  \item[d)] Saccharose:
+    $n = \frac{42}{342.30} = 0.123\ \mathrm{mol}$,
+    $N = 0.123 \cdot 6.022\cdot10^{23} = 7.39\cdot10^{22}$.
+\end{itemize}
+
+\begin{ergebnis}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Verbindung & $n$ & $N$ \\
+\midrule
+$\mathrm{HCl}$          & $\qty{1.152}{mol}$ & $6.94\cdot10^{23}$ \\
+$\mathrm{NaCl}$         & $\qty{0.719}{mol}$ & $4.33\cdot10^{23}$ \\
+$\mathrm{CaSO_4}$       & $\qty{0.309}{mol}$ & $1.86\cdot10^{23}$ \\
+Saccharose              & $\qty{0.123}{mol}$ & $7.39\cdot10^{22}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{ergebnis}
+
+\begin{kontrolle}
+Alle vier Massen sind gleich (42 g), also gilt naeherungsweise
+$n \propto 1/M$: Die kleinste Molmasse (HCl, $M=36$) ergibt die größte
+Stoffmenge, Saccharose ($M=342$) die kleinste. Die Teilchenzahlen liegen
+zwischen $7\cdot10^{22}$ und $7\cdot10^{23}$, konsistent mit
+$N \approx n \cdot 6\cdot10^{23}$.
+\end{kontrolle}
+
+\begin{merksatz}
+Erst $M$ bestimmen, dann $n = m/M$, dann $N = n\cdot N_\mathrm{A}$. Grosse
+Moleküle (grosse $M$) liefern bei gleicher Masse weniger Teilchen.
+\end{merksatz}

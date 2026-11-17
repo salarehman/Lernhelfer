@@ -1,0 +1,48 @@
+% titel: Blatt 4, A5: Photoelektrischer Effekt an Molybdän
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Grenzfrequenz Mo: $\nu_0 = \qty{1.09e15}{s^{-1}}$.
+a) Mindestenergie (Austrittsarbeit $W$),
+b) zugehörige Wellenlänge $\lambda_0$,
+c) maximale $E_{\text{kin}}$ bei Bestrahlung mit $\lambda = \qty{120}{nm}$.
+
+\subsection*{Ansatz}
+$W = h\nu_0$; $\lambda_0 = c/\nu_0$; $E_{\text{kin}} = hc/\lambda - W$.
+
+\subsection*{Rechnung}
+\begin{align*}
+  W &= 6.626\times10^{-34}\times 1.09\times10^{15}
+  = 7.22\times10^{-19}\ \mathrm{J}
+  = 4.51\ \mathrm{eV}, \\[2pt]
+  \lambda_0 &= \frac{2.998\times10^{8}}{1.09\times10^{15}}
+  = 2.75\times10^{-7}\ \mathrm{m}
+  = \qty{275}{nm}, \\[2pt]
+  E_{\text{photon}} &= \frac{h\,c}{\lambda}
+  = \frac{1.987\times10^{-25}}{1.20\times10^{-7}}
+  = 1.66\times10^{-18}\ \mathrm{J}
+  = 10.33\ \mathrm{eV}, \\[2pt]
+  E_{\text{kin}} &= E_{\text{photon}} - W
+  = 1.66\times10^{-18} - 7.22\times10^{-19}
+  = 9.33\times10^{-19}\ \mathrm{J}
+  = 5.82\ \mathrm{eV}.
+\end{align*}
+
+\begin{ergebnis}
+a) Austrittsarbeit $W \approx \qty{7.2e-19}{J} = \qty{4.5}{eV}$;
+b) $\lambda_0 \approx \qty{275}{nm}$;
+c) $E_{\mathrm{kin,max}} \approx \qty{9.3e-19}{J} = \qty{5.8}{eV}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+Die Grenzfrequenz $1.09\times10^{15}$ s$^{-1}$ entspricht einer
+Abschneidewellenlänge von 275 nm (UV); kürzeres Licht (120 nm) hat mehr
+Energie, der Überschuss $10.3 - 4.5 = 5.8\ \mathrm{eV}$ erscheint als
+kinetische Energie des Elektrons. Plausibel und größenordnungsmäßig typisch
+für den Photoeffekt.
+\end{kontrolle}
+
+\begin{merksatz}
+Photoeffekt: W = h$\nu_0$; $E_{\text{kin}} = hc/\lambda - W$. Unterhalb der
+Grenzfrequenz (oberhalb $\lambda_0$) gibt es keine Emission.
+\end{merksatz}

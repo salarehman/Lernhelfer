@@ -1,0 +1,40 @@
+% titel: Blatt 9, A3: Benzol/Toluol-Dampfdruck bei 100°C
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Bei 100\,°C: $p^\circ_{\text{Benzol}}=1.801$ bar,
+$p^\circ_{\text{Toluol}}=0.7310$ bar. Lösung siedet bei 1.000 bar.
+Gesucht: Molenbrüche $x_B$, $x_T$.
+
+\subsection*{Ansatz}
+Ideale Lösung, Sieden bei $p_{\text{ges}}=1.000$ bar:
+\[
+  1.000 = x_B\cdot1.801 + x_T\cdot0.7310,\qquad x_B + x_T = 1 .
+\]
+
+\subsection*{Rechnung}
+Einsetzen $x_T = 1-x_B$:
+\[
+  1.000 = x_B\cdot1.801 + (1-x_B)\cdot0.7310
+  = 0.7310 + x_B\,(1.801-0.7310) .
+\]
+\[
+  x_B = \frac{1.000-0.7310}{1.801-0.7310}
+      = \frac{0.2690}{1.0700} \approx 0.251,
+  \qquad x_T = 1-0.251 = 0.749.
+\]
+
+\begin{ergebnis}
+$x_{\text{Benzol}} \approx 0.25$, $x_{\text{Toluol}} \approx 0.75$.
+\end{ergebnis}
+
+\begin{kontrolle}
+Prüfung: $0.251\cdot1.801+0.749\cdot0.7310
+=0.452+0.548=1.000$ bar. Probe stimmt. Da Benzol flüchtiger ist, hätte man
+einen kleineren Anteil von Benzol erwartet als von Toluol --- passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Raoult: $p_{\text{ges}}=x_Ap_A^\circ+x_Bp_B^\circ$ mit $x_A+x_B=1$. Beim
+Sieden gleichsetzen mit dem Außendruck und nach dem Molenbruch auflösen.
+\end{merksatz}

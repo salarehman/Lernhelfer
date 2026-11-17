@@ -1,0 +1,44 @@
+% titel: Blatt 5, A1: Born-Haber-Kreisprozess (Gitterenergie)
+
+\subsection*{Gegeben und gesucht}
+$\Delta H_{\mathrm{sub}}(\mathrm{Mg})=148$, $\mathrm{IE}(\mathrm{Mg\to Mg^{2+}})=2187$,
+$\Delta H_{\mathrm{vap}}(\mathrm{Br_2})=31.0$, $\Delta H_{\mathrm{dis}}(\mathrm{Br_2})=193$,
+$\mathrm{EA}(\mathrm{Br})=-331$, $\Delta H_{\mathrm f}(\mathrm{MgBr_2})=-524$
+(jeweils \si{\kilo\joule\per\mol}). Gesucht: Gitterenergie $U$.
+
+\subsection*{Ansatz}
+Für $\mathrm{MgBr_2}$ mit zwei $\mathrm{Br}$-Atomen lautet der Born-Haber-Zyklus:
+$\mathrm{Mg(s)}\to\mathrm{Mg(g)}\to\mathrm{Mg^{2+}(g)}$ und
+$\mathrm{Br_2(l)}\to 2\,\mathrm{Br(g)}\to 2\,\mathrm{Br^-(g)}$; die Teilenthalpien
+addieren sich zum Kreisprozess zur Bildungsenthalpie.
+
+\subsection*{Rechnung}
+Summe der übrigen Beiträge:
+\begin{align*}
+  \Delta H_{\mathrm{sub}}+\mathrm{IE}+\Delta H_{\mathrm{vap}}+\Delta H_{\mathrm{dis}}+2\cdot\mathrm{EA}
+  &= 148+2187+31.0+193+2(-331)\\
+  &= 1897\ \si{\kilo\joule\per\mol}.
+\end{align*}
+Damit folgt für die Gitterenergie:
+\begin{equation}
+  U = \Delta H_{\mathrm f} - 1897 = -524-1897 = -2421\ \si{\kilo\joule\per\mol}.
+\end{equation}
+
+\begin{ergebnis}
+Die Gitterenergie von $\mathrm{MgBr_2}$ beträgt
+$U \approx -2421\ \si{\kilo\joule\per\mol}$
+(beim Kristallaufbau werden rund \qty{2421}{\kilo\joule\per\mol} frei).
+\end{ergebnis}
+
+\begin{kontrolle}
+Die Bildungsenthalpie ist stark negativ ($-524$), das Salz ist also stabil.
+Die Summe der endothermen Schritte ($148+2187+31+193=2559$) wird durch die sehr
+grosse exotherme Gitterenergie von $-2421$ und die beiden Elektronenaffinitäten
+überkompensiert --- ein plausibles Bild eines energiereichen Ionenkristalls.
+\end{kontrolle}
+
+\begin{merksatz}
+Born-Haber: $\Delta H_{\mathrm f}$ in einzelne messbare Schritte zerlegen und
+nach der einen unbekannten Grösse (hier $U$) auflösen. Vorzeichen der
+Elektronenaffinitäten und die Faktorisierung pro Atom sind die klassischen Fehlerquellen.
+\end{merksatz}

@@ -1,0 +1,41 @@
+% titel: Blatt 3, A8: Wärmekapazität eines Kalorimeters
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$Q = \qty{25.00}{kJ}$ zugefügt; Temperatur steigt von
+$T_{\text{anf}} = \qty{19.84}{\celsius}$ auf
+$T_{\text{end}} = \qty{21.12}{\celsius}$. Gesucht: Wärmekapazität
+$C$ des Kalorimeters.
+
+\subsection*{Ansatz}
+$C = Q/\Delta T$ mit $\Delta T = T_{\text{end}} - T_{\text{anf}}$. Die
+gegebenen Werte $c_p(\mathrm{H_2O})$ und $\rho(\mathrm{H_2O})$ werden nicht
+gebraucht, weil keine Wassermasse in der Aufgabe steckt.
+
+\subsection*{Rechnung}
+\begin{align*}
+  \Delta T &= 21.12 - 19.84 = \qty{1.28}{K}, \\
+  C &= \frac{25000\ \mathrm{J}}{1.28\ \mathrm{K}}
+  \approx \qty{19531}{J/K}
+  \approx \qty{1.95e4}{J/K}
+  = \qty{19.5}{kJ/K}.
+\end{align*}
+
+\begin{ergebnis}
+$C \approx \qty{1.95e4}{J/K}$ bzw.\ $C \approx \qty{19.5}{kJ/K}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+Grössenordnung: eine Wärmekapazität von $\approx 20\ \mathrm{kJ/K}$ steckt
+typischerweise einige Liter Wasser (über $m c_p \approx
+20\ \mathrm{kJ/K}$); mit $Q = C\,\Delta T$ zurück gerechnet liefert
+$19531\times 1.28 = \qty{25000}{J}$, also die vorgegebene Energie. Die
+Wasser-Konstanten ($c_p$, $\rho$) ändern das Resultat nicht, da keine
+Wassermasse gegeben ist.
+\end{kontrolle}
+
+\begin{merksatz}
+Aus zugeführter Wärme und beobachteter Temperaturerhöhung folgt die
+Wärmekapazität direkt über $C = Q/\Delta T$; die Differenz in °C oder K ist
+identisch.
+\end{merksatz}

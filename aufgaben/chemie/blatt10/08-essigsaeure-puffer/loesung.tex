@@ -1,0 +1,37 @@
+% titel: Blatt 10, A8: pH von 50 mg CH3COOH + 10 mg NaAcetat
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+50 mg CH$_3$COOH und 10 mg CH$_3$COONa, mit Wasser auf 100 mL. Gesucht pH.
+
+\subsection*{Rechnung}
+$M(\mathrm{CH_3COOH})\approx60.05$, $M(\mathrm{CH_3COONa})\approx82.03$
+g/mol; $pK_s=4.75$.
+\begin{align*}
+  n(\mathrm{HAc}) &= \frac{0.050}{60.05} = 8.33\cdot10^{-4}\ mol,\\
+  n(\mathrm{Ac^-}) &= \frac{0.010}{82.03} = 1.22\cdot10^{-4}\ mol.
+\end{align*}
+Puffergleichung (V kürzt sich):
+\[
+  pH = pK_s + \lg\frac{n(\mathrm{Ac^-})}{n(\mathrm{HAc})}
+     = 4.75 + \lg\frac{1.22\cdot10^{-4}}{8.33\cdot10^{-4}}
+     = 4.75 + \lg 0.146 .
+\]
+\[
+  pH \approx 4.75 - 0.835 \approx 3.92 .
+\]
+
+\begin{ergebnis}
+$pH \approx 3.9$ (Essigsäure $\gg$ Acetat, daher im saueren Bereich).
+\end{ergebnis}
+
+\begin{kontrolle}
+Die Säure ist mehrfach im Überschuss gegenüber dem Acetat
+(Ratio$\approx0.146$), also liegt der pH deutlich unter $pK_s(=4.75)$.
+$pH\approx3.9$ ist plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Mengen der Pufferkomponenten aus $n=m/M$; V kürzt sich. $pH=pK_s+\lg
+\frac{n(\text{Base})}{n(\text{Säure})}$.
+\end{merksatz}

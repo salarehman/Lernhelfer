@@ -1,0 +1,57 @@
+% titel: Blatt 3, A9: Enthalpieänderungen von Ethanol
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$m(\mathrm{C_2H_6O}) = \qty{10}{g}$, $M \approx \qty{46.07}{g/mol}$;
+$c_p = \qty{2.42}{J\,g^{-1}K^{-1}}$,
+$\Delta_{vap}H^\circ = \qty{43.5}{kJ/mol}$,
+$\Delta_cH^\circ = \qty{-1368}{kJ/mol}$,
+$\Delta_fH^\circ(\text{flüssig}) = \qty{-277.69}{kJ/mol}$.
+Gesucht: Enthalpieänderung für a) Erwärmen 20--40\,°C, b) Verdampfen,
+c) Verbrennen, d) Bilden aus den Elementen.
+
+\subsection*{Ansatz}
+Gemeinsame Stoffmenge $n = m/M$; a) über $m\,c_p\,\Delta T$, b)--d) über
+$n\cdot$ molare Enthalpie.
+
+\subsection*{Rechnung}
+\begin{equation*}
+  n = \frac{10}{46.07} = 0.2171\ \mathrm{mol}.
+\end{equation*}
+\begin{itemize}
+  \item[a)] $\Delta T = 40 - 20 = \qty{20}{K}$:
+        \begin{equation*}
+          \Delta H_a = 10\times 2.42 \times 20 = \qty{484}{J}
+          = \qty{0.484}{kJ}.
+        \end{equation*}
+  \item[b)] $\Delta H_b = n\,\Delta_{vap}H^\circ
+        = 0.2171\times 43.5 = \qty{9.44}{kJ}$.
+  \item[c)] $\Delta H_c = n\,\Delta_cH^\circ
+        = 0.2171\times(-1368) = \qty{-297}{kJ}$.
+  \item[d)] $\Delta H_d = n\,\Delta_fH^\circ
+        = 0.2171\times(-277.69) = \qty{-60.3}{kJ}$.
+\end{itemize}
+
+\begin{ergebnis}
+\begin{align*}
+  \text{a) Erwärmen } &\Delta H \approx \qty{0.48}{kJ},\\
+  \text{b) Verdampfen } &\Delta H \approx \qty{9.4}{kJ},\\
+  \text{c) Verbrennen } &\Delta H \approx \qty{-297}{kJ},\\
+  \text{d) Bilden } &\Delta H \approx \qty{-60.3}{kJ}.
+\end{align*}
+\end{ergebnis}
+
+\begin{kontrolle}
+Wärmemengen/Größenordnungen plausibel: Erwärmen kleiner Betrag
+(0.5 kJ), Verdampfen positiv und grösser, Verbrennen dominiert (stark
+exotherm, ca. 30 kJ/g entsprechend der üblichen Verbrennungswärme von
+Ethanol). Querprobe d) $\to$ c): $\Delta_cH$ liegt wegen der
+Verbrennungsprodukte weiter negativ als $\Delta_fH$; beides mit demselben
+$n = 0.217\ \mathrm{mol}$ gerechnet.
+\end{kontrolle}
+
+\begin{merksatz}
+Erwärmen mit $m\,c_p\Delta T$, Phasen- und Reaktionsenthalpien mit
+$n\cdot\Delta H^\circ$ rechnen; Vorzeichen von Verdampfung (positiv) und
+Verbrennung (negativ) beherzigen.
+\end{merksatz}

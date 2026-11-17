@@ -1,0 +1,41 @@
+% titel: Blatt 10, A9: Titration HCOOH mit NaOH (pH vor/am Äquivalenzpunkt)
+% skript: Mortimer Kap. 17 (Titration, Puffer, Hydrolyse)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Beim Titrieren einer schwachen Säure mit einer starken Base ändert sich der
+pH je nach Stadium: vor dem Äquivalenzpunkt wirkt das Gemisch als Puffer,
+am Äquivalenzpunkt liegt die konjugierte Base (hydrolysiert) vor.
+
+\begin{werkzeugkasten}[Titration einer schwachen Säure]
+\begin{itemize}
+  \item \textbf{Vor dem Äquivalenzpunkt:} Es bleiben HA und A$^-$
+        nebeneinander $\Rightarrow$ Puffer:
+        \[
+          pH = pK_s + \lg\frac{n(\mathrm{A^-})}{n(\mathrm{HA})},
+        \]
+        mit $n(\mathrm{A^-})$ aus der zugegebenen Base.
+  \item \textbf{Am Äquivalenzpunkt:} alles HA ist neutralisiert, es liegt
+        nur die schwache Base A$^-$ vor:
+        \[
+          pOH \approx \frac12(pK_b - \lg c)\,,\quad
+          pK_b = 14-pK_s,\qquad [OH^-] = \sqrt{K_b c}.
+        \]
+  \item Stöchiometrie $n(\mathrm{OH^-})=n(\mathrm{HA})$ bestimmt die
+        benötigte NaOH-Volumen.
+\end{itemize}
+\textit{Skript:} Mortimer Kap. 17 (Titrationskurven).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Am Äquivalenzpunkt ist der pH \emph{nicht} 7: Die konjugierte Base
+        (Formiat) macht die Lösung basisch.
+  \item pK$_s$(HCOOH)$=3.75 \Rightarrow pK_b=10.25$.
+  \item Für Teil a) erst die im Überschuss verbleibende Säuremenge und das
+        gebildete A$^-$ bestimmen (Stoffmengen, nicht Konzentrationen nötig
+        für das Ratio).
+  \item Gesamtvolumen ändert sich; für pH/Puffer kürzt es sich im
+        Verhältnis häufig, für $c$ am Äquivalenzpunkt aber nicht.
+\end{itemize}
+\end{achtung}

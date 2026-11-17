@@ -1,0 +1,59 @@
+% titel: Blatt 10, A9: Titration HCOOH mit NaOH
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+25.00 mL 0.100 M HCOOH, titriert mit 0.150 M NaOH. $pK_s=3.75$.
+Gesucht: pH nach (a) 5.00 mL NaOH, (b) am Äquivalenzpunkt.
+
+\subsubsection*{a) 5.00 mL NaOH}
+Stoffmengen:
+\[
+  n(\mathrm{HCOOH})=0.0250\cdot0.100=2.50\cdot10^{-3}\ mol,
+\]
+\[
+  n(\mathrm{NaOH})=0.00500\cdot0.150=0.75\cdot10^{-3}\ mol .
+\]
+Es überträgt sich OH$^-$ auf HCOOH: gebildetes Formiat
+$n(\mathrm{HCOO^-})=0.75\cdot10^{-3}$; verbleibende Säure
+$n(\mathrm{HCOOH})=(2.50-0.75)\cdot10^{-3}=1.75\cdot10^{-3}$ mol.
+Puffer:
+\[
+  pH = 3.75 + \lg\frac{0.75\cdot10^{-3}}{1.75\cdot10^{-3}}
+     = 3.75 + \lg 0.4286 \approx 3.75-0.368 \approx 3.38 .
+\]
+
+\subsubsection*{b) Äquivalenzpunkt}
+Stöchiometrie: $n(\mathrm{NaOH})_e = n(\mathrm{HCOOH})$
+$=2.50\cdot10^{-3}$ mol, also
+\[
+  V_e = \frac{2.50\cdot10^{-3}}{0.150} = 0.0167\ L = 16.7\ mL .
+\]
+Am EP: nur Formiat. $V_{\text{ges}}=0.0250+0.0167=0.0417$ L.
+\[
+  c(\mathrm{HCOO^-}) = \frac{2.50\cdot10^{-3}}{0.0417} \approx 0.0600\ M.
+\]
+$pK_b = 14-3.75 = 10.25$; $K_b=10^{-10.25}\approx5.6\cdot10^{-11}$.
+\[
+  [OH^-] = \sqrt{K_b\,c} = \sqrt{5.6\cdot10^{-11}\cdot0.0600}
+    \approx 1.83\cdot10^{-6}\ M.
+\]
+\[
+  pOH = -\lg(1.83\cdot10^{-6}) \approx 5.74,\qquad
+  pH = 14-5.74 \approx 8.26 .
+\]
+
+\begin{ergebnis}
+a) $pH(5\,\mathrm{mL\ NaOH}) \approx 3.4$;
+b) $pH_{\text{ÄP}} \approx 8.3$ (basisch, Am $c_0{=}16.7$ mL NaOH).
+\end{ergebnis}
+
+\begin{kontrolle}
+Vor dem EP (Puffer) 3.4, am EP 8.26: Das ist die typische Titrationskurve
+einer schwachen Säure (pH steigt über neutral am Äquivalenzpunkt, da die
+konjugierte Base hydrolysiert). Plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Vor dem EP: Puffergleichung mit Stoffmengen. Am EP: nur konjugierte Base,
+$[OH^-]=\sqrt{K_b c}$, $pH=14-pOH$. Äquivalenzpunkt liegt basisch über 7.
+\end{merksatz}

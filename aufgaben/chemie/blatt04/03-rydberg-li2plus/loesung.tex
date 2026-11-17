@@ -1,0 +1,42 @@
+% titel: Blatt 4, A3: Wellenlänge, Frequenz, Wellenzahl in Li2+
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Übergang $n = 5 \rightarrow n = 4$ im Ion Li$^{2+}$ ($Z=3$). Gesucht:
+Wellenlänge $\lambda$, Frequenz $\nu$, Wellenzahl $\tilde\nu$.
+
+\subsection*{Ansatz}
+Wasserstoffähnliche Formel $\nu = R_\infty\,Z^2(1/n_f^2 - 1/n_i^2)$; daraus
+$\lambda = c/\nu$ und $\tilde\nu = 1/\lambda$.
+
+\subsection*{Rechnung}
+\begin{align*}
+  \nu &= 3.29\times10^{15}\times 3^2
+       \left(\frac{1}{4^2} - \frac{1}{5^2}\right)
+  = 3.29\times10^{15}\times 9 \times 0.0225
+  = 6.66\times10^{14}\ \mathrm{Hz} \\[2pt]
+  \lambda &= \frac{2.998\times10^{8}}{6.66\times10^{14}}
+  = 4.50\times10^{-7}\ \mathrm{m}
+  = \qty{450}{nm} \\[2pt]
+  \tilde\nu &= \frac{1}{4.50\times10^{-7}}
+  = 2.22\times10^{6}\ \mathrm{m^{-1}}
+  = \qty{22200}{cm^{-1}}.
+\end{align*}
+
+\begin{ergebnis}
+$\lambda \approx \qty{450}{nm}$,\quad
+$\nu \approx \qty{6.66e14}{s^{-1}}$,\quad
+$\tilde\nu \approx \qty{2.22e6}{m^{-1}} = \qty{22200}{cm^{-1}}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+Der gleiche Übergang liegt beim H ($Z=1$) bei $\lambda \approx 4050$ nm
+(Infrarot); mit $Z=3$ skalieren Frequenz und Wellenzahl um $Z^2=9$, die
+Wellenlänge um $1/9$: $4050/9 \approx 450$ nm --- konsistent. Die Linie fällt
+ins Sichtbare, was für Li$^{2+}$ typisch ist.
+\end{kontrolle}
+
+\begin{merksatz}
+Wasserstoffähnlich = Formel mit $Z^2$-Faktor; aus $\nu$ folgen
+$\lambda = c/\nu$ und $\tilde\nu = 1/\lambda$.
+\end{merksatz}

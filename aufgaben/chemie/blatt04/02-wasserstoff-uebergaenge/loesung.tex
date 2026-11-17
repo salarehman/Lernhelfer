@@ -1,0 +1,59 @@
+% titel: Blatt 4, A2: Energieübergänge im Wasserstoff-Atom
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Übergänge im H-Atom: $n=4 \rightarrow n=2$ und $n=1 \rightarrow n=5$.
+Gesucht unter anderem: Grundzustand, Beschreibung, Zahl der
+Emissionslinien von $n=4$ samt Wellenlängen der energiereichsten und
+energieärmsten Linie, Verhalten bei Bestrahlung des Grundzustands mit
+$\lambda = \qty{1.13e-6}{m}$.
+
+\subsection*{Rechnung}
+\textbf{a) Grundzustand:} $n_{\text{Grund}} = 1$.
+
+\textbf{b) Beschreibung:} $n=4 \rightarrow n = 2$ ist \textbf{Emission}
+(Energie wird abgegeben); $n=1 \rightarrow n = 5$ ist \textbf{Absorption}
+(Energie wird aufgenommen, Anregung).
+
+\textbf{c) Zahl der Linien von $n = 4$:}
+\begin{equation*}
+  \binom{4}{2} = 6 \quad \text{Linien}
+  \ (4{\to}3,\ 4{\to}2,\ 4{\to}1,\ 3{\to}2,\ 3{\to}1,\ 2{\to}1).
+\end{equation*}
+Energie höchste $\to$ $n=4\rightarrow 1$, niedrigste $\to$ $n=4 \rightarrow 3$.
+\begin{align*}
+  \Delta E_{4\to1} &= 13.6\!\left(1 - \frac{1}{16}\right) = 12.75\ \mathrm{eV},
+  &\lambda_{4\to1} &= \frac{hc}{\Delta E} = \qty{97.2}{nm}, \\[2pt]
+  \Delta E_{4\to3} &= 13.6\!\left(\frac{1}{9}-\frac{1}{16}\right)=0.661\ \mathrm{eV},
+  &\lambda_{4\to3} &= \frac{hc}{\Delta E} = \qty{1.88}{\micro\meter}.
+\end{align*}
+
+\textbf{d) Bestrahlung des Grundzustands mit $\lambda = 1.13\times10^{-6}$ m:}
+Photonenenergie
+\begin{equation*}
+  E_{\text{photon}} = \frac{hc}{\lambda}
+  = \frac{1.987\times10^{-25}}{1.13\times10^{-6}}
+  = 1.10\ \mathrm{eV}.
+\end{equation*}
+Die Anregung $n=1\to n=2$ benötigt aber $10.2\ \mathrm{eV}$; $1.10\ \mathrm{eV}$
+reicht nicht. Das Wasserstoffatom bleibt im Grundzustand; das Photon wird
+nicht absorbiert.
+
+\begin{ergebnis}
+Grundzustand $n=1$. Linien von $n=4$: $6$. Energiereichste
+$4\to1$ ($\approx \qty{97.2}{nm}$), energieärmste $4\to3$
+($\approx \qty{1.88}{\micro\meter}$). Ein Photon mit
+$\lambda = 1.13\times10^{-6}\,\mathrm{m}$ ($1.1\ \mathrm{eV}$) wird vom
+Grundzustand nicht absorbiert.
+\end{ergebnis}
+
+\begin{kontrolle}
+97 nm liegt im UV (serie im Lyman-Bereich), 1.88 µm im IR (Paschen-Bereich)
+--- plausibel. Der gewünschte 1.13-µm-Photone läge im IR mit nur 1.1 eV;
+da der erste angeregte Zustand 10.2 eV verlangt, ist keine Anregung möglich.
+\end{kontrolle}
+
+\begin{merksatz}
+$n_i>n_f$: Emission, $n_i<n_f$: Absorption. Linienzahl $\binom{n}{2}$;
+höchste Energie kommt vom grössten $|1/n_f^2 - 1/n_i^2|$.
+\end{merksatz}

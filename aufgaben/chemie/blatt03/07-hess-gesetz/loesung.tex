@@ -1,0 +1,67 @@
+% titel: Blatt 3, A7: Hess'scher Satz (Standard-Reaktionsenthalpie)
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Zielreaktion bei $T = \qty{298.15}{K}$:
+\begin{equation*}
+  \mathrm{N_2O_4(g)} + 2\,\mathrm{N_2H_4(l)} \rightarrow
+  3\,\mathrm{N_2(g)} + 4\,\mathrm{H_2O(g)}.
+\end{equation*}
+Gegeben (Standard-bildungs-relevante Teilreaktionen):
+\begin{align*}
+  \mathrm{NH_3(g)} &\rightarrow \tfrac12\mathrm{N_2(g)} + \tfrac32\mathrm{H_2(g)}
+    &\Delta H_1^\circ &= +46.19,\\
+  \mathrm{N_2O_4(g)} &\rightarrow 2\,\mathrm{NO_2(g)}
+    &\Delta H_2^\circ &= +58.04,\\
+  2\,\mathrm{NH_3(g)} &\rightarrow \mathrm{N_2H_4(l)} + \mathrm{H_2(g)}
+    &\Delta H_3^\circ &= +142.80,\\
+  2\,\mathrm{NO_2(g)} + 4\,\mathrm{H_2(g)} &\rightarrow \mathrm{N_2(g)} + 4\,\mathrm{H_2O(g)}
+    &\Delta H_4^\circ &= -1033.66.
+\end{align*}
+Gesucht: $\Delta_rH^\circ$ in kJ/mol.
+
+\subsection*{Ansatz}
+Zielreaktion aus den Teilreaktionen zusammensetzen durch Umkehren und
+Vervielfachen, dann die Enthalpien addieren (Hess).
+
+\subsection*{Rechnung}
+\begin{enumerate}
+  \item Gegeben (R4): $2\,\mathrm{NO_2} + 4\,\mathrm{H_2} \rightarrow
+        \mathrm{N_2} + 4\,\mathrm{H_2O}$,
+        $\Delta H_4^\circ = -1033.66$.
+  \item R2 liefert $\mathrm{NO_2}$: $\mathrm{N_2O_4} \rightarrow
+        2\,\mathrm{NO_2}$, $+58.04$.
+  \item R3 umkehren und verdoppeln, um $2\,\mathrm{N_2H_4}$ als Edukt zu haben:
+        $2\,\mathrm{N_2H_4} + 2\,\mathrm{H_2} \rightarrow
+        4\,\mathrm{NH_3}$, $\Delta H = -2\cdot 142.80 = -285.60$.
+  \item R1 vervierfachen, um $4\,\mathrm{NH_3}$ wieder abzubauen:
+        $4\,\mathrm{NH_3} \rightarrow 2\,\mathrm{N_2} + 6\,\mathrm{H_2}$,
+        $\Delta H = +4\cdot 46.19 = +184.76$.
+\end{enumerate}
+Addiert man (1)--(4), kürzen sich $2\,\mathrm{NO_2}$, $4\,\mathrm{NH_3}$ und
+$6\,\mathrm{H_2}$ heraus:
+\begin{align*}
+  \Delta_rH^\circ &=
+  \Delta H_4^\circ + \Delta H_2^\circ -2\,\Delta H_3^\circ +4\,\Delta H_1^\circ \\[2pt]
+  &= (-1033.66) + 58.04 - 285.60 + 184.76 \\
+  &= \qty{-1076.46}{kJ/mol}.
+\end{align*}
+
+\begin{ergebnis}
+$\Delta_rH^\circ \approx \qty{-1076.46}{kJ/mol}$ für
+$\mathrm{N_2O_4(g)} + 2\,\mathrm{N_2H_4(l)}
+\rightarrow 3\,\mathrm{N_2(g)} + 4\,\mathrm{H_2O(g)}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+Probe der Teilbilanzen: R3 umgekehrt gibt $2\,\mathrm{N_2H_4}$, R4 liefert
+$4\,\mathrm{H_2O}$ und (nach Kürzung) $1\,\mathrm{N_2}$,
+R1' liefert $2\,\mathrm{N_2}$, zusammen $3\,\mathrm{N_2}$ --- passt zur
+Zielreaktion. Die Reaktion ist stark exotherm (grosser negativer Wert),
+typisch für ein Treibstoff-Paar ($\mathrm{N_2O_4}/\mathrm{N_2H_4}$).
+\end{kontrolle}
+
+\begin{merksatz}
+Zielgleichung aus Teilgleichungen durch Umkehren/Vervielfachen zusammenbauen,
+Zwischenprodukte kürzen und die (skalierten) $\Delta H$ aufsummieren.
+\end{merksatz}

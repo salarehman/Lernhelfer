@@ -1,0 +1,44 @@
+% titel: Blatt 4, A7: Welche Serie? (Wasserstoffspektrum, Wellenzahlen)
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Zwei aufeinanderfolgende Linien des H-Atomspektrums mit
+$\tilde\nu_i = \qty{2.057e6}{m^{-1}}$ und
+$\tilde\nu_{i+1} = \qty{2.304e6}{m^{-1}}$. Gesucht: zu welcher Serie (d.\,h.
+zu welchem $n_f$) sie gehören.
+
+\subsection*{Ansatz}
+Rydberg-Formel $\tilde\nu = R_H(1/n_f^2 - 1/n_i^2)$ mit
+$R_H \approx \qty{1.097e7}{m^{-1}}$; beide Werte auf denselben $n_f$
+prüfen (die Linien $n_f{+}1\to n_f$ und $n_f{+}2\to n_f$).
+
+\subsection*{Rechnung}
+Probe für Serie $n_f = 2$ (Balmer):
+\begin{align*}
+  \tilde\nu_{4\to2} &= 1.097\times10^{7}
+    \left(\frac14 - \frac{1}{16}\right)
+  = 1.097\times10^{7}\times 0.1875
+  = 2.057\times10^{6}\ \mathrm{m^{-1}}, \\[2pt]
+  \tilde\nu_{5\to2} &= 1.097\times10^{7}
+    \left(\frac14 - \frac{1}{25}\right)
+  = 1.097\times10^{7}\times 0.21
+  = 2.304\times10^{6}\ \mathrm{m^{-1}}.
+\end{align*}
+Beide Werte stimmen exakt mit den gegebenen Wellenzahlen überein.
+
+\begin{ergebnis}
+Die beiden Linien gehören zur \textbf{Balmer-Serie}
+($n_f = 2$); sie entsprechen den Übergängen $n=4\to n=2$ und $n=5\to n=2$.
+\end{ergebnis}
+
+\begin{kontrolle}
+Die anderen Serien liefern andere Werte: für $n_f=3$ (Paschen) käme etwa
+$R_H(1/9-1/16) = 5.3\times10^{5}\ \mathrm{m^{-1}}$, kleiner als die
+gegebenen Zahlen. Die Übereinstimmung mit exakt $2.057$ und $2.304\times10^{6}$
+(auf 4 Ziffern) bestätigt die Balmer-Zuordnung.
+\end{kontrolle}
+
+\begin{merksatz}
+Zwei aufeinanderfolgende Linien mit gleichem $n_f$ ergeben zusammen
+$R_H(1/n_f^2)$-Struktur; hier passt $n_f=2$ (Balmer) exakt auf beide.
+\end{merksatz}

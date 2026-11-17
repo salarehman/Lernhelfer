@@ -1,0 +1,39 @@
+% titel: Blatt 4, A7: Welche Serie? (Wasserstoffspektrum, Wellenzahlen)
+% skript: Mortimer Kap. 6 (Serien des Wasserstoffs)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Die Linien des Wasserstoffatoms ordnen sich in Serien, benannt nach dem
+unteren Niveau $n_f$ (Lyman $n_f=1$, Balmer $n_f=2$, Paschen $n_f=3$,
+Brackett $n_f=4$, Pfund $n_f=5$). Zwei aufeinanderfolgende Linien gehören
+zur selben Serie, wenn sie denselben Endzustand $n_f$ teilen.
+
+\begin{werkzeugkasten}[Serienidentifikation über die Wellenzahl]
+Wellenzahl einer Linie von $n_i \to n_f$:
+\begin{equation}
+  \tilde\nu = \frac{1}{\lambda} = R_H\left(\frac{1}{n_f^2}
+  - \frac{1}{n_i^2}\right),
+  \qquad R_H \approx \qty{1.097e7}{m^{-1}}.
+\end{equation}
+Zwei aufeinanderfolgende Linien derselben Serie haben dasselbe $n_f$ und
+$n_i$ bzw.\ $n_i+1$. Für Balmer ($n_f=2$):
+\begin{equation}
+  \tilde\nu = R_H\!\left(\frac14 - \frac{1}{n_i^2}\right).
+\end{equation}
+Man kann durch Probieren der $n_f$ prüfen, welche Serie beide
+gegebenen Werte reproduziert.
+
+\textit{Skript:} Mortimer Kap. 6 (Serien, Rydberg-Formel), Übung 4/7.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Beide Wellenzahlen müssen zur \emph{gleichen} Serie gehören, d.\,h.
+        gleichen $n_f$ und $n_i$-Werte haben, die sich um $1$ unterscheiden.
+  \item Die Serien sind nach dem unteren Niveau benannt; nicht nach dem
+        oberen.
+  \item Ohne $R_H$ geht der Kürzest-weg-Test: Der Quotient bzw.\ die
+        Differenz der Wellenzahlen legt die Serienzugehörigkeit fest.
+  \item Werte in m$^{-1}$ einsetzen ($10^6$-Faktor beachten).
+\end{itemize}
+\end{achtung}
