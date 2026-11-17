@@ -1,0 +1,53 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$c>0$, $S>0$, $a\ge0$; $(a_n),(b_n),(c_n)$ positive Folgen mit
+$a_n\to a$, $b_n\to\infty$, $c_n\le S$. Zu beweisen:
+(a) $\lim(c\,a_n)=c\,a$; (b) $\lim(c\,b_n)=\infty$; (c) $\lim c_n/b_n=0$.
+
+\subsection*{a) $\lim(c\,a_n)=c\,a$}
+Zu $\varepsilon>0$: wegen $a_n\to a$ gibt es $N$ mit
+$|a_n-a|<\varepsilon/c$ (da $c>0$) für alle $n>N$. Dann
+\begin{equation}
+  |c\,a_n-c\,a|=|c|\,|a_n-a|=c\,|a_n-a|<c\cdot\frac\varepsilon c
+  =\varepsilon .
+\end{equation}
+Also $c\,a_n\to c\,a$. \checkmark
+
+\subsection*{b) $\lim(c\,b_n)=\infty$}
+Zu $M>0$: wegen $b_n\to\infty$ gibt es $N$ mit $b_n>\tfrac M c$ (da
+$c>0$) für alle $n>N$. Dann
+\begin{equation}
+  c\,b_n>c\cdot\frac Mc=M .
+\end{equation}
+Also $c\,b_n\to\infty$. \checkmark
+
+\subsection*{c) $\lim\frac{c_n}{b_n}=0$}
+Zu $\varepsilon>0$: wegen $b_n\to\infty$ gibt es $N$ mit
+$b_n>\tfrac S\varepsilon$ für alle $n>N$. Mit der Beschränkung
+$c_n\le S$ ($c_n>0$):
+\begin{equation}
+  \left|\frac{c_n}{b_n}\right|=\frac{c_n}{b_n}\le\frac{c_n}{S/\varepsilon}
+  <\frac{S}{S/\varepsilon}=\varepsilon .
+\end{equation}
+Also $c_n/b_n\to0$. \checkmark
+
+\begin{ergebnis}
+\begin{equation*}
+  \lim(c\,a_n)=c\,a,\qquad
+  \lim(c\,b_n)=\infty,\qquad
+  \lim\frac{c_n}{b_n}=0 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+Beispiel: $a_n=2+\tfrac1n$ ($a=2$), $c=3$: $c\,a_n=6+\tfrac3n\to6=3\cdot2$;
+$b_n=n\to\infty$: $3n\to\infty$; $c_n=\sin n$ (beschränkt $\le1$):
+$\tfrac{c_n}{n}\to0$. Passt zu allen drei Aussagen.
+\end{kontrolle}
+
+\begin{merksatz}
+Ketten von ``zu jedem $\varepsilon$ existiert $N$'' beweisen, indem man
+das Ziel $N$ aus der jeweiligen Prämissen (Konvergenz, Divergenz,
+Beschränktheit) ableitet; dadurch folgt alles direkt die Definitionen.
+\end{merksatz}

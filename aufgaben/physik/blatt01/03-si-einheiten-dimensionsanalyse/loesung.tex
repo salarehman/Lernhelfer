@@ -1,0 +1,93 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+$x\in[\mathrm m]$, $t\in[\mathrm s]$, $v\in[\mathrm{m/s}]$,
+$F\in[\mathrm N]$, $m_1,m_2\in[\mathrm{kg}]$; ferner $p$ Druck, $\rho$
+Dichte, $g$ Ortsfaktor, $h$ H\"ohe, $x$ Ort, $t$ Zeit. Gesucht: (a) SI-
+Einheiten von $C_1,C_2$ in drei Gleichungen, (b) Dimensionsprobe zweier
+Formeln, (c) welche Angstroem-Angaben stimmen.
+
+\subsection*{Ansatz}
+Die Konstante gleicht die Einheiten aus; Logarithmus-Argument muss
+dimensionslos sein; jede Formel beidseitig auf Masse/Laenge/Zeit zurueckfuehren.
+
+\subsection*{Rechnung}
+\textbf{a) Einheiten der Konstanten.}
+\begin{enumerate}
+  \item[(i)] $x=C_1+C_2t$: beide Terme in \unit{\metre}.
+\begin{equation}
+  C_1:\ \unit{\metre},\qquad
+  C_2:\ \frac{\unit{\metre}}{\unit{\second}}.
+\end{equation}
+  \item[(ii)] $v=C_1\,x\,\ln(C_2t)$: $\ln$-Argument dimensionslos
+        $\Rightarrow C_2$ in \unit{\per\second}.
+\begin{equation}
+  C_1=\frac{v}{x}=\frac{\unit{\metre\per\second}}{\unit{\metre}}
+      =\unit{\per\second},\qquad
+  C_2:\ \unit{\per\second}.
+\end{equation}
+  \item[(iii)] $F=C_1\,\frac{m_1m_2}{x^2}$:
+\begin{equation}
+  C_1=\frac{F\,x^2}{m_1m_2}
+      =\frac{\unit{\newton\metre\squared}}{\unit{\kilogram\squared}}
+      =\frac{\unit{\metre\cubed}}{\unit{\kilogram\second\squared}}
+      \quad(\text{Gravitationskonstante }G)\;.
+\end{equation}
+\end{enumerate}
+
+\textbf{b) Dimensionsprobe.}
+\begin{enumerate}
+  \item[(i)] $p+\rho gh+\tfrac12\rho v^2=\text{const.}$ Alle drei Terme:
+\begin{equation}
+  \frac{\unit{\kilogram}}{\unit{\metre\second\squared}}
+  \quad\text{(Druck, Bernoulli)}\;.
+\end{equation}
+$p=\unit{\pascal}$: ok. $\rho gh$: $\tfrac{\mathrm{kg}}{\mathrm m^3}\cdot
+\frac{\mathrm m}{\mathrm s^2}\cdot\mathrm m=\frac{\mathrm{kg}}{\mathrm{m s^2}}$. ok.
+$\tfrac12\rho v^2$: $\frac{\mathrm{kg}}{\mathrm m^3}\cdot
+\frac{\mathrm m^2}{\mathrm s^2}=\frac{\mathrm{kg}}{\mathrm{m s^2}}$. ok.
+Die Formel kann stimmen.
+
+  \item[(ii)] $F=\mathrm d^2x/\mathrm dt^2$: links
+        \unit{\newton}$=\frac{\mathrm{kg\,m}}{\mathrm s^2}$, rechts
+\begin{equation}
+  \frac{\mathrm d^2x}{\mathrm dt^2}:\ \frac{\unit{\metre}}{\unit{\second\squared}},
+\end{equation}
+also fehlt die Masse. Die Formel \textbf{stimmt nicht} (richtig:
+$F=m\,\mathrm d^2x/\mathrm dt^2$).
+\end{enumerate}
+
+\textbf{c) Angstroem-Umrechnung.} $1\,\mathrm{\AA}=10^{-10}\mathrm m$:
+\begin{align}
+  (i)\ 10\,\mathrm{nm}&=10^{-8}\mathrm m\ \text{(falsch)},\\
+  (ii)\ 10^5\,\mathrm{fm}&=10^5\cdot10^{-15}\mathrm m=10^{-10}\mathrm m\
+      \checkmark,\\
+  (iii)\ 10^{-1}\,\mathrm{nm}&=10^{-1}\cdot10^{-9}\mathrm m=10^{-10}\mathrm m\
+      \checkmark,\\
+  (iv)\ 10^{-5}\,\mathrm{fm}&=10^{-20}\mathrm m\ \text{(falsch)},\\
+  (v)\ 10^{-4}\,\mathrm{\mu m}&=10^{-4}\cdot10^{-6}\mathrm m=10^{-10}\mathrm m\
+      \checkmark,\\
+  (vi)\ 10^{3}\,\mathrm{\mu m}&=10^{-3}\mathrm m\ \text{(falsch)}.
+\end{align}
+
+\begin{ergebnis}
+(a) $C_1$: m (bzw. s$^{-1}$, bzw. m$^3$/(kg$\,\cdot$s$^2$)); $C_2$: m/s
+(bzw. s$^{-1}$). (b) Bernoulli-Gleichung ok, $F=\mathrm d^2x/\mathrm dt^2$
+nicht. (c) Richtig: (ii), (iii), (v).
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} in (a) jede Gleichung links/rechts auf eine
+Einheitenkette geprueft; in (c) alle auf \unit{\metre}. \checkmark
+
+\textbf{Querprobe:} Durchmesser eines Atoms $\sim1\mathrm{\AA}$.
+$10^5\,\mathrm{fm}=10^{-10}\mathrm m$ ist der gleiche Wert, also sind
+(ii),(iii),(v) konsistent. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Eine Konstante in einer Formel uebernimmt genau die Einheit, die die
+Gleichung dimensionell ausgleicht; naehert man eine Gleichung auf die
+Dimension aller Terme, erkennt man fehlende Faktoren (hier die Masse) und
+kann Umrechnungen mit 10er-Potenzen sauber pruefen.
+\end{merksatz}

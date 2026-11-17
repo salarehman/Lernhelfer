@@ -1,0 +1,61 @@
+% titel: Blatt 2, A2: Federpendel
+% skript: Kap. Schwingungen, harmonischer Oszillator
+
+% Federkraft, Ruhelage, Bewegungsgleichung, freie Schwingung.
+
+Eine Masse an einer Feder schwingt um ihre Ruhelage mit der
+Kreisfrequenz $\omega=\sqrt{k/m}$, solange die Auslenkungen das
+Hooke'sche Gesetz erfuellen.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Hooke'sche Gesetz} (Kraft proportional zur Auslenkung gegen die
+Ruhelage):
+\begin{equation}
+  F=-k\,(z-z_0),
+\end{equation}
+wobei $k$ die Federkonstante, $z_0$ die Ruhelage ist.
+
+\textbf{Vertikale Feder:} Ruhelage ergibt sich aus dem Kräftegleichgewicht
+(Gewicht gegen Federkraft)
+\begin{equation}
+  m g=k\,(z_0-z_{\text{unbelastet}})\;\Rightarrow\;
+  z_0=\frac{m g}{k}\;.
+\end{equation}
+
+\textbf{Bewegungsgleichung} (2. Newton):
+\begin{equation}
+  m\ddot z=-k\,(z-z_0)\;.
+\end{equation}
+Mit $u=z-z_0$ wird daraus der harmonische Oszillator
+\begin{equation}
+  \ddot u+\omega^2 u=0,\qquad \omega=\sqrt{k/m},\quad
+  T=2\pi/\omega\;.
+\end{equation}
+
+\textbf{Allgemeine Loesung} (frei waehlbare $A,B$, festgelegt durch
+Anfangsbedingungen $u(0)$ und $\dot u(0)$):
+\begin{equation}
+  u(t)=A\cos(\omega t)+B\sin(\omega t)=C\cos(\omega t+\varphi)\;.
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Ruhelage: $F=0$ setzen bzw. Kräftegleichgewicht.
+  \item Die DGL auf $u=z-z_0$ umschreiben, dann $A$, $B$ aus $z(0)$ und
+        $\dot z(0)$ bestimmen.
+  \item Ohne Anfangsgeschwindigkeit ($\dot u(0)=0$) bleibt nur der
+        Kosinus-Term mit Amplitude $u(0)$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Die Ruhelage ist $z_0\ne0$; man rechnet sie sauber als konstanten
+        Offset, bevor man die Oszillator-Formel ansetzt.
+  \item $\omega$ ist \emph{nicht} $m/k$, sondern $\sqrt{k/m}$.
+  \item Anfangsbedingungen inkenlich ansetzen: die Kugel wird \emph{nach
+        unten} gedrueckt; das Vorzeichen von $z(0)$ folgt aus der
+        gewaehlten $z$-Achse.
+\end{itemize}
+\end{achtung}

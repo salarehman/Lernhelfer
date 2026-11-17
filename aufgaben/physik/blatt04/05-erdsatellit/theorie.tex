@@ -1,0 +1,55 @@
+% titel: Erdsatellit: Kreisbahn, Umlaufzeit, geostationaer
+% skript: Kap. Gravitation, Satellitenbewegung
+
+Ein Satellit der Masse $m\ll M_E$ kreist auf einer (näherungsweise)
+Kreisbahn mit Radius $R$ um die Erde. Die Gravitationskraft liefert die
+Zentripetalkraft; daraus folgen Bahngeschwindigkeit und Umlaufzeit allein aus
+Bahnradius, Erdmasse und Gravitationskonstante.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Zentripetalkraft aus Gravitation:}
+\begin{equation}
+  \frac{m v^2}{R} = G\,\frac{M_E\,m}{R^2}
+  \;\Rightarrow\;
+  v = \sqrt{\frac{G M_E}{R}}\;.
+\end{equation}
+
+\textbf{Umlaufzeit} (Kreisbahn, $2\pi R$ pro Umlauf):
+\begin{equation}
+  T = \frac{2\pi R}{v} = 2\pi\sqrt{\frac{R^3}{G M_E}}\;.
+\end{equation}
+
+\textbf{Bahnhöhe über Erdoberfläche:} $R = R_E + h$.
+
+\textbf{Geostationäre Bahn:} $T$ gleich der Umlaufdauer der Erde
+($T=$\,\unit{24 h}); der Satellit steht dann über einem festen Punkt des
+Äquators. Nur über dem Äquator ist die Bahnebene mit der
+Drehachse verträglich.
+
+\textbf{Mechanische Energie auf Kreisbahn:}
+\begin{equation}
+  E_\mathrm{mech} = E_\mathrm{kin}+E_\mathrm{pot}
+  = \frac12 m v^2 - G\frac{M_E m}{R}
+  = -G\frac{M_E m}{2R}\;\;(\text{mit } v^2=GM_E/R)\;.
+\end{equation}
+
+\textbf{Konstante:} $G=\qty{6.674e-11}{m^3/(kg\,s^2)}$,
+$M_E=\qty{5.974e24}{kg}$, $R_E=\qty{6378}{km}$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+$a)$ Allgemeinen Ausdruck für $T$ herleiten. $b)$ Für die ISS Höhe
+$h=\qty{400}{km}$: $R=R_E+h$ einsetzen. $c)$ Geostationär: $T$ fixieren und
+nach $R$ auflösen. $d)$ Reibungsabnahme der Gesamtenergie $E_\mathrm{mech}$
+mit dem Radius $R$ verknüpfen ($E_\mathrm{mech}\propto -1/R$) und
+Schlussfolgerung über $R$ und $T$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $R$ ist der Abstand zum Erdmittelpunkt, nicht die Höhe über der
+       Oberfläche.
+  \item $E_\mathrm{mech}<0$: eine kleinere (negativere) mechanische Energie
+       bedeutet kleineren Bahnradius.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,77 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+Zylinderfoermige Walze (Masse $m$) ruht in einer Rinne; linkes Brett
+unter $\alpha_1$, rechtes unter $\alpha_2$ zur Horizontalen.
+Gesucht: (a) Freikoerperbild mit allen Kraeften, (b) Betrag der
+Gesamtkraft, (c) Kraefte des linken und rechten Brettes als Funktion von
+$\alpha_1,\alpha_2$ und die Gegenkraefte, (d) Winkel fuer
+``vierfache Gewichtskraft'' pro Brett.
+
+\subsection*{Ansatz}
+Statik: $\sum\vec F=0$; Krafte in $x$- und $y$-Komponenten zerlegen,
+Normalkraefte senkrecht zu den Brettern.
+
+\subsection*{Rechnung}
+\textbf{a) Kraefte.} Auf die Walze wirken: die Gewichtskraft
+$\vec F_G=m\vec g$ senkrecht nach unten, die Normalkraft $\vec N_1$ des
+linken sowie $\vec N_2$ des rechten Brettes (jeweils senkrecht zur
+Brettflaeche); zusammen ergeben sie null.
+
+\textbf{b) Gesamtkraft.} Wegen Ruhe ist
+\begin{equation}
+  \sum\vec F=\vec F_G+\vec N_1+\vec N_2=\vec 0
+  \;\Rightarrow\;|\vec F_{\mathrm{ges}}|=0.
+\end{equation}
+
+\textbf{c) Normalkraefte.} In horizontale und vertikale Richtung zerlegen
+(mit $\alpha_1$ (linkes Brett nach links oben) und $\alpha_2$
+(rechtes Brett nach rechts oben)):
+\begin{align}
+  x:\quad -N_1\sin\alpha_1+N_2\sin\alpha_2&=0,\\
+  y:\quad N_1\cos\alpha_1+N_2\cos\alpha_2&=mg.
+\end{align}
+Aus der ersten Gleichung $N_2\sin\alpha_2=N_1\sin\alpha_1$;
+einsetzen in die zweite (bzw. symmetrisch) liefert:
+\begin{equation}
+  \boxed{\;N_1=\frac{mg\,\sin\alpha_2}{\sin(\alpha_1+\alpha_2)},\qquad
+  N_2=\frac{mg\,\sin\alpha_1}{\sin(\alpha_1+\alpha_2)}\;}.
+\end{equation}
+Die Gegenkraefte der Walze auf die Bretter sind
+$\vec F'_1=-\vec N_1$ und $\vec F'_2=-\vec N_2$.
+
+\textbf{d) Vierfache Gewichtskraft.} Die Bedingung $N_1=N_2=4mg$
+kombiniert mit der $x$-Gleichung $N_1\sin\alpha_1=N_2\sin\alpha_2$
+ergibt $\sin\alpha_1=\sin\alpha_2$, also (gleiche, spitze Winkel)
+$\alpha_1=\alpha_2=\alpha$. Aus der $y$-Gleichung mit $N=4mg$:
+\begin{equation}
+  4mg\cos\alpha+4mg\cos\alpha=mg
+  \;\Rightarrow\;\cos\alpha=\frac18,
+  \;\Rightarrow\;\alpha=\arccos\tfrac18\approx\qty{82.8}{\degree}.
+\end{equation}
+
+\begin{ergebnis}
+(a) Gewicht plus zwei Normalkraefte; (b) Gesamtkraft null; (c)
+$N_1=\dfrac{mg\sin\alpha_2}{\sin(\alpha_1+\alpha_2)}$,
+$N_2=\dfrac{mg\sin\alpha_1}{\sin(\alpha_1+\alpha_2)}$, Gegenkraefte $-N_1,-N_2$;
+(d) fuer $N_1=N_2=4mg$: $\alpha_1=\alpha_2=\arccos(1/8)\approx\qty{82.8}{\degree}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Sonderfall:} Fuer gleiche Winkel $\alpha_1=\alpha_2=45^\circ$ ist
+$\sin(\alpha_1+\alpha_2)=1$ und
+$N_1=N_2=mg\,\sin45^\circ=mg/\sqrt2\approx0{,}71\,mg$. Ein symmetrischer
+45$^\circ$-Keil ruft an jedem Brett eine Normalkraft von $0{,}71\,mg$
+hervor; die Summe der Vertikalkomponenten ($2\cdot0{,}71\,mg\cos45^\circ$)
+gleicht $mg$ -- plausibel. \checkmark
+
+\textbf{Einheiten:} $N_1,N_2$ in \unit{\newton}; Argumente $mg\sin\alpha_2$
+[\unit{\newton}], $\sin(\alpha_1+\alpha_2)$ dimensionslos. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Im statischen Gleichgewicht ist die Vektorsumme aller Kraefte null. Zwei
+schraege Auflager zerlegt man in Normalkraefte mit einer
+Komponentenzerlegung; die Kraft pro Brett haengt von beiden Winkeln ab und
+kann fuer steile Rinnen die Gewichtskraft um ein Vielfaches uebersteigen.
+\end{merksatz}

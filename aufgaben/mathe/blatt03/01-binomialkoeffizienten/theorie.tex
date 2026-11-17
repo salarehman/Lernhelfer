@@ -1,0 +1,38 @@
+% titel: Blatt 3, A1: Binomialkoeffizienten
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Binomialkoeffizienten berechnen, Auswahlmöglichkeiten zählen und die Zahl
+der nichtnegativen Lösungen einer Gleichung bestimmen.
+
+\begin{werkzeugkasten}[Binomialkoeffizient]
+\begin{equation}
+  \binom{n}{k}=\frac{n!}{k!\,(n-k)!},
+  \qquad\binom{n}{k}=\binom{n}{n-k}.
+\end{equation}
+Ohne Taschenrechner kürzt man: $\binom{12}{3}=\frac{12\cdot11\cdot10}{3!}=220$,
+$\binom{57}{56}=\binom{57}{1}=57$, $\binom{10}{7}=\binom{10}{3}=120$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Auswahl und Säulen-Formel]
+\begin{itemize}
+  \item Anzahl der Teilmengen mit mindestens $r$ Elementen aus einer
+        $m$-Menge: $\sum_{k=r}^{m}\binom{m}{k}$.
+  \item Zahl der Lösungen von
+        $x_1+\dots+x_d=N$ mit $x_i\in\mathbb N_0$ (Säulen-/Permanenz-Formel):
+        \begin{equation}
+          \binom{N+d-1}{d-1}.
+        \end{equation}
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Symmetrie $\binom{n}{k}=\binom{n}{n-k}$ nutzen, um kleine Werte zu
+        berechnen (z. B. $\binom{10}{7}=\binom{10}{3}$).
+  \item ``Mindestens 7 aus 10'' ist die Summe $\binom{10}{7}+\dots+\binom{10}{10}$,
+        nicht nur $\binom{10}{7}$.
+  \item Für $x_i\in\mathbb N_0$ gilt die Formel $\binom{N+d-1}{d-1}$; für
+        strikt positive $x_i$ müsste man sie zuerst verschieben.
+\end{itemize}
+\end{achtung}

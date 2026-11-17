@@ -1,0 +1,70 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Person $m=\qty{70}{kg}$, Boot $M=\qty{140}{kg}$, Bootlänge
+$L=\qty{6}{m}$, keine Reibung zwischen Boot und Wasser. Relativgeschwindigkeit
+$u=\qty{1}{m/s}$ in Teil (b).
+Gesucht: (a) Verschiebung des Bootes beim Gang der Person zum Bug; (b)
+Geschwindigkeit des Bootes relativ zum Wasser während und nach dem Gang.
+
+\subsection*{Ansatz}
+Ohne äussere horizontale Kräfte bleiben Gesamtimpuls und Schwerpunkt konstant.
+Alle Orts- und Geschwindigkeitsangaben deshalb auf das Wasser (Inertialsystem)
+beziehen; nur die im Aufgabentext genannte $u$ ist relativ zum Boot.
+
+\subsection*{Rechnung}
+\textbf{a) Verschiebung des Bootes.} $x=0$ beim Heck anfangs; Schwerpunkt beider
+Massen bleibt am selben Ort wie zu Beginn (alles in Ruhe). Person wandert um
+$L$ relativ zum Boot; das Boot verschiebt sich um $s$ entgegengesetzt. Da
+innerhalb des Systems nur die Person relativ verschoben wird, gilt
+\begin{equation}
+  0 = m\,(L-s) + M\,(-s)
+  \;\Rightarrow\;
+  s = \frac{m}{m+M}\,L
+  = \frac{70}{210}\,\qty{6}{m}
+  = \qty{2.0}{m}\;.
+\end{equation}
+($L-s$ ist die Wasser-Verschiebung der Person, $-s$ die des Bootes.)
+
+\textbf{b) Geschwindigkeit des Bootes.} Impulserhaltung bezogen aufs Wasser:
+Person hat $u+v$, Boot $v$ (entgegengesetztes Vorzeichen übernehmen):
+\begin{equation}
+  0 = m(u+v) + Mv
+  \;\Rightarrow\;
+  v = -\frac{m}{m+M}\,u
+  = -\frac{70}{210}\,\qty{1}{m/s}
+  = \qty{-0.33}{m/s}\;.
+\end{equation}
+Das Boot fährt also mit \qty{0.33}{m/s} \emph{entgegen} der Laufrichtung. Bei
+$u=0$ (Person bleibt stehen) ist $v=0$: das Boot und die Person ruhen wieder
+relativ zum Wasser; die gesamte Verschiebung ist unverändert
+$\qty{2}{m}$.
+
+\begin{ergebnis}
+(a) Das Boot verschiebt sich um $\dfrac{m}{m+M}\,L=\qty{2.0}{m}$ in Richtung
+Bug der Person \emph{entgegen} (also zum Heck). (b) Relativ zum Wasser gilt
+\begin{equation*}
+  v_\mathrm{Boot}=-\dfrac{m}{m+M}\,u=\qty{-0.33}{m/s},\qquad
+  v_\mathrm{Person \text{ zu Beginn}}=u+v=\qty{0.67}{m/s}\;,
+\end{equation*}
+und sobald die Person stehen bleibt, steht auch das Boot still.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Grenzfall:} Für $m\ll M$ (leichte Person, schweres Boot) wird $s
+\approx 0$ und $v\approx 0$: das schwere Boot bewegt sich kaum. Für $m=M$
+wird $s=L/2$. Plausibel.
+
+\textbf{Einheiten:} $m/(m+M)$ ist dimensionslos, mal Meter ergibt Meter;
+Geschwindigkeit $= m/s$. \checkmark
+
+\textbf{Alternative:} über den konstanten Schwerpunkt: derselbe Versatz folgt
+aus $\Delta x_S=0$, was die Identität der Ergebnisse bestätigt.
+\end{kontrolle}
+
+\begin{merksatz}
+In einem System ohne äussere Kräfte genügt der Impulserhaltungssatz (oder
+konstanter Schwerpunkt), um zwei Unbekannte zu verknüpfen. Man muss nur
+sauber ein gemeinsames Inertialsystem (das Wasser) wählen und relative gegen
+absolute Bewegung abgrenzen.
+\end{merksatz}

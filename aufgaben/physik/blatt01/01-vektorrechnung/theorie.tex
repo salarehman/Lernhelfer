@@ -1,0 +1,55 @@
+% titel: Blatt 1, A1: Vektorrechnung
+% skript: Kap. Grundlagen Vektorrechnung
+
+% Betrag, Skalarprodukt, Kreuzprodukt am konkreten Zahlenpaar.
+
+Die Aufgaben loest man mit den drei Standard-Operationen der
+Vektorrechnung: Betrag, Skalarprodukt und Kreuzprodukt.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Betrag} eines Vektors $\vec a=(a_x,a_y,a_z)$:
+\begin{equation}
+  |\vec a|=\sqrt{a_x^2+a_y^2+a_z^2}\;.
+\end{equation}
+
+\textbf{Skalarprodukt} (Skalar, ergibt den Winkel):
+\begin{equation}
+  \vec a\cdot\vec b = a_xb_x+a_ya_y+a_zb_z
+  = |\vec a|\,|\vec b|\cos\theta
+  \;\Rightarrow\;
+  \cos\theta=\frac{\vec a\cdot\vec b}{|\vec a|\,|\vec b|}\;.
+\end{equation}
+
+\textbf{Kreuzprodukt} (Vektor senkrecht auf beiden Faktoren):
+\begin{equation}
+  \vec c=\vec a\times\vec b
+  =\begin{pmatrix}
+     a_yb_z-a_zb_y\\ a_zb_x-a_xb_z\\ a_xb_y-a_yb_x
+   \end{pmatrix},
+  \qquad |\vec c|=|\vec a|\,|\vec b|\sin\theta\;.
+\end{equation}
+
+\textbf{Addition komponentenweise:} $\vec a+\vec b=(a_x+b_x,\dots)$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Einen Winkel erhaelt man immer ueber $\cos\theta$ aus dem
+        Skalarprodukt -- nie ueber die Einzelne koordinaten raten.
+  \item $|\vec c|$ ist zugleich der Flaeche des von $\vec a,\vec b$
+        aufgespannten Parallelogramms proportional.
+  \item Senkrechtheit testet man mit dem Skalarprodukt: zwei Vektoren
+        stehen senkrecht genau dann, wenn ihr Skalarprodukt null ist.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Skalarprodukt und Kreuzprodukt verwechseln: das eine liefert eine
+        Zahl, das andere einen Vektor.
+  \item Beim Kreuzprodukt die Reihenfolge und die Vorzeichen der
+        Kofaktoren (Muster $+,-,+$ in der ersten Zeile) beachten.
+  \item Fuer den Winkel den Definitionsbereich von $\arccos$ bedenken;
+        er liegt zwischen $0$ und $\pi$.
+\end{itemize}
+\end{achtung}

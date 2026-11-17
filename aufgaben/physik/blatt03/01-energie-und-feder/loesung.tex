@@ -1,0 +1,84 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+Massenpunkt im Punkt A (Hoehe $h_A$, Geschwindigkeit $v_A$) rollt
+reibungslos; B tiefster Punkt (Hoehe $h_B$); C trifft eine Feder
+(Federkonstante $k$); D hoechster Punkt; Nulllage der $x$-Achse = rechter
+Endpunkt der entspannten Feder. Gesucht: (a) $v_B$, (b) $v_C$, Federweg
+$x$ und geleistete Arbeit, (c) Bedingung dafuer, dass D erreicht wird,
+(d) Skizze von $E_{\rm pot}(x)$.
+
+\subsection*{Ansatz}
+Energieerhaltung zwischen den Bahnpunkten; an der Feder wird kinetische
+in Federenergie umgewandelt.
+
+\subsection*{Rechnung}
+\textbf{a) Geschwindigkeit in B.} Zwischen A und B (reibungsfrei):
+\begin{equation}
+  \tfrac12m v_A^2+mg\,h_A=\tfrac12m v_B^2+mg\,h_B
+  \;\Rightarrow\;
+  \boxed{\;v_B=\sqrt{v_A^2+2g(h_A-h_B)}\;}.
+\end{equation}
+
+\textbf{b) An der Feder (Punkt C).} Energie A $\to$ C (Hoehe $h_C$):
+\begin{equation}
+  v_C=\sqrt{v_A^2+2g(h_A-h_C)}\;.
+\end{equation}
+Beim Eindruecken der Feder wird diese Energie vollstaendig in
+Federenergie umgewandelt (Ende der Fahrt kurzzeitig $v=0$):
+\begin{equation}
+  \tfrac12 k\,x^2=\tfrac12 m v_C^2
+  \;\Rightarrow\;
+  \boxed{\;x=v_C\sqrt{\frac{m}{k}}\;}.
+\end{equation}
+Die Arbeit des Wagens an der Feder ist gleich dieser Energie:
+\begin{equation}
+  W=\tfrac12 m v_C^2=\tfrac12 k x^2\;.
+\end{equation}
+
+\textbf{c) Ueberwinden des Punkts D.} Auf dem Rueckweg aus der
+Federenergie muss der Wagen die Hoehe $h_D$ erreichen; die Bedingung ist
+(in Energie: am tiefsten C von der Feder zu D):
+\begin{equation}
+  \tfrac12 m v_C^2 \ge mg(h_D-h_C)
+  \;\Longleftrightarrow\;
+  v_C^2\ge 2g(h_D-h_C),
+  \quad\text{d. h.}\quad
+  x\ge\sqrt{\frac{2m(h_D-h_C)}{k}}\,.
+\end{equation}
+Gelingt gleicher Energiefluss bis D, so erreicht er D.
+
+\textbf{d) $E_{\rm pot}(x)$.} Fuer $x<0$ (links der Feder) gibt es nur die
+Gravitationsenergie, die dem Bahnprofil folgt (ansteigend zum
+hoechsten Punkt). Fuer $x\ge0$ (im Bereich der Feder) kommt die
+Federenergie dazu,
+$E_{\rm pot}=mgh(x)+\tfrac12 kx^2$, eine ansteigende
+Parabel aus dem Kontaktpunkt. Die Gesamtkurve ist stetig und hat ihr
+Minimum am tiefsten Bahnpunkt B.
+
+\begin{ergebnis}
+$v_B=\sqrt{v_A^2+2g(h_A-h_B)}$; $v_C=\sqrt{v_A^2+2g(h_A-h_C)}$,
+$v$ bestimmt den Federweg $x=v_C\sqrt{m/k}$ und die Arbeit
+$\tfrac12kx^2$; Bedingung $v_C^2\ge2g(h_D-h_C)$ (a. a. Federweg).
+$E_{\rm pot}(x)$: Gravitation $+$ (nur rechts) Feder-Parabel.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Grenzfall:} Fuer $h_A=h_B$ (gleiche Hoehe) ist $v_B=v_A$ -- keine
+Energieaenderung, plausibel. \checkmark
+
+\textbf{Einheiten:} $\sqrt{2g(h_A-h_B)}$: [m/s$^2$]$\cdot$m = m$^2$/s$^2$,
+Wurzel [m/s]. $x=\sqrt{m/k}\cdot v$: $\sqrt{\mathrm{kg}\cdot\mathrm{m/N}}=\sqrt{\mathrm{m\cdot s^2/(s^2)}}\,$m? richtige Dimensionsprobe:
+$[v\sqrt{m/k}]=(\mathrm{m/s})\sqrt{\mathrm{kg\,m/(kg\,m/s^2)}}=
+(\mathrm{m/s})\sqrt{\mathrm{s^2}}=\mathrm m$. \checkmark
+
+\textbf{D-Kriterium:} fuer $h_D=h_C+\tfrac{v_C^2}{2g}$ (genau erreichbar)
+ist die Ungleichung gerade Gleichheit. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Ohne Reibung bleibt $E=\tfrac12mv^2+mgh$ konstant; an der Feder gilt die
+zusaetzliche Umwandlung $\tfrac12mv^2\leftrightarrow\tfrac12kx^2$. Die
+erreichbare Hoehe (auch nach Abprall) haengt nur von der zur Verfuegung
+stehenden kinetischen Energie, nicht vom Weg ab.
+\end{merksatz}

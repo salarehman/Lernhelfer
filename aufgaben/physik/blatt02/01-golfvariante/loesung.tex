@@ -1,0 +1,65 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+Abgeschossener Golfball mit $v_0$ unter $\alpha=45^\circ$; Wand im Abstand
+$a$, Loch in H\"ohe $h$; keine Luftreibung. Gesucht: (a) $v_0$, (b) Abstand
+$b$ hinter der Wand, (c) $v_1$ am Boden, (d) $v_0$ und $b$ f\"ur
+$a=\qty{12}{m}$, $h=\qty{10}{m}$.
+
+\subsection*{Ansatz}
+Wurfparabel $y(x)$ durch $(a,h)$ legen und nach $v_0$ aufl\"osen;
+Ankunft am Boden bedeutet $y=0$, also wieder die Parabel bis zur
+Reichweite $R$.
+
+\subsection*{Rechnung}
+\textbf{a) Abschussgeschwindigkeit.} Aus
+\begin{equation}
+  h=a\tan\alpha-\frac{g\,a^2}{2\cos^2\alpha\,v_0^2}
+  \;\Rightarrow\;
+  v_0^2=\frac{g\,a^2}{2\cos^2\alpha\,(a\tan\alpha-h)}\;.
+\end{equation}
+
+\textbf{b) Auftreffpunkt hinter der Wand.} Am Boden ($y=0$) gilt
+\begin{equation}
+  R=\frac{v_0^2\sin(2\alpha)}{g},\qquad
+  b=R-a=\boxed{\;\frac{v_0^2\sin(2\alpha)}{g}-a\;}.
+\end{equation}
+
+\textbf{c) Endgeschwindigkeit.} Ohne Reibung und mit gleicher Start-/End-
+ho\"he ist $v_1=v_0$ (Energieerhaltung).
+
+\textbf{d) Zahlenwerte} ($\alpha=45^\circ$, also $2\cos^2\alpha=1$,
+$\tan\alpha=1$, $\sin(2\alpha)=1$):
+\begin{align}
+  v_0^2&=\frac{g\,a^2}{a-h}
+       =\frac{\qty{9.81}{m/s^2}\cdot(\qty{12}{m})^2}{(\qty{12}{m}-\qty{10}{m})}
+       =\qty{706.3}{m^2/s^2},\\
+  v_0&=\sqrt{706.3}\approx\boxed{\;\qty{26.6}{m/s}\;},\\
+  R&=\frac{v_0^2}{g}=\frac{706.3}{9.81}\approx\qty{72.0}{m},\qquad
+  b=R-a=\qty{72.0}{m}-\qty{12}{m}=\boxed{\;\qty{60}{m}\;}.
+\end{align}
+
+\begin{ergebnis}
+Allgemein $v_0=\sqrt{\frac{g a^2}{2\cos^2\alpha(a\tan\alpha-h)}}$ und
+$b=\frac{v_0^2\sin(2\alpha)}{g}-a$; $v_1=v_0$. F\"ur $a=\qty{12}{m}$,
+$h=\qty{10}{m}$: $v_0\approx\qty{26.6}{m/s}$, $b=\qty{60}{m}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} Z\"ahler $g a^2$ [m$^3$/s$^2$] / Nenner [m] [m] ergibt
+[m$^2$/s$^2$], Wurzel [m/s]. R in [m]. \checkmark
+
+\textbf{Querprobe:} F\"ur $h=a\tan\alpha$ (Loch in Wurfhöhe) w\"are die
+L\"osung $v_0\to\infty$; das Loch liegt hier \"uber dem Schuss, also ist ein
+endliches (grosses) $v_0$ physikalisch sinnvoll.
+
+\textbf{Energie:} $v_1=v_0$ $\Rightarrow$ Aufgabe hat nur ein Ergebniswert,
+nicht einen zweiten Geschwindigkeitsbetrag. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Der schiefe Wurf ist eine Parabel: einen Durchgangspunkt gibt die
+Startgeschwindigkeit vor, die Restentfernung bis zum Boden ergibt die
+Reichweite $R=\sin(2\alpha)v_0^2/g$, und es gibt ohne Reibung eine
+symmetrische Bahn mit gleicher Endgeschwindigkeit.
+\end{merksatz}

@@ -1,0 +1,47 @@
+% titel: Blatt 6, A5: Eulersche Formel
+% skript: Kap. 1 (Eulersche Formel, komplexe Exponentialfunktion)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Mit der Eulerschen Formel $e^{it}=\cos t+i\sin t$ wichtige
+Eigenschaften der komplexen Exponentialfunktion herleiten und daraus die
+Doppelwinkelformeln ableiten.
+
+\begin{werkzeugkasten}[Eulersche Formel und Betrag]
+Für alle $t\in\mathbb R$:
+\begin{equation*}
+  e^{it}=\cos t+i\sin t,\qquad |e^{it}|=\sqrt{\cos^2t+\sin^2t}=1 .
+\end{equation*}
+Der Zeiger $e^{it}$ läuft also auf dem Einheitskreis. Für das Konjugierte
+gilt
+\begin{equation*}
+  \overline{e^{it}}=\cos t-i\sin t=e^{-it},
+\end{equation*}
+also ist $e^{-it}$ das Spiegelbild von $e^{it}$ an der reellen Achse.
+
+\textit{Skript:} Kap. 1 (Eulersche Formel).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Induktion und Real-/Imaginärteil]
+\begin{itemize}
+  \item $(e^{it})^n=e^{int}$ folgt per vollständiger Induktion aus den
+        Rechenregeln $e^{ia}e^{ib}=e^{i(a+b)}$ der Exponentialfunktion.
+  \item Aus $(e^{it})^2=e^{i2t}$ erhält man durch Ausmultiplizieren der
+        linken Seite eine Identität; Vergleich von Real- und Imaginärteil
+        liefert die Doppelwinkelformeln.
+\end{itemize}
+\textit{Skript:} Kap. 1, Satz 3.1.4.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item $|e^{it}|=1$ gilt für \emph{reelle} $t$; für komplexe Argumente
+        gilt das nicht mehr so einfach (dort wächst das Argumentmodul).
+  \item Beim Spiegeln: Konjugation entspricht dem Ersetzen $i\to-i$,
+        im reellen Ausdruck ergibt sich $\cos t-i\sin t=e^{-it}$.
+  \item Beim Ausmultiplizieren von $(\cos t+i\sin t)^2$ beide Terme
+        (Realteil aus $i^2=-1$) korrekt sammeln.
+  \item Nur gleiche Frequenzen kombinieren; $n=2$ ergibt genau
+        $\cos2t$ und $\sin2t$.
+\end{itemize}
+\end{achtung}

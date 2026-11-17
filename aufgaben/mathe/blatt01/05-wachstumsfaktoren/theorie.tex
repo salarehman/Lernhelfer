@@ -1,0 +1,36 @@
+% titel: Blatt 1, A5: Wachstumsfaktoren über zwei Jahre
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Mittlerer Wachstumsfaktor $\sqrt{ab}$ zweier positiver Faktoren $a$, $b$
+mit deren arithmetischem Mittel vergleichen.
+
+\begin{werkzeugkasten}[Mittlerer Wachstumsfaktor]
+Einer Population, die im ersten Jahr um $a>0$ und im zweiten um $b>0$
+wächst, entspricht über beide Jahre der Faktor $ab$. Der mittlere
+Wachstumsfaktor $\sqrt{ab}$ lässt die Population nach zwei Jahren gleich
+groß werden; er ist höchstens so groß wie der Durchschnitt $\tfrac{a+b}2$:
+\begin{equation}
+  \sqrt{ab}\le \frac{a+b}2 \qquad (a,b>0).
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Beweis über das Quadrat einer Differenz]
+Es ist $(\sqrt a-\sqrt b)^2\ge0$, also $a-2\sqrt{ab}+b\ge0$, d.h.
+$a+b\ge2\sqrt{ab}$, geteilt durch $2$:
+\begin{equation}
+  \frac{a+b}2\ge\sqrt{ab} .
+\end{equation}
+Gleichheit genau dann, wenn $\sqrt a=\sqrt b$, also $a=b$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Voraussetzung $a,b>0$ beachten -- Wurzeln $\sqrt{ab}$ sinnvoll.
+  \item Die Ungleichung wird aus dem nichtnegativen Quadrat
+        $(\sqrt a-\sqrt b)^2$ abgeleitet, nicht durch ``Nachrechnen mit
+        Beispielen''.
+  \item Gleichheit (b) genau für $a=b$; ein Gegenbeispiel $a\neq b$ zeigt
+        das ($\sqrt{ab}<\tfrac{a+b}2$).
+\end{itemize}
+\end{achtung}

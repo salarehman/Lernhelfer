@@ -1,0 +1,44 @@
+% titel: Rotierende Scheiben: gemeinsame Winkelgeschwindigkeit
+% skript: Kap. Rotation, Drehimpulserhaltung, Reibungsenergie
+
+Zwei Scheiben rotieren zunächst getrennt um dieselbe (vertikale) Achse; durch
+Aufsetzen der oberen auf die untere wirken zwischen ihnen Reibungskräfte, bis
+beide mit gemeinsamer Winkelgeschwindigkeit drehen. Ohne äussere Drehmomente
+um die Achse bleibt der \emph{Drehimpuls} erhalten (nicht die Energie).
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Drehimpulserhaltung} für die Achse (keine äusseren Drehmomente):
+\begin{equation}
+  L_\mathrm{vor} = L_\mathrm{nach}
+  \;\Rightarrow\;
+  I_1\omega_1 + I_2\omega_2 = (I_1+I_2)\,\omega\;.
+\end{equation}
+
+\textbf{Trägheitsmoment} einer homogenen Scheibe der Masse $m$ und des Radius
+$R$ um die Symmetrieachse:
+\begin{equation}
+  I = \frac12 m R^2\;.
+\end{equation}
+
+\textbf{Rotationsenergie:} $E_\mathrm{rot}=\frac12 I\omega^2$.
+
+\textbf{Reibungsenergie:} Der Energieverlust beim Reibschluss ist die Differenz
+der Rotationsenergien vor und nach dem Vorgang.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+$I_1,I_2$ aus $\frac12 mR^2$; aus $I_1\omega_1+I_2\omega_2=(I_1+I_2)\omega$
+die gemeinsame $\omega$; Reibungsenergie $=\frac12 I_1\omega_1^2
++\frac12 I_2\omega_2^2-\frac12 (I_1+I_2)\omega^2$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Beim Schleifen ist die Gesamtenergie nicht erhalten - nur der
+       Drehimpuls. Die Reibung setzt Energie in Wärme um.
+  \item $\omega_2<0$: Vorzeichen der zweiten Scheibe (Gegendrehung) sauber
+       in die Erhaltungsgleichung nehmen.
+  \item $60\,\mathrm{min}^{-1}$ sind $1\,\mathrm s^{-1}$ (Umdrehungen),
+       also $\omega=2\pi\,\mathrm{rad/s}$; nicht verwechseln.
+\end{itemize}
+\end{achtung}

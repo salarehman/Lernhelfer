@@ -1,0 +1,55 @@
+% titel: Blatt 8, A1: Python-Code
+% skript: Kap. 4.3 (Newton-Verfahren), Kap. 5 (Summen)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zwei kleine Python-Schnipsel verstehen und mathematisch übersetzen: eine
+Summe über Potenzen sowie eine Näherungsschleife, die eine Kubikwurzel
+berechnet.
+
+\begin{werkzeugkasten}[Summe als mathematischer Ausdruck]
+Der Ausdruck
+\begin{verbatim}
+sum([1/(k**p) for k in range(1, n+1)])
+\end{verbatim}
+summiert über $k=1,\dots,n$ jeweils den Term $1/k^p$:
+\begin{equation*}
+  \sum_{k=1}^{n}\frac{1}{k^p}.
+\end{equation*}
+Für $p=1$ handelt es sich um die (partielle) harmonische Reihe, die langsam
+gegen $\infty$ wächst; für $p>1$ konvergiert die Reihe (Zeta-Funktion).
+
+\textit{Skript:} Kap. 5 (Summen).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Newton-Schleife zum Kubikwurzel-Ziehen]
+\begin{verbatim}
+x = 3
+for n in range(11):
+    print(x)
+    x = x - (x**3 - 3) / (3*x**2)
+\end{verbatim}
+Der Code startet bei $x=3$ und wendet $11$-mal die Newton-Iteration für
+$f(x)=x^3-3$ mit $f'(x)=3x^2$ an:
+\begin{equation*}
+  x_{k+1}=x_k-\frac{x_k^3-3}{3x_k^2}.
+\end{equation*}
+Dabei ist $x_k^3-3$ der Fehler zu $f(x)=x^3-3=0$, gesucht ist die reelle
+Lösung $x=\sqrt[3]{3}\approx1{,}442$.
+
+\textit{Skript:} Kap. 4.3 (Newton-Verfahren).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item \texttt{range(1,n+1)} läuft von $1$ bis $n$ (den Endwert
+        $n$ inklusive), \texttt{range(n)} von $0$ bis $n-1$ -- zählen
+        unterscheidet die beiden.
+  \item \texttt{k**p} ist Potenz, nicht $k$ mal $p$.
+  \item Die Newton-Formel muss mit der Ableitung
+        $f'(x)=3x^2$ übereinstimmen; sie ist korrekt, wenn
+        $\frac{x_k^3-3}{3x_k^2}$ gegen $0$ strebt (dann konvergiert $x_k$).
+  \item \texttt{print(x)} vor der Aktualisierung druckt das $x$, \emph{bevor}
+        es verändert wird.
+\end{itemize}
+\end{achtung}

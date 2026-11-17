@@ -1,0 +1,49 @@
+% titel: Blatt 5, A2: Grenzwerte von Funktionen
+% skript: Kap. 3 (Grenzwerte von Funktionen, L'Hospital)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Fünf einseitige bzw. unendliche Grenzwerte bestimmen; dabei treten
+Polynomverhältnisse, Wurzeln, Logarithmen und gebrochene rationale Ausdrücke
+auf.
+
+\begin{werkzeugkasten}[Grenzwert am Unendlichen von Polynomverhältnissen]
+Für $x\to\infty$ zählt der höchste Grad von Zähler und Nenner:
+\begin{itemize}
+  \item $\displaystyle\lim_{x\to\infty}\frac{a_kx^k+\dots}{b_mx^m+\dots}$ mit
+        gleichem Grad $k=m$ ist
+        $\frac{a_k}{b_m}$ (Verhältnis der Leitkoeffizienten).
+  \item Höherer Nennergrad gibt $0$, höherer Zählergrad gibt $\pm\infty$.
+\end{itemize}
+Der Schlüssel ist, $x$ mit der höchsten Potenz auszuklammern und zu kürzen.
+
+\textit{Skript:} Kap. 3 (Grenzwerte im Unendlichen).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Tricks für Wurzel- und Logarithmus-Ausdrücke]
+\begin{itemize}
+  \item \textbf{Wurzeln:} Bei Ausdrücken wie $x-\sqrt{x^2-1}$ erweitert man
+        mit der konjugierten Wurzel:
+        $x-\sqrt{x^2-1}=\dfrac{(x-\sqrt{x^2-1})(x+\sqrt{x^2-1})}{x+\sqrt{x^2-1}}
+        =\dfrac{1}{x+\sqrt{x^2-1}}$.
+  \item \textbf{Brüche unter der Wurzel:} höchste Potenz ausklammern, dann die
+        Wurzel durch die Potenz ziehen.
+  \item \textbf{Logarithmen:} den Grenzwert des Argumentes bilden, dann
+        $\ln$ anwenden (Stetigkeit von $\ln$).
+\end{itemize}
+
+\textit{Skript:} Kap. 3 (Rechnen mit Grenzwerten).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Bei $x\to-\infty$ sauber ausklammern: $\sqrt{x^2}=|x|$, nicht $x$.
+  \item Einen einseitigen Grenzwert ($x\searrow1$) getrennt vom anderen
+        Vorzeichen behandeln; hier kürzt das Vorzeichen des Nenners die
+        Divergenzrichtung.
+  \item $\ln(A/B)$ erst auf den Quotienten vereinfachen, bevor der Grenzwert
+        genommen wird (Argument gegen $1$, nicht gegen $0$).
+  \item Für $\frac{\pm\infty}{\pm\infty}$ immer durch die höchste Potenz
+        dividieren statt direkt zu ``kürzen''.
+\end{itemize}
+\end{achtung}

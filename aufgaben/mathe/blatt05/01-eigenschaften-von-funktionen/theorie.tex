@@ -1,0 +1,49 @@
+% titel: Blatt 5, A1: Eigenschaften von Funktionen
+% skript: Kap. 2 (Funktionen, Gerade/Ungerade, Monotonie, Umkehrfunktion)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Eigenschaften von Funktionen (gerade/ungerade, Monotonie, Umkehrbarkeit)
+analysieren und an konkreten Beispielen prüfen sowie einen Satz über die
+Umkehrfunktion beweisen.
+
+\begin{werkzeugkasten}[Gerade und ungerade Funktionen]
+Eine Funktion $f$ auf einer um $0$ symmetrischen Menge heißt
+\begin{itemize}
+  \item \textbf{gerade}, wenn $f(x)=f(-x)$ für alle $x$ gilt; der Graph ist
+        symmetrisch zur $y$-Achse.
+  \item \textbf{ungerade}, wenn $f(-x)=-f(x)$ für alle $x$ gilt; der Graph
+        ist symmetrisch zum Ursprung (punktsymmetrisch).
+\end{itemize}
+Beide Bedingungen prüft man, indem man $x$ durch $-x$ ersetzt. Produkte
+folgen der Regel ``gerade $\times$ ungerade $=$ ungerade'', ``gerade
+$\times$ gerade $=$ gerade''.
+
+\textit{Skript:} Kap. 2 (Eigenschaften von Funktionen).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Monotonie und Umkehrfunktion]
+$f$ heißt \textbf{streng monoton steigend}, falls aus $x_1<x_2$ stets
+$f(x_1)<f(x_2)$ folgt, \textbf{streng monoton fallend} bei
+$f(x_1)>f(x_2)$. Eine streng monotone Funktion ist \textbf{injektiv} und damit
+(bijektiv auf ihr Bild) umkehrbar.
+
+Für die steigende Umkehrfunktion $g$ nutzt man das Kontrapositionsargument:
+aus $g(u)\le g(v)$ folgt durch Anwenden von $f$ die Ungleichung $u\le v$, weil
+$f$ streng monoton steigend ist.
+
+\textit{Skript:} Kap. 2 (Monotonie, Umkehrfunktion).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Den Definitionsbereich im Auge behalten: $f_1$ ist nur auf den
+        Einheitsintervall $[-1,1]$ erklärt, wo $1-x^2\ge0$ gilt.
+  \item Nicht aus $f'>0$ allein schließen, sondern die Umformung mit
+        $f(-x)$ direkt durchführen.
+  \item Bijektivität von $[0,1]$ nach $[0,1]$ erzwingt keine Monotonie;
+        es kann sogar monoton fallend sein.
+  \item Beim Monotonie-Beweis der Umkehrfunktion zuerst annehmen, dass
+        $g$ NICHT wächst, und einen Widerspruch zur Injektivität ableiten.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,36 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Beweisen: $2+4+6+\dots+2n=n(n+1)$ für alle $n\ge1$.
+
+\subsection*{Ansatz}
+Vollständige Induktion; im IS den letzten Summanden abspalten.
+
+\subsection*{Induktionsanfang}
+$n=1$: links $2$, rechts $1\cdot2=2$. Stimmt.
+
+\subsection*{Induktionsschritt}
+Annahme: $2+4+\dots+2n=n(n+1)$. Zu zeigen für $n+1$:
+\begin{align}
+  2+4+\dots+2n+2(n+1)
+  &=n(n+1)+2(n+1) \\
+  &=(n+1)(n+2). \tag*{$\checkmark$}
+\end{align}
+Das ist $n(n+1)$ mit $n$ durch $n+1$ ersetzt. Aus IA und IS folgt die
+Behauptung für alle $n\ge1$.
+
+\begin{ergebnis}
+\begin{equation*}
+  2+4+6+\dots+2n= n(n+1)\quad\text{für alle } n\ge1 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+$n=3$: $2+4+6=12$, $3\cdot4=12$; $n=5$: $2+4+6+8+10=30$, $5\cdot6=30$.
+Passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Induktionsschritt: neuen letzten Summanden abspalten, Voraussetzung
+einsetzen und den gemeinsamen Faktor $n+1$ ausklammern.
+\end{merksatz}

@@ -1,0 +1,37 @@
+% titel: Blatt 3, A3: Grenzwerte von Folgen
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Grenzwerte von Folgen für $n\to\infty$ bestimmen: rationale Folgen,
+Wurzelbrüche, Exponential-/rationale Kombinationen und Fakultäten.
+
+\begin{werkzeugkasten}[Führende Terme]
+Bei Quotienten von Polynomen dominiert die höchste Potenz:
+\begin{equation}
+  \frac{3n^3-2n^2+1}{n^2-2n^3-3}\ \sim\ \frac{3n^3}{-2n^3}
+  \to -\frac32 .
+\end{equation}
+Bei $2^n,3^n,\dots$ dominiert die größte Basis; $n!\ $ wächst schneller als
+jede feste Potenz:
+\begin{equation}
+  \frac{n^2}{(n+1)!}\to0 .
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Wurzelbrüche]
+Beim Grenzwert mit Wurzeln im Nenner durch die führende Potenz von $n$
+kürzen (z. B. durch $\sqrt n$); dabei $\sqrt{n+1}\approx\sqrt n$ nutzen,
+das Restglied $\to0$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Kürzen durch die \emph{größte} auftretende Potenz von $n$; die
+        kleineren Terme fallen dann weg.
+  \item Bei $(-1)^n$ gemischten Termen bleibt das Vorzeichen des
+        führenden Glieds entscheidend; $(-1)^n/3^n\to0$.
+  \item $3^{n+1}=3\cdot3^n$ -- im Nenner $4\cdot3^{n+1}$ die Basis $3$ mit
+        $3^n$ vergleichen, nicht $2^n$.
+  \item $d_n=n^2/(n+1)!$: Fakultät dominiert, Grenzwert $0$.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,86 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: drei Punktmassen $m$ an den Ecken eines gleichseitigen Dreiecks,
+Kantenlänge $d$; Achsen $A1$ (in einer Seitenlinie) und $A2$
+(Winkelhalbierende durch den Schwerpunkt).
+Gesucht: $I$ für (a) $A1$ punktförmig, (b) $A2$ punktförmig, (c) $A1$ und $A2$
+bei gleichmässig verteilter Masse.
+
+\subsection*{Rechnung}
+\textbf{Vorüberlegung Geometrie:} Höhe $h=\frac{\sqrt3}{2}d$, Fläche
+$A=\frac{\sqrt3}{4}d^2$, Schwerpunkt auf der Winkelhalbierenden in
+$\frac13 h$ Abstand von der Seite.
+
+\textbf{a) Achse $A1$ (Seitenlinie durch zwei Atome).} Zwei Atome liegen
+\emph{auf} der Achse ($r=0$); das dritte hat die Distanz $h$ (die Höhe). Damit
+\begin{equation}
+  I_{A1}^{\mathrm{pt}} = 0 + 0 + m\, h^2
+  = m\left(\frac{\sqrt3}{2}d\right)^2
+  = \frac34\, m\, d^2.
+\end{equation}
+
+\textbf{b) Achse $A2$ (Winkelhalbierende durch den Schwerpunkt).} Die Achse
+geht durch ein Atom (Ecke, $r=0$) und halbiert die gegenüberliegende Seite; die
+beiden anderen Atome haben von ihr den lotrechten Abstand $d/2$. Damit
+\begin{equation}
+  I_{A2}^{\mathrm{pt}} = 0 + m\left(\frac d2\right)^2 + m\left(\frac d2\right)^2
+  = \frac12\, m\, d^2.
+\end{equation}
+
+\textbf{c) Kontinuierlich (gleichmässige Flächenverteilung).}
+Flächendichte $\sigma = \frac{3m}{A}=\frac{3m}{\sqrt3\,d^2/4}=\frac{12m}{\sqrt3\,d^2}$.
+
+Für $A1$ (Achse in der Seitlinie, Grundlinie der Länge $d$, Spitze bei Höhe $h$):
+Integral über die Höhe $y\in[0,h]$ mit Breite $w(y)=d(1-y/h)$:
+\begin{equation}
+  I_{A1}^{\mathrm{cont}}
+  = \sigma \int_0^h y^2\, w(y)\,\mathrm dy
+  = \sigma \int_0^h y^2\, d\left(1-\frac yh\right)\mathrm dy
+  = \sigma\, d\, \frac{h^3}{12}.
+\end{equation}
+Mit $\sigma d\,\frac{h^3}{12}=\frac{3m}{\sqrt3 d^2/4}\, d\,\frac{(\sqrt3 d/2)^3}{12}
+=\frac{12m}{\sqrt3 d^2}\cdot d\cdot\frac{3\sqrt3 d^3/8}{12}
+= m\,d^2\,\frac{36}{8\cdot 4}=\frac38\,m\,d^2$:
+\begin{equation}
+  I_{A1}^{\mathrm{cont}} = \frac38\, m\, d^2.
+\end{equation}
+
+Für $A2$ (Winkelhalbierende durch den Schwerpunkt): Die Achse zerlegt das
+Dreieck in zwei gleiche Hälften; das Integral von $r_\perp^2=x^2$ über eine
+Hälfte, mit $x$ quer zur Achse von $0$ bis $x_\mathrm{max}(y)=
+\frac d2(1-\frac yh)$, beide Hälften zusammen:
+\begin{equation}
+  I_{A2}^{\mathrm{cont}}
+  = \sigma\cdot 2\int_0^h \frac{x_\mathrm{max}^3}{3}\,\mathrm dy
+  = \sigma \cdot \frac{d^3}{4}\int_0^h \left(1-\frac yh\right)^3\frac{}{}\mathrm dy
+  = \sigma \cdot \frac{d^3}{4}\cdot\frac h4
+  = \frac{12m}{\sqrt3 d^2}\cdot\frac{\sqrt3 d^4}{16}
+  = \frac18\, m\, d^2.
+\end{equation}
+(Zur Kontrolle numerisch: $\sigma\cdot\frac{d^3 h}{16}$ mit obigen Werten ergibt
+$0.125\,m d^2$.) \checkmark
+
+\begin{ergebnis}
+Punktförmig: $I_{A1}=\frac34 m d^2$, $I_{A2}=\frac12 m d^2$.
+Kontinuierlich: $I_{A1}=\frac38 m d^2$, $I_{A2}=\frac18 m d^2$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Grenzfall:} verteilt sich die Masse gleichmässig über die Fläche, wird
+"Masse ineinander geschoben", das Trägheitsmoment nimmt ab. Stets
+$\frac34>\frac38$, $\frac12>\frac18$. Plausibel.
+
+\textbf{Einheiten:} $m\,d^2$: $kg\cdot m^2$. \checkmark
+
+\textbf{Numerische Probe (c):} Standardintegral über das gleichseitige Dreieck
+bestätigt $\frac38 m d^2$ und $\frac18 m d^2$. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+$I=\sum m r^2$ für diskrete Massen (Atome in der Achse tragen $r=0$ bei), und
+$I=\sigma\int r_\perp^2 dA$ für kontinuierliche Verteilungen. Wichtig ist die
+Geometrie (Höhe $\sqrt3 d/2$, Seitenhalbierende). Eine Massenverbreitung über
+die Fläche \emph{verkleinert} das Trägheitsmoment einer vorgegebenen totalen
+Masse.
+\end{merksatz}

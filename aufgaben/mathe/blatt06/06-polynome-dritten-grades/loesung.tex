@@ -1,0 +1,80 @@
+% titel: Blatt 6, A6: Polynome 3-ten Grades (Cardano)
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Für $p,q\in\mathbb R$ mit $D=q^2+p^3>0$ und $u,v$ wie im Blatt: nachweisen,
+dass $x=\sqrt[3]{u}+\sqrt[3]{v}$ (reelle Kubikwurzel) Nullstelle von
+$z^3+3pz+2q$ ist; danach alle Nullstellen von $z^3+3\sqrt[3]{9}\,z+8$.
+
+\subsection*{a) Nachweis, dass $x$ Nullstelle ist}
+Zuerst $\sqrt[3]{uv}$:
+\begin{equation*}
+  uv=(-q+\sqrt{D})(-q-\sqrt{D})
+  =q^2-D=q^2-(q^2+p^3)=-p^3,
+\end{equation*}
+also $\sqrt[3]{uv}=\sqrt[3]{-p^3}=-p$. Mit dem Binom
+$(a+b)^3=a^3+b^3+3ab(a+b)$ für $a=\sqrt[3]{u}$, $b=\sqrt[3]{v}$ und
+$x=a+b$ ist $ab=\sqrt[3]{uv}=-p$ und
+\begin{align*}
+  x^3&=u+v+3\,\sqrt[3]{uv}\,\cdot x\\
+     &=(-2q)+3(-p)x=-2q-3px.
+\end{align*}
+Umgestellt: $x^3+3px+2q=0$, also ist $x$ eine Nullstelle.
+
+\subsection*{b) Nullstellen von $z^3+3\sqrt[3]{9}\,z+8$}
+Hier ist $3p=3\sqrt[3]{9}$, also $p=\sqrt[3]{9}$, und $2q=8$, also $q=4$.
+Dann
+\begin{equation*}
+  D=q^2+p^3=16+(\sqrt[3]{9})^3=16+9=25,\qquad\sqrt{D}=5,
+\end{equation*}
+\begin{equation*}
+  u=-4+5=1,\qquad v=-4-5=-9,
+\end{equation*}
+\begin{equation*}
+  x_1=\sqrt[3]{1}+\sqrt[3]{-9}=1-\sqrt[3]{9}.
+\end{equation*}
+Faktorisieren:
+\begin{equation*}
+  z^3+3\sqrt[3]{9}\,z+8
+  =(z-x_1)\bigl(z^2+x_1z+(x_1^2+3\sqrt[3]{9})\bigr).
+\end{equation*}
+Die quadratische Formel für die restlichen Nullstellen:
+\begin{equation*}
+  z_{2,3}=\frac{-x_1\pm\sqrt{x_1^2-4(x_1^2+3\sqrt[3]{9})}}{2}
+  =\frac{-x_1\pm i\sqrt{3x_1^2+12\sqrt[3]{9}}}{2}.
+\end{equation*}
+Mit $x_1^2=(1-\sqrt[3]{9})^2=1-2\sqrt[3]{9}+\sqrt[3]{9}^2$ vereinfacht sich
+\begin{equation*}
+  3x_1^2+12\sqrt[3]{9}=3\bigl(1+2\sqrt[3]{9}+\sqrt[3]{9}^2\bigr)
+  =3\bigl(1+\sqrt[3]{9}\bigr)^2,
+\end{equation*}
+also
+\begin{equation*}
+  z_{2,3}=\frac{\sqrt[3]{9}-1\pm i\sqrt3\,(1+\sqrt[3]{9})}{2}.
+\end{equation*}
+Numerisch $\sqrt[3]{9}\approx2{,}0801$: $x_1\approx-1{,}0801$,
+$z_{2,3}\approx0{,}540\pm2{,}667i$.
+
+\begin{ergebnis}
+\begin{equation*}
+  z_1=1-\sqrt[3]{9},\qquad
+  z_{2,3}=\frac{\sqrt[3]{9}-1\,\pm\,i\sqrt3\,(1+\sqrt[3]{9})}{2}.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Numerisch:} $z_1={-}1{,}0801$, $z_{2,3}=0{,}540\pm2{,}667i$.
+Einsetzen bestätigt alle drei Nullstellen des Polynoms
+$z^3+3\sqrt[3]{9}\,z+8$. Vieta: Summe der Nullstellen $=0$ (kein
+$z^2$-Term) und $\sum z_iz_j=3\sqrt[3]{9}$ -- passt.
+
+\textbf{Grenzfall:} $D=25>0$, also genau eine reelle + zwei konjugiert
+komplexe Nullstellen -- konsistent mit der Cardano-Voraussetzung.
+\end{kontrolle}
+
+\begin{merksatz}
+Beim Cardano-Verfahren zuerst $\sqrt[3]{uv}=-p$ berechnen; damit wird
+$x^3=-2q+3\sqrt[3]{uv}\,x=-2q-3px$, ein kurzer Beweis der
+Nullstelleneigenschaft. Faktorisieren liefert die restlichen Nullstellen
+über die quadratische Formel.
+\end{merksatz}

@@ -1,0 +1,48 @@
+% titel: Blatt 6, A1: Komplexe Zahlen
+% skript: Kap. 1 (Komplexe Zahlen, Polarkoordinaten)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Polarkoordinaten einer komplexen Zahl bestimmen, eine Kreisscheibe in der
+komplexen Ebene charakterisieren und den dritten Eckpunkt eines
+gleichseitigen Dreiecks finden.
+
+\begin{werkzeugkasten}[Polarkoordinaten]
+Eine komplexe Zahl $z=a+ib$ schreibt sich mit Radius $r$ und Winkel $\varphi$
+als $z=r(\cos\varphi+i\sin\varphi)$ mit
+\begin{equation*}
+  r=|z|=\sqrt{a^2+b^2}, \qquad
+  \tan\varphi=\frac{b}{a}\ \text{(im richtigen Quadranten)}.
+\end{equation*}
+Arithmetik wird im Polarbild einfach:
+\begin{equation*}
+  z_1\cdot z_2=r_1r_2\,\mathrm e^{i(\varphi_1+\varphi_2)},\qquad
+  z^n=r^n\,\mathrm e^{in\varphi}.
+\end{equation*}
+Für $z=1+i\sqrt3$: $r=\sqrt{1+3}=2$, $\varphi=\arctan(\sqrt3)=\frac\pi3$.
+
+\textit{Skript:} Kap. 1 (Polarkoordinaten).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Mengen und Abstände in $\mathbb C$]
+$|z-z_0|$ ist der Abstand von $z$ zum Punkt $z_0$. Daher beschreibt
+\begin{itemize}
+  \item $|z-z_0|=r$ den Kreis um $z_0$ mit Radius $r$,
+  \item $|z-z_0|<r$ den offenen Kreis~\emph{innen} (ohne Rand),
+  \item $|z-z_0|>r$ das Gebiet~\emph{au{\ss}erhalb} des Kreises.
+\end{itemize}
+
+\textit{Skript:} Kap. 1 (Komplexe Zahlen).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item $\arctan(b/a)$ liefert den Winkel nur in $(-90^\circ,90^\circ)$;
+        den Quadranten von $z$ separat beachten (hier liegt $1+i\sqrt3$ im
+        ersten Quadranten, $\varphi=\pi/3$ bleibt).
+  \item $|z-2i|<2$ ist ein \emph{offener} Kreis: der Rand
+        ($|z-2i|=2$) gehört nicht dazu.
+  \item Bei zwei gegebenen Eckpunkten eines gleichseitigen Dreiecks gibt es
+        zwei mögliche dritte Punkte (die beiden Seiten-Einheits-Richtungen).
+\end{itemize}
+\end{achtung}

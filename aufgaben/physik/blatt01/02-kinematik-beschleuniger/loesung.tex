@@ -1,0 +1,77 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+$a(t)$ steigt fuer $0\le t<T$ linear von $0$ auf $a_0$, faellt fuer
+$T\le t<2T$ linear auf $0$ und ist fuer $t\ge2T$ null.
+Anfangsbedingungen $v(0)=0$, $x(0)=0$. Gesucht: (a) $a(t)$ in den drei
+Intervallen, (b) $v(t)$ und $x(t)$ fuer $t\ge0$, (c) $v_{\mathrm{end}}$.
+
+\subsection*{Ansatz}
+Die Beschleunigung ist in jedem Intervall eine Gerade; einmaliges bzw.
+zweimaliges Integrieren liefert $v(t)$ bzw. $x(t)$. Die Randwerte werden
+uemer die Anschlussbedingungen verknuepft.
+
+\subsection*{Rechnung}
+\textbf{a) Beschleunigung.}
+\begin{equation}
+  a(t)=\begin{cases}
+    \dfrac{a_0}{T}\,t & 0\le t<T,\\[1.5ex]
+    a_0\left(2-\dfrac{t}{T}\right) & T\le t<2T,\\[1.5ex]
+    0 & t\ge2T.
+  \end{cases}
+\end{equation}
+
+\textbf{b) Geschwindigkeit und Ort.} Fuer das erste Intervall:
+\begin{equation}
+  v(t)=\int_0^t \frac{a_0}{T}t'\,\mathrm dt'=\frac{a_0\,t^2}{2T},
+  \qquad x(t)=\int_0^t v\,\mathrm dt'=\frac{a_0\,t^3}{6T},
+\end{equation}
+also $v(T)=a_0T/2$ und $x(T)=a_0T^2/6$.
+
+Zweites Intervall mit $v(T)$ als Startwert:
+\begin{equation}
+  v(t)=v(T)+\int_T^t a_0\left(2-\frac{t'}{T}\right)\mathrm dt'
+  = a_0\left(2t-\frac{t^2}{2T}-T\right),
+\end{equation}
+\begin{equation}
+  x(t)=x(T)+\int_T^t v(t')\,\mathrm dt'
+  = a_0\left(t^2-\frac{t^3}{6T}-Tt+\frac{T^2}{3}\right).
+\end{equation}
+Am rechten Rand $t=2T$: $v(2T)=a_0T$, $x(2T)=a_0T^2$.
+
+Drittes Intervall ($a=0\Rightarrow v$ konstant):
+\begin{equation}
+  v(t)=a_0T,\qquad
+  x(t)=a_0T^2+a_0T\,(t-2T)=a_0T\,(t-T)\;.
+\end{equation}
+
+\textbf{c) Endgeschwindigkeit.}
+\begin{equation}
+  \boxed{\;v_{\mathrm{end}}=v(2T)=a_0T\;}.
+\end{equation}
+Die Skizze zeigt $v(t)$: steigende Parabel, dann fallende Parabel, ab $2T$
+eine Horizontale auf $a_0T$.
+
+\begin{ergebnis}
+$a(t)$ wie oben; $v(t)$ und $x(t)$ stueckweise mit den Anschluessen
+$v(T)=\tfrac12a_0T$, $v(2T)=a_0T$; $v_{\mathrm{end}}=a_0T$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $a_0$ in \unit{\metre\per\second\squared}, $T$ in
+\unit{\second} --- $a_0T$ damit in \unit{\metre\per\second}. \checkmark
+
+\textbf{Querprobe:} Fuer eine Dreiecksspitze der Breite $2T$ und Hoehe
+$a_0$ ist die Flaeche $\int a\,\mathrm dt=\frac12(2T)a_0=a_0T$, genau
+$v_{\mathrm{end}}$. \checkmark
+
+\textbf{Stetigkeit:} $v(T)=\tfrac12a_0T$ aus beiden angrenzenden
+Formeln; keine Spruenge. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Die Geschwindigkeit ist die Flaeche unter $a(t)$. Bei stueckweise
+linearem $a(t)$ integriert man Intervall fuer Intervall und schliesst die
+Randwerte an; die Enddgeschwindigkeit ist die gesamte Flaeche unter der
+Beschleunigungskurve.
+\end{merksatz}

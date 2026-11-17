@@ -1,0 +1,33 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Aussage: ``Zu jeder beliebigen Zahl gibt es eine natürliche Zahl, die
+größer ist.'' Gesucht: die Negation aus den vier vorgegebenen Aussagen.
+
+\subsection*{Ansatz}
+Negieren der Quantoren ``zu jeder'' $\rightarrow$ ``es gibt eine'', ``es
+gibt eine ($> x$)'' $\rightarrow$ ``keine ($> x$)''.
+
+\subsection*{Rechnung}
+Formal: $\bigl(\forall x\,\exists n\in\mathbb N:\ n>x\bigr)$. Die Negation:
+$\exists x$ so, dass $\forall n\in\mathbb N:\ n\not>x$, d.h. $n\leq x$.
+In Worten: \emph{Es gibt mindestens eine Zahl, die von keiner natürlichen
+Zahl übertroffen wird.} Das trifft auf Aussage b) zu.
+
+\begin{ergebnis}
+Die Negation ist \textbf{b)}: ``Es gibt mindestens eine Zahl, die von
+keiner natürlichen Zahl übertroffen wird.''
+\end{ergebnis}
+
+\begin{kontrolle}
+Aussage a) ``keine einzige Zahl wird von jeder übertroffen'' ist zu stark
+(verneint nur den Allquantor, nicht den Existenzquantor); c) ersetzt
+``größer'' durch ``kleiner''; d) verneint den Existenzteil falsch. Nur b)
+entspricht der formalen Negation.
+\end{kontrolle}
+
+\begin{merksatz}
+Die Negation dreht jeden Quantor um (``jede'' $\leftrightarrow$
+``mindestens eine'', ``es gibt'' $\leftrightarrow$ ``keine''); der
+Wahrheitsgehalt spielt keine Rolle.
+\end{merksatz}

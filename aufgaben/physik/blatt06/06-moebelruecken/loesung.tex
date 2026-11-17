@@ -1,0 +1,67 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Klotz $m$, Breite $B=\qty{0.90}{m}$, Gleitreibungszahl
+$\mu=\qty{0.34}{}$, Schubkraft $F$ auf Höhe $h$, konstante
+Gleitgeschwindigkeit, $g=\qty{9.81}{m/s^2}$.
+Gesucht: maximale Höhe $h_\mathrm{max}$, bei der der Klotz nicht kippt.
+
+\subsection*{Ansatz}
+Aus dem Kräftegleichgewicht (konstante Geschwindigkeit) $F=\mu mg$. Drehmomente
+um den Kipp-Punkt $P$ an der vorderen unteren Kante; Bedingung "nicht
+kippen" $Fh\le mg\,\frac B2$.
+
+\subsection*{Rechnung}
+Horizontalkräfte im Gleichgewicht:
+\begin{equation}
+  F = \mu\, m g.
+\end{equation}
+Moment um den Kipp-Punkt $P$ (vordere untere Kante). Die Reibungskraft wirkt
+kurz vor dem Kippen \emph{an $P$} selbst und erzeugt dadurch hier kein Moment;
+das Gewicht wirkt im Schwerpunkt am Hebelarm $B/2$ (stabilisierend). Maximal
+darf das kippende Moment des Schubs gerade gleich sein:
+\begin{equation}
+  F\cdot h = m g\cdot \frac B2.
+\end{equation}
+Einsetzen von $F=\mu m g$ ($m g$ kürzt sich):
+\begin{equation}
+  \mu\,m g\, h = m g\,\frac B2
+  \;\Rightarrow\;
+  h = \frac{B}{2\mu}
+  = \frac{0.90}{2\cdot 0.34}\ \si{m}
+  = \qty{1.32}{m}.
+\end{equation}
+
+\textbf{Antwort zur Reibungskraft:} Konstruktiv wirkt die Gleitreibung an der
+gesamten Kontaktfläche; kurz \emph{vor} dem Kippen (wenn der Klotz nur noch um
+$P$ drehen möchte) wandert die Normalkraft samt Reibung zum Kipp-Punkt $P$.
+Dadurch beträgt der Hebelarm der Reibungskraft um $P$ null und ihr Moment
+verschwindet.
+
+\begin{ergebnis}
+\begin{equation*}
+  h_\mathrm{max} = \frac{B}{2\mu} = \qty{1.32}{m}.
+\end{equation*}
+Für $h\le\qty{1.32}{m}$ (und $h\le H$) kippt der Klotz nicht; darüber kippt er
+trotz Gleitens um die vordere Kante.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $B/(2\mu)$: $m/\mathrm{dimensionslos}=m$. \checkmark
+
+\textbf{Grenzfälle:} Kleines $\mu$ (glatter Boden) ermöglicht eine grosse
+Höhe $h_\mathrm{max}$; für $\mu\to0$ kippt der Klotz nie (er rutscht nur).
+Grosses $B$ (breiter Klotz) vergrössert ebenfalls $h_\mathrm{max}$.
+Plausibel.
+
+\textbf{Konsistenz:} eine höhere Angriffshöhe $h$ vergrössert
+das kippende Moment $Fh$; das Reibungsgleichgewicht $F=\mu mg$ ist dabei
+notwendig (bei gegebener Reibung nicht willkürlich).
+\end{kontrolle}
+
+\begin{merksatz}
+Kippen untersucht man mit Drehmomenten um die Kippkante $P$: stabilisierend
+wirkt das Gewicht ($mg$ bei Hebelarm $B/2$), kippend die Schubkraft ($F$ bei
+Hebelarm $h$). Zusammen mit dem Reibungsgleichgewicht $F=\mu mg$ ergibt sich
+$h_\mathrm{max}=B/(2\mu)$. Die Kipppunkt-Reibkraft trägt zum Moment nichts bei.
+\end{merksatz}

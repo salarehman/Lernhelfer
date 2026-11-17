@@ -1,0 +1,46 @@
+% titel: Blatt 6, A2: Rechnen mit komplexen Zahlen
+% skript: Kap. 1 (Komplexe Zahlen, Betrag und Abstand)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Ungleichungen mit dem Betrag in $\mathbb C$ lesen, konkrete Lösungen finden
+und die Multiplikativität des Betrags zeigen.
+
+\begin{werkzeugkasten}[Betrag als Abstand]
+Für $z=a+ib$ ist $|z|=\sqrt{a^2+b^2}$ der euklidische Abstand zum Ursprung,
+$|z-z_0|$ der Abstand zu $z_0$. Damit sind eine Kreisscheibe
+($|z-z_0|\le r$) und ihr Äußeres ($|z-z_0|>r$) direkt ablesbar:
+\begin{center}
+$|z-1+i|>1 \;=\; |z-(1-i)|>1$: das Äußere des Einheitskreises um $1-i$.
+\end{center}
+
+\textit{Skript:} Kap. 1 (Betrag).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Betrag multiplikativ]
+Eine Zahl erfüllt zwei Betragsbedingungen genau dann, wenn der
+Schnittpunkt der beiden zugehörigen Kreise liegt (Methode):
+\begin{enumerate}
+  \item Betragsbedingung quadrieren: $|x+iy\pm\text{...}|^2=r^2$,
+  \item beide Gleichungen subtrahieren, um eine lineare Beziehung für die
+        Koordinaten zu erhalten,
+  \item einsetzen und auflösen (hier entstehen zwei Lösungen).
+\end{enumerate}
+Für die allgemeine Aussage $|zw|=|z||w|$ nutzt man
+$|z|^2=z\bar z$ und die Rechenregeln des Konjugierens.
+
+\textit{Skript:} Kap. 1 (Betrag, Konjugation).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item $|z-1+i|>1$ nicht mit $|z-1|+|i|$ verwechseln: der Betrag wirkt auf
+        die \emph{ganze} Differenz, nicht additiv.
+  \item Beim Quadrieren von Betragsgleichungen keine Vorzeichensache: alle
+        Terme sind quadratisch, es geht nichts verloren.
+  \item Der Schnitt zweier Kreise liefert in der Regel zwei Punkte, nicht
+        einen -- alle Lösungen angeben.
+  \item $|zw|=|z||w|$ gilt für alle $z,w\in\mathbb C$; der Beweis mit der
+        Konjugation ist der sauberste.
+\end{itemize}
+\end{achtung}

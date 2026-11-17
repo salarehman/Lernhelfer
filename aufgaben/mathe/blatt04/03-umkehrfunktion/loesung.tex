@@ -1,0 +1,54 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) $f\colon[0,\infty)\to\mathbb R$, $f(x)=\frac{x^2-4}{x^2+1}$;
+(b) $f\colon\mathbb R\to\mathbb R$, $f(x)=3+\mathrm e^{-x}$.
+Gesucht: Bild $f(D)$, Umkehrfunktion $g$, Grobskizze der Graphen.
+
+\subsection*{a) $f(x)=\frac{x^2-4}{x^2+1}$}
+Umschreiben: $f(x)=\frac{x^2+1-5}{x^2+1}=1-\frac5{x^2+1}$. Ableitung
+\begin{equation}
+  f'(x)=\frac{10x}{(x^2+1)^2}\ge0 \quad (\text{$>0$ für }x>0)
+\end{equation}
+Also streng wachsend, Bild von $x=0$ bis $x\to\infty$:
+$f(0)=1-\frac51=-4$, $f(x)\to1-0=1$. Injektiv, Bild $[-4,1)$.
+
+Stelle nach $x$ um:
+\begin{equation}
+  y=1-\frac5{x^2+1}\ \Longrightarrow\ \frac5{x^2+1}=1-y\ \Longrightarrow\
+  x^2=\frac5{1-y}-1=\frac{4+y}{1-y}.
+\end{equation}
+Wegen $x\ge0$:
+\begin{equation}
+  g(y)=\sqrt{\frac{4+y}{1-y}},\qquad y\in[-4,1).
+\end{equation}
+
+\subsection*{b) $f(x)=3+\mathrm e^{-x}$}
+$\mathrm e^{-x}\in(0,\infty)$, also $f(x)\in(3,\infty)$; $f$ ist streng
+monoton fallend (Ableitung $f'(x)=-\mathrm e^{-x}<0$), also injektiv.
+Bild $(3,\infty)$.
+
+Stelle um: $y=3+\mathrm e^{-x}\ \Rightarrow\ \mathrm e^{-x}=y-3
+\ \Rightarrow\ x=-\ln(y-3)$:
+\begin{equation}
+  g(y)=-\ln(y-3),\qquad y\in(3,\infty).
+\end{equation}
+
+\begin{ergebnis}
+\begin{align*}
+  \text{a)}&\ f(D)=[-4,1),\quad g(y)=\sqrt{\tfrac{4+y}{1-y}},\ y\in[-4,1);\\
+  \text{b)}&\ f(D)=(3,\infty),\quad g(y)=-\ln(y-3),\ y\in(3,\infty).
+\end{align*}
+\end{ergebnis}
+
+\begin{kontrolle}
+a) Probe $f(g(y))=1-\frac5{1+(4+y)/(1-y)}=1-\frac5{(1-y+4+y)/(1-y)}
+=1-\frac{5(1-y)}5=y$, und $g(f(x))$ gibt $x$ ($x\ge0$).
+b) Probe: $f(-\ln(y-3))=3+\mathrm e^{\ln(y-3)}=y$. Beide rechnen.
+\end{kontrolle}
+
+\begin{merksatz}
+Bild und Injektivität kommen aus Monotonie; man stellt $y=f(x)$ nach $x$
+um und beachtet die Definitionsbedingungen (Wurzel, $\ln$), um die
+Umkehrfunktion samt Bildbereich anzugeben.
+\end{merksatz}

@@ -1,0 +1,118 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) $m_1$ mit $v_1$, ruhendes $m_2$: Energieübertrag auf $m_2$.
+(b) Neutron ($m_1\approx 1$), Stösse gegen $^{12}\mathrm C$ ($m_2\approx 12$) bzw.
+$^{2}\mathrm H$ (Deuterium, $m_2\approx 2$), Ziel: $>99{,}9\%$ Energieverlust des
+Neutrons.
+(c) Zwei gleiche Pucks ($m$, $r$), Stoss um $r$ versetzt: Impulsvektoren nachher.
+(d) Kleinwagen $m_K=\qty{500}{kg}$, Bus $m_B=\qty{10000}{kg}$, beide $v=40$\,\unit{km/h};
+vier Unfallsituationen; verfügbare Deformationsenergie.
+
+\subsection*{Ansatz}
+(a) Elastischer zentraler Stoss: $E_2'/E_1 = 4m_1m_2/(m_1+m_2)^2$.
+(b) Pro Stoss Energiefaktor $q=\left(\frac{m_2-m_1}{m_2+m_1}\right)^2$ für die
+zurückbleibende Energie des Neutrons (hier ist $m_2$ das ruhende schwere Atom),
+$q^N<0{,}001$.
+(c) Beim gleichen Massen überschneiden sich die Endgeschwindigkeiten senkrecht:
+Impulserhaltung in $x,y$. Die Versetzung um $r$ legt den Aufschlagwinkel fest.
+(d) Vollplastischer Stoss: gemeinsame Geschwindigkeit aus Impulserhaltung,
+$\Delta E=E_\mathrm{vor}-E_\mathrm{nach}$.
+
+\subsection*{Rechnung}
+\textbf{a) Energietransfer:}
+\begin{equation}
+  \frac{E_2'}{E_1}
+  = \frac{4m_1m_2}{(m_1+m_2)^2}.
+\end{equation}
+Das Maximum ist $1$ (für $m_1=m_2$); sonst bleibt ein Teil bei $m_1$.
+
+\textbf{b) Kollisionszahl.}
+\begin{equation}
+  q_{^{12}C}=\left(\frac{12-1}{12+1}\right)^2=\left(\frac{11}{13}\right)^2\approx 0.716,
+  \qquad
+  q_{^{2}H}=\left(\frac{2-1}{2+1}\right)^2=\frac19\approx 0.111.
+\end{equation}
+Für $q^N<10^{-3}$:
+\begin{equation}
+  N_{\mathrm C}=\frac{\ln 10^{-3}}{\ln 0.716}\approx 20.7\;\Rightarrow\;21,
+  \qquad
+  N_{\mathrm H}=\frac{\ln 10^{-3}}{\ln(1/9)}\approx 3.1\;\Rightarrow\;4.
+\end{equation}
+
+\textbf{c) Impulsvektoren beim versetzten Stoss.} Zwei gleiche Pucks (Radius $r$),
+der zweite ruhend, Stoss um $r$ versetzt ($\Rightarrow$ Stossparameter $b=r$).
+Beim elastischen Stoss gleicher Massen gilt nach Impuls- ($\vec v=v_1'+v_2'$)
+und Energieerhaltung ($v^2=v_1'^2+v_2'^2$) stets $v_1'\perp v_2'$. Die Kraft
+wirkt beim Kontakt entlang der Verbindungslinie der Zentren; sie bildet mit der
+Bewegungsrichtung den Winkel $\theta$, gegeben durch
+\begin{equation}
+  \sin\theta = \frac{b}{2r} = \frac{r}{2r} = \frac12\;\Rightarrow\;\theta=30^{\circ}.
+\end{equation}
+Der ruhende Puck übernimmt die Komponente \emph{entlang} der Verbindungslinie,
+der bewegte behält die senkrechte Komponente. Mit Impuls- und Energieerhaltung:
+\begin{equation}
+  v_1' = v\cos\theta = \frac{\sqrt3}{2}v,
+  \qquad
+  v_2' = v\sin\theta = \frac12 v.
+\end{equation}
+Die Vektoren (Einheitsvektoren $\hat e_{\parallel}$ entlang,
+$\hat e_{\perp}$ senkrecht zur Verbindungslinie):
+\begin{equation}
+  \vec p_1' = m\,\frac{\sqrt3}{2}v\,\hat e_{\parallel},\qquad
+  \vec p_2' = m\,\frac12 v\,\hat e_{\perp}.
+\end{equation}
+Die Lage von $\hat e_{\parallel},\hat e_{\perp}$ relativ zur Skizze folgt aus
+der Orientierung des versetzten Aufschlags; Faktum ist die Zerlegung in zwei
+senkrechte Impulse der Beträge $\frac{\sqrt3}{2}mv$ und $\frac12 mv$.
+
+\textbf{d) Unfallsituationen.} $v=40/3.6=\qty{11.11}{m/s}$.
+\emph{Klein in stehenden Klein} (1): vollplastisch, gemeinsame $V=v/2$:
+\begin{equation}
+  \Delta E_1=\frac12 m_K v^2 - \frac12 (2m_K)\left(\frac v2\right)^2
+  = \frac14 m_K v^2
+  = \frac14\cdot 500\cdot 11.11^2\ \si{J}\approx \qty{15.4}{kJ}.
+\end{equation}
+\emph{Frontal zwei Kleine} (2): gemeinsame $V=0$, ganz $E_\mathrm{vor}$ steht zur
+Verfügung:
+\begin{equation}
+  \Delta E_2 = 2\cdot\frac12 m_K v^2 = m_K v^2
+  = 500\cdot 11.11^2\ \si{J}\approx \qty{61.7}{kJ}.
+\end{equation}
+\emph{Klein in stehenden Bus} (3): $V = \frac{m_K}{m_K+m_B} v$:
+\begin{equation}
+  \Delta E_3 = \frac12 m_K v^2\,\frac{m_B}{m_K+m_B}
+  = \frac12\cdot 500\cdot 11.11^2\cdot\frac{10000}{10500}\ \si{J}
+  \approx \qty{29.4}{kJ}.
+\end{equation}
+\emph{Bus in stehenden Klein} (4): $V = \frac{m_B}{m_K+m_B} v$:
+\begin{equation}
+  \Delta E_4 = \frac12 m_B v^2\,\frac{m_K}{m_K+m_B}
+  = \frac12\cdot 10000\cdot 11.11^2\cdot\frac{500}{10500}\ \si{J}
+  \approx \qty{29.4}{kJ}.
+\end{equation}
+
+\begin{ergebnis}
+(a) $\dfrac{E_2'}{E_1}=\dfrac{4m_1m_2}{(m_1+m_2)^2}$ (Maximum $1$ bei $m_1=m_2$).
+(b) Gegen $^{12}\mathrm C$: $N=21$; gegen $^{2}\mathrm H$: $N=4$.
+(c) Gleiche Massen: $\vec v_1'\perp\vec v_2'$, $|\vec p_i|=mv/\sqrt2$;
+die konkrete Zerlegung in Komponenten folgt aus der Aufschlag-Geometrie.
+(d) $\Delta E_1\approx\qty{15.4}{kJ}$, $\Delta E_2\approx\qty{61.7}{kJ}$,
+$\Delta E_3\approx\qty{29.4}{kJ}$, $\Delta E_4\approx\qty{29.4}{kJ}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} (d): $kg\cdot (m/s)^2 = kg\cdot m^2/s^2 = J$; $kJ$ korrekt.
+\textbf{Grössenordnung:} ein Auto bei $40\,\unit{km/h}$ hat $E=\frac12\cdot500\cdot11.11^2\approx
+31\,\unit{kJ}$; der Anteil, der in Deformation geht, liegt naturgemäss darunter.
+\textbf{Grenzfall (b):} je leichter das Target, desto effizienterer Energietransfer
+(kleine $N$); Wasserstoff/Deuterium moderiert deshalb am besten. Plausibel.
+\textbf{Grenzfall (a):} $m_1=m_2$ gibt vollen Transfer, $m_1\gg m_2$ fast null.
+\end{kontrolle}
+
+\begin{merksatz}
+Elastische Zentralstösse sind durch die beiden Geschwindigkeitsformeln
+vollständig beschrieben; bei gleichen Massen resultieren senkrechte
+Endgeschwindigkeiten. Bei vollplastischen Stössen liefert die Energiebilanz
+mit gemeinsamer Endgeschwindigkeit direkt die Verformungsenergie.
+\end{merksatz}

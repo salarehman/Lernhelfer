@@ -1,0 +1,72 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+$\vec r=x\hat e_x+y\hat e_y$, $x=r\cos\varphi$, $y=r\sin\varphi$.
+Definiert: $\hat e_r=\partial\vec r/\partial r$ (normiert),
+$\hat e_\varphi=\partial\vec r/\partial\varphi$ (normiert).
+Gesucht: (a) $\hat e_r,\hat e_\varphi$, (b) $\vec r$ in polar,
+(c) $\vec v=\mathrm d\vec r/\mathrm dt$, (d) Kreisbewegung $|v|=R\omega$.
+
+\subsection*{Ansatz}
+Partielle Ableitungen normieren; Ortsvektor $r\hat e_r$; Zeitableitung
+per Produktregel mit $\dot{\hat e}_r=\dot\varphi\,\hat e_\varphi$.
+
+\subsection*{Rechnung}
+\textbf{a) Einheitsvektoren.}
+\begin{align}
+  \frac{\partial\vec r}{\partial r}&=(\cos\varphi,\sin\varphi)
+   \;\Rightarrow\;\hat e_r=(\cos\varphi,\sin\varphi),\\
+  \frac{\partial\vec r}{\partial\varphi}&=(-r\sin\varphi,r\cos\varphi)
+   \;\Rightarrow\;\hat e_\varphi=(-\sin\varphi,\cos\varphi),
+\end{align}
+also als Linearkombinationen:
+\begin{equation}
+  \hat e_r=\cos\varphi\,\hat e_x+\sin\varphi\,\hat e_y,\qquad
+  \hat e_\varphi=-\sin\varphi\,\hat e_x+\cos\varphi\,\hat e_y.
+\end{equation}
+
+\textbf{b) Ortsvektor in polaren Koordinaten.}
+\begin{equation}
+  \vec r=r\,\hat e_r=r(\cos\varphi\,\hat e_x+\sin\varphi\,\hat e_y)\;,
+\end{equation}
+$|\vec r|=r$; $\hat e_r$ zeigt radial nach aussen, $\hat e_\varphi$ zeigt
+tangential (senkrecht zu $\hat e_r$ in der Bahnebene).
+
+\textbf{c) Geschwindigkeit.} Produktregel mit $\dot{\hat e}_r=\dot\varphi\,\hat e_\varphi$:
+\begin{equation}
+  \boxed{\;\vec v=\dot r\,\hat e_r+r\,\dot\varphi\,\hat e_\varphi\;}.
+\end{equation}
+
+\textbf{d) Gleichfoermige Kreisbewegung} ($r=R=$ const., $\dot\varphi=\omega$ const.):
+$\dot r=0$, also
+\begin{equation}
+  \vec v=R\omega\,\hat e_\varphi,\qquad
+  |\vec v|=R\omega\,|\hat e_\varphi|=R\omega=\text{const.}
+\end{equation}
+
+\begin{ergebnis}
+$\hat e_r=(\cos\varphi,\sin\varphi)$, $\hat e_\varphi=(-\sin\varphi,\cos\varphi)$;
+$\vec r=r\hat e_r$; $\vec v=\dot r\,\hat e_r+r\dot\varphi\,\hat e_\varphi$;
+bei Kreisbahn $|\vec v|=R\omega$ const.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\dot r$ in \unit{\metre\per\second},
+$r\dot\varphi$ in \unit{\metre\per\second}; Geschwindigkeitskomponenten
+konsistent. \checkmark
+
+\textbf{Querprobe:} Fuer $\varphi=0$ (Punkt auf $x$-Achse) ist
+$\hat e_r=\hat e_x$, $\hat e_\varphi=\hat e_y$; die Formeln reduzieren sich
+auf $\vec v=(\dot r,r\dot\varphi)$, die zweidimensionale Geschwindigkeit in
+Radial- und Azimutalrichtung. \checkmark
+
+\textbf{Spezialfall Kreis:} $r$ konstant, also rein tangential;
+$|v|=R\omega$ haengt nicht von $\varphi$ ab. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+In Polarkoordinaten dreht sich die Basis mit: $v_r=\dot r$, $v_\varphi=r\dot\varphi$.
+Fuer die gleichfoermige Kreisbewegung ($r=R$, $\dot\varphi=\omega$) bleibt
+das Geschwindigkeits-Betrag $R\omega$ konstant, obwohl die Richtung staendig
+wechselt.
+\end{merksatz}

@@ -1,0 +1,56 @@
+% titel: Blatt 2, A6: Statik -- Walze im Winkel
+% skript: Kap. Statik, Kraeftegleichgewicht
+
+% Krafte auf eine ruhende Walze in einer V-foermigen Rinne.
+
+Eine ruhende Walze in einer Rinne aus zwei schraegen Brettern: die
+Summe aller Kraefte (Gewicht, zwei Normalkraefte) ist null. Zerlegt man
+geeignet, erhaelt man die Normalkraefte jedes Brettes.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Statisches Gleichgewicht} (ruhender Koerper):
+\begin{equation}
+  \sum\vec F=\vec 0\qquad(\vec a=0).
+\end{equation}
+
+\textbf{Komponentenzerlegung:} Eine Kraeftegleichung in
+$x$- und $y$-Richtung aufspalten. Bei einer schraegen Bretterebene zeigt
+die Normalkraft senkrecht zur Brettflaeche, also unter einem
+Erg{\"a}nzungs- und Wechselwinkel zur Horizontalen.
+
+Für Bretter unter $\alpha_1$ (links) und $\alpha_2$ (rechts) ergibt sich
+aus
+\begin{equation}
+  N_1\sin\alpha_1=N_2\sin\alpha_2,\qquad
+  N_1\cos\alpha_1+N_2\cos\alpha_2=mg
+\end{equation}
+nach Aufloesen
+\begin{equation}
+  N_1=\frac{mg\,\sin\alpha_2}{\sin(\alpha_1+\alpha_2)},\qquad
+  N_2=\frac{mg\,\sin\alpha_1}{\sin(\alpha_1+\alpha_2)}\;.
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Skizze: Gewicht senkrecht nach unten, Normalkr{\"a}fte senkrecht zu
+        jeder Brettflaeche.
+  \item Kraeftegleichung in zwei unabhaengige Komponenten zerlegen und
+        nach $N_1,N_2$ aufloesen.
+  \item Die Gegenkraefte der Walze auf die Bretter betragen jeweils
+        $-N_1$ bzw.\ $-N_2$ (Actio=Reactio).
+  \item Bei ``vierfache Gewichtskraft'' $N_1=N_2=4mg$ setzen und die
+        Winkel berechnen.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Die Normalkraft steht \emph{senkrecht} zur Brettflaeche, nicht
+        senkrecht zur Horizontalen.
+  \item $\sin(\alpha_1+\alpha_2)$ im Nenner; beide Winkel gehen ein.
+  \item ``Gegenkraft der Walze auf das Brett'' ist nicht dasselbe wie die
+        auf die Walze wirkende Kraft -- Actio/Reactio betrifft
+        verschiedene Koerper.
+\end{itemize}
+\end{achtung}

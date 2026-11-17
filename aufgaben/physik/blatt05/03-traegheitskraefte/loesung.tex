@@ -1,0 +1,63 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: geographische Breite $\vartheta=47^\circ$ nördlich,
+Fliesgeschwindigkeit $v=\qty{0.5}{m/s}$, $\Omega\approx\qty{7.27e-5}{rad/s}$,
+$g=\qty{9.81}{m/s^2}$, Flussbreite $B=\qty{1}{km}$.
+Gesucht: (a) drei Unterscheidungsmerkmale; (b) Coriolisbeschleunigung;
+(c) betroffenes Ufer und Höhenunterschied des Wassers.
+
+\subsection*{Rechnung}
+\textbf{a) Eigenschaften der Trägheitskräfte.}
+\begin{itemize}
+  \item Sie sind \emph{proportional zur Masse} (wie echte Kräfte) und
+       werten sofort in die Bewegungsgleichung ein, sie verursachen aber
+       keine Gegenkraft auf einen anderen Körper (kein drittes
+       Newtonsches Axiom).
+  \item Sie treten \emph{nur in beschleunigten/rotierenden Systemen} auf und
+       verschwinden im Inertialsystem identisch.
+  \item Sie haben \emph{keine physikalische Quelle}: keine Wechselwirkung
+       mit einem Partner; messbar nur relativ zum Bezugssystem
+       (Fliehkraft, Corioliskraft, eulersche Kraft).
+\end{itemize}
+
+\textbf{b) Coriolisbeschleunigung.} Für eine horizontale Strömung ist nur die
+zur Erdfläche senkrechte Projektion von $\vec\Omega$ wirksam:
+\begin{equation}
+  a_C = 2\,\Omega\,\sin\vartheta\, v
+  = 2\cdot 7.27e-5\cdot \sin47^{\circ}\cdot 0.5\ \si{m/s^2}
+  \approx \qty{5.3e-5}{m\,s^{-2}}.
+\end{equation}
+
+\textbf{c) Ufer und Wasserspiegel.} Der Fluss fliesst auf der Nordhalbkugel
+von Norden nach Süden; die Coriolisbeschleunigung zeigt senkrecht zur
+Bewegungsrichtung nach \emph{rechts}, also nach Westen. Das Wasser wird an das
+\emph{westliche} Ufer gedrückt (dort fliesst es höher, das Ufer wird stärker
+ausgewaschen). Höhenunterschied bei $B=\qty{1}{km}$:
+\begin{equation}
+  \Delta h = B\,\frac{a_C}{g}
+  = \frac{1000\cdot 5.3e-5}{9.81}\ \si{m}
+  \approx \qty{5.4e-3}{m} \approx \qty{5}{mm}.
+\end{equation}
+
+\begin{ergebnis}
+(b) $a_C\approx\qty{5.3e-5}{m/s^2}$. (c) Das Wasser hebt sich am
+\emph{westlichen} Ufer um $\Delta h
+=B\,a_C/g\approx\qty{5}{mm}$ über das östliche; dort wird das Ufer
+überproportional abgetragen.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $a_C$: $\mathrm{rad/s}\cdot m/s = m/s^2$; $\Delta h$:
+$m\cdot(m/s^2)/(m/s^2)=m$. \checkmark
+
+\textbf{Grössenordnung:} $a_C\approx 5e-5\,m/s^2$ (rund tausendfach kleiner als
+$g$); über $1$\,km nur $\approx5$\,mm. Über sehr lange Fliessstrecken summieren
+sich die Effekte - genau das sieht man an langen grossen Flüssen.
+\end{kontrolle}
+
+\begin{merksatz}
+Corioliskraft $=-2m\,\vec\Omega\times\vec v$ lenkt auf der Nordhalbkugel
+Bewegungen nach rechts ab (bezogen auf die Bewegungsrichtung). Horizontale
+Strömungen spüren wegen der Erdkrümmung nur $\Omega\sin\vartheta$.
+\end{merksatz}

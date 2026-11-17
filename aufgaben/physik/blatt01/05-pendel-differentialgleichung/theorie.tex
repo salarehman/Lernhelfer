@@ -1,0 +1,51 @@
+% titel: Blatt 1, A5: Differentialgleichungen -- Pendel
+% skript: Kap. Differentialgleichungen, harmonischer Oszillator
+
+% Unterschied algebraische Gleichung vs. DGL; Loesung der Oszillator-DGL pruefen.
+
+Eine gewoehnliche Differentialgleichung (DGL) bestimmt eine \emph{Funktion},
+keine Zahl; die allgemeine Loesung enthaelt frei waehlbare Konstanten.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Algebraische Gleichung} (z. B. $x^2+2=0$): gesucht ist eine bzw.
+mehrere \emph{Zahlen} $x$, die die Gleichung erfuellen.
+
+\textbf{Differentialgleichung} (z. B. $-D\,x(t)=m\,\ddot x(t)$): gesucht
+ist eine \emph{Funktion} $x(t)$, die zusammen mit ihren Ableitungen die
+Gleichung identisch erfuellt. Nach $x(t)$ differenziert man mit den Regeln
+\begin{equation}
+  x=x_0\cos(\omega t+\varphi_0),\quad
+  v=\dot x=-x_0\omega\sin(\omega t+\varphi_0),\quad
+  a=\ddot x=-x_0\omega^2\cos(\omega t+\varphi_0).
+\end{equation}
+
+\textbf{Harmonischer Oszillator:} Jede Funktion der Form
+$x(t)=x_0\cos(\omega t+\varphi_0)$ loest die DGL
+\begin{equation}
+  \ddot x+\omega^2 x=0,
+\end{equation}
+wenn die Kreisfrequenz $\omega$ passt. Das ist die Grundgleichung der
+Schwingungslehre.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Ableitungen bilden: $v=\dot x$ als Funktion, nicht Zahl.
+  \item Zum Nachweis einsetzen: $\ddot x+\omega^2x$ berechnen und zeigen,
+        dass sie null ist.
+  \item Die Konstanten $x_0$ (Amplitude) und $\varphi_0$ (Phase) sind die
+        Freiheitsgrade; $\omega$ ist durch das System (Feder, Pendel)
+        festgelegt.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item ``Gesucht'' bei einer DGL ist eine ganze Funktion, nicht ein
+        einzelner Wert.
+  \item Ableitungen mit der Kettenregel (Argument $\omega t+\varphi_0$),
+        nicht einfach $\cos$ differenzieren.
+  \item $\varphi_0$ verschiebt nur den Nullpunkt der Zeit, beeinflusst aber
+        die Periodendauer nicht.
+\end{itemize}
+\end{achtung}

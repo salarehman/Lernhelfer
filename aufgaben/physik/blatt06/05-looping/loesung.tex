@@ -1,0 +1,62 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Kugel homogen, $I_K=\frac25 m r^2$, Radius $r$, Rollen ohne Gleiten;
+Loepingradius $R$ (Bahnradius des Mittelpunkts); Start in Ruhe aus
+zusätzlicher Höhe $h$ über dem höchsten Punkt.
+Gesucht: $h$, sodass die Kugel im höchsten Punkt gerade nicht herunterfällt.
+
+\subsection*{Ansatz}
+Energiesatz von der Ruhe bis zum Loeping-Scheitel (Höhendifferenz $h$);
+Kontaktbedingung $N\ge0$ (d.h.\ $v^2\ge gR$) im Scheitelpunkt.
+
+\subsection*{Rechnung}
+Energiebilanz (Rollbedingung $\omega=v/r$, $I=\frac25 mr^2$):
+\begin{equation}
+  m g h = \frac12 m v^2 + \frac12 I \omega^2
+  = \frac12 m v^2 + \frac12\,\frac25 m r^2\,\frac{v^2}{r^2}
+  = \frac12 m v^2\left(1+\frac25\right)
+  = \frac{7}{10} m v^2.
+\end{equation}
+Damit
+\begin{equation}
+  v^2 = \frac{10}{7}\,g\,h.
+\end{equation}
+Kontaktbedingung im Scheitelpunkt ($N=0$ gerade noch,
+$\frac{m v^2}{R}=mg$):
+\begin{equation}
+  v^2 \ge g R
+  \;\Rightarrow\;
+  \frac{10}{7}\,g\,h \ge g\,R
+  \;\Rightarrow\;
+  h \ge \frac{7}{10}\,R.
+\end{equation}
+
+\begin{ergebnis}
+\begin{equation*}
+  h_\mathrm{min} = \frac{7}{10}\,R.
+\end{equation*}
+Die Kugel muss zusätzlich um mindestens \qty{0.70}{} mal den Loopingradius $R$
+über dem höchsten Punkt losgelassen werden.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Grenzfälle:} Ohne Rotation ($\frac I{mr^2}=0$) wäre $v^2=2gh$ und
+$h=\frac12R$. Die Rotation erhöht die nötige Höhe auf $\frac{7}{10}R$ -
+plausibel, da ein Teil der Energie "in Rotation steckt". Je kompakter der
+Körper (kleineres $I$), desto kleiner das nötige $h$.
+
+\textbf{Einheiten:} $mgh$: $kg\cdot\frac{m}{s^2}\cdot m = kg\,m^2/s^2=J$;
+$\frac12 mv^2$:$J$. $h\propto R$ dimensionsmässig konsistent ($m$ kürzt sich). \checkmark
+
+\textbf{Konsistenz mit freiem Fall:} Bei $\Delta h=h$ entsteht $v=\sqrt{\frac{10}{7}gh}$
+statt $\sqrt{2gh}$; Faktor $\sqrt{5/7}\approx0.85$ - die Drehenergie bremst die
+Zunahme. Vertretbar.
+\end{kontrolle}
+
+\begin{merksatz}
+Beim Rollen gilt der Energiesatz mit Translations- plus Rotationsenergie;
+über die Rollbedingung $\omega=v/r$ wird $v^2(h)$ gewonnen. Zusammen mit der
+Kontaktbedingung $v^2\ge gR$ im Scheitel ergibt sich die Mindesthöhe
+$h=\frac{7}{10}R$ für die Vollkugel (ohne Rotation: $\frac12 R$).
+\end{merksatz}

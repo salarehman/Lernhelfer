@@ -1,0 +1,46 @@
+% titel: Blatt 6, A4: Überlagerte Schwingungen
+% skript: Kap. 1 (komplexe Darstellung, Zeiger)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zwei gleichfrequente Kosinus-Schwingungen zu einer Schwingung
+$A\cos(\omega t+\varphi)$ zusammenfassen.
+
+\begin{werkzeugkasten}[Phasor/Zeiger-Methode]
+Einen Kosinus $a\cos(\omega t+\varphi)$ deutet man als Realteil des
+Zeigers $a\mathrm e^{i\varphi}\cdot\mathrm e^{i\omega t}$. Die Überlagerung
+gleicher Frequenz ist die Summe der Zeiger (eine komplexe Zahl):
+\begin{equation*}
+  \sum_j a_j\cos(\omega t+\varphi_j)
+  =\operatorname{Re}\Bigl[\Bigl(\sum_j a_j\mathrm e^{i\varphi_j}\Bigr)
+  \mathrm e^{i\omega t}\Bigr]
+  =A\cos(\omega t+\varphi),
+\end{equation*}
+wobei $A$ der Betrag und $\varphi$ das Argument der Zeigersumme ist.
+
+\textit{Skript:} Kap. 1 (komplexe Zahlen in Schwingungen).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Schrittfolge]
+\begin{enumerate}
+  \item Jede Schwingung als Zeiger schreiben:
+        $\cos(\omega t)\mapsto 1\cdot e^{i0}$, $2\cos(\omega t+2\pi/3)
+        \mapsto2\,e^{i2\pi/3}$.
+  \item Zeiger addieren und in Polarkoordinaten umrechnen
+        (hier Ergebnis $i\sqrt3=\sqrt3\,e^{i\pi/2}$).
+  \item Ablesen: $A=\sqrt3$, $\varphi=\pi/2$.
+\end{enumerate}
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Der Zeiger erfasst nur Amplitude und Phase; die gemeinsame
+        $e^{i\omega t}$-Zeitabhängigkeit wird ausgeklammert.
+  \item Das Ergebnis $i\sqrt3$ hat Realteil $0$: die Phasenverschiebung ist
+        $\varphi=\pi/2$, die Amplitude $\sqrt3$, \emph{nicht} $0$.
+  \item Nach dem Umrechnen die Form $A\cos(\omega t+\varphi)$ mit $A>0$
+        und $\varphi\in[0,2\pi)$ aufschreiben.
+  \item Verifikation an einer Zeitachse (z.B.\ $\omega t=0$) hilft, das
+        Vorzeichen der Phase zu prüfen.
+\end{itemize}
+\end{achtung}

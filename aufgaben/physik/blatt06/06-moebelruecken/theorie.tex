@@ -1,0 +1,50 @@
+% titel: Moebelruecken: Kippen unter Schubkraft
+% skript: Kap. Statik, Drehmoment, Reibung
+
+Ein Klotz (homogene Masse $m$, Breite $B$, Höhe $H$) wird auf horizontalem
+Boden mit einer Kraft $F$ geschoben, die auf der Höhe $h$ angreift. Bei
+konstanter Gleitgeschwindigkeit gilt für die Schub- und die Reibungskraft
+ein Kräftegleichgewicht; gleichzeitig darf das Drehmoment zum Kippen nicht
+überhandnehmen. Gesucht ist die maximale Höhe $h$, bei der der Klotz gerade
+noch nicht umkippt.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Kippbedingung:} Kurz vor dem Kippen dreht der Körper um die vordere
+untere Kante (den Kipp-Punkt $P$). Dort greifen dann Normal- und
+Reibungskraft an (sie wandern an die Kontaktkante). Um $P$:
+\begin{equation}
+  \text{Kipp-Drehmoment der Schubkraft}:\; F\cdot h,
+  \qquad
+  \text{stabilisierendes Gewicht}:\; m g\cdot \frac B2.
+\end{equation}
+
+\textbf{Gleitreibung:} bei konstanter Geschwindigkeit gilt in horizontaler
+Richtung $F = \mu\, mg$ (die Reibung gleicht die Schubkraft aus).
+
+\textbf{Nicht kippen:} Das kippende Drehmoment darf das stabilisierende nicht
+überschreiten:
+\begin{equation}
+  F\cdot h \le m g\,\frac B2.
+\end{equation}
+
+\textbf{Konstanten:} $\mu=\qty{0.34}{}$, $B=\qty{90}{cm}=\qty{0.90}{m}$,
+$g=\qty{9.81}{m/s^2}$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+$F=\mu mg$ einsetzen, in die Kippbedingung stellen und nach $h_\mathrm{max}$
+auflösen; die Höhe $H$ des Klotzes spielt dabei keine Rolle, solange
+$h\le H$. Die Frage "wo greifen die Reibungskräfte an?" klären: kurz vor
+dem Kippen am Kipp-Punkt $P$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Nicht $F$ willkürlich wählen: bei konstanter Geschwindigkeit ist
+       $F=\mu mg$.
+  \item Der Kipp-Punkt ist die \emph{vordere} untere Kante (Bewegungsrichtung);
+       das Gewicht wirkt im Schwerpunkt, Hebelarm $B/2$.
+  \item Die Höhe $H$ geht nur über $h\le H$ ein; $h_\mathrm{max}$ hängt von
+       $B$ und $\mu$ ab.
+\end{itemize}
+\end{achtung}

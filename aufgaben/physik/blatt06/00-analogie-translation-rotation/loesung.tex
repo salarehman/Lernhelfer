@@ -1,0 +1,46 @@
+% Teil II: Analogie-Tabelle und Gegenüberstellung.
+
+\subsection*{Gegenüberstellung}
+Zentrale Entsprechungen (Skalarform, Rotation um feste Achse):
+
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Grösse} & \textbf{Translation} & \textbf{Rotation}\\
+\midrule
+Kinematik-Grösse & $x,\ v,\ a$ & $\varphi,\ \omega,\ \alpha$\\
+Trägheit & $m$ & $I$\\
+Ursache & Kraft $F$ & Drehmoment $M$\\
+Bewegungsgleichung & $F=ma$ & $M=I\alpha$\\
+Impuls/Drehimpuls & $p=mv$ & $L=I\omega$\\
+Grundgesetz & $F=\dot p$ & $M=\dot L$\\
+kinetische Energie & $E=\frac12 m v^2$ & $E_\mathrm{rot}=\frac12 I\omega^2$\\
+Arbeit & $W=\int F\,dx$ & $W=\int M\,d\varphi$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Bedeutung der Analogie:} Das Eiskunstläufer-Problem (Drehimpuls
+erhalten, $I$ ändert sich) entspricht dem linearen Problem "Anzug, bei dem
+sich die Masse ändert, aber $p=mv$ konstant bleibt"; die Struktur der
+Lösungen ist identisch.
+
+\begin{ergebnis}
+Jeder Translationsgrösse steht eine Rotationsgrösse gegenüber; die
+Gesetze ($F=ma$ vs.\ $M=I\alpha$, Impuls vs.\ Drehimpuls, Energie- und
+Arbeitsdefinitionen) haben dieselbe mathematische Form.
+\end{ergebnis}
+
+\begin{kontrolle}
+\emph{Konsistenz:} $M=I\alpha$ aus $\dot L=\frac{d}{dt}(I\omega)=I\dot\omega$
+für konstantes $I$ - genau wie $F=m\dot v$. \checkmark
+\emph{Dimensionen:} $M=[kg\,m^2/s^2]$, $I\alpha=[kg\,m^2/s^2]$. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Wenn man eine rotierende Grösse erkennt, hat man die Lösung schon: Man
+ersetzt $m\to I$, $v\to\omega$, $F\to M$, $p\to L$ und erhält
+Bewegungsgleichung, Erhaltungssatz und Energie aus dem schon verstandenen
+Translationsfall.
+\end{merksatz}

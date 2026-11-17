@@ -1,0 +1,78 @@
+% titel: Blatt 8, A5: Lokale Extrema und Sattelpunkte
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+a) Zeigen: $f$ hat bei $x_0$ einen Wendepunkt gdw.\ $f'$ bei $x_0$ ein
+isoliertes lokales Extremum hat. b) Beweisen per Induktion: aus
+$f^{(n)}(x_0)=0$ für $n<m$ und $f^{(m)}(x_0)\ne0$ folgt -- $m$ gerade:
+isoliertes lokales Extremum, $m$ ungerade: isolierter Sattelpunkt.
+
+\subsection*{a) Wendepunkt $\Leftrightarrow$ Extremum von $f'$}
+Ein Wendepunkt bei $x_0$ bedeutet Krümmungswechsel: $f''$ (und damit die
+Steigung $f'$ der Kurve) wechselt an $x_0$ ihr Monotonieverhalten. Per
+Definition hat $f'$ genau dann an $x_0$ ein \emph{isoliertes lokales
+Extremum}, wenn es eine Umgebung gibt, in der $f'$ links von $x_0$ auf einer
+Seite größer (kleiner) und rechts auf der anderen Seite kleiner (größer)
+ist -- gerade der Krümmungswechsel. Die ``Isoliertheit'' schließt aus, dass
+$f'$ auf einem ganzen Intervall konstant ist (kein echter Wendepunkt).
+
+\subsection*{b) Induktionsbeweis über $m$}
+Die Behauptung $P(m)$: ist $f^{(n)}(x_0)=0$ für $n<m$ und
+$f^{(m)}(x_0)\ne0$, so ist $x_0$ für $m$ gerade ein isoliertes lokales
+Extremum und für $m$ ungerade ($m\ge3$) ein isolierter Sattelpunkt.
+
+\textbf{Induktionsanfang} $P(2)$ (die erste gerade Ordnung): Aus
+$f'(x_0)=0$ und $f''(x_0)\ne0$ folgt wegen des zweiten-Ableitungs-Kriteriums
+ein lokales Extremum (Minimum falls $f''>0$, Maximum falls $f''<0$); es ist
+isoliert, da $f'$ das Vorzeichen wechselt.
+
+\textbf{Induktionsschritt} $m\to m+1$: Wir nehmen an, das Kriterium gelte für
+Ordnung $m$, und zeigen es für $m+1$. Dazu wendet man $P(m)$ auf die
+Ableitung $g=f'$ an. Gilt nämlich $f^{(n)}(x_0)=0$ für $n<m+1$ und
+$f^{(m+1)}(x_0)\ne0$, so gilt $g^{(n)}(x_0)=f^{(n+1)}(x_0)=0$ für $n<m$
+und $g^{(m)}(x_0)=f^{(m+1)}(x_0)\ne0$.
+
+Für $m+1$ gerade (also $m$ ungerade, $m\ge2$): Nach Induktionsannahme
+hat $g=f'$ bei $x_0$ einen Sattelpunkt-artigen Verlauf, d.h.\ $g$ wechselt
+an $x_0$ das Vorzeichen symmetrisch nicht -- konkret: $g$ hat ein lokales
+Extremum bei $x_0$ (Sattel der Steigung). Ein lokales Extremum von $f'$
+bedeutet nach Teil a) einen Wendepunkt von $f$, d.h.\ $f$ hat bei $x_0$ ein
+lokales Extremum (gerade Ordnung) -- das isolierte lokale Extremum.
+
+Für $m+1$ ungerade (also $m$ gerade): Nach Induktionsannahme hat $f'$
+ein lokales Extremum bei $x_0$ (Höcker der Steigung), d.h.\ $f$ hat dort
+einen Wendepunkt-Stellung; da $f'(x_0)=0$ und die Steigung auf beiden Seiten
+gleiches Vorzeichen hat, ist $x_0$ ein Sattelpunkt (kein Vorzeichenwechsel
+von $f'$ durch $x_0$). Das ist der isolierte Sattelpunkt.
+
+Beide Fälle folgen demselben Muster: die Parität der führenden
+Taylor-Ordnung der Steigungsfunktion entscheidet, ob $f'$ ein Extremum
+(gerade) oder einen Durchgang (ungerade) hat -- und damit ob $f$ ein
+Extremum oder einen Sattelpunkt besitzt.
+
+\begin{ergebnis}
+\begin{equation*}
+  \underbrace{f\ \text{hat WP bei }x_0}_{\text{$\Leftrightarrow$}}\
+  \underbrace{f'\ \text{hat isoliertes lok. Extremum bei }x_0}.
+\end{equation*}
+Und aus $f^{(n)}(x_0)\!=\!0\ (n<m)$, $f^{(m)}(x_0)\ne0$: \\
+$m$ gerade $\Rightarrow$ isoliertes lokales Extremum; $m$ ungerade
+$\Rightarrow$ isolierter Sattelpunkt.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Beispiel:} $f(x)=(x-x_0)^3$: $f'=3(x-x_0)^2$ hat bei $x_0$ ein
+(einfaches) Minimum, also Wendepunkt von $f$; $f''(x_0)=0$, $f'''(x_0)=6
+\ne0$, $m=3$ ungerade -- Sattelpunkt, wie behauptet.
+
+\textbf{Beispiel:} $f(x)=(x-x_0)^4$: $f'''(x_0)=0$, $f^{(4)}(x_0)\ne0$,
+$m=4$ gerade -- isoliertes lokales Minimum.
+\end{kontrolle}
+
+\begin{merksatz}
+Der Wendepunkt lässt sich über ein isoliertes lokales Extremum von $f'$
+definieren. Entscheidend bei der Induktion ist die Parität der ersten
+nichtverschwindenden Ableitung: gerade Ordnung gibt ein Extremum, ungerade
+einen Sattelpunkt; der Beweis reduziert Ordnung $m$ auf Ordnung $m-1$, indem
+man die Regel auf $f'$ anwendet.
+\end{merksatz}

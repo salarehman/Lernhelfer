@@ -1,0 +1,49 @@
+% titel: Blatt 8, A5: Lokale Extrema und Sattelpunkte
+% skript: Kap. 4.2--4.3 (Extrema, Sattelpunkte, Wendepunkte)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zwei Sätze über lokale Extrema, Sattel- und Wendepunkte beweisen.
+
+\begin{werkzeugkasten}[Definitionen]
+\begin{itemize}
+  \item \textbf{Lokales Extremum} von $f$ bei $x_0$: $f$ nimmt dort einen
+        lokalen Maximums-/Minimumswert an (Wert in einer Umgebung nicht
+        größer/kleiner).
+  \item \textbf{Isoliertes} Extremum: es gibt eine Umgebung, in der kein
+        weiterer Extremalpunkt liegt (das Extremum ist ``getrennt'').
+  \item \textbf{Wendepunkt}: Krümmungswechsel bei $x_0$; $f'$ hat dort ein
+        lokales Extremum (Krümungsfunktion $f''$ wechselt das Vorzeichen).
+  \item \textbf{Sattelpunkt}: $f'(x_0)=0$, aber kein Extremum; die
+        Seitenstücke verlaufen monoton ($f$ ``biegt um, ohne zu wenden'' in
+        vollem Sinne).
+\end{itemize}
+\textit{Skript:} Kap. 4.2--4.3.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Kriterium über höhere Ableitungen]
+Falls $f^{(n)}(x_0)=0$ für alle $n<m$ und $f^{(m)}(x_0)\ne0$, so entscheidet
+die Parität von $m$:
+\begin{itemize}
+  \item $m$ gerade: $x_0$ ist isoliertes lokales Extremum (die
+        Taylor-Entwicklung beginnt mit $\frac{f^{(m)}(x_0)}{m!}(x-x_0)^m$
+        mit gerader Potenz, Vorzeichenwechsel gilt nicht).
+  \item $m$ ungerade: $x_0$ ist isolierter Sattelpunkt (ungerade Potenz
+        wechselt das Vorzeichen, aber nicht das Vorzeichen von $f'$ symmetrisch).
+\end{itemize}
+
+\textit{Skript:} Kap. 4.3.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Einen Wendepunkt über $f'$: $f'$ muss ein \emph{isoliertes} lokales
+        Extremum haben; das ist die Formulierung der Krümmungsänderung.
+  \item ``Isoliert'' ist essenziell: konstante Ableitung auf einem
+        Intervall macht keinen Wendepunkt (kein Krümmungswechsel).
+  \item Beim Beweis per Induktion die Fallunterscheidung gerade/ungerade
+        sauber führen und den Induktionsanfang (niedrigste $m$) prüfen.
+  \item Die Taylor-Vorzeichenargumentation statt bloßer
+        ``$f'=0$ heißt Sattel/Estrum'' anwenden.
+\end{itemize}
+\end{achtung}

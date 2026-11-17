@@ -1,0 +1,45 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Zu vier Aussagen das Gegenteil (die Negation) angeben, ohne zu bewerten,
+ob die Aussage wahr ist.
+
+\subsection*{a) ``Die Sonne geht jeden Morgen auf.''}
+Gegenteil: \emph{Es gibt einen Morgen, an dem die Sonne nicht aufgeht.}
+(Negation von ``für alle Morgen gilt: aufgehen'' ist ``es existiert ein
+Morgen mit ``nicht aufgehen''''.)
+
+\subsection*{b) ``Jedes Tier ist grau.''}
+Gegenteil: \emph{Es gibt ein Tier, das nicht grau ist.}
+
+\subsection*{c) ``Es gibt eine Pflanze, die weder grün noch gelb ist.''}
+Gegeben ist ``es gibt eine Pflanze mit $\neg(\text{grün oder gelb})$''.
+Gegenteil: \emph{Jede Pflanze ist grün oder gelb.}
+(``Es gibt nicht'': alle Pflanzen erfüllen nicht $\neg(\text{grün oder
+gelb})$; mit De Morgan ist das ``grün oder gelb''.)
+
+\subsection*{d) ``Jede Bitfolge besteht aus Nullen und Einsen.''}
+Gegenteil: \emph{Es gibt eine Bitfolge, die nicht nur aus Nullen und Einsen
+besteht.}
+
+\begin{ergebnis}
+\begin{itemize}
+  \item a) Es gibt einen Morgen, an dem die Sonne nicht aufgeht.
+  \item b) Es gibt ein Tier, das nicht grau ist.
+  \item c) Jede Pflanze ist grün oder gelb.
+  \item d) Es gibt eine Bitfolge, die nicht nur aus Nullen und Einsen besteht.
+\end{itemize}
+\end{ergebnis}
+
+\begin{kontrolle}
+Logikprobe: jede Negation so formulieren, dass Aussage und Negation sich
+gegenseitig ausschließen und zusammen alle Fälle überdecken -- für a)
+``jeden Morgen aufgehen'' vs. ``mindestens ein Morgen nicht''; beide
+zugleich denkbar wären ein Widerspruch.
+\end{kontrolle}
+
+\begin{merksatz}
+Negation ``dreht'' Quantoren: ``alle'' $\leftrightarrow$ ``mindestens
+eine'', ``es gibt'' $\leftrightarrow$ ``keine'', mit De Morgan für
+Verknüpfungen; Wahrheitswert wird nicht bestimmt.
+\end{merksatz}

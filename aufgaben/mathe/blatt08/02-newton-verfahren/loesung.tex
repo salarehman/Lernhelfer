@@ -1,0 +1,72 @@
+% titel: Blatt 8, A2: Newton-Verfahren
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+a) Ein Newton-Schritt für $f(x)=x^5-2x-1$ auf $[1,2]$ und Prüfung der
+Bedingungen von Satz 4.3.8. b) Zwei Newton-Schritte für $e^{x_0}=2-x_0^2$
+auf $[0,1]$. c) Nullstelle $x^*\in[1,2]$ von $f$ aus a) mit angepasstem
+Python-Code (sehr genau).
+
+\subsection*{a) Handschritt und Voraussetzungen}
+$f(x)=x^5-2x-1$; $f'(x)=5x^4-2$. Start $x_0=2$:
+\begin{equation*}
+  f(2)=32-4-1=27,\qquad f'(2)=5\cdot16-2=78,
+\end{equation*}
+\begin{equation*}
+  x_1=2-\frac{27}{78}=2-0{,}3461538=1{,}6538462 .
+\end{equation*}
+Voraussetzungen (Satz 4.3.8): $f(1)=-2<0<f(2)=27$; $f'=5x^4-2>0$ auf
+$[1,2]$ (monoton steigend, Nullstelle eindeutig); $f''=20x^3>0$ (konvex).
+Start $x_0=2$ liegt im ``richtigen'' Bereich, wo das Verfahren konvergiert.
+
+\subsection*{b) Zwei Newton-Schritte}
+Umformen: $e^x+x^2-2=0$, also $g(x)=e^x+x^2-2$, $g'(x)=e^x+2x$.
+Start $x_0=0{,}5$:
+\begin{equation*}
+  g(0{,}5)=e^{0{,}5}+0{,}25-2\approx1{,}6487-1{,}75=-0{,}1013,\qquad
+  g'(0{,}5)=1{,}6487+1=2{,}6487,
+\end{equation*}
+\begin{equation*}
+  x_1=0{,}5-\frac{-0{,}1013}{2{,}6487}=0{,}53824 .
+\end{equation*}
+Zweiter Schritt:
+\begin{equation*}
+  g(0{,}53824)\approx0{,}002683,\quad g'(0{,}53824)\approx2{,}7897,
+  \quad
+  x_2=0{,}53824-\frac{0{,}002683}{2{,}7897}=0{,}53728 .
+\end{equation*}
+
+\subsection*{c) Sehr genaue Nullstelle per Code}
+Der Vorlesungscode wird nur leicht angepasst (mehr Iterationen):
+\begin{verbatim}
+x = 2.0
+while abs(x**5 - 2*x - 1) > 1e-30:
+    x = x - (x**5 - 2*x - 1) / (5*x**4 - 2)
+print(f"{x:.19f}")
+\end{verbatim}
+Ausgabe (Beispielwert, entspricht $x^*$):
+\begin{equation*}
+  x^*\approx1{,}2906488013467097215\ldots
+\end{equation*}
+
+\begin{ergebnis}
+a) $x_1=1{,}653846$; Bedingungen erfüllt. b) $x_1=0{,}53824$,
+$x_2=0{,}53728$. c) $x^*\approx1{,}2906488013$ (sehr genau; 19 Nachkommastellen
+gezeigt).
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Probe a):} $1{,}653846$ in $f$: $(1{,}653846)^5-2\cdot1{,}653846-1
+\approx3{,}38$ -- <$f'(2)$-Bezug; der Schritt ist die korrekte Newton-Näherung.
+\textbf{Probe b):} $e^{0{,}53728}+0{,}53728^2-2\approx0{,}0000$ -- Nullstelle.
+$x_2$ liegt bei $0{,}53727$, konsistent.
+
+\textbf{Grenzfall:} ab $x_2$ ist die Änderung minimal (quadratische
+Konvergenz), weitere Schritte ändern kaum noch etwas.
+\end{kontrolle}
+
+\begin{merksatz}
+Newton: $x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}$, mit $f'\neq0$ in der Nähe der
+Nullstelle. Vor dem Start Vorzeichenwechsel, Monotonie und Konvexität prüfen.
+Der Code braucht nur die Ableitung als Funktion und eine Abbruchbedingung.
+\end{merksatz}

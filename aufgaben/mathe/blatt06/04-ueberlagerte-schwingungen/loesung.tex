@@ -1,0 +1,47 @@
+% titel: Blatt 6, A4: Überlagerte Schwingungen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$A>0$, $\varphi\in[0,2\pi)$ finden mit
+\begin{equation*}
+  \cos(\omega t)+2\cos\Bigl(\omega t+\frac{2\pi}{3}\Bigr)
+  =A\cos(\omega t+\varphi).
+\end{equation*}
+
+\subsection*{Zeigermethode}
+Die beiden Schwingungen als komplexe Amplituden:
+\begin{equation*}
+  z_1=1\cdot\mathrm e^{i0}=1,\qquad
+  z_2=2\,\mathrm e^{i\frac{2\pi}{3}}
+  =2\Bigl(-\frac12+i\frac{\sqrt3}{2}\Bigr)=-1+i\sqrt3.
+\end{equation*}
+Die Zeigersumme
+\begin{equation*}
+  z=z_1+z_2=1+(-1+i\sqrt3)=i\sqrt3.
+\end{equation*}
+Also $A=|z|=\sqrt3$ und $\varphi=\arg(z)=\frac\pi2$.
+
+\subsection*{Ergebnis}
+\begin{equation*}
+  \cos(\omega t)+2\cos\Bigl(\omega t+\frac{2\pi}{3}\Bigr)
+  =\sqrt3\cos\Bigl(\omega t+\frac\pi2\Bigr).
+\end{equation*}
+
+\begin{ergebnis}
+$A=\sqrt3$, $\varphi=\frac\pi2$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Probe (Zeitachse):} Für $\omega t=-\frac\pi2$ ist die rechte Seite
+$\sqrt3\cos(0)=\sqrt3$. Linke Seite:
+$\cos(-\frac\pi2)+2\cos(\frac\pi6)=0+2\cdot\frac{\sqrt3}{2}=\sqrt3$ -- passt.
+Für $\omega t=0$: links $\cos0+2\cos\frac{2\pi}{3}=1-1=0$; rechts
+$\sqrt3\cos\frac\pi2=0$ -- passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Gleichfrequente Schwingungen addieren sich über die komplexen Amplituden
+(Zeiger): Summe $=\sum a_j e^{i\varphi_j}$, dann $A=|z|$,
+$\varphi=\arg z$. Das Ergebnis ist wieder eine Kosinus-Schwingung derselben
+Frequenz.
+\end{merksatz}

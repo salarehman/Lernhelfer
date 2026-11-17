@@ -1,0 +1,38 @@
+% titel: Blatt 4, A2: Eulersche Zahl
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Die Ungleichung $n!>2^{n-1}$ zeigen, daraus $\sum 1/n!<1$ folgern, $2<e<3$
+beweisen und $e$ per Python annähern.
+
+\begin{werkzeugkasten}[$n!$ gegen $2^{n-1}$]
+Für $n>2$: Induktion bzw. trivial über die ersten Faktoren
+$n!=n(n-1)\cdots2\cdot1$. Ab $n=3$ sind die Faktoren $\ge2$, viele
+strikt größer, sodass $n!>2^{n-1}$. Nutzt man das für teilsummierten
+Summanden $\frac1{n!}<\frac1{2^{n-1}}$ ($n\ge3$), konvergiert
+$\sum_{n=2}^\infty\frac1{n!}$ gegen eine Zahl unter $1$, weil die
+verbleibende geometrische Reihe von $n=3$ an $\frac12$ liefert.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Euler-Zahl als Reihe]
+\begin{equation}
+  e=\sum_{n=0}^{\infty}\frac1{n!}.
+\end{equation}
+Untere Schranke: Reihe ab einschließlich $n=2$ ist $e-2>0$; obere
+Schranke: für $n\ge2$ ist $n!\ge2^{n-1}$, also
+$\sum_{n=2}^{\infty}\frac1{n!}\le\sum_{n=2}^{\infty}\frac1{2^{n-1}}=1$,
+damit $e\le3$ (strikt $<3$ wegen echter Ungleichheit für $n\ge3$);
+untere: $e=2+\tfrac12+\dots>2$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Die Ungleichung $n!>2^{n-1}$ gilt \emph{erst ab} $n=3$;
+        für $n=2$ ist $2! =2^{1}$ (Gleichheit).
+  \item Beim Folgern von $\sum 1/n!<1$ die Indexgrenzen sauber trennen
+        ($n=2$ separat, ab $n=3$ mit der Ungleichung).
+  \item $e$ in Python: \texttt{sum([1/math.factorial(k) for k in range(11)])};
+        ``12 Nachkommastellen'' über ausreichend viele Glieder, z.B.
+        $\texttt{range(21)}$.
+\end{itemize}
+\end{achtung}

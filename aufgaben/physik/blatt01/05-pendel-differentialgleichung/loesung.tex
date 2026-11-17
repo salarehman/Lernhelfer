@@ -1,0 +1,55 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+$a)$ Unterschied zwischen $x^2+2=0$ und $-D\,x(t)=m\,\ddot x(t)$; $b)$
+$v(t),\ a(t)$ fuer $x(t)=x_0\cos(\omega t+\varphi_0)$; $c)$ Zeigen:
+$\ddot x=-\omega^2x$, also Loesung der DGL $\ddot x+\omega^2x=0$.
+
+\subsection*{Ansatz}
+Beide Faelle unterscheiden, dann die trigonometrischen Ableitungen bilden
+und die DGL pruefen.
+
+\subsection*{Rechnung}
+\textbf{a) Unterschied.} $x^2+2=0$ ist eine algebraische Gleichung; gesucht
+sind die \emph{Zahlenwerte} $x$ (hier komplex $\pm i\sqrt2$), die die
+Gleichung erfuellen. $-D\,x(t)=m\,\ddot x(t)$ ist eine
+Differentialgleichung; gesucht ist die \emph{Funktion} $x(t)$, die die
+Gleichung zusammen mit ihrer Ableitung identisch erfuellt.
+
+\textbf{b) Ableitungen.}
+\begin{align}
+  v(t)&=\dot x(t)=-x_0\omega\sin(\omega t+\varphi_0),\\
+  a(t)&=\ddot x(t)=-x_0\omega^2\cos(\omega t+\varphi_0)\;.
+\end{align}
+
+\textbf{c) Nachweis.} Wegen $x(t)=x_0\cos(\omega t+\varphi_0)$ ist
+\begin{equation}
+  a(t)=-x_0\omega^2\cos(\omega t+\varphi_0)=-\omega^2\,x(t)\;.
+\end{equation}
+Damit folgt
+\begin{equation}
+  \ddot x+\omega^2x=-\omega^2x+\omega^2x=0\;\checkmark.
+\end{equation}
+
+\begin{ergebnis}
+$a)$ algebraische Gleichung: gesucht die Zahl; DGL: gesucht die Funktion.
+$b)$ $v=-x_0\omega\sin(\omega t+\varphi_0)$, $a=-x_0\omega^2\cos(\omega t+\varphi_0)$.
+$c)$ $a=-\omega^2x$, d. h. $x(t)$ loest $\ddot x+\omega^2x=0$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\omega$ in \unit{\per\second}, $\omega t$ und
+$\varphi_0$ dimensionslos; $x_0\omega^2$ hat die Dimension von $a$
+(\unit{\metre\per\second\squared}), $x_0\omega$ die von $v$
+(\unit{\metre\per\second}). \checkmark
+
+\textbf{Querprobe:} Fuer $\varphi_0=0$, $t=0$ ist $x=x_0$ (maximal),
+$v=0$ (Umkehrpunkt), $a=-x_0\omega^2$ nach innen -- klassischer
+Oszillator-Umkehrpunkt. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Der harmonische Oszillator beschreibt jede Bewegung mit ruecktreibender
+Kraft proportional zur Auslenkung: $x(t)=x_0\cos(\omega t+\varphi_0)$ ist
+seine allgemeine Loesung und $\ddot x+\omega^2x=0$ seine Bewegungsgleichung.
+\end{merksatz}

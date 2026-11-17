@@ -1,0 +1,81 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $T=2400$\,Jahre, $1\,\mathrm{AE}=\qty{1.5e8}{km}$,
+$r_P=\qty{1}{AE}$, $v_P=\qty{42}{km/s}$, $M_\odot=\qty{1.989e30}{kg}$,
+$m_\mathrm{Komet}=\qty{1.3e16}{kg}$.
+Gesucht: (a) $a$; (b) $r_A$; (c) $v_P/v_A$; (d) Zeit Perihel$\to$Aphel bei
+konstanter Mittengeschwindigkeit; (e) $E_\mathrm{pot}$ an beiden Punkten.
+
+\subsection*{Ansatz}
+(a) 3. Kepler in Jahren/AE. (b) $2a = r_P+r_A$. (c)
+Drehimpulserhaltung. (d) Weg = halber Ellipsenumlauf $\approx \pi a$,
+Zeit $=\text{Weg}/v_\mathrm{mitte}$. (e) $E_\mathrm{pot}=-GM_\odot m/r$.
+
+\subsection*{Rechnung}
+\textbf{a) Grosse Halbachse:}
+\begin{equation}
+  T^2 = a^3\;\Rightarrow\;
+  a = T^{2/3} = 2400^{2/3}\,\mathrm{AE} \approx \qty{179.3}{AE}.
+\end{equation}
+
+\textbf{b) Aphel:}
+\begin{equation}
+  r_A = 2a-r_P = 2\cdot 179.3 - 1 = \qty{357.5}{AE}.
+\end{equation}
+
+\textbf{c) Geschwindigkeitsverhältnis:}
+\begin{equation}
+  \frac{v_P}{v_A} = \frac{r_A}{r_P}
+  = \frac{357.5}{1} = 357.5
+  \;(\Rightarrow v_A\approx\qty{0.117}{km/s}).
+\end{equation}
+
+\textbf{d) Zeit Perihel$\to$Aphel.} Weg$\,\approx\pi a$ (halber Umlauf).
+Mittlere Geschwindigkeit $\bar v=(v_P+v_A)/2=(42+0.117)/2\approx\qty{21.06}{km/s}$:
+\begin{equation}
+  \pi a = \pi\cdot 179.3\cdot 1.5e8\ \mathrm{km} \approx \qty{8.44e10}{km},
+\end{equation}
+\begin{equation}
+  \Delta t = \frac{\pi a}{\bar v}
+  = \frac{8.44e10}{21.06}\ \si{s}
+  \approx \qty{4.01e9}{s}
+  \approx \qty{127}{a}\ \mathrm{(Jahre)}.
+\end{equation}
+
+\textbf{e) Potentielle Energien:}
+\begin{equation}
+  E_P = -G\frac{M_\odot m}{r_P}
+  = -\frac{6.674e-11\cdot 1.989e30\cdot 1.3e16}{1.5e11}\ \si{J}
+  \approx \qty{-1.15e25}{J},
+\end{equation}
+\begin{equation}
+  E_A = -\frac{G M_\odot m}{r_A}
+  = -\frac{6.674e-11\cdot 1.989e30\cdot 1.3e16}{357.5\cdot 1.5e11}\ \si{J}
+  \approx \qty{-3.22e22}{J}.
+\end{equation}
+
+\begin{ergebnis}
+(a) $a\approx\qty{179.3}{AE}$; (b) $r_A\approx\qty{357.5}{AE}$;
+(c) $v_P/v_A=357.5$; (d) $\Delta t\approx\qty{127}{Jahre}$;
+(e) $E_P\approx\qty{-1.15e25}{J}$, $E_A\approx\qty{-3.22e22}{J}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Grenzfall (c):} im Perihel ist der Komet der Sonne am nächsten und am
+schnellsten; das 357-fache Geschwindigkeitsverhältnis entspricht dem
+Aphel/Perihel-Verhältnis. Plausibel für einen langperiodischen Kometen.
+
+\textbf{Einheiten:} $\Delta t$: km/(km/s)$=$s; Umrechnung in Jahre korrekt.
+$E_\mathrm{pot}$: $m^3/(kg\,s^2)\cdot kg\cdot kg/m = kg\,m^2/s^2 = J$. \checkmark
+
+\textbf{Konsistenz:} $E_P/E_A = r_A/r_P = 357.5$; Zahlen: $1.15e25/3.22e22
+\approx 357$. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Mit dem dritten Keplerschen Gesetz ($T^2=a^3$ in Jahren/AE) erhält man aus
+der Periode sofort $a$; Aphel und Perihel verhalten sich bezüglich
+Geschwindigkeit reziprok (Drehimpulserhaltung). Potentielle Energien
+skalieren wie $1/r$.
+\end{merksatz}

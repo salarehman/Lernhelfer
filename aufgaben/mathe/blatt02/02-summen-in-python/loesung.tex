@@ -1,0 +1,53 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) Programm für $\sum_{k=0}^{n}k^2$; (b) mit $n(n+1)(2n+1)/6$
+vergleichen; (c) die Formel beweisen.
+
+\subsection*{a) Programm}
+\begin{verbatim}
+sum([k**2 for k in range(n+1)])
+\end{verbatim}
+Für $n=5$: $0+1+4+9+16+25=55$. \checkmark
+
+\subsection*{b) Vergleich}
+\begin{center}
+\begin{tabular}{c|ccc}
+$n$ & $\sum k^2$ & $\frac{n(n+1)(2n+1)}6$ & überein\\
+\hline
+1 & 1 & $\frac{1\cdot2\cdot3}{6}=1$ & ja\\
+2 & 5 & $\frac{2\cdot3\cdot5}{6}=5$ & ja\\
+3 & 14 & $\frac{3\cdot4\cdot7}{6}=14$ & ja\\
+5 & 55 & $\frac{5\cdot6\cdot11}{6}=55$ & ja
+\end{tabular}
+\end{center}
+Werte stimmen für alle getesteten $n$ überein -- die Formel wird bestätigt.
+
+\subsection*{c) Beweis per Induktion}
+\emph{IA} ($n=1$): $1=\frac{1\cdot2\cdot3}6$.
+\emph{IS} ($n\to n+1$), mit der Annahme $\sum_{k=0}^{n}k^2=\frac{n(n+1)(2n+1)}6$:
+\begin{align}
+  \sum_{k=0}^{n+1}k^2
+  &=\frac{n(n+1)(2n+1)}6+(n+1)^2 \\
+  &=\frac{n(n+1)(2n+1)+6(n+1)^2}{6} \\
+  &=\frac{(n+1)\bigl(n(2n+1)+6(n+1)\bigr)}6 \\
+  &=\frac{(n+1)(2n^2+7n+6)}6 \\
+  &=\frac{(n+1)(n+2)(2n+3)}6 .
+\end{align}
+Das ist die Behauptung für $n+1$.
+
+\begin{ergebnis}
+\begin{equation*}
+  \sum_{k=0}^{n} k^2=\frac{n(n+1)(2n+1)}6\quad\text{für alle }n\ge1 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+$n=4$: $0+1+4+9+16=30$, Formel $4\cdot5\cdot9/6=30$; $n=6$:
+$0+\dots+36=91$, Formel $6\cdot7\cdot13/6=91$. Passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Python prüft die Formel numerisch, die Induktion beweist sie: im IS den
+Term $(n+1)^2$ addieren und den gemeinsamen Nenner $6$ herstellen.
+\end{merksatz}

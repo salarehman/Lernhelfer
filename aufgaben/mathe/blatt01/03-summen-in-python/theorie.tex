@@ -1,0 +1,38 @@
+% titel: Blatt 1, A3: Summen in Python
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Python-Programme zum Summieren natürlichter Zahlen abändern, ein vorgebtes
+Programm für $n=1,2,3,\dots$ auswerten und die Gauß-Formel der Summe
+beweisen.
+
+\begin{werkzeugkasten}[Python: range und sum]
+\begin{itemize}
+  \item \texttt{range(21)} liefert die Zahlen $0,1,\dots,20$
+        ($\to$ ``bis 20''). Für ``bis 29'' schreibt man \texttt{range(30)}.
+  \item \texttt{sum(iterable)} addiert alle Elemente,
+        z. B. \texttt{sum(range(30))} $=0+1+\dots+29$.
+  \item \texttt{range(n+1)} steht für die Zahlen $0,1,\dots,n$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Gauß-Formel durch Induktion]
+Die Summe der ersten $n$ Zahlen:
+\begin{equation}
+  \sum_{k=0}^{n} k = \frac{n(n+1)}2 .
+\end{equation}
+Damit ist \texttt{sum(range(n+1))-n*(n+1)/2} für jedes $n$ gleich $0$ --
+das ist die zu beobachtende ``Auffälligkeit''.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item \texttt{range} ist ``halb-offen'': \texttt{range(30)} endet bei
+        $29$, \texttt{range(21)} bei $20$.
+  \item In Python Mehrfachsummen sauber in eine \texttt{sum}-Funktion mit
+        Generatorausdruck schreiben.
+  \item Die Formel $n(n+1)/2$ ist für alle $n\in\mathbb N$ zu beweisen --
+        Induktionsanfang und Induktionsschritt fehlen dürfen nicht getrennt
+        sein.
+\end{itemize}
+\end{achtung}

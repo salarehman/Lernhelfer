@@ -1,0 +1,60 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Der Läufer halbiert sein Trägheitsmoment, $I_2=\frac12 I_1$, ohne
+äussere Drehmomente um die Achse.
+Gesucht: Faktoren, mit denen sich (a) $L$, (b) $\omega$, (c) $E_\mathrm{rot}$
+ändern.
+
+\subsection*{Ansatz}
+Drehimpulserhaltung um die Körperachse liefert $\omega_2$; damit die neue
+Energie. Die Energieänderung aus der Arbeit der Armmuskeln begründen.
+
+\subsection*{Rechnung}
+\textbf{Drehimpuls $L$:} Ohne äussere Drehmomente ist $L$ streng erhalten:
+\begin{equation}
+  \frac{L_2}{L_1} = 1 \qquad (L\text{ ändert sich \emph{nicht}}).
+\end{equation}
+
+\textbf{Winkelgeschwindigkeit:} Aus $I_1\omega_1=I_2\omega_2$ und
+$I_2=\frac12 I_1$:
+\begin{equation}
+  \omega_2 = \frac{I_1}{I_2}\,\omega_1 = 2\,\omega_1
+  \qquad (\omega\text{ verdoppelt sich}).
+\end{equation}
+
+\textbf{Rotationsenergie:}
+\begin{equation}
+  \frac{E_\mathrm{rot,2}}{E_\mathrm{rot,1}}
+  = \frac{\frac12 I_2\omega_2^2}{\frac12 I_1\omega_1^2}
+  = \frac{(\frac12 I_1)(2\omega_1)^2}{I_1\omega_1^2}
+  = \frac{\frac12\cdot 4}{1} = 2.
+\end{equation}
+Die Rotationsenergie verdoppelt sich ($E_\mathrm{rot}\propto 1/I$ bei
+konstantem $L$: $E_\mathrm{rot}=L^2/2I$).
+
+\textbf{Herkunft der Energie:} Beim Einziehen der Arme leistet der Sportler
+gegen die Zentrifugalkraft positive Arbeit (die Armmuskeln ziehen die Masse
+nach innen), die als zusätzliche Rotationsenergie gespeichert wird; die Zunahme
+ist also $=W_\mathrm{Arme}=\Delta E_\mathrm{rot}=\frac12 I_1\omega_1^2$.
+
+\begin{ergebnis}
+$L$: Faktor $1$ (unverändert); $\omega$: Faktor $2$; $E_\mathrm{rot}$: Faktor
+$2$ (Verdopplung). Die zusätzliche Energie kommt aus der Arbeit der Armmuskeln,
+die beim Anziehen der Arme gegen die Zentrifugalkraft geleistet wird.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Formel-Check:} $E_\mathrm{rot}=L^2/2I$: halbiert man $I$ (konstantes
+$L$), so verdoppelt sich $E_\mathrm{rot}$. \checkmark
+\textbf{Energieerhaltung} in der Gesamtbilanz: Die Zunahme von $\Delta
+E_\mathrm{rot}$ muss von der muskulären Arbeit kommen - kein Widerspruch,
+da das System nicht isoliert ist (Arme als "Muskelmaschine").
+\end{kontrolle}
+
+\begin{merksatz}
+Ohne äusseres Drehmoment bleibt $L=I\omega$ konstant; verkleinert man $I$, so
+wächst $\omega$ reziprok. Die Rotationsenergie $E_\mathrm{rot}=L^2/2I$ wird
+dabei grösser, und diese Energie muss von aussen (Muskelarbeit) zugeführt
+werden.
+\end{merksatz}

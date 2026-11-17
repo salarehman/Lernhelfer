@@ -1,0 +1,67 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) $a_n=\frac1{\sqrt{n^3+2}}$: konkretes $N$ für $|a_n|<10^{-3}$ und ein
+von $\varepsilon$ abhängiges $N$; (b) warum $b_n=(-1)^n$ nicht gegen $1$
+oder $-1$ konvergiert; (c) $\sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}$.
+
+\subsection*{a) konkretes $N$ für $|a_n|<10^{-3}$}
+Es ist $a_n>0$. Gefordert $\frac1{\sqrt{n^3+2}}<10^{-3}$:
+\begin{equation}
+  \sqrt{n^3+2}>1000\ \Longleftrightarrow\ n^3+2>10^6 .
+\end{equation}
+Für $n\ge100$ gilt $n^3+2\ge100^3+2>10^6$. Wähle $N=99$; für alle $n>N$
+ist $|a_n|<10^{-3}$.
+
+\subsection*{a') allgemeines $N$ für $|a_n|<\varepsilon$}
+\begin{equation}
+  \frac1{\sqrt{n^3+2}}<\varepsilon\ \Longleftrightarrow\
+  n^3+2>\frac1{\varepsilon^2}\ \Longleftrightarrow\
+  n>\sqrt[3]{\frac1{\varepsilon^2}-2}.
+\end{equation}
+Wähle
+\begin{equation}
+  N=\left\lceil\sqrt[3]{\frac1{\varepsilon^2}-2}\right\rceil .
+\end{equation}
+Für $\varepsilon=10^{-3}$ wird $N=\lceil\sqrt[3]{10^6-2}\rceil=\lceil99.9999\rceil=100$ (mit der Bedingung ``$n>N$'' dann $N=99$).
+
+\subsection*{b) $b_n=(-1)^n$}
+Teilfolgen: $b_{2k}=(-1)^{2k}=1$ und $b_{2k+1}=-1$. Wäre $b_n$ konvergent,
+so müssten beide Teilfolgen gegen denselben Grenzwert gehen -- $1\neq-1$,
+ein Widerspruch. Also konvergiert $b_n$ weder gegen $1$ noch $-1$.
+
+\subsection*{c) $\sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}$}
+\begin{equation}
+  \sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}
+  =\frac14\sum_{k=2}^{\infty}\Bigl(-\frac34\Bigr)^k .
+\end{equation}
+Geometrische Summe:
+$\sum_{k=0}^{\infty}(-\tfrac34)^k=\frac1{1+\frac34}=\frac47$;
+die Glieder $k=0,1$ sind $1$ und $-\frac34$, also
+\begin{equation}
+  \sum_{k=2}^{\infty}\Bigl(-\frac34\Bigr)^k
+  =\frac47-1+\frac34=\frac9{28},
+  \qquad
+  \frac14\cdot\frac9{28}=\frac9{112}.
+\end{equation}
+
+\begin{ergebnis}
+\begin{equation*}
+  \text{a)}\ N=99\ (\varepsilon=10^{-3}),\quad
+  N=\left\lceil\sqrt[3]{\tfrac1{\varepsilon^2}-2}\right\rceil,\qquad
+  \text{b)}\ b_n\ \text{divergent},\qquad
+  \text{c)}\ \frac9{112}.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+a) bei $n=99$: $|a_{99}|=\frac1{\sqrt{970299+2}}>10^{-3}$, bei $n=101$:
+$<10^{-3}$; c) Summe $\frac9{112}\approx0.0804$, roh über $|q^k|$ abgeschätzt
+plausibel ($\tfrac14\cdot\tfrac{(3/4)^2}{1-3/4}=\tfrac14\cdot\tfrac{9/16}{1/4}=\tfrac9{16}$, das erste Glied $>0$).
+\end{kontrolle}
+
+\begin{merksatz}
+Konvergenz-Beweise führen das $N$ auf die $\varepsilon$-Forderung zurück;
+alternierende Folgen widerlegt man über Teilfolgen; gebrochene geometrische
+Reihen klammert man und korrigiert den Startindex.
+\end{merksatz}

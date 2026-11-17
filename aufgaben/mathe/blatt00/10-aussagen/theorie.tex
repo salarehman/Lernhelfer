@@ -1,0 +1,40 @@
+% titel: Blatt 0, A10: Aussagen und ihre Gegenteile
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Das Gegenteil (die Negation) von Aussagen bestimmen; nicht auswerten, ob
+die Aussage wahr oder falsch ist.
+
+\begin{werkzeugkasten}[Negation von Quantoren]
+Für eine Aussage ``alle'': das Gegenteil ist ``mindestens eine (die
+nicht)''. Für ``es gibt eine'': das Gegenteil ist ``keine''.
+\begin{align}
+  \neg\bigl(\forall x: P(x)\bigr) &\Longleftrightarrow \exists x:
+  \neg P(x),\\
+  \neg\bigl(\exists x:P(x)\bigr) &\Longleftrightarrow \forall x:\neg P(x).
+\end{align}
+Allquantor und Existenzquantor ``drehen sich um'' und das Prädikat wird
+verneint; weitere logische Verknüpfungen (und/oder) werden ebenfalls negiert.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Negation von Prädikaten]
+\begin{itemize}
+  \item Gegenteil von ``jeder Morgen: die Sonne geht auf'' ist ``es gibt
+        einen Morgen, an dem die Sonne nicht aufgeht''.
+  \item Gegenteil von ``jedes Tier ist grau'' ist ``es gibt ein Tier, das
+        nicht grau ist''.
+  \item Gegenteil von ``es gibt eine Pflanze mit P'' ist ``alle Pflanzen
+        erfüllen $\neg P$''.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Die Negation einer ``alle''-Aussage ist \emph{ein} Gegenbeispiel,
+        nicht ``keine''. Die Negation einer ``es gibt''-Aussage ist
+        ``keine''.
+  \item Die Aussage ``$P$ und $Q$'' negiert man als ``$\neg P$ oder
+        $\neg Q$''.
+  \item Nicht nach Wahrheit entscheiden -- nur die Negation bilden.
+\end{itemize}
+\end{achtung}

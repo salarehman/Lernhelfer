@@ -1,0 +1,67 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+Lampe an langem Kabel (Masse vernachlaessigbar), Hoehe ueber dem Boden
+$\ell_b=\qty{3}{m}$. Gemessen: 5 Perioden in $\qty{63}{s}$, kleine
+Amplitude. Gesucht: (a) Bewegungsgleichung, (b) Loesung fuer kleine
+Amplituden ($\sin\varphi\approx\varphi$, Ansatz $\varphi=\varphi_0e^{i\omega t}$),
+(c) Deckenhoehe.
+
+\subsection*{Ansatz}
+Pendel der Laenge $\ell$ (Fadenlaenge), dessen Schwingungsdauer gemessen
+wird. Bewegungsgleichung in Tangentialrichtung; Naherung kleiner Winkel;
+$\ell$ aus $T=2\pi\sqrt{\ell/g}$.
+
+\subsection*{Rechnung}
+\textbf{a) Bewegungsgleichung.} Fuer die Punktmasse am Faden der Laenge
+$\ell$ gilt in Tangentialrichtung
+\begin{equation}
+  m\ell\ddot\varphi=-mg\sin\varphi
+  \;\Rightarrow\;
+  \boxed{\;\ddot\varphi+\frac{g}{\ell}\sin\varphi=0\;}.
+\end{equation}
+
+\textbf{b) Kleine Amplituden.} Mit $\sin\varphi\approx\varphi$:
+\begin{equation}
+  \ddot\varphi+\frac{g}{\ell}\varphi=0.
+\end{equation}
+Einsetzen von $\varphi=\varphi_0e^{i\omega t}$ liefert
+$\ddot\varphi=-\omega^2\varphi_0e^{i\omega t}$, also
+\begin{equation}
+  -\omega^2\varphi+\frac{g}{\ell}\varphi=0
+  \;\Rightarrow\;\omega=\sqrt{\frac{g}{\ell}},\qquad
+  T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{\ell}{g}}\;.
+\end{equation}
+
+\textbf{c) Deckenhoehe.} Fuer 5 Perioden in 63 s ist
+$T=\qty{63}{s}/5=\qty{12.6}{s}$. Daraus
+\begin{equation}
+  \ell=\frac{g T^2}{4\pi^2}
+  =\frac{\qty{9.81}{m/s^2}\cdot(\qty{12.6}{s})^2}{4\pi^2}
+  \approx\qty{39.5}{m},
+\end{equation}
+und die Decke liegt um die H\"ohe der Lampe {\"u}ber dem Boden h{\"o}her:
+\begin{equation}
+  h=\ell+\ell_b\approx\qty{39.5}{m}+\qty{3}{m}=\boxed{\;\qty{42.5}{m}\;}.
+\end{equation}
+
+\begin{ergebnis}
+$\ddot\varphi+(g/\ell)\sin\varphi=0$; fuer kleine Winkel
+$\omega=\sqrt{g/\ell}$, $T=2\pi\sqrt{\ell/g}$; mit $T=\qty{12.6}{s}$ ist
+$\ell\approx\qty{39.5}{m}$ und die Deckenhoehe $\approx\qty{42.5}{m}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\ell=gT^2/(4\pi^2)$: [m/s$^2$]$\cdot$s$^2$ = m. \checkmark
+
+\textbf{Querprobe:} Ein ${}\approx40\,\mathrm m$ langes Pendel hat in $g$
+gerade eine Periode von etwa 12 bis 13 s -- erwartete Groessenordnung fuer ein
+Kirchenseil. Fuer $\ell=\qty{9.8}{m}$ wuerde $T\approx\qty{6.3}{s}$ und 5
+Perioden 31 s brauchen, deutlich weniger als gemessen. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Fuer kleine Amplituden ist das mathematische Pendel ein harmonischer
+Oszillator ($T=2\pi\sqrt{\ell/g}$); aus der Periode folgt die Fadenlaenge
+und damit die Deckenhoehe.
+\end{merksatz}

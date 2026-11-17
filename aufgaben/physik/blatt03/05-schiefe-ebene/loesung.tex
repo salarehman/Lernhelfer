@@ -1,0 +1,96 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+K\"orper auf schiefer Ebene (Winkel $\alpha$); Haftreibung
+$F_R\le\mu_H F_N$, Gleitreibung $F_R=\mu_G F_N$. Gegeben fuer den Holzklotz:
+$\alpha_H=27^\circ$, $\alpha_G=17^\circ$; f\"ur Autoreifen $\mu_H\approx0,8$
+(trocken) bzw.\ 0,1 (eisig). Gesucht: (a) Zeigen $\mu_H=\tan\alpha_H$,
+(b) experimentelle Bestimmung von $\mu_H,\mu_G$, (c) $\mu_H,\mu_G$ und
+Beschleunigung bei $27^\circ$, (d) maximale Strassensteigung und die Rolle
+von Masse/Auflageflaeche.
+
+\subsection*{Ansatz}
+Kraeftegleichgewicht senkrecht und parallel zur Ebene; Reibungsgrenze im
+Moment vor dem Rutschen; gleichfoermiges Gleiten mit $a=0$.
+Beschleunigung nach dem Anstoss aus $a=g(\sin\alpha-\mu_G\cos\alpha)$.
+
+\subsection*{Rechnung}
+\textbf{a) Haftreibungswinkel.} Fuer den ruhenden Koerper gilt parallel
+zur Ebene $F_\parallel=F_R$; die Haftreibung erreicht gerade ihren
+Hoehstwert $\mu_H F_N$ im Moment des Rutschens:
+\begin{equation}
+  mg\sin\alpha_H=\mu_H\,mg\cos\alpha_H
+  \;\Rightarrow\;
+  \boxed{\;\mu_H=\tan\alpha_H\;}.
+\end{equation}
+
+\textbf{b) Experimentelle Bestimmung.} Man erhoeht die Neigung langsam,
+bis der Koerper zu rutschen beginnt (Winkel $\alpha_H$), dann ist
+$\mu_H=\tan\alpha_H$. Fuer $\mu_G$ stoesst man den Koerper an und findet
+den Winkel $\alpha_G$, bei dem er gleichfoermig (konstante Geschwindigkeit)
+weitergleitet; dann ist $\mu_G=\tan\alpha_G$.
+
+\textbf{c) Holzklotz.}
+\begin{equation}
+  \mu_H=\tan27^\circ\approx0{,}51,\qquad
+  \mu_G=\tan17^\circ\approx0{,}31\;.
+\end{equation}
+Nach dem Anstoss bei $\alpha=27^\circ$ gilt mit der Gleitreibung
+\begin{equation}
+  a=g(\sin\alpha-\mu_G\cos\alpha)
+  =9{,}81\,(\sin27^\circ-0{,}3057\cos27^\circ)
+\end{equation}
+\begin{equation}
+  \sin27^\circ\approx0{,}4540,\ \cos27^\circ\approx0{,}8910,
+  \;\Rightarrow\;
+  a\approx9{,}81(0{,}4540-0{,}2724)\approx
+  \boxed{\;\qty{1.78}{m/s^2}\;}.
+\end{equation}
+W\"are $\mu_G>\mu_H$ (mehr Gleit- als Haftreibung), so wuerde zwischen
+$\alpha_H$ und $\alpha_G$ mit $\mu_H<\mu_G$ ein paradoxer Bereich
+entstehen: der Koerper beginnt beim Haftreibungswinkel zu rutschen, koennte
+aber dann wegen der groesseren Gleitreibung ($a<0$ zwischen den beiden
+Winkeln) nicht gleichfoermig weiter; ein zunaechst angefangenes Rutschen
+kaeme wieder zum Stillstand -- unphysikalisch. Es muss stets
+$\mu_H\ge\mu_G$ gelten.
+
+\textbf{d) Maximale Strassensteigung.} Ein blockiertes (parkiertes) Rad
+wird durch die Haftreibung gehalten; Rutschen setzt bei
+$\tan\alpha=\mu_H$ ein:
+\begin{equation}
+  \alpha_{\max}=\arctan\mu_H: \quad
+  \text{trocken } \alpha_{\max}=\arctan0{,}8\approx\qty{39}{\degree},
+  \quad \text{eisig } \alpha_{\max}=\arctan0{,}1\approx\qty{5{,}7}{\degree}.
+\end{equation}
+Die Masse kuerzt sich heraus ($mg$ auf beiden Seiten der
+Reibungsgleichung); die Auflageflaeche spielt im einfachen Modell
+$F_R=\mu F_N$ keine Rolle.
+
+\begin{ergebnis}
+$\mu_H=\tan\alpha_H$, $\mu_G=\tan\alpha_G$; Klotz: $\mu_H\approx0{,}51$,
+$\mu_G\approx0{,}31$, $a\approx\qty{1.78}{m/s^2}$ bei $27^\circ$.
+Strassen: $\alpha_{\max}\approx\qty{39}{\degree}$ (trocken),
+$\qty{5{,}7}{\degree}$ (Eis); Masse und Auflageflaeche spielen im Modell
+keine Rolle; $\mu_G>\mu_H$ w\"are unphysikalisch.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\tan$ als Verhaeltnis der Kraftkomponenten
+dimensionslos; $a=g(\sin\alpha-\mu_G\cos\alpha)$ in \unit{\metre\per
+\second\squared}. \checkmark
+
+\textbf{Grenzfall:} Fuer $\mu_G=0$ (glatte Bahn) ist
+$a=g\sin\alpha$, der freie Fall auf der Ebene. Fuer $\alpha=0$ (waagrecht)
+wird $a=0$. \checkmark
+
+\textbf{Plausibilitaet:} $\mu_H>\mu_G$ (0,51 > 0,31) erfuellt die
+Forderung $\mu_H\ge\mu_G$; die Beschleunigung ist moderat, wie bei
+flacher Reibung zu erwarten. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Haftreibung haelt bis $\mu_H=\tan\alpha_H$, Gleitreibung ist konstant
+$\mu_G=\tan\alpha_G$; nach dem Anstoss beschleunigt der Koerper mit
+$a=g(\sin\alpha-\mu_G\cos\alpha)$. Masse und Flaeche spielen im
+Coulomb-Modell keine Rolle; es gilt stets $\mu_H\ge\mu_G$.
+\end{merksatz}

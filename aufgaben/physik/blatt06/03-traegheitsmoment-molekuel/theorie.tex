@@ -1,0 +1,54 @@
+% titel: Traegheitsmoment von Molekuelen
+% skript: Kap. Rotation, Traegheitsmoment mehrerer Massenpunkte
+
+Ein planares dreiatomiges Molekül besteht aus drei punktförmigen Massen $m$
+an den Eckpunkten eines gleichseitigen Dreiecks (Kantenlänge $d$). Das
+Trägheitsmoment um verschiedene Achsen wird einmal für punktförmige, einmal
+für kontinuierlich (gleichmässig) auf der Dreiecksfläche verteilte Masse
+bestimmt.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Trägheitsmoment diskreter Massenpunkte} (Abstand $r_i$ von der Achse):
+\begin{equation}
+  I = \sum_i m_i\, r_i^2.
+\end{equation}
+
+\textbf{Kontinuierliche (konstante) Massenverteilung} mit Flächendichte
+$\sigma=m/A$:
+\begin{equation}
+  I = \sigma \int_A r_\perp^2\,\mathrm dA.
+\end{equation}
+
+\textbf{Gleichseitiges Dreieck:} Kantenlänge $d$, Höhe
+\begin{equation}
+  h = \frac{\sqrt3}{2}\,d,
+  \qquad
+  A = \frac{\sqrt3}{4}\,d^2,
+\end{equation}
+Schwerpunkt $S$ auf der Winkelhalbierenden, Abstand $\frac13 h$ von einer
+Seite; die Winkelhalbierende durch eine Ecke teilt die gegenüberliegende Seite
+im rechten Winkel (die beiden anderen Massen haben von ihr den lotrechten
+Abstand $d/2$).
+
+\textbf{Achsen:} $A1$ liegt \emph{in einer Seitenlinie} (durch zwei Atome),
+$A2$ ist die \emph{Winkelhalbierende durch den Schwerpunkt} (senkrecht zur
+gegenüberliegenden Seite, durch ein Atom).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+Punktförmig: Abstände der drei Massen von der jeweiligen Achse ablesen und
+$I=\sum m r^2$. Kontinuierlich: $\sigma=3m/A$ und das Flächenintegral von
+$r_\perp^2$ über das Dreieck für jede Achse (Achse in der Seitlinie bzw.
+Winkelhalbierende) auswerten.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Für die Achse $A1$ wie für $A2$ liegen \emph{je nach Achse andere}
+       Atome auf bzw.\ in der Achse: $r=0$ für Atome in der Achse.
+  \item Bei der kontinuierlichen Verteilung bleibt die \emph{Gesamtmasse}
+       $3m$ erhalten: $\sigma=3m/A$, nicht $m/A$.
+  \item Die Höhe des gleichseitigen Dreiecks ist $\frac{\sqrt3}{2}d$, nicht
+       $d$.
+\end{itemize}
+\end{achtung}

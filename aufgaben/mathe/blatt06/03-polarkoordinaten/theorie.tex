@@ -1,0 +1,49 @@
+% titel: Blatt 6, A3: Polarkoordinaten
+% skript: Kap. 1 (Polarkoordinaten, de Moivre)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zahlen in Polarkoordinaten umrechnen, Potenzen mit der Moivre-Formel
+berechnen, komplexe Gleichungen wie $z^4=-1$ lösen und eine Drehung am
+Ortsvektor durchführen.
+
+\begin{werkzeugkasten}[Polarkoordinaten und de Moivre]
+Jede Zahl $z=r(\cos\varphi+i\sin\varphi)=r\mathrm e^{i\varphi}$ mit
+\begin{equation*}
+  r=|z|=\sqrt{a^2+b^2},\qquad
+  \varphi=\arg(z)\ \text{im passenden Quadranten}.
+\end{equation*}
+Für Potenzen und Wurzeln gilt die Moivre-Formel
+\begin{equation*}
+  z^n=r^n(\cos(n\varphi)+i\sin(n\varphi)),\qquad
+  z^{1/n}=r^{1/n}\Bigl(\cos\frac{\varphi+2\pi k}{n}
+  +i\sin\frac{\varphi+2\pi k}{n}\Bigr),\ k=0,\dots,n-1.
+\end{equation*}
+
+\textit{Skript:} Kap. 1 (Moivre).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Kurze Umrechnungen]
+\begin{itemize}
+  \item $-5=-5+0i$: $r=5$, $\varphi=\pi$.
+  \item $-3i+3=3-3i$: $r=3\sqrt2$, $\varphi=-\frac\pi4$.
+  \item $\frac1i=-i$: $r=1$, $\varphi=-\frac\pi2$.
+  \item $1+i\tan\alpha$: $r=\sec\alpha=\frac{1}{\cos\alpha}$,
+        $\varphi=\alpha$ (da $\cos\alpha>0$ für
+        $-\frac\pi2<\alpha<\frac\pi2$).
+\end{itemize}
+\textit{Skript:} Kap. 1 (Polarkoordinaten).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Den Quadranten beim Argument nicht übersehen: $1-i\sqrt3$ liegt im
+        \emph{vierten} Quadranten, $\varphi=-\frac\pi3$.
+  \item Bei $z^n$ mit großem $n$ zuerst in Polarkoordinaten umrechnen, dann
+        de Moivre anwenden -- nicht ausmultiplizieren.
+  \item $z^4=-1$ hat \emph{vier} Lösungen, gleichmäßig auf dem Einheitskreis
+        (Richtungen $\pi/4$, $3\pi/4$, $5\pi/4$, $7\pi/4$).
+  \item Eine Drehung um $\theta$ multipliziert mit
+        $e^{i\theta}$: $\varphi\mapsto\varphi+\theta$; Radius bleibt gleich.
+\end{itemize}
+\end{achtung}

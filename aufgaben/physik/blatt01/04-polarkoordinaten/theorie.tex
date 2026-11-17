@@ -1,0 +1,61 @@
+% titel: Blatt 1, A4: Polarkoordinaten
+% skript: Kap. Kinematik, ebene Polarkoordinaten
+
+% Einheitsvektoren, Orts- und Geschwindigkeitsvektor in Polarkoordinaten.
+
+Bei ebenen Bahnen bietet ein Koordinatensystem an den Ort die
+Polarkoordinaten $(r,\varphi)$: Grundvektoren heissen $\hat e_r$
+(radial) und $\hat e_\varphi$ (tangential zur Kreisbahn).
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Umrechnung} kartesisch $\leftrightarrow$ polar:
+\begin{equation}
+  x=r\cos\varphi,\quad y=r\sin\varphi,\qquad
+  r=\sqrt{x^2+y^2}.
+\end{equation}
+
+\textbf{Einheitsvektoren} (normierte partielle Ableitungen):
+\begin{equation}
+  \hat e_r=\frac{\partial\vec r/\partial r}{|\cdot|},\qquad
+  \hat e_\varphi=\frac{\partial\vec r/\partial\varphi}{|\cdot|}\;.
+\end{equation}
+
+\textbf{Ortsvektor} in Polarkoordinaten:
+\begin{equation}
+  \vec r(\vec r,\varphi)=r\,\hat e_r\;.
+\end{equation}
+
+\textbf{Zeitableitung von $\hat e_r$ und $\hat e_\varphi$:} Weil sich die
+Basis unter der Drehung $\varphi$ aendert, gilt
+\begin{equation}
+  \dot{\hat e}_r=\dot\varphi\,\hat e_\varphi,\qquad
+  \dot{\hat e}_\varphi=-\dot\varphi\,\hat e_r\;.
+\end{equation}
+
+\textbf{Geschwindigkeit} (Produktregel $\vec r=r\hat e_r$):
+\begin{equation}
+  \vec v=\dot r\,\hat e_r+r\,\dot\varphi\,\hat e_\varphi\;.
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Einheitsvektoren: partielle Ableitung bilden, dann normieren.
+  \item Die Zeitableitung der Basis nicht vergessen: die Einheitsvektoren
+        sind orts- (und damit zeit-)abhaengig.
+  \item Bei der Kreisbewegung ist $\dot r=0$ und $\varphi=\omega t$; der
+        Radialteil verschwindet.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $\hat e_r$ und $\hat e_\varphi$ sind \emph{nicht} konstant, anders
+        als $\hat e_x,\hat e_y$.
+  \item Beim Ableiten von $r\hat e_r$ die Produktregel verwenden; sonst
+        fehlt der tangentiale Term.
+  \item Fuer die Kreisbahn mit $r=R$ die Laenge $|\vec v|$ aus beiden
+        Komponenten ausrechnen, nicht nur den Betrag von $\hat e_\varphi$
+        (der ist $1$).
+\end{itemize}
+\end{achtung}

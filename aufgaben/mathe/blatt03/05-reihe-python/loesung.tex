@@ -1,0 +1,51 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) Differenz $\tfrac{\pi^2}6-\sum_{k=1}^{100}\frac1{k^2}$ in Python
+berechnen; (b) das kleinste $N$ mit $\tfrac{\pi^2}6-\sum_{k=1}^{N}\frac1{k^2}<0.001$ finden.
+
+\subsection*{a) Differenz bis $N=100$}
+\begin{verbatim}
+import math
+diff = math.pi**2/6 - sum([1/k**2 for k in range(1, 101)])
+print(diff)
+\end{verbatim}
+Das ergibt näherungsweise
+\begin{equation}
+  \frac{\pi^2}6-\sum_{k=1}^{100}\frac1{k^2}
+  \approx 0.0099502 .
+\end{equation}
+
+\subsection*{b) kleinstes $N$ mit Differenz $<0.001$}
+\begin{verbatim}
+import math
+for N in range(1, 1000):
+    diff = math.pi**2/6 - sum([1/k**2 for k in range(1, N+1)])
+    if diff < 0.001:
+        print(N, diff)
+        break
+\end{verbatim}
+Das kleinste solche $N$ ist
+\begin{equation}
+  N=1000,\qquad \text{Differenz }\approx0.00099950.
+\end{equation}
+
+\begin{ergebnis}
+\begin{align*}
+  \text{a)}&\ \frac{\pi^2}6-\sum_{k=1}^{100}\frac1{k^2}\approx0.0099502,\\
+  \text{b)}&\ N=1000\ \text{liefert erstmals eine Differenz }<0.001.
+\end{align*}
+\end{ergebnis}
+
+\begin{kontrolle}
+Da die Reihe mit $1/k^2$ langsam konvergiert (Harmonische-Quadrat), ist ein
+großes $N$ (hier $\sim10^3$) für die Schwelle $0.001$ plausibel; das
+Restglied $>\!\!\int_{1000}^{\infty}\frac{\mathrm dx}{x^2}=0.001$ passt zur
+Grenze.
+\end{kontrolle}
+
+\begin{merksatz}
+Iterativ $N$ erhöhen und die Differenz $\tfrac{\pi^2}6-$Teilsumme mit der
+Schwelle vergleichen; \texttt{range(1,N+1)} und \texttt{k**2} sind die
+richtigen Bausteine.
+\end{merksatz}

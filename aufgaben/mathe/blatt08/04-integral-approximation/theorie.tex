@@ -1,0 +1,51 @@
+% titel: Blatt 8, A4: Approximation eines Integrals
+% skript: Kap. 5 (Riemann-Integral, Approximation)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Einen numerischen Näherungswert eines Integrals (Gauß-Dichte) aus Python verstehen
+und verbessern.
+
+\begin{werkzeugkasten}[Riemann-Summe als Integral]
+Der Code
+\begin{verbatim}
+import math
+def f(x): return (1/math.sqrt(2*math.pi))*math.exp(-x**2/2)
+S = sum([f(x/100)*(1/100) for x in range(-196, 197)])
+\end{verbatim}
+summiert Rechtecke der Breite $\frac1{100}$ an den Stützstellen
+$x=k/100$, $k=-196,\dots,196$. Das ist eine Riemann-Summe für das Integral
+über die Standard-Gauß-Verteilungsdichte:
+\begin{equation*}
+  \int_{-1{,}96}^{1{,}96}\frac{1}{\sqrt{2\pi}}\mathrm e^{-x^2/2}\,dx.
+\end{equation*}
+$\frac1{\sqrt{2\pi}}e^{-x^2/2}$ ist die Dichte der Normalverteilung
+$\mathcal N(0,1)$; das Integral bis $1{,}96$ ist der Wert der
+Verteilungsfunktion $\Phi(1{,}96)-\Phi(-1{,}96)\approx0{,}95$.
+
+\textit{Skript:} Kap. 5 (Riemann-Integral).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Bessere Approximation]
+Der Fehler einer Rechteckregel ist $O(h)$, wobei $h$ die Schrittweite ist.
+\emph{Verkleinert man $h$}, d.h. mehr und dichter liegende Stützstellen
+statt $1/100$ z.B.\ $1/1000$ (bei gleichem Integrationsbereich
+$[-1{,}96,1{,}96]$), wird das Ergebnis genauer. Zusätzlich ist die
+\emph{Mittelpunktregel} (Stützstelle in der Mitte jedes Teilintervalls) oder
+die Trapez-/Simpson-Regel deutlich effizienter (Fehler $O(h^2)$ bzw.\ $O(h^4)$).
+
+\textit{Skript:} Kap. 5 (Numerische Integration).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Die Breite $\frac1{100}$ und den Bereich: $x$ läuft von
+        $-1{,}96$ bis $1{,}96$ (Rechtecks-Mittelwerte sind hier links),
+        daher ist $S$ eine Links-Rechteck-Summe.
+  \item Fehlerabschätzung: Rechteck-$(O(h))$ gegen Trapez/Simpson
+        ($O(h^2)/O(h^4)$); ein genauerer Wert braucht \emph{mehr} bzw.\
+        \emph{bessere} Stützstellen.
+  \item Für das Integral bis $\infty$ müsste man den Bereich erweitern;
+        hier ist $[-1{,}96,1{,}96]$ fest vorgegeben.
+\end{itemize}
+\end{achtung}

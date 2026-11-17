@@ -1,0 +1,55 @@
+% titel: Betrachtungen in verschiedenen Systemen: rotierendes Buro
+% skript: Kap. Rotierende Bezugssysteme, Corioliskraft
+
+Eine Kugel wird in einem um die eigene Achse rotierenden, kreisrunden Raum
+abgeschossen. Je nach Bezugssystem beschreibt man dasselbe physikalische
+Ereignis unterschiedlich: im Inertialsystem fliegt die Kugel geradeaus und das
+Ziel bewegt sich; im mitrotierenden System krümmt die Kugel ihre Bahn
+(Corioliskraft). Beide Betrachtungen müssen dieselbe Abweichung liefern.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Im Inertialsystem} (ruhend von aussen): Die Kugel hat nur die
+Anfangsgeschwindigkeit $\vec v_0$ und die Flugzeit zum Ziel
+$t=\text{Distanz}/v_0$. Das Ziel (an der Wand) rotiert mit $\vec\Omega$:
+in der Zeit $t$ dreht sich der Raum um $\Omega t$, und der Zielpunkt
+verschiebt sich tangential um
+\begin{equation}
+  \Delta d = r\,\Omega t\;.
+\end{equation}
+
+\textbf{Im rotierenden System:} Trägheitskräfte für die Kugel. Bei
+(konstant angenommener) Geschwindigkeit $v_0$ wirkt die
+Coriolisbeschleunigung
+\begin{equation}
+  a_C = 2\,\Omega\, v_0
+\end{equation}
+senkrecht zur Bewegung; Querablenkung (gleichmässig beschleunigt über die
+Flugzeit $t$):
+\begin{equation}
+  \Delta d = \tfrac12 a_C t^2 = \Omega\, v_0\, t^2.
+\end{equation}
+
+\textbf{Zentrifugalbeschleunigung} im Abstand $r$ vom Zentrum:
+\begin{equation}
+  a_\mathrm{zentri} = \Omega^2 r\;.
+\end{equation}
+
+\textbf{Konstanten:} $\Omega = 2\pi\cdot 1\,\mathrm{s^{-1}}$ (eine Umdrehung
+pro Sekunde), $v_0=\qty{500}{m/s}$, $d=\qty{10}{m}$ (Radius $r=\qty{5}{m}$).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+Flugzeit $t$ aus Distanz und $v_0$; Ablenkung im Inertialsystem über die
+Rotation des Zielpunkts, im rotierenden System über die Coriolisbeschleunigung
+bestimmen - beide müssen gleich sein. Für die Beschleunigung am Aufenthaltsort
+die Zentrifugalkraft nutzen.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Die Flugzeit $t$ aus der \emph{im Raum} zurückgelegten Strecke und
+       $v_0$; die Rotation ändert diese nur zweiter Ordnung.
+  \item In $\Delta d=\tfrac12 a_C t^2$ die Einheit der Zeit (s) korrekt
+       einsetzen; $\Omega$ in rad/s.
+\end{itemize}
+\end{achtung}

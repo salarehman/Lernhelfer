@@ -1,0 +1,76 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Hohlzylinder $m$, Innenradius $r$, Aussenradius $R$; Drehachse $D$
+parallel zur Symmetrieachse, um $r$ versetzt (Schwerpunktabstand $s=r$).
+Gesucht: (a) Bestätigung $\ddot\varphi+\frac{mgr}{I_D}\sin\varphi=0$;
+(b) $I_D$; (c) $\omega_0$; (d) $r$ für schnellstmögliche Schwingung bei
+gegebenem $R,m$.
+
+\subsection*{Rechnung}
+\textbf{a) Bewegungsgleichung.} Drehimpulssatz um die feste Achse $D$:
+\begin{equation}
+  I_D\,\ddot\varphi = M_\varphi = -m\,g\,r\,\sin\varphi
+  \qquad(\text{Komponente des Schwerpunkt-Moments } m g \text{ um }D).
+\end{equation}
+Division durch $I_D$ ergibt exakt
+\begin{equation}
+  \ddot\varphi + \frac{m g r}{I_D}\,\sin\varphi = 0. \qquad\checkmark
+\end{equation}
+
+\textbf{b) Trägheitsmoment.} Symmetrieachse durch den Schwerpunkt:
+$I_S=\frac12 m(R^2+r^2)$. Verschiebung parallel um $d=r$, Steiner:
+\begin{equation}
+  I_D = I_S + m r^2
+  = \frac12 m(R^2+r^2) + m r^2
+  = \frac{m}{2}\left(R^2+3r^2\right). 
+\end{equation}
+
+\textbf{c) Eigenkreisfrequenz} (Kleinschwingung, $s=r$):
+\begin{equation}
+  \omega_0^2 = \frac{m g r}{I_D}
+  = \frac{m g r}{\frac m2 (R^2+3r^2)}
+  \;\Rightarrow\;
+  \omega_0 = \sqrt{\frac{2 g r}{R^2+3r^2}}\;.
+\end{equation}
+
+\textbf{d) Schnellstmögliche Schwingung.} Für gegebenes $R,m$ bleibt von $m,g$
+abzusehen; zu maximieren ist $f(r)=\frac{r}{R^2+3r^2}$:
+\begin{equation}
+  f'(r)
+  = \frac{1\cdot(R^2+3r^2) - r\cdot 6r}{(R^2+3r^2)^2}
+  = \frac{R^2-3r^2}{(R^2+3r^2)^2}
+  \;\overset{!}{=}\;0
+  \;\Rightarrow\;
+  3r^2 = R^2
+  \;\Rightarrow\;
+  r = \frac{R}{\sqrt3}.
+\end{equation}
+
+\begin{ergebnis}
+(a) $\ddot\varphi+\dfrac{mgr}{I_D}\sin\varphi=0$ (mit $I_D$ aus b).
+(b) $I_D=\dfrac{m}{2}\left(R^2+3r^2\right)$.
+(c) $\omega_0=\sqrt{\dfrac{2 g r}{R^2+3r^2}}$.
+(d) Optimaler Innenradius $r=R/\sqrt3$ (≈\qty{0.58}\cdot R).
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\omega_0^2$:
+$\frac{m/s^2\cdot m}{kg\,m^2/(kg)}=\frac{m^2/s^2}{m^2}=s^{-2}$, also $\omega_0$
+in rad/s. \checkmark
+
+\textbf{Grenzfall:} $r=0$ (dünner Vollzylinder wäre $R\gg r$ hier): $\omega_0
+=\sqrt{2gr/R^2}\to 0$ - kaum Schwerpunktabstand, fast keine rücktreibende
+Kraft. Für $r\to R$ (sehr dünne Schale) $I_D\approx\frac m2(R^2+3R^2)=2mR^2$,
+$\omega_0=\sqrt{2gR/(4R^2)}=\sqrt{g/(2R)}$ - plausibel.
+
+\textbf{Optimierung:} $r=R/\sqrt3$ ist das Maximum (Wochenzeichen: $f"<0$
+dort), das Pendel schwingt dort am schnellsten.
+\end{kontrolle}
+
+\begin{merksatz}
+Physisches Pendel um eine parallel verschobene Achse: Bewegungsgleichung
+über den Drehimpulssatz, Trägheitsmoment über Steiner $I_D=I_S+md^2$. Die
+Eigenfrequenz $\omega_0=\sqrt{mgs/I_D}$ folgt daraus; tritt neben $s$ auch
+der Innenradius als Variable auf, maximiert man $\omega_0^2(r)$ durch Ableiten.
+\end{merksatz}

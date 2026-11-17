@@ -1,0 +1,50 @@
+% titel: Blatt 6, A6: Polynome 3-ten Grades (Cardano)
+% skript: Kap. 1 (Wurzeln), Kap. 3 (Nullstellen)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Mit der Cardano-Formel eine reelle Nullstelle kubischer Polynome der Form
+$z^3+3pz+2q$ konstruieren und alle Nullstellen eines konkreten Polynoms
+bestimmen.
+
+\begin{werkzeugkasten}[Cardano-Formel für $z^3+3pz+2q$]
+Unter der Voraussetzung $D:=q^2+p^3>0$ setzt man
+\begin{equation*}
+  u=-q+\sqrt{D},\qquad v=-q-\sqrt{D},\qquad
+  x=\sqrt[3]{u}+\sqrt[3]{v},
+\end{equation*}
+wobei $\sqrt[3]{\,}$ die reelle dritte Wurzel ist (Umkehrfunktion von
+$t\mapsto t^3$). Der entscheidende Baustein ist
+\begin{equation*}
+  uv=q^2-D=q^2-(q^2+p^3)=-p^3
+  \;\Longrightarrow\;
+  \sqrt[3]{uv}=-p .
+\end{equation*}
+Mit dem Binom $(a+b)^3=a^3+b^3+3ab(a+b)$ folgt
+$x^3=-2q+3\sqrt[3]{uv}\,x=-2q-3px$, also $x^3+3px+2q=0$.
+
+\textit{Skript:} Kap. 1 (komplexe Wurzeln), Kap. 3 (Polynome).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Alle Nullstellen]
+Hat man eine reelle Nullstelle $x$, so faktorisiert man:
+\begin{equation*}
+  z^3+3pz+2q=(z-x)\bigl(z^2+xz+(x^2+3p)\bigr).
+\end{equation*}
+Die quadratische Gleichung liefert die restlichen zwei (ggf.\ konjugiert
+komplexen) Nullstellen.
+
+\textit{Skript:} Kap. 3 (Nullstellen von Polynomen).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item $\sqrt[3]{\,}$ ist die \emph{reelle} dritte Wurzel; sie existiert
+        immer, auch für negative Argumente ($\sqrt[3]{-9}=-\sqrt[3]{9}$).
+  \item Erster Schritt nach dem Hinweis: $\sqrt[3]{uv}$ berechnen -- das
+        ist der Schlüssel zur Vereinfachung.
+  \item Beim konkreten Polynom (b) zuerst $p$ und $q$ identifizieren
+        ($3p=3\sqrt[3]{9}$, $2q=8$), dann $D$, $u$, $v$ bestimmen.
+  \item Am Ende alle drei Nullstellen angeben, nicht nur die reelle.
+\end{itemize}
+\end{achtung}

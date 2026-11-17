@@ -1,0 +1,43 @@
+% titel: Blatt 5, A4: Intervallhalbierungsverfahren
+% skript: Kap. 3 (Zwischenwertsatz, numerische Nullstellensuche)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Eine Nullstelle eines Polynoms $p$ durch fortgesetztes Halbieren eines
+Intervalls approximieren.
+
+\begin{werkzeugkasten}[Intervallhalbierung (Bisektion)]
+Für stetiges $p$ mit $p(a)\cdot p(b)<0$ liegt (nach Zwischenwertsatz) eine
+Nullstelle in $[a,b]$:
+\begin{enumerate}
+  \item Mittelpunkt $m=\frac{a+b}{2}$.
+  \item Ist $p(a)\cdot p(m)<0$, ist die Nullstelle in $[a,m]$; sonst in
+        $[m,b]$.
+  \item Intervall ersetzen und wiederholen.
+\end{enumerate}
+Nach $n$ Schritten ist die Fehlerbreite $(b-a)/2^n$; schon wenige Schritte
+verkleinern das Suchfenster drastisch.
+
+\textit{Skript:} Kap. 3 (Zwischenwertsatz).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Konvergenzgeschwindigkeit]
+Jeder Schritt halbiert die Länge: nach $k$ Schritten ist das Intervall
+$\dfrac{b-a}{2^k}$ lang. Für $[0,2]$ und $k=20$ ist die Breite
+$\dfrac{2}{2^{20}}\approx2\cdot10^{-6}$, die Nullstelle liegt also auf
+mindestens 5 nachkommastellen genau fest.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Vorbedingung prüfen: $p$ stetig und $p(a)\,p(b)<0$. Für $p(x)=x^5-2x-1$
+        ist $p(0)=-1$, $p(2)=32-4-1>0$ -- Vorbedingung erfüllt.
+  \item Das Vorzeichen \emph{des Produkts} entscheidet, nicht das von $p(m)$
+        allein.
+  \item Den Schritt sauber protokollieren (linke/rechte Grenze und $p(m)$),
+        auch bei ``von Hand''.
+  \item Beim Python-Code: Iterationsschleife in die Funktion stecken und den
+        Zähler korrekt hochzählen; die 5-Nachkommastellen-Genauigkeit erst
+        nach ausreichend vielen Schritten angeben.
+\end{itemize}
+\end{achtung}

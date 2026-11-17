@@ -1,0 +1,47 @@
+% titel: Blatt 8, A3: Flächeninhalte und Stammfunktionen
+% skript: Kap. 5 (Stammfunktionen, Hauptsatz)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Stammfunktionen zu verschiedenen Funktionen angeben, Flächen zwischen zwei
+Kurven bzw. zwischen Kurve und $x$-Achse berechnen und einen Grenzwert für
+unendliche Integrationsgrenze auswerten.
+
+\begin{werkzeugkasten}[Grund-Stammfunktionen]
+\begin{itemize}
+  \item $\displaystyle\int\frac1x\,dx=\ln|x|+\mathbb C$ ($x\ne0$).
+  \item Mit der Kettenregel-Rückwärts (Substitution): Aus
+        $\int u'(x)u(x)\,dx$ Typen wie
+        $2\sin x\cos x=\sin(2x)$ erkennen und integrieren.
+  \item $\displaystyle\frac{2x}{\cos^2(x^2)}$ ist die Ableitung von
+        $\tan(x^2)$ (Kettenregel in der Form
+        $[\tan g]'=\frac{g'}{\cos^2g}$ mit $g=x^2$, $g'=2x$).
+\end{itemize}
+\textit{Skript:} Kap. 5 (Stammfunktionen).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Fläche zwischen zwei Kurven]
+Die von $f$ und $g$ auf $[a,b]$ eingeschlossene Fläche ist
+\begin{equation*}
+  \int_a^b |f(x)-g(x)|\,dx .
+\end{equation*}
+Hat $f-g$ ein festes Vorzeichen auf Teilintervallen, rechnet man die Abschnitte
+getrennt. Beispielhaft für $f(x)=\sin x$ und $g(x)=-x(x-\pi)(x-2\pi)$ auf
+$[0,2\pi]$ erhält man über die Stammfunktionen von $\sin$ und des
+kubischen Polynoms einen exakten Ausdruck.
+
+\textit{Skript:} Kap. 5 (Hauptsatz, Flächen).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Betrag nicht vergessen: $\int(f-g)$ ist nicht die Fläche, falls
+        $f<g$ auf einem Teilbereich.
+  \item Bei $1/x$ unbedingt $\ln|x|$ statt $\ln x$ schreiben (Integrand
+        auch für $x<0$ erklärt).
+  \item Skizzieren zuerst: die Vorzeichen der Differenz $f-g$ bestimmen
+        die Zerlegung der Fläche.
+  \item Für die Grenzwert-Aufgabe c) die Stammfunktion exakt hinschreiben,
+        die Grenzen einsetzen und den Grenzwert $b\to\infty$ bilden.
+\end{itemize}
+\end{achtung}

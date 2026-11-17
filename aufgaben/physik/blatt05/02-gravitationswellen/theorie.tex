@@ -1,0 +1,56 @@
+% titel: Gravitationswellen von zwei ubereinander kreisenden Massen
+% skript: Kap. Gravitation, Virialsatz
+
+Zwei gleiche Massen $m$ kreisen mit Winkelgeschwindigkeit $\omega$ im Abstand
+$r$ um ihren gemeinsamen Schwerpunkt. Aus dem Kräftegleichgewicht erhält man
+den Zusammenhang $r(\omega)$; mit Energie- und Virialsatz folgt die
+mechanische Gesamtenergie $E_\mathrm{tot}$, und über die abgestrahlte
+Leistung $P \propto \omega^{10/3}$ ergibt sich, warum Gravitationswellen
+erst spät im Signal stark werden.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Kraftbilanz} auf einer Kreisbahn (Masse $m$ um Abstand $r/2$ vom
+Schwerpunkt):
+\begin{equation}
+  G\frac{m^2}{r^2} = m\,\omega^2\,\frac r2
+  \;\Rightarrow\;
+  r^3 = \frac{2Gm}{\omega^2}\;.
+\end{equation}
+
+\textbf{Potentielle Energie} durch Integration der Gravitationskraft vom
+Unendlichen:
+\begin{equation}
+  E_\mathrm{pot} = -G\frac{m^2}{r}\;,
+\end{equation}
+
+\textbf{Virialsatz} für ein gebundenes System ($\langle E_\mathrm{kin}\rangle
+$ gegen $\langle E_\mathrm{pot}\rangle$ zum Mittelwert):
+\begin{equation}
+  E_\mathrm{kin} = -\frac12 E_\mathrm{pot} \;.
+\end{equation}
+
+\textbf{Abgestrahlte Leistung} (quadrupol-Näherung, gegeben):
+\begin{equation}
+  P = \frac{8G}{5c^5}\,m^2\, r^4 \omega^6\;.
+\end{equation}
+
+\textbf{Konstanten:} $c=\qty{3e8}{m/s}$, $G=\qty{6.674e-11}{m^3/(kg\,s^2)}$,
+$M_\odot=\qty{1.989e30}{kg}$; GW-Frequenz ist die doppelte Umlauffrequenz.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+(a) Kräftegleichgewicht. (b) Frequenz aus dem Signal ablesen, $r$ und Dichte
+berechnen. (c) Energie durch Integration. (d) $E_\mathrm{tot}=E_\mathrm{kin}+
+E_\mathrm{pot}$ und Virialsatz prüfen, $E_\mathrm{tot}(\omega)$. (e)
+Vorzeichen von $\mathrm d\omega/\mathrm dt$. (f) $P(\omega)$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Jede Masse dreht im Radius $r/2$ (nicht $r$): Der Abstand $r$ ist die
+       Distanz \emph{zwischen} den Massen.
+  \item Gravitationswellen-Frequenz ist die doppelte Umlauffrequenz.
+  \item $\omega$ variiert; es bei der Antwort auf das Abnehmen des Abstands
+       beachten.
+\end{itemize}
+\end{achtung}

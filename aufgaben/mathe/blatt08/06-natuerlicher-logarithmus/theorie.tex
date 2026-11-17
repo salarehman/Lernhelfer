@@ -1,0 +1,49 @@
+% titel: Blatt 8, A6: Natürlicher Logarithmus
+% skript: Kap. 4 (Differentialrechnung), Kap. 1.2 (Funktionalgleichung)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zeigen, dass eine differenzierbare Funktion $L\colon(0,\infty)\to\mathbb R$
+mit den drei Eigenschaften $L(1)=0$, $L'(1)=1$, $L(xy)=L(x)+L(y)$ bereits
+der natürliche Logarithmus ist.
+
+\begin{werkzeugkasten}[Funktionalgleichung und Ableiten]
+Die Multiplikativität
+\begin{equation*}
+  L(xy)=L(x)+L(y)\qquad \forall x,y>0
+\end{equation*}
+ist die zentrale Charakterisierung des Logarithmus. Leitet man sie nach
+einer Variablen (z.B.\ $y$ mit festem $x$) ab, erhält man eine
+Differentialgleichung für $L'$:
+\begin{equation*}
+  x\,L'(xy)=L'(y).
+\end{equation*}
+Diese Identität für alle $y>0$ aufschreiben und mit geeigneter Wahl (z.B.\
+$y=1$) nach $L'(x)$ auflösen.
+
+\textit{Skript:} Kap. 1.2 (Logarithmus), Kap. 4 (Ableitungen).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Schlussfolge zu $\ln x$]
+\begin{enumerate}
+  \item $L(xy)=L(x)+L(y)$ nach $y$ ableiten (Kettenregel links): 
+        $L'(xy)\cdot x=L'(y)$.
+  \item $y=1$ einsetzen: $xL'(x)=L'(1)=1$, also $L'(x)=\frac1x$.
+  \item Integration mit $L(1)=0$: $L(x)=\ln x$ ($\ln 1=0$).
+\end{enumerate}
+
+\textit{Skript:} Kap. 4 (Ableitung von $\ln$).
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Die Funktionalgleichung nach \emph{beiden} Variablen gilt; man darf
+        $y=1$ spezialisieren, weil sie für alle $y>0$ gefordert ist.
+  \item Bei der Kettenregel links fehlt der Faktor $x$: 
+        $\frac d{dy}L(xy)=L'(xy)\cdot x$ (innere Ableitung $=x$).
+  \item $L'(1)=1$ liefert erst die Integrationskonstante und so
+        $L(x)=\ln x$, nicht eine um $\ln x$ verschobene Funktion.
+  \item Nicht voraussetzen, dass $L(x)=\ln(x)$ bereits bekannt ist; man
+        \emph{zeigt} es aus den Axiomen.
+\end{itemize}
+\end{achtung}

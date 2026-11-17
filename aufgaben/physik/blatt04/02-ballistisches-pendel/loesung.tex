@@ -1,0 +1,103 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $M=\qty{2}{kg}$, $m=\qty{10}{g}=\qty{0.010}{kg}$,
+$L=\qty{1}{m}$, $\varphi=37^\circ$, $g=\qty{9.81}{m/s^2}$.
+Gesucht: (a) $v_\mathrm{Kugel}$; (b) Deformationsenergie; (c)
+Kugelgeschwindigkeit für Überschlag (Stange bzw. Seil); (d) Geschwindigkeit
+des harten Klotzes $V$ nach elastischem Rückprall der Kugel mit
+$c=\qty{10}{m/s}$.
+
+\subsection*{Ansatz}
+(a) Aus $\varphi$ die Hubhöhe $h$; Energie während des Pendelumlaufs, dann
+Impuls am Stoss. (b) Differenz der kinetischen Energien.
+(c) Überschlag: Energiebetrachtung bis zum höchsten Punkt. (d)
+Elastischer Stoss: Impuls- und Energieerhaltung.
+
+\subsection*{Rechnung}
+\textbf{a) Kugelgeschwindigkeit.}
+\begin{equation*}
+  h = L(1-\cos\varphi)=\qty{1}{m}(1-\cos 37^\circ)=\qty{0.201}{m}.
+\end{equation*}
+Energie nach dem Stoss (gemeinsame Geschwindigkeit $u$):
+\begin{equation}
+  \frac12 (m+M)u^2 = (m+M)gh
+  \;\Rightarrow\;
+  u=\sqrt{2gh}=\qty{1.987}{m/s}.
+\end{equation}
+Impuls beim Stoss, $m v=(m+M)u$:
+\begin{equation}
+  v = \frac{m+M}{m}\,u
+  = \frac{2.010}{0.010}\,\qty{1.987}{m/s}
+  \approx \qty{400}{m/s}.
+\end{equation}
+
+\textbf{b) Deformationsenergie:}
+\begin{equation}
+  \Delta E = \frac12 m v^2 - \frac12 (m+M)u^2
+  = \frac12\cdot 0.01\cdot 400^2\ \si{J}
+    - \frac12\cdot 2.01\cdot 1.987^2\ \si{J}
+  \approx \qty{794}{J}.
+\end{equation}
+
+\textbf{c) Überschlag.} Im höchsten Punkt ($h=2L$) muss für die Stange nur
+$u_{\mathrm{top}}\ge 0$ sein; Energie:
+\begin{equation}
+  \frac12 (m+M)u^2 = (m+M)\,g\cdot 2L\;\Rightarrow\;
+  u=\sqrt{4gL}=\qty{6.26}{m/s}
+  \;\Rightarrow\;
+  v = \frac{m+M}{m}u=\qty{1259}{m/s}.
+\end{equation}
+Beim \emph{Seil} muss im obersten Punkt $u_{\mathrm{top}}^2/L \ge g$ gelten
+(für $u_{\mathrm{top}}=\sqrt{gL}$), also
+\begin{equation}
+  \frac12 (m+M)u^2 = (m+M)g\cdot 2L + \frac12(m+M)gL
+  \;\Rightarrow\; u=\sqrt{5gL}=\qty{7.00}{m/s}
+  \;\Rightarrow\; v=\qty{1408}{m/s}.
+\end{equation}
+Mit dem Seil ist also mehr Kugelgeschwindigkeit nötig: Bei
+$\varphi=180^\circ$ reicht die zur Verfügung stehende Energie zum Erreichen
+der Höhe $2L$ nicht mehr mit der Zusatzbedingung der Zentripetalbeschleunigung
+aus. Antwort: Mit der Stange $\qty{1259}{m/s}$, mit dem Seil $\qty{1408}{m/s}$
+nötig - die erste reicht für das Seil \emph{nicht}.
+
+\textbf{d) Klotzgeschwindigkeit nach elastischem Rückstoss.} Impuls- und
+Energieerhaltung mit Kugelgeschwindigkeiten vor ($v$) und nach ($-c$), Klotz
+$V$:
+\begin{equation*}
+  m v = m(-c) + M V\;,\qquad
+  \frac12 m v^2 = \frac12 m c^2 + \frac12 M V^2.
+\end{equation*}
+Aus der zweiten: $v^2 = c^2 + \frac{M}{m}V^2$; zusammen mit der ersten
+$v = -c+\frac{M}{m}V$ führt das (Lösung nach $V$) auf
+\begin{equation}
+  V = \frac{2mc}{M-m}
+  = \frac{2\cdot 0.010\cdot 10}{2-0.010}\ \si{m/s}
+  = \qty{0.101}{m/s}.
+\end{equation}
+
+\begin{ergebnis}
+(a) $v\approx\qty{400}{m/s}$; (b) $\Delta E\approx\qty{794}{J}$;
+(c) Stange $v=\qty{1.26e3}{m/s}$, Seil $v=\qty{1.41e3}{m/s}$ - mit dem
+Seil erreicht man die Höhe $2L$ mit $v=\qty{1259}{m/s}$ nicht;
+(d) $V=\dfrac{2mc}{M-m}=\qty{0.101}{m/s}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} In (a)
+$v=\tfrac{m+M}{m}\sqrt{2gh}$: $kg/kg\cdot\sqrt{m^2/s^2}=m/s$. \checkmark
+Grenzfall (c): ein Überschlag benötigt bei einem Seil mehr Energie als bei
+einer Stange, weil am obersten Punkt zusätzliche Zentripetalbeschleunigung
+bereitstehen muss - plausibel.
+
+\textbf{Elastischer Limit:} Für $M\to m$ (in d) teilen sich Energie und
+Impuls; $\frac{2m c}{M-m}$ wird für $M\to m$ gross (Kugel wird fast nicht
+gebremst). Einheiten: $kg\cdot m/s/kg = m/s$. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Beim vollständig inelastischen Stoss ist nur der Impuls erhalten, bei
+elastischem zusätzlich die kinetische Energie. Beim ballistischen Pendel
+koppeln Stoss (Impulserhaltung) und Pendel (Energieerhaltung) über die
+gemeinsame Geschwindigkeit $u$ direkt nach dem Stoss.
+\end{merksatz}

@@ -1,0 +1,57 @@
+% titel: Blatt 1, A3: SI-Einheiten und Dimensionsanalyse
+% skript: Kap. Methoden der Physik, Einheiten
+
+% Einheiten von Konstanten, Dimensionsprauefung, Angstroem-Umrechnung.
+
+Die Dimensionsanalyse prueft Gleichungen auf Konsistenz, ohne Zahlen
+einzusetzen -- jede physikalische Gleichung muss beidseitig gleiche
+Dimension besitzen.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Basisgroessen und Einheiten} im SI:
+L\"ange \unit{\metre}, Masse \unit{\kilogram}, Zeit \unit{\second},
+Stromst\"arke \unit{\ampere}, Temperatur \unit{\kelvin}.
+Wichtig: \textbf{Newton}
+\begin{equation}
+  \unit{\newton}=\frac{\unit{\kilogram\metre}}{\unit{\second\squared}},
+  \qquad
+  \unit{\pascal}=\frac{\unit{\newton}}{\unit{\metre\squared}}
+  =\frac{\unit{\kilogram}}{\unit{\metre\second\squared}}.
+\end{equation}
+
+\textbf{Regeln:}
+\begin{itemize}
+  \item In einer Summe/Gleichung m\"ussen alle Terme gleiche Dimension
+        haben.
+  \item Das Argument von Funktionen wie $\ln$, $\sin$, $\cos$ muss
+        dimensionslos sein (hier: $C_2t$ dimensionslos).
+  \item Eine Konstante $C$, die multipliziert wird, uebernimmt die
+        Einheit, die die Gleichung ausgleicht.
+\end{itemize}
+
+\textbf{Dezimalvorsaetze} (Potenzen von 10):
+$1\,\mathrm{\mu m}=10^{-6}\,\mathrm m$, $1\,\mathrm{nm}=10^{-9}\,\mathrm m$,
+$1\,\mathrm{fm}=10^{-15}\,\mathrm m$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Einheitenprodukte links und rechts zerlegen und vergleichen;
+        die Konstante bekommt genau die fehlende Einheit.
+  \item Fl\"achen/Betraege: Groessenproben auf die gleiche Kette von
+        Masse, Laenge, Zeit reduzieren.
+  \item Fuer Umrechnungen den Wert als Produkt ``Zahl mal Zehnerpotenz''
+        mit Vorsatz schreiben und in \unit{\metre} umrechnen.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $\ln(C_2t)$: nicht die Einheit von $t$ in $C_2$ ``stecken'',
+        sondern $C_2$ so waehlen, dass $C_2t$ dimensionslos ist.
+  \item ``Gravitationskonstante'' ist die Einheit von $C$ in einer
+        Kraftgleichung vom Typ $F=C\,m_1m_2/x^2$, nicht $\vec F=m\vec a$.
+  \item Vorsaetze beim Umrechnen mit 10er-Potenzen: einer der
+        Umrechnungswerte ist inkorrekt; einfach alle durchexerzieren.
+\end{itemize}
+\end{achtung}

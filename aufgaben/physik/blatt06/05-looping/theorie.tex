@@ -1,0 +1,58 @@
+% titel: Looping: Kugel rollt herab
+% skript: Kap. Energiesatz, Rotation (Rollbewegung)
+
+Eine Kugel (homogen, Trägheitsmoment $I_K=\frac25 m r^2$, Radius $r$) rollt
+ohne zu gleiten aus einer Höhe $h$ in einen kreisrunden Looping (Radius $R$)
+herab. Gesucht ist die Mindesthöhe $h$, damit die Kugel im höchsten Punkt
+gerade nicht herunterfällt. Dabei ist neben der Translationsenergie auch die
+Rotationsenergie zu berücksichtigen.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Energiesatz für rollende Kugel} (ohne Gleiten, ohne Reibungsverluste;
+Rollbedingung $\omega=v/r$):
+\begin{equation}
+  m g \Delta h
+  = \frac12 m v^2 + \frac12 I \omega^2
+  = \frac12 m v^2 \left(1+\frac{r^2 I}{m r^2}\right)
+  = \frac12 m v^2\left(1+\frac{I}{m r^2}\right).
+\end{equation}
+
+Für die Vollkugel $I=\frac25 m r^2$:
+\begin{equation}
+  m g\Delta h = \frac12 m v^2\left(1+\frac25\right) = \frac{7}{10} m v^2
+  \;\Rightarrow\;
+  v^2 = \frac{10}{7}\,g\,\Delta h.
+\end{equation}
+
+\textbf{Im höchsten Punkt des Loopings} (Radius $R$): Die Kugel darf gerade
+nicht den Kontakt verlieren, d.h.\ die Normalkraft $\ge 0$; dann muss die
+Zentripetalbeschleunigung ganz von der Schwerkraft geliefert werden:
+\begin{equation}
+  \frac{m v^2}{R} \ge m g
+  \;\Rightarrow\;
+  v^2 \ge g\, R.
+\end{equation}
+($R$ ist der Bahnradius des Kugelmittelpunkts.)
+
+\textbf{Höhendifferenz} $\Delta h$: vom Loslasspunkt bis zum höchsten Punkt
+des Loopings. In der Aufgabenstellung ist $h$ die \emph{zusätzliche} Höhe
+über dem höchsten Punkt, also $\Delta h=h$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+Energiebilanz zwischen Loslassen (Ruhe) und höchstem Looping-Punkt
+($\Delta h=h$); daraus $v^2=\frac{10}{7}gh$. Kontaktbedingung
+$v^2\ge gR$ einsetzen und nach $h$ auflösen.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Der $\frac25$-Anteil: Die Rotation "verbraucht" einen Teil der
+       Energie; ohne ihn würde $h$ falsch klein herauskommen.
+  \item Im Scheitelpunkt übernehmen \emph{Gewicht und Normalkraft} gemeinsam
+       die Zentripetalbeschleunigung; "nicht herunterfallen" heisst
+       $N\ge0$, also $v^2\ge gR$.
+  \item Reihenfolge: erst $v^2(h)$, dann die Kontaktbedingung anwenden;
+       nicht die Höhenangaben verwechseln.
+\end{itemize}
+\end{achtung}

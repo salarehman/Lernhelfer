@@ -1,0 +1,39 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Beweisen: Die Summe der Innenwinkel eines $n$-Ecks ($n\ge3$, Eckpunkte
+auf einer gemeinsamen Kreislinie) ist $(n-2)\cdot180^\circ$.
+
+\subsection*{Ansatz}
+Vollständige Induktion über die Eckenzahl $n$, im Schritt per Diagonale
+zerlegen.
+
+\subsection*{Induktionsanfang}
+$n=3$: Dreieckssumme ist $180^\circ=(3-2)\cdot180^\circ$. \checkmark
+
+\subsection*{Induktionsschritt}
+Sei die Aussage für ein $n$-Eck bewiesen. Ein $(n+1)$-Eck (konvex) wird
+durch eine Diagonale in ein Dreieck und ein $n$-Eck zerlegt. Die
+Innenwinkelsumme des $(n+1)$-Ecks ist die des $n$-Ecks plus die des
+Dreiecks:
+\begin{equation}
+  S(n+1)=S(n)+180^\circ=(n-2)180^\circ+180^\circ=(n-1)180^\circ .
+\end{equation}
+Wegen $n-1=(n+1)-2$ ist das die Behauptung für $n+1$.
+
+\begin{ergebnis}
+\begin{equation*}
+  S(n)=(n-2)\cdot180^\circ\quad\text{für alle } n\ge3 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+$n=4$: Viereck hat $\text{360}^\circ=(4-2)180^\circ$; $n=5$: Fünfeck
+$\text{540}^\circ=(5-2)180^\circ$. Vertraut und plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Ein konvexes Polygon zerlegt man in Dreieck plus kleineres Polygon; jede
+Zerlegung addiert $180^\circ$, was auf die Formel $(n-2)\cdot180^\circ$
+führt.
+\end{merksatz}

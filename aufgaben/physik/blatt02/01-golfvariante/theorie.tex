@@ -1,0 +1,47 @@
+% titel: Blatt 2, A1: Eine neue Golfvariante (schiefer Wurf)
+% skript: Kap. Kinematik, Projektilbewegung
+
+% Wurfparabel, Schnittpunkt mit einer Wand, Reichweite.
+
+Beim schiefen Wurf ohne Luftreibung ueberlagern sich eine gleichfoermige
+Bewegung in horizontaler und eine gleichmaessig beschleunigte in
+vertikaler Richtung: die Bahn ist eine Parabel.
+
+\begin{werkzeugkasten}[Werkzeuge]
+Mit $\vec g$ nach unten und Start im Ursprung:
+\begin{equation}
+  x(t)=v_0\cos\alpha\,t,\qquad
+  y(t)=v_0\sin\alpha\,t-\tfrac12 g t^2.
+\end{equation}
+Ohne $t$ ergibt sich die \textbf{Wurfparabel}
+\begin{equation}
+  y(x)=x\tan\alpha-\frac{g\,x^2}{2\cos^2\alpha\,v_0^2}\;.
+\end{equation}
+\textbf{Reichweite} (Treffer $y=0$ beim Abflug, $y=0$ beim Aufschlag):
+\begin{equation}
+  R=\frac{v_0^2\,\sin(2\alpha)}{g}\;.
+\end{equation}
+
+\textbf{Energieerhaltung} (keine Reibung): Geschwindigkeit in gleicher
+Hoehe wieder $v_0$; gilt allgemein für beliebige Haltepunkte der Bahn.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Die Gr\"o\"sen $v_0$ und $\alpha$ stehen nur in der Parabelformel;
+        einen gegebenen Punkt $(a,h)$ einsetzen.
+  \item Den Abstand hinter der Wand als Reststueck $R-a$ bestimmen.
+  \item Fuer die Endgeschwindigkeit Energieerhaltung (oder Parabelsymmetrie)
+        nutzen.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Die Wand loest \emph{nicht} die Bewegung: der Ball durchquert das
+        Loch und fliegt als dieselbe Parabel weiter.
+  \item Reichweite $R$ heisst der Abstand zwischen Abwurf und R\"uckkehr auf
+        $y=0$; der Auftreffpunkt hinter der Wand liegt bei $x=R$.
+  \item $\sin(2\alpha)$ statt $\cos(2\alpha)$ verwenden.
+\end{itemize}
+\end{achtung}

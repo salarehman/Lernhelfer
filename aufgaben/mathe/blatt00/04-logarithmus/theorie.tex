@@ -1,0 +1,41 @@
+% titel: Blatt 0, A4: Logarithmus
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Logarithmusgleichungen nach $x$ auflösen sowie Aussagen über
+Logarithmusregeln als wahr oder falsch beurteilen.
+
+\begin{werkzeugkasten}[Definition und Regeln]
+$\log_a(u)=v \ \Longleftrightarrow\ a^v=u$ für $a>0$,
+$a\neq1$, $u>0$; es gilt $\log_a(a)=1$.
+
+\begin{align}
+  \log_a(u\,v)&=\log_a u+\log_a v, &
+  \log_a\frac{u}{v}&=\log_a u-\log_a v,\\
+  \log_a(u^r)&=r\log_a u, &
+  \log_a a^r&=r .
+\end{align}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Exponentialgleichung lösen]
+Gleichungen der Form $a^x=b$ ($a>0$, $a\neq1$, $b>0$) löst man über den
+Logarithmus:
+\begin{equation}
+  x=\log_a b .
+\end{equation}
+Steht der Exponent komplizierter, etwa $a^{x^2}=b$, so gilt
+$x^2=\log_a b$, und evtl. sind beide Vorzeichenlösungen zu beachten.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Logarithmen sind nur für positive Argumente definiert; Definitionsbedingungen beachten.
+  \item $\log_a(2a)=2$ gilt \emph{nicht} für alle $a$: es ist
+        $\log_a(2a)=\log_a 2+1$, also $=2$ nur, wenn $\log_a 2=1$, d.h.
+        $a=2$.
+  \item Aussagen mit ``für alle'' sind bereits falsch, wenn \emph{ein}
+        Gegenbeispiel existiert.
+  \item Beim Auflösen von $10^{x^2}=100$ beide Lösungen $x=\pm\sqrt2$
+        berücksichtigen.
+\end{itemize}
+\end{achtung}

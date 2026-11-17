@@ -1,0 +1,32 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$10!=3628800$ endet mit zwei Nullen; gesucht: mit wie vielen Nullen endet
+$100!$?
+
+\subsection*{Ansatz}
+Endnullen = Primfaktoren $5$ in $100!$ (Fünfen sind der limitierende
+Faktor, da Zweien reichlich vorhanden).
+
+\subsection*{Rechnung}
+\begin{align}
+  &\left\lfloor\frac{100}{5}\right\rfloor = 20 &&\text{(Vielfache von 5)}\\
+  &\left\lfloor\frac{100}{25}\right\rfloor = 4 &&\text{(Vielfache von 25 geben je eine Fünf extra)}\\
+  &\left\lfloor\frac{100}{125}\right\rfloor = 0 .
+\end{align}
+Summe: $20+4=24$.
+
+\begin{ergebnis}
+$100!$ endet mit \textbf{24} Nullen.
+\end{ergebnis}
+
+\begin{kontrolle}
+Schätzung: $5,10,\dots,100$ sind 20 Vielfache; davon $25,50,75,100$ je eine
+zusätzliche Fünf ($4$), Summe $24$. Die $2$er-Potenz in $100!$ ist deutlich
+größer ($\ge 24$), also limitiert allein die Fünf.
+\end{kontrolle}
+
+\begin{merksatz}
+Endnullen von $n!$ = Anzahl der $5$er inklusive derer aus $25,125,\dots$;
+Zwei Faktoren sind nie der Engpass.
+\end{merksatz}

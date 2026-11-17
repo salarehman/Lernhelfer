@@ -1,0 +1,65 @@
+% titel: Blatt 3, A5: Gleichgewicht auf der schiefen Ebene
+% skript: Kap. Statik, Haft- und Gleitreibung
+
+% Haftreibung, Gleitreibung, Reibungswinkel.
+
+Auf einer geneigten Ebene halten sich Gewicht, Normalkraft und Reibung
+das Gleichgewicht; die Grenzwoerte der Reibung bestimmen den Winkel, bei
+dem der Koerper rutscht.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Komponenten der Gewichtskraft} ($\vec F_G$ zerlegt senkrecht und
+parallel zur Ebene):
+\begin{equation}
+  F_\parallel=mg\sin\alpha,\qquad
+  F_\perp=mg\cos\alpha=F_N.
+\end{equation}
+
+\textbf{Haftreibung} (Solange der Koerper ruht):
+\begin{equation}
+  |\vec F_R|\le F_{R,\max}=\mu_H F_N.
+\end{equation}
+Grenzwert beim Anlaufen des Rutschens (Haftreibungswinkel):
+\begin{equation}
+  \mu_H=\tan\alpha_H\;.
+\end{equation}
+
+\textbf{Gleitreibung} (gleitender Koerper):
+\begin{equation}
+  |\vec F_R|=\mu_G F_N,\qquad\mu_G=\tan\alpha_G
+\end{equation}
+im gleichfoermigen Gleiten ($a=0$).
+
+\textbf{Beschleunigung beim Rutschen} (Antrieb minus Gleitreibung als
+Massenkraft):
+\begin{equation}
+  a=g(\sin\alpha-\mu_G\cos\alpha)\;.
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Freikoerperbild: $\vec F_G$, $\vec F_N$ senkrecht, $\vec F_R$ den
+        Hang hinauf, solange der Koerper (noch) ruht.
+  \item Haftreibung: nur der \emph{maximale} Wert $\mu_H F_N$ haelt an;
+        Gleichgewicht bis $\tan\alpha=\mu_H$.
+  \item Gleitreibung: konstanter Wert $\mu_GF_N$; $a=g(\sin\alpha-\mu_G\cos\alpha)$.
+  \item Eine Strasse darf nur bis zum Winkel mit $\tan\alpha_{\max}=\mu_H$
+        mit blockierten Raedern geneigt sein (kein Rutschen).
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $\mu_H\ge\mu_G$; ein Rutschen mit $\mu_G>\mu_H$ ist unphysikalisch
+        (s. unten).
+  \item $F_N=mg\cos\alpha$, nicht $mg$; bei steiler Ebene nimmt die
+        Normalkraft ab.
+  \item Die Masse kuerzt sich in $a=g(\sin\alpha-\mu\cos\alpha)$ heraus;
+        die Auflageflaeche spielt im einfachen Reibungsmodell keine Rolle.
+  \item ``Blockiert und parkiert'' bedeutet Haftreibung ($\mu_H$), nicht
+        $\mu_G$.
+  \item Die Hoehe der Haftreibung am Berg ohne Ansto\ss{} ist nur bis zur
+        Grenze $\mu_HF_N$ bestimmt; steiler wird sie nicht.
+\end{itemize}
+\end{achtung}

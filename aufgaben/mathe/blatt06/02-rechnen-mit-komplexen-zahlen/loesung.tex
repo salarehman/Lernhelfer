@@ -1,0 +1,68 @@
+% titel: Blatt 6, A2: Rechnen mit komplexen Zahlen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Lösungsmenge von $|z-1+i|>1$ (a), alle $z$ mit $|z+i|=1$ und $|z-i|=\sqrt3$
+(b), Nachweis von $|zw|=|z||w|$ für alle $z,w\in\mathbb C$ (c).
+
+\subsection*{a) $|z-1+i|>1$}
+\begin{equation*}
+  |z-1+i|=|z-(1-i)|.
+\end{equation*}
+Das ist der Abstand von $z$ zum Punkt $1-i$. Die Ungleichung $>1$ beschreibt
+das \textbf{komplementäre Gebiet außerhalb der offenen Kreisscheibe} um
+$1-i$ mit Radius $1$ (ohne Rand).
+
+\subsection*{b) Schnitt zweier Kreise}
+Sei $z=x+iy$. Die Bedingungen quadrieren:
+\begin{align*}
+  |z+i|^2&=x^2+(y+1)^2=1,\\
+  |z-i|^2&=x^2+(y-1)^2=3.
+\end{align*}
+Subtraktion der ersten von der zweiten Zeile:
+\begin{equation*}
+  x^2+(y-1)^2-\bigl[x^2+(y+1)^2\bigr]=3-1
+  \;\Longrightarrow\;
+  (y-1)^2-(y+1)^2=2
+  \;\Longrightarrow\;
+  -4y=2,\quad y=-\tfrac12.
+\end{equation*}
+Einsetzen in $x^2+(y+1)^2=1$ mit $y+1=\tfrac12$:
+\begin{equation*}
+  x^2+\tfrac14=1 \;\Longrightarrow\; x^2=\tfrac34
+  \;\Longrightarrow\; x=\pm\tfrac{\sqrt3}{2}.
+\end{equation*}
+Es gibt \textbf{zwei} Lösungen: $z=\pm\frac{\sqrt3}{2}-\frac12i$.
+
+\subsection*{c) $|zw|=|z||w|$}
+Mit $|u|^2=u\bar u$:
+\begin{equation*}
+  |zw|^2=(zw)\overline{(zw)}=zw\,\bar z\,\bar w=(z\bar z)(w\bar w)
+  =|z|^2\,|w|^2.
+\end{equation*}
+Da der Betrag nichtnegativ ist, folgt $|zw|=|z||w|$.
+
+\begin{ergebnis}
+\begin{equation*}
+  \text{a)}\ |z-(1-i)|>1\ \text{(äußerer Bereich um }1-i); \qquad
+  \text{b)}\ z=\pm\tfrac{\sqrt3}{2}-\tfrac12i; \qquad
+  \text{c)}\ |zw|=|z||w|.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Probe b):} Für $z=\frac{\sqrt3}{2}-\frac12i$ ist
+$|z+i|=|\frac{\sqrt3}{2}+\frac12i|=\sqrt{\frac34+\frac14}=1$; deutlich
+$|z-i|=|\frac{\sqrt3}{2}-\frac32i|=\sqrt{\frac34+\frac94}=\sqrt3$. Beide
+Bedingungen erfüllt, ebenso für das Minus-Vorzeichen.
+
+\textbf{Beispiel c):} $z=i$, $w=1+i$: $|zw|=|i-1|=\sqrt2$,
+$|i||1+i|=1\cdot\sqrt2$ -- passt.
+\end{kontrolle}
+
+\begin{merksatz}
+$|z-z_0|$ zeichnet sich als Kreis; Ungleichungen mit $<$/$>$ trennen Innen
+und Außen. Schnitt zweier Betragsbedingungen: quadrieren, subtrahieren
+(dadurch linear), auflösen -- jeder Schnittkreispartner gibt eine Lösung.
+$|zw|=|z||w|$ folgt aus $|u|^2=u\bar u$.
+\end{merksatz}

@@ -1,0 +1,86 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $M_E$, $R_E=\qty{6378}{km}$, $G$; für die ISS $h=\qty{400}{km}$;
+für geostationär $T$=$24$\,h.
+Gesucht: (a) allgemeiner Ausdruck $T(R)$; (b) $v$ und $T$ für die ISS;
+(c) $v$ und $R$ für geostationäre Satelliten; (d) Verhalten von $R$ und $T$
+bei Abbrennung.
+
+\subsection*{Ansatz}
+$a)$ $m v^2/R = GM_Em/R^2$ mit $v=2\pi R/T$ verknüpfen.
+$b,c)$ Zahlen einsetzen. $d)$ $E_\mathrm{mech}=-GM_Em/(2R)$; Verlust
+$\Rightarrow$ negativeres $E_\mathrm{mech}$ $\Rightarrow$ kleineres $R$,
+und aus $T^2\propto R^3$ folgt ein kleineres $T$.
+
+\subsection*{Rechnung}
+\textbf{a) Umlaufzeit:}
+\begin{equation}
+  v = \sqrt{\frac{GM_E}{R}}\qquad\Rightarrow\qquad
+  T = \frac{2\pi R}{v} = 2\pi\sqrt{\frac{R^3}{G M_E}}\;.
+\end{equation}
+
+\textbf{b) ISS} ($R=R_E+h=6378+400=\qty{6778}{km}$):
+\begin{equation}
+  v
+  = \sqrt{\frac{6.674e-11\cdot 5.974e24}{6.778e6}}\ \si{m/s}
+  \approx \qty{7.67e3}{m/s}\approx \qty{7.67}{km/s},
+\end{equation}
+\begin{equation}
+  T
+  = \frac{2\pi\cdot 6.778e6}{7.67e3}\ \si{s}
+  \approx \qty{5.55e3}{s}
+  \approx \qty{92.5}{min}.
+\end{equation}
+
+\textbf{c) Geostationär} ($T=24\,\mathrm h=86\,400$\,s):
+\begin{equation}
+  R
+  = \left(\frac{G M_E T^2}{4\pi^2}\right)^{1/3}
+  = \left(\frac{6.674e-11\cdot 5.974e24\cdot(8.64e4)^2}{4\pi^2}\right)^{1/3}\ \si{m}
+  \approx \qty{4.22e7}{m}
+  \approx \qty{42245}{km}.
+\end{equation}
+Bahnhöhe $=R-R_E\approx\qty{35870}{km}$; Bahngeschwindigkeit
+\begin{equation}
+  v = \frac{2\pi R}{T}
+  = \frac{2\pi\cdot 4.225e7}{8.64e4}\ \si{m/s}
+  \approx \qty{3.07e3}{m/s}\approx\qty{3.07}{km/s}.
+\end{equation}
+Eine geostationäre Position ist nur \emph{über dem Äquator} möglich: nur dort
+stimmt die Normale der Bahnebene mit der Erd drehachse überein (sonst hätte
+der Satellit eine Nord-Süd-Komponente relativ zur Erdoberfläche).
+
+\textbf{d) Abbrennung durch Restluftreibung.} Die Gesamtenergie
+$E_\mathrm{mech}=-GM_Em/(2R)$ nimmt durch Reibungsarbeit ab (negativer). Daraus
+folgt, dass $R$ \emph{abnimmt}. Wegen $T^2\propto R^3$ wird die Umlaufzeit
+$T$ damit ebenfalls \emph{kürzer}.
+
+\begin{ergebnis}
+(a) $T=2\pi\sqrt{R^3/(GM_E)}$.
+(b) $v\approx\qty{7.67}{km/s}$, $T\approx\qty{92.5}{min}$.
+(c) $R\approx\qty{42245}{km}$ (Höhe $\approx\qty{35870}{km}$), $v\approx
+\qty{3.07}{km/s}$; nur über dem Äquator möglich.
+(d) Bei Abbrennung nimmt $R$ ab und $T$ wird kürzer.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $T$: $\sqrt{m^3/(kg\cdot s^2\cdot kg)^{-1}\cdot m^3}$ verifiziert
+die Sekunde; konkret numerisch $\qty{92}{min}$ für die ISS und $=24$\,h für
+geostationäre Bahn als Konsistenzcheck (Annahme, Rechnung).
+
+\textbf{Grenzfall:} sehr kleines $R\to R_E$ ergibt $\approx \qty{84}{min}$
+(kürzeste Umlaufzeit), sehr grosses $R$ lange Perioden. Geostationär liegt
+$T=24$\,h im erwarteten Bereich.
+
+\textbf{Konsistenz (c):} $T=2\pi\sqrt{R^3/(GM_E)}$ mit $R=4.225e7$\,m gibt
+$2\pi\sqrt{(4.225e7)^3/(6.674e-11\cdot5.974e24)}\,\si{s}=8.64e4$\,s $=24$\,h.
+\checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Kreisbahn: $v=\sqrt{GM/R}$, $T=2\pi\sqrt{R^3/(GM)}$, $E_\mathrm{mech}
+=-GMm/(2R)$. Verlust an Energie (Reibung) verkleinert $R$ und verkürzt $T$;
+mehr Energieverlust heisst engere, schnellere (aber langsamere lineare
+Geschwindigkeit) Bahn.
+\end{merksatz}

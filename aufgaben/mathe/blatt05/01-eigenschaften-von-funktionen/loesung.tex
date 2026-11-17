@@ -1,0 +1,57 @@
+% titel: Blatt 5, A1: Eigenschaften von Funktionen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Drei Funktionen auf gerade/ungerade und Monotonie untersuchen (a), einen
+Satz über die Umkehrfunktion einer streng monoton steigenden Funktion beweisen
+(b), und eine bijektive Funktion $f\colon[0,1]\to[0,1]$ finden, die nicht
+streng monoton steigend ist (c).
+
+\subsection*{a) Gerade/ungerade und Monotonie}
+\begin{itemize}
+  \item $f_1(x)=\sqrt{1-x^2}$ auf $[-1,1]$: Es ist
+        $f_1(-x)=\sqrt{1-(-x)^2}=\sqrt{1-x^2}=f_1(x)$, also ist $f_1$
+        \textbf{gerade}. Für die Monotonie betrachtet man $x_1<x_2$ in der
+        Hälfte: auf $[0,1]$ fällt $f_1$ (die Wurzel eines fallenden Arguments),
+        auf $[-1,0]$ steigt sie. $f_1$ ist also weder streng monoton steigend
+        noch streng monoton fallend auf ganz $[-1,1]$.
+  \item $f_2(x)=10-10x$: $f_2(-x)=10+10x$, das ist weder $f_2(x)$ noch
+        $-f_2(x)$. Aus $x_1<x_2$ folgt $f_2(x_1)>f_2(x_2)$, folglich ist $f_2$
+        \textbf{streng monoton fallend}.
+  \item $f_3(x)=x^2\sin x$: $f_3(-x)=(-x)^2\sin(-x)=x^2(-\sin x)=-x^2\sin x$
+        $=-f_3(x)$, also \textbf{ungerade}. Die Monotonie wechselt wegen des
+        oszillierenden Sinus; $f_3$ ist nicht streng monoton auf $\mathbb R$.
+\end{itemize}
+
+\subsection*{b) Umkehrfunktion ist streng monoton steigend}
+Seien $u,w\in W=D$ mit $u<w$. Angenommen $g(u)\ge g(w)$. Weil $f$ streng
+monoton steigend ist, gilt dann $f(g(u))\ge f(g(w))$, also wegen
+$f\circ g=\mathrm{id}$ gerade $u\ge w$. Das widerspricht $u<w$. Es muss also
+$g(u)<g(w)$ gelten; $g$ ist streng monoton steigend.
+
+\subsection*{c) Bijektiv, aber nicht streng monoton steigend}
+$g\colon[0,1]\to[0,1]$, $g(x)=1-x$ ist bijektiv (Umkehrung von sich selbst)
+und streng monoton \emph{fallend}, also nicht streng monoton steigend.
+
+\begin{ergebnis}
+\begin{itemize}
+  \item $f_1$ gerade, $f_2$ streng monoton fallend, $f_3$ ungerade.
+  \item Die Umkehrfunktion einer streng monoton steigenden surjektiven
+        Funktion ist streng monoton steigend.
+  \item Ja: $g(x)=1-x$ ist bijektiv auf $[0,1]$, aber nicht monoton
+        steigend.
+\end{itemize}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Probe:} $g(g(x))=1-(1-x)=x$, also ist $g$ die inverse Abbildung zu
+sich selbst und damit bijektiv. Für $x_1<x_2$ ist $g(x_1)>g(x_2)$, also
+streng monoton fallend.
+\end{kontrolle}
+
+\begin{merksatz}
+Gerade/ungerade prüft man durch Einsetzen von $-x$. Streng monotone
+Funktionen sind injektiv und umkehrbar; die Umkehrfunktion erbt die
+Monotonierichtung. Bijektivität $[0,1]\to[0,1]$ erzwingt keine Monotonie
+(Gegenbeispiel $x\mapsto1-x$).
+\end{merksatz}

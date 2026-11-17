@@ -1,0 +1,49 @@
+% titel: Ballistisches Pendel
+% skript: Kap. Stösse, Impulserhaltung, Energieerhaltung
+
+Eine Gewehrkugel bleibt in einem an einer Stange hängenden Klotz stecken
+(vollständig inelastischer Stoss); anschliessend schwingt das System als
+Pendel hoch. Aus der maximalen Auslenkung wird die Kugelgeschwindigkeit
+zurückgerechnet. Kernidee: Man trennt die Probleme "Stoss" und
+"Pendelbewegung": der Stoss erhält den Impuls, aber nicht die mechanische
+Energie; die Pendelbewegung erhält die Energie, aber nicht den Impuls.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Inelastischer Stoss} (Kugel $m$, Geschwindigkeit $v$; Ruheklotz $M$;
+gemeinsame Geschwindigkeit $u$ nach dem Stoss):
+\begin{equation}
+  m\,v = (m+M)\,u\;.
+\end{equation}
+
+\textbf{Energieerhaltung beim Pendelumlauf} (Höhe $h$, Auslenkung $\varphi$,
+Stangenlänge $L$):
+\begin{equation}
+  \frac12\,(m+M)\,u^2 = (m+M)\,g\,h\;,
+  \qquad h = L(1-\cos\varphi)\;.
+\end{equation}
+
+\textbf{Überschlag / Seil:} Beim Überschlagen muss im höchsten Punkt die
+notwendige Zentripetalbeschleunigung zur Verfügung stehen. Bei einer starren
+Stange genügt $u^2/(2)=2gL$; bei einem masselosen Seil muss im höchsten Punkt
+zusätzlich $mu_{\mathrm{top}}^2/L > mg$ gelten, sonst schlafft das Seil.
+
+\textbf{Energieverlust durch Deformation:} Die im Stoss "verlorene"
+mechanische Energie ist die Differenz der kinetischen Energien vor und nach
+dem Stoss.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+Vom gegebenen $\varphi$ über $h$ auf $u$, dann über die Impulserhaltung auf
+$v$ schliessen. Bei Teilaufgaben zur Deformationsenergie die
+Energiebilanz unmittelbar vor und nach dem Stoss bilden.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Die \emph{Gesamtenergie} ist beim inelastischen Stoss nicht erhalten;
+       nur der Impuls gilt dort.
+  \item Beim elastischen Rückprall des harten Klotzes (Teil d) sind Impuls
+       \emph{und} kinetische Energie erhalten.
+  \item $h$ nur durch die Pendelgeometrie über $\cos\varphi$ ausdrücken.
+\end{itemize}
+\end{achtung}

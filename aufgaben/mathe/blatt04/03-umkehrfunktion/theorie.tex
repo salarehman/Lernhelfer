@@ -1,0 +1,38 @@
+% titel: Blatt 4, A3: Umkehrfunktion
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Das Bild $f(D)$ einer bijektiven Funktion bestimmen, die Umkehrfunktion
+$g$ angeben und die Graphen von $f$ und $g$ skizzieren.
+
+\begin{werkzeugkasten}[Umkehrfunktion]
+Eine Funktion $f$ heißt injektiv, wenn aus $f(x_1)=f(x_2)$ stets
+$x_1=x_2$ folgt. Dann existiert $g=f^{-1}$ mit $g(f(x))=x$ und
+$f(g(y))=y$; der Definitionsbereich von $g$ ist das Bild $f(D)$.
+Rechnerisch stellt man $y=f(x)$ nach $x$ auf und tauscht die Rollen der
+Variablen.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Bild einer Funktion]
+Das Bild $f(D)$ erschließt man über Monotonie und Randwerte:
+\begin{itemize}
+  \item $f(x)=\frac{x^2-4}{x^2+1}=1-\frac5{x^2+1}$ auf $D=[0,\infty)$ ist
+        streng monoton wachsend ($f'(x)>0$), mit $f(0)=-4$ und
+        $f(x)\to1$ für $x\to\infty$; Bild $[-4,1)$.
+  \item $f(x)=3+\mathrm e^{-x}$ auf $\mathbb R$ ist streng monoton fallend,
+        $f(x)\to3$ für $x\to\infty$, $f(x)\to\infty$ für $x\to-\infty$;
+        Bild $(3,\infty)$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Offene/geschlossene Endpunkte des Bildes korrekt setzen: Bei
+        $x\to\infty$ wird $1$ bzw. $3$ nur \emph{angenähert}, also
+        halboffenes Intervall.
+  \item Beim Aufstellen der Umkehrfunktion die Definitionsbedingung des
+        Logarithmus bzw. der Wurzel beachten ($1-y>0$, $y-3>0$).
+  \item Nur injektive Funktionen haben eine Umkehrfunktion; Monotonie
+        (Aus $f'$ ablesen) zeigt Injektivität.
+\end{itemize}
+\end{achtung}

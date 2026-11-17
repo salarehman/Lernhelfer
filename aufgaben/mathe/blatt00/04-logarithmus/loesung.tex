@@ -1,0 +1,48 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a)--(c) Gleichungen nach $x$ auflösen; (d)--(f) Aussagen als wahr oder
+falsch beurteilen.
+
+\subsection*{a) $2^x=8$}
+\begin{equation}
+  x=\log_2 8=3.
+\end{equation}
+
+\subsection*{b) $7^{2x}=5$}
+\begin{equation}
+  2x=\log_7 5 \;\Longrightarrow\; x=\frac12\log_7 5=\log_7\sqrt5 .
+\end{equation}
+
+\subsection*{c) $10^{x^2}=100$}
+$10^{x^2}=10^2$ also $x^2=2$, damit $x=\pm\sqrt2$.
+
+\subsection*{d) $\log_a(2a)=2$ für alle $a>0$?}
+$\log_a(2a)=\log_a 2+\log_a a=\log_a 2+1$. Das ist $=2$ nur wenn
+$\log_a 2=1$ bzw. $a=2$, nicht für alle $a>0$.
+\begin{ergebnis} Aussage ist \textbf{falsch}. \end{ergebnis}
+
+\subsection*{e) $\log_a(bx+b)=\log_a b+\log_a(x+1)$ für alle $a,b,x>0$?}
+\begin{equation}
+  \log_a b+\log_a(x+1)=\log_a\bigl(b(x+1)\bigr)=\log_a(bx+b),
+\end{equation}
+gültig für alle $a,b,x$ im Definitionsbereich.
+\begin{ergebnis} Aussage ist \textbf{wahr}. \end{ergebnis}
+
+\subsection*{f) $\log_a\!\bigl(\tfrac{ab}{a^2}\bigr)=\log_a b-1$ für alle $a,b>0$?}
+\begin{equation}
+  \log_a\frac{ab}{a^2}=\log_a\frac{b}{a}=\log_a b-\log_a a=\log_a b-1 ,
+\end{equation}
+gültig für alle $a,b>0$.
+\begin{ergebnis} Aussage ist \textbf{wahr}. \end{ergebnis}
+
+\begin{kontrolle}
+a) $2^3=8$; b) $7^{2\log_7\sqrt5}=(\sqrt5)^2=5$; c) $10^{(\pm\sqrt2)^2}=10^2=100$;
+d) Gegenbeispiel $a=3$: $\log_3 6\neq2$; e), f) Regeln geben exakt die
+Behauptung.
+\end{kontrolle}
+
+\begin{merksatz}
+Logarithmus ``löst'' den Exponenten aus einer Gleichung; Aussagen ``für
+alle'' widerlegt ein einziges Gegenbeispiel.
+\end{merksatz}

@@ -1,0 +1,48 @@
+% titel: Blatt 4, A5: Rekursiv definierte Folge
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Eine rekursiv definierte Folge $(a_n)$ mit $a_1=1$, $a_{n+1}=\frac{1+a_n}{2+a_n}$
+untersuchen: Anfangswerte, eine Ungleichung per Induktion, Monotonie/Konvergenz
+und Grenzwert.
+
+\begin{werkzeugkasten}[Nachrechnen der ersten Glieder]
+Die Folge ist eine rationale Iteration (Bruchrechnung):
+\begin{equation}
+  a_2=\frac2 3,\ a_3=\frac5 8,\ a_4=\frac{13}{21},\ a_5=\frac{34}{55}.
+\end{equation}
+Das sind Verhältnisse aufeinanderfolgender Fibonacci-Zahlen
+($\frac{1}{1},\frac2 3,\frac5 8,\frac{13}{21},\frac{34}{55},\dots$).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Differenz und Monotonie]
+Die Differenz zweier Folgeglieder:
+\begin{equation}
+  a_{n+1}-a_n=\frac{1+a_n}{2+a_n}-a_n
+  =\frac{1-a_n-a_n^2}{2+a_n}.
+\end{equation}
+Ist $a_n^2+a_n>1$ und $2+a_n>0$, so ist $a_{n+1}-a_n<0$: die Folge ist
+streng monoton fallend.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Grenzwert einer Iteration]
+Konvergente rekursive Folgen: der Grenzwert $L$ erfüllt die
+Fixpunktgleichung
+\begin{equation}
+  L=\frac{1+L}{2+L}\ \Longleftrightarrow\ L^2+L-1=0\ \Longrightarrow\
+  L=\frac{\sqrt5-1}2 .
+\end{equation}
+Nur die positive Lösung kommt (alle $a_n>0$) als $L=\Phi-1=\frac1{\Phi}$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Beim Induktions-Beweis von $a_n^2+a_n>1$ die Rekursion so umbauen,
+        dass Zähler/Nenner rational zeigen, dass die Ungleichheit bestehen
+        bleibt; Start $a_1$ prüfen.
+  \item Monotonie nicht nur ``anschaulich'': aus $a_{n+1}-a_n<0$ und
+        Beschränktheit (untere Schranke $0$) folgt Konvergenz.
+  \item Die Fixpunktgleichung hat zwei Lösungen; nur die positive ist
+        zulässig ($a_n>0$).
+\end{itemize}
+\end{achtung}

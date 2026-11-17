@@ -1,0 +1,63 @@
+% Teil II: durchgerechneter Weg, Teile a--b.
+
+\subsection*{Gegeben und gesucht}
+$U(r)=-GMm/r$ mit $r=\sqrt{x^2+y^2+z^2}$. Gesucht: (a) $\vec F=-\nabla U$
+durch explizite Gradientenbildung, (b)(Bonus) $\nabla\times\vec F$ und
+Aussage zur Konservativitaet.
+
+\subsection*{Ansatz}
+Partielle Ableitungen von $U(r)$ ueber die Kettenregel mit
+$\partial r/\partial x=x/r$ etc.; sodann der Gradientenvektor. Fuer die
+Rotation nutzt man die Identitaet $\nabla\times(-\nabla U)=\vec 0$.
+
+\subsection*{Rechnung}
+\textbf{a) Gradient und Kraft.} Mit
+$\mathrm dU/\mathrm dr=GMm/r^2$ (da $\mathrm d(-1/r)/\mathrm dr=1/r^2$)
+gilt
+\begin{equation}
+  \frac{\partial U}{\partial x}=\frac{GMm}{r^2}\cdot\frac{x}{r}
+  =\frac{GMm\,x}{r^3},
+\end{equation}
+analog fuer $y,z$. Damit
+\begin{equation}
+  \nabla U=\frac{GMm}{r^3}(x,y,z)=\frac{GMm}{r^2}\,\hat e_r,
+\end{equation}
+und mit dem Vorzeichen
+\begin{equation}
+  \boxed{\;\vec F=-\nabla U=-\frac{GMm}{r^3}(x,y,z)
+  =-\frac{GMm}{r^2}\,\hat e_r\;}.
+\end{equation}
+Die Kraft zeigt radial nach innen (Anziehung), Betrag $GMm/r^2$.
+
+\textbf{b) Rotation (Bonus).} Da $\vec F=-\nabla U$ gilt, ist
+\begin{equation}
+  \nabla\times\vec F=-\nabla\times(\nabla U)=\vec 0
+  \quad(\text{per Komponente pruefbar})\;.
+\end{equation}
+Das Gravitationsfeld ist also wirbelfrei. Mit dem Satz von Stokes folgt
+damit fuer jeden geschlossenen Weg $\oint\vec F\cdot\mathrm d\vec r=0$,
+d. h. das Feld ist \emph{konservativ}.
+
+\begin{ergebnis}
+$\vec F=-(GMm/r^3)(x,y,z)=-(GMm/r^2)\hat e_r$; $\nabla\times\vec F=\vec 0$,
+das Gravitationsfeld ist konservativ, das Wegintegral ist wegunabhaengig.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Querprobe (Radialsymmetrie):} Fuer $\vec F=-GMm\,\hat e_r/r^2$ sind
+alle Ableitungen entlang der Komponenten konsistent (z. B. $\partial_y F_z$-
+Terme heben sich mit $\partial_z F_y$-Termen), also $\nabla\times\vec F=\vec 0$.
+\checkmark
+
+\textbf{Vorzeichen:} $F<0$ in $\hat e_r$-Richtung bedeutet Attraktion,
+wie fuer die Gravitation erwartet. \checkmark
+
+\textbf{Einheiten:} $\nabla U$: [J/m] = [N], was zu einer Kraft passt. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Gradientenfelder $\vec F=-\nabla U$ sind automatisch rotationfrei
+($\nabla\times\vec F=\vec 0$) und damit konservativ: Die Arbeit laengs
+eines Weges haengt nur von den Endpunkten ab. Die Gravitation zweigt als
+radialsymmetrisches Potential $(GMm/r)$ genau dieses Bild.
+\end{merksatz}

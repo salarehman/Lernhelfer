@@ -1,0 +1,39 @@
+% titel: Blatt 3, A4: Grenzwert-Eigenschaften beweisen
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Grenzwertrechenregeln direkt mit den $\varepsilon$-Definitionen beweisen
+(ohne den Grenzwertsatz 2.1.6 zu verwenden).
+
+\begin{werkzeugkasten}[Definitionen]
+\begin{itemize}
+  \item Konvergenz $a_n\to a$: zu jedem $\varepsilon>0$ existiert
+        $N\in\mathbb N$ mit $|a_n-a|<\varepsilon$ für alle $n>N$.
+  \item Divergenz $b_n\to\infty$: zu jedem $M>0$ existiert $N$ mit
+        $b_n>M$ für alle $n>N$.
+  \item Konvergenz gegen $0$: zu jedem $\varepsilon>0$ existiert $N$ mit
+        $|c_n/b_n|<\varepsilon$ für alle $n>N$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Strategie]
+\begin{itemize}
+  \item $\lim(c\,a_n)=c\,a$: Skizze
+        $|c\,a_n-c\,a|=|c|\,|a_n-a|$; wähle $N$ für $\varepsilon/|c|$.
+  \item $\lim(c\,b_n)=\infty$ ($c>0$): $|c|\,b_n>M$ für $b_n>M/|c|$.
+  \item $\lim c_n/b_n=0$: nutze Beschränktheit $c_n\le S$ und
+        $b_n\to\infty$, also $|c_n/b_n|\le S/b_n\to0$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Aus $c>0$ folgt $|c|=c$; nur mit $c>0$ ist $c\,b_n\to\infty$ (bei
+        $c<0$ wäre es $-\infty$).
+  \item Beim ersten Beweis $N$ für $\tfrac{\varepsilon}{|c|}$ wählen und
+        sauber abschließen, nicht nur ``trivial'' schreiben.
+  \item Beim dritten Beweis beide Voraussetzungen ($c_n\le S$,
+        $b_n\to\infty$) gleichzeitig nutzen; das kleine $N$ ergibt sich aus
+        $b_n>S/\varepsilon$.
+\end{itemize}
+\end{achtung}

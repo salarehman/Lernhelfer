@@ -1,0 +1,56 @@
+% titel: Hohlzylinder-Pendel (physisches Pendel)
+% skript: Kap. Schwingungen, physisches Pendel, Steinerscher Satz
+
+Ein homogener Hohlzylinder (Innenradius $r$, Aussenradius $R$, Masse $m$)
+hängt auf einem (dickenlosen) Stab, der um $r$ parallel zur Symmetrieachse
+versetzt ist. Dadurch entsteht ein physisches Pendel um die Drehachse $D$.
+Gefragt sind die Bewegungsgleichung, das Trägheitsmoment $I_D$ und die
+Eigenfrequenz.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Physisches Pendel:} Für einen um eine Achse $D$ drehbaren Körper mit
+Trägheitsmoment $I_D$, dessen Schwerpunkt bei Winkel $\varphi$ unterhalb/über
+der Achse hängt (Abstand $s$ von $D$ zur Schwerpunktslinie), liefert der
+Drehimpulssatz
+\begin{equation}
+  I_D\,\ddot\varphi = -m\,g\,s\,\sin\varphi
+  \;\Rightarrow\;
+  \ddot\varphi + \frac{m g s}{I_D}\sin\varphi = 0.
+\end{equation}
+
+\textbf{Kleinschwingung:} $\sin\varphi\approx\varphi$:
+\begin{equation}
+  \ddot\varphi + \omega_0^2\,\varphi=0,
+  \qquad \omega_0 = \sqrt{\frac{m g s}{I_D}}.
+\end{equation}
+
+\textbf{Steinerscher Satz} (Trägheitsmoment um eine zu einer
+Symmetrieachse parallel verschobene Achse im Abstand $d$):
+\begin{equation}
+  I_D = I_S + m\,d^2.
+\end{equation}
+
+\textbf{Hohlzylinder} (homogen, Massen $m$, Innenradius $r$, Aussenradius $R$):
+\begin{equation}
+  I_S = \frac12 m\,(R^2+r^2)
+\end{equation}
+um die Symmetrieachse durch den Schwerpunkt.
+
+\textbf{Konstante:} $g=\qty{9.81}{m/s^2}$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+(a) Drehimpulssatz um $D$ aufstellen (Schwerpunktabstand $s=r$); (b)
+$I_D=I_S+m r^2$ mit $I_S=\frac12 m(R^2+r^2)$; (c) $\omega_0$; (d)
+$\omega_0^2(r)$ für konstant gehaltenes $R,m$ maximieren.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $s$ ist der Abstand \emph{Drehachse $D$--Schwerpunkt}; hier $s=r$.
+  \item Der Satz von Steiner versetzt die Achse \emph{parallel}, nicht die
+       Flächenmomente in einem Integral mischen.
+  \item Maximierung: $\omega_0^2\propto r/(R^2+3r^2)$ bei $R=$\,konst. Nach
+       $r$ ableiten.
+\end{itemize}
+\end{achtung}

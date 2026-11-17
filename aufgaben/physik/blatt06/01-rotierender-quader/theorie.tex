@@ -1,0 +1,53 @@
+% titel: Rotierender Quader: Traegheitsmoment und Drehimpulssatz
+% skript: Kap. Rotation, Traegheitsmoment, Drehimpulssatz
+
+Ein Quader mit den Kanten $a,b,c$ und Masse $m_Q$ rotiert um eine Achse durch
+den Körpermittelpunkt, die in Richtung der Kante $c$ zeigt. Durch Ziehen an
+einer masselosen Schnur (Radius $r$) wird er mit konstanter Kraft $F_\mathrm{Zug}$
+beschleunigt. Es wird das Trägheitsmoment gezeigt und der Drehimpulssatz
+angewandt.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Trägheitsmoment eines Quaders} (homogen, Achse durch den
+Körpermittelpunkt längs $c$):
+\begin{equation}
+  I_Q = \frac{m_Q}{12}\,\bigl(a^2+b^2\bigr).
+\end{equation}
+Herleitung: $I=\int\rho\,(x^2+y^2)\,dV$ über die Quaderdichte
+$\rho=m_Q/(abc)$ von $-a/2$ bis $a/2$, $-b/2$ bis $b/2$.
+
+\textbf{Drehimpulssatz} um die (hier ortsfeste) Drehachse:
+\begin{equation}
+  M_\mathrm{ext} = \frac{\mathrm d L}{\mathrm dt} = I\,\alpha,
+  \qquad L=I\,\omega,\quad \alpha=\dot\omega.
+\end{equation}
+
+\textbf{Drehmoment der Schnurkraft} (Kraft senkrecht zum Radius $r$):
+\begin{equation}
+  M = F_\mathrm{Zug}\cdot r.
+\end{equation}
+
+\textbf{Rotationsenergie:} $E_\mathrm{rot}=\frac12 I\omega^2$.
+
+\textbf{Rollbedingung / Faden:} Der Faden läuft ohne zu dehnen ab; die
+abgewickelte Länge ist $s=r\,\Delta\varphi$ (für konstantes $r$), die
+momentane Fadengeschwindigkeit $r\,\omega$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen in allgemeiner Form]
+(a) Integral für $I_Q$ auswerten. (b) Drehimpulssatz mit $M=F r$ aufstellen
+und $\alpha$; für Gleichförmigkeit $\omega(t)=\alpha t$. (c) Über die
+Rotationsenergie $E_\mathrm{rot}=F s$ die Fadenlänge $s$ bestimmen (oder über
+$s=r\Delta\varphi$ mit konstantem $\alpha$).
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Die konstante Kraft wirkt am Radius \emph{$r$} (Schnurradius), nicht an
+       der Quaderkante $a$ oder $b$.
+  \item Der Faden wickelt sich um $r$: eine volle Umdrehung wickelt
+       $2\pi r$ ab.
+  \item Bei Teil (c) kann man die Energie, bei direkter Rechnung die
+       Winkelbeschleunigung verwenden --- beide führen auf dieselbe Länge.
+\end{itemize}
+\end{achtung}

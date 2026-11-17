@@ -1,0 +1,64 @@
+% Teil II: durchgerechneter Weg, Teile a--b.
+
+\subsection*{Gegeben und gesucht}
+Masseloser Balken, bei der Mitte auf einer Schneide drehbar gelagert; am
+rechten Ende (Armlaenge $a$) haengt $m_2$, am linken Ende ist ein Stueck
+der Laenge $b$ senkrecht zum Balken abgeknickt, an dessen Ende $m_1$
+haengt; Balken um $\alpha$ gegen die Horizontale geneigt.
+Spezialfall: $a=2b$, $m_2=1,3\,m_1$. Gesucht: (a) Kraefte im Balken,
+(b) Gleichgewichtsbedingung und der Winkel $\alpha$.
+
+\subsection*{Ansatz}
+Momentengleichgewicht um die Schneide (Drehpunkt), dort faellt die
+Lagerkraft heraus. Hebelarme horizontal ansetzen.
+
+\subsection*{Rechnung}
+\textbf{a) Kraefte.} Auf den Balken wirken: die Gewichtskraft $m_2g$
+vertikal nach unten am rechten Ende, $m_1g$ vertikal nach unten am Ende
+des abgeknickten Stuecks, und die Lagerkraft unter der Schneide (im
+Drehpunkt). Balkenmasse und -dicke vernachlaessigen.
+
+\textbf{b) Gleichgewicht und Winkel.} Um die Schneide (Momentensumme
+null). Horizontale Hebelarme: rechts $\ell_2=a\cos\alpha$; links betraegt
+der Arm $a\cos\alpha$ (bis zum Ende) plus $b\sin\alpha$ (zusaetzlich durch
+das abgeknickte, nach aussen gerichtete Stueck), also
+$\ell_1=a\cos\alpha+b\sin\alpha$. Mit dem Drehsinn (rechts abwaerts /
+links aufwaerts negativ) gibt
+\begin{equation}
+  -m_2g\,a\cos\alpha + m_1g\,(a\cos\alpha+b\sin\alpha)=0
+  \;\Rightarrow\;
+  m_2\,a\cos\alpha = m_1\,a\cos\alpha + m_1\,b\sin\alpha
+\end{equation}
+\begin{equation}
+  (m_2-m_1)\,a\cos\alpha=m_1\,b\sin\alpha
+  \;\Rightarrow\;
+  \boxed{\;\tan\alpha=\frac{(m_2-m_1)\,a}{m_1\,b}\;}.
+\end{equation}
+Einsetzen von $a=2b$, $m_2=1,3\,m_1$:
+\begin{equation}
+  \tan\alpha=\frac{(1,3m_1-m_1)\cdot2b}{m_1\,b}=0,6
+  \;\Rightarrow\;
+  \boxed{\;\alpha=\arctan(0{,}6)\approx\qty{31.0}{\degree}\;}.
+\end{equation}
+
+\begin{ergebnis}
+Gleichgewichtsbedingung $\sum M=0$ um das Lager;
+$\tan\alpha=(m_2-m_1)/(m_1)\cdot a/b$. Fuer $a=2b$, $m_2=1,3m_1$:
+$\tan\alpha=0{,}6$, also $\alpha\approx\qty{31.0}{\degree}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Grenzfall:} Sinkt der Abstand $m_2=m_1$ auf gleich grosse Massen,
+wird $\tan\alpha=0$ und $\alpha=0$ (waagrechter Balken) -- symmetrische
+Anordnung, plausibel. \checkmark
+
+\textbf{Einheiten:} $\tan\alpha$ ist dimensionslos; $a$ und $b$ in m
+kuerzen sich unter dem Bruch. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Im Drehmoment-Gleichgewicht um ein Lager verschwinden die Momente aller
+Gewichte; horizontale Hebelarme sind $\ell\cos\alpha \pm$ ($b\sin\alpha$
+fuer abgeknickte Teile). Der Winkel folgt aus
+$\tan\alpha=(m_2-m_1)a/(m_1b)$.
+\end{merksatz}

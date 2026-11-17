@@ -1,0 +1,66 @@
+% titel: Blatt 6, A1: Komplexe Zahlen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Polarkoordinaten von $z=1+i\sqrt3$ angeben und $(1+i\sqrt3)^3$ zeigen (a);
+Lösungsmenge von $|z-2i|<2$ (b); dritter Eckpunkt des gleichseitigen Dreiecks
+aus $z_1=1+i\sqrt3$, $z_2=1-i\sqrt3$ (c).
+
+\subsection*{a) Polarkoordinaten und dritte Potenz}
+Für $z=1+i\sqrt3$:
+\begin{equation*}
+  r=\sqrt{1^2+\sqrt3^2}=2,\qquad
+  \varphi=\arctan\frac{\sqrt3}{1}=\frac\pi3.
+\end{equation*}
+Also $z=2(\cos\frac\pi3+i\sin\frac\pi3)=2\mathrm e^{i\pi/3}$. Dann ist
+\begin{equation*}
+  z^3=2^3\,\mathrm e^{i\cdot3\frac\pi3}=8\,\mathrm e^{i\pi}=-8,
+\end{equation*}
+wie gefordert.
+
+\subsection*{b) Lösungsmenge von $|z-2i|<2$}
+$|z-2i|$ ist der Abstand von $z$ zum Punkt $2i=(0,2)$ in der komplexen Ebene.
+$|z-2i|<2$ ist daher die offene Kreisscheibe mit Mittelpunkt $2i$ und Radius
+$2$ (ohne Rand).
+
+\subsection*{c) Dritter Eckpunkt des gleichseitigen Dreiecks}
+$z_1,z_2$ liegen symmetrisch zur reellen Achse:
+\begin{equation*}
+  z_1=r\mathrm e^{i\pi/3},\quad z_2=r\mathrm e^{-i\pi/3},\qquad r=2.
+\end{equation*}
+Die Strecke $z_1z_2$ hat Länge $2\sqrt3$ (Differenz $2\sqrt3\,i$). Der dritte
+Punkt $z_3$ liegt auf der Mittelsenkrechten, also auf der reellen Achse. Bei
+einem gleichseitigen Dreieck steht die Höhe senkrecht auf der Seite; mit der
+Seitenlänge $s=2\sqrt3$ und Höhe $h=\frac{\sqrt3}{2}s$ gilt
+\begin{equation*}
+  h=\frac{\sqrt3}{2}\cdot2\sqrt3=3.
+\end{equation*}
+Der Mittelpunkt von $z_1,z_2$ ist $1$. Also liefert $z_3=1\pm3$, d.h.
+$z_3=4$ oder $z_3=-2$.
+
+\begin{ergebnis}
+\begin{equation*}
+  \text{a)}\ r=2,\ \varphi=\tfrac\pi3,\qquad (1+i\sqrt3)^3=-8; \qquad
+  \text{b)}\ |z-2i|<2\ \text{offene Scheibe bei }2i; \qquad
+  \text{c)}\ z_3=4\ \text{oder}\ z_3=-2 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Probe c):} Abstand $|4-(1+i\sqrt3)|=|3-i\sqrt3|=\sqrt{9+3}=2\sqrt3$,
+ebenso $|4-(1-i\sqrt3)|=\sqrt{9+3}=2\sqrt3$; alle drei Seiten sind gleich
+lang. Analog für $z_3=-2$: $|-2-(1+i\sqrt3)|=|-3-i\sqrt3|=\sqrt{9+3}
+=2\sqrt3$.
+
+\textbf{Probe a):} $(1+i\sqrt3)^3$ ausmultiplizieren: $(1+i\sqrt3)^2
+=-2+2i\sqrt3$; mal $(1+i\sqrt3)$ ergibt $-8$ (Real- und Imaginärteil
+verschwinden). -- bestätigt.
+\end{kontrolle}
+
+\begin{merksatz}
+Jede komplexe Zahl als $r\mathrm e^{i\varphi}$ mit $r=|z|$ und $e^{i\varphi}$
+im passenden Quadranten schreiben; Potenzen werden zu
+$(r\mathrm e^{i\varphi})^n=r^n\mathrm e^{in\varphi}$. Abstände $|z-z_0|$
+zeichnen Kreise; der dritte Eckpunkt eines gleichseitigen Dreiecks liegt auf
+der Mittelsenkrechten des Seitenpaares.
+\end{merksatz}

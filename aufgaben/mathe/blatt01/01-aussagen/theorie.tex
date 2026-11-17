@@ -1,0 +1,30 @@
+% titel: Blatt 1, A1: Negation einer Aussage
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Von einer Aussage das Gegenteil (die Negation) unter den vorgegebenen
+Möglichkeiten erkennen; nicht über den Wahrheitsgehalt entscheiden.
+
+\begin{werkzeugkasten}[Negation]
+Die Negation einer Aussage mit Allquantor ``zu jeder Zahl gibt es eine
+natürliche Zahl, die größer ist'' ist die Aussage: \emph{Es gibt eine Zahl,
+die von keiner natürlichen Zahl übertroffen wird.}
+Formal:
+\begin{equation}
+  \neg\bigl(\forall x\,\exists n\in\mathbb N:\ n>x\bigr)\;\Longleftrightarrow\;
+  \exists x\,\forall n\in\mathbb N:\ n\leq x .
+\end{equation}
+``Zu jeder'' wird zu ``es gibt eine'', ``es gibt eine'' wird zu ``zu keiner''.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Die Negation von ``es gibt eine natürliche Zahl, die größer ist''
+        ist ``es gibt keine natürliche Zahl, die größer ist'', nicht
+        ``kleiner''.
+  \item Aussagen wie ``Keine einzige Zahl wird von jeder natürlichen Zahl
+        übertroffen'' (Variante a) sind \emph{nicht} die Negation, weil sie
+        die Reihenfolge der Quantoren falsch drehen.
+  \item Nicht bewerten ob die Aussage wahr oder falsch ist.
+\end{itemize}
+\end{achtung}

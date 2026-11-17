@@ -1,0 +1,33 @@
+% titel: Blatt 2, A4: Innenwinkelsumme im n-Eck
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Die Summe der Innenwinkel eines $n$-Ecks (Eckpunkte auf einer Kreislinie,
+$x\ge3$) per vollständiger Induktion als $(n-2)\cdot180^\circ$ zeigen.
+
+\begin{werkzeugkasten}[Vollständige Induktion]
+Beweisschema: Induktionsanfang ($n=3$: Dreieck $180^\circ$) und
+Induktionsschritt ($n\to n+1$: Winkel eines $(n+1)$-Ecks aus dem eines
+$n$-Ecks ableiten).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Triangulierung]
+Ein konvexes $(n+1)$-Eck zerlegt man durch eine Diagonale in ein Dreieck
+und ein $n$-Eck. Die Innenwinkel des großen Polygons setzen sich aus der
+Summe des $n$-Ecks plus der $180^\circ$ des Dreiecks zusammen:
+\begin{equation}
+  S(n+1)=S(n)+180^\circ .
+\end{equation}
+Da die neuen Punkte auf einer Kreislinie liegen, sind die Polygone konvex
+-- jede Diagonale liegt im Inneren.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Die Diagonale muss das Polygon in ein Dreieck und ein $n$-Eck
+        zerlegen, \emph{nicht} in zwei beliebige Teile.
+  \item Induktionsanfang bei $n=3$: Dreieckssumme $180^\circ=(3-2)\cdot180^\circ$.
+  \item Im Schritt die konkrete Summe $(n-2)180^\circ+180^\circ=(n-1)180^\circ
+        =((n+1)-2)180^\circ$ zeigen, nicht nur ``$+180^\circ$'' schreiben.
+\end{itemize}
+\end{achtung}

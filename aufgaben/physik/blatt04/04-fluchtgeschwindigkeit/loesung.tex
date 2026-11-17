@@ -1,0 +1,52 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $R_E=\qty{6378}{km}=\qty{6.378e6}{m}$, $M_E=\qty{5.974e24}{kg}$,
+$G=\qty{6.674e-11}{m^3/(kg\,s^2)}$.
+Gesucht: anfängliche Geschwindigkeit $v_0$ zum Verlassen des Gravitationsfelds.
+
+\subsection*{Ansatz}
+Energieerhaltung zwischen Oberfläche (Zustand 1) und Unendlich (Zustand 2).
+Im Unendlichen soll $v_2=0$ sein (gerade noch entkommen). Damit die Masse
+$m$ der Kugel aus der Gleichung.
+
+\subsection*{Rechnung}
+\begin{equation}
+  \frac12 m v_0^2 - G\frac{M_E m}{R_E}
+  = \frac12 m\,0^2 - 0
+  = 0\;.
+\end{equation}
+Nach $v_0$ auflösen ($m$ kürzt sich):
+\begin{equation}
+  v_0 = \sqrt{\frac{2\,G M_E}{R_E}}
+  = \sqrt{\frac{2\cdot 6.674e-11\cdot 5.974e24}{6.378e6}}\ \si{m/s}
+  \approx \qty{1.12e4}{m/s}
+  \approx \qty{11.2}{km/s}.
+\end{equation}
+
+\begin{ergebnis}
+\begin{equation*}
+  v_0 = \sqrt{\frac{2GM_E}{R_E}} \approx \qty{11.2}{km/s}.
+\end{equation*}
+Die Kugel muss (reibungslos, vertikal) mindestens \qty{11.2}{km/s} schnell sein,
+um das Gravitationspotential der Erde zu verlassen.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $G M_E/R_E$:
+$\frac{m^3}{kg\,s^2}\cdot\frac{kg}{m}=m^2/s^2$, damit $\sqrt{\cdots}=m/s$. \checkmark
+
+\textbf{Grössenordnung:} Die Fluchtgeschwindigkeit von der Erde ($\approx
+\qty{11.2}{km/s}$) liegt um $\sqrt2$ über der ersten kosmischen
+Geschwindigkeit für eine erdnahe Kreisbahn ($\approx\qty{7.9}{km/s}$);
+das ist physikalisch bekannt (Kreisbahn braucht $\sqrt{GM_E/R_E}$).
+
+\textbf{Grenzfall:} Bei $R_E\to\infty$ (keine Masse) würde $v_0\to 0$.
+\end{kontrolle}
+
+\begin{merksatz}
+Entkommgeschwindigkeit = $\sqrt{2GM/R}$: die Energie wird von der
+potentiellen auf die kinetische Form übertragen; Masse des fliegenden
+Objekts kürzt sich heraus. Gilt analog für jede Masse im Gravitationsfeld
+einer kugelsymmetrischen Verteilung.
+\end{merksatz}

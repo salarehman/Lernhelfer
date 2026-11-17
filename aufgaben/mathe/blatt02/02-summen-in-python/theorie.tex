@@ -1,0 +1,37 @@
+% titel: Blatt 2, A2: Summe der Quadrate in Python
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Summe der Quadratzahlen $0^2+1^2+\dots+n^2$ in Python bilden, mit der
+Formel vergleichen und die Formel beweisen.
+
+\begin{werkzeugkasten}[Python: Listen und sum]
+\begin{itemize}
+  \item \texttt{[k**2 for k in range(21)]}: Liste der Quadrate $0^2,\dots,20^2$.
+  \item \texttt{sum(...)}: Summe der Elemente, also
+        \texttt{sum([k**2 for k in range(n+1)])} $=\sum_{k=0}^{n}k^2$.
+  \item Für $n=5$: $0+1+4+9+16+25=55$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Summenformel der Quadratzahlen]
+\begin{equation}
+  \sum_{k=0}^{n} k^2=\frac{n(n+1)(2n+1)}6 .
+\end{equation}
+Für $n=5$: $5\cdot6\cdot11/6=55$. Der Vergleich für verschiedene $n$ zeigt
+Übereinstimmung; der Beweis läuft per vollständiger Induktion, wobei im
+Induktionsschritt der neue Term $(n+1)^2$ zum alten Zwischenstand
+$n(n+1)(2n+1)/6$ addiert und auf den Nenner $6$ gebracht wird.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item \texttt{range(21)} endet bei $20$; für quadratische Summe bis $n$
+        \texttt{range(n+1)} verwenden.
+  \item Im Induktionsschritt den Bruch $(n+1)^2$ zu
+        $\frac{6(n+1)^2}{6}$ erweitern und $n+1$ ausklammern; das Ziel ist
+        $\frac{(n+1)(n+2)(2n+3)}6$.
+  \item Formel und Schleife liefern dieselben Werte -- dies ist der
+        eigentliche Inhalt von Teil b).
+\end{itemize}
+\end{achtung}

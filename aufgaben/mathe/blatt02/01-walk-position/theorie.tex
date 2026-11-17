@@ -1,0 +1,43 @@
+% titel: Blatt 2, A1: Position nach einem Zufallswalk
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Ein Individuum startet in $0$ und bewegt sich pro Sekunde mit gleicher
+Wahrscheinlichkeit um $1$ nach rechts oder $1$ nach links. Mögliche
+Positionen und Wahrscheinlichkeit, rechts von der Startposition zu stehen.
+
+\begin{werkzeugkasten}[Parität der Position]
+Nach $n$ Schritten gilt: Position $=$ (Anzahl rechts) $-$ (Anzahl links),
+$R+L=n$. Damit
+\begin{equation}
+  \text{Position } = 2R-n .
+\end{equation}
+Also: Bei geradem $n$ sind alle erreichbaren Positionen gerade
+($\ldots,-2,0,2,\ldots$), bei ungeradem $n$ ungerade. Erreichbare Positionen:
+$\{-n,-n+2,\dots,n\}$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Wahrscheinlichkeit, rechts zu stehen]
+Die Verteilung von $R$ ist binomial, $R\sim\mathrm{Bin}(n,\tfrac12)$, mit
+$\mathrm P(R=r)=\binom{n}{r}2^{-n}$.
+\begin{itemize}
+  \item $n$ \emph{ungerade}: Symmetrie um $0$ ohne Gleichstand, also
+        $\mathrm P(\text{rechts})=\tfrac12$.
+  \item $n$ \emph{gerade}: Position $0$ ist möglich, mit
+        $\mathrm P(0)=\binom{n}{n/2}2^{-n}$; wegen Symmetrie folgt
+        $\mathrm P(\text{rechts})=\frac12\bigl(1-\mathrm P(0)\bigr)$.
+\end{itemize}
+Die Frage ``Kann das Individuum zur Startposition zurückkehren?'' ist
+genau für gerades $n$ mit ``ja'' zu beantworten.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Parität: Position und $n$ haben dieselbe Parität -- bei geradem $n$
+        liegen nur gerade Positionen vor, die $0$ eingeschlossen.
+  \item Bei geradem $n$ ist $P(\text{rechts})<\tfrac12$, weil Masse bei
+        $0$ liegt; bei ungeradem $n$ exakt $\tfrac12$.
+  \item Nicht jede Position unter $n$ gleich wahrscheinlich -- der mitten
+        liegende Bereich ist wahrscheinlicher (Binomialverteilung).
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,43 @@
+% titel: Blatt 5, A3: Radioaktiver Zerfall (C-14)
+% skript: Kap. 2 (Exponentialfunktion), Kap. 3 (lim)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Aus der Halbwertszeit die Zerfallskonstante $\lambda$ bestimmen und damit das
+Alter einer Probe aus der verbliebenen Konzentration.
+
+\begin{werkzeugkasten}[Zerfallsgesetz]
+Der Anteil radioaktiven Materials nimmt exponentiell ab:
+\begin{equation*}
+  N(t)=N_0\,\mathrm e^{-\lambda t}, \qquad \lambda>0 .
+\end{equation*}
+$\lambda$ ist die Zerfallskonstante mit Einheit $\mathrm{a}^{-1}$. Die
+Halbwertszeit $T$ erfüllt $N(T)=\tfrac12 N_0$, also
+$\mathrm e^{-\lambda T}=\tfrac12$.
+
+\textit{Skript:} Kap. 2 (Exponentialfunktion).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen bei zwei Unbekannten]
+\begin{enumerate}
+  \item $\lambda$ aus der Halbwertszeit bestimmen:
+        $\lambda=\dfrac{\ln 2}{T}$.
+  \item Gemessen ist der Restanteil $q=\frac{N(t)}{N_0}$. Aus
+        $q=\mathrm e^{-\lambda t}$ folgt
+        $t=\dfrac{\ln(1/q)}{\lambda}=\dfrac{\ln(1/q)\cdot T}{\ln 2}$.
+        Alternativ $\ln q=-\lambda t$.
+\end{enumerate}
+Für $q<1$ ist $\ln(1/q)>0$, das Alter ist positiv.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item $\lambda$ und die Zeit im \emph{gleichen} Zeitsystem (Jahre) angeben.
+  \item Nicht $N_0$ verwechseln: es kürzt sich heraus, nur der gemessene
+        Anteil $q$ zählt.
+  \item $q$ als Zahl zwischen $0$ und $1$ einsetzen ($53\,\%=0{,}53$), nicht
+        als Prozentzahl $53$.
+  \item Mit dem Logarithmus isolieren: $\ln(q)=\ln(\mathrm e^{-\lambda t})
+        =-\lambda t$ und nach $t$ auflösen.
+\end{itemize}
+\end{achtung}

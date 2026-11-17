@@ -1,0 +1,38 @@
+% titel: Blatt 2, A5: Bäume
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Für einen Baum, in dem jeder Knoten, der kein freies Ende ist, genau drei
+benachbarte Kanten hat, zeigen: $n$ ist gerade und der Baum hat genau
+$\tfrac n2+1$ freie Enden.
+
+\begin{werkzeugkasten}[Begriffe und Handschlaglemma]
+Ein \emph{Baum} ist ein zusammenhängender kreisfreier Graph. Ein
+\emph{freies Ende} ist ein Knoten vom Grad $1$ (Blatt); die übrigen Knoten
+haben Grad $3$. In jedem Baum gilt \emph{Eckenbilanz}:
+\begin{equation}
+  \sum_{\text{Knoten }v}\deg(v)=2\cdot(\text{Anzahl Kanten})=2(n-1).
+\end{equation}
+Diese Bilanz liefert bereits $n$ gerade und $\tfrac n2+1$ freie Enden.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Induktionsschritt mit freien Enden]
+Per Induktion über $n$. Für $n>2$ gibt es einen Knoten, der zu
+\emph{mindestens} zwei freien Enden benachbart ist. Entfernt man diese
+beiden freien Enden zusammen mit den angrenzenden Kanten, wird der nun
+freie Knoten selbst ein freies Ende: $n$ sinkt um $2$, die Zahl der freien
+Enden um $1$. Damit ist die Zahl $\tfrac n2+1$ invariante:
+$(n-2)/2+1=n/2$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Grad-Zusammenhang: zweimal Kanten zählen (jede Kante hat zwei
+        Enden) -- daraus das ``gerade $n$''-Argument ableiten.
+  \item Beim induktiven Entfernen \emph{beide} freien Enden samt des
+        Zwischenknotens nehmen, sonst zerstört man die ``nur Grad 3''-
+        Bedingung der inneren Knoten.
+  \item Nicht nur $n$ gerade zeigen, sondern auch die Anzahl der freien
+        Enden ($\tfrac n2+1$) -- beides gehört zur Behauptung.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,76 @@
+% titel: Blatt 5, A5: Elementare Funktionen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Zu drei Vorgaben je eine elementare Funktion mit passendem
+Definitionsbereich.
+
+\subsection*{a) Maximum bei 2, Grenzwert 1}
+Eine Glocke um $x=2$ mit Höhe $10$ und asymptotischem Niveau $1$:
+\begin{equation*}
+  f(x)=1+9\,\mathrm e^{-(x-2)^2}.
+\end{equation*}
+Prüfung: $f(2)=1+9=10$; für $x\to\pm\infty$ gilt $\mathrm e^{-(x-2)^2}\to0$,
+also $f(x)\to1$. Ableitung $f'(x)=-18(x-2)\mathrm e^{-(x-2)^2}$: für $x<2$
+ist $f'>0$ (wachsend), für $x>2$ ist $f'<0$ (fallend).
+
+\subsection*{b) Auf $R_{>1}$, Werte 0 und $-1$, Pole und $-\infty$}
+Gesucht $f(2)=0$, $f(3)=-1$, $\lim_{x\searrow1}f(x)=\infty$,
+$\lim_{x\to\infty}f(x)=-\infty$. Nützlicher Baustein: ein Pol bei $1$ mit
+$+\infty$ und ein Abfall nach $-\infty$. Passt
+\begin{equation*}
+  f(x)=\ln\frac{1}{x-1}=\; -\ln(x-1).
+\end{equation*}
+Es gilt $\lim_{x\searrow1}f(x)=+\infty$ und $\lim_{x\to\infty}=-\infty$. Die
+Werte lassen sich nachregulieren: $g(x)=f(x)+cx+d$ mit $g(2)=0$, $g(3)=-1$
+löst
+\begin{align*}
+  0&=\;\;-\ln(1)+2c+d=2c+d,\\
+  -1&=-\ln2+3c+d.
+\end{align*}
+Aus der ersten Zeile $d=-2c$; in die zweite eingesetzt
+$-1=-\ln2+c$, also $c=\ln2-1$, $d=2-2\ln2$. Damit
+\begin{equation*}
+  g(x)=-\ln(x-1)+(\ln2-1)x+2-2\ln2
+\end{equation*}
+erfüllt alle vier Bedingungen; $g(2)=0$, $g(3)=-1$, Pole bei $1$ vom Typ
+$+\infty$, Grenzwert $-\infty$ am Unendlichen.
+
+\subsection*{c) Auf $R\setminus\{-1,1\}$, fallend, Pole}
+Gesucht $f(0)=0$, $\lim_{x\to1}f(x)=\infty$, $\lim_{x\nearrow-1}f(x)=-\infty$,
+streng monoton fallend auf $R_{>1}$. Das gebrochen-rationale
+\begin{equation*}
+  f(x)=\frac{2x}{x^2-1}
+\end{equation*}
+hat Pole bei $\pm1$ und $f(0)=0$. Ableitung
+\begin{equation*}
+  f'(x)=\frac{2(x^2-1)-2x(2x)}{(x^2-1)^2}
+  =\frac{2x^2-2-4x^2}{(x^2-1)^2}
+  =\frac{-2x^2-2}{(x^2-1)^2}<0
+\end{equation*}
+auf $R_{>1}$, also streng monoton fallend. Grenzwerte: für $x\nearrow1$ geht
+$x^2-1$ nach $0^+$ mit positivem Zähler $\to\infty$; für $x\nearrow-1$ geht
+$x^2-1$ nach $0^+$, aber der Zähler $2x\to-2<0$, also $\to-\infty$.
+
+\begin{ergebnis}
+\begin{equation*}
+  \text{a)}\ f(x)=1+9\mathrm e^{-(x-2)^2}; \qquad
+  \text{b)}\ g(x)=-\ln(x-1)+(\ln2-1)x+2-2\ln2; \qquad
+  \text{c)}\ f(x)=\frac{2x}{x^2-1}.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Probe a):} $1+9\mathrm e^{0}=10$, asymptotisch $1$ -- passt.
+\textbf{Probe b):} $g(2)=2(\ln2-1)+2-2\ln2=0$; und
+$g(3)=3(\ln2-1)-\ln2+2-2\ln2=-1$ -- beide Werte richtig, Pole und
+Grenzwert wegen $-\ln(x-1)$.
+\textbf{Probe c):} $f(0)=0$; $f'(x)<0$ auf $R_{>1}$, Pole wie gefordert.
+\end{kontrolle}
+
+\begin{merksatz}
+Eine elementare Funktion baut man aus Grundbausteinen (Pol, Glocke, $\ln$,
+lineare Anpassung), die man additiv kombiniert, um mehrere Bedingungen
+(Wert, Monotonie, Grenzwert, Definitionsbereich) gleichzeitig zu erfüllen.
+Jede Bedingung separat nachrechnen.
+\end{merksatz}

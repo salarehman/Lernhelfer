@@ -1,0 +1,77 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+$m=\qty{0.1}{kg}$, $R_1=\qty{30}{cm}=0{,}30\,\mathrm m$,
+$\omega_1=\qty{9}{s^{-1}}$, $R_2=\qty{15}{cm}=0{,}15\,\mathrm m$; global
+f{\"u}r $r_1=R_1$, $r_2=R_2$. Gesucht: (a) Erhaltung und $\omega_2$,
+(b) Fadenspannung bei $R_1$ und $R_2$, (c) Arbeit der ziehenden Kraft,
+(d) Aenderung der kinetischen Energie und Vergleich.
+
+\subsection*{Ansatz}
+Drehimpulserhaltung $mr^2\omega=\text{const.}$; Fadenspannung =
+Zentripetalkraft; Arbeit = Energiebilanz $\Delta E_{\rm kin}$.
+
+\subsection*{Rechnung}
+\textbf{a) Erhaltung und $\omega_2$.} Die Zugkraft wirkt entlang des
+Fadens, also radial durch die Mitte -- sie uebt kein Drehmoment
+bezueglich der Achse aus, deshalb bleibt $L=mr^2\omega$ erhalten.
+\begin{equation}
+  \omega_2=\omega_1\left(\frac{R_1}{R_2}\right)^2
+  =\qty{9}{s^{-1}}\left(\frac{0{,}30}{0{,}15}\right)^2
+  =\qty{9}{s^{-1}}\cdot4
+  =\boxed{\;\qty{36}{s^{-1}}\;}.
+\end{equation}
+
+\textbf{b) Fadenspannung.}
+\begin{equation}
+  F=m\,r\,\omega^2: \quad
+  F_1=mR_1\omega_1^2=0{,}1\cdot0{,}30\cdot81\approx\boxed{\;\qty{2.43}{N}\;},
+\end{equation}
+\begin{equation}
+  F_2=mR_2\omega_2^2=0{,}1\cdot0{,}15\cdot1296
+  \approx\boxed{\;\qty{19.4}{N}\;}
+\end{equation}
+
+\textbf{c) Arbeit der ziehenden Kraft.} $\Delta E_{\rm kin}$, mit
+$E_{\rm kin}=\tfrac12 m r^2\omega^2=\tfrac{L^2}{2mr^2}$:
+\begin{align}
+  E_1&=\tfrac12 m R_1^2\omega_1^2
+      =0{,}5\cdot0{,}1\cdot0{,}09\cdot81\approx\qty{0.365}{J},\\
+  E_2&=\tfrac12 m R_2^2\omega_2^2
+      =0{,}5\cdot0{,}1\cdot0{,}0225\cdot1296\approx\qty{1.46}{J},\\
+  \Delta E&=E_2-E_1\approx\qty{1.46}{J}-\qty{0.365}{J}
+      =\boxed{\;\qty{1.09}{J}\;}.
+\end{align}
+
+\textbf{d) Vergleich.} Die kinetische Energie aendert sich genau um den
+Betrag der Arbeit der Zugkraft:
+\begin{equation}
+  \boxed{\;W=\Delta E_{\rm kin}=\qty{1.09}{J}\;}.
+\end{equation}
+Die Energie steigt an (der Faden zieht nach innen, die Zentripetalkraft
+hat eine radiale Komponente; die Zugkraft verrichtet Arbeit).
+
+\begin{ergebnis}
+$\omega_2=\qty{36}{s^{-1}}$; $F_1\approx\qty{2.43}{N}$,
+$F_2\approx\qty{19.4}{N}$; $W=\Delta E_{\rm kin}\approx\qty{1.09}{J}$;
+die kinetische Energie waechst um diesen Betrag.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\omega$ [s$^{-1}$]; $F=mr\omega^2$: kg$\cdot$m$\cdot$s$^{-2}$
+[$\rightarrow$N]. $E=\tfrac12mr^2\omega^2$: kg$\cdot$m$^2\cdot$s$^{-2}$=J. \checkmark
+
+\textbf{Querprobe:} Radius halbiert sich, also $\omega_2=4\omega_1$;
+$E\propto r^2\omega^2\propto r^2(1/r^4)=1/r^2$: bei halbem Radius vierfache
+Energie. Von $E_1=\qty{0.365}{J}$ zu $E_2\approx4\cdot0{,}365=1{,}46\,\mathrm J$ --
+stimmt. \checkmark
+
+\textbf{Spannung:} $F_2\approx8F_1$ (da $\omega_2^2R_2/(\omega_1^2R_1)
+=16\cdot\frac12=8$) -- Anstieg deutlich. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Zieht man eine Masse auf der Kreisbahn nach innen, bleibt der Drehimpuls
+erhalten ($\omega\propto1/r^2$); die Arbeit der Zugkraft gleicht dem
+Energiezuwachs $E_{\rm kin}=L^2/(2mr^2)$ und nimmt mit kleinerem Radius zu.
+\end{merksatz}

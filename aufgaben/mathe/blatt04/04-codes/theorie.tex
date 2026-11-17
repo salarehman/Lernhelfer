@@ -1,0 +1,44 @@
+% titel: Blatt 4, A4: Codes und Bijektivität
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zwei Verschlüsselungsfunktionen modulo 26 (Verschiebe- und
+Multiplikationscode) untersuchen und die Umkehrfunktion (Entschlüsselung)
+angeben.
+
+\begin{werkzeugkasten}[Rechnen mod 26]
+Nach $\bmod 26$ werden nur die Reste bei Division durch $26$ betrachtet;
+man addiert/subtrahiert beliebig oft $26$. Mit A$=0$, B$=1,\dots,$ Z$=25$:
+\begin{equation}
+  f(x)=(x+3)\bmod 26 .
+\end{equation}
+Diese Verschiebung ist bijektiv, denn $+3$ ist auf $\mathbb Z_{26}$ eine
+Permutation; die Umkehrung ist
+\begin{equation}
+  f^{-1}(y)=(y-3)\bmod 26 .
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Multiplikationscode und Einheiten]
+\begin{itemize}
+  \item $g(x)=2x\bmod26$ ist \emph{nicht} bijektiv: $2x$ ist stets gerade,
+        ungerade Reste ($1,3,\dots,25$) werden nie getroffen, und es gibt
+        Kollisionen (z. B. $x$ und $x+13$ liefern denselben Wert).
+  \item $h(x)=3x\bmod26$ ist bijektiv, weil $\mathrm{ggT}(3,26)=1$; die
+        Umkehrung nutzt das modulare Inverse von $3$ (hier $9$, da
+        $3\cdot9=27\equiv1$).
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Bijektiv heißt injektiv \emph{und} surjektiv; bei $2x\bmod26$
+        reicht schon ein nicht getroffener Wert (etwa $1$), um
+        Surjektivität zu widerlegen.
+  \item Zwei Buchstaben mit demselben Code: z. B. A$x=0$ und N$x=13$ geben
+        beide $0$.
+  \item Bei $h(x)=3x\bmod26$ die Umkehrung über das modulare Inverse von
+        $3$ bilden (d. h. multiplizieren mit $9$), nicht durch ``$x/3$''
+        rechnen.
+\end{itemize}
+\end{achtung}

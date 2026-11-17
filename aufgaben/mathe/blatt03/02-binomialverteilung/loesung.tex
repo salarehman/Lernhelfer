@@ -1,0 +1,41 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) Zugverspätung mit $p=\tfrac15$ je Fahrt; gesucht:
+$\mathrm P(\text{mindestens 4 von 5 verspätet})$.
+(b) Aquarium mit $9$ Fischen, je $p=\tfrac1{10}$ pro Nacht;
+gesucht: $\mathrm P(\text{mindestens einer springt hinaus})$.
+
+\subsection*{a) Mindestens 4 von 5 verspätet}
+$k=4$ oder $k=5$:
+\begin{align}
+  \mathrm P &= \binom54\Bigl(\frac15\Bigr)^4\frac45
+     +\binom55\Bigl(\frac15\Bigr)^5 \\
+  &=5\cdot\frac{1}{625}\cdot\frac45+\frac1{3125}
+   =\frac{20}{3125}+\frac1{3125}=\frac{21}{3125}.
+\end{align}
+\begin{ergebnis}
+$\mathrm P=\dfrac{21}{3125}\approx0.0067$.
+\end{ergebnis}
+
+\subsection*{b) Mindestens einer von 9 springt hinaus}
+Gegenereignis ``keiner springt hinaus'':
+\begin{equation}
+  \mathrm P=1-\Bigl(1-\frac1{10}\Bigr)^9
+  =1-\Bigl(\frac9{10}\Bigr)^9 .
+\end{equation}
+\begin{ergebnis}
+$\mathrm P=1-\bigl(\tfrac9{10}\bigr)^9
+=1-\tfrac{387420489}{10^9}\approx0.6126$.
+\end{ergebnis}
+
+\begin{kontrolle}
+a) $p$ klein, $k\ge4$: Ergebnis $~0.0067$ ist klein aber positiv;
+b) $\bigl(\tfrac9{10}\bigr)^9\approx0.387$, also $P\approx0.613<1$ -- plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Bei ``mindestens $c$'' summiert man die Binomialwahrscheinlichkeiten ab
+$c$; bei ``mindestens einer'' ist das Gegenereignis ``keiner'' meist
+schneller.
+\end{merksatz}

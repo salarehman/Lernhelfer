@@ -1,0 +1,37 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$a,b>0$. (a) $\sqrt{ab}\le\tfrac{a+b}2$ zeigen; (b) die Fälle mit
+$\sqrt{ab}=\tfrac12(a+b)$ bestimmen.
+
+\subsection*{a) Ungleichung $\sqrt{ab}\le\frac{a+b}2$}
+Für alle reellen Zahlen ist das Quadrat nichtnegativ:
+\begin{equation}
+  0\le\bigl(\sqrt a-\sqrt b\bigr)^2 = a-2\sqrt{ab}+b .
+\end{equation}
+Damit
+\begin{equation}
+  2\sqrt{ab}\le a+b \;\Longrightarrow\;
+  \sqrt{ab}\le\frac{a+b}2 . \tag*{$\checkmark$}
+\end{equation}
+
+\subsection*{b) Gleichheitsfall}
+Gleichheit in der obigen Abschätzung genau dann, wenn
+$\sqrt a-\sqrt b=0$, d.h. $\sqrt a=\sqrt b$, also $a=b$.
+
+\begin{ergebnis}
+\begin{equation*}
+  \sqrt{ab}\le\frac{a+b}2 \quad\text{für }a,b>0,\qquad
+  \text{Gleichheit genau für } a=b .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+Gegenprobe: $a=1,b=9$: $\sqrt{9}=3$, Durchschnitt $\frac{10}2=5$, es gilt
+$3\le5$ (echt); $a=b=4$: $\sqrt{16}=4$, Durchschnitt $4$, Gleichheit. Passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Der mittlere Wachstumsfaktor liegt nie über dem arithmetischen Mittel;
+Gleichheit nur bei gleichen Faktoren -- folgt aus $(\sqrt a-\sqrt b)^2\ge0$.
+\end{merksatz}

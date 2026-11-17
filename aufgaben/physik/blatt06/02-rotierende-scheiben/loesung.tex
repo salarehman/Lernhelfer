@@ -1,0 +1,70 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $m_1=\qty{10}{kg}$, $m_2=\qty{5}{kg}$, $R=\qty{20}{cm}=\qty{0.20}{m}$,
+$\omega_1=60\,\mathrm{min}^{-1}=\qty{6.28}{rad/s}$,
+$\omega_2=-150\,\mathrm{min}^{-1}=-\qty{15.7}{rad/s}$.
+Gesucht: (a) gemeinsame Winkelgeschwindigkeit $\omega$; (b) Reibungsenergie.
+
+\subsection*{Rechnung}
+\textbf{Winkelgeschwindigkeiten in SI.}
+$60\,\mathrm{min}^{-1}=1\,\mathrm s^{-1}\;\Rightarrow\;\omega_1=2\pi\cdot
+1=\qty{6.283}{rad/s}$. $150\,\mathrm{min}^{-1}=2.5\,\mathrm s^{-1}\;\Rightarrow\;
+\omega_2=-2\pi\cdot 2.5=-\qty{15.71}{rad/s}$.
+
+\textbf{Trägheitsmomente:}
+\begin{equation}
+  I_1=\frac12 m_1R^2=\frac12\cdot10\cdot0.20^2=\qty{0.20}{kg\,m^2},
+  \qquad
+  I_2=\frac12\cdot5\cdot0.20^2=\qty{0.10}{kg\,m^2}.
+\end{equation}
+
+\textbf{a) Gemeinsame Winkelgeschwindigkeit} (Drehimpulserhaltung):
+\begin{equation}
+  \omega
+  = \frac{I_1\omega_1+I_2\omega_2}{I_1+I_2}
+  = \frac{0.20\cdot6.283 + 0.10\cdot(-15.71)}{0.30}\ \si{rad/s}
+  = \frac{1.257-1.571}{0.30}
+  = \qty{-1.05}{rad/s}.
+\end{equation}
+Das entspricht $\omega/(2\pi)=-\qty{0.167}{s^{-1}}$, also $-10\,\mathrm{min}^{-1}$:
+die Scheiben drehen gemeinsam mit $\qty{1.05}{rad/s}$ in die Richtung der
+oberen (schnelleren) Scheibe.
+
+\textbf{b) Reibungsenergie:}
+\begin{equation}
+  \Delta E
+  = \frac12 I_1\omega_1^2+\frac12 I_2\omega_2^2 - \frac12(I_1+I_2)\omega^2
+\end{equation}
+\begin{equation}
+  = \frac12\cdot0.20\cdot6.283^2
+  + \frac12\cdot0.10\cdot(-15.71)^2
+  - \frac12\cdot0.30\cdot(-1.05)^2\ \si{J}
+  = (3.95 + 12.34 - 0.16)\ \si{J}
+  \approx \qty{16.1}{J}.
+\end{equation}
+
+\begin{ergebnis}
+(a) $\omega=\dfrac{I_1\omega_1+I_2\omega_2}{I_1+I_2}
+=\qty{-1.05}{rad/s}$ (Drehsinn der oberen Scheibe). (b)
+$\Delta E_\mathrm{Reibung}\approx\qty{16.1}{J}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\omega$: $kg\,m^2\cdot rad/s / kg\,m^2 = rad/s$. \checkmark
+$\Delta E$: $kg\,m^2/s^2\cdot(rad/s)^2\,s^2/(rad^2)=J$. \checkmark
+
+\textbf{Drehimpulserhaltung gegen Energie:} $E_\mathrm{kin}$ muss abnehmen
+(Reibung) - $16.1\,\si{J}>0$. \checkmark
+
+\textbf{Grenzfall:} stünden beide Scheiben gleich schnell ($\omega_2=\omega_1$),
+kehrte sich nichts um und $\Delta E=0$; hier kommt die Reibung von der
+unterschiedlichen Drehrichtung. Plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Wenn zwei rotierende Körper reibend zu einer gemeinsamen Winkelgeschwindigkeit
+zusammenkommen, ist der \emph{Drehimpuls} (nicht die Energie) erhalten.
+Man berechnet zuerst $I=\frac12 mR^2$, dann $L$, und zieht die
+Reibungsenergie aus der Energiebilanz.
+\end{merksatz}

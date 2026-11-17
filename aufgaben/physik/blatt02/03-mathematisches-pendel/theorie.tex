@@ -1,0 +1,50 @@
+% titel: Blatt 2, A3: Das mathematische Pendel
+% skript: Kap. Schwingungen, mathematisches Pendel
+
+% Bewegungsgleichung und Schwingungsdauer des Fadenpendels.
+
+Das mathematische (Faden-)Pendel schwingt fuer kleine Auslenkungen
+harmonisch; die Schwingungsdauer haengt nur von Laenge und Ortsfaktor ab,
+nicht von der Masse.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Ruecktreibende Kraft.} Fuer eine um $\varphi$ ausgelenkte
+Punktmasse am Faden der Laenge $\ell$ wirkt die Tangentialkomponente der
+Gewichtskraft; Newton in Tangentialrichtung ($s=\ell\varphi$):
+\begin{equation}
+  m\ell\ddot\varphi=-mg\sin\varphi
+  \;\Rightarrow\;\;
+  \ddot\varphi+\frac{g}{\ell}\sin\varphi=0\;.
+\end{equation}
+
+\textbf{Kleine Auslenkungen} $\sin\varphi\approx\varphi$:
+\begin{equation}
+  \ddot\varphi+\frac{g}{\ell}\,\varphi=0,
+  \qquad\omega=\sqrt{\frac{g}{\ell}},
+  \qquad T=2\pi\sqrt{\frac{\ell}{g}}\;.
+\end{equation}
+
+\textbf{Ansatz} $e^{i\omega t}$ (oder $\cos$, $\sin$): einsetzen ergibt
+eine Bedingung fuer $\omega$. Damit laesst sich aus gemessener Periode die
+Fadenlaenge $\ell$ zurueckrechnen.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Zuerst die Bewegungsgleichung in Winkelkoordination aufstellen.
+  \item Die Naherung $\sin\varphi\approx\varphi$ anwenden und $\omega$
+        ablesen.
+  \item Aus $T$ die Laenge $\ell=g\,T^2/(4\pi^2)$ bestimmen; zur
+        Deckenhoehe addiert sich der Abstand der Lampe ueber dem Boden.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item $T$ aus mehreren Perioden durch Division bekommen; die angegebene
+        Zeit ist die fuer 5 Schwingungsperioden.
+  \item $\omega$ ist die \emph{Kreisfrequenz} ($\omega=2\pi/T$), nicht $f$.
+  \item Die Deckenhoehe ist $\ell$ \emph{plus} die H\"ohe der Lampe ueber dem
+        Boden, nicht nur $\ell$.
+\end{itemize}
+\end{achtung}

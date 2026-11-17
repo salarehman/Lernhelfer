@@ -1,0 +1,55 @@
+% Teil II: durchgerechneter Weg, Teile a--b.
+
+\subsection*{Gegeben und gesucht}
+$a)$ Zwei Geschosse gleicher kinetischer Energie, eines mit doppelter
+Masse. $b)$ Koerper $m=\qty{3}{kg}$ aus der Ruhe gleichmaessig
+beschleunigt, nach $\qty{6}{s}$ Geschwindigkeit $\qty{30}{m/s}$.
+Gesucht: $a)$ welches schneller (Faktor) und welches mehr Arbeit;
+$b)$ Momentanleistung nach $\qty{3}{s}$.
+
+\subsection*{Ansatz}
+$a)$ $E_{\mathrm{kin}}=\tfrac12mv^2$ gleichsetzen. $b)$ $a$ aus
+$v=at$, dann $P(3\,\mathrm s)=m a v(3\,\mathrm s)$.
+
+\subsection*{Rechnung}
+\textbf{a) Geschwindigkeiten.} Sei Masse $m$ (Geschoss $v_1$) und Masse
+$2m$ (Geschoss $v_2$); gleiche Energie:
+\begin{equation}
+  \tfrac12 m v_1^2=\tfrac12 (2m)v_2^2\;\Rightarrow\;
+  v_1^2=2v_2^2\;\Rightarrow\;
+  \boxed{\;v_1=\sqrt2\,v_2\;}.
+\end{equation}
+Das leichtere Geschoss ist um den Faktor $\sqrt2\approx1{,}41$ schneller.
+Da beide die \emph{gleiche} kinetische Energie und damit dieselbe
+Arbeitsfaehigkeit haben, können beide gleich viel Arbeit verrichten.
+
+\textbf{b) Momentanleistung.} Aus $v(t)=at$ mit $v(\qty{6}{s})=\qty{30}{m/s}$:
+\begin{equation}
+  a=\frac{v}{t_{\mathrm{end}}}=\frac{\qty{30}{m/s}}{\qty{6}{s}}=\qty{5}{m/s^2}.
+\end{equation}
+Nach $\qty{3}{s}$: $v_3=at_3=\qty{5}{m/s^2}\cdot\qty{3}{s}=\qty{15}{m/s}$. Damit
+\begin{equation}
+  P=m\,a\,v_3=\qty{3}{kg}\cdot\qty{5}{m/s^2}\cdot\qty{15}{m/s}=
+  \boxed{\;\qty{225}{W}\;}.
+\end{equation}
+
+\begin{ergebnis}
+$a)$ $v_1=\sqrt2\,v_2$ (das leichtere verdoppelt seine Geschwindigkeit um
+$\sqrt2$); gleiche kinetische Energie, also gleiche Arbeitsfaehigkeit.
+$b)$ $P(\qty{3}{s})=\qty{225}{W}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\mathrm{kg\cdot m/s^2\cdot m/s}=\mathrm{kg\cdot m^2/s^3}
+=\unit{\watt}$. \checkmark
+
+\textbf{Querprobe:} Bei $t=\qty{6}{s}$ ist $P=\qty{3}{kg}\cdot\qty{5}{m/s^2}\cdot
+\qty{30}{m/s}=\qty{450}{W}$, doppelt so hoch wie bei $\qty{3}{s}$ (weil $P\propto
+t$); laengere Beschleunigung gibt mehr Leistung. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+$E_{\mathrm{kin}}=\tfrac12mv^2$: die Geschwindigkeit zaehlt quadratisch.
+Momentanleistung $P=mav$; bei gleichmaessiger Beschleunigung aus der Ruhe
+waechst sie linear mit der Zeit.
+\end{merksatz}

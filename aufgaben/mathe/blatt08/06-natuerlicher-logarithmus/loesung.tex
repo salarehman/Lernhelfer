@@ -1,0 +1,48 @@
+% titel: Blatt 8, A6: Natürlicher Logarithmus
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$L\colon(0,\infty)\to\mathbb R$ differenzierbar mit
+$L(1)=0$, $L'(1)=1$ und $L(xy)=L(x)+L(y)$ für alle $x,y>0$. Zeige:
+$L=\ln$.
+
+\subsection*{Differentialgleichung aus der Funktionalgleichung}
+Differenziere $L(xy)=L(x)+L(y)$ nach $y$; dabei ist $x$ fest, links wendet
+man die Kettenregel an ($\frac d{dy}(xy)=x$):
+\begin{equation*}
+  L'(xy)\cdot x=L'(y).
+\end{equation*}
+Setze nun $y=1$:
+\begin{equation*}
+  x\,L'(x)=L'(1)=1\;\Longrightarrow\;
+  L'(x)=\frac1x\qquad\forall x>0 .
+\end{equation*}
+
+\subsection*{Integration}
+Eine Stammfunktion von $\frac1x$ ist $\ln x$, und $L(1)=0=\ln1$. Aus
+$L'=\ln'=\frac1x$ und $L(1)=\ln1=0$ folgt
+\begin{equation*}
+  L(x)=\ln x\qquad\forall x>0 .
+\end{equation*}
+
+\begin{ergebnis}
+$L(x)=\ln x$ für alle $x>0$. Der drei Eigenschaften genügen nur genau die
+Logarithmusfunktion.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Probe:} $\ln(xy)=\ln x+\ln y$, $\ln 1=0$, $\ln'1=\frac11=1$ -- die
+drei axiomatischen Eigenschaften sind für $\ln$ erfüllt, und die Herleitung
+zeigt, dass es keine anderen Funktionen gibt. $\ln'(x)=\frac1x$ ist die
+einzige Lösung mit $\ln 1=0$.
+
+\textbf{Grenzfall:} Ohne $L'(1)=1$ wäre jede Konstante $c$ möglich und
+$L(x)=c\ln x$; die Bedingung $L'(1)=1$ legt $c=1$ fest.
+\end{kontrolle}
+
+\begin{merksatz}
+Die Additionseigenschaft $L(xy)=L(x)+L(y)$ ist die definierende Identität
+des Logarithmus. Ableiten nach $y$ gibt $xL'(xy)=L'(y)$; mit $y=1$
+entsteht $L'(x)=1/x$; mit $L(1)=0$ folgt $L(x)=\ln x$. Die Bedingung
+$L'(1)=1$ fixiert die Normierung.
+\end{merksatz}

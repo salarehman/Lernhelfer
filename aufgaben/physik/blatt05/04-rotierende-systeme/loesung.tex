@@ -1,0 +1,79 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Zimmervdurchmesser $d=\qty{10}{m}$ (Radius $r=\qty{5}{m}$), eine
+Umdrehung pro Sekunde $\Rightarrow \Omega=2\pi\cdot 1\;\si{s^{-1}}\approx
+\qty{6.28}{rad/s}$, Kugelgeschwindigkeit $v_0=\qty{500}{m/s}$.
+Gesucht: (a) Verfehlung beim ersten und zweiten Schuss (inertial und
+rotierend); (b) Beschleunigung in Einheiten von $g$, wenn Bond
+\qty{1}{m} vom Zentrum entfernt ist; (c) Diskussion.
+
+\subsection*{Rechnung}
+\textbf{Erster Schuss.} Bond in der Mitte, Coriolis an der Wand; Distanz
+$r=\qty{5}{m}$.
+\begin{equation}
+  t_1 = \frac{5}{500}\;\si{s} = \qty{0.010}{s}.
+\end{equation}
+\emph{Inertial:} Zielpunkt rotiert tangential, $\Delta d_1 = r\,\Omega t_1
+= 5\cdot 6.28\cdot 0.01=\qty{0.314}{m}$.
+\emph{Rotierend:} $a_C=2\Omega v_0=2\cdot6.28\cdot500=\qty{6283}{m/s^2}$, also
+$\Delta d_1=\tfrac12 a_C t_1^2 = \tfrac12\cdot6283\cdot(0.01)^2
+=\qty{0.314}{m}$. Beide Methoden stimmen überein.
+
+\textbf{Zweiter Schuss.} Bond steht nun an der Wand (Radius $\qty{5}{m}$),
+Coriolis gegenüber an der anderen Wand; Distanz $=d=\qty{10}{m}$:
+\begin{equation}
+  t_2 = \frac{10}{500}\;\si{s} = \qty{0.020}{s}.
+\end{equation}
+\emph{Inertial:} Für den Flug über die volle Sehne (Durchmesser) rotiert der
+Zielpunkt während $t_2$; die Ablenkung quer ist dieselbe Skalenlogik wie oben,
+aber über die Sehne. Rotierend, exakt:
+\begin{equation}
+  \Delta d_2
+  = \tfrac12\,a_C\,t_2^2
+  = \tfrac12\cdot 6283\cdot (0.02)^2\;\si{m}
+  = \qty{1.26}{m}.
+\end{equation}
+Im Inertialsystem entspricht dies der tangentialen Verschiebung des
+Zielpunkts während $t_2$ (quer zur Sehnenrichtung, $\approx r\Omega t_2$);
+die Rechnung über die Coriolisbeschleunigung (rotierendes System) liefert
+dasselbe $\qty{1.26}{m}$.
+
+\textbf{b) Beschleunigung} in $\qty{1}{m}$ Abstand vom Zentrum (die
+Zentrifugalbeschleunigung dominiert, da Bond dort fast ohne Radialgeschwindigkeit
+steht):
+\begin{equation}
+  a = \Omega^2\, r = (2\pi)^2\cdot 1\;\si{m/s^2}
+  \approx \qty{39.5}{m/s^2}
+  \approx \qty{4.0}{g}.
+\end{equation}
+
+\textbf{c) Diskussion.} Coriolis kann $\omega$ so wählen, dass die
+Querablenkung $\Delta d$ gerade der (von der Geometrie abhängigen) Projektion
+des Zielpunkts entspricht; dann würde die Kugel Bond auf seiner eigenen Linie
+treffen. Wegen der oberen Grenze der Geometrie (Wandradius, Flugstrecke) ist
+das aber meist nur für eine bestimmte $\omega$-Wahl der Fall.
+
+\begin{ergebnis}
+(a) Erster Schuss: Verfehlung $\qty{0.31}{m}$; zweiter Schuss: Verfehlung
+$\qty{1.26}{m}$ (jeweils konsistent in Inertial- und mitrotierendem System).
+(b) $\qty{39.5}{m/s^2}\approx\qty{4}{g}$.
+(c) Ja, prinzipiell bei geeignet gewählter Winkelgeschwindigkeit $\omega$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\Delta d$: gilt authentisch:
+$r\,\Omega t: m \cdot rad/s\cdot s = m$ (rad/s$=s^{-1}$); $\frac12 a_C t^2:
+m/s^2\cdot s^2=m$. \checkmark
+\textbf{Grössenordnung:} Die Coriolisbeschleunigung von $2\Omega v_0\approx
+6e3\,m/s^2$ klingt gross, aber bei $t\approx\qty{0.02}{s}$ ergeben sich nur
+$\approx\qty{1}{m}$ Abweichung - plausibel für eine schnelle Kugel in einem
+schnell rotierenden Raum.
+\end{kontrolle}
+
+\begin{merksatz}
+Dieselbe Physik lässt sich in zwei Systemen rechnen: im Inertialsystem
+(bewegtes Ziel, gerade Kugelbahn) und im rotierenden System (Corioliskraft auf
+die Kugel). Beide Ablenkungen müssen identisch sein; die Wahl ist dann eine
+Frage der Bequemlichkeit.
+\end{merksatz}

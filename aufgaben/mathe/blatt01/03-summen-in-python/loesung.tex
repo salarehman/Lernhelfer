@@ -1,0 +1,56 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) Programm so ändern, dass $0+1+\dots+29$ summiert wird; (b) Programm
+für $n=1,2,3,4,\dots$ auswerten und das Muster beschreiben; (c)
+$\sum_{k=0}^{n}k=n(n+1)/2$ für alle $n\ge1$ beweisen.
+
+\subsection*{a) Programmänderung}
+\emph{Vorher:} \texttt{sum(range(21))} (summiert $0,\dots,20$).
+Für $0,\dots,29$:
+\begin{verbatim}
+sum(range(30))
+\end{verbatim}
+
+\subsection*{b) Auswertung von \texttt{sum(range(n+1))-n*(n+1)/2}}
+\begin{center}
+\begin{tabular}{c|c|c|c}
+$n$ & \texttt{sum(range(n+1))} & $n(n+1)/2$ & Differenz\\
+\hline
+1 & 1 & 1 & 0\\
+2 & 3 & 3 & 0\\
+3 & 6 & 6 & 0\\
+4 & 10 & 10 & 0
+\end{tabular}
+\end{center}
+Das Ergebnis ist für jedes $n$ \emph{stets $0$}, denn beide Terme stimmen
+überein.
+
+\subsection*{c) Beweis per vollständiger Induktion}
+\emph{Induktionsanfang} ($n=1$): $\sum_{k=0}^{1}k=0+1=1=\frac{1\cdot2}2$. \\
+\emph{Induktionsschritt} ($n\to n+1$), mit der Voraussetzung
+$\sum_{k=0}^{n}k=\frac{n(n+1)}2$:
+\begin{align}
+  \sum_{k=0}^{n+1}k &=\sum_{k=0}^{n}k+(n+1)
+  =\frac{n(n+1)}2+(n+1) \\
+  &=\frac{n(n+1)+2(n+1)}2=\frac{(n+1)(n+2)}2 .
+\end{align}
+Das ist die Behauptung für $n+1$. Aus IA und IS hält die Formel für alle
+$n\ge1$.
+
+\begin{ergebnis}
+\begin{equation*}
+  \sum_{k=0}^{n}k=\frac{n(n+1)}2 \quad\text{für alle } n\ge1 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+Für $n=4$: $0+1+2+3+4=10=\frac{4\cdot5}2$; für $n=5$: $15=\frac{5\cdot6}2$.
+Passt. Damit liefert das Python-Programm identisch $0$.
+\end{kontrolle}
+
+\begin{merksatz}
+``Bis $n$'' heißt \texttt{range(n+1)}; die Gauß-Formel beweist man, indem
+man im Induktionsschritt den letzten Summanden $(n+1)$ abspaltet und auf
+den gemeinsamen Nenner bringt.
+\end{merksatz}

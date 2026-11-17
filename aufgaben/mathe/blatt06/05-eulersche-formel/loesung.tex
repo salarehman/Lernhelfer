@@ -1,0 +1,62 @@
+% titel: Blatt 6, A5: Eulersche Formel
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Mit $e^{it}=\cos t+i\sin t$ zeigen: (i) $|e^{it}|=1$, (ii) $e^{-it}$ ist das
+Spiegelbild von $e^{it}$ an der $x$-Achse, (iii) $(e^{it})^n=e^{int}$
+(Induktion). Danach aus $n=2$ die Doppelwinkelformeln folgern.
+
+\subsection*{a) Eigenschaften}
+\begin{itemize}
+  \item[(i)] $|e^{it}|^2=e^{it}\overline{e^{it}}=e^{it}e^{-it}=e^{0}=1$,
+        also $|e^{it}|=1$.
+  \item[(ii)] $\overline{e^{it}}=\cos t-i\sin t$ und zugleich
+        $\cos t-i\sin t=e^{-it}$, also ist $e^{-it}$ das
+        Spiegelbild (komplex Konjugiertes) von $e^{it}$ an der reellen
+        Achse.
+  \item[(iii)] Induktion über $n$. Induktionsanfang $n=1$ trivial.
+        Induktionsschritt $n\to n+1$:
+        \begin{equation*}
+          (e^{it})^{n+1}=(e^{it})^n\,e^{it}=e^{int}\,e^{it}
+          =e^{int+it}=e^{i(n+1)t}.
+        \end{equation*}
+        Damit gilt $(e^{it})^n=e^{int}$ für alle $n\in\mathbb N$
+        (die Rechenregel $e^{a}e^{b}=e^{a+b}$ ist nach Satz 3.1.4 gegeben).
+\end{itemize}
+
+\subsection*{b) Doppelwinkelformeln aus $n=2$}
+Mit $n=2$: $(e^{it})^2=e^{i2t}$. Linke Seite ausmultiplizieren,
+rechte Seite in $\cos$/$\sin$:
+\begin{align*}
+  (\cos t+i\sin t)^2&=\cos^2t+2i\sin t\cos t-\sin^2t
+  =\cos^2t-\sin^2t+2i\sin t\cos t,\\
+  e^{i2t}&=\cos 2t+i\sin 2t.
+\end{align*}
+Gleichsetzen von Real- und Imaginärteil:
+\begin{equation*}
+  \boxed{\cos 2t=\cos^2t-\sin^2t},\qquad
+  \boxed{\sin 2t=2\sin t\cos t}.
+\end{equation*}
+
+\begin{ergebnis}
+\begin{equation*}
+  |e^{it}|=1,\quad \overline{e^{it}}=e^{-it},\quad
+  (e^{it})^n=e^{int},\quad
+  \cos2t=\cos^2t-\sin^2t,\quad \sin2t=2\sin t\cos t.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Beispieldaten:} $t=\frac\pi4$:
+$\sin\frac\pi2=1$, rechts $2\sin\frac\pi4\cos\frac\pi4
+=2\frac{\sqrt2}{2}\frac{\sqrt2}{2}=1$ -- passt. \\
+$\cos\pi=-1$, rechts
+$\cos^2\frac\pi2-\sin^2\frac\pi2=0-1=-1$ -- passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Die Eulersche Formel beantwortet Potenz- und Winkelprobleme in einem Zug:
+$e^{it}$ hat Betrag $1$; Konjugation spiegelt an der reellen Achse;
+$(e^{it})^n=e^{int}$. Aus dem Vergleich von Real- und Imaginärteil eines
+Quadrats erhält man die Doppelwinkelformeln.
+\end{merksatz}

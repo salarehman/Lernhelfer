@@ -1,0 +1,35 @@
+% titel: Blatt 3, A5: Näherung der Reihe 1/k² mit Python
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Die Euler-Reihe $1/k^2$ mit Python annähern und den kleinsten Abschneidepunkt
+$N$ finden, bei dem die Differenz zu $\pi^2/6$ erstmals unter $0.001$ liegt.
+
+\begin{werkzeugkasten}[Python: math und Summe]
+\begin{itemize}
+  \item \texttt{math.pi} ist die Konstante $\pi$, \texttt{math} muss
+        zuerst importiert werden.
+  \item \texttt{range(1,101)} liefert $1,2,\dots,100$; die Teilsumme bis
+        $N$: \texttt{sum([1/k**2 for k in range(1, N+1)])}.
+  \item Differenz: \texttt{math.pi**2/6 - Teilsumme}.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Euler-Reihe]
+\begin{equation}
+  \sum_{k=1}^{\infty}\frac1{k^2}=\frac{\pi^2}6 .
+\end{equation}
+Die Reihe konvergiert mit $1/k^2$; das Restglied ist durch das erste
+weggelassene Glied grob abgeschätzt. Man erhöht $N$ so lange, bis die
+Differenz kleiner als $0.001$ wird.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item \texttt{range(1,N+1)} -- \texttt{range} endet nicht am oberen Wert.
+  \item \texttt{k**2} statt \verb|k^2| (in Python ist \verb|^| kein
+        Potenz-Operator).
+  \item ``Erstmals unter $0.001$'' heißt bei aufsteigendem $N$ das kleinste
+        $N$ mit Differenz $<0.001$; per Schleife ab $N=1$ prüfen.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,68 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) $n!>2^{n-1}$ für $n>2$; (b) $\sum_{n=2}^{\infty}1/n!<1$; (c) $2<e<3$;
+(d) Python-Code für $s_n=\sum_{k=0}^{n}1/k!$ ($n=0,\dots,20$) und $e$ auf
+12 Nachkommastellen.
+
+\subsection*{a) $n!>2^{n-1}$ für $n>2$}
+Induktion. IA ($n=3$): $3!=6>4=2^{2}$. IS: Ist $n!>2^{n-1}$, so
+\begin{equation}
+  (n+1)!=(n+1)\,n!>(n+1)\,2^{n-1}>2\cdot2^{n-1}=2^{n}.
+\end{equation}
+Für $n+1\ge4$ ist $n+1>2$. Damit gilt die Ungleichung für alle $n>2$.
+
+\subsection*{b) $\sum_{n=2}^{\infty}1/n!<1$}
+\begin{align}
+  \sum_{n=2}^{\infty}\frac1{n!}
+  &=\frac1{2!}+\sum_{n=3}^{\infty}\frac1{n!}
+  <\frac12+\sum_{n=3}^{\infty}\frac1{2^{n-1}} \\
+  &=\frac12+\Bigl(\frac14+\frac18+\cdots\Bigr)
+  =\frac12+\frac12=1 .
+\end{align}
+Wegen der strikten Ungleichung für alle $n\ge3$ ist die Summe strikt $<1$.
+
+\subsection*{c) $2<e<3$}
+Untere Schranke:
+\begin{equation}
+  e=1+1+\frac1{2!}+\frac1{3!}+\dots>1+1=2 .
+\end{equation}
+Obere Schranke: für $n\ge3$ ist $1/n!<1/2^{n-1}$ (aus a)), also
+\begin{equation}
+  e=2+\sum_{n=2}^{\infty}\frac1{n!}<2+1=3 .
+\end{equation}
+
+\subsection*{d) Python}
+\begin{verbatim}
+import math
+for n in range(21):
+    sn = sum([1/math.factorial(k) for k in range(n+1)])
+    print(n, sn)
+print(round(sum([1/math.factorial(k) for k in range(21)]), 12))
+\end{verbatim}
+Ausgabe (letzte Zeile): $e\approx2.\!718281828459$, also auf 12
+Nachkommastellen
+\begin{equation}
+  e\approx2.\!718281828459 .
+\end{equation}
+
+\begin{ergebnis}
+\begin{equation*}
+  n!>2^{n-1}\ (n>2),\qquad
+  \sum_{n=2}^{\infty}\frac1{n!}<1,\qquad
+  2<e<3,\qquad
+  e\approx2.\!718281828459 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+b) Bricht man bei $n=5$ ab: $1/2+1/6+1/24=0.7083<1$; c) mit
+$m=\texttt{range(21)}$ liefert $s_{20}=2.\!718281828459$, was in der Mitte
+von $(2,3)$ liegt; a) direkt: $4!=24>8=2^3$, $5!=120>16$.
+\end{kontrolle}
+
+\begin{merksatz}
+$e$ ist eine absolut konvergente Reihe; die Abschätzung über
+$n!>2^{n-1}$ liefert Konvergenz $(<1)$ und die Schranken $2<e<3$; in
+Python zählt `math.factorial` die Reihe.
+\end{merksatz}

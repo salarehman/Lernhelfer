@@ -1,0 +1,83 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: $a=\qty{5}{cm}$, $b=\qty{10}{cm}$, $c=\qty{10}{cm}$, $r=\qty{10}{mm}=\qty{0.010}{m}$,
+$m_Q=\qty{10}{kg}$, $|F_\mathrm{Zug}|=\qty{10}{N}$, Start $t=0$ in Ruhe,
+$t=\qty{5}{s}$.
+Gesucht: (a) $I_Q=\frac{m_Q}{12}(a^2+b^2)$; (b) Bewegungsgleichung und
+Drehfrequenz nach $5$\,s; (c) abgewickelte Fadenlänge.
+
+\subsection*{Rechnung}
+\textbf{a) Trägheitsmoment.} Dichte $\rho=m_Q/(abc)$. Um die Achse längs $c$
+(durch den Schwerpunkt):
+\begin{equation}
+  I_Q = \rho\int_{-c/2}^{c/2}\!\!\!\int_{-b/2}^{b/2}\!\int_{-a/2}^{a/2}
+        (x^2+y^2)\;\mathrm dx\,\mathrm dy\,\mathrm dz.
+\end{equation}
+Die $z$-Integration liefert den Faktor $c$ und hebt sich gegen $\rho=m_Q/(abc)$;
+der Rest ist $\int_{-a/2}^{a/2}x^2\mathrm dx\,\cdot b + \int_{-b/2}^{b/2}y^2\mathrm dy\,\cdot a
+=\frac{a^3}{12}b+\frac{b^3}{12}a$. Zusammen mit $\rho\,c=\frac{m_Q}{ab}$:
+\begin{equation}
+  I_Q = \frac{m_Q}{ab}\left(\frac{a^3\,b}{12}+\frac{b^3\,a}{12}\right)
+  = \frac{m_Q}{12}(a^2+b^2). \qquad\checkmark
+\end{equation}
+
+\textbf{b) Bewegungsgleichung (Drehimpulssatz).} Die Schnur wirkt mit der Kraft
+$F_\mathrm{Zug}$ tangential am Radius $r$:
+\begin{equation}
+  I_Q\,\alpha = M = F_\mathrm{Zug}\,r
+  \;\Rightarrow\;
+  \alpha = \frac{F r}{I_Q}.
+\end{equation}
+Mit $I_Q=\frac{10}{12}(0.05^2+0.10^2)=\qty{0.01042}{kg\,m^2}$:
+\begin{equation}
+  \alpha = \frac{10\cdot 0.010}{0.01042}\ \si{rad/s^2}
+  = \qty{9.6}{rad/s^2}.
+\end{equation}
+Bei konstantem $\alpha$ und $\omega(0)=0$:
+\begin{equation}
+  \omega = \alpha\,t = 9.6\cdot 5\;\si{rad/s} = \qty{48}{rad/s},
+\end{equation}
+\begin{equation}
+  \nu = \frac{\omega}{2\pi} = \frac{48}{2\pi}\;\si{s^{-1}}
+  \approx \qty{7.64}{Hz}. 
+\end{equation}
+
+\textbf{c) Fadenlänge.} Über die Rotationsenergie: die von der Kraft
+geleistete Arbeit $W=F s$ wird zu $E_\mathrm{rot}$:
+\begin{equation}
+  \frac12 I_Q \omega^2 = F\,s
+  \;\Rightarrow\;
+  s = \frac{\frac12 I_Q\omega^2}{F}
+  = \frac{\frac12\cdot 0.01042\cdot 48^2}{10}\ \si{m}
+  = \qty{1.2}{m}.
+\end{equation}
+(Alternativ: $\Delta\varphi=\frac12\alpha t^2=\frac12\cdot9.6\cdot25=\qty{120}{rad}$,
+$s=r\Delta\varphi=0.010\cdot120=\qty{1.2}{m}$. \checkmark)
+
+\begin{ergebnis}
+(a) $I_Q=\dfrac{m_Q}{12}(a^2+b^2)=\qty{10.4e-3}{kg\,m^2}$.
+(b) $\alpha=F r/I_Q=\qty{9.6}{rad/s^2}$, $\omega=\qty{48}{rad/s}$,
+$\nu\approx\qty{7.6}{Hz}$.
+(c) $s=\dfrac{I_Q\omega^2}{2F}=\qty{1.2}{m}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $I_Q$: $kg\cdot m^2$; $\alpha=F r/I$:
+$\frac{N\cdot m}{kg\,m^2}\,\frac{kgs^2}{}=rad/s^2$ \checkmark zu rad/s$^2$.
+$s$: $\frac{kg\,m^2/s^2}{N}=\frac{kg\,m^2/s^2}{kg\,m/s^2}=m$. \checkmark
+
+\textbf{Grenzfall:} $a,b\to 0$ (Stab längs $c$): $I_Q\to0$ - plausibel. Das
+Ergebnis $s=r\varphi$ mit abgewickeltem Winkel ist dimensionsgetreu die
+Seillänge der aufgewickelten Schnur.
+
+\textbf{Konsistenz:} Energieweg vs.\ Kinematik liefert identisches
+$s=\qty{1.2}{m}$.
+\end{kontrolle}
+
+\begin{merksatz}
+Das Trägheitsmoment homogener Körper erhält man aus $I=\int\rho r_\perp^2 dV$
+(vorziehen: Achse durch den Schwerpunkt). Beim angetriebenen Rotator gilt
+der Drehimpulssatz $I\alpha=F r$; die Fadenlänge folgt direkt aus der
+Arbeit-Energie $Fs=\frac12 I\omega^2$.
+\end{merksatz}

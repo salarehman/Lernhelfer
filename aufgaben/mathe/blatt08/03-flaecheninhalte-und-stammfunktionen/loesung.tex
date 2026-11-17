@@ -1,0 +1,72 @@
+% titel: Blatt 8, A3: Flächeninhalte und Stammfunktionen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+a) Stammfunktionen zu $\frac1x$, $2\sin x\cos x$, $\frac{2x}{\cos^2(x^2)}$.
+b) Fläche zwischen $f(x)=\sin x$ und $g(x)=-x(x-\pi)(x-2\pi)$ auf
+$[0,2\pi]$. c) Fläche zwischen $x\mathrm e^{-x^2/2}$ und der $x$-Achse auf
+$[-b,b]$ sowie deren Grenzwert $b\to\infty$.
+
+\subsection*{a) Stammfunktionen}
+\begin{align*}
+  \int \frac1x\,dx&=\ln|x|+\mathbb C,\\
+  \int 2\sin x\cos x\,dx&=\int\sin(2x)\,dx=-\frac{\cos(2x)}{2}+\mathbb C,\\
+  \int \frac{2x}{\cos^2(x^2)}\,dx&=\tan(x^2)+\mathbb C .
+\end{align*}
+
+\subsection*{b) Fläche zwischen $\sin x$ und dem Polynom}
+Es ist $f(x)-g(x)=\sin x+x(x-\pi)(x-2\pi)$. Aufgabe: Fläche
+$\int_0^{2\pi}|f-g|\,dx$. Skizze zeigt $f-g>0$ auf $(0,\pi)$ und
+$f-g<0$ auf $(\pi,2\pi)$ (an $\pi$ Berührung). Also
+\begin{align*}
+  A&=\int_0^{\pi}\bigl(f(x)-g(x)\bigr)\,dx
+    +\int_{\pi}^{2\pi}\bigl(g(x)-f(x)\bigr)\,dx .
+\end{align*}
+Zuerst $\int_0^\pi f\,dx=\int_0^\pi\sin x\,dx=[-\cos x]_0^\pi=2$. Für das
+Polynom $g$ (überlege $g(x)=-x(x-\pi)(x-2\pi)$) ist wegen der
+Punktsymmetrie um $\pi$: $\int_{\pi}^{2\pi}g\,dx=\int_{0}^{\pi}g\,dx$ (beide
+liefern dasselbe). Aus der Antisymmetrie insgesamt
+\begin{equation*}
+  A=4+\frac{\pi^4}{2}.
+\end{equation*}
+Zum Nachrechnen: Die Differenz $\sin x - g(x)$ integriert über $[0,\pi]$
+gibt $2+\pi^4/4$; verdoppelt (beide Hälften gleich) ergibt dies
+$4+\pi^4/2\approx52{,}70$.
+
+\subsection*{c) Fläche unter $x\mathrm e^{-x^2/2}$}
+$f(x)=x\mathrm e^{-x^2/2}$ ist ungerade, $|f|$ spiegelsymmetrisch, folglich
+\begin{equation*}
+  A_b=\int_{-b}^{b}|f(x)|\,dx=2\int_0^{b}x\mathrm e^{-x^2/2}\,dx
+  =2\Bigl[-\mathrm e^{-x^2/2}\Bigr]_0^{b}
+  =2\bigl(1-\mathrm e^{-b^2/2}\bigr).
+\end{equation*}
+Grenzwert:
+\begin{equation*}
+  \lim_{b\to\infty} A_b=2\lim_{b\to\infty}\bigl(1-\mathrm e^{-b^2/2}\bigr)=2.
+\end{equation*}
+
+\begin{ergebnis}
+\begin{gather*}
+  \int\frac1x\,dx=\ln|x|,\ \int2\sin x\cos x\,dx=-\frac{\cos2x}{2},\
+  \int\frac{2x}{\cos^2(x^2)}\,dx=\tan(x^2),\\
+  A\text{(zw.}\sin\text{ und Polynom)}=\frac{\pi^4}{2}+4,\qquad
+  A_b=2(1-\mathrm e^{-b^2/2})\ \underset{b\to\infty}{\longrightarrow}\ 2 .
+\end{gather*}
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Numerisch b):} $\pi^4/2+4\approx48{,}70+4=52{,}70$. Die direkte
+Integration (siehe Daten) liefert $52{,}7045$ -- stimmt.
+\textbf{Probe c):} für $b=3$ ist $A_b=2(1-\mathrm e^{-4{,}5})=1{,}9778$,
+für $b=10$ praktisch $2$; der Grenzwert $2$ ist plausibel.
+
+\textbf{Grenzfall c):} das Integral von $x e^{-x^2/2}$ über ganz
+$\mathbb R$ ist $2$ (konvergent), da der Integrand exponentiell fällt.
+\end{kontrolle}
+
+\begin{merksatz}
+Stammfunktionen über Grundintegrale + Kettenregel rückwärts. Flächen
+zwischen Kurven: $\int|f-g|$, Vorzeichen-Abschnitte getrennt. Für
+$1/x$ immer $\ln|x|$. Ungerade Integranden: $|f|$ spiegelsymmetrisch,
+Fläche = $2\cdot$(rechte Hälfte).
+\end{merksatz}

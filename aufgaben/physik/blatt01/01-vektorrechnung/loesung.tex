@@ -1,0 +1,75 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+$\vec a=(1,3,-4)$, $\vec b=(3,5,-1)$. Gesucht: (a) Betraege und $\vec a+\vec b$,
+(b) Skalarprodukt und Winkel, (c) Kreuzprodukt $\vec c$, (d) Nachweis
+$\vec c\perp\vec a,\vec c\perp\vec b$ und geometrische Bedeutung von $|\vec c|$.
+
+\subsection*{Ansatz}
+Betraege und Summe komponentenweise; der Winkel folgt aus dem
+Skalarprodukt, das Kreuzprodukt aus der Determinantenformel;
+Senkrechtheit prueft man mit zwei Zeilen-Skalarprodukten.
+
+\subsection*{Rechnung}
+\textbf{a) Betraege und Summe.}
+\begin{equation}
+  |\vec a|=\sqrt{1+9+16}=\sqrt{26}\approx5{,}10,\qquad
+  |\vec b|=\sqrt{9+25+1}=\sqrt{35}\approx5{,}92,
+\end{equation}
+\begin{equation}
+  \vec a+\vec b=(4,8,-5)\;.
+\end{equation}
+
+\textbf{b) Skalarprodukt und Winkel.}
+\begin{equation}
+  \vec a\cdot\vec b=1\cdot3+3\cdot5+(-4)(-1)=3+15+4=22\;,
+\end{equation}
+\begin{equation}
+  \cos\theta=\frac{22}{\sqrt{26}\,\sqrt{35}}
+  \approx0{,}7293
+  \;\Rightarrow\;
+  \boxed{\;\theta\approx\qty{43{,}2}{\degree}\;}.
+\end{equation}
+
+\textbf{c) Kreuzprodukt.}
+\begin{equation}
+  \vec c=\vec a\times\vec b
+  =\begin{pmatrix}
+      3\cdot(-1)-(-4)\cdot5\\ (-4)\cdot3-1\cdot(-1)\\ 1\cdot5-3\cdot3
+   \end{pmatrix}
+  =\begin{pmatrix}17\\ -11\\ -4\end{pmatrix}\;.
+\end{equation}
+
+\textbf{d) Senkrechtheit und Bedeutung.}
+\begin{align}
+  \vec c\cdot\vec a &= 17\cdot1+(-11)\cdot3+(-4)(-4)=17-33+16=0\;,\\
+  \vec c\cdot\vec b &= 17\cdot3+(-11)\cdot5+(-4)(-1)=51-55+4=0\;.
+\end{align}
+Da beide Skalarprodukte verschwinden, steht $\vec c$ senkrecht auf beiden
+Vektoren.
+\begin{equation}
+  |\vec c|=\sqrt{17^2+(-11)^2+(-4)^2}=\sqrt{426}\approx\qty{20{,}6}{}\;.
+\end{equation}
+
+\begin{ergebnis}
+$|\vec a|=\sqrt{26}\approx5{,}10$, $|\vec b|=\sqrt{35}\approx5{,}92$,
+$\vec a+\vec b=(4,8,-5)$; Winkel $\theta\approx\qty{43{,}2}{\degree}$;
+$\vec c=(17,-11,-4)$, $|\vec c|\approx20{,}6$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} geometrische Groessen; Vektorkomponenten und Betraege
+haben dieselbe Laengeneinheit wie eingegeben. \checkmark
+
+\textbf{Querprobe:} $|\vec c|=|\vec a|\,|\vec b|\,\sin\theta$
+$=\sqrt{26}\sqrt{35}\sin(43{,}2^\circ)\approx\sqrt{910}\cdot0{,}684\approx20{,}6$. \checkmark
+
+\textbf{Geometrie:} $|\vec c|$ ist der Flaecheninhalt des von $\vec a$ und
+$\vec b$ aufgespannten Parallelogramms.
+\end{kontrolle}
+
+\begin{merksatz}
+Das Kreuzprodukt liefert einen Vektor senkrecht auf beiden Faktoren und
+seinen Betrag die Parallelogrammflaeche; das Skalarprodukt vermittelt den
+Winkel zwischen zwei Vektoren.
+\end{merksatz}

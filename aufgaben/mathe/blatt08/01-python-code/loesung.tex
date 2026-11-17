@@ -1,0 +1,56 @@
+% titel: Blatt 8, A1: Python-Code
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Den Python-Summenausdruck als mathematische Formel schreiben (a) und die
+Newton-Schleife erklären (b).
+
+\subsection*{a) Summenformel}
+\begin{verbatim}
+sum([1/(k**p) for k in range(1, n+1)])
+\end{verbatim}
+läuft über $k=1,2,\dots,n$ und summiert $1/k^p$, also (reelle) Summe
+\begin{equation*}
+  S_n(p)=\sum_{k=1}^{n}\frac{1}{k^p}.
+\end{equation*}
+Für $p=1$ wächst $S_n(1)\to\infty$ (harmonische Reihe), für $p>1$
+konvergiert $S_n(p)\to\zeta(p)$ (Zeta-Funktion).
+
+\subsection*{b) Newton-Schleife}
+\begin{verbatim}
+x = 3
+for n in range(11):
+    print(x)
+    x = x - (x**3 - 3) / (3*x**2)
+\end{verbatim}
+Der Code sucht eine Nullstelle von $f(x)=x^3-3$ (also die Kubikwurzel
+$\sqrt[3]{3}$). Mit $f'(x)=3x^2$ lautet der Newton-Schritt
+\begin{equation*}
+  x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}
+  =x_k-\frac{x_k^3-3}{3x_k^2}.
+\end{equation*}
+Gestartet bei $x_0=3$ werden $11$ Iterationen durchlaufen; jede Zeile
+\texttt{print(x)} gibt den aktuellen Wert aus. Die Folge konvergiert
+quadratisch gegen den Fixpunkt $\sqrt[3]{3}\approx1{,}4422$.
+
+\begin{ergebnis}
+a) $\displaystyle\sum_{k=1}^{n}\frac{1}{k^p}$. \\
+b) Newton-Iteration
+$x_{k+1}=x_k-\frac{x_k^3-3}{3x_k^2}$ für $f(x)=x^3-3$, Start $x_0=3$,
+$11$ Schritte, Konvergenz gegen $\sqrt[3]{3}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Startwerte:} $x_0=3$; $x_1=3-\frac{27-3}{27}=3-0{,}8889=2{,}1111$;
+$x_2\approx1{,}6667$; rasch gegen $\sqrt[3]{3}=1{,}44225$. Die Werte folgen
+aus der Formel und stimmen mit der Ausgabe überein.
+
+\textbf{Probe:} $\sqrt[3]{3}^{\,3}\approx3{,}0000$ -- bestätigt.
+\end{kontrolle}
+
+\begin{merksatz}
+\texttt{sum([1/(k**p) for k in range(1,n+1)])} übersetzt zu
+$\sum_{k=1}^{n}1/k^p$. Die Schleife wendet zu $f(x)=x^3-3$ die
+Newton-Formel an; \texttt{print(x)} zeigt jeden Zwischenstand, die Folge
+kriecht gegen die gesuchte Kubikwurzel.
+\end{merksatz}

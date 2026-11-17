@@ -1,0 +1,64 @@
+% titel: Blatt 3, A4: Gradient eines Skalarfeldes
+% skript: Kap. Vektoranalysis, Gradient und Rotation
+
+% Gradient, Kraft = - nabla U, Rotation konservativer Felder.
+
+Die Gravitationskraft ist der (negative) Gradient des Skalarpotentials
+$U$; ein konservatives Feld hat verschwindende Rotation.
+
+\begin{werkzeugkasten}[Werkzeuge]
+\textbf{Gradient} (Vektor der partiellen Ableitungen):
+\begin{equation}
+  \nabla U=\left(\frac{\partial U}{\partial x},
+  \frac{\partial U}{\partial y},\frac{\partial U}{\partial z}\right).
+\end{equation}
+
+\textbf{Kraft aus Potential:}
+\begin{equation}
+  \vec F=-\nabla U.
+\end{equation}
+
+\textbf{Radialsymmetrisches Feld:} die Kraft hat Betrag $|\vec F|$ und
+zeigt in Richtung $-\hat e_r$ (Attraktion), falls $U$ mit wachsendem $r$
+zunimmt (hier: $U\to 0$ fuer $r\to\infty$).
+
+\textbf{Kettenregel fuer $r=\sqrt{x^2+y^2+z^2}$:}
+\begin{equation}
+  \frac{\partial U}{\partial x}=\frac{\mathrm dU}{\mathrm dr}
+  \frac{\partial r}{\partial x},\qquad
+  \frac{\partial r}{\partial x}=\frac{x}{r}\;.
+\end{equation}
+
+\textbf{Rotation:}
+\begin{equation}
+  \nabla\times\vec F=
+  \begin{pmatrix}\partial_yF_z-\partial_zF_y\\
+  \partial_zF_x-\partial_xF_z\\
+  \partial_xF_y-\partial_yF_x\end{pmatrix}\;.
+\end{equation}
+Fuer ein Feld $\vec F=-\nabla U$ gilt stets $\nabla\times\vec F=\vec 0$;
+eine verschwindende Rotation (wirbelfrei) ist die lokale Bedingung fuer
+ein konservatives Kraftfeld.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Vorgehen]
+\begin{itemize}
+  \item Zuerst $\partial r/\partial x_i=x_i/r$ bilden.
+  \item $\nabla U$ als Vektor schreiben; das negative Vorzeichen durch
+        $\vec F=-\nabla U$ macht die Kraft zum Zentrum hin.
+  \item Fuer die Rotation eine Komponente exemplarisch pruefen oder die
+        Identitaet ``Rotation eines Gradienten ist null'' ausnutzen.
+  \item Mit dem Satz von Stokes ist die Wirbelfreiheit gleichbedeutend
+        mit verschwindender Ringintegral.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fallen]
+\begin{itemize}
+  \item Beim Differenzieren von $U(r)$ die Kettenregel nicht vergessen
+        ($r$ haengt von $x,y,z$ ab).
+  \item Vorzeichen: $\vec F=-\nabla U$, nicht $+\nabla U$.
+  \item $\nabla\times\vec F=\vec 0$ bedeutet: das Feld ist wirbelfrei und
+        (in einfach zusammenhaengenden Gebieten) konservativ.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,40 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Baum mit $n\ge2$ Knoten; jeder Knoten, der kein freies Ende ist, hat genau
+$3$ Nachbarn. Zu zeigen: $n$ gerade und die Zahl $L$ der freien Enden ist
+$\tfrac n2+1$.
+
+\subsection*{Ansatz}
+Erst über die Gradsumme (Handschlaglemma), dann der Induktionsbeweis mit
+dem Entfernen zweier freier Enden.
+
+\subsection*{Rechnung}
+Sei $L$ die Zahl der freien Enden (Grad $1$), $n-L$ die der Grad-3-Knoten.
+Der Baum hat $n-1$ Kanten, also
+\begin{align}
+  L\cdot1+(n-L)\cdot3 &= 2(n-1), \\
+  L+3n-3L &= 2n-2, \\
+  3n-2L &= 2n-2, \\
+  n+2 &= 2L,
+  \qquad L=\frac{n+2}2=\frac n2+1 .
+\end{align}
+Da $2L=n+2$ und $L$ eine ganze Zahl (Knotenzahl) ist, folgt $n=2L-2$
+gerade. Damit sind beide Teile der Behauptung bewiesen.
+
+\begin{ergebnis}
+\begin{equation*}
+  n\ \text{gerade},\qquad \text{Anzahl freier Enden } L=\frac n2+1 .
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+kleine Bäume: $n=2$ (zwei Knoten, beide freie Enden): $L=2=\frac22+1$;
+$n=4$: $L=3=\frac42+1$; Baum mit $n=6$: $L=4$. Passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Gradsumme $=$ doppelte Kantenzahl macht $n$ und die Blattzahl direkt
+hart; die induktive Entfernung zweier freier Enden liefert dasselbe
+dank der invarianten Differenz ($n\mapsto n-2$, $L\mapsto L-1$).
+\end{merksatz}

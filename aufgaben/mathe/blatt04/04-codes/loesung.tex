@@ -1,0 +1,54 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) Verschiebecode $f(x)=(x+3)\bmod26$: MATHE verschlüsseln, Bijektivität
+zeigen, $f^{-1}$ angeben; (b) $g(x)=2x\bmod26$ vs. $h(x)=3x\bmod26$:
+welche ist bijektiv, bei der anderen zwei Kollisionen und einen ungetroffenen
+Wert finden.
+
+\subsection*{a) Verschlüsseln von MATHE}
+M$=12$, A$=0$, T$=19$, H$=7$, E$=4$; Sender addiert $3$,
+\begin{equation}
+  \begin{array}{c|ccccc}
+   &\mathrm M&\!\mathrm A&\!\mathrm T&\!\mathrm H&\!\mathrm E\\[-1pt]
+   x & 12&0&19&7&4\\
+   x+3\bmod26 & 15&\;3&22&10&7\\
+   \text{Buchstabe} & \mathrm P&\mathrm D&\mathrm W&\mathrm K&\mathrm H
+  \end{array}
+\end{equation}
+Also \textbf{MATHE} $\to$ \textbf{PDWKH}. Es ist eine Verschiebung, damit
+bijektiv (Permutation von $\mathbb Z_{26}$); das modulare Inverse
+$(+3)^{-1}=-3$:
+\begin{equation}
+  f^{-1}(y)=(y-3)\bmod26 .
+\end{equation}
+
+\subsection*{b) $g(x)=2x\bmod26$ und $h(x)=3x\bmod26$}
+$g$: $2x$ ist stets gerade, also sind alle ungeraden Reste
+($1,3,5,\dots,25$) nie erreichbar -- \emph{nicht surjektiv}, damit nicht
+bijektiv. Außerdem ist $g(0)=0$ und $g(13)=0$, also $0$ und $13$ zwei
+verschiedene Ursprünge mit demselben Code (nicht injektiv).
+
+$h$: $\mathrm{ggT}(3,26)=1$, daher liefert $3x\bmod26$ alle $26$ Reste --
+\emph{bijektiv}.
+
+\begin{ergebnis}
+\begin{equation*}
+  \text{a)}\ \text{MATHE}\to\text{PDWKH},\quad
+  f^{-1}(y)=(y-3)\bmod26,\qquad
+  \text{b)}\ h\ \text{bijektiv},\ g\ \text{nicht}.
+\end{equation*}
+\end{ergebnis}
+
+\begin{kontrolle}
+Entschlüsseln von PDWKH mit $(y-3)\bmod26$: $15\to12=\mathrm M$,
+$3\to0=\mathrm A$, $22\to19=\mathrm T$, $10\to7=\mathrm H$,
+$7\to4=\mathrm E$ -- MATHE zurück. Für $g$: $1$ wird
+nie getroffen; $0$ und $13$ beide $=0$. Passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Modulare Multiplikationen sind genau dann bijektiv, wenn der Faktor teilerfremd
+zur Modulzahl ist; Verschiebungen sind immer Permutationen mit der
+Umkehrung $-a$.
+\end{merksatz}

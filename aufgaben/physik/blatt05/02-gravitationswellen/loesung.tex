@@ -1,0 +1,116 @@
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Gegeben: Zwei Massen $m$, Abstand $r$, Winkelgeschwindigkeit $\omega$;
+$a)$ zeigen $r=(2Gm/\omega^2)^{1/3}$. $b)$ je $m=35\,M_\odot$, Signal-Frequenz
+aus Abbildung; $c)$ $E_\mathrm{pot}$; $d)$ $E_\mathrm{tot}$, Virialsatz;
+$e)$ Zeitverhalten von $\omega$; $f)$ $P(\omega)$ und Erklärung.
+
+\subsection*{Rechnung}
+\textbf{a) Kraftgleichgewicht.} Jede Masse läuft im Radius $r/2$ um den
+Schwerpunkt; die Gravitationskraft der jeweils anderen Masse (Abstand $r$)
+liefert die Zentripetalkraft:
+\begin{equation}
+  G\frac{m^2}{r^2} = m\,\omega^2\,\frac r2
+  \;\Rightarrow\;
+  r^3 = \frac{2Gm}{\omega^2}
+  \;\Rightarrow\;
+  r = \left(\frac{2Gm}{\omega^2}\right)^{1/3}\;.
+\end{equation}
+
+\textbf{b) Werte aus dem Signal.} Die Gravitationswellen-Frequenz ist doppelt
+so hoch wie die Umlauffrequenz; kurz vor dem Abbruch liest man aus der
+Abbildung nahezu $f_\mathrm{GW}\approx\qty{150}{Hz}$ ab, also
+$\omega = 2\pi\,\frac{150}{2} = \qty{471}{rad/s}$. Mit jeder Masse
+$m=35\,M_\odot=\qty{6.96e31}{kg}$:
+\begin{equation}
+  r = \left(\frac{2\cdot 6.674e-11\cdot 6.96e31}{471^2}\right)^{1/3}\ \si{m}
+  \approx \qty{3.47e5}{m} = \qty{347}{km}.
+\end{equation}
+Zwei homogene Kugeln, die sich gerade berühren, haben je Radius $r/2=\qty{174}{km}$;
+ihre Dichte
+\begin{equation}
+  \rho = \frac{m}{\frac43\pi (r/2)^3}
+  = \frac{6.96e31}{\frac43\pi (1.74e5)^3}\ \si{kg/m^3}
+  \approx \qty{3.2e15}{kg\,m^{-3}},
+\end{equation}
+das ist (bei Blei $\rho_\mathrm{Pb}\approx\qty{1.1e4}{kg/m^3}$) um rund
+$\qty{3e11}{}$-fach grösser - weit über der Dichte von Atomkernen. (Die
+Näherung homogener Kugeln ist grob, zeigt aber die extreme Verdichtung.)
+
+\textbf{c) Potentielle Energie.} Die Kraft auf eine Masse ist $F=Gm^2/r^2$;
+Integrieren der Arbeit beim Heranholen aus dem Unendlichen:
+\begin{equation}
+  E_\mathrm{pot} = \int_\infty^r G\frac{m^2}{\tilde r^2}\,\mathrm d\tilde r
+  = -G\frac{m^2}{r}\;.
+\end{equation}
+
+\textbf{d) Gesamtenergie und Virialsatz.} Pro Masse
+$E_\mathrm{kin,i}=\frac12 m (\omega\frac r2)^2$; beide zusammen
+$E_\mathrm{kin}=2\cdot\frac12 m (\omega r/2)^2=\frac14 m\omega^2 r^2$. Mit
+$a)$ $\omega^2=2Gm/r^3$, also
+\begin{equation}
+  E_\mathrm{kin} = \frac14 m\,\frac{2Gm}{r^3}\,r^2
+  = \frac{Gm^2}{2r},
+  \qquad
+  E_\mathrm{tot}=E_\mathrm{kin}+E_\mathrm{pot}
+  = \frac{Gm^2}{2r}-\frac{Gm^2}{r}
+  = -\frac{Gm^2}{2r}.
+\end{equation}
+Virialsatz: $E_\mathrm{kin}=\frac{Gm^2}{2r}=-\frac12 E_\mathrm{pot}$ erfüllt.
+Mit $a)$ $r=(2Gm/\omega^2)^{1/3}$:
+\begin{equation}
+  E_\mathrm{tot} = -\frac{Gm^2}{2}\left(\frac{\omega^2}{2Gm}\right)^{1/3}
+  = -\frac12\,G^{2/3}m^{5/3}\cdot 2^{-1/3}\,\omega^{2/3}
+  \propto -\omega^{2/3}.
+\end{equation}
+
+\textbf{e) Frequenzsteigerung.} Aus dem Energieverlust,
+$
+  \mathrm dE_\mathrm{tot}/\mathrm dt = -P < 0,
+$
+wird $E_\mathrm{tot}$ negativer. Da $E_\mathrm{tot}\propto -\omega^{2/3}$,
+bedeutet negativere Energie grösseres $\omega$: Die Frequenz \emph{steigt}
+mit der Zeit. Das bestätigt die Messung (Anstieg von Amplitude und Frequenz
+bis zum abrupten Abbruch).
+
+\textbf{f) Abstrahlung.} $P=\frac{8G}{5c^5}m^2r^4\omega^6$. Aus $a)$ setzen wir
+$r^4\omega^6=(2Gm/\omega^2)^{4/3}\omega^6
+=\left(2Gm\right)^{4/3}\omega^{6-8/3}
+=\left(2Gm\right)^{4/3}\omega^{10/3}$, also
+\begin{equation}
+  P = \frac{8G}{5c^5}\,m^2\,(2Gm)^{4/3}\,\omega^{10/3}
+  \propto \omega^{10/3}.
+\end{equation}
+Da die Leistung sehr stark mit $\omega$ wächst und $E_\mathrm{tot}$ langsam
+abnimmt, sind Gravitationswellen erst messbar, wenn die Massen sehr nahe sind
+(grosse $\omega$); solange sie weit auseinanderkreisen, bleibt $P$ winzig.
+
+\begin{ergebnis}
+(a) $r=(2Gm/\omega^2)^{1/3}$.
+(b) $\omega\approx\qty{471}{rad/s}$, $r\approx\qty{347}{km}$,
+$\rho\approx\qty{3.2e15}{kg/m^3}$ (Vergleich Blei $\sim10^{11}$-fach).
+(d) $E_\mathrm{tot}=-\frac{Gm^2}{2r}\propto-\omega^{2/3}$;
+$E_\mathrm{kin}=-\frac12 E_\mathrm{pot}$ (Virialsatz erfüllt).
+(e) $\omega$ steigt mit der Zeit. (f) $P\propto\omega^{10/3}$; deshalb erst
+nahe der Massen stark nachweisbar.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} (b) $r$: $[G m/\omega^2]^{1/3}
+=\left(\frac{m^3}{kg\,s^2}\cdot kg\cdot s^2\right)^{1/3}=m$. \checkmark
+$\rho$: $kg/m^3$. \checkmark
+
+\textbf{Virialsatz:} numerisch $E_\mathrm{kin}=4.66e47$, $-\frac12 E_\mathrm{pot}
+=4.66e47$. \checkmark
+
+\textbf{Grenzfall:} für $r\to\infty$ (grosse Distanz) wird $\omega\to0$,
+$E_\mathrm{tot}\to0$ und $P\to0$ - konsistent.
+\end{kontrolle}
+
+\begin{merksatz}
+Für ein Zweikörper-Doppelsystem folgen aus Kräftegleichgewicht ($r^3=2Gm/\omega^2$),
+Virialsatz und Quadrupol-Strahlung ($P\propto\omega^{10/3}$) alle klassischen
+Resultate: Frequenz- und Energieentwicklung sind über kurze Skalen sehr steil,
+daher das charakteristische "Chirp"-Signal (Frequenz rauf, dann Abbruch).
+\end{merksatz}

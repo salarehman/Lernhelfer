@@ -1,0 +1,30 @@
+% titel: Blatt 3, A2: Binomialverteilung
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zwei konkrete Wahrscheinlichkeiten mit der Binomialverteilung bestimmen:
+verspätete Zugfahrten und herausspringende Fische.
+
+\begin{werkzeugkasten}[Binomialverteilung]
+Bei $n$ unabhängigen Versuchen mit Erfolgswahrscheinlichkeit $p$ ist die
+Wahrscheinlichkeit für genau $k$ Erfolge
+\begin{equation}
+  \mathrm P(k)=\binom{n}{k}p^k(1-p)^{n-k}.
+\end{equation}
+\begin{itemize}
+  \item ``Mindestens $4$ von $5$ verspätet'' (Erfolg $=$ Verspätung,
+        $p=\tfrac15$): $\mathrm P(4)+\mathrm P(5)$.
+  \item ``Mindestens einer von $n$'': Komplement
+        $1-\mathrm P(\text{keiner})=1-(1-p)^n$.
+\end{itemize}
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item ``Mindestens $4$ von $5$'' heißt $4$ \emph{oder} $5$ -- beide Fälle
+        addieren ($k=4$ und $k=5$).
+  \item ``Mindestens ein Fisch springt hinaus'' bequemer über das
+        Gegenereignis ``keiner springt hinaus'' $=(1-p)^n$.
+  \item $p$ und $\binom{n}{k}$ korrekt einsetzen: $\mathrm P(5)=\binom55 p^5 (1-p)^0=p^5$.
+\end{itemize}
+\end{achtung}
