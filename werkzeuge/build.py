@@ -179,6 +179,7 @@ def schreibe_generated(fach: str, blatt: dict, nur_theorie: bool) -> None:
     fach_titel = {
         "physik": "Physik",
         "mathe": "Mathematik",
+        "chemie": "Chemie",
     }.get(fach, fach.capitalize())
 
     (GENERIERT / "meta.tex").write_text(
@@ -372,15 +373,8 @@ def main() -> int:
                     return 1
                 ziele.append(ziel)
 
-            schreibe_generated(fach, blatt, nur_theorie=True)
-            if not args.kein_pdf:
-                ziel = Path(str(stamm) + "-theorie.pdf")
-                if not kompilieren(ziel):
-                    return 1
-                ziele.append(ziel)
-
     if args.kein_pdf:
-        print("generated/ neu geschrieben (zuletzt: Theorie-Variante).")
+        print("generated/ neu geschrieben (Lernhelfer-Variante).")
         return 0
 
     for ziel in ziele:
