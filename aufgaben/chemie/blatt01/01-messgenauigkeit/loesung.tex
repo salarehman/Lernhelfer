@@ -1,0 +1,42 @@
+% titel: Blatt 1, A1: Messgenauigkeit
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Fünf Wägungen (in g): $26.518,\ 26.526,\ 26.504,\ 26.511,\ 26.534$. Gesucht
+Mittelwert $\bar x$ und Standardabweichung $s$.
+
+\subsection*{Rechnung}
+Mittelwert:
+\begin{equation}
+  \bar x = \frac{26.518+26.526+26.504+26.511+26.534}{5}
+  = \frac{132.593}{5} = 26.5186\ \mathrm{g}.
+\end{equation}
+Abweichungen quadrieren:
+\begin{align*}
+  (0.0006)^2 &= 3.6\cdot10^{-7}, &
+  (0.0074)^2 &= 5.476\cdot10^{-5}, \\
+  (-0.0146)^2 &= 2.1316\cdot10^{-4}, &
+  (-0.0076)^2 &= 5.776\cdot10^{-5}, \\
+  (0.0154)^2 &= 2.3716\cdot10^{-4}.
+\end{align*}
+Quadratsumme: $\Sigma(x_i-\bar x)^2 = 5.62\cdot10^{-4}\ \mathrm{g^2}$.
+\begin{equation}
+  s = \sqrt{\frac{5.62\cdot10^{-4}}{5-1}} = \sqrt{1.405\cdot10^{-4}}
+  \approx 0.01185\ \mathrm{g} \approx 0.012\ \mathrm{g}.
+\end{equation}
+
+\begin{ergebnis}
+$\bar x = 26.519\ \mathrm{g},\qquad s \approx 0.012\ \mathrm{g}.$
+\end{ergebnis}
+
+\begin{kontrolle}
+Die Werte streuen $\pm 0.015$ g um 26.52 g; eine Standardabweichung von
+rund 0.012 g stimmt mit dieser sichtbaren Streuung überein. $s$ ist deutlich
+kleiner als die Messwerte selbst --- die Wägung ist präzise.
+\end{kontrolle}
+
+\begin{merksatz}
+Mehrfachmessung: erst Mittelwert, dann die Abweichungen quadriert mitteln
+($n-1$) und die Wurzel ziehen. So beschreibt man eine Messreihe mit einem
+Wert und einer Unsicherheit.
+\end{merksatz}
