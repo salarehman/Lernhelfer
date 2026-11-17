@@ -1,0 +1,48 @@
+% titel: Blatt 9, A5: Gerade und ungerade Funktionen
+% skript: Kap. 5.2 (Hauptsatz, Stammfunktionen) und Kap. 5.3 (Substitution, S. 91)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Symmetrie-Eigenschaften stetiger Funktionen und Konsequenzen für deren
+Integrale über $[-a,a]$ sowie für die Parität von Stammfunktionen.
+
+\begin{werkzeugkasten}[Gerade / ungerade]
+$f:\mathbb R\to\mathbb R$ heißt \textbf{gerade}, falls $f(-x)=f(x)$, und
+\textbf{ungerade}, falls $f(-x)=-f(x)$ für alle $x$.
+\begin{itemize}
+  \item Gerade: Graph symmetrisch zur $y$-Achse, $f$ durch Werte auf
+        $[0,\infty)$ festgelegt.
+  \item Ungerade: Graph punktsymmetrisch zum Ursprung.
+  \item $f'\ $ dergerade, wenn $f$ ungerade ($f=\sin$); $f'$ ungerade,
+        wenn $f$ gerade ($f=\cos$).
+\end{itemize}
+\textit{Skript:} Symmetrie-Beispiele, Kap. 2.6.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Symmetrie im Integral]
+Mit der Substitution $u=-x$ (Kap. 5.3) zerlegt man das Integral über
+$[-a,a]$:
+\begin{equation}
+  \int_{-a}^{a} f(x)\,\dd x = \int_0^a f(x)\,\dd x + \int_{-a}^{0} f(x)\,\dd x .
+\end{equation}
+Für \textbf{gerade} $f$ fallen beide Teilflächen zusammen, für \textbf{ungerade}
+heben sie sich auf. Dadurch lassen sich die Integrale vereinfachen.
+
+\textit{Skript:} Substitutionsregel, Beispiel 5.3.4; Symmetrie in
+Beispiel 5.2.3, S. 87.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item In Teil c) die Stammfunktion gezielt wählen (hier $F(0)=0$) und die
+        Parität von $F$ aus $F'=f$ plus Symmetrie ableiten.
+  \item $f$ gerade $\Rightarrow\int_{-a}^{0}f(x)\dd x=\int_0^a f(x)\dd x$
+        über $u=-x$; $f$ ungerade $\Rightarrow\int_{-a}^{0}f(x)\dd x=
+        -\int_0^a f(x)\dd x$.
+  \item Im Integral die Integrationsvariable umbenennen, damit alle
+        Teilintegrale gleich heißen (z. B. nur noch $f(x)$), sonst vergleicht
+        man unpassende Ausdrücke.
+  \item Die Behauptung in c) ist die \emph{Umkehrung} des bekannten
+        Zusammenhangs für Ableitungen — nicht verwechseln.
+\end{itemize}
+\end{achtung}

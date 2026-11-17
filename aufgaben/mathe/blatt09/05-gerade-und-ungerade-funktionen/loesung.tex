@@ -1,0 +1,74 @@
+% titel: Blatt 9, A5: Gerade und ungerade Funktionen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$f:\mathbb R\to\mathbb R$ stetig; zu zeigen: (a) $f$ gerade
+$\Rightarrow\int_{-a}^a f=2\int_0^a f$; (b) $f$ ungerade $\Rightarrow\int_{-a}^a f=0$,
+je für alle $a>0$; (c) für eine Stammfunktion $F$ mit $F(0)=0$: $f$ gerade
+$\Rightarrow F$ ungerade, $f$ ungerade $\Rightarrow F$ gerade.
+
+\subsection*{a) $f$ gerade}
+Mit der Substitution $u=-x$ in $\int_{-a}^{0}$ ($\dd x=-\dd u$, $x=-a\to u=a$,
+$x=0\to u=0$):
+\begin{align}
+  \int_{-a}^{0} f(x)\,\dd x
+  = -\int_{a}^{0} f(-u)\,\dd u
+  = \int_0^a f(-u)\,\dd u
+  = \int_0^a f(u)\,\dd u .
+\end{align}
+(Letzter Schritt nutzt $f(-u)=f(u)$.) Also
+\begin{equation}
+  \int_{-a}^{a} f(x)\,\dd x
+  = \int_{-a}^{0}f+\int_0^a f
+  = \int_0^a f(u)\,\dd u + \int_0^a f(x)\,\dd x
+  = 2\int_0^a f(x)\,\dd x .
+\end{equation}
+
+\subsection*{b) $f$ ungerade}
+Wie in a), aber $f(-u)=-f(u)$:
+\begin{equation}
+  \int_{-a}^{0}f(x)\,\dd x
+  = \int_0^a f(-u)\,\dd u
+  = -\int_0^a f(u)\,\dd u
+  = -\int_0^a f(x)\,\dd x,
+\end{equation}
+also $\int_{-a}^a f=\int_0^a f-\int_0^a f=0$.
+
+\subsection*{c) Parität der Stammfunktion}
+Da $F$ Stammfunktion mit $F(0)=0$ ist, gilt
+$F(x)=\int_0^x f(t)\,\dd t$.
+
+\textbf{$f$ ungerade $\Rightarrow F$ gerade:} mit $u=-t$ ($\dd t=-\dd u$):
+\begin{align}
+  F(-x)=\int_0^{-x}f(t)\,\dd t
+  &= -\int_0^x f(-u)\,\dd u
+  = \int_0^x f(u)\,\dd u
+   = F(x),
+\end{align}
+denn $f(-u)=-f(u)$ und $-\cdot(-f(u))=f(u)$. Also $F$ gerade.
+
+\textbf{$f$ gerade $\Rightarrow F$ ungerade:}
+\begin{equation}
+  F(-x)=-\int_0^x f(-u)\,\dd u
+  = -\int_0^x f(u)\,\dd u = -F(x),
+\end{equation}
+also $F$ ungerade.
+
+\begin{ergebnis}
+$f$ gerade: $\displaystyle\int_{-a}^a f=2\int_0^a f$ und $F$ ungerade;
+\qquad
+$f$ ungerade: $\displaystyle\int_{-a}^a f=0$ und $F$ gerade.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Beispiel:} $f(x)=x$ (ungerade) gibt $\int_{-a}^a x\,\dd x=0$, und
+$F=\frac{x^2}{2}$ ist gerade. $f(x)=x^2$ (gerade) gibt
+$\int_{-a}^a x^2\,\dd x=\frac{2a^3}{3}=2\int_0^a x^2\,\dd x$, und
+$F=\frac{x^3}{3}$ ist ungerade. Passt.
+\end{kontrolle}
+
+\begin{merksatz}
+Die Substitution $u=-x$ macht die Symmetrie rechnerisch sichtbar: gerade
+glättet (verdoppelt auf ein halbes Intervall), ungerade hebt auf. Achtung:
+Antiderivative \emph{kehrt} die Parität umgekehrt zur Ableitung.
+\end{merksatz}

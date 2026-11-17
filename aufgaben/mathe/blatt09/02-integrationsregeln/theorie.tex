@@ -1,0 +1,50 @@
+% titel: Blatt 9, A2: Integrationsregeln
+% skript: Kap. 5.3 (Integrationsregeln und uneigentliche Integrale, S. 90)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Bestimmte Integrale berechnen, teils mit partieller Integration (Teil a), teils
+mit geeigneter Substitution (Teil b).
+
+\begin{werkzeugkasten}[Partielle Integration]
+Für $f,g\in C^1[a,b]$:
+\begin{equation}
+  \int_a^b f(x)\,g'(x)\,\dd x
+  = \bigl[f(x)\,g(x)\bigr]_a^b - \int_a^b f'(x)\,g(x)\,\dd x .
+\end{equation}
+Wähle $f$ so, dass es beim Ableiten einfacher wird (Polynome), und $g'$, das
+man direkt integrieren kann ($\cos$, $\mathrm e^{\cdot}$).
+
+\textit{Skript:} Satz 5.3.1, S. 90.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Substitution]
+Substituiere $u=\varphi(x)$; dann ist $\dd u=\varphi'(x)\dd x$ und
+\begin{equation}
+  \int_a^b f(\varphi(x))\,\varphi'(x)\,\dd x
+  = \int_{\varphi(a)}^{\varphi(b)} f(u)\,\dd u .
+\end{equation}
+Grenzen mit umrechnen oder anschließend zurücksubstituieren. Typische Kandidaten:
+\begin{itemize}
+  \item $\varphi=x^2$ bei $x\,\dd x$ im Integranden;
+  \item trigonometrische Faktoren wie $\cos^3 x\,\sin x$: $u=\cos x$,
+        weil $\sin x\,\dd x = -\dd u$;
+  \item $u=\ln x$ bei $\frac{1}{x}\,\dd x$ (hier mit $(\ln x)^2$).
+\end{itemize}
+\textit{Skript:} Substitutionsregel, Beispiel 5.3.4, S. 91.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Bei $(\ln x)^2$ erscheint $u^2\,\dd u$ nach der Substitution — nicht
+        die innere Ableitung vergessen, aber auch nicht verdoppeln.
+  \item $\sqrt{1+x^2}$ lässt sich NICHT über eine einfache Polynom-Substitution
+        lösen; hier passt $u=1+x^2$, weil der Faktor $x$ schon vor der Wurzel
+        steht.
+  \item Bei $\cos^3 x\,\sin x$ die Grenzen auf $u$ umrechnen
+        ($\cos 0=1$, $\cos\pi=-1$) — das Vorzeichen durch $-\dd u$ nicht
+        unterschlagen.
+  \item Vorzeichen und die ``Richtung'' der Grenzen bei $\sqrt{x}$-Integralen
+        mit $x=t^2$ prüfen.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,76 @@
+% titel: Blatt 9, A3: Rationale Funktionen
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{a) Stammfunktionen per Partialbruch}
+
+\textbf{i) $f(x)=\dfrac{x+1}{x(x-5)}$:} Ansatz
+$\frac{x+1}{x(x-5)}=\frac{A}{x}+\frac{B}{x-5}$. Mit $x(x-5)$ multiplizieren:
+\begin{equation}
+  x+1 = A(x-5)+Bx .
+\end{equation}
+$x=0$: $1=-5A\Rightarrow A=-\frac15$. $x=5$: $6=5B\Rightarrow B=\frac65$.
+\begin{align}
+  \int \frac{x+1}{x(x-5)}\,\dd x
+  &= -\frac15\int\frac1x\,\dd x + \frac65\int\frac{1}{x-5}\,\dd x \\
+  &= -\frac15\ln\abs{x} + \frac65\ln\abs{x-5} + C .
+\end{align}
+
+\textbf{ii) $f(x)=\dfrac{x^2-2x}{(x-1)^2(x+3)}$:} doppelte Nullstelle bei $1$:
+\begin{equation}
+  \frac{x^2-2x}{(x-1)^2(x+3)}
+  = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+3}.
+\end{equation}
+Mit $(x-1)^2(x+3)$ multiplizieren:
+\begin{equation}
+  x^2-2x = A(x-1)(x+3) + B(x+3) + C(x-1)^2 .
+\end{equation}
+$x=1$: $-1 = 4B \Rightarrow B=-\frac14$. $x=-3$: $15=16C\Rightarrow
+C=\frac{15}{16}$. $x=0$: $0=-3A+3B+C$
+$\Rightarrow 3A=3B+C=-\frac34+\frac{15}{16}=-\frac{12}{16}+\frac{15}{16}=\frac{3}{16}$
+$\Rightarrow A=\frac{1}{16}$.
+\begin{align}
+  \int \frac{x^2-2x}{(x-1)^2(x+3)}\,\dd x
+  &= \frac1{16}\int\frac1{x-1}\,\dd x
+   - \frac14\int\frac1{(x-1)^2}\,\dd x
+   + \frac{15}{16}\int\frac1{x+3}\,\dd x \\
+  &= \frac1{16}\ln\abs{x-1}
+   + \frac{1}{4(x-1)}
+   + \frac{15}{16}\ln\abs{x+3} + C .
+\end{align}
+
+\begin{ergebnis}
+\[
+\int\frac{x+1}{x(x-5)}\,\dd x=-\frac15\ln\abs{x}+\frac65\ln\abs{x-5}+C,
+\qquad
+\int\frac{x^2-2x}{(x-1)^2(x+3)}\,\dd x
+=\frac1{16}\ln\abs{x-1}+\frac{1}{4(x-1)}+\frac{15}{16}\ln\abs{x+3}+C.
+\]
+\end{ergebnis}
+
+\subsection*{b) Uneigentliches Integral}
+Substituiere $u=2x-1$, $\dd u=2\dd x$; $x=1\Rightarrow u=1$,
+$x\to\infty\Rightarrow u\to\infty$:
+\begin{align}
+  \int_1^\infty \frac{\dd x}{(2x-1)^4}
+  &= \frac12\int_1^\infty u^{-4}\,\dd u
+   = \frac12\Bigl[-\frac13 u^{-3}\Bigr]_1^\infty
+   = -\frac16\Bigl(\lim_{R\to\infty}\frac1{R^3}-1\Bigr)
+   = \frac16 .
+\end{align}
+
+\begin{ergebnis}
+$\displaystyle\int_1^\infty\frac{\dd x}{(2x-1)^4}=\frac16 .$
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Plausibilität:} alle Integranden fallen wie $x^{-2}$ bzw.\ $x^{-4}$
+ab; das uneigentliche Integral ist endlich und klein. Durch Differenzieren
+der gefundenen Stammfunktionen erhält man wieder $f$ (Koeffizientenprobe).
+\end{kontrolle}
+
+\begin{merksatz}
+Partialbruchzerlegung: einfache Nullstelle $\to\frac{A}{x-a}$, $m$-fache
+$\to$ Summe bis $\frac{A_m}{(x-a)^m}$; Koeffizienten über geschickte
+$x$-Werte. Uneigentliches Integral: substituieren, Stammfunktion, dann
+Grenzwert.
+\end{merksatz}

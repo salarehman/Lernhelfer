@@ -1,0 +1,61 @@
+% titel: Blatt 9, A1: Vollständige Induktion
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+Zwei Aussagen für alle $n\in\mathbb N$ per vollständiger Induktion zeigen:
+\begin{align}
+  \text{a)}\quad &\sum_{k=1}^{n}\frac{k}{2^k}=2-\frac{n+2}{2^n}, \\
+  \text{b)}\quad &\prod_{k=1}^{n}\Bigl(1+\frac2k\Bigr)=\frac{(n+1)(n+2)}2.
+\end{align}
+
+\subsection*{a) Summe $\sum_{k=1}^{n}\frac{k}{2^k}$}
+Induktionsanfang ($n=1$): $\sum_{k=1}^{1}\frac{k}{2^k}=\frac12$ und
+$2-\frac{3}{2}=\frac12$ — stimmt.
+
+Induktionsschritt ($n\to n+1$): mit der Induktionsannahme
+$\sum_{k=1}^{n}\frac{k}{2^k}=2-\frac{n+2}{2^n}$ gilt
+\begin{align}
+  \sum_{k=1}^{n+1}\frac{k}{2^k}
+  &=\sum_{k=1}^{n}\frac{k}{2^k}+\frac{n+1}{2^{n+1}} \\
+  &=2-\frac{n+2}{2^n}+\frac{n+1}{2^{n+1}}
+  =2-\frac{2(n+2)-(n+1)}{2^{n+1}} \\
+  &=2-\frac{n+3}{2^{n+1}}
+  =2-\frac{(n+1)+2}{2^{n+1}}.
+\end{align}
+Das ist die Behauptung für $n+1$. Aus IA und IS folgt die Formel für alle
+$n\in\mathbb N$.
+
+\begin{ergebnis}
+$\displaystyle\sum_{k=1}^{n}\frac{k}{2^k}=2-\frac{n+2}{2^n}\quad\forall n\in\mathbb N$.
+\end{ergebnis}
+
+\subsection*{b) Produkt $\prod_{k=1}^{n}\bigl(1+\tfrac2k\bigr)$}
+Schreibe $1+\frac2k=\frac{k+2}{k}$. Der Bruch kürzt jedes Mal die vorige
+Zahl:
+\begin{align}
+  \prod_{k=1}^{n}\frac{k+2}{k}
+  &=\frac{3}{1}\cdot\frac{4}{2}\cdot\frac{5}{3}\cdots\frac{n+1}{n-1}\cdot\frac{n+2}{n} \\
+  &=\frac{(n+1)\,(n+2)}{1\cdot 2}
+  =\frac{(n+1)(n+2)}2.
+\end{align}
+Alternativ sauber induktiv: IA ($n=1$) gibt $\frac{3}{1}\cdot\frac{4}{2}\cdot\frac{5}{3}=\frac{3}{1}=3$ links und $\frac{2\cdot3}{2}=3$ rechts. Im IS multipliziert man mit
+dem Faktor $1+\frac{2}{n+1}=\frac{n+3}{n+1}$ und erhält
+$\frac{(n+1)(n+2)}{2}\cdot\frac{n+3}{n+1}=\frac{(n+2)(n+3)}2$, die
+Behauptung für $n+1$.
+
+\begin{ergebnis}
+$\displaystyle\prod_{k=1}^{n}\Bigl(1+\frac2k\Bigr)=\frac{(n+1)(n+2)}2\quad\forall n\in\mathbb N$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Kleiner Fall:} für $n=1$ ist im Produkt nur der Faktor $1+\frac21=3$
+links, rechts $\frac{2\cdot3}{2}=3$ — passt. \textbf{Grenzfall:} für große
+$n$ wächst das Produkt wie $\frac{n^2}{2}$, der Ausdruck rechts ebenso —
+plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Induktion heißt: IA prüfen, dann den neuen Summanden/Faktor abspalten und die
+Voraussetzung einsetzen; Ausdrücke wie $\frac{k+2}{k}$ als Teleskopprodukt zu
+schreiben vereinfacht den Rückweg auf die Annahme.
+\end{merksatz}

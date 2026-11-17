@@ -1,0 +1,65 @@
+% titel: Blatt 9, A6: Potenzreihe für ein Integral (Gauß-Integral)
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) Eine Potenzreihe $\sum_{n=0}^{\infty}a_n x^n$, die für alle $x$ konvergiert
+und gleich $\int_0^x \mathrm e^{-t^2/2}\,\dd t$ ist, analog Beispiel 5.4.5,3.
+(b) Python-Code, der $\int_0^1 \mathrm e^{-t^2/2}\,\dd t$ mittels dieser Reihe
+approximiert.
+
+\subsection*{a) Potenzreihe für $\int_0^x \mathrm e^{-t^2/2}\,\dd t$}
+Die Setupreihe der Exponentialfunktion gibt für alle $t$:
+\begin{equation}
+  \mathrm e^{-t^2/2}
+  = \sum_{k=0}^{\infty}\frac{(-t^2/2)^k}{k!}
+  = \sum_{k=0}^{\infty} (-1)^k \frac{t^{2k}}{2^k\,k!}.
+\end{equation}
+Gliedweises Integrieren von $0$ bis $x$ (Satz 5.4.2; Konvergenzradius bleibt
+$\infty$):
+\begin{align}
+  \int_0^x \mathrm e^{-t^2/2}\,\dd t
+  &= \sum_{k=0}^{\infty} (-1)^k \frac{1}{2^k\,k!}\int_0^x t^{2k}\,\dd t \\
+  &= \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)\,2^k\,k!}.
+\end{align}
+Dies ist eine Potenzreihe $\sum_n a_n x^n$ mit
+$a_{2k+1}=\dfrac{(-1)^k}{(2k+1)\,2^k\,k!}$ und $a_{2k}=0$.
+
+\begin{ergebnis}
+$\displaystyle
+\int_0^x \mathrm e^{-t^2/2}\,\dd t
+=\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{(2k+1)\,2^k\,k!},\qquad
+a_{2k+1}=\frac{(-1)^k}{(2k+1)\,2^k\,k!},\ a_{2k}=0$.
+\end{ergebnis}
+
+\subsection*{b) Python-Approximation von $\int_0^1 \mathrm e^{-t^2/2}\,\dd t$}
+Für $x=1$ in die Reihe einsetzen und gliedweise aufsummieren:
+\begin{verbatim}
+import math
+N = 50
+s = 0.0
+for k in range(N):
+    s += (-1)**k / ((2*k+1) * 2**k * math.factorial(k))
+print(s)
+\end{verbatim}
+Analog lösbar über die rekursive Glieddefinition
+`term *= -x**2 * (2*k+1) / (2*(k+1))` in einer Schleife. Für $N=50$ erhält man
+$s\approx0.85562439$.
+
+\begin{ergebnis}
+$\displaystyle\int_0^1 \mathrm e^{-t^2/2}\,\dd t \approx 0.85562439 .$
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Referenz:} Das Integral ist $\sqrt{\tfrac\pi2}\,\mathrm{erf}(\tfrac1{\sqrt2})
+\approx0.85562439$ — stimmt mit der Reihensumme überein.
+\textbf{Grenzfall:} Integrand $\mathrm e^{-t^2/2}$ ist positiv, nie größer als
+$1$; das Integral über $[0,1]$ liegt zwischen $0$ und $1$, das Ergebnis
+$0.856$ ist plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Eine Funktion ohne elementare Stammfunktion (hier $\mathrm e^{-t^2/2}$) wird
+über die Potenzreihe integrierbar: Reihe hinschreiben, gliedweise integrieren,
+Danach bleibt der Konvergenzradius erhalten. Für numerische Werte reicht das
+Partial aufsummieren der alternierenden Reihe.
+\end{merksatz}

@@ -1,0 +1,56 @@
+% titel: Blatt 9, A6: Potenzreihe für ein Integral (Gauß-Integral)
+% skript: Kap. 5.4 (Potenzreihen, gliedweise Integration; Beispiel 5.4.5)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Eine Potenzreihe finden, die dasselbe leistet wie $\int_0^x \mathrm e^{-t^2/2}\,\dd t$
+— also für alle $x$ konvergiert und diesen Integralwert darstellt — und den
+Wert $\int_0^1\mathrm e^{-t^2/2}\,\dd t$ mit Python aproximieren.
+
+\begin{werkzeugkasten}[Reihe der Exponentialfunktion]
+Für alle $t\in\mathbb R$:
+\begin{equation}
+  \mathrm e^{u}=\sum_{k=0}^{\infty}\frac{u^k}{k!} .
+\end{equation}
+Mit $u=-t^2/2$ erhält man eine Reihe in geraden Potenzen von $t$, die für alle
+$t$ (insbesondere $|x|\le 1$) konvergiert.
+
+\textit{Skript:} Kap. 2.3, Beispiel 5.4.1.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Gliedweise Integration einer Potenzreihe]
+In ihrem Konvergenzintervall (hier $\mathbb R$) darf eine Potenzreihe
+gliedweise integriert werden (Satz 5.4.2):
+\begin{equation}
+  \int_0^x \sum_{k=0}^{\infty}a_k t^k\,\dd t
+  = \sum_{k=0}^{\infty}a_k\frac{x^{k+1}}{k+1}.
+\end{equation}
+Damit wird aus der Reihe für $\mathrm e^{-t^2/2}$ eine Potenzreihe
+$\sum_n a_n x^n$ für den gewünschten Integralwert; da der Konvergenzradius
+erhalten bleibt, konvergiert sie global.
+
+\textit{Skript:} Satz 5.4.2, Beispiel 5.4.5, Punkt 3.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Python-Approximation]
+Die Reihe bis zu einem $N$ mit `sum` über eine Schleife aufsummieren, Glied
+$k$ aus dem vorherigen Schritt rekursiv (Faktor pro $k$) — spart Laufzeit und
+bleibt numerisch stabil. Einzelne Summanden
+$(-1)^k \frac{x^{2k+1}}{(2k+1)\,2^k\,k!}$ schreiben.
+
+\textit{Skript:} Anhang A.2 (Python-Befehle), S. 139.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Das Integral hat \emph{keine} elementare Stammfunktion; nur die
+        Reihen-Darstellung liefert einen brauchbaren Weg.
+  \item Beim gliedweisen Integrieren $t^{2k}\to\frac{x^{2k+1}}{2k+1}$ — alle
+        $k$-abhängigen Faktoren sauber zusammensetzen.
+  \item Die Antwort in a) muss eine \emph{Potenzreihe} $\sum_n a_n x^n$ sein,
+        d. h. nach $x$ geordnete Koeffizienten $a_n$, nicht nur das Integral
+        dahinschreiben.
+  \item Bei $x=1$ alterniert die Reihe; abbrechen, wenn das nächste Glied klein
+        genug ist.
+\end{itemize}
+\end{achtung}

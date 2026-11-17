@@ -1,0 +1,65 @@
+% titel: Blatt 9, A4: Taylorentwicklung
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+(a) Taylorreihe von $f(x)=\frac1{1+x^2}$ um $x_0=0$ auf $(-1,1)$; (b) daraus
+arctan-Reihe durch gliedweise Integration; (c) $\arctan(0.5)$ per Python.
+
+\subsection*{a) Taylorreihe von $\frac1{1+x^2}$}
+Mit der geometrischen Reihe für $q=x^2$, $|x|<1$:
+\begin{equation}
+  f(x)=\frac1{1+x^2}=\sum_{k=0}^{\infty}(-1)^k x^{2k}
+  =1-x^2+x^4-x^6+\cdots .
+\end{equation}
+
+\begin{ergebnis}
+$\displaystyle f(x)=\sum_{k=0}^{\infty}(-1)^k x^{2k}$ für
+$|x|<1$, mit $f^{(k)}(0)=0$ für ungerade $k$ und
+$f^{(2k)}(0)=(-1)^k(2k)!$.
+\end{ergebnis}
+
+\subsection*{b) Taylorentwicklung von $\arctan$}
+$\arctan$ ist Stammfunktion von $\frac1{1+t^2}$ mit $\arctan(0)=0$. Gliedweise
+integrieren von $0$ bis $x$ (Satz 5.4.2):
+\begin{align}
+  \arctan(x)
+  &= \int_0^x \sum_{k=0}^{\infty}(-1)^k t^{2k}\,\dd t
+   = \sum_{k=0}^{\infty}(-1)^k \frac{x^{2k+1}}{2k+1} \\
+  &= x-\frac{x^3}{3}+\frac{x^5}{5}-\frac{x^7}{7}+\cdots,\qquad |x|<1 .
+\end{align}
+
+\begin{ergebnis}
+$\displaystyle\arctan(x)=\sum_{k=0}^{\infty}(-1)^k\frac{x^{2k+1}}{2k+1}$
+für $|x|<1$.
+\end{ergebnis}
+
+\subsection*{c) $\arctan(0.5)$ mit Python}
+\begin{verbatim}
+import math
+x = 0.5
+N = 20
+s = 0.0
+for k in range(N):
+    s += (-1)**k * x**(2*k+1) / (2*k+1)
+print(s)                 # 0.463647609...
+print(math.atan(0.5))    # Referenz
+\end{verbatim}
+Für $N=20$ erhält man $s\approx0.463647609$, in Übereinstimmung mit
+$\mathrm{math.atan}(0.5)$. Da die Reihe alterniert, ist der Fehler durch das
+erste weggelassene Glied $\tfrac{x^{2N+1}}{2N+1}$ schon sehr klein.
+
+\begin{ergebnis}
+$\arctan(0.5)\approx0.4636476$ (rad).
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Referenz:} $\arctan(0.5)\approx0.4636$ rad $\approx26.6^\circ$ — passt,
+da $\tan(30^\circ)=\frac1{\sqrt3}\approx0.577$. \textbf{Konvergenz:} $x=0.5<1$,
+Reihe ist absolut konvergent, wenige Glieder genügen.
+\end{kontrolle}
+
+\begin{merksatz}
+Potenzreihen aus der geometrischen Reihe über Substitution + gliedweise
+Integration ableiten; die Integration ändert den Konvergenzradius nicht und
+liefert die Stammfunktion als Reihe.
+\end{merksatz}

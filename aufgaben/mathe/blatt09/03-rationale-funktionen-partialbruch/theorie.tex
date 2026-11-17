@@ -1,0 +1,49 @@
+% titel: Blatt 9, A3: Rationale Funktionen
+% skript: Kap. 5.3 (Partialbruchzerlegung, uneigentliche Integrale, S. 93)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Stammfunktionen rationaler Funktionen $f=P/Q$ per Partialbruchzerlegung (Teil a)
+sowie ein uneigentliches Integral über $[1,\infty)$ (Teil b).
+
+\begin{werkzeugkasten}[Partialbruchzerlegung]
+Ist $\deg Q>\deg P$, zerlege $Q$ in Linearfaktoren. Für eine einfache Nullstelle
+$a$ von $Q$ gehört ein Term $\frac{A}{x-a}$, für eine $m$-fache Nullstelle
+$a$ gehören
+\begin{equation}
+  \frac{A_1}{x-a}+\frac{A_2}{(x-a)^2}+\cdots+\frac{A_m}{(x-a)^m}.
+\end{equation}
+Koeffizienten bestimmt man, indem man beide Seiten mit $Q$ multipliziert und
+geeignete $x$-Werte einsetzt oder die Koeffizienten vergleicht. Dann
+integrieren:
+\begin{equation}
+  \int\frac{A}{x-a}\,\dd x=A\ln\abs{x-a},
+  \qquad
+  \int\frac{A}{(x-a)^k}\,\dd x=\frac{-A}{(k-1)(x-a)^{k-1}}\ (k>1).
+\end{equation}
+\textit{Skript:} Partialbruch, S. 93.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Uneigentliches Integral]
+Für $\int_a^\infty$ mit stetigem, hinreichend abfallendem Integranden:
+\begin{equation}
+  \int_a^\infty g(t)\,\dd t=\lim_{R\to\infty}\int_a^R g(t)\,\dd t .
+\end{equation}
+Hier liefert eine affine Substitution $u=2x-1$ ein Potenzintegral
+$\int u^{-4}\dd u$, das bei $u\to\infty$ konvergiert.
+
+\textit{Skript:} uneigentliche Integrale, S. 94--95.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Bei doppelter Nullstelle (Teil a ii) beiden Terme
+        $\frac{A_1}{x-1}+\frac{A_2}{(x-1)^2}$ ansetzen; den $(\cdot)^2$-Term
+        nicht unterschlagen.
+  \item Beim Einsetzen einzelner $x$-Werte die Faktoren richtig lesen:
+        die Ansatzform fest aufschreiben, nicht zwischendrin umbauen.
+  \item Beim uneigentlichen Integral zuerst die Stammfunktion in $u$ bilden
+        und \emph{dann} den Grenzwert — nicht einzeln divergieren lassen.
+  \item Das Vorzeichen in $\int u^{-4}\dd u=-\tfrac13u^{-3}$ nicht verlieren.
+\end{itemize}
+\end{achtung}

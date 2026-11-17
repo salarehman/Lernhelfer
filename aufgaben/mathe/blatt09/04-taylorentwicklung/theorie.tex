@@ -1,0 +1,56 @@
+% titel: Blatt 9, A4: Taylorentwicklung
+% skript: Kap. 5.4 (Taylorentwicklung und Integration, S. 96)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Taylor-/Potenzreihe von $f(x)=\frac1{1+x^2}$ um $x_0=0$, Herleitung der
+arctan-Reihe durch gliedweise Integration und numerische Auswertung von
+$\arctan(0.5)$ mit Python.
+
+\begin{werkzeugkasten}[Potenzreihe der geometrischen Reihe]
+Für $|q|<1$:
+\begin{equation}
+  \frac1{1+q}=1-q+q^2-q^3+\cdots=\sum_{k=0}^{\infty}(-1)^k q^k .
+\end{equation}
+Mit $q=x^2$ erhält man direkt
+\begin{equation}
+  \frac1{1+x^2}=\sum_{k=0}^{\infty}(-1)^k x^{2k},
+  \qquad|x|<1 .
+\end{equation}
+\textit{Skript:} geometrische Reihe, Kap. 2.1; Potenzreihen, Kap. 5.4.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Gliedweise Integration]
+In ihrem Konvergenzintervall darf eine Potenzreihe gliedweise integriert
+werden (Satz 5.4.2):
+\begin{equation}
+  \int_0^x \sum_{k=0}^{\infty}a_k t^k\,\dd t
+  = \sum_{k=0}^{\infty}a_k\frac{x^{k+1}}{k+1}.
+\end{equation}
+Wendet man das auf die Reihe für $\frac1{1+t^2}$ an, erhält man eine Reihe für
+$\arctan$, weil $\arctan'(t)=\frac1{1+t^2}$ und $\arctan(0)=0$.
+
+\textit{Skript:} Satz 5.4.2, Beispiel 5.4.5.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Numerik mit Python]
+Eine Potenzreihe mit endlichen Summen approximieren: Reihe bis $N$ aufsummieren,
+mit einem Summationsschritt der als Bruch oder via $\mathrm{math}$ exakt bleibt.
+Dezimalausgabe z. B. mit `print(...)`. Alternierende Reihen konvergieren oft
+schnell und der Fehler ist durch das erste weggelassene Glied abgeschätzt.
+
+\textit{Skript:} Anhang A.2 (einige Python-Befehle), S. 139.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Die Reihe für $\frac1{1+x^2}$ hat nur gerade Exponenten; der
+        Koeffizient $a_{2k}=(-1)^k$, alle ungeraden Koeffizienten sind $0$.
+  \item Beim Integrieren jedes Glied $x^{2k}\to\frac{x^{2k+1}}{2k+1}$ — den
+        neuen Nenner $2k+1$ nicht vergessen.
+  \item Die Reihen konvergieren absolut für $|x|<1$; für $\arctan(0.5)$ ist
+        die Konvergenz gut.
+  \item In Python Potenzen sauber schreiben (z. B. `(-1)**k * x**(2*k+1) /
+        (2*k+1)`) und genügend Glieder summieren.
+\end{itemize}
+\end{achtung}

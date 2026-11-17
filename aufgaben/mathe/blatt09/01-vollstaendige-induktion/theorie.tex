@@ -1,0 +1,50 @@
+% titel: Blatt 9, A1: Vollständige Induktion
+% skript: Kap. 1.2 (Vollständige Induktion, S. 11)
+
+% Teil I: Werkzeuge, kein Lösungsweg.
+
+Zeigen, dass zwei Aussagen der Form ``für alle $n\in\mathbb N$ gilt …'' wahr
+sind, jeweils per vollständiger Induktion.
+
+\begin{werkzeugkasten}[Vollständige Induktion]
+Eine Aussage $A(n)$ für alle $n\in\mathbb N$ beweist man in zwei Schritten:
+\begin{enumerate}
+  \item \textbf{Induktionsanfang} (IA): $A(1)$ direkt prüfen.
+  \item \textbf{Induktionsschritt} (IS): unter der \emph{Induktionsannahme}
+        $A(n)$ (bzw.\ $A(k)$) folgt $A(n+1)$ (bzw.\ $A(k+1)$).
+\end{enumerate}
+Antrit die Kette $A(1)\Rightarrow A(2)\Rightarrow\cdots$, so gilt $A(n)$ für
+alle $n$. Oft fängt man bei $n=0$ an, wenn die Behauptung das nahelegt.
+
+\textit{Skript:} Kap. 1.2, S. 11.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Hilfsmittel im IS]
+Im Schritt rechnet man die neue Summe bzw.\ das neue Produkt auf die
+Induktionsannahme zurück:
+\begin{itemize}
+  \item \textbf{Summe:} $\displaystyle\sum_{k=1}^{n+1}a_k = a_{n+1} +
+        \sum_{k=1}^{n}a_k$ — dann die Voraussetzung einsetzen.
+  \item \textbf{Produkt:} $\displaystyle\prod_{k=1}^{n+1}a_k =
+        a_{n+1}\cdot\prod_{k=1}^{n}a_k$ — dann die Voraussetzung einsetzen.
+  \item Der letzte Summand bzw.\ Faktor hat die Form $\frac{n+1}{2^{n+1}}$
+        bzw.\ $\frac{2}{n+1}$, sodass man auf einen gemeinsamen Nenner bringen
+        und zusammenfassen kann.
+\end{itemize}
+\textit{Skript:} Kap. 1.2, S. 11--12.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item Im Summen-Beispiel entsteht rechts ein Ausdruck
+        $2-\frac{n+2}{2^n}+\frac{n+1}{2^{n+1}}$; nur mit dem gemeinsamen
+        Nenner $2^{n+1}$ lassen sich die Brüche sauber zusammenfassen.
+  \item Im Produkt-Beispiel schreibt man jeden Faktor um
+        (hier $1+\frac2k=\frac{k+2}{k}$): so wird das Produkt zum
+        Teleskopprodukt, das Schritt für Schritt kürzt.
+  \item Die Behauptung ist für $n\in\mathbb N$ formuliert; prüfen, ob der
+        IA bei $n=1$ beginnt.
+  \item Nicht den IS als bloße Umformung der Induktionsannahme missverstehen;
+        das Ziel ist die Behauptung für $n+1$.
+\end{itemize}
+\end{achtung}

@@ -1,0 +1,93 @@
+% titel: Blatt 9, A2: Integrationsregeln
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{a) Partielle Integration}
+
+\textbf{$\int_0^\pi (x+1)^2\cos x\,\dd x$:} Für das Polynom $f(x)=(x+1)^2$
+und $g'(x)=\cos x$ ist $g(x)=\sin x$, also
+\begin{align}
+  \int_0^\pi (x+1)^2\cos x\,\dd x
+  &= \Bigl[(x+1)^2\sin x\Bigr]_0^\pi
+     - 2\int_0^\pi (x+1)\,\sin x\,\dd x .
+\end{align}
+Randterm: $(x+1)^2\sin x\big|_0^\pi = (\pi+1)^2\cdot0-1\cdot0=0$. Nochmals
+partiell integrieren mit $f(x)=x+1$, $g'=\sin x$:
+\begin{align}
+  \int (x+1)\sin x\,\dd x
+  &= -(x+1)\cos x + \int \cos x\,\dd x
+   = -(x+1)\cos x + \sin x .
+\end{align}
+Eingesetzt:
+\begin{align}
+  \int_0^\pi (x+1)^2\cos x\,\dd x
+  &= -2\Bigl[\overbrace{-(x+1)\cos x+\sin x}\Bigr]_0^\pi \\
+  &= -2\Bigl[\bigl(-(\pi+1)(-1)+0\bigr)-\bigl(-1\cdot1+0\bigr)\Bigr]
+   = -2\bigl[(\pi+1)-(-1)\bigr]
+   = -2(\pi+2).
+\end{align}
+
+\textbf{$\int_1^4 \frac{\ln x}{\sqrt x}\,\dd x$:} Wähle $f=\ln x$, $g'=x^{-1/2}$
+$\Rightarrow$ $g=2x^{1/2}$:
+\begin{align}
+  \int \frac{\ln x}{\sqrt x}\,\dd x
+  &= 2\sqrt x\,\ln x - \int 2x^{1/2}\cdot\frac1x\,\dd x
+   = 2\sqrt x\,\ln x - \int 2x^{-1/2}\,\dd x \\
+  &= 2\sqrt x\,\ln x - 4\sqrt x .
+\end{align}
+Mit den Grenzen:
+\begin{align}
+  \Bigl[2\sqrt x\,\ln x - 4\sqrt x\Bigr]_1^4
+  &= (4\ln4 - 8) - (0-4) = 4\ln4 - 4 = 4(\ln4-1) = 8\ln2 - 4 .
+\end{align}
+
+\begin{ergebnis}
+$\displaystyle\int_0^\pi (x+1)^2\cos x\,\dd x = -2(\pi+2),\qquad
+\int_1^4\frac{\ln x}{\sqrt x}\,\dd x = 8\ln2-4.$
+\end{ergebnis}
+
+\subsection*{b) Substitution}
+
+\textbf{$\int_0^1 \frac{x}{\sqrt{1+x^2}}\,\dd x$:} $u=1+x^2$, $\dd u=2x\,\dd x$,
+Grenzen $x{=}0{\to}u{=}1$, $x{=}1{\to}u{=}2$:
+\begin{align}
+  \int_0^1\frac{x}{\sqrt{1+x^2}}\,\dd x
+  = \frac12\int_1^2 u^{-1/2}\,\dd u
+  = \Bigl[\sqrt u\Bigr]_1^2 = \sqrt2-1 .
+\end{align}
+
+\textbf{$\int_0^\pi \cos^3 x\,\sin x\,\dd x$:} $u=\cos x$, $\dd u=-\sin x\,\dd x$,
+Grenzen $0{\to}1$, $\pi{\to}{-}1$:
+\begin{align}
+  \int_0^\pi \cos^3 x\,\sin x\,\dd x
+  = \int_{1}^{-1} u^3(-\dd u)
+  = \int_{-1}^{1} u^3\,\dd u = 0 ,
+\end{align}
+denn $u^3$ ist ungerade (s. Blatt 9, A5), das Integral über $[-1,1]$ ist null.
+
+\textbf{$\int_1^e \frac{(\ln x)^2}{x}\,\dd x$:} $u=\ln x$, $\dd u=\frac1x\,\dd x$,
+Grenzen $1{\to}0$, $e{\to}1$:
+\begin{align}
+  \int_1^e \frac{(\ln x)^2}{x}\,\dd x
+  = \int_0^1 u^2\,\dd u = \frac{u^3}{3}\Big|_0^1 = \frac13 .
+\end{align}
+
+\begin{ergebnis}
+$\displaystyle\int_0^1\frac{x}{\sqrt{1+x^2}}\,\dd x=\sqrt2-1,\qquad
+\int_0^\pi \cos^3 x\,\sin x\,\dd x=0,\qquad
+\int_1^e\frac{(\ln x)^2}{x}\,\dd x=\frac13.$
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Größenordnung:} $\sqrt2-1\approx0.414$ passt zu einem positiven
+Integranden $\le\frac{x}{1}$. \textbf{Null.} $\cos^3x\sin x$ ist auf $[0,\pi]$
+symmetrisch mit Vorzeichenwechsel um $x=\frac\pi2$, das Integral ist $0$ —
+konsistent. \textbf{Kleinheit:} $(\ln x)^2/x$ positiv, kleines Ergebnis
+$\frac13$ plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Partielle Integration, wenn ein Faktor beim Ableiten einfacher wird
+(Polynom$\cdot\sin/\cos$); Substitution, wenn $\varphi'(x)$ als Faktor schon
+da ist ($x\dd x$ zu $x^2$, $\frac1x\dd x$ zu $\ln x$, $\sin\dd x$ zu $\cos$).
+Grenzen immer mit umrechnen.
+\end{merksatz}
