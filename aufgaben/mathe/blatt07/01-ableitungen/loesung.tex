@@ -2,8 +2,8 @@
 
 \subsection*{Gegeben und gesucht}
 Einige Funktionen zum Üben der Ableitungsregeln (Teil a) sowie Kurvendiskussion
-von $f(x)=\ln(x^2+1)$ (Teil b). Einzelne konkrete Funktionen in Teil a sind im
-eingescannten Blatt unlesbar; die Methode zeigt der lesbare Teil.
+von $f(x)=\ln(x^2+\tfrac12)$ (Teil b). Einzelne konkrete Funktionen in Teil a
+sind im eingescannten Blatt unlesbar; die Methode zeigt der lesbare Teil.
 
 \subsection*{a) Ableiten — lesbarer Teil}
 Mit der Kettenregel, z. B. für $g(x)=\ln(\cos x)$ mit $x\in(-\tfrac\pi2,\tfrac\pi2)$:
@@ -19,38 +19,45 @@ Die restlichen Funktionen (deren genaue Gestalt der Scan nicht sicher zeigt)
 ebenso mit den passenden Regeln ableiten — bitte die ursprünglichen Ausdrücke
 vom Blatt übernehmen.
 
-\subsection*{b) Kurvendiskussion von $f(x)=\ln(x^2+1)$}
-Definitionsbereich: $x^2+1>0$ für alle $x$, also $\mathbb D_f=\mathbb R$.
+\subsection*{b) Kurvendiskussion von $f(x)=\ln(x^2+\tfrac12)$}
+Definitionsbereich: $x^2+\tfrac12>0$ für alle $x$, also $\mathbb D_f=\mathbb R$.
 Nullstellen:
 \begin{equation}
-  \ln(x^2+1)=0 \;\Longleftrightarrow\; x^2+1=1 \;\Longleftrightarrow\; x=0.
+  \ln\!\bigl(x^2+\tfrac12\bigr)=0
+  \;\Longleftrightarrow\; x^2+\tfrac12=1
+  \;\Longleftrightarrow\; x^2=\tfrac12
+  \;\Longleftrightarrow\; x=\pm\tfrac{1}{\sqrt2}.
 \end{equation}
 Ableitungen:
 \begin{equation}
-  f'(x)=\frac{2x}{x^2+1},\qquad
-  f''(x)=\frac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}
-  =\frac{2-2x^2}{(x^2+1)^2}.
+  f'(x)=\frac{2x}{x^2+\tfrac12},\qquad
+  f''(x)=\frac{2\bigl(x^2+\tfrac12\bigr)-2x\cdot2x}{\bigl(x^2+\tfrac12\bigr)^2}
+  =\frac{1-2x^2}{\bigl(x^2+\tfrac12\bigr)^2}.
 \end{equation}
-Extrema: $f'=0$ bei $x=0$; dort $f''(0)=2>0$, also lokales Minimum $f(0)=0$,
-zugleich globales Minimum. Wendepunkte: $f''=0$ bei $2-2x^2=0$, also
-$x=\pm1$; dort wechselt $f''$ das Vorzeichen, daher sind $\pm1$ Wendestellen.
+Extrema: $f'=0$ bei $x=0$; dort $f''(0)=4>0$, also lokales Minimum
+$f(0)=\ln\tfrac12=-\ln2$, zugleich globales Minimum. Wendepunkte: $f''=0$ bei
+$1-2x^2=0$, also $x=\pm\tfrac{1}{\sqrt2}$; dort wechselt $f''$ das Vorzeichen
+(für $|x|<\tfrac1{\sqrt2}$ ist $f''>0$, sonst $<0$), daher sind
+$\pm\tfrac1{\sqrt2}$ Wendestellen.
 
 \begin{ergebnis}
 \begin{equation*}
   f\ \text{überall definiert},\quad
-  \text{Min}\ (0,0),\quad
-  \text{Wende st.}\ x=\pm1.
+  \text{Min}\ \bigl(0,-\ln2\bigr),\quad
+  \text{Null- und Wende st.}\ x=\pm\tfrac{1}{\sqrt2}.
 \end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
 \textbf{Symmetrie:} $f(x)=f(-x)$ (gerade), also Min bei $0$ und symmetrische
-Wendestellen bei $\pm1$ — plausibel.
-\textbf{Grenzfall:} $f''$ ist für $|x|<1$ positiv, für $|x|>1$ negativ;
-Vorzeichenwechsel bei $\pm1$ bestätigt die Wendestellen.
+Null-/Wendestellen bei $\pm\tfrac1{\sqrt2}$ — plausibel.
+\textbf{Grenzfall:} $f''$ ist für $|x|<\tfrac1{\sqrt2}$ positiv, für
+$|x|>\tfrac1{\sqrt2}$ negativ; Vorzeichenwechsel bei $\pm\tfrac1{\sqrt2}$
+bestätigt die Wendestellen.
 \end{kontrolle}
 
 \begin{merksatz}
-Kettenregel zuerst; bei $\ln(x^2+1)$ ist $x^2+1$ stets positiv, daher keine
-Definitionslücken. Extrema über $f'=0$ mit Vorzeichen, Wendepunkte über $f''=0$.
+Kettenregel zuerst; bei $\ln(x^2+\tfrac12)$ ist das Argument $x^2+\tfrac12$
+stets positiv, daher keine Definitionslücken. Extrema über $f'=0$ mit
+Vorzeichen, Wendepunkte über $f''=0$.
 \end{merksatz}
