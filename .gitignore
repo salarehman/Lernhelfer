@@ -12,6 +12,7 @@ texput.log
 
 # vom Build erzeugt
 generated/
+_bm.tex
 
 # Betriebssystem
 .DS_Store
