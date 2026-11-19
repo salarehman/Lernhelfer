@@ -5,7 +5,7 @@
 % Grundidee: Python zählt 0^2+...+n^2 numerisch; die geschlossene Formel
 % n(n+1)(2n+1)/6 wird per Induktion bewiesen.
 
-Wie bei der Gauß-Summe treffen sich hier numerisches Rechnen (Python-
+Wie bei der Gauss-Summe treffen sich hier numerisches Rechnen (Python-
 Schleife) und eine geschlossene Formel. Beim Beweis ist die eigentliche
 Schwierigkeit die Induktionsvorbereitung: \emph{welcher neue Summand
 kommt dazu, und auf welchen Nenner bringt man ihn?}
@@ -29,7 +29,7 @@ Faktor $2n+1$?} Die Formel muss die Summe der $n$ ersten Quadratzahlen
 treffen; die Induktion zeigt, dass beim Hinzufügen von $(n+1)^2$ der
 Zähler $(n+1)(n+2)(2n+3)$ entsteht. Dass im Zähler das Produkt dreier
 aufeinanderfolgender natürlicher Zahlen steht, ist eine strukturelle
-Regelmäßigkeit dieser Summenklasse.
+Regelmässigkeit dieser Summenklasse.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
@@ -40,7 +40,7 @@ Regelmäßigkeit dieser Summenklasse.
         sind und man $n+1$ ausklammern kann; das Ziel ist
         $\frac{(n+1)(n+2)(2n+3)}6$.
   \item Formel und Schleife müssen für \emph{alle} $n$ dieselben Werte
-        liefern --- das ist der Inhalt von Teil b), nicht bloß ``einmal
+        liefern --- das ist der Inhalt von Teil b), nicht bloss ``einmal
         passt es``.
 \end{itemize}
 \end{achtung}

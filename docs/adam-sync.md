@@ -38,7 +38,7 @@ skript/<fach>/  (Skripte)   ·   aufgaben/<fach>/<blattNN>/  (Scaffold, öffentl
   Build in einen deklarativen Sync für die beiden Lernhelfer-Repos.
   GitHub: `github:salarehman/flake-environments?dir=lernhelfer-sync`.
 - **Lokaler Wächter** `/opt/data/scripts/lernhelfer-probe.sh` — der tägliche
-  Cron-Probe, der Sync + Einordnung anstößt und eine deterministische Signatur
+  Cron-Probe, der Sync + Einordnung anstösst und eine deterministische Signatur
   ausgibt (siehe unten).
 
 ## Cookies (einmaliger Login)
@@ -84,7 +84,7 @@ Nutzungsbedingungen nicht weitergegeben werden — auch nicht über eine
 
 - Sie liegen **nur im privaten Repo `Lernhelfer-Material`**
   (`eingang/<fach>/` für Blätter, `skript/<fach>/` für Skripte).
-- Das öffentliche Repo `Lernhelfer` enthält ausschließlich selbst geschriebene
+- Das öffentliche Repo `Lernhelfer` enthält ausschliesslich selbst geschriebene
   Inhalte (die Lernhelfer-PDFs und ihre LaTeX-Quellen) und ist frei von diesen
   Dateien — faktisch und in der Git-Historie.
 

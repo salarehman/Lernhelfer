@@ -2,9 +2,9 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-% Grundidee: Das Bild der fallenden Dominokette: Anfang stoßt den ersten
+% Grundidee: Das Bild der fallenden Dominokette: Anfang stosst den ersten
 % Stein, der Schritt "n -> n+1" kettet alle weiteren. Die Summe gerader
-% Zahlen folgt aus der Gaußschen Dreieckszahl.
+% Zahlen folgt aus der Gaussschen Dreieckszahl.
 
 Die vollständige Induktion ist ein Beweisverfahren, das unendlich viele
 Einzelfälle $A(1),A(2),A(3),\dots$ in \emph{zwei} Schritten abdeckt. Das
@@ -15,11 +15,11 @@ Stell dir eine unendlich lange Reihe von Dominosteinen vor, die alle in
 gleichem Abstand aufgestellt sind. Um alle umzuwerfen, brauchst du genau
 zweierlei:
 \begin{itemize}
-  \item \textbf{Induktionsanfang (IA):} Du stößt den \emph{ersten} Stein
+  \item \textbf{Induktionsanfang (IA):} Du stösst den \emph{ersten} Stein
         um (er muss wirklich fallen, sonst passiert nichts).
   \item \textbf{Induktionsschritt (IS):} Es ist konstruktionsbedingt
         gesichert, dass wenn Stein $n$ fällt, er den Stein $n+1$ mit
-        umstoßt.
+        umstosst.
 \end{itemize}
 Dann fallen \emph{alle} Steine. Auf Aussagen übertragen: $A(1)$ ist wahr
 (IA), und aus ``$A(n)$ wahr`` folgt ``$A(n+1)$ wahr`` (IS, unter der
@@ -32,7 +32,7 @@ Die Summe der ersten $n$ geraden Zahlen:
   2+4+6+\dots+2n = 2(1+2+\dots+n)=2\cdot\frac{n(n+1)}2=n(n+1).
 \end{equation}
 \textbf{Warum?} Ausklammern des Faktors $2$ führt sie auf die
-Gaußsche Summe $\frac{n(n+1)}2$ zurück; die Verdopplung hebt das
+Gausssche Summe $\frac{n(n+1)}2$ zurück; die Verdopplung hebt das
 $\tfrac12$ auf. Im Induktionsschritt zerlegt man
 \begin{equation}
   \text{(Summe bis } n+1)=\text{(Summe bis } n)+ 2(n+1)

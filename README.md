@@ -57,7 +57,7 @@ Theorie-PDF (eine Datei reicht). Beispiel: `out/physik/blatt07-lernhelfer.pdf`.
 ## Wöchentliche Routine
 
 1. **Ingest (automatisch):** adam-sync zieht neue Dateien aus ADAM ins private
-   Material-Repo (`eingang/<fach>/`); ein täglicher 02:00-Timer/probe stößt
+   Material-Repo (`eingang/<fach>/`); ein täglicher 02:00-Timer/probe stösst
    Sync + Einordnung an. Details: [docs/adam-sync.md](docs/adam-sync.md).
 2. **Einordnen:** `eingang.py einordnen --public ../Lernhelfer` sortiert
    Skripte → `skript/<fach>/`, Blätter → Scaffold-Ordner hier in

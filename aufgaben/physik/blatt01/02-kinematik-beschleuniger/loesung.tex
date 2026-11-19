@@ -1,15 +1,15 @@
 % Teil II: durchgerechneter Weg, Teile a--c.
 
 \subsection*{Gegeben und gesucht}
-$a(t)$ steigt fuer $0\le t<T$ linear von $0$ auf $a_0$, faellt fuer
-$T\le t<2T$ linear auf $0$ und ist fuer $t\ge2T$ null.
+$a(t)$ steigt für $0\le t<T$ linear von $0$ auf $a_0$, fällt für
+$T\le t<2T$ linear auf $0$ und ist für $t\ge2T$ null.
 Anfangsbedingungen $v(0)=0$, $x(0)=0$. Gesucht: (a) $a(t)$ in den drei
-Intervallen, (b) $v(t)$ und $x(t)$ fuer $t\ge0$, (c) $v_{\mathrm{end}}$.
+Intervallen, (b) $v(t)$ und $x(t)$ für $t\ge0$, (c) $v_{\mathrm{end}}$.
 
 \subsection*{Ansatz}
 Die Beschleunigung ist in jedem Intervall eine Gerade; einmaliges bzw.
 zweimaliges Integrieren liefert $v(t)$ bzw. $x(t)$. Die Randwerte werden
-uemer die Anschlussbedingungen verknuepft.
+uemer die Anschlussbedingungen verknüpft.
 
 \subsection*{Rechnung}
 \textbf{a) Beschleunigung.}
@@ -21,7 +21,7 @@ uemer die Anschlussbedingungen verknuepft.
   \end{cases}
 \end{equation}
 
-\textbf{b) Geschwindigkeit und Ort.} Fuer das erste Intervall:
+\textbf{b) Geschwindigkeit und Ort.} Für das erste Intervall:
 \begin{equation}
   v(t)=\int_0^t \frac{a_0}{T}t'\,\mathrm dt'=\frac{a_0\,t^2}{2T},
   \qquad x(t)=\int_0^t v\,\mathrm dt'=\frac{a_0\,t^3}{6T},
@@ -53,7 +53,7 @@ Die Skizze zeigt $v(t)$: steigende Parabel, dann fallende Parabel, ab $2T$
 eine Horizontale auf $a_0T$.
 
 \begin{ergebnis}
-$a(t)$ wie oben; $v(t)$ und $x(t)$ stueckweise mit den Anschluessen
+$a(t)$ wie oben; $v(t)$ und $x(t)$ stückweise mit den Anschluessen
 $v(T)=\tfrac12a_0T$, $v(2T)=a_0T$; $v_{\mathrm{end}}=a_0T$.
 \end{ergebnis}
 
@@ -61,17 +61,17 @@ $v(T)=\tfrac12a_0T$, $v(2T)=a_0T$; $v_{\mathrm{end}}=a_0T$.
 \textbf{Einheiten:} $a_0$ in \unit{\metre\per\second\squared}, $T$ in
 \unit{\second} --- $a_0T$ damit in \unit{\metre\per\second}. \checkmark
 
-\textbf{Querprobe:} Fuer eine Dreiecksspitze der Breite $2T$ und Hoehe
-$a_0$ ist die Flaeche $\int a\,\mathrm dt=\frac12(2T)a_0=a_0T$, genau
+\textbf{Querprobe:} Für eine Dreiecksspitze der Breite $2T$ und Hoehe
+$a_0$ ist die Fläche $\int a\,\mathrm dt=\frac12(2T)a_0=a_0T$, genau
 $v_{\mathrm{end}}$. \checkmark
 
 \textbf{Stetigkeit:} $v(T)=\tfrac12a_0T$ aus beiden angrenzenden
-Formeln; keine Spruenge. \checkmark
+Formeln; keine Sprünge. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Die Geschwindigkeit ist die Flaeche unter $a(t)$. Bei stueckweise
-linearem $a(t)$ integriert man Intervall fuer Intervall und schliesst die
-Randwerte an; die Enddgeschwindigkeit ist die gesamte Flaeche unter der
+Die Geschwindigkeit ist die Fläche unter $a(t)$. Bei stückweise
+linearem $a(t)$ integriert man Intervall für Intervall und schliesst die
+Randwerte an; die Enddgeschwindigkeit ist die gesamte Fläche unter der
 Beschleunigungskurve.
 \end{merksatz}
