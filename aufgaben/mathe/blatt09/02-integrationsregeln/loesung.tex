@@ -47,12 +47,14 @@ $\displaystyle\int_0^\pi (x+1)^2\cos x\,\dd x = -2(\pi+2),\qquad
 
 \subsection*{b) Substitution}
 
-\textbf{$\int_0^1 \frac{x}{\sqrt{1+x^2}}\,\dd x$:} $u=1+x^2$, $\dd u=2x\,\dd x$,
-Grenzen $x{=}0{\to}u{=}1$, $x{=}1{\to}u{=}2$:
+\textbf{$\int_0^1 x\sqrt{1+x^2}\,\dd x$:} $u=1+x^2$, $\dd u=2x\,\dd x$
+$\Rightarrow$ $x\,\dd x=\frac12\,\dd u$; Grenzen
+$x{=}0{\to}u{=}1$, $x{=}1{\to}u{=}2$:
 \begin{align}
-  \int_0^1\frac{x}{\sqrt{1+x^2}}\,\dd x
-  = \frac12\int_1^2 u^{-1/2}\,\dd u
-  = \Bigl[\sqrt u\Bigr]_1^2 = \sqrt2-1 .
+  \int_0^1 x\sqrt{1+x^2}\,\dd x
+  = \frac12\int_1^2 u^{1/2}\,\dd u
+  = \frac12\Bigl[\frac23 u^{3/2}\Bigr]_1^2
+  = \frac13\bigl(2\sqrt2-1\bigr) .
 \end{align}
 
 \textbf{$\int_0^\pi \cos^3 x\,\sin x\,\dd x$:} $u=\cos x$, $\dd u=-\sin x\,\dd x$,
@@ -72,14 +74,14 @@ Grenzen $1{\to}0$, $e{\to}1$:
 \end{align}
 
 \begin{ergebnis}
-$\displaystyle\int_0^1\frac{x}{\sqrt{1+x^2}}\,\dd x=\sqrt2-1,\qquad
+$\displaystyle\int_0^1 x\sqrt{1+x^2}\,\dd x=\frac13(2\sqrt2-1),\qquad
 \int_0^\pi \cos^3 x\,\sin x\,\dd x=0,\qquad
 \int_1^e\frac{(\ln x)^2}{x}\,\dd x=\frac13.$
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Größenordnung:} $\sqrt2-1\approx0.414$ passt zu einem positiven
-Integranden $\le\frac{x}{1}$. \textbf{Null.} $\cos^3x\sin x$ ist auf $[0,\pi]$
+\textbf{Größenordnung:} $\frac13(2\sqrt2-1)\approx0.609$ passt zu einem
+positiven Integranden $x\sqrt{1+x^2}\in[0,\sqrt2]$. \textbf{Null.} $\cos^3x\sin x$ ist auf $[0,\pi]$
 symmetrisch mit Vorzeichenwechsel um $x=\frac\pi2$, das Integral ist $0$ —
 konsistent. \textbf{Kleinheit:} $(\ln x)^2/x$ positiv, kleines Ergebnis
 $\frac13$ plausibel.
