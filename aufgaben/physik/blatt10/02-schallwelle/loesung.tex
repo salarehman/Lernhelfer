@@ -1,0 +1,81 @@
+% Teil II: durchgerechneter Weg, Teile a--b.
+
+\subsection*{Gegeben und gesucht}
+Ebene Schallwelle $y(x,t)=\qty{5e-5}{m}\cdot\sin(\qty{1980}{s^{-1}}t-\qty{6}{m^{-1}}x)$.
+Gesucht: (a) $f,\lambda,c$; (b) Teilchengeschwindigkeit $v(x,t)$, Maximalwert
+$v_{\max}$ und Vergleich mit $c$.
+
+\subsection*{Ansatz und Physik dahinter}
+Die Gleichung ist bereits der harmonische Ansatz $A\sin(\omega t-kx)$ --- man
+liest nur $\omega$ und $k$ ab und setzt die Standardbeziehungen
+$f=\omega/2\pi$, $\lambda=2\pi/k$, $c=\omega/k$ ein. Die
+Teilchengeschwindigkeit ist die zeitliche Ableitung der Auslenkung, weil
+``Geschwindigkeit = Änderung der Auslenkung pro Zeit'' am festen Ort $x$
+gemeint ist. Das $x$ bleibt bei dieser Ableitung unverändert (es ist nur ein
+Parameter, der angibt, \emph{welches} Teilchen man betrachtet).
+
+\subsection*{Rechnung}
+\textbf{a) Frequenz, Wellenlänge, Geschwindigkeit.}
+\begin{align}
+  f&=\frac{\omega}{2\pi}=\frac{1980}{2\pi}\ \mathrm{s^{-1}}
+    \approx\boxed{\;\qty{315}{Hz}\;},\\
+  \lambda&=\frac{2\pi}{k}=\frac{2\pi}{6}\ \mathrm{m}
+    \approx\boxed{\;\qty{1.05}{m}\;},\\
+  c&=\frac{\omega}{k}=\frac{1980}{6}\ \mathrm{\frac{m}{s}}
+    =\boxed{\;\qty{330}{m/s}\;},
+  \quad\text{oder } c=\lambda f\ \text{mit $\lambda f=1.05\cdot315$.}
+\end{align}
+Die drei Beziehungen sind nicht unabh"angig: $c=\lambda f$ folgt aus $c=\omega/k$
+und den Definitionen ($\omega=2\pi f$, $k=2\pi/\lambda$).
+
+\textbf{b) Teilchengeschwindigkeit.} Kettenregel beim Zeit-Differenzieren
+(das Argument $\omega t-kx$ bleibt stehen):
+\begin{equation}
+  v(x,t)=\frac{\partial y}{\partial t}
+  =\qty{5e-5}{m}\cdot\qty{1980}{s^{-1}}\cdot\cos(\omega t-kx)
+  =\qty{0.099}{m/s}\,\cos(\omega t-kx)\;.
+\end{equation}
+Das Maximum tritt auf, wo $\cos=\pm1$ (dort, wo das Teilchen seine
+Ruhelage durchquert -- gr"o"ste Geschwindigkeit):
+\begin{equation}
+  \boxed{\;v_{\max}=A\omega=\qty{0.099}{m/s}\;}.
+\end{equation}
+Vergleich mit der Ausbreitungsgeschwindigkeit:
+\begin{equation}
+  \frac{v_{\max}}{c}=\frac{0.099}{330}=3.0\times10^{-4}
+  \quad\Rightarrow\quad v_{\max}\ll c
+  \quad(\lesssim0.3\,\text{mm/s}).
+\end{equation}
+Die Luftteilchen schwingen also nur winzig um ihre Ruhelage
+(\qty{0.1}{m/s}), w"ahrend sich die Störung mit \qty{330}{m/s} durch die Luft
+bewegt. Das ist der Unterschied zwischen Teilchen- und Phasengeschwindigkeit.
+
+\begin{ergebnis}
+$a)$ $f=\qty{315}{Hz}$, $\lambda=\qty{1.05}{m}$, $c=\qty{330}{m/s}$.
+$b)$ $v=\qty{0.099}{m/s}\cos(\omega t-kx)$, $v_{\max}=\qty{0.099}{m/s}$,
+$v_{\max}/c=3.0\times10^{-4}$ --- Teilchengeschwindigkeit weit kleiner als die
+Phasengeschwindigkeit.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $A\omega=(\mathrm{m})(\mathrm{s^{-1}})=
+\mathrm{m/s}\checkmark$; $c=\omega/k=(\mathrm{s^{-1}})(\mathrm{m})=
+\mathrm{m/s}\checkmark$; $\lambda=2\pi/k\Rightarrow\unit{\metre}$.
+Das Argument $\omega t-kx$ ist dimensionslos. \checkmark
+
+\textbf{Grenzfall/Größenordnung:} Schall in Luft bei 20$\,{}^\circ$C hat
+$c\approx\qty{343}{m/s}$; hier $330$ m/s passt zu Normalbedingungen
+(\qty{0}{\celsius}). Ein h"orbares 315-Hz-Signal (\qty{1.05}{m}
+Wellenlänge) ist ein allt"aglicher Ton, es stimmt. \checkmark
+
+\textbf{Querprobe mit $c=\lambda f$:} $1.05\cdot315\approx330$ -- die drei
+Gr"o"sen sind konsistent. Die Teilchenauslenkung \qty{5e-5}{m} ist fast
+$10^5$"mal kleiner als die Wellenlänge, also lineare Welle. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+An einer ebenen Welle $y=A\sin(\omega t-kx)$ liest man die Ausbreitung direkt
+ab: $\lambda=2\pi/k$, $f=\omega/2\pi$, $c=\omega/k=\lambda f$. Die
+Teilchengeschwindigkeit ist zeitenableitung und bleibt Br"uche $Ak\omega$
+klein gegenüber $c$; die Störung eilt, die Teilchen taumeln nur.
+\end{merksatz}

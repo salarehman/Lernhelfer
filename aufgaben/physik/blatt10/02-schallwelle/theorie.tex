@@ -1,0 +1,79 @@
+% titel: Blatt 10, A2: Ebene Schallwelle
+% skript: Kap. Wellen, harmonische Welle, Teilchengeschwindigkeit
+
+% Ebene Schallwelle: Kenngroessen aus y(x,t)=A sin(wt-kx),
+% Teilchengeschwindigkeit ist Ableitung, vmax << c.
+
+Eine ebene Schallwelle ist eine ganz konkrete Form der Welle: die
+Luftteilchen schwingen periodisch um ihre Ruhelage, und diese Störung
+läuft als Verdichtung/Verflüssigung durch das Medium. Die gegebene Gleichung
+$y(x,t)=A\sin(\omega t-kx)$ enthält alle Information --- man muss nur lernen,
+sie auszulesen.
+
+\begin{werkzeugkasten}[Die Wellengleichung lesen]
+\begin{equation}
+  y(x,t)=A\,\sin(\omega t-kx),\qquad
+  A=\qty{5e-5}{m},\ \omega=\qty{1980}{s^{-1}},\ k=\qty{6}{m^{-1}}.
+\end{equation}
+Was bedeuten die drei Kenngrößen?
+
+\begin{itemize}
+  \item \textbf{Amplitude $A$:} maximale Auslenkung eines Luftteilchens aus
+        seiner Ruhelage --- hier \qty{5e-5}{m} (f"unf Hundertstel Millimeter!
+        Schall ist eine winzige Bewegung).
+  \item \textbf{Kreisfrequenz $\omega$:} wie schnell schwingt ein
+        \emph{einzelnes} Teilchen, $f=\omega/2\pi$. Unser Ohr h"ort das als
+        Tonh"ohe.
+  \item \textbf{Wellenzahl $k$:} wie gedrängt die schwingenden Teilchen im
+        Raum sitzen, $\lambda=2\pi/k$. Ein Momentfoto der Welle zeigt das
+        r"aumliche Sinusmuster.
+  \item \textbf{Phasengeschwindigkeit $c=\omega/k$:} das Tempo, mit dem sich
+        ein fester Wellenzustand (ein Wellenberg \emph{oder} ein Nulldurch-
+        gang) bewegt. In Luft $c\approx\qty{330}{m/s}$.
+\end{itemize}
+
+\textbf{Warum $c=\omega/k$?} Ein Zustand ``konstanter Phase'' (z. B. das
+Maximum $\sin=1$) wandert, wenn $\omega t-kx$ konstant bleibt. Differenziert
+man $\omega\,dt-k\,dx=0$, folgt $dx/dt=\omega/k=c$. Die Welle läuft nach
+rechts, weil $kx$ ein \emph{Minuszeichen} trägt.
+
+\textbf{Größenordnung und Grenzen:} Die Auslenkung (\qty{5e-5}{m}) ist winzig
+gegen die Wellenlänge (\qty{1.05}{m}) --- die "Anderungen der Luftdichte sind
+klein, die Welle ist linear, $c$ h"angt nicht von der Amplitude ab. Erst bei
+Schockwellen (Sprengstoff, Knall) versagt dieses Modell.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Teilchen- vs. Phasengeschwindigkeit -- zwei völlig verschiedene Dinge]
+Hier steckt der Kern der Aufgabe. Es gibt \emph{zwei} Geschwindigkeiten:
+
+\begin{itemize}
+  \item \textbf{Phase $c$:} die Störung läuft mit $\qty{330}{m/s}$ durch die
+        Luft. Das Luftteilchen \emph{selbst} wandert nicht mit; es schwingt
+        nur um seinen Platz.
+  \item \textbf{Teilchengeschwindigkeit $v(x,t)=\partial y/\partial t$:} wie
+        schnell ein bestimmtes Teilchen in seiner Umgebung hin- und
+        hergleitet. Es ist die zeitliche Ableitung der Auslenkung.
+\end{itemize}
+
+\textbf{Physikalische Vorstellung:} Ein Blatt Papier, das in der Luft
+schwimmt, wird von einer Schallwelle nicht mitgerissen (das wäre die Phase),
+sondern nur leicht hin- und hergeschoben (das wäre die Teilchenbewegung).
+Schall überträgt \emph{keine} Materie, nur Störung und Energie. Dass
+$v_{\max}\ll c$ ist, bedeutet: die Teilchen taumeln nur minimal, während die
+Störung blitzschnell eilt.
+\end{werkzeugkasten}
+
+\begin{achtung}[Das Argument der Ableitung bleibt stehen]
+Beim Differenzieren \emph{innerhalb} des Sinus benutzt man die Kettenregel:
+$\partial_t y = A\,\omega\cos(\omega t-kx)$ --- das Argument $\omega t-kx$
+bleibt unverändert, nur die Vorfaktoren ändern sich ($A\omega$ statt $A$,
+$\sin\rightarrow\cos$). Ein h"aufiger Fehler ist, $kx$ f"alschlich mit
+abzuleiten.
+\end{achtung}
+
+\begin{achtung}[Einheiten der Kenngrößen]
+$\omega$ in \unit{\per\second} (Kreisfrequenz), $f$ in \unit{\hertz},
+$k$ in \unit{\per\metre}, $\lambda$ in \unit{\metre}. $A\omega$ (eine
+Geschwindigkeit) in \unit{\metre\per\second}. Nicht $f$ mit $\omega$ oder
+$k$ mit $\lambda$ verwechseln.
+\end{achtung}

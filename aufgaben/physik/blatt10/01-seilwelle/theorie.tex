@@ -1,0 +1,96 @@
+% titel: Blatt 10, A1: Seilwelle
+% skript: Kap. Wellen, Transversalwelle auf gespanntem Seil
+
+% Seilwelle: Geschwindigkeit c = sqrt(F/mu), Wellenpaket aus Seilenden,
+% Ueberlagerung gegenlaeufiger Störungen.
+
+Eine Transversalwelle auf einem gespannten Seil ist das einfachste Beispiel
+einer Welle, weil sich ihre Ausbreitungsgeschwindigkeit fast ohne Rechnung
+aus einer einzigen Kraft-überlegung ergibt. Um die Aufgabe zu verstehen,
+muss man begreifen, woher die Formel $c=\sqrt{F/\mu}$ kommt --- sie ist keine
+Definition, sondern das Ergebnis einer dynamischen Überlegung.
+
+\begin{werkzeugkasten}[Warum $c=\sqrt{F/\mu}$? Laengsspannung und Traegheit]
+Was bestimmt, wie schnell eine Störung entlang eines Seils läuft? Zwei
+gegenläufige Einflüsse:
+
+\begin{itemize}
+  \item \textbf{Die Zugkraft $F$ (Spannung):} sie zieht jedes Seilelement
+        zurück in seine Ruhelage. Je stärker gespannt das Seil, desto
+        schneller ``erholt'' sich eine Auslenkung --- die Welle läuft
+        schneller.
+  \item \textbf{Die Massenträgheit $\mu=\rho A$ (Masse pro Länge):} ein
+        schweres, träges Seil reagiert träge auf die Rückstellkraft --- die
+        Welle läuft langsamer.
+\end{itemize}
+
+Die Physik steckt in der Kombination: beide hängen gegenläufig, also
+\begin{equation}
+  c=\sqrt{\frac{F}{\mu}}=\sqrt{\frac{F}{\rho A}}\;.
+\end{equation}
+Das ist formal dieselbe Form wie $v=\sqrt{D/m}$ des harmonischen Oszillators:
+Rückstell-"Größe" ($F$ bzw. Federhärte $D$) über Trägheit ($\mu$ bzw.
+Masse $m$). Auch die Schallgeschwindigkeit $c=\sqrt{\kappa p/\rho}$ hat
+genau diese Form: eine Art ``Steifigkeit'' über die Dichte.
+
+\textbf{\"Ober ``Faktor Zwei``:} Bei einer Auslenkung wirkt an einem
+Seilelement die Seilspannung $F$ an \emph{beiden} Enden; die Rückstellkräfte
+addieren sich. Das ist der Ursprung des als Wurzel geschriebenen
+Zusammenhangs, nicht eine freie Konstante.
+
+\textbf{Größenordnung:} Gardinen- oder Paketschnur mit $F\approx10$~N,
+$\mu\approx10^{-3}$~kg/m ergibt $c\approx100$~m/s --- viel schneller, als man
+händisch ``schwingt''. Eine straffe Gitarrensaite (kleines $\mu$, gro"se $F$)
+erreicht hunderte m/s.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Ein Wellenpaket am Seilende erzeugen]
+Wird das Seilende bei $x=0$ mit $y(0,t)$ ausgelenkt, so wandert diese
+Auslenkung unverändert nach rechts:
+\begin{equation}
+  y(x,t)=y(0,\,t-x/c)\;.
+\end{equation}
+Jeder ``Momentanwert'' der Handbewegung braucht die Zeit $L/v=x/c$, um zum Ort
+$x$ zu gelangen. Solche Funktionen der Kombination $t-x/c$ hei"sen
+\emph{vorwärtslaufende Wellen}; eine Funktion von $t+x/c$ läuft nach links.
+
+Ein \emph{Wellenpaket} entsteht, wenn das Ende nur über ein Zeitintervall
+$\Delta t$ bewegt wird. Die Störung hat dann räumliche Länge $c\,\Delta t$:
+Die Vorderseite wurde zu Beginn, die Rückseite am Ende der Bewegung
+ausgesandt und beide laufen mit gleichem $c$ --- die Länge im Raum bleibt
+konstant ($c\cdot\Delta t$).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Erkennen von Wellenlänge, Periode, Phase]
+In einer Funktion $y=A\sin(\omega t-kx)$ steckt alles:
+\begin{itemize}
+  \item Kreisfrequenz $\omega$ (Schwingung an \emph{einem} Ort),
+        Frequenz $f=\omega/2\pi$.
+  \item Wellenzahl $k$ (Schwingung im \emph{Raum} zu einer Zeit),
+        Wellenlänge $\lambda=2\pi/k$.
+  \item Phasengeschwindigkeit $c=\omega/k=\lambda f$ (die Störung läuft mit
+        $x/t=\omega/k$).
+  \item Fortschreiten nach rechts: negatives Vorzeichen $-kx$; nach links:
+        $+kx$.
+\end{itemize}
+Maxima sind dort, wo das Argument einem Vielfachen von $\pi/2$ entspricht ---
+der ``Wellenberg'' wandert also mit der Phasengeschwindigkeit.
+\end{werkzeugkasten}
+
+\begin{achtung}[Grenzen der Näherung]
+\begin{itemize}
+  \item \textbf{Kleine Auslenkungen} ($y\ll\lambda$, kleine Steigung):
+        nur dann ist die Diagonal-Spannung ~$F$ konstant und $c$ unabhängig
+        von der Amplitude. Bei grossen Auslenkungen wird die Tangentialkraft
+        gr"o"ser und die Welle \emph{nichtlinear} (Wellenkämme laufen den
+        Tälern davon).
+  \item \textbf{Ideales, masseloses Spannungsmodell:} Biegesteifigkeit,
+        innere Reibung und Schwerkraft (hängendes statt liegendes Seil) sind
+        vernachl"assigt. Ein senkrecht hängendes Seil hätte zum Beispiel
+        wegen des Gewichts eine ortsabhängige Spannung und damit
+        ortsabhängiges $c$.
+  \item Die Formel $c=\sqrt{F/\mu}$ gilt nur für die \emph{transversale}
+        Ausbreitung entlang eines gespannten Seils, nicht für Schall in
+        Gasen oder Körperwellen.
+\end{itemize}
+\end{achtung}

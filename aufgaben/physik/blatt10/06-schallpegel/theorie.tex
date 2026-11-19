@@ -1,0 +1,78 @@
+% titel: Blatt 10, A6: Schallpegel
+% skript: Kap. Akustik, Schalldruckpegel und Addition inkohärenter Quellen
+
+% Lautstaerke als dB, 10 log10(I/I0); N gleichlaut inkohaerente Quellen
+% addieren Intensitaet linear -> +10 log10(N) dB.
+
+Schall wird nicht in linearer Intensität, sondern logarithmisch als
+\emph{Schallpegel} angegeben. Der Grund liegt in der riesigen Spanne h"orbaren
+Schalls: Die leiseste h"orbare Intensität ($I_0\approx\qty{1e-12}{W/m^2}$)
+und die Schmerzgrenze unterscheiden sich um zw"olf Zehnerpotenzen. Ein
+logarithmisches Ma"ss bringt diese Spanne auf eine handliche Skala.
+
+\begin{werkzeugkasten}[Schallpegel: Dezibel-Skala]
+\begin{equation}
+  L=10\log_{10}\frac{I}{I_0}\ \mathrm{dB},\qquad
+  I_0=\qty{1e-12}{W/m^2}\ \text{(H"orschwelle)}.
+\end{equation}
+Der Faktor 10 steckt drin, weil 1~dB ``gerade noch h"orbarer Unterschied''
+ist: 10~dB bedeuten eine Verzehnfachung der Intensit"at, 20~dB eine
+Verhundertfachung usw. Ein \emph{Verh"altnis} der Intensit"aten wird also nur
+vom Logarithmus des Verh"altnisses bestimmt; f"ur zwei Pegel $L_1,L_2$
+\begin{equation}
+  L_2-L_1=10\log_{10}\frac{I_2}{I_1}\ \mathrm{dB}.
+\end{equation}
+Wichtig ist die \emph{Logarithmus-Logik}: eine Verdopplung der Intensit"at
+ist nur $+3$~dB ($10\log_{10}2\approx3$) --- nicht h"obstens laut, sondern
+``etwas h"orbar lauter''.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Warum N gleichlaut Quellen nur $+10\log_{10}N$ dB]
+Zwei unabh"angige, \emph{inkoh"arente} Schallquellen (z. B. zwei Trillerpfeifen,
+zwei Trommeln) haben keine feste Phasenbeziehung. Mittelt sich die
+Interferenz heraus, so \emph{addieren sich die Intensit"aten}: $I_N=N\,I_1$.
+Damit
+\begin{equation}
+  L_N=10\log_{10}\frac{N I_1}{I_0}
+  =10\log_{10}\frac{I_1}{I_0}+10\log_{10}N
+  =L_1+10\log_{10}N.
+\end{equation}
+Zahlen:
+\begin{itemize}
+  \item 10 gleiche Quellen: $+10\log_{10}10=+10$~dB.
+  \item 100 Quellen: $+20$~dB; 1000 Quellen: $+30$~dB.
+  \item 2 Quellen: nur $+3$~dB --- die Logarithmus-Skala macht Schall
+        ``langsam laut''.
+\end{itemize}
+Das ist der physikalische Kern beider Teilaufgaben: die Antwort h"angt nur
+vom \emph{Verh"altnis} der Anzahlen ab, also direkt vom $10\log_{10}N$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Schmerzgrenze und Größenordnungen]
+Richtwerte in geringer Entfernung: Flüstern ~30~dB, normale Unterhaltung
+~60~dB, laute Stra"se ~80~dB, Rockkonzert/Diskothek ~100~dB,
+Trillerpfeife in geringer Entfernung ~120~dB, \textbf{Schmerzschwelle
+$\approx130$~dB}.
+Ein Zuwachs von 10~dB wird als ``grob doppelt so laut'' empfunden --- wegen
+der Logarithmus-Skala psychologisch etwa linear zur dB-Zahl.
+\end{werkzeugkasten}
+
+\begin{achtung}[Pegel vs.\ Intensit"at bei mehreren Quellen]
+\textbf{Bei inkoh"arenten Quellen Intensit"aten addieren, nicht Drücke} und
+\textbf{nicht direkt dB}: $I_{\text{tot}}=\sum I_i$. Nur bei \emph{exakt
+gleichen, koh"arenten} Quellen (gleiche Phase) w"urden die \emph{Amplituden/
+Drücke} addieren, was doppelt so viele Amplituden $\Rightarrow 4\times$ die
+Intensit"at $\Rightarrow +6$~dB w"are. Bei verschiedenen Quellen (Pfeifen,
+Trommeln) gilt die inkoh"arente Regel $+10\log_{10}N$.
+\end{achtung}
+
+\begin{achtung}[F"ulle beim Umkehren]
+Sucht man die Anzahl $N$ zu einer gewünschten Pegel-Differenz
+$\Delta L=L_2-L_1$, löst man
+\begin{equation}
+  N=10^{\Delta L/10}\;.
+\end{equation}
+F"ur $\Delta L=30$~dB ist $N=10^{3}=1000$; f"ur $\Delta L=10$~dB
+$N=10$. Nicht vergessen, dass ``\emph{mehr als}`` bedeuten kann, dass die
+errechnete Zahl allein noch nicht reicht (Achtung auf $\ge$ vs.\ $>$).
+\end{achtung}

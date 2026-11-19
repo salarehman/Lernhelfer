@@ -1,0 +1,108 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+Saite $L=\qty{0.5}{m}$, lineare Dichte $\lambda_m=\mu=\qty{2.0}{g/m}$,
+zweite Oberwelle, Resonanzfrequenz $f=\qty{420}{Hz}$, Maximalauslenkung
+$A=\qty{1}{cm}$. Gesucht: (a) Wellenfunktion $y(x,t)$ als Lösung der
+1D-Wellengleichung, (b) kinetische Energie eines Segments $\mathrm{d}x$,
+Zeitpunkt und Form der Maximal-KE, (c) Maximalwert der gesamten KE.
+
+\subsection*{Ansatz und Physik dahinter}
+Eingespannte Saite $\Rightarrow$ stehende Welle $y=A\sin(kx)\cos(\omega t)$.
+Aus der ``zweiten Oberwelle'' folgt $n=3$, also $k=3\pi/L$ und
+$\omega=2\pi f=2\pi\cdot420$. Die Amplitude $A=\qty{1}{cm}$ ist die maximale
+Auslenkung an einem Bauch ($\sin(kx)=1$). Die Geschwindigkeit des Segments
+ist die Zeitableitung $v=\partial y/\partial t$; die KE eines Segments ist
+$\frac12\mu\,\mathrm{d}x\,v^2$. -- Der physikalische Grundgedanke: die
+stehende Welle ist eine Überlagerung zweier gegenläufiger Wellen; bei
+$t=0$ (max. Auslenkung) ist $v=0$ (nur potentielle Energie), ein Viertel
+Periode später ist $y=0$ mit maximalem $v$ (nur kinetische Energie).
+
+\subsection*{Rechnung}
+\textbf{a) Wellenfunktion.} Zweite Oberwelle: $n=3$, Wellenzahl
+\begin{equation}
+  k=\frac{3\pi}{L}=\frac{3\pi}{0.5}\,\mathrm{m^{-1}}=\qty{18.85}{m^{-1}},
+  \qquad \omega=2\pi f=2\pi\cdot420\,\mathrm{s^{-1}}\approx\qty{2639}{s^{-1}}.
+\end{equation}
+Damit (mit "ublicher stehender-Wellen-Form):
+\begin{equation}
+  \boxed{\;y(x,t)=\qty{0.01}{m}\cdot\sin\!\Bigl(\frac{3\pi x}{L}\Bigr)
+  \cos(2\pi f\,t)\;},\qquad
+  y(0,t)=y(L,t)=0,\ \text{erf"ullt}.
+\end{equation}
+Ableitungen (Kettenregel):
+\begin{equation}
+  \frac{\partial y}{\partial t}=-A\,\omega\,\sin(kx)\,\sin(\omega t),
+  \qquad
+  \frac{\partial^2y}{\partial t^2}=-A\,\omega^2\sin(kx)\,\cos(\omega t).
+\end{equation}
+Einsetzen in $v^2\,\partial^2 y/\partial x^2=\partial^2 y/\partial t^2$ mit
+$v^2k^2=\omega^2$ best"atigt die 1D-Wellengleichung: Der Moden-Formfaktor
+$\sin(kx)$ erfüllt seine räumliche DGL, $\cos$ seine zeitliche.
+
+\textbf{b) KE eines Segments und Maximalzeitpunkt.}
+\begin{equation}
+  \mathrm{d}E_{\text{kin}}
+  =\tfrac12\mu\,A^2\omega^2\,\sin^2(kx)\,\sin^2(\omega t)\,\mathrm{d}x
+  \;.
+\end{equation}
+Kinetische Energie ist maximal, wenn $\sin^2(\omega t)=1$, also
+\begin{equation}
+  \omega t=\frac{\pi}{2}\ \Rightarrow\ t=\frac{\pi}{2\omega}
+  =\frac{1}{4f}=\frac{1}{4\cdot420}\,\mathrm{s}
+  =\boxed{\;\qty{5.95e-4}{s}\;\bigl(=T/4\bigr)}.
+\end{equation}
+Zu diesem Zeitpunkt ist $\cos(\omega t)=0$, also $y(x,t)=0$: die Saite ist
+\textbf{gerade} (Form einer Geraden durch die Ruhelage), alle Segmente
+durchlaufen gleichzeitig die Ruhelage mit maximaler Geschwindigkeit (an den
+Bäuchen, an den Knoten ruht sie weiterhin).
+
+\textbf{c) Maximalwert der gesamten KE.} Integration über $[0,L]$ bei
+$\sin^2(\omega t)=1$:
+\begin{equation}
+  E_{\text{kin,max}}
+  =\tfrac12\mu A^2\omega^2
+  \!\int_0^L\!\sin^2\!\Bigl(\frac{3\pi x}{L}\Bigr)\mathrm{d}x
+  =\tfrac12\mu A^2\omega^2\cdot\frac{L}{2}
+  =\boxed{\;\frac{\mu\,A^2\,\omega^2\,L}{4}\;}
+\end{equation}
+mit $\int_0^L\sin^2(n\pi x/L)\,\mathrm{d}x=L/2$. Zahlen (mit
+$\mu=\qty{0.002}{kg/m}$, $\omega=2639$ s$^{-1}$, $L=0.5$~m):
+\begin{equation}
+  E_{\text{kin,max}}
+  =\frac{0.002\cdot(0.01)^2\cdot(2639)^2\cdot0.5}{4}
+  \approx\qty{0.17}{J}.
+\end{equation}
+
+\begin{ergebnis}
+(a) $y=\qty{0.01}{m}\sin(3\pi x/L)\cos(2\pi\cdot420\,t)$.
+(b) $\mathrm{d}E_{\text{kin}}=\frac12\mu A^2\omega^2\sin^2(kx)\sin^2(\omega t)\mathrm{d}x$;
+$E_{\text{kin}}$ maximal bei $t=T/4=\qty{0.60}{ms}$, dann ist die Saite gerade
+($y=0$). (c) $E_{\text{kin,max}}=\mu A^2\omega^2L/4\approx\qty{0.17}{J}$.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $[\mu A^2\omega^2 L]=
+(\mathrm{kg/m})(\mathrm{m^2})(\mathrm{s^{-2}})(\mathrm m)=\mathrm{kg\,m^2/s^2}
+=\mathrm J\ \checkmark$.
+
+\textbf{Grenzfall ``Grundwelle'' ($n=1$):} sin$^2$ integriert wieder $L/2$
+$=$ gleich, derselbe Ausdruck -- plausibel, da die Modenform den
+Energiegehalt nicht "andert, nur die Verteilung. \checkmark
+
+\textbf{Grenzfall $\omega\rightarrow0$ (kein Schwingen):} $t=\pi/2\omega\to\infty
+$, KE $\to0$, kein Widerspruch. \checkmark
+
+\textbf{Querprobe (Erhaltung):} Bei $t=0$ ist alle Energie potentiell,
+$E_{\text{pot,max}}=E_{\text{kin,max}}$. Mit $y=A\sin(kx)$, $\mu$ linearer
+Dichte stimmt die Gr"o"senordnung: eine 1-cm-Auslenkung auf 0.5~m Saite bei
+~420~Hz tr"agt wenige Zehntel Joule (die Saite bewegt sich schnell).
+\checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Eine eingespannte Saite schwingt nur in Eigenmoden $y=A\sin(n\pi x/L)\cos(\omega t)$
+($\lambda_n=2L/n$). ``Zweite Oberwelle'' hei"st $n=3$. Der B"auch-Auslenkung
+$\Leftrightarrow v=0$ bei $t=0$; eine Viertelperiode sp"ater ist die Saite
+gerade mit maximaler kinetischer Energie $E_{\text{kin,max}}=\mu A^2\omega^2L/4$.
+\end{merksatz}

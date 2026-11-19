@@ -1,0 +1,93 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+Tröte der Länge $l$, ein Ende geschlossen, ein Ende offen, gef"ullt mit
+Stickstoff N$_2$. Normalbedingungen $T=\qty{0}{\celsius}=273.15$~K,
+$p=1$~atm. $R=\qty{8.314}{J/(mol\,K)}$, $\kappa_{\mathrm{N}_2}=7/5$,
+$\kappa_{\mathrm{He}}=5/3$, $M_{\mathrm{N}_2}=\qty{28}{g/mol}$,
+$M_{\mathrm{He}}=\qty{4}{g/mol}$. Gesucht: (a) Skizze Grundschwingung +
+erste Oberschwingung; (b) Frequenz der Grundschwingung; (c) "Anderung bei
+Ersatz durch Helium.
+
+\subsection*{Ansatz und Physik dahinter}
+Einseitig geschlossenes Rohr $\Rightarrow$ Grundwelle $l=\lambda/4$:
+$f_1=c/4l$. Schallgeschwindigkeit im idealen Gas $c=\sqrt{\kappa R T/M}$.
+Die Länge $l$ ist nicht gegeben --- das Ergebnis bleibt symbolisch in $l$,
+aber $c$ l"asst sich mit den gegebenen Konstanten ausrechnen. Für Teil (c)
+ist nur das \emph{Verh"altnis} der beiden Schallgeschwindigkeiten n"otig,
+da die Geometrie ($l$) unver"andert bleibt: $f_{\mathrm{He}}/f_{\mathrm{N}_2}
+=c_{\mathrm{He}}/c_{\mathrm{N}_2}$.
+
+\subsection*{Rechnung}
+\textbf{a) Skizzen.} Grundschwingung: Knoten am geschlossenen Ende, Bauch am
+offenen Ende, genau eine Viertelwelle ($\lambda_1=4l$). Erste Oberschwingung:
+drei Viertelwellen ($\lambda=4l/3$, $f=3f_1$); Knoten am geschlossenen Ende,
+ein Knoten bei $l/3$, Bauch bei $2l/3$ und am offenen Ende.
+
+\textbf{b) Grundfrequenz (N$_2$).} Zuerst $c$ (mit M in \unit{kg/mol}):
+\begin{equation}
+  c_{\mathrm{N}_2}
+  =\sqrt{\frac{\kappa R\,T}{M}}
+  =\sqrt{\frac{7/5\cdot8.314\cdot273.15}{0.028}}
+  =\sqrt{\frac{3180.6}{0.028}}
+  \approx\boxed{\;\qty{337}{m/s}\;}.
+\end{equation}
+Damit
+\begin{equation}
+  \boxed{\;f_1=\frac{c_{\mathrm{N}_2}}{4l}
+  =\frac{337}{4\,l}\,\mathrm{m/s}\;\bigl(l\ \text{in } m\bigr)
+  \approx\frac{84.3}{l}\,\mathrm{Hz}\;}.
+\end{equation}
+Also z. B. f"ur $l=\qty{1}{m}$: $f_1\approx\qty{84}{Hz}$.
+
+\textbf{c) Ersatz durch Helium.} Nur das Verh"altnis der $c$'s z"ahlt:
+\begin{equation}
+  \frac{c_{\mathrm{He}}}{c_{\mathrm{N}_2}}
+  =\sqrt{\frac{\kappa_{\mathrm{He}}}{\kappa_{\mathrm{N}_2}}
+  \cdot\frac{M_{\mathrm{N}_2}}{M_{\mathrm{He}}}}
+  =\sqrt{\frac{5/3}{7/5}\cdot\frac{28}{4}}
+  =\sqrt{\frac{25}{3}}
+  \approx\boxed{\;2.89\;}.
+\end{equation}
+Zahlenprobe ($c_{\mathrm{He}}=\sqrt{5/3\cdot8.314\cdot273.15/0.004}
+\approx\qty{973}{m/s}$, geteilt durch 337 $\approx2.89$). Die
+Grundfrequenz wird also um den Faktor $2.89$ \emph{h"oher}:
+\begin{equation}
+  f_{1,\mathrm{He}}\approx 2.89\,f_{1,\mathrm{N}_2}\approx\frac{243}{l}
+  \,\mathrm{Hz}\qquad(l\ \text{in } m).
+\end{equation}
+
+\begin{ergebnis}
+(a) Grundschwingung: Halbwelle $\lambda/4$ (Knoten am einen, Bauch am
+offenen Ende); \checkmark
+erste Oberschwingung: $\lambda=4l/3$, mit zus"atzlichem Knoten.
+(b) $c_{\mathrm{N}_2}=\qty{337}{m/s}$,
+$f_1=c_{\mathrm{N}_2}/4l=84.3/l$ Hz.
+(c) Helium: $c_{\mathrm{He}}=973$~m/s, Faktor $2.89$,
+$f_{1,\mathrm{He}}\approx243/l$ Hz --- h"oherer Ton.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\sqrt{\kappa R T/M}$:
+$\sqrt{(\mathrm{kg\,m^2/s^2})/(\mathrm{kg})}=\mathrm{m/s}$. \checkmark
+
+\textbf{Größenordnung:} $c_{\mathrm{N}_2}=337$~m/s ist nur wenig kleiner als
+Schall in Luft ($\approx343$~m/s), weil N$_2$ und die effektive molare Masse
+der Luft fast gleich sind. Das passt.\ \checkmark
+
+\textbf{Konsistenz von Teil (b,c):} da $f_1\propto c\propto1/\sqrt M$, und Helium
+sehr leicht ist, ist eine "Anderung um Faktor $\approx2.9$ plausibel.
+\checkmark
+
+\textbf{Grenzfall:} bei $T\to0$ ginge $c\to0$ (alle Molek"ule st"anden
+still)---im klassischen Bild sinnvoll; die Formel verliert erst weit unter
+Konsensbedingungen ihre G"ultigkeit.
+\end{kontrolle}
+
+\begin{merksatz}
+Einseitig geschlossenes Rohr (Tröte): Grundwelle $l=\lambda/4$, $f_1=c/4l$,
+Obertöne nur ungerade Vielfache. Im idealen Gas
+$c=\sqrt{\kappa R T/M}$; wegen $\kappa\propto\sqrt{\kappa/M}$ wird ein
+leichtes einatomiges Gas (Helium) deutlich "schneller'' als schweres,
+zweiatomiges Stickstoff, die Tröte klingt h"oher.
+\end{merksatz}

@@ -1,0 +1,104 @@
+% Teil II: durchgerechneter Weg, Teile a--c.
+
+\subsection*{Gegeben und gesucht}
+Ballon: Hülle $m_{\mathrm{H}}=\qty{10}{kg}$, $V_{\max}=\qty{1000}{m^3}$.
+$R=\qty{8.314}{J/(mol\,K)}$, $T_0=\qty{273.15}{K}$,
+$p_0=\qty{1.013e5}{Pa}$; $g=\qty{9.81}{m/s^2}$; molare Massen
+$M_{\mathrm{He}}=\qty{4.0}{g/mol}$, $M_{\mathrm{N}_2}=\qty{28.0}{g/mol}$,
+$M_{\mathrm{O}_2}=\qty{32.0}{g/mol}$, $M_{\mathrm{Ar}}=\qty{39.9}{g/mol}$;
+Luft $78\%$ N$_2$, $21\%$ O$_2$, $1\%$ Ar.
+Gesucht: (a) Dichten von He und Luft; (b) Mindest-Heliumvolumen zum Abheben;
+(c) H"ohe, in der $V_{\max}$ erreicht wird, und ob der Ballon weiter steigt.
+
+\subsection*{Ansatz und Physik dahinter}
+Dichte aus idealem Gas $\rho=Mp/(RT)$. Effektive molare Masse der Luft aus
+den gewichteten Anteilen. Auftriebsgleichgewicht am Boden: verdr"angte
+Luftmasse $=$ Hülle $+\,$ Helium; daraus $V_0$. Steigt der Ballon, bleibt die
+Heliummenge konstant und $pV=\text{const}$ (isotherm), also
+$V(h)=V_0\,p_0/p(h)$; $V=V_{\max}$ liefert $h$.
+
+\subsection*{Rechnung}
+\textbf{a) Dichten.}
+\begin{equation}
+  M_{\mathrm{He}}=4.0\times10^{-3}\ \mathrm{kg/mol},\qquad
+  \rho_{\mathrm{He}}=\frac{p_0 M_{\mathrm{He}}}{R T_0}
+  =\frac{1.013\times10^{5}\cdot4.0\times10^{-3}}{8.314\cdot273.15}
+  \approx\boxed{\;\qty{0.18}{kg/m^3}\;}.
+\end{equation}
+Effektive Luftmolmasse:
+\begin{equation}
+  M_{\mathrm{Luft}}=0.78\cdot28+0.21\cdot32+0.01\cdot39.9
+  =28.96\ \mathrm{g/mol}\approx\qty{0.02896}{kg/mol}\;,
+  \qquad
+  \rho_{\mathrm{Luft}}=\frac{p_0 M_{\mathrm{Luft}}}{R T_0}
+  \approx\boxed{\;\qty{1.29}{kg/m^3}\;}.
+\end{equation}
+
+\textbf{b) Mindestvolumen zum Abheben.} Auftrieb $=$ Gewicht:
+\begin{equation}
+  \rho_{\mathrm{Luft}}\,V_0\,g=(m_{\mathrm{H}}+\rho_{\mathrm{He}}V_0)\,g
+  \quad\Rightarrow\quad
+  V_0=\frac{m_{\mathrm{H}}}{\rho_{\mathrm{Luft}}-\rho_{\mathrm{He}}}
+  =\frac{10}{1.29-0.18}\approx\boxed{\;\qty{9.0}{m^3}\;}
+  \ (\approx \qty{8.98}{m^3}).
+\end{equation}
+Gegenprobe: Hülle 10~kg, Helium 0.18$\cdot$9.0$\approx$1.6~kg, zusammen
+$\approx$11.6~kg; verdr"angt 1.29$\cdot$9.0$\approx$11.6~kg Luft. Gleich-
+gewicht. \checkmark
+
+\textbf{c) H"ohe mit $V=V_{\max}$; steigt er weiter?} Bei koh"arenter
+isothermer F"ullung $V(h)=V_0\,p_0/p(h)$:
+\begin{equation}
+  V_{\max}=V_0\,e^{+M_{\mathrm{Luft}}\,g\,h/(R T_0)}
+  \;\Rightarrow\;
+  h=\frac{R T_0}{M_{\mathrm{Luft}}\,g}\ln\frac{V_{\max}}{V_0}.
+\end{equation}
+Mit $M_{\mathrm{Luft}}=0.02896$~kg/mol:
+\begin{equation}
+  \frac{R T_0}{M_{\mathrm{Luft}}\,g}
+  =\frac{8.314\cdot273.15}{0.02896\cdot9.81}
+  \approx\qty{7991}{m},\qquad
+  h=\qty{7991}{m}\cdot\ln(1000/8.98)=\qty{7991}{m}\cdot4.712
+  \approx\boxed{\;\qty{37.6}{km}\;}.
+\end{equation}
+\textbf{Weiter steigen?} In Schritt (c) ist das Volumen am Maximum: Der
+Ballon k"onnte an dieser H"ohe nicht weiter aufbl\"ahen ($V_{\max}$ ist das
+Fassungsvermögen der Hülle, das Helium hat den Umgebungsdruck erreicht).
+Oberhalb davon f"allt $p$ weiter, der Ballon k"onnte nicht weiter expandieren,
+zugleich nimmt die verdr\"angte Luftmasse $\rho_{\mathrm{Luft}}V_{\max}$ mit
+der H"ohe ab, w"ahrend das Gewicht (Hülle + Helium) konstant bleibt:
+der Auftriebsspielraum schrumpft, das Gleichgewicht wird bei $V_{\max}$
+stabil erreicht. Physikalisch hat er seine ``Reiseh"ohe'' erreicht, wo die
+verdr\"angte Luftmasse wieder dem Gewicht entspricht --- ein stabiler
+Schwebezustand. Er steigt also \emph{nicht} weiter.
+
+\begin{ergebnis}
+a) $\rho_{\mathrm{He}}=\qty{0.18}{kg/m^3}$, $\rho_{\mathrm{Luft}}=\qty{1.29}{kg/m^3}$,
+$M_{\mathrm{Luft}}=\qty{29.0}{g/mol}$.
+b) $V_0=m_{\mathrm{H}}/(\rho_{\mathrm{Luft}}-\rho_{\mathrm{He}})\approx\qty{9.0}{m^3}$.
+c) $h=\dfrac{RT_0}{M_{\mathrm{Luft}}g}\ln\dfrac{V_{\max}}{V_0}
+\approx\qty{37.6}{km}$; der Ballon steigt nach Erreichen von $V_{\max}$
+nicht weiter (stabiler Schwebezustand).
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $\rho\colon\dfrac{Pa\cdot kg/mol}{J/(mol\,K)\cdot K}
+=\dfrac{kg/m^2}{m/s^2\cdot s^{-1}}$... konkret:
+$pM/(RT)=(\mathrm{kg\,m/s^2})/(\mathrm{m^2})\cdot(\mathrm{kg/mol})
+/[(\mathrm{kg\,m^2/s^2})/\mathrm{mol}]=\mathrm{kg/m^3}$. \checkmark
+$h$: $RT_0/(Mg)=[\mathrm{m^2/s^2}]/[\mathrm{m/s^2}]=\mathrm m$. \checkmark
+
+\textbf{Größenordnung/Grenzfälle:} Helium 0.18 vs.\ Luft 1.29 kg/m$^3$ ---
+Helium ist ~7"mal leichter; $V_0=9$~m$^3$ (weniger als 2~m Kugeldurchmesser)
+trägt die 10-kg-Hülle knapp. 37.6~km ist die typische H"ohe von
+Wetterballons (30--40~km, Stratosph"are) --- die Antwort ist physikalisch
+plausibel. Bei $T_0\to0$ ginge $\rho\to\infty$, $V_0\to0$: unrealistisch,
+spiegelt nur das Modell. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Ideales Gas: $\rho=Mp/(RT)$. Auftrieb $=\rho_{\mathrm{Luft}}Vg$; Abheben
+genau bei $V=m_{\mathrm{H}}/(\rho_{\mathrm{Luft}}-\rho_{\mathrm{He}})$.
+Isothermer Ballon: $pV$ konstant, $V(h)=V_0e^{Mgh/(RT_0)}$; $V_{\max}$
+erreicht er bei $h=RT_0/(Mg)\ln(V_{\max}/V_0)$ und schwebt dort stabil.
+\end{merksatz}

@@ -1,0 +1,81 @@
+% titel: Blatt 10, A5: Tröte (Stickstoff, einseitig geschlossen)
+% skript: Kap. Stehende Wellen in Luftsäulen, Schallgeschwindigkeit im Gas
+
+% Einseitig geschlossenes Rohr (Grundwelle l=lam/4), Stickstoff (kappa=7/5),
+% c=sqrt(kappa R T/M), Helium-Verstellung (kappa=5/3, M klein).
+
+Eine Tröte ist ein einseitig \emph{geschlossenes} Rohr: Luft steht an der
+geschlossenen Wand still, ist aber am offenen Ende frei. Diese
+Randbedingungen bestimmen alle erlaubten Schwingungen.
+
+\begin{werkzeugkasten}[Warum die Grundwelle $\lambda/4$ ist]
+An einem \emph{geschlossenen} Ende muss ein Verschiebungs- \emph{Knoten}
+sein (die Luft kann dort nicht schwingen, die Wand h"alt sie fest), am
+\emph{offenen} Ende ein Bauch (Druckursprung, Luft frei). Das kleinste
+Schwingungsmuster, das beides verbindet, ist genau \emph{ein Viertel einer
+stehenden Welle}: ein Knoten am geschlossenen, ein Bauch am offenen Ende.
+Damit:
+\begin{equation}
+  L=\frac{\lambda_1}{4}\quad\Rightarrow\quad
+  f_1=\frac{c}{\lambda_1}=\frac{c}{4L}\;.
+\end{equation}
+Die weitere Harmonischenfolge eines einseitig geschlossenen Rohres ist
+\textbf{nur ungerade Vielfache} der Grundfrequenz:
+\begin{equation}
+  f_n=(2n-1)\,f_1,\qquad n=1,2,3,\dots
+  \quad(f_1,\,3f_1,\,5f_1,\dots).
+\end{equation}
+Eine stehende Welle der Länge $(2n-1)\frac{\lambda}{4}$ passt immer genau in
+ein solches Rohr, eine gerade Anzahl Viertelwellen nicht (w"urde am offenen
+Ende ein Knoten erzwingen). Das unterscheidet das halb offene Rohr von der
+beidseitig eingespannten Saite.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Schallgeschwindigkeit im idealen Gas]
+Die Schallgeschwindigkeit h"angt von \emph{Steifigkeit} und \emph{Tr"agheit}
+des Gases ab, analog zu $c=\sqrt{F/\mu}$ beim Seil:
+\begin{equation}
+  c=\sqrt{\frac{\kappa R T}{M}},\qquad
+  \kappa=\frac{c_p}{c_v}
+  \begin{cases}
+    7/5 &\text{zweiatomig (N$_2$, O$_2$, Luft)},\\
+    5/3 &\text{einatomig (He)},\\
+  \end{cases}
+\end{equation}
+mit der molaren Masse $M$ und der universellen Gaskonstante
+$R=\qty{8.314}{J/(mol\,K)}$. Physikalisch: $M$ (Trägheit pro Mol) bremst, die
+Temperatur (kinetische Energie) treibt, und $\kappa>1$ wegen der adiabatischen
+Verdichtung (die Kompression erw"armt das Gas, "ubertragen auf den
+Zusammenhang $\Delta p/\Delta\rho$).
+
+Wichtig: $c$ und damit $f_1=c/4L$ h"angen nicht vom \emph{Druck} ab (bei
+idealem Gas), sondern nur von \emph{Temperatur} und molarer Masse. Die
+``Normalbedingungen'' $T=\qty{0}{\celsius}=273.15$~K sind hier die relevante
+Angabe; der Druck $p=1$~atm fällt aus der Formel heraus, weil $c$ drucklos
+ist.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Stickstoff vs.\ Helium -- Vorhersage ohne Rechnung]
+Ersetzt man N$_2$ ($\kappa=7/5$, $M=28$~g/mol) durch Helium
+($\kappa=5/3$, $M=4$~g/mol), so "andert sich $c\propto\sqrt{\kappa/M}$:
+  \begin{itemize}
+  \item kleine molare Masse ($28\to4$, Faktor 7) $\Rightarrow$ gr"o"sseres $c$,
+  \item gr"o"sseres $\kappa$ ($5/3$ vs.\ $7/5$; einematomig statt zweiatomig)
+        $\Rightarrow$ gr"o"sseres $c$.
+  \end{itemize}
+Beide Effekte wirken in dieselbe Richtung: Die Schallgeschwindigkeit und die
+Grundfrequenz der Tröte werden \emph{h"oher} bei Helium. Genauer
+$\sqrt{(\kappa_{\mathrm{He}}/\kappa_{\mathrm{N}_2})\cdot(M_{\mathrm{N}_2}/
+M_{\mathrm{He}})}=\sqrt{(5/3)/(7/5)\cdot28/4}=\sqrt{25/3}\approx2.89$.
+\end{werkzeugkasten}
+
+\begin{achtung}[Einheiten und Größenordnungen]
+$c$ in \unit{\metre\per\second}; $RT$ hat die Einheit
+$\mathrm{J/mol}=(\mathrm{kg\,m^2/s^2})/\mathrm{mol}$; durch $M$ in
+\unit{kg/mol} ergibt sich $\mathrm{m^2/s^2}$, also $c$ in \unit{\metre\per\second}. 
+Bei Normalbedingungen $c_{\mathrm{N}_2}\approx\qty{337}{m/s}$, Helium
+$\approx\qty{973}{m/s}$ (sehr viel schneller, weil leichtes einatomiges Gas).
+Die Länge $l$ der Tröte ist \emph{nicht} numerisch gegeben --- die
+Grundfrequenz bleibt "uber $l$ ausgedrückt ($f_1=c/4l$), auch wenn $c$
+ausgerechnet wird.
+\end{achtung}

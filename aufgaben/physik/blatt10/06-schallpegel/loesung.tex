@@ -1,0 +1,63 @@
+% Teil II: durchgerechneter Weg, Teile a--b.
+
+\subsection*{Gegeben und gesucht}
+(a) Eine Trillerpfeife: $L_1=\qty{120}{dB}$; $N=10$ gleiche Pfeifen, gleiche
+geringe Entfernung: gesamt Schalldruckpegel? (b) Trommel $L=\qty{100}{dB}$;
+wie viele Trommler "uberschreiten die Schmerzgrenze $\qty{130}{dB}$?
+
+\subsection*{Ansatz und Physik dahinter}
+Inkoh"arente, gleichlaut Quellen addieren ihre \emph{Intensit"aten}:
+$I_N=N I_1$. Dann
+$L_N=L_1+10\log_{10}N$. Die Schmerzschwelle $130$~dB bedeutet eine
+Pegeldifferenz $\Delta L=30$~dB gegen"uber der Trommel, also $N=10^{30/10}=1000$.
+
+\subsection*{Rechnung}
+\textbf{a) 10 Pfeifen.}
+\begin{equation}
+  L_N=L_1+10\log_{10}N
+  =120+10\log_{10}10
+  =120+10
+  =\boxed{\;\qty{130}{dB}\;}.
+\end{equation}
+
+\textbf{b) Anzahl Trommeln f"ur $\ge\qty{130}{dB}$.} Pegeldifferenz
+\begin{equation}
+  \Delta L=130-100=30\ \mathrm{dB},\qquad
+  N=10^{\Delta L/10}=10^{30/10}=10^{3}
+  =\boxed{\;1000\;}.
+\end{equation}
+Da bei $N=1000$ bereits der Wert $130$~dB erreicht ist, "uberschreitet man
+die Schmerzgrenze damit (bei $N\ge1000$; exakt ``\emph{mehr}'' erfordert
+$N>1000$, ab $N=1001$). Als ganze Zahl von Trommlern: ab $N=1000$ ist die
+Grenze erreicht, ab $1001$ "uberschritten. Wird die Frage als ``erreicht''
+gelesen, gen"ugen 1000; bei ``"uberschritten'' ist $N\ge1001$ n"otig
+(reine Randwert-Interpretation).
+
+\begin{ergebnis}
+a) $L_{10\,\text{Pfeifen}}=120+10=\boxed{\qty{130}{dB}}$.
+b) $N=10^{(130-100)/10}=10^{3}=\boxed{1000}$ Trommler erreichen die
+Schmerzgrenze (bei ``$>$'' $N\ge1001$).
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Querprobe (Logik der Skala):} 10 gleiche Quellen verzehnfachen die
+Intensit"at, das sind exakt $+10$~dB. Damit landet man bei $130$~dB --- die
+einzige Trillerpfeife war schon $120$, zehn davon eben $130$. \checkmark
+
+\textbf{Grenzf"all:} Eine einzelne Trommel ($100$~dB) reicht bei weitem
+nicht; $10$ Trommeln g"aben $110$~dB, $100$ Trommeln $120$~dB. Die
+Schmerzgrenze liegt eine volle Zehnerpotenz zu weit, also braucht es genau
+10"mal so viele wie f"ur 120~dB, n"amlich 1000. \checkmark
+
+\textbf{Plausibilit"at:} 1000 Trommeln sind absurd viele --- genau deshalb ist
+die Schmerzgrenze schwer zu erreichen, und die logarithmische
+Pegeldarstellung macht das anschaulich. Die Antwort 1000 liegt
+gr"o"senordnungsm"a"ssig korrekt.
+\end{kontrolle}
+
+\begin{merksatz}
+Schallpegel $L=10\log_{10}(I/I_0)$. $N$ gleichlaut inkoh"arente Quellen:
+$I_N=N I_1$, also $L_N=L_1+10\log_{10}N$. Zehnfache Zahl $\Rightarrow+10$~dB;
+die Schmerzgrenze (130~dB) gegen"uber 100~dB braucht
+$N=10^{30/10}=1000$ Trommler.
+\end{merksatz}

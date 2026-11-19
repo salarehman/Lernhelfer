@@ -1,0 +1,110 @@
+% Teil II: durchgerechneter Weg, Teile a--d.
+
+\subsection*{Gegeben und gesucht}
+Seil der L"ange $L$, Dichte $\rho$, Querschnitt $A$, Zugkraft $F$; kleine
+Auslenkungen. Am Ende $x=0$ erzeugt das M"adchen das Wellenpaket
+$y(0,t)=y_0\sin^2(\pi\,t/\mathrm{s})$ f"ur $0\le t\le\qty{1}{s}$, sonst $0$
+($\mathrm{s}$ symbolisch f"ur \qty{1}{s}). Gesucht: (a) $c$, (b) Skizze und
+Maximum bei $t=1$~s, (c) $y(x,t)$ der vorwärtslaufenden Störung, (d,
+Bonus) Überlagerung mit entgegengesetzt ausgelenktem anderen Ende.
+
+\subsection*{Ansatz und Physik dahinter}
+Aus der Dynamik: je gr"o"ser die Rückstellkraft $F$, desto schneller, je
+gr"o"ser die Tr"agheit $\mu=\rho A$, desto langsamer --- daraus direkt
+$c=\sqrt{F/\mu}$. Das Paket wandert unverändert als Funktion von $t-x/c$
+nach rechts. Für das Maximum setzt man die ausgesandte Störung in Bewegung:
+ein Punkt, der zur Zeit $t_s$ ausgesandt wurde, ist zur Zeit $t$ bei
+$x=c\,(t-t_s)$.
+
+\subsection*{Rechnung}
+\textbf{a) Ausbreitungsgeschwindigkeit.}
+\begin{equation}
+  c=\sqrt{\frac{F}{\mu}}=\sqrt{\frac{F}{\rho A}}\;.
+\end{equation}
+
+\textbf{b) Maximum bei $t=\qty{1}{s}$.} Das Paket wird w"ahrend
+$t_s\in[0,1~s]$ ausgesandt; die Vorderseite ($t_s=0$) ist zur Zeit $t$ bei
+$x=ct$. Die Auslenkungsform $\sin^2(\pi t_s/\mathrm{s})$ hat ihr Maximum bei
+$t_s=\qty{0.5}{s}$ (Scheitel des $\sin^2$). Das Maximum wurde also zur Zeit
+$t_s=0.5$~s ausgesandt und bewegt sich mit $c$. Zum Zeitpunkt $t=1$~s:
+\begin{equation}
+  x_{\max}=c\,(t-t_s)=c\,(1-0.5)\,\mathrm{s}
+  =\tfrac12\,c\cdot\mathrm{s}
+  \;.
+\end{equation}
+Mit $c$ in \unit{\metre\per\second} und $\mathrm s=\qty{1}{s}$ ist das die
+L"ange $x_{\max}=\tfrac12\,c\cdot\qty{1}{s}$ (in Metern, mit $c$ als
+Zahlenwert).
+Das Maximum liegt zur halben Paketl"ange: zu $t=\qty{1}{s}$ ist das Paket
+gerade fertig ausgesandt, reicht von $x=0$ bis $x=c\cdot\qty{1}{s}$, und sein
+Berg liegt in der Mitte. Skizze: vor Ort gebundener, glockenf"ormiger Berg von
+H"ohe $y_0$ bei $x=c/2$, rechts und links abfallend auf $0$.
+
+\textbf{c) Laufende Störung (Richtung Junge, $+x$).} Jeder Punkt läuft mit
+Zeitverz"ogerung $x/c$:
+\begin{equation}
+  y(x,t)=\begin{cases}
+    y_0\,\sin^2\!\bigl(\pi\,(t-x/c)/\mathrm{s}\bigr)
+      & \text{f"ur } 0\le t-x/c\le\qty{1}{s},\\
+    0 & \text{sonst}.
+  \end{cases}
+\end{equation}
+Die Bedingung $0\le t-x/c\le1$~s bedeutet: der Punkt $(x,t)$ ist "uberhaupt
+erst erreicht, wenn die Vorderseite ($t_s=0$, also $x\le ct$) vorbeikam, und
+schon wieder vorbei, nachdem die Rückseite ($t_s=1$~s, also $x\ge c(t-1~s)$)
+durch ist. Es ist exakt die Funktion $y(0,t)$ mit Argument $t-x/c$.
+
+\textbf{d, Bonus) Zwei gegenl"aufige Pakete.} Das M"adchen sendet nach
+rechts $y_G(x,t)=y(0,t-x/c)$, der Junge nach links
+$y_J(x,t)=-y(0,t-(L-x)/c)$. Beide haben r"aumliche L"ange $c\cdot\qty{1}{s}$.
+
+Zum Zeitpunkt $t_1=L/2c$: die beiden Vorderkanten treffen sich gerade in der
+Mitte $x=L/2$; es "uberlappen sich noch keine Störungen (die Pakete berühren
+sich nur). Kurz danach schieben sie sich "ubereinander --- mit
+\emph{entgegengesetztem Vorzeichen}.
+
+Zum Zeitpunkt $t_2=t_1+\qty{0.5}{s}$: jedes Paket ist um weitere
+$c\cdot\qty{0.5}{s}$ gerückt, und die beiden wären jetzt eine volle
+Paketlänge verschoben --- sie \emph{decken sich exakt} und heben sich wegen
+$y_J=-y_G$ \emph{vollst"andig auf}. Das Seil ist zu diesem Zeitpunkt
+\emph{gerade} ($y\equiv0$), ein eindrücklicher Moment: zwei Maxima
+verschwinden, wo sie sich treffen, die Energien der beiden ist trotzdem nur
+überlagert (Superposition), die Pakete laufen ungestört weiter.
+
+Zum Zeitpunkt $t_3=t_1+\qty{1}{s}$: die Pakete sind vollst"andig
+\textbf{durchgelaufen} und getrennt --- das M"adchen-Paket ist jetzt auf der
+rechten, das Jungen-Paket auf der linken Seite, jedes mit vollem $|y_0|$
+(entgegengesetztes Vorzeichen). Das Seil zeigt zwei nach au"sen (nach Mitte
+gegenl"aufig) versetzte Berge.
+
+\begin{ergebnis}
+(a) $c=\sqrt{F/(\rho A)}$. (b) Maximum bei $x=\frac12 c\cdot\qty{1}{s}$
+(Berg in Paketmitte). (c) $y=y_0\sin^2(\pi(t-x/c)/\mathrm{s})$ f"ur
+$0\le t-x/c\le\qty{1}{s}$, sonst $0$. (d) Bei $t_2$ exakte Überlagerung
+$\rightarrow$ gerades Seil; bei $t_3$ getrennte, entgegengesetzt ausgelenkte
+Pakete.
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} $F/\mu=(\mathrm{kg\,m/s^2})/(\mathrm{kg/m})=\mathrm{m^2/s^2}$,
+Wurzel $\rightarrow\unit{\metre\per\second}$. Das Argument $t-x/c$ von
+$\sin^2$ ist dimensionslos. \checkmark
+
+\textbf{Grenzfall:} F"ur $F\rightarrow0$ erg"abe $c\rightarrow0$ (loses Seil,
+keine Welle), f"ur $\mu\rightarrow0$ (imagin"ar masseloses Seil) $c\rightarrow
+\infty$. Beides physikalisch sinnvoll. \checkmark
+
+\textbf{Querprobe (Anschaulich):} Ein Punkt auf dem Seil kann erst schwingen,
+nachdem die Vorderseite ihn erreicht hat -- mit
+$x_{\text{Reichweite}}=c\,t$ passt das zu Teil (b): zur Zeit $t=1$~s ist die
+Reichweite gerade $c\cdot\qty{1}{s}$, das Maximum liegt bei halber Reichweite.
+\checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Eine gespannte Saite transportiert Transversalwellen mit
+$c=\sqrt{F/\mu}$: R"uckstellkraft über Tr"agheit. Ein "uber ein Zeitintervall
+$\Delta t$ erzeugtes Paket hat L"ange $c\,\Delta t$; zwei entgegengesetzte
+Pakete löschen sich bei exakter Überlagerung aus und laufen danach ungestört
+weiter (Superpositionsprinzip).
+\end{merksatz}

@@ -1,0 +1,85 @@
+% titel: Blatt 10, A7: Wetterballon (Bonus, Ausblick Wärmelehre)
+% skript: Kap. Ideales Gas, Dichte, barometrische H"ohenformel, Auftrieb
+
+% Wetterballon: pV=nRT, Dichte rho=Mp/RT, barometrische H"ohenformel,
+% Auftriebsgleichgewicht am Abheben und am Maximalvolumen.
+
+Ein Wetterballon ist ein Paradebeispiel daf"ur, wie sich ideales Gas,
+Dichte und Auftrieb zu einem praktischen Problem verbinden. Der Ballon
+steigt, solange der Auftrieb sein Gewicht "ubersteigt; gleichzeitig f"allt
+der Luftdruck mit der H"ohe, der Ballon bl"aht sich auf und wird dabei
+d"unner.
+
+\begin{werkzeugkasten}[Ideales Gas: Druck, Temperatur, Dichte]
+Die allgemeine Gasgleichung
+\begin{equation}
+  p\,V=n_M R\,T
+\end{equation}
+(mit $n_M$ Stoffmenge, $R=\qty{8.314}{J/(mol\,K)}$). Aus der Stoffmenge
+$n_M=m/M$ folgt die \emph{Massendichte}
+\begin{equation}
+  \rho=\frac{m}{V}=\frac{p\,M}{R\,T}.
+\end{equation}
+Jedes ideale Gas: dieselbe Temperatur/Druck $\Rightarrow$ \emph{gleiche
+Zahl von Teilchen pro Volumen}, aber die Dichte skaliert mit der molaren
+Masse $M$. Deshalb ist Helium ($M=\qty{4}{g/mol}$) viel leichter als Luft
+(effektiv $\approx\qty{29}{g/mol}$) und tr"agt den Ballon.
+
+\textbf{Effektive molare Masse der Luft} aus den Anteilen der
+Hauptbestandteile:
+\begin{equation}
+  M_{\mathrm{Luft}}=0.78M_{\mathrm{N}_2}+0.21M_{\mathrm{O}_2}
+  +0.01M_{\mathrm{Ar}}.
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Auftrieb und das Loslösen des Ballons]
+Ein eingetauchter Körper erf"ahrt einen Auftrieb gleich dem Gewicht der
+verdr"angten Luft (Archimedes):
+\begin{equation}
+  F_{\text{Auftrieb}}=\rho_{\mathrm{Luft}}\,V_{\mathrm{Ballon}}\,g.
+\end{equation}
+Der Ballon beginnt zu steigen, sobald
+\begin{equation}
+  \rho_{\mathrm{Luft}}\,V\,g \ge (m_{\mathrm{Hülle}}+\rho_{\mathrm{He}}\,V)\,g,
+\end{equation}
+d. h. wenn die verdr"angte Luftmasse die Ballonmasse (Hülle + Helium)
+gerade "ubersteigt. Physikalisch ist der Ballon ``leichter als Luft'',
+weil $\rho_{\mathrm{He}}<\rho_{\mathrm{Luft}}$: das gef"ullte Helium wiegt
+weniger als die Luft, die es verdr"angt. Um das Loslösen zu finden, l"ost
+man nach dem n"otigen Volumen $V$ auf.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Barometrische H"ohenformel]
+Der Luftdruck nimmt mit der H"ohe $h$ exponentiell ab, weil die "ubereinander
+liegende Luft ihr eigenes Gewicht tr"agt:
+\begin{equation}
+  p(h)=p_0\,e^{-M_{\mathrm{Luft}}\,g\,h/(R\,T_0)}.
+\end{equation}
+Die Skalenh"ohe $H=R T_0/(M_{\mathrm{Luft}} g)$ ist die H"ohe, in der der
+Druck um $e^{-1}$ gefallen ist ($H\approx\qty{8}{km}$ f"ur die
+Erdatmosph"are). Bei konstanter Temperatur und konstanter Heliummenge im
+Ballon (die Hülle sei dicht, das Helium verhält sich wie ein ideales Gas)
+bleibt $p\,V$ konstant, also
+\begin{equation}
+  p(h)\,V(h)=\mathrm{const}\quad\Rightarrow\quad
+  V_{\mathrm{Ballon}}(h)=V_0\,\frac{p_0}{p(h)}=V_0\,e^{M g h/(R T_0)}.
+\end{equation}
+Je h"oher, desto kleiner der Druck, desto gr"o"ser das Volumen des
+gleichbleibend gef"ullten Heliums. Der Ballon bl"aht damit exponentiell auf
+und erreicht bei $V_{\max}$ sein Fassungsvermögen.
+\end{werkzeugkasten}
+
+\begin{achtung}[Konstanten und Grenzen]
+- Normbedingungen: $T_0=\qty{273.15}{K}$, $p_0=\qty{1.013e5}{Pa}$
+  (hier $T_0$ "uberall konstant angenommen).
+- Molaren Massen in \emph{g/mol} umrechnen ($M\div1000$) vor dem Einsetzen
+  in SI (kg/mol).
+- Die Hülle sei sehr dünn: Eigengewicht $m_{\mathrm{Hülle}}=\qty{10}{kg}$;
+  das Helium im Ballon hat \emph{denselben Druck} wie die Umgebung, so dass
+  die Dichte in jedem H"ohepunkt aus dem dortigen $p$ folgt.
+- Die barometrische Formel setzt konstante Temperatur voraus und gilt nur
+  f"ur ein isothermes Modell der Atmosph"are --- in Wahrheit k"uhlt die
+  Atmosph"are mit der H"ohe ab. Als Ausblick auf die Wärmelehre reicht das
+  isotherme Modell f"ur die Gr"o"senordnung.
+\end{achtung}

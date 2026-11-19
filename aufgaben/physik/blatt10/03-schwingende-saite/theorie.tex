@@ -1,0 +1,67 @@
+% titel: Blatt 10, A3: Schwingende Saite
+% skript: Kap. Stehende Wellen, Eigenmoden, Energie der Saite
+
+% Stehende Welle auf eingespannten Saite: Eigenmoden y=A sin(n pi x/L) cos(wt),
+% zweite Oberwelle = n=3, kinetische Energie ueber Segment + Integral.
+
+Eine eingespannte Saite (beide Enden fest) schwingt nicht beliebig, sondern
+nur mit ganz bestimmten ``Eigenmoden'' --- das ist der Kern der Aufgabe.
+Die Erkenntnis kommt aus der Kombination zweier Wellen, die sich an den
+fixierten Enden spiegeln.
+
+\begin{werkzeugkasten}[Warum entstehen nur diskrete Moden?]
+An einem eingespannten Ende ($y=0$) muss die Auslenkung \emph{immer} null sein.
+Eine nach rechts laufende Welle reflektiert dort zu einer nach links
+laufenden gleicher Amplitude. Aus der Überlagerung zweier gegenläufiger
+Wellen gleicher Frequenz entsteht eine \emph{stehende Welle}
+\begin{equation}
+  y(x,t)=A\,\sin(k_n x)\,\cos(\omega t)\;.
+\end{equation}
+Die Bedingung $y(0,t)=y(L,t)=0$ erzwingt $k_n L=n\pi$ ($n$ ganze Zahl), also
+\begin{equation}
+  \lambda_n=\frac{2L}{n},\qquad
+  f_n=\frac{c}{2L}\,n=n\,f_1\;.
+\end{equation}
+Physikalisch: Nur wenn eine \emph{ganze Zahl} Halbwellenlängen ins Seil
+passen, trifft die reflektierte Welle in Phase auf die einlaufende; sonst
+löschen sie sich aus. Das erklärt die ``Resonanzen'' der Saite.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Knoten, Bäuche und die "Oberwellen-Zählung]
+\begin{itemize}
+  \item $n=1$: Grundschwingung, ein Berg (2 Knoten an den Enden), $f_1=c/2L$.
+  \item $n=2$: erste Oberwelle, $\lambda_2=L$, ein Knoten in der Mitte.
+  \item $n=3$: \textbf{zweite Oberwelle} (=``Oberton 3''), $\lambda_3=2L/3$,
+        ein Knoten bei $L/3$ und einer bei $2L/3$.
+\end{itemize}
+\textbf{Zählfalle:} ``erste Oberwelle'' bedeutet $n=2$, die Grundschwingung
+zählt als $n=1$. Die \emph{zweite} Oberwelle ist $n=3$. Die Frequenzen gehen
+$f_1,2f_1,3f_1,\dots$ --- Obertöne sind vielfache ganze Zahlen der
+Grundfrequenz, weil lineare Dichte und Spannung konstant sind.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Energie eines schwingenden Saitensegments]
+Ein Segment der Länge $\mathrm{d}x$ mit Masse $\mu\,\mathrm{d}x$ ($\mu$:
+lineare Dichte) bewegt sich senkrecht zur Saite mit Geschwindigkeit
+$v=\partial y/\partial t$. Seine kinetische Energie ist
+\begin{equation}
+  \mathrm{d}E_{\text{kin}}=\tfrac12\,\mu\,\mathrm{d}x\,v^2
+  =\tfrac12\,\mu\,A^2\omega^2\,\sin^2(k_nx)\,\cos^2(\omega t)\,\mathrm{d}x
+  \quad(\text{f"ur } y=A\sin(kx)\cos(\omega t)).
+\end{equation}
+Wichtig ist die \emph{zeitliche und räumliche Separation}:
+$\sin^2(kx)$ gibt an, wo (Bäuche maximal, Knoten null), $\cos^2(\omega t)$
+wann (an den Durchgängen durch die Ruhelage maximal). Die \emph{gesamte}
+kinetische Energie erhält man durch Integration über die Saite; wegen
+$\int_0^L\sin^2(n\pi x/L)\,\mathrm{d}x=L/2$ entfällt jeder Moden-abhängige
+Faktor.
+\end{werkzeugkasten}
+
+\begin{achtung}[Phase zum Zeitpunkt t = 0]%
+Bei ``Saite ist bei $t=0$ maximal ausgelenkt'' ist $\cos(\omega t)=1$, also
+$\cos(\omega\cdot0)=1$: die Saite steht im Bäuch-Amplituden-Moment still
+($v=0$, rein potentielle Energie). Ein Viertelperiode später
+($\omega t=\pi/2$) ist $y=0$ --- die Saite ist \emph{gerade} --- und $v$ ist
+maximal: die Energie ist dort voll in kinetischer Form. Die Gesamtenergie
+schaukelt zwischen diesen Extremen hin und her, bleibt aber konstant.
+\end{achtung}

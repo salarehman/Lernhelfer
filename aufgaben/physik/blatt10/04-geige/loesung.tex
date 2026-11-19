@@ -1,0 +1,73 @@
+% Teil II: durchgerechneter Weg, Teile a--b.
+
+\subsection*{Gegeben und gesucht}
+a)-Saite, Grundschwingung $f_0=\qty{440}{Hz}$ (Kammerton a1). (a) Finger
+teilt die Saite im Verh"altnis $1:2$, Bogen streicht den gr"o"seren Teil:
+Frequenz? Skizze. (b) Flag'eolett: Finger leicht an die gleiche Stelle
+(wie in Teil a), ganze Saite schwingt: Frequenz? Skizze.
+
+\subsection*{Ansatz und Physik dahinter}
+Zweit"onen benutzen dieselbe Beziehung $f=c/2L$. Grundschwingung der vollen
+Saite $L$: $f_0=c/2L$. 
+
+(a) \textbf{Greifen:} der gr"o"ssere der Teile $1:2$ ist $\tfrac23 L$ lang.
+Festgegriffen endet die Schwingung dort (echter Knoten), schwingende Länge
+$L'=\tfrac23 L$. Damit:
+\begin{equation}
+  f'=\frac{c}{2L'}=\frac{c}{2\cdot\frac23L}=\frac32\,\frac{c}{2L}=\frac32 f_0.
+\end{equation}
+Zahlen: $f'=\tfrac32\cdot440=\boxed{\;\qty{660}{Hz}\;}$ (das ist die
+Quinte-a''\ wäre die Oktave+Quinte ... konkret: $660$ Hz ist eine Quinte
+"uber a1, genauer ein ``e2''-artiger Ton, das klassische ``f'' der Violine
+als A-5-Klang, moduliert durch die Saitengeometrie; physikalisch z"ahlt nur
+das Verh"altnis $\tfrac32$).
+
+\textbf{Skizze (a):} Die Saite hat nur im segment $\tfrac23L$ (Steg bis
+Fingersatz) einen Bauch; Knoten am Steg (bei $x=0$), beim Finger ($x=\tfrac23L$)
+und am Saitenende (die restlichen $\tfrac13L$, die nicht schwingen, als ruhend
+gezeichnet). Eine Halbwelle $\lambda/2=\tfrac23L$, zwei Scheitelpunkte.
+
+(b) \textbf{Flag'eolett:} Der Finger liegt (leicht) bei der gleichen Stelle
+wie zuvor -- d. h. bei $L/3$ von einem Ende (oder $2L/3$ vom anderen). Jetzt
+schwingt die \emph{ganze} Saite (Länge $L$), aber der Finger zwingt dort einen
+Knoten auf. Ein Knoten bei $L/3$ erfordert drei Halbwellen ($n=3$):
+\begin{equation}
+  f_3=3\,f_0=3\cdot440=\boxed{\;\qty{1320}{Hz}\;}
+  \quad\text{(3. Harmonische)}.
+\end{equation}
+
+\textbf{Skizze (b):} ganze Saite mit Knoten an $x=0$, $L/3$, $2L/3$, $L$ und
+Bäuchen dazwischen; der Fingersatz f"allt genau auf einen inneren Knoten
+($L/3$).
+
+\begin{ergebnis}
+a) $f'_{\text{gegriffen}}=\frac32 f_0=\qty{660}{Hz}$ -- die Saite
+schwingt nur auf $\tfrac23L$, Frequenz steigt um 3/2.
+b) $f_{\text{Flageolett}}=3f_0=\qty{1320}{Hz}$ -- 3. Harmonische der vollen
+Saite (Knoten bei $L/3$ und $2L/3$).
+\end{ergebnis}
+
+\begin{kontrolle}
+\textbf{Einheiten:} Frequenz im \unit{\hertz}; Verh"altnisse
+($\tfrac32$, $3$) sind dimensionslos. \checkmark
+
+\textbf{Grenzf"alle:} Greift man die Saite sehr weit oben ($L'\to0$),
+$f'\to\infty$ (sehr hoher Ton) -- plausibel; verdoppelt man die
+schwingende Länge, halbiert sich $f'$, wie erwartet. Flag'eolett f"ur
+$n=1$ g"abe wieder $f_0$ (kein Knoten). \checkmark
+
+\textbf{Querprobe (H"orvergleich):} 660~Hz ist eine Quinte "uber 440~Hz
+(Frequenzverh"altnis 3:2), 1320~Hz eine Oktave dar"uber (bzw. die 3.
+Harmonische). Beides sind konsonante, klar h"orbare Töne -- geometrisch
+einleuchtend. Das Intervall ``3:2'' (Quinte) und ``3'' (doppelte Oktave via
+$n=3$) ist musikalisch exakt. \checkmark
+\end{kontrolle}
+
+\begin{merksatz}
+Greifen (fester Knoten) verk"urzt die schwingende Saite: $f'=c/2L'$,
+z. B. $\tfrac23L\Rightarrow\tfrac32 f_0$ (Quinte). Das Flag'eolett (weicher
+Knoten) lässt die ganze Saite schwingen und erzwingt eine Harmonische:
+$f=n f_0$, z. B. Knoten bei $L/3\Rightarrow f=3f_0$. Kurz: Greifen
+$\Rightarrow$ rationales Frequenzverh"altnis (Längen), Flag'eolett
+$\Rightarrow$ ganzzahliges Vielfaches (Harmonische).
+\end{merksatz}
