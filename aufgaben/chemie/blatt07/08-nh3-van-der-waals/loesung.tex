@@ -1,0 +1,45 @@
+% titel: Blatt 7, A8: NH3 bei 500 K - idealer und Van-der-Waals-Druck
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$n=2$ mol $\mathrm{NH_3}$, $V=100$ L, $T=500$ K. VdW-Konstanten:
+$a=4.17\ \mathrm{L^2\,atm\,mol^{-2}}=0.423\ \mathrm{J\,m^3\,mol^{-2}}$,
+$b=0.037\ \mathrm{L\,mol^{-1}}=3.7\times10^{-5}\ \mathrm{m^3\,mol^{-1}}$.
+Gesucht: Druck nach ideal, Druck nach Van der Waals.
+
+\subsection*{Ansatz}
+a) $p=nRT/V$; b) $p=nRT/(V-nb) - a n^2/V^2$ (im idealen Gerüst).
+
+\subsection*{Rechnung}
+\textbf{a) Ideal:}
+\[
+  p = \frac{nRT}{V} = \frac{2\cdot 0.0821\cdot 500}{100}
+   = 0.821\ \mathrm{atm} .
+\]
+
+\textbf{b) Van der Waals} ($R=0.0821\ \mathrm{L\,atm\,mol^{-1}K^{-1}}$):
+\begin{align*}
+  p &= \frac{nRT}{V-nb} - a\,\frac{n^2}{V^2}\\
+    &= \frac{2\cdot 0.0821\cdot 500}{100 - 2\cdot 0.037}
+       - 4.17\cdot\frac{2^2}{100^2}\\
+    &= \frac{82.1}{99.93} - 4.17\cdot\frac{4}{10000}\\
+    &= 0.822 - 0.00167 = 0.820\ \mathrm{atm}.
+\end{align*}
+
+\begin{ergebnis}
+Ideal: $0.821$ atm; Van der Waals: $0.820$ atm. Die Abweichung ist klein
+($\Delta p \approx 0.001$ atm); NH$_3$ verh\"alt sich hier nahezu ideal.
+\end{ergebnis}
+
+\begin{kontrolle}
+Die beiden Korrekturen heben sich teilweise auf: das Eigenvolumen
+($\approx +0.001$ atm) kompensiert die Anziehung ($\approx -0.0017$ atm).
+Bei $n=2$ mol in 100 L ist die Dichte ($c = 0.02\ \mathrm{mol\,L^{-1}}$)
+so klein, dass die realen Effekte kaum ins Gewicht fallen. Plausibel.
+\end{kontrolle}
+
+\begin{merksatz}
+Van der Waals: $p = \frac{nRT}{V-nb} - a\frac{n^2}{V^2}$. Bei kleinen
+Konzentrationen ist die Abweichung vom idealen Gas minimal; erst unter
+Druck (hohe $n/V$, tiefes $T$) wird die reale Korrektur deutlich.
+\end{merksatz}

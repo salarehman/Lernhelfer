@@ -1,0 +1,51 @@
+% titel: Blatt 7, A5: Partialdrücke (He, Methan, Ethan) und Gesamtdruck
+% Teil II: der durchgerechnete Weg.
+
+\subsection*{Gegeben und gesucht}
+$V=40\ \mathrm{L}$, $T=300\ \mathrm{K}$; $m_{\mathrm{He}}=1.0$ g,
+$m_{\mathrm{CH_4}}=5.0$ g, $m_{\mathrm{C_2H_6}}=4.0$ g. Gesucht:
+Partialdr\"ucke der drei Gase und Gesamtdruck.
+
+\subsection*{Ansatz}
+F\"ur jedes Gas $n_i=m_i/M_i$ ausrechnen, dann $p_i=n_i RT/V$; Summe
+$=$ Gesamtdruck.
+
+\subsection*{Rechnung}
+Stoffmengen ($M_{\mathrm{He}}=4.00$, $M_{\mathrm{CH_4}}=16.04$,
+$M_{\mathrm{C_2H_6}}=30.07$ in $\mathrm{g\,mol^{-1}}$):
+\begin{align*}
+  n_{\mathrm{He}} &= \frac{1.0}{4.00} = 0.250\ \mathrm{mol},\\
+  n_{\mathrm{CH_4}} &= \frac{5.0}{16.04} = 0.3117\ \mathrm{mol},\\
+  n_{\mathrm{C_2H_6}} &= \frac{4.0}{30.07} = 0.1330\ \mathrm{mol}.
+\end{align*}
+Partialdr\"ucke ($R=0.0821\ \mathrm{L\,atm\,mol^{-1}K^{-1}}$):
+\begin{align*}
+  p_{\mathrm{He}} &= 0.250\cdot\frac{0.0821\cdot 300}{40}
+                    = 0.154\ \mathrm{atm},\\
+  p_{\mathrm{CH_4}} &= 0.3117\cdot\frac{0.0821\cdot 300}{40}
+                    = 0.192\ \mathrm{atm},\\
+  p_{\mathrm{C_2H_6}} &= 0.1330\cdot\frac{0.0821\cdot 300}{40}
+                    = 0.0819\ \mathrm{atm}.
+\end{align*}
+Gesamtdruck:
+\[
+  p_{\text{ges}} = 0.154 + 0.192 + 0.0819 = 0.428\ \mathrm{atm}.
+\]
+
+\begin{ergebnis}
+$p_{\mathrm{He}}=0.154$ atm, $p_{\mathrm{CH_4}}=0.192$ atm,
+$p_{\mathrm{C_2H_6}}=0.0819$ atm, Gesamtdruck $0.428$ atm.
+\end{ergebnis}
+
+\begin{kontrolle}
+Anteile: $x_{\mathrm{He}}=0.250/0.6947=0.360$,
+$x_{\mathrm{CH_4}}=0.449$, $x_{\mathrm{C_2H_6}}=0.191$. Ein Stoffmengen-
+und Druck-Anteil decken sich; Summe der Partialdr\"ucke $=$ Gesamtdruck.
+Plausibel, da ideal (Druck $<1$ atm bei 300 K in 40 L).
+\end{kontrolle}
+
+\begin{merksatz}
+Partialdruck $p_i = n_i RT/V$, Gesamtdruck $=$ Summe der
+Partialdr\"ucke. Bei idealen Gasen ist der Partialdruck direkt proportional
+zum Stoffmengenanteil.
+\end{merksatz}

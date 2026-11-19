@@ -1,0 +1,35 @@
+% titel: Blatt 7, A8: NH3 - ideale Gasgleichung vs. Van-der-Waals-Gleichung
+% skript: Mortimer Kap. 11 (reales Gas, Van-der-Waals-Gleichung)
+
+% Teil I: Werkzeuge, kein L\"osungsweg.
+
+Das ideale Gasgesetz vernachl\"assigt das Eigenvolumen der Teilchen und
+die gegenseitige Anziehung. Die Van-der-Waals-Gleichung korrigiert beide
+Effekte mit den Stoffkonstanten $a$ und $b$.
+
+\begin{werkzeugkasten}[Van-der-Waals-Gleichung]
+\[
+  \left(p + a\frac{n^2}{V^2}\right)(V - nb) = nRT,
+  \qquad
+  p = \frac{nRT}{V-nb} - a\frac{n^2}{V^2}.
+\]
+\begin{itemize}
+  \item $a\,(n/V)^2$: Korrektur f\"ur intermolekulare Anziehung
+        (zieht $\rightarrow$ senkt $p$).
+  \item $b$: Korrektur f\"ur das Eigenvolumen der Molek\"ule
+        ($V-nb$ kleiner $\rightarrow$ erh\"oht $p$).
+\end{itemize}
+\textit{Skript:} Mortimer Kap. 11, reale Gase.
+\end{werkzeugkasten}
+
+\begin{achtung}[Darauf achten]
+\begin{itemize}
+  \item In $p=p(nRT)/(V-nb)-a n^2/V^2$ steht $n^2$ (nicht $n$) beim
+        Anziehungsterm.
+  \item Einheiten: $a$ in $\mathrm{L^2\,atm\,mol^{-2}}$ und $b$ in
+        $\mathrm{L\,mol^{-1}}$ passend zu $p$ in atm und $V$ in L.
+  \item Ideal und Van-der-Waals weichen bei dichtem Gas spürbar ab; sind
+        die Werte nah beieinander, ist das Gas (bei diesen Bedingungen)
+        nahezu ideal.
+\end{itemize}
+\end{achtung}
