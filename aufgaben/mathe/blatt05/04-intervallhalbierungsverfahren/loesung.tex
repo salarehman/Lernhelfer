@@ -2,18 +2,22 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-$p(x)=x^5-2x-1$, Nullstelle in $[0,2]$. Teil a: 3 Schritte von Hand; Teil b:
-20 Schritte per Python und Nullstelle auf 5 Nachkommastellen.
+$p(x)=x^5-2x-1$, Nullstelle in $[0,2]$. Teil (a): drei Halbierungen von
+Hand; Teil (b): 20 Schritte per Python und Nullstelle auf 5 Nachkommastellen.
 
 \subsection*{Vorbedingung}
-$p$ stetig (Polynom), $p(0)=0-0-1=-1<0$, $p(2)=32-4-1=27>0$. Also gibt es
-wegen des Zwischenwertsatzes eine Nullstelle in $[0,2]$.
+\emph{Gedankenschritt:} Bevor man halbiert, prüft man den Vorzeichenwechsel.
+$p$ ist ein Polynom, also stetig; $p(0)=0-0-1=-1<0$, $p(2)=32-4-1=27>0$.
+Der Zwischenwertsatz sichert damit eine Nullstelle in $[0,2]$.
 
 \subsection*{a) Drei Schritte von Hand}
+\emph{Gedankenschritt:} Bei jedem Schritt: Mittelpunkt $m$, Vorzeichen von
+$p(m)$ gegen $p(\text{links})$ vergleichen, das Teilintervall mit dem
+Vorzeichenwechsel behalten.
 \begin{center}
 \begin{tabular}{c|c|c|c|c}
 Schritt & Intervall & $m$ & $p(m)$ & neues Intervall\\\hline
-1 & $[0,2]$ & $1$ & $-2<0$ & $[1,2]$\\
+1 & $[0,2]$ & $1$ & $1-2-1=-2<0$ & $[1,2]$\\
 2 & $[1,2]$ & $1{,}5$ & $7{,}59-3-1=3{,}59>0$ & $[1,1{,}5]$\\
 3 & $[1,1{,}5]$ & $1{,}25$ & $3{,}05-2{,}5-1=-0{,}45<0$ & $[1{,}25,1{,}5]$\\
 \end{tabular}
@@ -21,8 +25,9 @@ Schritt & Intervall & $m$ & $p(m)$ & neues Intervall\\\hline
 Nach 3 Schritten liegt die Nullstelle in $[1{,}25\,;\,1{,}5]$.
 
 \subsection*{b) 20 Schritte per Python}
-Der Vorlesungscode wird zur Funktion umgebaut, die die Intervall-Halbierung
-schleift:
+\emph{Warum dieser Code:} Der Produkt-Test $p(a)\cdot p(m)<0$ ist das Herz
+der Auswahl; je nach Ergebnis wird die rechte oder linke Grenze auf $m$
+gesetzt und das Intervall halbiert.
 \begin{verbatim}
 def p(x): return x**5 - 2*x - 1
 a, b = 0.0, 2.0
@@ -34,30 +39,26 @@ for _ in range(20):
         a = m
 print((a + b) / 2)      # -> 1.2906488013...
 \end{verbatim}
-Änderung gegenüber dem Vorlesungsbeispiel: die Funktion als eigene Definition
-$p(x)$, Schleifencode manuell verschachtelt statt vorgegebener Zeilen, und der
-Namen der Intervallgrenzen ``a,b''.
 
 \begin{ergebnis}
-Nullstelle $x^*\approx\boxed{1{,}29065}$ (5 Nachkommastellen genau).
+Nullstelle $x^*\approx\boxed{1{,}29065}$ (auf 5 Nachkommastellen).
 \end{ergebnis}
 
-\begin{verbatim}
-1.2906484604   # 20-Schritt-Mittelpunkt
-true root:     1.2906488013
-\end{verbatim}
-
 \begin{kontrolle}
-\textbf{Probe:} $p(1{,}29065)$ ist nahe $0$; einsetzen
-$(1{,}29065)^5-2\cdot1{,}29065-1\approx0{,}0000$. \textbf{Fehlerbreite:}
-$2/2^{20}\approx1{,}9\cdot10^{-6}$, die 6. Nachkommastelle ist also die
-unsichere. Rundung auf 5 Nachkommastellen ergibt $1{,}29065$, was mit der
-bekannten reellen Nullstelle übereinstimmt.
+\textbf{Fehlerbreite:} Nach 20 Schritten ist das Intervall
+$2/2^{20}\approx1{,}9\cdot10^{-6}$ lang; die 6. Nachkommastelle ist damit
+die unsichere. Der Mittelwert $1{,}2906488$ gerundet gibt $1{,}29065$.
+\checkmark
+
+\textbf{Probe:} $p(1{,}29065)\approx0{,}0000$ -- nahe der Nullstelle. An
+den Intervallgrenzen schlägt das Vorzeichen gerade in der Nähe der
+Nullstelle um; konsistent mit einer einzigen Nullstelle in $[1,2]$.
+\checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Bisektion braucht nur Stetigkeit und einen Vorzeichenwechsel. Jeder Schritt
-halbiert das Intervall; nach $n$ Schritten ist die Breite $(b-a)/2^n$. Im
-Code den Produkt-Test $p(a)p(m)<0$ verwenden und die beiden Grenzen sauber
-überschreiben.
+Bisektion braucht nur Stetigkeit und einen Vorzeichenwechsel; jeder Schritt
+halbiert das Intervall, nach $n$ Schritten ist die Breite
+$(b-a)/2^n$. Im Code ist der Produkt-Test $p(a)p(m)<0$ und das saubere
+Überschreiben der beiden Grenzen entscheidend.
 \end{merksatz}

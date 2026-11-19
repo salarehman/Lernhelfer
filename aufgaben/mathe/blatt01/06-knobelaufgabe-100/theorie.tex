@@ -2,29 +2,41 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Anzahl der Endnullen einer Fakultät bestimmen; $10!=3628800$ endet mit
-zwei Nullen.
+% Grundidee: Eine Endnull entsteht aus 2*5=10. In n! gibt es viel mehr
+% Zweien als Fünfen, also zählt man die Fünfen (Primfaktor 5).
 
-\begin{werkzeugkasten}[Endnullen einer Fakultät]
-Eine Endnull entsteht aus dem Produkt $2\cdot5=10$. Da Primfaktoren $2$ in
-Fakultäten reichlich vorkommen, ist die Zahl der Endnullen gleich der Zahl
-der Primfaktoren $5$ in $n!$:
+Warum hat $10!=3628800$ genau zwei Endnullen? Eine Null am Ende ist
+das Ergebnis der Multiplikation mit $10=2\cdot5$. In einer Fakultät
+stecken beide Primfaktoren in Hülle und Fülle, aber \emph{nie gleich
+viel}: Es gibt deutlich mehr Zweien als Fünfen. Deshalb ist die Zahl der
+Fünfen der Engpass --- jede Fünf ``paart`` sich mit einer der vielen
+Zweien und erzeugt eine $10$, also eine Endnull.
+
+\begin{werkzeugkasten}[Endnullen einer Fakultät zählen]
+Die Anzahl der Primfaktoren $p$ in $n!$ zählt die sog. Legendre-Formel:
 \begin{equation}
-  \left\lfloor\frac{n}5\right\rfloor+
+  \left\lfloor\frac{n}{5}\right\rfloor+
   \left\lfloor\frac{n}{25}\right\rfloor+
   \left\lfloor\frac{n}{125}\right\rfloor+\dots
 \end{equation}
-(alle $5^k$ mit $5^k\le n$). Für $n=10$: $\lfloor10/5\rfloor=2$,
-$\lfloor10/25\rfloor=0$, Summe $2$ -- passt zu $10!=3628800$.
+(alle $5^k\le n$). \textbf{Warum die Potenzen?} Jede Zahl, die ein
+Vielfaches von $25$ ist, enthält eine \emph{zusätzliche} Fünf, die von
+$\lfloor n/5\rfloor$ nur einmal erfasst wird --- deshalb zählt man ab
+$25$ noch einmal nach, usw. Für $n=10$: $\lfloor10/5\rfloor=2$,
+$\lfloor10/25\rfloor=0$, Summe $2$ --- genau die zwei Endnullen von
+$10!$.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Nicht die $2$er zählen, sondern die $5$er -- Nullen entstehen durch
-        Fünf in Kombination mit genügend Zweien.
-  \item Jede Potenz $25,125,\dots$ gibt einen \emph{weiteren} Primfaktor
-        $5$ und wird mitgezählt (Legendre).
-  \item Für $100!$: $100/5=20$, $100/25=4$, $100/125=0$, also $20+4=24$.
-        Nicht vergessen, bei $75!$ etwa $25$ und $50$ je ein Doppel zählen.
+  \item \textbf{Nicht die Zweien, sondern die Fünfen zählen} --- Nullen
+        entstehen durch Fünf in Kombination mit genügend Zweien; da die
+        Zweien immer im \"Uberschuss sind, ist die Fünf der
+        limitierende Faktor.
+  \item Jede Potenz $25,125,\dots$ gibt einen \emph{weiteren}
+        Primfaktor $5$ und wird mitgezählt.
+  \item Beim konkreten Z\"ahlen nicht vergessen, dass z.\,B. bei $100!$
+        die Zahlen $25,50,75,100$ je eine extra Fünf tragen (je zwei
+        f\"unf-teilbare Stufen).
 \end{itemize}
 \end{achtung}

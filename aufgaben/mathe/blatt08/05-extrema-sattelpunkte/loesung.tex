@@ -2,77 +2,97 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-a) Zeigen: $f$ hat bei $x_0$ einen Wendepunkt gdw.\ $f'$ bei $x_0$ ein
-isoliertes lokales Extremum hat. b) Beweisen per Induktion: aus
-$f^{(n)}(x_0)=0$ für $n<m$ und $f^{(m)}(x_0)\ne0$ folgt -- $m$ gerade:
-isoliertes lokales Extremum, $m$ ungerade: isolierter Sattelpunkt.
+a) Zeigen: $f$ hat bei $x_0$ einen Wendepunkt genau dann, wenn $f'$ bei
+$x_0$ ein isoliertes lokales Extremum hat. b) Beweisen: aus
+$f^{(n)}(x_0)=0$ für $n<m$ und $f^{(m)}(x_0)$ ungleich $0$ folgt -- $m$
+gerade: isoliertes lokales Extremum, $m$ ungerade: isolierter
+Sattelpunkt.
 
-\subsection*{a) Wendepunkt $\Leftrightarrow$ Extremum von $f'$}
-Ein Wendepunkt bei $x_0$ bedeutet Krümmungswechsel: $f''$ (und damit die
-Steigung $f'$ der Kurve) wechselt an $x_0$ ihr Monotonieverhalten. Per
-Definition hat $f'$ genau dann an $x_0$ ein \emph{isoliertes lokales
-Extremum}, wenn es eine Umgebung gibt, in der $f'$ links von $x_0$ auf einer
-Seite größer (kleiner) und rechts auf der anderen Seite kleiner (größer)
-ist -- gerade der Krümmungswechsel. Die ``Isoliertheit'' schließt aus, dass
-$f'$ auf einem ganzen Intervall konstant ist (kein echter Wendepunkt).
+\subsection*{a) Wendepunkt und Extremum von $f'$}
+\emph{Was ein Wendepunkt ist:} Die Kurve wechselt ihre Krümmung. Die
+Krümmung wird durch $f''$ gesteuert; ein Krümmungswechsel bei $x_0$
+bedeutet, dass $f''$ dort das Vorzeichen wechselt. Da $f''$ die Ableitung
+von $f'$ ist, heißt genau: $f''$ wechselt das Vorzeichen bei $x_0$,
+also: $f'$ hat bei $x_0$ ein \emph{lokales Extremum} (vorher steigt $f'$, nachher
+fällt sie, oder umgekehrt).
 
-\subsection*{b) Induktionsbeweis über $m$}
-Die Behauptung $P(m)$: ist $f^{(n)}(x_0)=0$ für $n<m$ und
-$f^{(m)}(x_0)\ne0$, so ist $x_0$ für $m$ gerade ein isoliertes lokales
-Extremum und für $m$ ungerade ($m\ge3$) ein isolierter Sattelpunkt.
+\emph{Warum \emph{isoliert}:} Ein isoliertes lokales Extremum von $f'$ hat
+eine Umgebung ohne weitere Extremalstellen. Das schließt den Fall aus, dass
+$f''\equiv0$ auf einem ganzen Intervall gilt (gerade Stücke, keine
+Krümmungsänderung). Nur ein \emph{echter Wechsel} ist ein Wendepunkt. Damit
+gilt die Äquivalenz: $f$ hat bei $x_0$ einen Wendepunkt genau dann, wenn
+$f'$ bei $x_0$ ein isoliertes lokales Extremum hat.
 
-\textbf{Induktionsanfang} $P(2)$ (die erste gerade Ordnung): Aus
-$f'(x_0)=0$ und $f''(x_0)\ne0$ folgt wegen des zweiten-Ableitungs-Kriteriums
-ein lokales Extremum (Minimum falls $f''>0$, Maximum falls $f''<0$); es ist
-isoliert, da $f'$ das Vorzeichen wechselt.
+\subsection*{b) Die Parität der ersten nicht verschwindenden Ableitung}
+\emph{Kernargument (Taylor):} Wenn alle Ableitungen bis $m-1$ bei $x_0$
+verschwinden und $f^{(m)}(x_0)$ ungleich $0$ ist, bildet $f^{(m)}(x_0)$
+den ersten führenden Taylor-Term. In der Nähe von $x_0$ gilt
+\begin{equation*}
+  f(x)-f(x_0)
+  =\frac{f^{(m)}(x_0)}{m!}\,(x-x_0)^m+\text{kleinere Reste},
+\end{equation*}
+und für genügend kleine Abstände beherrscht der Term $(x-x_0)^m$ das
+Vorzeichen von $f(x)-f(x_0)$.
 
-\textbf{Induktionsschritt} $m\to m+1$: Wir nehmen an, das Kriterium gelte für
-Ordnung $m$, und zeigen es für $m+1$. Dazu wendet man $P(m)$ auf die
-Ableitung $g=f'$ an. Gilt nämlich $f^{(n)}(x_0)=0$ für $n<m+1$ und
-$f^{(m+1)}(x_0)\ne0$, so gilt $g^{(n)}(x_0)=f^{(n+1)}(x_0)=0$ für $n<m$
-und $g^{(m)}(x_0)=f^{(m+1)}(x_0)\ne0$.
+\begin{itemize}
+  \item \textbf{$m$ gerade:} $(x-x_0)^m\ge0$ links \emph{und} rechts von
+        $x_0$. Das Vorzeichen von $f(x)-f(x_0)$ ist damit auf beiden
+        Seiten dasselbe (das von $f^{(m)}(x_0)$): ein \emph{isoliertes
+        lokales Extremum}. Minimum, falls $f^{(m)}>0$; Maximum, falls
+        $f^{(m)}<0$.
+  \item \textbf{$m$ ungerade:} $(x-x_0)^m$ wechselt das Vorzeichen bei
+        $x_0$. Die Differenz $f(x)-f(x_0)$ hat links und rechts
+        \emph{entgegengesetzte} Vorzeichen: kein Extremum. Da $m\ge3$
+        (wegen $f'(x_0)=0$), ist $x_0$ mit waagerechter Tangente ein
+        \emph{isolierter Sattelpunkt}.
+\end{itemize}
 
-Für $m+1$ gerade (also $m$ ungerade, $m\ge2$): Nach Induktionsannahme
-hat $g=f'$ bei $x_0$ einen Sattelpunkt-artigen Verlauf, d.h.\ $g$ wechselt
-an $x_0$ das Vorzeichen symmetrisch nicht -- konkret: $g$ hat ein lokales
-Extremum bei $x_0$ (Sattel der Steigung). Ein lokales Extremum von $f'$
-bedeutet nach Teil a) einen Wendepunkt von $f$, d.h.\ $f$ hat bei $x_0$ ein
-lokales Extremum (gerade Ordnung) -- das isolierte lokale Extremum.
+\emph{Induktive Sicht (warum man auf Ordnung $m-1$ reduzieren kann):}
+Dasselbe Ergebnis lässt sich induktiv führen, indem man die Paritätsaussage
+auf die Ableitung $g=f'$ anwendet: Gelten für $f$ die Bedingungen zur
+Ordnung $m+1$ (erste $m$ Ableitungen verschwinden, $f^{(m+1)}$ ungleich $0$), so
+gelten für $g=f'$ die Bedingungen zur Ordnung $m$ (denn $g^{(n)}=f^{(n+1)}$
+und $g^{(m)}=f^{(m+1)}$ ungleich $0$). Die führende Ordnung sinkt also pro
+Ableitung um $1$, und damit kehrt sich die Parität gerade/ungerade um:
+Aus einem lokal extremalen $f'$ ($m$ gerade) wird ein Wendepunkt-artiges
+$f$ ($m+1$ ungerade), aus einem sattel-artigen $f'$ ($m$ ungerade) ein
+extremales $f$ ($m+1$ gerade). Das liefert im Kern dieselbe Aussage wie
+die Taylor-Rechnung und ist gerade der Weg in der Vorlesung: Parität der
+führenden Ordnung von $f'$ entscheidet, ob $f'$ ein Extremum oder einen
+Durchgang hat -- und damit, ob $f$ ein Extremum oder einen Sattelpunkt
+besitzt.
 
-Für $m+1$ ungerade (also $m$ gerade): Nach Induktionsannahme hat $f'$
-ein lokales Extremum bei $x_0$ (Höcker der Steigung), d.h.\ $f$ hat dort
-einen Wendepunkt-Stellung; da $f'(x_0)=0$ und die Steigung auf beiden Seiten
-gleiches Vorzeichen hat, ist $x_0$ ein Sattelpunkt (kein Vorzeichenwechsel
-von $f'$ durch $x_0$). Das ist der isolierte Sattelpunkt.
-
-Beide Fälle folgen demselben Muster: die Parität der führenden
-Taylor-Ordnung der Steigungsfunktion entscheidet, ob $f'$ ein Extremum
-(gerade) oder einen Durchgang (ungerade) hat -- und damit ob $f$ ein
-Extremum oder einen Sattelpunkt besitzt.
+\textit{Abschluss des Beweises:} Die Taylor-Rechnung oben zeigt beide
+Richtungen der Paritätsaussage vollständig; die induktive Sicht ist
+verständnismäßig dasselbe Argument, nur über die Ableitung (Ordnung $m-1$)
+geführt.
 
 \begin{ergebnis}
 \begin{equation*}
-  \underbrace{f\ \text{hat WP bei }x_0}_{\text{$\Leftrightarrow$}}\
-  \underbrace{f'\ \text{hat isoliertes lok. Extremum bei }x_0}.
+  f\ \text{hat bei }x_0\ \text{einen Wendepunkt} \iff
+  f'\ \text{hat bei }x_0\ \text{ein isoliertes lokales Extremum}.
 \end{equation*}
-Und aus $f^{(n)}(x_0)\!=\!0\ (n<m)$, $f^{(m)}(x_0)\ne0$: \\
-$m$ gerade $\Rightarrow$ isoliertes lokales Extremum; $m$ ungerade
-$\Rightarrow$ isolierter Sattelpunkt.
+Aus $f^{(n)}(x_0)=0\\ (n<m)$ und $f^{(m)}(x_0)$ ungleich $0$: für gerades $m$ ein
+isoliertes lokales Extremum, für ungerades $m$ ein isolierter Sattelpunkt.
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Beispiel:} $f(x)=(x-x_0)^3$: $f'=3(x-x_0)^2$ hat bei $x_0$ ein
-(einfaches) Minimum, also Wendepunkt von $f$; $f''(x_0)=0$, $f'''(x_0)=6
-\ne0$, $m=3$ ungerade -- Sattelpunkt, wie behauptet.
+\textbf{Beispiel} $f(x)=(x-x_0)^3$: $f'=3(x-x_0)^2$ hat bei $x_0$ ein
+Minimum, $f''(x_0)=0$, $f'''(x_0)=6$ ungleich $0$, $m=3$ ungerade --
+Sattelpunkt, wie behauptet. \checkmark
 
-\textbf{Beispiel:} $f(x)=(x-x_0)^4$: $f'''(x_0)=0$, $f^{(4)}(x_0)\ne0$,
-$m=4$ gerade -- isoliertes lokales Minimum.
+\textbf{Beispiel} $f(x)=(x-x_0)^4$: $f'''(x_0)=0$, $f^{(4)}(x_0)=24$ ungleich $0$,
+$m=4$ gerade -- isoliertes lokales Minimum. \checkmark
+
+\textbf{Grenzfall:} Wäre $f^{(m)}(x_0)=0$ für \emph{alle} $m$, so gäbe es
+keine erste nicht verschwindende Ableitung und keine Vorzeichenaussage;
+die Zusatzannahme $f^{(m)}(x_0)$ ungleich $0$ ist unverzichtbar. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Der Wendepunkt lässt sich über ein isoliertes lokales Extremum von $f'$
-definieren. Entscheidend bei der Induktion ist die Parität der ersten
-nichtverschwindenden Ableitung: gerade Ordnung gibt ein Extremum, ungerade
-einen Sattelpunkt; der Beweis reduziert Ordnung $m$ auf Ordnung $m-1$, indem
-man die Regel auf $f'$ anwendet.
+Der Wendepunkt ist ein isoliertes lokales Extremum von $f'$. Entscheidend
+ist die \emph{Parität} der ersten nicht verschwindenden Ableitung: gerade
+Ordnung gibt ein Extremum (Term $(x-x_0)^m$ ohne Vorzeichenwechsel),
+ungerade einen Sattelpunkt (Term mit Vorzeichenwechsel). Über $g=f'$ lässt
+sich die Aussage induktiv auf Ordnung $m-1$ zurückführen.
 \end{merksatz}

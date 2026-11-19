@@ -2,8 +2,14 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Quadratische Gleichungen und Wurzelgleichungen für die reelle Zahl $x$
-lösen.
+% Grundidee: Quadratische Gleichungen = Nullstellen-Suche (Vieta/Mitternacht).
+% Wurzelgleichungen: Quadrieren erzeugt Scheinlösungen, deshalb probe.
+
+Die quadratische Gleichung $ax^2+bx+c=0$ stellt die Frage: \emph{an
+welchen Stellen wird dieser Term $0$?} Ihre Lösungen sind die
+``Nullstellen``. Wurzelgleichungen machen daraus eine zusätzliche,
+gefährliche Aufgabe: Mit dem Quadrieren trägt man eine \emph{weitere}
+Gleichung hinein, deren Lösungen nicht alle die ursprüngliche erfüllen.
 
 \begin{werkzeugkasten}[Quadratische Gleichung]
 $ax^2+bx+c=0$ lösen per Mitternachtsformel
@@ -12,30 +18,46 @@ $ax^2+bx+c=0$ lösen per Mitternachtsformel
 \end{equation}
 oder nach Normierung $x^2+px+q=0$ per $p$-$q$-Formel
 $x_{1,2}=-\frac p2\pm\sqrt{\left(\frac p2\right)^2-q}$.
-Zwei, eine oder keine reelle Lösung je nach Diskriminante.
+Welche Wurzelzeichen-Aussage: Zwei, eine oder keine reelle Lösung je nach
+Diskriminante $D=b^2-4ac$.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Wurzelgleichung]
+\begin{werkzeugkasten}[Warum kann das Quadrieren ``lügen''?]
+Ist $u=v$, dann ist auch $u^2=v^2$. Die Gegenrichtung gilt aber
+\emph{nicht}: aus $u^2=v^2$ folgt $u=v$ \emph{oder} $u=-v$. Beim
+Quadrieren einer Gleichung mit einer Wurzel auf der einen Seite
+\begin{equation}
+  \sqrt{\text{(Term)}}=(\text{fremder Term})
+\end{equation}
+können deshalb Werte entstehen, die das Minus-Vorzeichen ``heimlich''
+zulassen. Genau diese \emph{Scheinlösungen} sind der Grund für die
+zwingende Probe am Ende.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Wurzelgleichung systematisch]
 \begin{enumerate}
-  \item Wurzel isolieren.
-  \item Beide Seiten quadrieren (beim Quadrieren können Scheinlösungen
-        entstehen).
-  \item Die quadratische Gleichung lösen.
-  \item \textbf{Probe in der Originalgleichung}: Quadrieren ist nicht
-        äquivalent, negative Argumente der Wurzel und falsche Vorzeichen
-        ausschließen.
+  \item Wurzel isolieren (auf eine Seite bringen).
+  \item Beide Seiten quadrieren (welche Scheinlösungen entstehen können).
+  \item Die entstandene (i.\,A. quadratische) Gleichung lösen.
+  \item \textbf{Probe in der Originalgleichung:} Jede gefundene Lösung
+        zurücksetzen --- Quadrieren ist nicht äquivalent, und das
+        Wurzelargument muss reell (nichtnegativ) sein.
 \end{enumerate}
-Bei zwei Wurzeln beide nacheinander isolieren bzw. einmal geeignet quadrieren
-und die Wurzeln geschickt kombinieren.
+Bei zwei Wurzeln isoliert man beide nacheinander bzw. quadriert einmal
+und kombiniert die Wurzeln geschickt.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Jede Wurzelgleichung-Lösung zurückprüfen; es können Lösungen
-        auftreten, die die ursprüngliche Gleichung nicht erfüllen.
-  \item Das Wurzelargument muss reell (nichtnegativ) sein.
-  \item Vorzeichen: $10^{x^2}=100$ gibt $x=\pm\sqrt2$; beide Werte testen.
-  \item In Gleichungen wie $\sqrt{x+1}=x-5$ ist die rechte Seite bei der
-        Lösung $x=3$ negativ ($3-5=-2$) -- solche Scheinlösungen verwerfen.
+  \item \textbf{Probe vergessen:} Sie ist keine Formalität, sondern der
+        einzige Schutz vor den durch das Quadrieren eingeschleppten
+        Scheinlösungen.
+  \item \textbf{Wurzelargument} muss $\ge0$ sein (sonst nicht reell
+        definiert).
+  \item \textbf{Vorzeichen:} $10^{x^2}=100$ gibt $x=\pm\sqrt2$; beide
+        testen.
+  \item Bei $\sqrt{x+1}=x-5$ ist die rechte Seite zur Lösung $x=3$
+        negativ ($3-5=-2$) --- solche Werte verwerfen: eine Wurzel ist
+        nie negativ.
 \end{itemize}
 \end{achtung}

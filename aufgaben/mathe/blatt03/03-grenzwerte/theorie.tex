@@ -2,36 +2,61 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Grenzwerte von Folgen für $n\to\infty$ bestimmen: rationale Folgen,
-Wurzelbrüche, Exponential-/rationale Kombinationen und Fakultäten.
+% Grundidee: Grenzwert = "wo landet die Folge letztlich?". Bei Quotienten
+% dominiert der höchste Term. Warum? Je größer n, desto unwichtiger die
+% kleinen Terme.
 
-\begin{werkzeugkasten}[Führende Terme]
-Bei Quotienten von Polynomen dominiert die höchste Potenz:
+Der Grenzwert einer Folge $a_n$ f\"ur $n\to\infty$ beantwortet die Frage:
+\emph{``Wo landet die Folge, wenn wir immer weiter schauen?``} Obwohl die
+einzelnen $n$ niemals ``erreicht`` werden, kann man oft dennoch den
+\emph{Trend} ablesen. Die effizienteste Technik bei Br\"uchen ist die
+\emph{f\"uhrende Ordnung}: Man sucht den Term, der f\"ur gro\ss{}e $n$
+alle anderen v\"berstrahlt.
+
+\begin{werkzeugkasten}[Was bedeutet ``Konvergenz $a_n\to a$`` intuitiv?]
+Eine Folge konvergiert gegen $a$, wenn die Glieder $a_n$ der Zahl $a$
+beliebig nahekommen und dort \emph{bleiben} --- egal wie klein man die
+Toleranz w\"ahlt. Man dr\"uckt das durch $\varepsilon$-Umgebungen aus:
+\begin{equation}
+  |a_n-a|<\varepsilon \quad\text{f\"ur alle } n>N .
+\end{equation}
+Lesart: ``Ab einem Index $N$ liegt \emph{jedes} weitere Glied innerhalb
+des Toleranz-Fensters der Breite $2\varepsilon$ um $a$.`` Je kleiner
+$\varepsilon$, desto weiter hinten liegt $N$. (Dass $a_n$ gleich $a$
+wird, ist \emph{nicht} n\"otig --- der Grenzwert ist der ``Halt``, nicht
+der Ankunftspunkt.)
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[F\"uhrende Ordnung bei Br\"uchen]
+Bei einem Quotienten von Polynomen dominiert die \emph{h\"ochste}
+Potenzen:
 \begin{equation}
   \frac{3n^3-2n^2+1}{n^2-2n^3-3}\ \sim\ \frac{3n^3}{-2n^3}
   \to -\frac32 .
 \end{equation}
-Bei $2^n,3^n,\dots$ dominiert die größte Basis; $n!\ $ wächst schneller als
-jede feste Potenz:
-\begin{equation}
-  \frac{n^2}{(n+1)!}\to0 .
-\end{equation}
+\textbf{Warum?} Man k\"urzt durch die h\"ochste Potenz $n^3$; dann bleiben
+Terme wie $\pm\frac1n$, $\frac{\mathrm{const}}{n^3}$ \"ubrig, die f\"ur
+$n\to\infty$ gegen $0$ gehen --- nur die Verh\"altnisf\"uhrer überleben.
+Dasselbe Prinzip gilt bei Exponential- und Fakult\"atsbr\"uchen: Die
+gr\"o\ss{}te Basis bzw. die Fakult\"at dominiert.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Wurzelbrüche]
-Beim Grenzwert mit Wurzeln im Nenner durch die führende Potenz von $n$
-kürzen (z. B. durch $\sqrt n$); dabei $\sqrt{n+1}\approx\sqrt n$ nutzen,
-das Restglied $\to0$.
+\begin{werkzeugkasten}[Wurzelbr\"uche]
+Gibt es Wurzeln im Nenner, k\"urzt man durch die f\"uhrende Potenz von $n$
+(z.\,B. durch $\sqrt n$); f\"ur gro\ss{}e $n$ ist $\sqrt{n+1}\approx
+\sqrt n$, das Restglied strebt zu $0$.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Kürzen durch die \emph{größte} auftretende Potenz von $n$; die
-        kleineren Terme fallen dann weg.
+  \item K\"urzen durch die \emph{gr\"o\ss{}te} (nicht irgendeine)
+        Potenz von $n$; die kleineren Terme fallen dann weg.
   \item Bei $(-1)^n$ gemischten Termen bleibt das Vorzeichen des
-        führenden Glieds entscheidend; $(-1)^n/3^n\to0$.
-  \item $3^{n+1}=3\cdot3^n$ -- im Nenner $4\cdot3^{n+1}$ die Basis $3$ mit
-        $3^n$ vergleichen, nicht $2^n$.
-  \item $d_n=n^2/(n+1)!$: Fakultät dominiert, Grenzwert $0$.
+        f\"uhrenden Glieds entscheidend; $(-1)^n/3^n\to0$ (der Z\"ahler
+        ist beschr\"ankt, der Nenner explodiert).
+  \item $3^{n+1}=3\cdot3^n$ --- im Nenner $4\cdot3^{n+1}$ die Basis $3$
+        richtig von $3^n$ vergleichen, nicht mit $2^n$.
+  \item $d_n=n^2/(n+1)!$: die Fakult\"at dominiert jede feste Potenz,
+        Grenzwert $0$.
 \end{itemize}
 \end{achtung}

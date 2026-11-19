@@ -2,34 +2,44 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Die Euler-Reihe $1/k^2$ mit Python annähern und den kleinsten Abschneidepunkt
-$N$ finden, bei dem die Differenz zu $\pi^2/6$ erstmals unter $0.001$ liegt.
+% Grundidee: sum_{k=1}^inf 1/k^2 = pi^2/6 (Euler). Man nähert die
+% Teilsumme mit einer Schleife an und sucht das kleinste N, ab dem die
+% Differenz < 0.001 ist. Typische Python-Fallen: range halb-offen, **.
 
-\begin{werkzeugkasten}[Python: math und Summe]
+Diese Aufgabe verbindet Analysis (Euler-Reihe) mit Programmierung. Die
+Reihe $\sum 1/k^2$ konvergiert zu $\frac{\pi^2}6$, aber recht \emph{langsam}
+--- das Restglied $=\sum_{k>N}1/k^2$ klingt wie $1/N$ ab. Genau deshalb ist
+das gesuchte $N$ f\"ur die Schranke $0.001$ deutlich \emph{gr\"o\ss}er als
+``bei den ersten Paar Gliedern``.
+
+\begin{werkzeugkasten}[Python-Werkzeuge]
 \begin{itemize}
-  \item \texttt{math.pi} ist die Konstante $\pi$, \texttt{math} muss
-        zuerst importiert werden.
-  \item \texttt{range(1,101)} liefert $1,2,\dots,100$; die Teilsumme bis
-        $N$: \texttt{sum([1/k**2 for k in range(1, N+1)])}.
+  \item \texttt{math.pi} ist $\pi$, \texttt{import math} zuerst.
+  \item \texttt{range(1,101)} liefert $1,2,\dots,100$ ($1$ bis $100$,
+        oberer Wert exklusiv). Teilsumme bis $N$:
+        \texttt{sum([1/k**2 for k in range(1, N+1)])}.
   \item Differenz: \texttt{math.pi**2/6 - Teilsumme}.
 \end{itemize}
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Euler-Reihe]
+\begin{werkzeugkasten}[Euler-Reihe und Restglied]
 \begin{equation}
   \sum_{k=1}^{\infty}\frac1{k^2}=\frac{\pi^2}6 .
 \end{equation}
-Die Reihe konvergiert mit $1/k^2$; das Restglied ist durch das erste
-weggelassene Glied grob abgeschätzt. Man erhöht $N$ so lange, bis die
-Differenz kleiner als $0.001$ wird.
+Sie konvergiert (das \emph{Restglied} geht "wie $\int_N^\infty
+\frac{dx}{x^2}=\frac1N$`` zu $0$). Um ``erstmals unter $0.001$`` zu
+finden, erh\"oht man $N$ so lange, bis die Differenz kleiner als
+$0.001$ wird.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item \texttt{range(1,N+1)} -- \texttt{range} endet nicht am oberen Wert.
-  \item \texttt{k**2} statt \verb|k^2| (in Python ist \verb|^| kein
-        Potenz-Operator).
-  \item ``Erstmals unter $0.001$'' heißt bei aufsteigendem $N$ das kleinste
-        $N$ mit Differenz $<0.001$; per Schleife ab $N=1$ prüfen.
+  \item \texttt{range(1,N+1)} --- \texttt{range} endet nicht am oberen
+        Wert.
+  \item \texttt{k**2} statt \verb|k^2| (in Python ist \verb|^| ein
+        Bit-XOR, kein Potenz-Operator).
+  \item ``Erstmals unter $0.001$``: das kleinste $N$ mit Differenz
+        $<0.001$, im aufsteigenden Lauf gefunden (bei $N=100$ ist die
+        Differenz noch \emph{oberhalb} der Schranke).
 \end{itemize}
 \end{achtung}

@@ -1,5 +1,8 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Die Schleife erhöht N, bis die Differenz eingeholt ist;
+% das Restglied ~1/N erklärt, warum N in der 1000er-Größenordnung liegt.
+
 \subsection*{Gegeben und gesucht}
 (a) Differenz $\tfrac{\pi^2}6-\sum_{k=1}^{100}\frac1{k^2}$ in Python
 berechnen; (b) das kleinste $N$ mit $\tfrac{\pi^2}6-\sum_{k=1}^{N}\frac1{k^2}<0.001$ finden.
@@ -10,7 +13,7 @@ import math
 diff = math.pi**2/6 - sum([1/k**2 for k in range(1, 101)])
 print(diff)
 \end{verbatim}
-Das ergibt näherungsweise
+Das ergibt n\"aherungsweise
 \begin{equation}
   \frac{\pi^2}6-\sum_{k=1}^{100}\frac1{k^2}
   \approx 0.0099502 .
@@ -19,7 +22,7 @@ Das ergibt näherungsweise
 \subsection*{b) kleinstes $N$ mit Differenz $<0.001$}
 \begin{verbatim}
 import math
-for N in range(1, 1000):
+for N in range(1, 100000):
     diff = math.pi**2/6 - sum([1/k**2 for k in range(1, N+1)])
     if diff < 0.001:
         print(N, diff)
@@ -38,14 +41,29 @@ Das kleinste solche $N$ ist
 \end{ergebnis}
 
 \begin{kontrolle}
-Da die Reihe mit $1/k^2$ langsam konvergiert (Harmonische-Quadrat), ist ein
-großes $N$ (hier $\sim10^3$) für die Schwelle $0.001$ plausibel; das
-Restglied $>\!\!\int_{1000}^{\infty}\frac{\mathrm dx}{x^2}=0.001$ passt zur
-Grenze.
+\textbf{Warum ist $N\sim10^3$ plausibel? (Grenzfall/Gr\"o\ss{}enordnung)}
+Die Reihe konvergiert langsam wie $1/k^2$; das Restglied ist grob
+\[
+  \sum_{k>N}\frac1{k^2}\approx\int_N^\infty\frac{\mathrm dx}{x^2}
+  =\frac1N .
+\]
+Also ist der Schwellwert $0.001\approx1/N$ erst bei $N\sim1000$
+erreicht --- konsistent mit dem gefundenen $N=1000$. (Bei $N=100$ st\"unde
+noch $\approx0.01$ Rest, zehnmal zu viel.)
+
+\textbf{Off-by-One im Code (der eigentliche Test):} Das gefundene
+$N=1000$ liegt \emph{jenseits} von $100$; eine Schleife bis nur $999$
+(wie ``range(1,1000)``, oberer Index exklusiv) würde den Wert $N=1000$
+nie erreichen und nie ausbrechen. Deshalb muss die Obergrenze der
+Schleife deutlich über dem erwarteten $N$ liegen --- hier bis $10^5$.
+Das ist genau das ``range(endet nicht am oberen Wert``-Prinzip., der hier
+genau passt.
 \end{kontrolle}
 
 \begin{merksatz}
-Iterativ $N$ erhöhen und die Differenz $\tfrac{\pi^2}6-$Teilsumme mit der
-Schwelle vergleichen; \texttt{range(1,N+1)} und \texttt{k**2} sind die
-richtigen Bausteine.
+Iterativ $N$ erh\"ohen und die Differenz $\tfrac{\pi^2}6-$Teilsumme mit der
+Schwelle vergleichen; wegen des langsamen $1/N$-Abklingens des
+Restglieds liegt die Schwelle $0.001$ erst in der $10^3$-Gr\"o\ss{}en-
+ordnung. \texttt{range(1,N+1)} und \texttt{k**2} sind die richtigen
+Bausteine.
 \end{merksatz}

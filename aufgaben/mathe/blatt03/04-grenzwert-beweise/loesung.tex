@@ -1,13 +1,21 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Die epsilon-N-Definition "rückwärts" lesen: erst das
+% gewünschte Ziel N aus der Voraussetzung ableiten.
+
 \subsection*{Gegeben und gesucht}
 $c>0$, $S>0$, $a\ge0$; $(a_n),(b_n),(c_n)$ positive Folgen mit
 $a_n\to a$, $b_n\to\infty$, $c_n\le S$. Zu beweisen:
 (a) $\lim(c\,a_n)=c\,a$; (b) $\lim(c\,b_n)=\infty$; (c) $\lim c_n/b_n=0$.
 
+\subsection*{Ansatz}
+Wir spielen der $\varepsilon$-$N$-Definition hinterher, aber ``planend``:
+Wir schreiben hin, was wir brauchen (z.\,B.\ ``Differenz $<|c|\varepsilon'$
+), und fragen, welche Voraussetzung uns das liefert.
+
 \subsection*{a) $\lim(c\,a_n)=c\,a$}
 Zu $\varepsilon>0$: wegen $a_n\to a$ gibt es $N$ mit
-$|a_n-a|<\varepsilon/c$ (da $c>0$) für alle $n>N$. Dann
+$|a_n-a|<\varepsilon/c$ (da $c>0$) f\"ur alle $n>N$. Dann
 \begin{equation}
   |c\,a_n-c\,a|=|c|\,|a_n-a|=c\,|a_n-a|<c\cdot\frac\varepsilon c
   =\varepsilon .
@@ -16,7 +24,7 @@ Also $c\,a_n\to c\,a$. \checkmark
 
 \subsection*{b) $\lim(c\,b_n)=\infty$}
 Zu $M>0$: wegen $b_n\to\infty$ gibt es $N$ mit $b_n>\tfrac M c$ (da
-$c>0$) für alle $n>N$. Dann
+$c>0$) f\"ur alle $n>N$. Dann
 \begin{equation}
   c\,b_n>c\cdot\frac Mc=M .
 \end{equation}
@@ -24,13 +32,15 @@ Also $c\,b_n\to\infty$. \checkmark
 
 \subsection*{c) $\lim\frac{c_n}{b_n}=0$}
 Zu $\varepsilon>0$: wegen $b_n\to\infty$ gibt es $N$ mit
-$b_n>\tfrac S\varepsilon$ für alle $n>N$. Mit der Beschränkung
-$c_n\le S$ ($c_n>0$):
+$b_n>\tfrac S\varepsilon$ f\"ur alle $n>N$. Mit der Beschr\"ankung
+$c_n\le S$ und $c_n>0$:
 \begin{equation}
   \left|\frac{c_n}{b_n}\right|=\frac{c_n}{b_n}\le\frac{c_n}{S/\varepsilon}
   <\frac{S}{S/\varepsilon}=\varepsilon .
 \end{equation}
-Also $c_n/b_n\to0$. \checkmark
+\textbf{Gedankenschritt:} Da $b_n$ gr\"o\ss{}er wird als $\tfrac S\varepsilon$,
+wird jeder Z\"ahler $c_n\le S$ dagegen ein Bruch $<\varepsilon$. Also
+$c_n/b_n\to0$. \checkmark
 
 \begin{ergebnis}
 \begin{equation*}
@@ -41,13 +51,20 @@ Also $c_n/b_n\to0$. \checkmark
 \end{ergebnis}
 
 \begin{kontrolle}
-Beispiel: $a_n=2+\tfrac1n$ ($a=2$), $c=3$: $c\,a_n=6+\tfrac3n\to6=3\cdot2$;
-$b_n=n\to\infty$: $3n\to\infty$; $c_n=\sin n$ (beschränkt $\le1$):
-$\tfrac{c_n}{n}\to0$. Passt zu allen drei Aussagen.
+\textbf{Konkretes Beispiel:} $a_n=2+\tfrac1n$ ($a=2$), $c=3$:
+$c\,a_n=6+\tfrac3n\to6=3\cdot2$; $b_n=n\to\infty$: $3n\to\infty$;
+$c_n=\sin n$ (beschr\"ankt $\le1$): $\tfrac{c_n}{n}\to0$. Passt zu allen
+drei Aussagen.
+
+\textbf{Grenzfall:} W\"are $c=0$, w\"are a) trivilar ($0\cdot a_n=0$) und
+b) in "abermal" $0$-Produkt $=0$, nicht $\infty$ --- deshalb ist die
+Voraussetzung $c>0$ essenziell. Die Beweise machen diesen Randpunkt
+explizit: b) nutzt $M/c$, was nur f\"ur $c>0$ sinnvoll ist.
 \end{kontrolle}
 
 \begin{merksatz}
-Ketten von ``zu jedem $\varepsilon$ existiert $N$'' beweisen, indem man
-das Ziel $N$ aus der jeweiligen Prämissen (Konvergenz, Divergenz,
-Beschränktheit) ableitet; dadurch folgt alles direkt die Definitionen.
+Ketten von ``zu jedem $\varepsilon$ existiert $N$`` beweist man, indem man
+das Ziel $N$ (bzw.\ das Schwellenverh\"altnis) aus der jeweiligen
+Voraussetzung (Konvergenz, Divergenz, Beschr\"anktheit) ableitet ---
+die Definitionen direkt verwenden, nicht blind Grenzwerts\"atze zitieren.
 \end{merksatz}

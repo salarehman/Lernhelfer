@@ -3,44 +3,56 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Ungleichungen mit dem Betrag in $\mathbb C$ lesen, konkrete Lösungen finden
-und die Multiplikativität des Betrags zeigen.
+Ungleichungen mit dem Betrag in $\mathbb C$ lesen, konkrete Lösungen
+finden und die Multiplikativität des Betrags zeigen.
 
-\begin{werkzeugkasten}[Betrag als Abstand]
-Für $z=a+ib$ ist $|z|=\sqrt{a^2+b^2}$ der euklidische Abstand zum Ursprung,
-$|z-z_0|$ der Abstand zu $z_0$. Damit sind eine Kreisscheibe
-($|z-z_0|\le r$) und ihr Äußeres ($|z-z_0|>r$) direkt ablesbar:
-\begin{center}
-$|z-1+i|>1 \;=\; |z-(1-i)|>1$: das Äußere des Einheitskreises um $1-i$.
-\end{center}
+\begin{werkzeugkasten}[Betrag als Abstand -- und was daraus \emph{gezeichnet} wird]
+Für $z=a+ib$ ist $|z|=\sqrt{a^2+b^2}$ der euklidische Abstand zum
+Ursprung; $|z-z_0|$ ist der Abstand zwischen $z$ und $z_0$. Deshalb werden
+Betragsgleichungen und -ungleichungen zu \emph{geometrischen} Aussagen:
+eine Forderung an den Abstand zu einem festen Punkt. Beispiel:
+\[
+  |z-1+i|=|z-(1-i)|>1
+\]
+heißt: alles, was weiter als $1$ vom Punkt $1-i$ entfernt ist -- das
+Außengebiet des Einheitskreises um $1-i$, ohne Rand. Das ist der Trick:
+$\pm i$ als Punkte in der Ebene lesen, nicht als \emph{Zahlen für sich}.
 
 \textit{Skript:} Kap. 1 (Betrag).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Betrag multiplikativ]
-Eine Zahl erfüllt zwei Betragsbedingungen genau dann, wenn der
-Schnittpunkt der beiden zugehörigen Kreise liegt (Methode):
+\begin{werkzeugkasten}[Schnitt zweier Kreise -- systematisch]
+Um alle $z$ mit $|z-z_1|=r_1$ und $|z-z_2|=r_2$ zu finden, nutzt man,
+dass Quadrieren die Beträge in quadratische Koordinaten-Ausdrücke
+verwandelt:
 \begin{enumerate}
-  \item Betragsbedingung quadrieren: $|x+iy\pm\text{...}|^2=r^2$,
-  \item beide Gleichungen subtrahieren, um eine lineare Beziehung für die
-        Koordinaten zu erhalten,
-  \item einsetzen und auflösen (hier entstehen zwei Lösungen).
+  \item Beide Gleichungen quadrieren:
+        $|x+iy-z_0|^2=(\cdots)^2+(\cdots)^2=r^2$.
+  \item \textbf{Subtrahieren} einer von der anderen. Die
+        $x^2$-Terme fallen weg, es bleibt eine \emph{lineare} Beziehung
+        zwischen $x$ und $y$ (die Radikal-Linie/Sekante).
+  \item Linear-Nichtlineares System lösen: eine Variable eliminieren, die
+        quadratische Restgleichung lösen. Zwei Kreise schneiden sich in
+        \emph{zwei} Punkten (oder einem, oder keinem).
 \end{enumerate}
-Für die allgemeine Aussage $|zw|=|z||w|$ nutzt man
-$|z|^2=z\bar z$ und die Rechenregeln des Konjugierens.
+Für die allgemeine Aussage $|zw|=|z||w|$ rechnet man algebraisch mit
+$|u|^2=u\bar u$ und der Rechenregel $\overline{zw}=\bar z\,\bar w$ des
+Konjugierens.
 
 \textit{Skript:} Kap. 1 (Betrag, Konjugation).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item $|z-1+i|>1$ nicht mit $|z-1|+|i|$ verwechseln: der Betrag wirkt auf
-        die \emph{ganze} Differenz, nicht additiv.
-  \item Beim Quadrieren von Betragsgleichungen keine Vorzeichensache: alle
-        Terme sind quadratisch, es geht nichts verloren.
-  \item Der Schnitt zweier Kreise liefert in der Regel zwei Punkte, nicht
-        einen -- alle Lösungen angeben.
-  \item $|zw|=|z||w|$ gilt für alle $z,w\in\mathbb C$; der Beweis mit der
-        Konjugation ist der sauberste.
+  \item \textbf{Betrag ist nicht additiv:} $|z-1+i|$ ist \emph{nicht}
+        $|z-1|+|i|$; der Betrag wirkt auf die gesamte Differenz.
+  \item \textbf{Quadratieren verliert nichts:} Alle Terme sind quadratisch,
+        es geht kein Vorzeichen \emph{verloren} (anders als beim Quadrieren
+        einer Gleichung mit linearen Termen).
+  \item \textbf{Alle Schnittpunkte angeben:} Zwei Kreise liefern in der
+        Regel \emph{zwei} Lösungen, nicht eine.
+  \item \textbf{$|u|^2=u\bar u$ ist der saubere Weg} für die
+        Multiplikativität; direkt \emph{ausmultiplizieren} von $|zw|$ macht die
+        Sache unübersichtlich.
 \end{itemize}
 \end{achtung}

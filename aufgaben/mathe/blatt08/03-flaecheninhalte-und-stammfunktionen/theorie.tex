@@ -4,44 +4,58 @@
 % Teil I: Werkzeuge, kein Lösungsweg.
 
 Stammfunktionen zu verschiedenen Funktionen angeben, Flächen zwischen zwei
-Kurven bzw. zwischen Kurve und $x$-Achse berechnen und einen Grenzwert für
-unendliche Integrationsgrenze auswerten.
+Kurven bzw.\ zwischen Kurve und $x$-Achse berechnen und einen Grenzwert
+für unendliche Integrationsgrenze auswerten.
 
-\begin{werkzeugkasten}[Grund-Stammfunktionen]
+\begin{werkzeugkasten}[Was ist eine Stammfunktion -- und warum hilft sie?]
+$F$ heißt Stammfunktion von $f$, wenn $F'=f$. Der Grund, sich dafür zu
+interessieren: Der \textbf{Hauptsatz} sagt, dass
+$\int_a^b f(x)\,dx=F(b)-F(a)$ -- eine Fläche/ein Integral ist also über
+eine \emph{Differenz von Stammfunktions-Werten} zugänglich, ohne
+Rechtecksummen. Den Stammfunktions-Teil zu lösen heißt also umgekehrtes
+Ableiten (\emph{Differenzieren rückwärts}):
 \begin{itemize}
-  \item $\displaystyle\int\frac1x\,dx=\ln|x|+\mathbb C$ ($x\ne0$).
-  \item Mit der Kettenregel-Rückwärts (Substitution): Aus
-        $\int u'(x)u(x)\,dx$ Typen wie
-        $2\sin x\cos x=\sin(2x)$ erkennen und integrieren.
-  \item $\displaystyle\frac{2x}{\cos^2(x^2)}$ ist die Ableitung von
-        $\tan(x^2)$ (Kettenregel in der Form
-        $[\tan g]'=\frac{g'}{\cos^2g}$ mit $g=x^2$, $g'=2x$).
+  \item $\displaystyle\int\frac1x\,dx=\ln|x|+\mathbb C$ (für $x$ ungleich
+        $0$). Der Betrag ist wichtig: die Ableitung von $\ln|x|$ ist
+        überall $\frac1x$, auch für $x<0$.
+  \item $\displaystyle\int 2\sin x\cos x\,dx$: Man erkennt in $2\sin x\cos x$
+        die Ableitung von $\sin^2x$ oder die Doppelwinkelformel
+        $\sin(2x)$; beide Wege führen zu $-\frac12\cos(2x)+\mathbb C$.
+  \item $\displaystyle\frac{2x}{\cos^2(x^2)}$: Die Kettenregel rückwärts
+        liefert $\tan(x^2)$, denn $[\tan(x^2)]'=\frac{2x}{\cos^2(x^2)}$.
 \end{itemize}
-\textit{Skript:} Kap. 5 (Stammfunktionen).
+Das musst du als \emph{$f$ sehen, das eine Ableitung ist} üben.
+
+\textit{Skript:} Kap. 5 (Stammfunktionen, Hauptsatz).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Fläche zwischen zwei Kurven]
+\begin{werkzeugkasten}[Fläche zwischen zwei Kurven -- nicht vergessen: Betrag]
 Die von $f$ und $g$ auf $[a,b]$ eingeschlossene Fläche ist
 \begin{equation*}
-  \int_a^b |f(x)-g(x)|\,dx .
+  A=\int_a^b |f(x)-g(x)|\,dx .
 \end{equation*}
-Hat $f-g$ ein festes Vorzeichen auf Teilintervallen, rechnet man die Abschnitte
-getrennt. Beispielhaft für $f(x)=\sin x$ und $g(x)=-x(x-\pi)(x-2\pi)$ auf
-$[0,2\pi]$ erhält man über die Stammfunktionen von $\sin$ und des
-kubischen Polynoms einen exakten Ausdruck.
+Der Grund für den Betrag: Das Integral $\int(f-g)$ zählt eine \emph{negative
+Fläche}, wenn $f<g$. Man zerlegt also in Teilintervalle, auf denen $f-g$
+ein festes Vorzeichen hat, benutzt dort $\pm(f-g)$ entsprechend und addiert
+die Beträge. Eine Skizze der Differenz $f-g$ (wo ist sie positiv, wo
+negativ?) ist der erste Schritt -- man kann die Flächen nicht blind als ein
+Integral anschreiben.
 
-\textit{Skript:} Kap. 5 (Hauptsatz, Flächen).
+\textit{Skript:} Kap. 5 (Flächen).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Betrag nicht vergessen: $\int(f-g)$ ist nicht die Fläche, falls
-        $f<g$ auf einem Teilbereich.
-  \item Bei $1/x$ unbedingt $\ln|x|$ statt $\ln x$ schreiben (Integrand
-        auch für $x<0$ erklärt).
-  \item Skizzieren zuerst: die Vorzeichen der Differenz $f-g$ bestimmen
-        die Zerlegung der Fläche.
-  \item Für die Grenzwert-Aufgabe c) die Stammfunktion exakt hinschreiben,
-        die Grenzen einsetzen und den Grenzwert $b\to\infty$ bilden.
+  \item \textbf{Betrag vergessen:} $\int(f-g)$ ist nicht die Fläche, falls
+        $f<g$ irgendwo; dann musst du getrennt integrieren und mit
+        Vorzeichen versehen.
+  \item \textbf{$\ln|x|$ statt $\ln x$:} Beim Stammfunktion-Bilden von
+        $\frac1x$ gehört der Betrag hinein (Integrand auch für $x<0$
+        erklärt).
+  \item \textbf{Erst skizzieren:} Die Vorzeichen von $f-g$ bestimmen die
+        Zerlegung; ohne Skizze riskiert man falsche Abschnitte.
+  \item \textbf{Unendliche Grenze sauber:} bei der Aufgabe (c) erst die
+        Stammfunktion exakt hinschreiben, dann die Grenzen einsetzen und
+        den Grenzwert $b\to\infty$ bilden (nicht \emph{unendlich einsetzen}).
 \end{itemize}
 \end{achtung}

@@ -1,5 +1,8 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Python-Wert vs. Formel numerisch, dann Induktion mit
+% Nenner 6 und Ausklammern von (n+1).
+
 \subsection*{Gegeben und gesucht}
 (a) Programm für $\sum_{k=0}^{n}k^2$; (b) mit $n(n+1)(2n+1)/6$
 vergleichen; (c) die Formel beweisen.
@@ -21,11 +24,14 @@ $n$ & $\sum k^2$ & $\frac{n(n+1)(2n+1)}6$ & überein\\
 5 & 55 & $\frac{5\cdot6\cdot11}{6}=55$ & ja
 \end{tabular}
 \end{center}
-Werte stimmen für alle getesteten $n$ überein -- die Formel wird bestätigt.
+Werte stimmen für alle getesteten $n$ überein --- die Vermutung wird
+gestützt (bewiesen wird sie durch (c)).
 
 \subsection*{c) Beweis per Induktion}
-\emph{IA} ($n=1$): $1=\frac{1\cdot2\cdot3}6$.
-\emph{IS} ($n\to n+1$), mit der Annahme $\sum_{k=0}^{n}k^2=\frac{n(n+1)(2n+1)}6$:
+\emph{IA} ($n=1$): $1=\frac{1\cdot2\cdot3}6$. \checkmark
+\emph{IS} ($n\to n+1$), mit der Annahme
+$\sum_{k=0}^{n}k^2=\frac{n(n+1)(2n+1)}6$: Der neue Summand ist
+$(n+1)^2$; wir schreiben ihn auf den Nenner $6$:
 \begin{align}
   \sum_{k=0}^{n+1}k^2
   &=\frac{n(n+1)(2n+1)}6+(n+1)^2 \\
@@ -34,7 +40,8 @@ Werte stimmen für alle getesteten $n$ überein -- die Formel wird bestätigt.
   &=\frac{(n+1)(2n^2+7n+6)}6 \\
   &=\frac{(n+1)(n+2)(2n+3)}6 .
 \end{align}
-Das ist die Behauptung für $n+1$.
+Das ist die Behauptung für $n+1$ (man muss $2n^2+7n+6$
+faktorisieren: $(n+2)(2n+3)$).
 
 \begin{ergebnis}
 \begin{equation*}
@@ -45,9 +52,17 @@ Das ist die Behauptung für $n+1$.
 \begin{kontrolle}
 $n=4$: $0+1+4+9+16=30$, Formel $4\cdot5\cdot9/6=30$; $n=6$:
 $0+\dots+36=91$, Formel $6\cdot7\cdot13/6=91$. Passt.
+
+\textbf{Grenzfall/Analyse des Faktors:} Der Zähler $n(n+1)(2n+1)$ ist
+stets durch $6$ teilbar (unter drei aufeinanderfolgenden Faktoren
+$n(n+1)(n+2)$ gibt es eine gerade Zahl und eine durch $3$; $2n+1$
+ist mit $n$ und $n+1$ ``ergänzt`` zu dieser Folge). Dass das Ergebnis
+eine ganze Zahl ist, ist ein guter Konsistenztest der Formel.
 \end{kontrolle}
 
 \begin{merksatz}
 Python prüft die Formel numerisch, die Induktion beweist sie: im IS den
-Term $(n+1)^2$ addieren und den gemeinsamen Nenner $6$ herstellen.
+Term $(n+1)^2$ auf den gemeinsamen Nenner $6$ erweitern und $n+1$
+ausklammern; das Skript \texttt{sum([k**2 for k in range(n+1)])}
+rechnet genau dieselbe Summe wie die Formel.
 \end{merksatz}

@@ -4,46 +4,62 @@
 % Teil I: Werkzeuge, kein Lösungsweg.
 
 Eigenschaften von Funktionen (gerade/ungerade, Monotonie, Umkehrbarkeit)
-analysieren und an konkreten Beispielen prüfen sowie einen Satz über die
-Umkehrfunktion beweisen.
+analysieren und an Beispielen prüfen sowie einen Satz über die
+Umkehrfunktion verstehen und begründen.
 
-\begin{werkzeugkasten}[Gerade und ungerade Funktionen]
-Eine Funktion $f$ auf einer um $0$ symmetrischen Menge heißt
+\begin{werkzeugkasten}[Gerade und ungerade Funktionen -- eine Spiegel-Frage]
+Eine Funktion $f$ auf einer um $0$ symmetrischen Definitionsmenge heißt
 \begin{itemize}
-  \item \textbf{gerade}, wenn $f(x)=f(-x)$ für alle $x$ gilt; der Graph ist
-        symmetrisch zur $y$-Achse.
-  \item \textbf{ungerade}, wenn $f(-x)=-f(x)$ für alle $x$ gilt; der Graph
-        ist symmetrisch zum Ursprung (punktsymmetrisch).
+  \item \textbf{gerade}, wenn $f(x)=f(-x)$ für alle $x$ gilt. Der Graph ist
+        eine Spiegelung seiner selbst an der $y$-Achse: Was rechts von $0$
+        passiert, spiegelt sich exakt nach links.
+  \item \textbf{ungerade}, wenn $f(-x)=-f(x)$ für alle $x$ gilt. Der Graph
+        ist eine Spiegelung an der $y$-Achse \emph{und} zusätzlich an der
+        $x$-Achse, zusammen also eine Drehung um $180^\circ$ um den
+        Ursprung.
 \end{itemize}
-Beide Bedingungen prüft man, indem man $x$ durch $-x$ ersetzt. Produkte
-folgen der Regel ``gerade $\times$ ungerade $=$ ungerade'', ``gerade
-$\times$ gerade $=$ gerade''.
+Der Name kommt von den typischen Monomen: $1,\,x^2,\,x^4$ sind gerade,
+$x,\,x^3,\,x^5$ ungerade. Bei einem Produkt erbt man die Symmetrie als \emph{Produkt der Symmetrien}:
+Gerade Monome hinterlassen beim Ersetzen von
+$x$ durch $-x$ kein Minuszeichen, ungerade schon, also
+$(\text{gerade})\cdot(\text{ungerade})=(\text{ungerade})$ und so weiter.
+Man prüft aber immer \emph{direkt durch Einsetzen von $-x$}, nicht durch
+Raten am Aussehen der Formel.
 
 \textit{Skript:} Kap. 2 (Eigenschaften von Funktionen).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Monotonie und Umkehrfunktion]
+\begin{werkzeugkasten}[Monotonie und Umkehrfunktion -- warum Injektivität reicht]
 $f$ heißt \textbf{streng monoton steigend}, falls aus $x_1<x_2$ stets
 $f(x_1)<f(x_2)$ folgt, \textbf{streng monoton fallend} bei
-$f(x_1)>f(x_2)$. Eine streng monotone Funktion ist \textbf{injektiv} und damit
-(bijektiv auf ihr Bild) umkehrbar.
+$f(x_1)>f(x_2)$. Anschaulich: Beim Durchlaufen der $x$-Achse bewegt sich
+der Funktionswert nur in eine Richtung, es gibt kein Zurück. Genau das macht
+$f$ \textbf{injektiv}: Jeder Funktionswert $y$ hat \emph{höchstens ein}
+Urbild $x$.
 
-Für die steigende Umkehrfunktion $g$ nutzt man das Kontrapositionsargument:
-aus $g(u)\le g(v)$ folgt durch Anwenden von $f$ die Ungleichung $u\le v$, weil
-$f$ streng monoton steigend ist.
+Nur injektive Funktionen sind umkehrbar, denn die Umkehrfunktion $g$ fragt
+\emph{Welches $x$ liefert diesen $y$-Wert?}. Hätte $y$ zwei Urbilder, wäre
+die Antwort nicht eindeutig und $g$ keine Funktion. Dass die Umkehrfunktion
+einer steigenden Funktion wieder steigt, folgt per \textbf{Kontraposition}:
+Wäre $g$ irgendwo nicht steigend, so ergäbe das Anwenden der steigenden
+Funktion $f$ einen Widerspruch zur Eindeutigkeit.
 
 \textit{Skript:} Kap. 2 (Monotonie, Umkehrfunktion).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Den Definitionsbereich im Auge behalten: $f_1$ ist nur auf den
-        Einheitsintervall $[-1,1]$ erklärt, wo $1-x^2\ge0$ gilt.
-  \item Nicht aus $f'>0$ allein schließen, sondern die Umformung mit
-        $f(-x)$ direkt durchführen.
-  \item Bijektivität von $[0,1]$ nach $[0,1]$ erzwingt keine Monotonie;
-        es kann sogar monoton fallend sein.
-  \item Beim Monotonie-Beweis der Umkehrfunktion zuerst annehmen, dass
-        $g$ NICHT wächst, und einen Widerspruch zur Injektivität ableiten.
+  \item \textbf{Definitionsbereich vergessen:} $f_1=\sqrt{1-x^2}$ ist nur
+        auf $[-1,1]$ erklärt ($1-x^2\ge 0$). Symmetrie hat nur auf einer um
+        $0$ symmetrischen Menge einen Sinn.
+  \item \textbf{Nicht aussehen lassen:} Aus einem Quadratterm nicht allein
+        auf gerade schließen; die Wurzel reicht die Symmetrie zum Beispiel
+        durch, ohne dass man am Vorzeichen rät.
+  \item \textbf{Bijektivität und Monotonie verwechseln:} Bijektiv
+        $[0,1]\to[0,1]$ erzwingt keine Monotonie ($x\mapsto 1-x$ ist
+        bijektiv, aber fallend).
+  \item \textbf{Beim Umkehrsatz die Kontraposition:} Man nimmt an, $g$ sei
+        nicht steigend, und führt das zu einem Widerspruch -- statt die
+        Richtung direkt zu \emph{erzwingen}.
 \end{itemize}
 \end{achtung}

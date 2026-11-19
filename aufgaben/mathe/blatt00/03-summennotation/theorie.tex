@@ -2,39 +2,58 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Darstellung von Summen: ausgeschrieben (mit ``\dots'') oder mit dem
-Summenzeichen $\Sigma$.
+% Grundidee: Das Summenzeichen ist eine Kompression von ``ausschreiben``.
+% Der Index ist ein Laufplatzhalter; das Umschreiben verlangt, dass erster
+% Term und letzter Term stimmen.
 
-\begin{werkzeugkasten}[Summenzeichen]
+Das Summenzeichen $\sum$ ist keine neue Rechenoperation, sondern
+\emph{Kurzschrift} für ``addiere viele gleich gebaute Terme``. Wer die
+Notation versteht, versteht auch, warum sie so praktisch ist: man gibt
+nur an, wie der allgemeine Summand aussieht und \emph{wo} er beginnt und
+endet.
+
+\begin{werkzeugkasten}[Summenzeichen: Aufbau]
 Eine Summe über die Laufvariable $i$ von $i=m$ bis $i=n$ schreibt man
 \begin{equation}
   \sum_{i=m}^{n} a_i = a_m + a_{m+1} + \dots + a_n .
 \end{equation}
-Der Laufindex $i$ ist stumm; er darf umbenannt werden, ohne den Wert zu
-ändern.
+\textbf{Vier Bausteine:} das Zeichen, der Laufindex $i$ (die ``Frage
+welches Glied``), der Startwert $m$ und der Endwert $n$. Die Summanden
+$i=m,m+1,\dots,n$ werden eingefüllt und aufsummiert.
 
+Der Laufindex $i$ ist \emph{stumm}: Er ist nur ein Platzhalter innerhalb
+der Summe und darf umbenannt werden, ohne den Wert zu ändern,
 \begin{equation}
   \sum_{i=m}^{n} a_i = \sum_{k=m}^{n} a_k .
 \end{equation}
+Anschaulich: ``das Glied Nummer $i$`` und ``das Glied Nummer $k$``
+beschreiben dieselbe Liste, nur mit anderem Namensschild.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Umformulieren des Summanden]
-Oft musst man den Summanden so umschreiben, dass mit einer festen
-Laufvariable $i$ (Startwert unter dem Summenzeichen) ein gemeinsamer Index
-steht. Ist der erste Term, der bei $i=m$ entsteht, gerade die gewünschte
-Form, so lautet die Probe ``Summand bei $i=m$ auswerten und mit dem
-Term der Summe vergleichen''.
-\end{werkzeugkasten}
-
-\begin{achtung}[Darauf achten]
+\begin{werkzeugkasten}[Warum man beim Umbenennen den \emph{Startwert} anpasst]
+Will man einen Summanden umschreiben (z.\,B. $2k+1$ statt $k$ als
+Laufvariable), kommt es nur auf zwei Terme an:
 \begin{itemize}
-  \item Den Startwert und Endwert des Index korrekt ablesen; Ausdrücke wie
-        ``$1+2+3+\dots+10$'' entsprechen $\sum_{i=1}^{10} i$.
-  \item Die Summanden nicht ausrechnen -- es ist nur die andere Schreibweise
-        verlangt.
-  \item Exponenten richtig interpretieren (z. B. $2^2,3^2,\dots,k^2$, nicht
-        Ziffern zusammensetzen).
-  \item Beim Ausformulieren einer Summe $\sum_{i=a}^{b}f(i)$ die Terme für
-        $i=a, a+1, \dots, b$ konkret hinschreiben.
+  \item \textbf{Startwert:} Der erste Summand der neuen Schreibweise muss
+        mit dem ersten der alten übereinstimmen. Beispiel: Ungerade Zahlen
+        $1,3,5,\dots$ starten mit $1$; mit der Form $2k+1$ ist das
+        $k=0$.
+  \item \textbf{Endwert:} Der letzte Term gibt den passenden Endwert vor.
+\end{itemize}
+Das Umschreiben ist also eine ``Passprobe an den Rändern``: Stimmen
+Anfang und Ende, stimmt die ganze Summe.
+\end{werkzeugkasten}
+
+\begin{achtung}[Typische Fehler]
+\begin{itemize}
+  \item Start- und Endwert des Index falsch ablesen. ``$1+2+3+\dots+10$``
+        ist $\sum_{i=1}^{10}i$, nicht bis $9$ oder $11$.
+  \item Die Summanden nicht ausrechnen --- es ist nur die \emph{andere
+        Schreibweise} verlangt.
+  \item Exponenten richtig interpretieren (z.\,B. $2^2,3^2,\dots,k^2$,
+        nicht die Ziffern ``zusammensetzen``).
+  \item Beim Ausformulieren von $\sum_{i=a}^{b}f(i)$ alle Terme für
+        $i=a,a+1,\dots,b$ konkret hinschreiben --- besonders den ersten
+        und den letzten, weil man sie für die Ränder-Probe braucht.
 \end{itemize}
 \end{achtung}

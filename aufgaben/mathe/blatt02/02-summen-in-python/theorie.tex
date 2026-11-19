@@ -2,12 +2,18 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Summe der Quadratzahlen $0^2+1^2+\dots+n^2$ in Python bilden, mit der
-Formel vergleichen und die Formel beweisen.
+% Grundidee: Python zählt 0^2+...+n^2 numerisch; die geschlossene Formel
+% n(n+1)(2n+1)/6 wird per Induktion bewiesen.
 
-\begin{werkzeugkasten}[Python: Listen und sum]
+Wie bei der Gauß-Summe treffen sich hier numerisches Rechnen (Python-
+Schleife) und eine geschlossene Formel. Beim Beweis ist die eigentliche
+Schwierigkeit die Induktionsvorbereitung: \emph{welcher neue Summand
+kommt dazu, und auf welchen Nenner bringt man ihn?}
+
+\begin{werkzeugkasten}[Python: Listen, range, sum]
 \begin{itemize}
-  \item \texttt{[k**2 for k in range(21)]}: Liste der Quadrate $0^2,\dots,20^2$.
+  \item \texttt{[k**2 for k in range(21)]}: Liste der Quadrate
+        $0^2,\dots,20^2$.
   \item \texttt{sum(...)}: Summe der Elemente, also
         \texttt{sum([k**2 for k in range(n+1)])} $=\sum_{k=0}^{n}k^2$.
   \item Für $n=5$: $0+1+4+9+16+25=55$.
@@ -18,20 +24,23 @@ Formel vergleichen und die Formel beweisen.
 \begin{equation}
   \sum_{k=0}^{n} k^2=\frac{n(n+1)(2n+1)}6 .
 \end{equation}
-Für $n=5$: $5\cdot6\cdot11/6=55$. Der Vergleich für verschiedene $n$ zeigt
-Übereinstimmung; der Beweis läuft per vollständiger Induktion, wobei im
-Induktionsschritt der neue Term $(n+1)^2$ zum alten Zwischenstand
-$n(n+1)(2n+1)/6$ addiert und auf den Nenner $6$ gebracht wird.
+Für $n=5$: $5\cdot6\cdot11/6=55$. \textbf{Warum das ``$/6$`` und der
+Faktor $2n+1$?} Die Formel muss die Summe der $n$ ersten Quadratzahlen
+treffen; die Induktion zeigt, dass beim Hinzufügen von $(n+1)^2$ der
+Zähler $(n+1)(n+2)(2n+3)$ entsteht. Dass im Zähler das Produkt dreier
+aufeinanderfolgender natürlicher Zahlen steht, ist eine strukturelle
+Regelmäßigkeit dieser Summenklasse.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item \texttt{range(21)} endet bei $20$; für quadratische Summe bis $n$
-        \texttt{range(n+1)} verwenden.
-  \item Im Induktionsschritt den Bruch $(n+1)^2$ zu
-        $\frac{6(n+1)^2}{6}$ erweitern und $n+1$ ausklammern; das Ziel ist
+  \item \texttt{range(21)} endet bei $20$; für bis $n$ verwende
+        \texttt{range(n+1)}.
+  \item Im Induktionsschritt den Bruch so erweitern, dass die Nenner gleich
+        sind und man $n+1$ ausklammern kann; das Ziel ist
         $\frac{(n+1)(n+2)(2n+3)}6$.
-  \item Formel und Schleife liefern dieselben Werte -- dies ist der
-        eigentliche Inhalt von Teil b).
+  \item Formel und Schleife müssen für \emph{alle} $n$ dieselben Werte
+        liefern --- das ist der Inhalt von Teil b), nicht bloß ``einmal
+        passt es``.
 \end{itemize}
 \end{achtung}

@@ -2,31 +2,49 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Ein lineares Gleichungssystem mit zwei Gleichungen und zwei Variablen $x$,
-$y$ lösen.
+% Grundidee: Zwei Geraden, ein Schnittpunkt. Das Verfahren eliminiert eine
+% Variable, sodass man eine einfache Gleichung erhält, dann die andere.
 
-\begin{werkzeugkasten}[Additionsverfahren]
-Zwei Gleichungen so mit Faktoren versehen, dass beim Addieren eine Variable
-wegfällt. Aus
+Zwei lineare Gleichungen in $x$ und $y$ sind geometrisch zwei Geraden; ihre
+Lösung ist der Schnittpunkt. Das \emph{Additionsverfahren} und das
+\emph{Einsetzungsverfahren} sind zwei Wege, diesen Schnittpunkt zu
+berechnen, indem man die Unbekannte eliminiert.
+
+\begin{werkzeugkasten}[Additionsverfahren: die Idee]
+Die Grundidee ist, \emph{eine Variable wegfallen zu lassen}. Man
+multipliziert eine Gleichung so mit einem Faktor, dass bei der Addition
+der beiden Gleichungen die eine Variable verschwindet:
 \begin{equation}
   -3x+4y=-1,\qquad 2x-5y=-4
 \end{equation}
-multipliziert man geeignet und addiert, um $x$ zu eliminieren; dann die
-verbleibende Gleichung nach der verbleibenden Variablen lösen und zurücksetzen.
+Multipliziert man die erste mit $2$ und die zweite mit $3$, steht in beiden
+bzw. zusammen ein ganzer Vielfachen-Ausgleich, sodass sich $x$ beim Addieren
+aufhebt ($-6x+6x=0$). Übrig bleibt eine lineare Gleichung in $y$.
+
+\textbf{Warum funktioniert das ``Faktor-Multiplizieren``?} Eine
+Gleichung ändert sich nicht, wenn man beide Seiten mit derselben Zahl
+multipliziert --- die Lösungsmenge bleibt identisch. Das ist die
+Harmlosigkeit der Operation.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Einsetzungsverfahren]
-Eine Gleichung nach einer Variablen auflösen (z. B. nach $y$ oder $x$),
-in die andere Gleichung einsetzen, lösen und die eine Variable wieder
-einsetzen.
+\begin{werkzeugkasten}[Einsetzungsverfahren: die Idee]
+Eine Gleichung nach einer Variablen auflösen (z.\,B. nach $y$), diesen
+Ausdruck in die \emph{andere} Gleichung einsetzen --- damit ist die
+eine Variable eliminiert, man erhält eine Gleichung in nur noch einer
+Unbekannten; lösen und zurücksetzen.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Alle Koeffizienten und Vorzeichen korrekt übernehmen ($-3x$, $4y$,
-        $2x$, $-5y$).
-  \item Nach der Lösung in \emph{beide} Gleichungen zurücksetzen (Probe).
-  \item Beim Additionsverfahren beide Seiten der Gleichung mit dem Faktor
-        multiplizieren, nicht nur die linke.
+  \item \textbf{Koeffizienten und Vorzeichen} korrekt übernehmen
+        ($-3x$, $4y$, $2x$, $-5y$) --- ein falsches Minus beim
+        ``Faktor-Multiplizieren`` verschiebt den Schnittpunkt.
+  \item \textbf{Beide Seiten} der Gleichung mit dem Faktor multiplizieren,
+        nicht nur die linke (sonst ist die Gleichung nicht mehr
+        äquivalent).
+  \item \textbf{Rückprobe in beiden} Gleichungen: $(x,y)$ muss \emph{beide}
+        erfüllen, nicht nur eine.
+  \item Beim Einsetzungsverfahren den Ausdruck sauber klammern, damit beim
+        Einsetzen keine Vorzeichen- und Rechenfehler entstehen.
 \end{itemize}
 \end{achtung}

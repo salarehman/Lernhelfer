@@ -2,37 +2,46 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Das Bild $f(D)$ einer bijektiven Funktion bestimmen, die Umkehrfunktion
-$g$ angeben und die Graphen von $f$ und $g$ skizzieren.
+% Grundidee: Eine Funktion muss injektiv sein, um eine Umkehrfunktion zu
+% haben. Bild f(D) wird der Definitionsbereich von g; man löst y=f(x)
+% nach x auf und beachtet Definitionsbedingungen (Wurzel, ln).
 
-\begin{werkzeugkasten}[Umkehrfunktion]
-Eine Funktion $f$ heißt injektiv, wenn aus $f(x_1)=f(x_2)$ stets
-$x_1=x_2$ folgt. Dann existiert $g=f^{-1}$ mit $g(f(x))=x$ und
-$f(g(y))=y$; der Definitionsbereich von $g$ ist das Bild $f(D)$.
-Rechnerisch stellt man $y=f(x)$ nach $x$ auf und tauscht die Rollen der
-Variablen.
+Die Umkehrfunktion ``macht das Entkn\"upfen r\"uckg\"angig``: $g(f(x))=x$
+und $f(g(y))=y$. Damit das \emph{eindeutig} m\"oglich ist, darf $f$ nie
+zwei verschiedene $x$ auf denselben Wert abbilden --- f\"ur injektive
+(umkehrbare) Funktionen. Wo $f$ hingeht (ihr Bild $f(D)$), das ist der
+Definitionsbereich von $g$.
+
+\begin{werkzeugkasten}[Injektivit\"at und Umkehrfunktion]
+$f$ heißt injektiv, wenn aus $f(x_1)=f(x_2)$ stets $x_1=x_2$ folgt.
+Dann existiert $g=f^{-1}$ mit
+\begin{equation}
+  g(f(x))=x,\qquad f(g(y))=y ,
+\end{equation}
+und der Definitionsbereich von $g$ ist das \emph{Bild} $f(D)$.
+Rechnerisch: $y=f(x)$ nach $x$ aufl\"osen und die Rollen tauschen.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Bild einer Funktion]
-Das Bild $f(D)$ erschließt man über Monotonie und Randwerte:
+\begin{werkzeugkasten}[Bild bestimmen via Monotonie und Randwerte]
+Eine (stetig) streng monotone Funktion wird durch ihre R\"andwerte
+\"uberspannt; das Bild ist das Intervall zwischen den Grenzwerten.
 \begin{itemize}
-  \item $f(x)=\frac{x^2-4}{x^2+1}=1-\frac5{x^2+1}$ auf $D=[0,\infty)$ ist
-        streng monoton wachsend ($f'(x)>0$), mit $f(0)=-4$ und
-        $f(x)\to1$ für $x\to\infty$; Bild $[-4,1)$.
-  \item $f(x)=3+\mathrm e^{-x}$ auf $\mathbb R$ ist streng monoton fallend,
-        $f(x)\to3$ für $x\to\infty$, $f(x)\to\infty$ für $x\to-\infty$;
-        Bild $(3,\infty)$.
+  \item $f(x)=\frac{x^2-4}{x^2+1}=1-\frac5{x^2+1}$ auf $D=[0,\infty)$:
+        streng monoton wachsend ($f'(x)>0$), $f(0)=-4$,
+        $f(x)\to1$ f\"ur $x\to\infty$; Bild $[-4,1)$.
+  \item $f(x)=3+\mathrm e^{-x}$ auf $\mathbb R$: streng monoton fallend,
+        $f(x)\to3$ f\"ur $x\to\infty$, $f(x)\to\infty$ f\"ur
+        $x\to-\infty$; Bild $(3,\infty)$.
 \end{itemize}
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Offene/geschlossene Endpunkte des Bildes korrekt setzen: Bei
-        $x\to\infty$ wird $1$ bzw. $3$ nur \emph{angenähert}, also
-        halboffenes Intervall.
-  \item Beim Aufstellen der Umkehrfunktion die Definitionsbedingung des
-        Logarithmus bzw. der Wurzel beachten ($1-y>0$, $y-3>0$).
+  \item Offene/geschlossene Endpunkte: Bei $x\to\infty$ wird $1$ bzw.
+        $3$ nur \emph{angen\"ahert}, also halboffenes Intervall.
+  \item Beim Aufl\"osen die Definitionsbedingung des Logarithmus bzw.\ der
+        Wurzel beachten ($1-y>0$, $y-3>0$).
   \item Nur injektive Funktionen haben eine Umkehrfunktion; Monotonie
-        (Aus $f'$ ablesen) zeigt Injektivität.
+        (aus $f'$ ablesen) zeigt Injektivit\"at.
 \end{itemize}
 \end{achtung}

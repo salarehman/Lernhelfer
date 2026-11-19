@@ -1,13 +1,18 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: range halb-offen beachten; die Differenz sum(range..)
+% minus Formel = 0 ist das numerische Bild der Gauß-Formel, die durch
+% Induktion bewiesen wird.
+
 \subsection*{Gegeben und gesucht}
 (a) Programm so ändern, dass $0+1+\dots+29$ summiert wird; (b) Programm
 für $n=1,2,3,4,\dots$ auswerten und das Muster beschreiben; (c)
 $\sum_{k=0}^{n}k=n(n+1)/2$ für alle $n\ge1$ beweisen.
 
 \subsection*{a) Programmänderung}
+\textbf{Begründung:} \texttt{range(stop)} erzeugt $0,\dots,stop-1$.
+Für ``bis 29`` müssen $29,30$-als-stop sein, also \texttt{range(30)}:
 \emph{Vorher:} \texttt{sum(range(21))} (summiert $0,\dots,20$).
-Für $0,\dots,29$:
 \begin{verbatim}
 sum(range(30))
 \end{verbatim}
@@ -23,13 +28,19 @@ $n$ & \texttt{sum(range(n+1))} & $n(n+1)/2$ & Differenz\\
 4 & 10 & 10 & 0
 \end{tabular}
 \end{center}
-Das Ergebnis ist für jedes $n$ \emph{stets $0$}, denn beide Terme stimmen
-überein.
+Das Ergebnis ist für jedes $n$ \emph{stets $0$}, denn beide Terme
+stimmen überein --- das ist das numerische \"Affall-Muster, das auf die
+Gauß-Formel hinweist (die gezählte Summe w\"achst $0,1,3,6,10,\dots$,
+nämlich $\frac{n(n+1)}2$).
 
 \subsection*{c) Beweis per vollständiger Induktion}
+\textbf{(Das Bild: eine fallende Dominokette.} Induktionsanfang stoßt den
+ersten Stein um, der Induktionsschritt ``wenn Stein $n$ umf\"allt, f\"allt
+auch Stein $n+1$ um``.)
 \emph{Induktionsanfang} ($n=1$): $\sum_{k=0}^{1}k=0+1=1=\frac{1\cdot2}2$. \\
 \emph{Induktionsschritt} ($n\to n+1$), mit der Voraussetzung
-$\sum_{k=0}^{n}k=\frac{n(n+1)}2$:
+$\sum_{k=0}^{n}k=\frac{n(n+1)}2$: Wir spalten den letzten Summanden
+$(n+1)$ ab:
 \begin{align}
   \sum_{k=0}^{n+1}k &=\sum_{k=0}^{n}k+(n+1)
   =\frac{n(n+1)}2+(n+1) \\
@@ -45,12 +56,17 @@ $n\ge1$.
 \end{ergebnis}
 
 \begin{kontrolle}
-Für $n=4$: $0+1+2+3+4=10=\frac{4\cdot5}2$; für $n=5$: $15=\frac{5\cdot6}2$.
-Passt. Damit liefert das Python-Programm identisch $0$.
+$n=4$: $0+1+2+3+4=10=\frac{4\cdot5}2$; $n=5$: $15=\frac{5\cdot6}2$.
+Passt. Damit liefert das Python-Programm identisch $0$, denn
+\texttt{sum} rechnet dieselbe Summe wie die Formel.
+
+\textbf{Grenzfall / Konsistenz:} Für $n=0$ g\"abe die Formel
+$\frac{0\cdot1}2=0$ (leere Summe) --- ein guter Randtest f\"ur jede
+geschlossene Summenformel.
 \end{kontrolle}
 
 \begin{merksatz}
-``Bis $n$'' heißt \texttt{range(n+1)}; die Gauß-Formel beweist man, indem
-man im Induktionsschritt den letzten Summanden $(n+1)$ abspaltet und auf
-den gemeinsamen Nenner bringt.
+``Bis $n$`` heißt \texttt{range(n+1)} (halb-offen!); die Gauß-Formel
+beweist man, indem man im Induktionsschritt den letzten Summanden
+$(n+1)$ abspaltet und auf den gemeinsamen Nenner bringt.
 \end{merksatz}

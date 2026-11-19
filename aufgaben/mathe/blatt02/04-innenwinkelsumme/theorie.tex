@@ -2,32 +2,46 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Die Summe der Innenwinkel eines $n$-Ecks (Eckpunkte auf einer Kreislinie,
-$x\ge3$) per vollständiger Induktion als $(n-2)\cdot180^\circ$ zeigen.
+% Grundidee: Jedes konvexe Polygon kann man durch eine Diagonale in ein
+% Dreieck und ein (n-1)-Eck zerlegen; damit induziert man die
+% Formel (n-2)*180°.
 
-\begin{werkzeugkasten}[Vollständige Induktion]
-Beweisschema: Induktionsanfang ($n=3$: Dreieck $180^\circ$) und
-Induktionsschritt ($n\to n+1$: Winkel eines $(n+1)$-Ecks aus dem eines
-$n$-Ecks ableiten).
+Eines der saubersten Induktionsbeispiele der Geometrie: Jede Hinzunahme
+einer Ecke erhöht die Innenwinkelsumme um $180^\circ$. Die Basis dafür ist
+die \emph{Triangulierung}: ein konvexes Polygon bekommt man aus einem
+Dreieck, indem man Schritt für Schritt einen weiteren Punkt hinzufügt.
+
+\begin{werkzeugkasten}[Die Grundtatsache]
+Die Innenwinkelsumme eines Dreiecks ist $180^\circ$. Für jedes weitere
+Eck kommt $180^\circ$ dazu, also gilt
+\begin{equation}
+  S(n)=(n-2)\cdot180^\circ .
+\end{equation}
+\textbf{Warum ``$n-2$``?} Ein $n$-Eck lässt sich in $n-2$ Dreiecke
+zerlegen (Triangulierung) --- jedes Dreieck liefert $180^\circ$. Die
+$n-2$ erklärt sich also aus der Zerlegbarkeit, nicht aus der
+Rechenregel allein.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Triangulierung]
-Ein konvexes $(n+1)$-Eck zerlegt man durch eine Diagonale in ein Dreieck
-und ein $n$-Eck. Die Innenwinkel des großen Polygons setzen sich aus der
-Summe des $n$-Ecks plus der $180^\circ$ des Dreiecks zusammen:
+\begin{werkzeugkasten}[Triangulierung und Induktion]
+Ein konvexes $(n+1)$-Eck zerlegt man durch eine Diagonale in ein
+Dreieck und ein $n$-Eck. Die Innenwinkel des großen Polygons setzen sich
+aus der des $n$-Ecks plus der $180^\circ$ des Dreiecks zusammen:
 \begin{equation}
   S(n+1)=S(n)+180^\circ .
 \end{equation}
-Da die neuen Punkte auf einer Kreislinie liegen, sind die Polygone konvex
--- jede Diagonale liegt im Inneren.
+Da die Eckpunkte auf einer Kreislinie liegen, sind die Polygone
+\emph{konvex} --- jede Diagonale liegt im Inneren, die Zerlegung ist
+garantiert.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
   \item Die Diagonale muss das Polygon in ein Dreieck und ein $n$-Eck
         zerlegen, \emph{nicht} in zwei beliebige Teile.
-  \item Induktionsanfang bei $n=3$: Dreieckssumme $180^\circ=(3-2)\cdot180^\circ$.
-  \item Im Schritt die konkrete Summe $(n-2)180^\circ+180^\circ=(n-1)180^\circ
-        =((n+1)-2)180^\circ$ zeigen, nicht nur ``$+180^\circ$'' schreiben.
+  \item Induktionsanfang bei $n=3$: $180^\circ=(3-2)180^\circ$.
+  \item Im Schritt konkret rechnen:
+        $(n-2)180^\circ+180^\circ=(n-1)180^\circ=((n+1)-2)180^\circ$,
+        nicht nur ``$+180^\circ$``.
 \end{itemize}
 \end{achtung}

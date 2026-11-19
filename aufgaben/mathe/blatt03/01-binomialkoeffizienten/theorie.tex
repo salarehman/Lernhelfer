@@ -2,37 +2,67 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Binomialkoeffizienten berechnen, Auswahlmöglichkeiten zählen und die Zahl
-der nichtnegativen Lösungen einer Gleichung bestimmen.
+% Grundidee: WARUM binom(n,k) die Auswahlmöglichkeiten zählt: Man wählt k
+% von n Plätzen; die Reihenfolge der Auswahl ist egal, deshalb teilt man
+% durch k! Permutationen. Symmetrie + Säulen-Formel.
 
-\begin{werkzeugkasten}[Binomialkoeffizient]
-\begin{equation}
-  \binom{n}{k}=\frac{n!}{k!\,(n-k)!},
-  \qquad\binom{n}{k}=\binom{n}{n-k}.
-\end{equation}
-Ohne Taschenrechner kürzt man: $\binom{12}{3}=\frac{12\cdot11\cdot10}{3!}=220$,
-$\binom{57}{56}=\binom{57}{1}=57$, $\binom{10}{7}=\binom{10}{3}=120$.
+Der Binomialkoeffizient $\binom{n}{k}$ beantwortet die Frage: \emph{Auf
+wie viele Arten kann man aus $n$ unterscheidbaren Dingen eine Menge von
+$k$ Stück auswählen, wenn die Reihenfolge egal ist?} Dass er mit der
+Fakultätsformel berechnet wird, ist die explizite Antwort --- aber erst
+die \emph{Herleitung} macht klar, \emph{warum} die Formel stimmt.
+
+\begin{werkzeugkasten}[Warum $\binom{n}{k}=\frac{n!}{k!(n-k)!}$? --- die Herleitung]
+\begin{enumerate}
+  \item \textbf{Geordnete Auswahl:} $k$ Dinge in einer festen Reihenfolge
+        aus $n$ Möglichkeiten auswählen: das erste in $n$ Weisen, das
+        zweite in $n-1$, \dots, das $k$-te in $n-k+1$. Zusammen:
+        $n(n-1)\cdots(n-k+1)=\frac{n!}{(n-k)!}$.
+  \item \textbf{Reihenfolge ist egal:} Jede Menge von $k$ Dingen wurde
+        auf $k\cdot(k-1)\cdots1=k!$ Arten in dieser geordneten Zählung
+        erfasst (jede Permutation der $k$ Elemente). Durch Division durch
+        $k!$ korrigieren wir das Zuviel:
+        \begin{equation}
+          \binom{n}{k}=\frac{n!}{k!(n-k)!}.
+        \end{equation}
+\end{enumerate}
+\textbf{Die zentrale Symmetrie:} $\binom{n}{k}=\binom{n}{n-k}$ --- ``einen
+$k$-Teil auswählen`` ist dasselbe wie ``die $n-k$ anderen beiseite
+legen``; die beiden Mengen stehen in Bijektion.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Auswahl und Säulen-Formel]
+\begin{werkzeugkasten}[Zählen ohne Taschenrechner]
+Kürzen statt ausmultiplizieren:
+$\binom{12}{3}=\frac{12\cdot11\cdot10}{3!}=220$,
+$\binom{57}{56}=\binom{57}{1}=57$,
+$\binom{10}{7}=\binom{10}{3}=120$. Die Symmetrie wandelt \emph{große}
+untere Zahlen in kleine um.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Zwei praktische Zähl-Werkzeuge]
 \begin{itemize}
-  \item Anzahl der Teilmengen mit mindestens $r$ Elementen aus einer
-        $m$-Menge: $\sum_{k=r}^{m}\binom{m}{k}$.
-  \item Zahl der Lösungen von
-        $x_1+\dots+x_d=N$ mit $x_i\in\mathbb N_0$ (Säulen-/Permanenz-Formel):
+  \item \textbf{Mindestens $r$ von $m$:} Summe
+        $\sum_{k=r}^{m}\binom{m}{k}$ ($k=r,r+1,\dots,m$).
+  \item \textbf{Säulen-/Permanenz-Formel:} Die Zahl der nichtnegativen
+        Lösungen von $x_1+\dots+x_d=N$ ($x_i\ge0$ ganzzahlig) ist
         \begin{equation}
           \binom{N+d-1}{d-1}.
         \end{equation}
+        \emph{Intuition:} Man stellt $N$ \emph{Kugeln} in einer Reihe auf
+        und trennt sie mit $d-1$ Trennstrichen in $d$ Fächer --- jede
+        Anordnung von $N$ Kugeln und $d-1$ Strichen entspricht einer
+        Lösung.
 \end{itemize}
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Symmetrie $\binom{n}{k}=\binom{n}{n-k}$ nutzen, um kleine Werte zu
-        berechnen (z. B. $\binom{10}{7}=\binom{10}{3}$).
-  \item ``Mindestens 7 aus 10'' ist die Summe $\binom{10}{7}+\dots+\binom{10}{10}$,
-        nicht nur $\binom{10}{7}$.
-  \item Für $x_i\in\mathbb N_0$ gilt die Formel $\binom{N+d-1}{d-1}$; für
-        strikt positive $x_i$ müsste man sie zuerst verschieben.
+  \item Symmetrie nutzen ($\binom{10}{7}=\binom{10}{3}$), dann kürzen.
+  \item ``Mindestens 7 aus 10`` ist die \emph{Summe}
+        $\binom{10}{7}+\dots+\binom{10}{10}$, nicht nur
+        $\binom{10}{7}$.
+  \item Die Säulen-Formel $\binom{N+d-1}{d-1}$ setzt \emph{nichtnegative}
+        ($\ge0$) Lösungen voraus; für strikt positive $x_i$ müsste man
+        zuerst verschieben (Substitution $x_i'=x_i-1$).
 \end{itemize}
 \end{achtung}

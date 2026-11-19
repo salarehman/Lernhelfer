@@ -2,39 +2,52 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Terme ausmultiplizieren (Klammern auflösen) und Terme so weit wie möglich
-faktorisieren.
+% Grundidee: Ausmultiplizieren = Klammern auflösen (Distributivgesetz);
+% Faktorisieren = Einmal-pro-alle-Mal rückwärts: Klammern (wieder) bilden.
+
+Die beiden Operationen sind \emph{gegenläufig} und bilden zusammen eine
+der grundlegenden Umformungsfähigkeiten: Ausmultiplizieren macht aus
+Produkten von Klammern eine Summe (``öffnet``), Faktorisieren macht aus
+einer Summe ein Produkt von Klammern (``schließt``). Für das
+Verständnis hilft es, beide als \emph{dieses Distributivgesetz} zu sehen
+--- dasselbe Gesetz, einmal vorwärts, einmal rückwärts.
 
 \begin{werkzeugkasten}[Ausmultiplizieren]
-Distributivgesetz: jeden Summanden der ersten Klammer mit jedem der zweiten
-multiplizieren und addieren,
+Distributivgesetz: jeden Summanden der ersten Klammer mit jedem der
+zweiten multiplizieren und addieren,
 \begin{equation}
   (a_1+a_2+\dots)(b_1+b_2+\dots)=\sum_{i,j} a_i b_j .
 \end{equation}
-Nach dem Auflösen gleichnamige Terme zusammenfassen sowie die binomischen
-Formeln nutzen: $(x+1)^2$, $(a-x)(a+x)=a^2-x^2$,
-$(1-x)(1+x+x^2)$.
+Nach dem Auflösen gleichnamige Terme zusammenfassen. Dabei helfen die
+binomischen Formeln als \emph{Abkürzung} ($(x+1)^2$, $(a-x)(a+x)=a^2-x^2$)
+und Spezialmuster wie $(1-x)(1+x+x^2)$.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Faktorisieren]
-Umgekehrt Klammern bilden:
+\begin{werkzeugkasten}[Faktorisieren: die es mit binomischen Formeln]
+Umgekehrt Klammern bilden --- das Muster in quadratischen Termen
+erkennen:
 \begin{itemize}
-  \item Zweite binomische Formel: $x^2+2x+1=(x+1)^2$.
-  \item Dritte binomische Formel: $x^2-a^2=(x-a)(x+a)$.
-  \item Nullstellen der quadratischen Form $ax^2+bx+c$: mit
+  \item \textbf{Zweite binomische Formel:} $x^2+2x+1=(x+1)^2$.
+        Der Mittelterm $2x$ ist das \emph{Signal}: $2\cdot x\cdot1$
+        (doppeltes Produkt der Wurzelterme $x$ und $1$).
+  \item \textbf{Dritte binomische Formel:} $x^2-a^2=(x-a)(x+a)$.
+        Ein \emph{Minus} zwischen zwei Quadraten zerfällt sofort.
+  \item \textbf{Allgemeine quadratische Form:} Mit den Nullstellen
         $x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ ist die Faktorisierung
         $a(x-x_1)(x-x_2)$.
 \end{itemize}
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Vorzeichen beim Ausmultiplizieren von Differenzen (z. B.
-        $y$ und $-y$ in $(x+1)(x-y+3)$).
-  \item $x^2-a^2=(x-a)(x+a)$, aber $x^2+a^2$ ist über $\mathbb R$ nicht
-        weiter zerlegbar.
-  \item Beim Erkennen binomischer Formeln die Quadrate (z. B.
-        $\tfrac14x^2=(\tfrac12x)^2$, $9=3^2$) und das doppelte Produkt
-        prüfen.
+  \item \textbf{Vorzeichen beim Ausmultiplizieren:} Bei
+        $(x+1)(x-y+3)$ trägt das Distributivgesetz $+1\cdot(x-y+3)$, also
+        $+x-y+3$; das $-y$ nicht verschlucken.
+  \item \textbf{$x^2+a^2$ ist über $\mathbb R$ nicht weiter zerlegbar}:
+        Ohne Minus zwischen den Quadraten funktioniert die dritte
+        binomische Formel nicht.
+  \item \textbf{Die Quadrate und das doppelte Produkt prüfen:}
+        $\tfrac14x^2=(\tfrac12x)^2$, $9=3^2$ --- bevor man eine binomische
+        Formel ``erkennt``, muss das doppelte Produkt stimmen.
 \end{itemize}
 \end{achtung}

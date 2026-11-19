@@ -2,58 +2,72 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-$N(t)=N_0\mathrm e^{-\lambda t}$, Halbwertszeit $T=5730$ Jahre, in Otzis
-Gewebe sind noch $53\,\%$ des ursprünglichen C-14. Gesucht: $\lambda$ und das
-Alter $t$.
+$N(t)=N_0\mathrm e^{-\lambda t}$, Halbwertszeit
+$T=\qty{5730}{\mathrm a}$, in einer Probe sind noch $q=53\,\%=0{,}53$ des
+ursprünglichen C-14 vorhanden. Gesucht: $\lambda$ und das Alter $t$.
+
+\subsection*{Ansatz und Gedankenschritt}
+\emph{Zwei Schritte, zwei Unbekannte, zwei Gleichungen:} (1) $\lambda$ wird
+aus der bekannten Halbwertszeit gewonnen, (2) das Alter aus dem gemessenen
+Anteil. Im zweiten Schritt logarithmieren wir, weil $\ln$ die Umkehrung
+von $e^{(\cdot)}$ ist und so das $t$ aus dem Exponenten \emph{holt}.
 
 \subsection*{Zerfallskonstante $\lambda$}
-Aus $N(T)=\tfrac12 N_0$ und $N(T)=N_0\mathrm e^{-\lambda T}$ folgt
+\emph{Gedankenschritt:} Nach einer Halbwertszeit ist die Hälfte übrig.
+Einsetzen in das Zerfallsgesetz und nach $\lambda$ auflösen:
 \begin{equation*}
-  \tfrac12=\mathrm e^{-\lambda T}
+  \tfrac12 N_0=N_0\,\mathrm e^{-\lambda T}
   \;\Longrightarrow\;
   \ln\tfrac12=-\lambda T
   \;\Longrightarrow\;
-  \lambda=\frac{\ln2}{T}=\frac{\ln2}{5730\,\mathrm a}
-  \approx 1{,}21\cdot10^{-4}\,\mathrm a^{-1}.
+  \lambda=\frac{\ln 2}{T}
+  =\frac{\ln 2}{\qty{5730}{\mathrm a}}
+  \approx 1{,}21\cdot10^{-4}\;\mathrm{a^{-1}}.
 \end{equation*}
+Richtiges Vorzeichen: $T$ hält $\lambda$ positiv, und die Menge nimmt ab.
 
-\subsection*{Alter von Oetzi}
-Mit dem gemessenen Restanteil $q=0{,}53$:
+\subsection*{Alter von Ötzi}
+\emph{Gedankenschritt:} In $q=\mathrm e^{-\lambda t}$ isolieren wir $t$.
+Setzen wir $\lambda=\ln 2/T$ ein, fällt das sofort ein; übrig bleibt ein
+reiner Quotient aus Halbwertszeit, $\ln(1/q)$ und $\ln 2$.
 \begin{equation*}
   0{,}53=\mathrm e^{-\lambda t}
   \;\Longrightarrow\;
   t=\frac{-\ln 0{,}53}{\lambda}
-  =\frac{\ln(1/0{,}53)}{\lambda}.
+  =\frac{T\,\ln(1/0{,}53)}{\ln 2}.
 \end{equation*}
-Wegen $\lambda=\ln2/T$ ist $1/\lambda=T/\ln2$ und damit
-$t=\dfrac{T\,\ln(1/q)}{\ln2}$.
-Eingesetzt:
+Rechnung:
 \begin{align*}
-  t&=\frac{5730\cdot\ln\frac{1}{0{,}53}}{\ln 2}
-  =\frac{5730\cdot\ln(1{,}8868)}{0{,}6931}\\
-  &\approx\frac{5730\cdot0{,}6349}{0{,}6931}
-  \approx 5248\ \mathrm{Jahre}.
+  t&=\frac{\qty{5730}{\mathrm a}\cdot\ln(1/0{,}53)}{\ln 2}
+  =\frac{5730\cdot\ln(1{,}8868)}{0{,}6931} \\
+  &\approx\frac{5730\cdot 0{,}6349}{0{,}6931}
+  \approx \qty{5248}{\mathrm a}.
 \end{align*}
 
 \begin{ergebnis}
 \begin{equation*}
-  \lambda\approx1{,}21\cdot10^{-4}\,\mathrm a^{-1},
-  \qquad t\approx 5248\ \mathrm{Jahre} \ (\text{ca. } 5{,}2\ \text{Millennien}).
+  \lambda\approx 1{,}21\cdot10^{-4}\;\mathrm{a^{-1}},\qquad
+  t\approx \qty{5248}{a}\ \text{(ca. }5{,}2\ \text{Millennien)} .
 \end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Grobenprüfung:} $53\,\%\approx(1/2)^{0{,}91}$; bei $0{,}91$
-Halbwertszeiten ist das Alter $0{,}91\cdot5730\approx5200$ Jahre -- passt zur
-detaillierten Rechnung. \textbf{Plausibilität:} Oetzi wird auf ca.\
-$3300\,\text{v.\,Chr.}$ datiert, also $\approx$ 5{,}2~Millennien vor heute --
-ein bekanntes Ergebnis.
+\textbf{Grobenprüfung (die halbe Sache):} $53\,\%$ entspricht
+$\ln(1/0{,}53)/\ln 2\approx0{,}916$ Halbwertszeiten. $0{,}916\cdot\qty{5730}{a}
+\approx\qty{5250}{a}$ -- konsistent. \checkmark
 
-\textbf{Einheiten:} $\lambda$ in $\mathrm a^{-1}$, $t$ in $\mathrm a$.
+\textbf{Plausibilität:} Ötzi wird auf ca.\ \qty{3300}{a}\ vor Christus
+datiert; das liegt gut zu $5{,}2$ Millennien heute. Ein bekanntes,
+glaubwürdiges Ergebnis. \checkmark
+
+\textbf{Einheiten:} $\lambda$ in $\mathrm{a^{-1}}$, $t$ in $\unit{a}$ --
+Produkt $\lambda t$ ist dimensionslos, wie es in einer Exponentialfunktion
+sein muss. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Aus der Halbwertszeit $\lambda=\ln2/T$. Aus dem Restanteil $q$:
-$t=T\ln(1/q)/\ln2$. $N_0$ kürzt sich heraus, nur der Anteil $q$ zählt.
-Mit $\ln$ isolieren und Stetigkeit des Logarithmus nutzen.
+Aus der Halbwertszeit folgt $\lambda=\ln 2/T$. Aus dem Restanteil $q$:
+$t=T\ln(1/q)/\ln 2$. $N_0$ kürzt sich heraus, nur der Anteil $q$ zählt;
+mit $\ln$ den Exponenten auflösen. Einheiten ($\lambda$ und $t$) müssen
+zusammenpassen.
 \end{merksatz}

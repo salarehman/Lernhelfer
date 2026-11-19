@@ -1,35 +1,56 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: die Formeln aus dem Flächenbild und aus dem
+% Distributivgesetz verstehen, statt sie nur nachzuschlagen.
+
 \subsection*{Gegeben und gesucht}
 Ausmultiplizieren von $(x+y)^2$, $(x-y)^2$ und $(x+y)(x-y)$ für Variablen
 $x$, $y$.
 
-\subsection*{Ansatz}
-Binomische Formeln anwenden (bzw. Distributivgesetz) und gleichnamige Terme
-zusammenfassen.
+\subsection*{Ansatz und der entscheidende Gedankenschritt}
+Statt die Formeln nur nachzuschlagen, rekonstruieren wir sie aus dem
+Distributivgesetz --- das ist der Schlüssel, um sie wirklich ``zu haben``.
+
+\textbf{Vorgehen:} $(x+y)^2$ schreiben wir als $(x+y)(x+y)$ und wenden das
+Distributivgesetz an: jeder von beiden Summanden im ersten Faktor
+multipliziert beide Summanden im zweiten. Das liefert vier Produkte;
+von diesen fassen wir die beiden ``gemischten`` ($xy$ und $yx$) zusammen.
 
 \subsection*{Rechnung}
 \begin{align}
-  (x+y)^2 &= x^2+2xy+y^2, \\
-  (x-y)^2 &= x^2-2xy+y^2, \\
-  (x+y)(x-y) &= x^2 -xy +xy -y^2 = x^2-y^2 .
+  (x+y)^2 &= x^2 + xy + yx + y^2 = x^2+2xy+y^2, \\
+  (x-y)^2 &= (x-y)(x-y)=x^2-xy-yx+y^2 = x^2-2xy+y^2, \\
+  (x+y)(x-y) &= x^2-xy+yx-y^2 = x^2-y^2 .
 \end{align}
+Bei den beiden ersten zählen wir $xy+yx=2$ gemischte Produkte (eines mit
+$+$, eines mit $-$, je nach Vorzeichen). Bei der dritten heben sich die
+beiden Mittelterme $xy$ und $yx$ mit \emph{entgegengesetztem} Vorzeichen
+weg.
 
 \begin{ergebnis}
 \begin{align*}
-  (x+y)^2 &= x^2+2xy+y^2,\\
-  (x-y)^2 &= x^2-2xy+y^2,\\
+  (x+y)^2 &= x^2+2xy+y^2, \\
+  (x-y)^2 &= x^2-2xy+y^2, \\
   (x+y)(x-y) &= x^2-y^2 .
 \end{align*}
 \end{ergebnis}
 
 \begin{kontrolle}
-Setzt man $x=1, y=1$: links $(1+1)^2=4$, rechts $1+2+1=4$; $(1-1)^2=0$,
-rechts $1-2+1=0$; $(1+1)(1-1)=0$, rechts $1-1=0$. In allen drei Fällen
-stimmt die Probe.
+\textbf{Probe mit Zahlen (eine starke Kontrolle):} setzt man $x=1,
+y=1$: links $(1+1)^2=4$, rechts $1+2+1=4$; $(1-1)^2=0$, rechts $1-2+1=0$;
+$(1+1)(1-1)=0$, rechts $1-1=0$. In allen drei Fällen stimmt die Probe.
+
+\textbf{Grenzfall $y=0$:} Setzt man $y=0$ ein, wird jede der drei Formeln
+zur trivialen Identität $x^2=x^2$ --- ein guter ``Selbsttest`` der
+Struktur, der zeigt, dass das doppelte Produkt logisch zusammengehört.
+Hätte der Mittelterm $2xy$ nicht gestimmt, wäre diese Probe für $y=0$
+zwar harmlos (weil $2xy=0$), aber für $y=1$ sofort sichtbar: Es bleibt
+$x^2+1$ statt $(x+1)^2=x^2+2x+1$, wenn man $2x$ vergisst.
 \end{kontrolle}
 
 \begin{merksatz}
 Die binomischen Formeln sind Spezialfälle des Distributivgesetzes; der
-Mittelterm $2xy$ bzw. $-2xy$ ist beim Quadrieren nicht zu vergessen.
+Mittelterm $2xy$ (bzw. $-2xy$) ist beim Quadrieren nicht zu vergessen ---
+anschaulich entstehen vier Teilflächen, von denen die beiden Rechtecke
+das doppelte Produkt liefern.
 \end{merksatz}

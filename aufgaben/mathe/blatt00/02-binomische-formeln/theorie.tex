@@ -2,35 +2,69 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Ausmultiplizieren von Termen, wobei $x$, $y$ Variablen sind: die drei
-binomischen Formeln.
+% Grundidee: Die binomischen Formeln sind nichts Neues, sondern nur die
+% Distributivgesetz-Regel, zweimal angewendet und kompakt aufgeschrieben.
 
-\begin{werkzeugkasten}[Binomische Formeln]
+Die binomischen Formeln sind ein reines \emph{Abkürzungs-System}: Sie
+sind keine neuen Rechenregeln, sondern das Ergebnis des
+Distributivgesetzes, so oft angewendet, bis man das Muster erkennt. Wer
+das versteht, muss die Formeln nicht auswendig lernen --- er kann sie sich
+jederzeit selbst herleiten.
+
+\begin{werkzeugkasten}[Warum $(x+y)^2=x^2+2xy+y^2$? --- das Flächenbild]
+$(x+y)^2$ ist die Fläche eines Quadrats mit Seitenlänge $x+y$. Teilt man
+dieses Quadrat in vier Teile, sieht man sofort, woraus sich die Fläche
+zusammensetzt:
+\begin{itemize}
+  \item ein großes Quadrat $x^2$ (links unten),
+  \item ein Quadrat $y^2$ (rechts oben),
+  \item zwei Rechtecke $x\cdot y$ --- deshalb das \emph{doppelte} Produkt
+        $2xy$.
+\end{itemize}
+Die Fläche des ganzen Quadrats ist also $x^2+2xy+y^2$. \textbf{Der Kern:}
+das ``doppelte Produkt`` entsteht räumlich, weil es zwei Rechtecke gibt,
+nicht eines!
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Die drei Formeln, gemeinsames Muster]
 \begin{align}
   (x+y)^2 &= x^2+2xy+y^2, \\
   (x-y)^2 &= x^2-2xy+y^2, \\
   (x+y)(x-y) &= x^2-y^2 .
 \end{align}
-Rechts steht bei der ersten Formel das \emph{doppelte} Produkt $2xy$; der
-Mittelterm geht beim Quadrieren einer Differenz mit Minuszeichen ein.
+Die erste und die zweite unterscheiden sich nur im Vorzeichen des
+Mittelterms: Quadriert man \emph{eine Differenz}, so ist das doppelte
+Produkt negativ. Die dritte ist die erstaunlichste: zwei verschiedene
+Klammern, deren Mittelterme sich zu $+xy-xy$ komplett wegheben --- es
+bleibt nur die Differenz der Quadrate.
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Ausmultiplizieren allgemein]
-Ohne binomische Formel wendet man das Distributivgesetz an: jeden Summanden
-der ersten Klammer mit jedem der zweiten multiplizieren und die Teilstücke
-addieren,
+Ohne binomische Formel wendet man das Distributivgesetz an: jeden
+Summanden der ersten Klammer mit jedem der zweiten multiplizieren und
+die Teilstücke addieren,
 \begin{equation}
   (a+b)(c+d)=ac+ad+bc+bd .
 \end{equation}
-Gleichnamige Terme zusammenfassen.
+Gleichnamige Terme zusammenfassen. Die binomischen Formeln sind genau
+dieses Gesetz, angewandt auf die Spezialfälle $(x+y)^2$, $(x-y)^2$ und
+$(x+y)(x-y)$ --- nichts weiter.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item $(x+y)^2\neq x^2+y^2$ -- der Term $2xy$ darf nicht fehlen.
-  \item Bei $(x-y)^2$ ist der Mittelterm $-2xy$, nicht $+2xy$.
-  \item $(x+y)(x-y)=x^2-y^2$: das mittlere $(+xy-xy)$ kürzt sich weg.
-  \item Faktoren wie $2$ oder Vorzeichen aus der Klammer korrekt mittels
-        Distributivgesetz verteilen.
+  \item \textbf{$(x+y)^2\neq x^2+y^2$:} Das ist der häufigste Fehler
+        überhaupt. Das doppelte Produkt $2xy$ darf nicht fehlen (im
+        Flächenbild: ohne die beiden Rechtecke bliebe nur die
+        ``Diagonale`` der Fläche zurück).
+  \item Bei $(x-y)^2$ ist der Mittelterm $\boldsymbol{-2xy}$, nicht
+        $+2xy$ --- aus $(-y)^2$ wird zwar $+y^2$, aber das gemischte
+        Produkt trägt das Minus.
+  \item $(x+y)(x-y)=x^2-y^2$: die mittleren Terme $+xy$ und $-xy$
+        heben sich genau weg.
+  \item Faktoren und Vorzeichen \emph{außerhalb} der Klammern korrekt
+        per Distributivgesetz verteilen, z.\,B.
+        $2(x+y)^2=2x^2+4xy+2y^2$ (der Faktor $2$ multipliziert \emph{jeden}
+        Term).
 \end{itemize}
 \end{achtung}

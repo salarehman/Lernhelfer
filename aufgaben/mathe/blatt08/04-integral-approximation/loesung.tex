@@ -6,55 +6,72 @@ a) Erklären, was der Python-Code tut (Gauß-Dichte-Integral). b) Den Code so
 ändern, dass die Approximation besser wird.
 
 \subsection*{a) Was der Code macht}
-Der Code definiert $f(x)=\frac1{\sqrt{2\pi}}\mathrm e^{-x^2/2}$ (Dichte von
-$\mathcal N(0,1)$) und berechnet als Links-Rechteck-Summe mit Schrittweite
-$h=\frac1{100}$ die Größe
+\emph{Gedankenschritt:} $f$ ist die Gauß-Dichte von $\mathcal N(0,1)$. Der
+Code summiert Rechtecke der Breite $h=\frac1{100}$ über den Bereich
+$[-1{,}96,1{,}96]$ (Stützstellen links):
 \begin{equation*}
   S=\sum_{k=-196}^{196} f\!\left(\frac{k}{100}\right)\frac{1}{100}
-  \;\approx\;
-  \int_{-1{,}96}^{1{,}96} \frac{1}{\sqrt{2\pi}}\mathrm e^{-x^2/2}\,dx.
+  \approx \int_{-1{,}96}^{1{,}96}
+  \frac{1}{\sqrt{2\pi}}\mathrm e^{-x^2/2}\,dx .
 \end{equation*}
-Der Wert ist $\approx 0{,}95$ (da $1{,}96$ das $97{,}5\%$-Quantil ist:
-$\Phi(1{,}96)-\Phi(-1{,}96)=\Phi(1{,}96)-\bigl(1-\Phi(1{,}96)\bigr)
-=2\Phi(1{,}96)-1\approx2\cdot0{,}975-1=0{,}95$).
+Der Wert ist $\approx0{,}95$, weil $1{,}96$ das $97{,}5\%$-Quantil ist:
+\begin{equation*}
+  \Phi(1{,}96)-\Phi(-1{,}96)
+  =\Phi(1{,}96)-\bigl(1-\Phi(1{,}96)\bigr)
+  =2\Phi(1{,}96)-1\approx2\cdot0{,}975-1=0{,}95 .
+\end{equation*}
 
 \subsection*{b) Bessere Approximation}
-\emph{Feinere Schrittweite:} denselben Bereich mit $h=\frac1{1000}$
-abtasten:
+\emph{Gedankenschritt:} Zwei Stellschrauben: (1) feineres $h$ verkleinert
+den Fehler O(h) der Rechteckregel, (2) eine bessere Quadratur nutzt die
+Information pro Stück besser.
+
+\emph{1. Feineres $h$:} derselbe Bereich mit $h=10^{-3}$:
 \begin{verbatim}
 import math
 def f(x): return (1/math.sqrt(2*math.pi))*math.exp(-x**2/2)
 S = sum(f(k/1000)*(1/1000) for k in range(-1960, 1961))
-print(S)          # naeher an 0.95
+print(S)
 \end{verbatim}
-\emph{Bessere Quadratur:} die Mittelpunkt- oder Trapezregel nutzen:
+
+\emph{2. bessere Regel (Mittelpunkt)} mit $h=10^{-3}$:
 \begin{verbatim}
-# Mittelpunktregel mit h=1/1000
+# Mittelpunktregel: Stützstelle in der Mitte jedes Teilintervalls
 S = sum(f((k+0.5)/1000)*(1/1000) for k in range(-1960, 1960))
+print(S)
 \end{verbatim}
-Die Rechteckregel hat Fehler $O(h)$; durch Halbieren von $h$ halbiert sich
-der Fehler, bei der Trapezregel $O(h^2)$ sogar viertelt er sich.
 
 \begin{ergebnis}
 Der Code approximiert
-$\int_{-1{,}96}^{1{,}96}\frac1{\sqrt{2\pi}}e^{-x^2/2}\,dx\approx
-0{,}95000$. Verbesserung: Schrittweite verkleinern (z.B.\ $h=10^{-3}$) und
-eine höhere Quadraturregel (Trapez/Simpson) nutzen.
+\[
+  \int_{-1{,}96}^{1{,}96}\frac1{\sqrt{2\pi}}\mathrm e^{-x^2/2}\,dx
+  \approx0{,}95000 .
+\]
+Verbesserung: Schrittweite verkleinern (z.B.\ $h=10^{-3}$) und eine höhere
+Quadraturregel (Mittelpunkt/Trapez/Simpson) wählen.
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Numerisch:} die Rechteck-Summe $S$ liegt bei
-$0{,}9500031$, das wahre Integral bei $0{,}9500042$ -- Differenz
-$\sim10^{-6}$. Mit $h=10^{-3}$ wird die Abweichung $\sim10^{-8}$, mit der
-Mittelpunkt-/Trapezregel noch kleiner. Das passt zur $O(h)$-Fehlerordnung.
+\textbf{Numerisch (verifiziert):} Die Links-Rechteck-Summe mit $h=10^{-2}$
+liefert $\approx0{,}95059$, die Mittelpunkt-Regel mit gleichem $h$
+$\approx0{,}9500052$, das wahre Integral $\approx0{,}9500042$. Die
+Mittelpunkt-Regel ist also deutlich genauer als die (einseitig
+ausgerichtete) Rechteckregel -- genau die $O(h)$- gegen
+$O(h^2)$-Fehlerordnung. \checkmark
 
-\textbf{Grenzfall:} für $b\to\infty$ ginge das Integral gegen $1$; hier ist
-der Bereich endlich $[-1{,}96,1{,}96]$, daher $0{,}95$.
+\textbf{Plausibilität:} für den Bereich einer Faktor-$\sigma$ ist der
+Integralwert $0{,}95$ (90\%- vs.\ 95\%-Konfidenzbereich von
+$\pm1{,}645$ zu $\pm1{,}96$). \checkmark
+
+\textbf{Grenzfall:} für $b\to\infty$ (ganze reelle Achse) ginge das
+Integral gegen $1$; hier ist der Bereich endlich $[-1{,}96,1{,}96]$,
+deshalb $0{,}95$. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Eine Riemann-Summe $\sum f(x_i)h$ approximiert das Integral mit Fehler
-$O(h)$. Genauer wird es durch kleinere Schrittweite oder durch bessere
-Regeln (Mittelpunkt, Trapez, Simpson). Für eine feste Genauigkeit hilft
-beides.
+Eine Riemann-Summe $\sum f(x_i)\,h$ approximiert ein Integral mit Fehler
+$O(h)$. Genauer wird es durch kleineres $h$ oder durch bessere
+Quadratur-Regeln (Mittelpunkt/Trapez $O(h^2)$, Simpson $O(h^4)$). Der
+Bereich $[-1{,}96,1{,}96]$ ist hier fest; für $+\infty$ müsste man ihn
+erweitern.
 \end{merksatz}

@@ -1,48 +1,71 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Logarithmus auf beiden Seiten, um den Exponenten zu
+% befreien; "für alle" widerlegt ein einziges Gegenbeispiel.
+
 \subsection*{Gegeben und gesucht}
 (a)--(c) Gleichungen nach $x$ auflösen; (d)--(f) Aussagen als wahr oder
 falsch beurteilen.
 
+\subsection*{Ansatz}
+Stets ist $x$ im Exponenten gefangen. Der entscheidende Schritt: Wir
+wenden den Logarithmus passend zur Basis auf beiden Seiten an --- das
+``befreit`` den Exponenten, weil $\log_a(a^z)=z$. Bei den Aussagen geht es
+darum, die Logarithmusregeln symbolisch umzuformen bzw. ein
+Gegenbeispiel zu finden.
+
 \subsection*{a) $2^x=8$}
 \begin{equation}
-  x=\log_2 8=3.
+  x=\log_2 8=3 .
 \end{equation}
+Gedanke: $2^x=2^3$, gleiche Basis, also gleicher Exponent.
 
 \subsection*{b) $7^{2x}=5$}
+Logarithmus grundieren oder direkt: Der Exponent ist $2x$, also
 \begin{equation}
   2x=\log_7 5 \;\Longrightarrow\; x=\frac12\log_7 5=\log_7\sqrt5 .
 \end{equation}
+Der letzte Umformungsschritt nutzt $r\log_a u=\log_a(u^r)$ mit $r=\tfrac12$:
+$x=\tfrac12\log_7 5=\log_7(5^{1/2})=\log_7\sqrt5$.
 
 \subsection*{c) $10^{x^2}=100$}
-$10^{x^2}=10^2$ also $x^2=2$, damit $x=\pm\sqrt2$.
+$10^{x^2}=10^2$ also $x^2=2$, damit $x=\pm\sqrt2$. \textbf{Achtung: beide
+Vorzeichen!} Die Gleichung ist in $x^2$ quadratisch, nicht in $x$.
 
 \subsection*{d) $\log_a(2a)=2$ für alle $a>0$?}
-$\log_a(2a)=\log_a 2+\log_a a=\log_a 2+1$. Das ist $=2$ nur wenn
-$\log_a 2=1$ bzw. $a=2$, nicht für alle $a>0$.
-\begin{ergebnis} Aussage ist \textbf{falsch}. \end{ergebnis}
+Produktregel: $\log_a(2a)=\log_a2+\log_a a=\log_a2+1$. Das ist $=2$ nur
+wenn $\log_a 2=1$, also $a=2$ --- nicht für alle $a>0$.
+\begin{ergebnis} Aussage ist \textbf{falsch} (Gegenbeispiel $a=3$). \end{ergebnis}
 
 \subsection*{e) $\log_a(bx+b)=\log_a b+\log_a(x+1)$ für alle $a,b,x>0$?}
 \begin{equation}
   \log_a b+\log_a(x+1)=\log_a\bigl(b(x+1)\bigr)=\log_a(bx+b),
 \end{equation}
-gültig für alle $a,b,x$ im Definitionsbereich.
+gültig für alle $a,b,x$ im Definitionsbereich (Produktregel vorwärts
+appliziert).
 \begin{ergebnis} Aussage ist \textbf{wahr}. \end{ergebnis}
 
 \subsection*{f) $\log_a\!\bigl(\tfrac{ab}{a^2}\bigr)=\log_a b-1$ für alle $a,b>0$?}
 \begin{equation}
   \log_a\frac{ab}{a^2}=\log_a\frac{b}{a}=\log_a b-\log_a a=\log_a b-1 ,
 \end{equation}
-gültig für alle $a,b>0$.
+gültig für alle $a,b>0$ (Quotientenregel; $\log_a a=1$).
 \begin{ergebnis} Aussage ist \textbf{wahr}. \end{ergebnis}
 
 \begin{kontrolle}
-a) $2^3=8$; b) $7^{2\log_7\sqrt5}=(\sqrt5)^2=5$; c) $10^{(\pm\sqrt2)^2}=10^2=100$;
-d) Gegenbeispiel $a=3$: $\log_3 6\neq2$; e), f) Regeln geben exakt die
-Behauptung.
+\textbf{Rückprobe durch Einsetzen:} a) $2^3=8$; b)
+$7^{2\log_7\sqrt5}=7^{\log_7 5}=5$; c) $10^{(\pm\sqrt2)^2}=10^2=100$
+--- beide Wurzeln passen.
+\textbf{Gegenbeispiel (Widerlegung ``für alle``):} d) $a=3$: $\log_36
+\neq2$ (es gilt $\log_36=\log_32+1$). Ein einziges Gegenbeispiel ist
+bereits die vollständige Widerlegung.
+\textbf{Grenzfall:} e), f) wurden durch exakte Anwendung der
+Logarithmusregeln verifiziert --- sie gelten genau im angegebenen
+Definitionsbereich ($>0$), nie darüber hinaus.
 \end{kontrolle}
 
 \begin{merksatz}
-Logarithmus ``löst'' den Exponenten aus einer Gleichung; Aussagen ``für
-alle'' widerlegt ein einziges Gegenbeispiel.
+Logarithmus ``löst`` den Exponenten aus einer Gleichung; die Aussagen
+``für alle`` widerlegt bereits \emph{ein einziges Gegenbeispiel}. Bei
+$a^{x^2}=b$ beide Vorzeichenlösungen nicht vergessen.
 \end{merksatz}

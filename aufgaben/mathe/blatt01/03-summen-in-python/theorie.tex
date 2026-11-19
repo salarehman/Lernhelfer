@@ -2,37 +2,47 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Python-Programme zum Summieren natürlichter Zahlen abändern, ein vorgebtes
-Programm für $n=1,2,3,\dots$ auswerten und die Gauß-Formel der Summe
-beweisen.
+% Grundidee: range ist halb-offen (stop-Zahl exklusiv). Die Gauß-Formel
+% steckt hinter sum(range(n+1)); sie wird per Induktion bewiesen.
+
+Python und Mathematik treffen sich hier: Eine \emph{endliche} Summe
+berechnet Python direkt, und die \emph{Gauß-Formel} gibt dieselbe Zahl
+geschlossen an. Zwei Dinge muss man für das Programm richtig haben:
+wie \texttt{range} verkettet ist und wie eine Schleife zählt.
 
 \begin{werkzeugkasten}[Python: range und sum]
 \begin{itemize}
   \item \texttt{range(21)} liefert die Zahlen $0,1,\dots,20$
-        ($\to$ ``bis 20''). Für ``bis 29'' schreibt man \texttt{range(30)}.
+        ($\to$ ``bis 20``). Den Endwert \emph{exklusiv} zu denken ist der
+        Schlüssel: Man gibt ``eine mehr`` als die letzte gewünschte Zahl.
+  \item Für ``bis 29`` schreibt man \texttt{range(30)}.
   \item \texttt{sum(iterable)} addiert alle Elemente,
-        z. B. \texttt{sum(range(30))} $=0+1+\dots+29$.
+        z.\,B. \texttt{sum(range(30))} $=0+1+\dots+29$.
   \item \texttt{range(n+1)} steht für die Zahlen $0,1,\dots,n$.
 \end{itemize}
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Gauß-Formel durch Induktion]
-Die Summe der ersten $n$ Zahlen:
+Die Summe der ersten $n$ Zahlen --- die klassische Schülergeschichte, die
+Gaußwohl schon am ersten Schultag entdeckte --- hat die geschlossene Form
 \begin{equation}
   \sum_{k=0}^{n} k = \frac{n(n+1)}2 .
 \end{equation}
-Damit ist \texttt{sum(range(n+1))-n*(n+1)/2} für jedes $n$ gleich $0$ --
-das ist die zu beobachtende ``Auffälligkeit''.
+Damit ist \texttt{sum(range(n+1))-n*(n+1)/2} für jedes $n$ gleich $0$.
+Der Beweis läuft per vollständiger Induktion (siehe A4: das
+Dominoketten-Bild). Die Beobachtung ``die Differenz ist stets $0$`` im
+Programm ist die numerische Auff\"alligkeit, die genau diese Formel
+bestätigt.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
   \item \texttt{range} ist ``halb-offen'': \texttt{range(30)} endet bei
         $29$, \texttt{range(21)} bei $20$.
-  \item In Python Mehrfachsummen sauber in eine \texttt{sum}-Funktion mit
+  \item Mehrfachsummen in Python sauber in eine \texttt{sum}-Funktion mit
         Generatorausdruck schreiben.
-  \item Die Formel $n(n+1)/2$ ist für alle $n\in\mathbb N$ zu beweisen --
-        Induktionsanfang und Induktionsschritt fehlen dürfen nicht getrennt
-        sein.
+  \item Die Formel $n(n+1)/2$ ist für \emph{alle} $n\in\mathbb N$ zu
+        beweisen --- Induktionsanfang und Induktionsschritt gehören
+        zusammen; ein Beispiel beweist nichts.
 \end{itemize}
 \end{achtung}

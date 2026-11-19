@@ -1,12 +1,23 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: negative Exponenten sind Kehrwerte, gebrochene Wurzeln;
+% die Potenzgesetze reduzieren Mehrfach-Potenzen auf eine Potenz.
+
 \subsection*{Gegeben und gesucht}
 (a)--(d) Werte ohne Taschenrechner; (e)--(h) Umformen bzw. vereinfachen.
+
+\subsection*{Ansatz}
+\textbf{Alle Teile beruhen auf zwei Kernideen:} (1) ein negativer
+Exponent kehrt den Kehrwert um, (2) ein gebrochener Exponent ist eine
+Wurzel. Wo mehrere Potenzen gemischt sind, wendet man die
+Potenzgesetze rückwärts an, um auf eine einzelne Potenz zu kommen.
 
 \subsection*{a) $2^{-3}$}
 \begin{equation}
   2^{-3}=\frac1{2^3}=\frac18 .
 \end{equation}
+Gedanke: nicht ``minus drei Zweien``, sondern ``Kehrwert von
+$2^3=8$``.
 
 \subsection*{b) $16^{1/2}$}
 \begin{equation}
@@ -22,11 +33,15 @@
 \begin{equation}
   \Bigl(\frac49\Bigr)^{-1/2}=\Bigl(\frac94\Bigr)^{1/2}=\frac32 .
 \end{equation}
+\textbf{Gedankenschritt:} Zwei Umkehr-Operationen hintereinander: der
+negative Exponent kehrt den Bruch um ($\tfrac49\to\tfrac94$), dann zieht
+der $\tfrac12$-Exponent die Wurzel.
 
 \subsection*{e) $\frac1{a^{-5}}$ als Potenz mit positivem Exponenten}
 \begin{equation}
   \frac1{a^{-5}}=a^5 .
 \end{equation}
+Doppelter Kehrwert ergibt die Ausgangsgröße.
 
 \subsection*{f) $a^{3/4}$ als Wurzelausdruck}
 \begin{equation}
@@ -37,6 +52,8 @@
 \begin{equation}
   \frac{a^5 a^{-2}}{a^3}=\frac{a^{5-2}}{a^3}=\frac{a^3}{a^3}=a^0=1 .
 \end{equation}
+Gedanke: alle Potenzen (auch die im Nenner, mit negativem Vorzeichen im
+Exponenten) werden kombiniert: $5+(-2)-3=0$.
 
 \subsection*{h) $\bigl(x^{2/3}\bigr)^{-3}$ ohne negativen Exponenten}
 \begin{equation}
@@ -57,13 +74,23 @@
 \end{ergebnis}
 
 \begin{kontrolle}
-a) $2^{-3}=\tfrac1{8}$; c) $27^{1/3}=3$, Kehrwert $\tfrac13$; d)
-$(\tfrac49)^{1/2}=\tfrac23$, Kehrwert $\tfrac32$; h) Probe mit $x=2$:
-$(2^{2/3})^{-3}=2^{-2}=\tfrac14=\tfrac1{2^2}$.
+\textbf{Numerische Kontrolle:} a) $2^{-3}=\tfrac1{8}$; c) $27^{1/3}=3$,
+Kehrwert $\tfrac13$; d) $(\tfrac49)^{1/2}=\tfrac23$, Kehrwert jedes
+Schritts: $\bigl(\tfrac49\bigr)^{-1/2}=\tfrac32$. \checkmark
+
+\textbf{Stichprobe:} h) Probe mit $x=2$:
+$(2^{2/3})^{-3}=2^{-2}=\tfrac14=\tfrac1{2^2}$. \checkmark
+
+\textbf{Grenzfall:} g) $a^5 a^{-2}/a^3=1$ für jedes $a>0$ --- die
+Exponentenbilanz $0$ bedeutet, die Basis kürzt sich komplett heraus. Der
+(allgemeine) Grenzfall ``$\ldots$'' der Potenzgesetze: für $a\to0$
+w\"arden negative Exponenten unendlich, was man als Prozess sehen kann,
+aber nicht \"uberbewerten darf.
 \end{kontrolle}
 
 \begin{merksatz}
-Negative Exponenten sind Kehrwerte, gebrochene Exponenten Wurzeln; mit den
-Potenzgesetzen lassen sich Brüche wie $a^5a^{-2}/a^3$ auf ein Glied
-zurückführen.
+Negative Exponenten sind Kehrwerte, gebrochene Exponenten Wurzeln; mit
+den Potenzgesetzen lassen sich Brüche wie $a^5a^{-2}/a^3$ auf ein Glied
+zurückführen. Die Probe per Zahlenwert (hier $x=2$) bestätigt die
+Umformung.
 \end{merksatz}

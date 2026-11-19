@@ -3,49 +3,56 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Einen numerischen Näherungswert eines Integrals (Gauß-Dichte) aus Python verstehen
-und verbessern.
+Einen numerischen Näherungswert eines Integrals (Gauß-Dichte) aus Python
+verstehen und verbessern.
 
-\begin{werkzeugkasten}[Riemann-Summe als Integral]
+\begin{werkzeugkasten}[Was eine Riemann-Summe wirklich tut]
 Der Code
 \begin{verbatim}
 import math
 def f(x): return (1/math.sqrt(2*math.pi))*math.exp(-x**2/2)
 S = sum([f(x/100)*(1/100) for x in range(-196, 197)])
 \end{verbatim}
-summiert Rechtecke der Breite $\frac1{100}$ an den Stützstellen
-$x=k/100$, $k=-196,\dots,196$. Das ist eine Riemann-Summe für das Integral
-über die Standard-Gauß-Verteilungsdichte:
+zerlegt die Fläche unter dem Graphen in schmale Rechtecke der Breite
+$h=\frac1{100}$ an den Stützstellen $x=k/100$, $k=-196,\ldots,196$. Das
+ist eine Riemann-Summe für das Integral
 \begin{equation*}
-  \int_{-1{,}96}^{1{,}96}\frac{1}{\sqrt{2\pi}}\mathrm e^{-x^2/2}\,dx.
+  \int_{-1{,}96}^{1{,}96}\frac{1}{\sqrt{2\pi}}\,\mathrm e^{-x^2/2}\,dx .
 \end{equation*}
-$\frac1{\sqrt{2\pi}}e^{-x^2/2}$ ist die Dichte der Normalverteilung
-$\mathcal N(0,1)$; das Integral bis $1{,}96$ ist der Wert der
-Verteilungsfunktion $\Phi(1{,}96)-\Phi(-1{,}96)\approx0{,}95$.
+Die Funktion $f$ ist die Dichte der Standard-Normalverteilung
+$\mathcal N(0,1)$; das Integral ist die Fläche, die die Dichte zwischen
+$-1{,}96$ und $+1{,}96$ einschließt. Da $1{,}96$ das $97{,}5\%$-Quantil
+ist, ist der Flächenanteil zwischen $-1{,}96$ und $+1{,}96$ gerade $0{,}95$.
 
 \textit{Skript:} Kap. 5 (Riemann-Integral).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Bessere Approximation]
-Der Fehler einer Rechteckregel ist $O(h)$, wobei $h$ die Schrittweite ist.
-\emph{Verkleinert man $h$}, d.h. mehr und dichter liegende Stützstellen
-statt $1/100$ z.B.\ $1/1000$ (bei gleichem Integrationsbereich
-$[-1{,}96,1{,}96]$), wird das Ergebnis genauer. Zusätzlich ist die
-\emph{Mittelpunktregel} (Stützstelle in der Mitte jedes Teilintervalls) oder
-die Trapez-/Simpson-Regel deutlich effizienter (Fehler $O(h^2)$ bzw.\ $O(h^4)$).
+\begin{werkzeugkasten}[Warum wird es durch kleinere Schrittweite besser?]
+Ein Rechteck unter der Kurve hat auf einem Stück, auf dem die Funktion
+glatt ist, einen Fehler proportional zur Schrittweite $h$ (die Kurve
+\emph{neigt} sich im Rechteck); über alle Stücke summiert ist der
+Gesamtfehler also von Ordnung $O(h)$. Halbiert man $h$, halbiert sich in
+etwa der Fehler. Hinzu kommt: \emph{Bessere Quadraturregeln} machen den
+Fehler viel schneller klein:
+\begin{itemize}
+  \item Mittelpunkt-Regel: Stützstelle in der Stückmitte, Fehler
+        $O(h^2)$ (die beidseitigen Über-/Unterschätzungen heben sich).
+  \item Trapezregel: Verbinden der Höhen durch Geraden, Fehler $O(h^2)$.
+  \item Simpson-Regel: Parabeln durch drei Punkte, Fehler $O(h^4)$.
+\end{itemize}
+Die Aufgabe fragt nach Verbesserung: kleineres $h$ und/oder bessere Regel.
 
-\textit{Skript:} Kap. 5 (Numerische Integration).
+\textit{Skript:} Kap. 5 (numerische Integration).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Die Breite $\frac1{100}$ und den Bereich: $x$ läuft von
-        $-1{,}96$ bis $1{,}96$ (Rechtecks-Mittelwerte sind hier links),
-        daher ist $S$ eine Links-Rechteck-Summe.
-  \item Fehlerabschätzung: Rechteck-$(O(h))$ gegen Trapez/Simpson
-        ($O(h^2)/O(h^4)$); ein genauerer Wert braucht \emph{mehr} bzw.\
-        \emph{bessere} Stützstellen.
-  \item Für das Integral bis $\infty$ müsste man den Bereich erweitern;
+  \item Die Breite und den Bereich lesen: $x$ läuft von $-1{,}96$ bis
+        $+1{,}96$; ein Rechteck mit linker Stützstelle ist eine
+        \emph{Links}-Rechteck-Summe (nicht Mittelpunkt oder Trapez).
+  \item Fehlerordnung nicht vergessen: Rechteck $O(h)$, Trapez/Mittelpunkt
+        $O(h^2)$, Simpson $O(h^4)$.
+  \item Für ein Integral bis $+\infty$ müsste man den Bereich erweitern;
         hier ist $[-1{,}96,1{,}96]$ fest vorgegeben.
 \end{itemize}
 \end{achtung}

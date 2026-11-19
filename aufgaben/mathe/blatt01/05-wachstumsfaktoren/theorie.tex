@@ -2,35 +2,48 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Mittlerer Wachstumsfaktor $\sqrt{ab}$ zweier positiver Faktoren $a$, $b$
-mit deren arithmetischem Mittel vergleichen.
+% Grundidee: Der mittlere Wachstumsfaktor ist der "geometrische
+% Mittelwert" sqrt(ab); er liegt nie über dem arithmetischen Mittel. Warum?
+% Ein Quadrat (Differenz zweier Wurzeln) ist nie negativ.
+
+Zwei aufeinanderfolgende Wachstumsfaktoren $a$ und $b$ (z.\,B. ``Faktor
+im 1. Jahr``, ``Faktor im 2. Jahr``) wirken \emph{multipliziert}: Über
+beide Jahre ist der Gesamtfaktor $ab$. Die Frage ``welcher Faktor wäre
+dasselbe Ergebnis in jedem der beiden Jahre?`` führt auf die Zahl $x$ mit
+$x^2=ab$, also $x=\sqrt{ab}$ --- den \emph{geometrischen Mittelfaktor}.
 
 \begin{werkzeugkasten}[Mittlerer Wachstumsfaktor]
-Einer Population, die im ersten Jahr um $a>0$ und im zweiten um $b>0$
-wächst, entspricht über beide Jahre der Faktor $ab$. Der mittlere
-Wachstumsfaktor $\sqrt{ab}$ lässt die Population nach zwei Jahren gleich
-groß werden; er ist höchstens so groß wie der Durchschnitt $\tfrac{a+b}2$:
+Wächst eine Population im ersten Jahr um $a>0$, im zweiten um $b>0$,
+so ist der Gesamtfaktor $ab$. Der mittlere Wachstumsfaktor $\sqrt{ab}$
+hätte in beiden Jahren denselben Gesamtfaktor $(\sqrt{ab})^2=ab$.
+Es gilt die zentrale Ungleichung
 \begin{equation}
-  \sqrt{ab}\le \frac{a+b}2 \qquad (a,b>0).
+  \sqrt{ab}\le \frac{a+b}2 \qquad (a,b>0),
 \end{equation}
+der \emph{geometrische} Mittelwert liegt nie über dem
+\emph{arithmetischen}.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Beweis über das Quadrat einer Differenz]
-Es ist $(\sqrt a-\sqrt b)^2\ge0$, also $a-2\sqrt{ab}+b\ge0$, d.h.
-$a+b\ge2\sqrt{ab}$, geteilt durch $2$:
+\begin{werkzeugkasten}[Warum gilt $\sqrt{ab}\le\frac{a+b}2$? --- der Kernbeweis]
+Man startet mit einer trivialen, aber m\"achtigen Tatsache: Ein Quadrat
+ist nie negativ.
 \begin{equation}
-  \frac{a+b}2\ge\sqrt{ab} .
+  (\sqrt a-\sqrt b)^2 \ge 0 .
 \end{equation}
-Gleichheit genau dann, wenn $\sqrt a=\sqrt b$, also $a=b$.
+Ausmultiplizieren: $a-2\sqrt{ab}+b\ge0$, also $a+b\ge2\sqrt{ab}$, geteilt
+durch $2$: $\frac{a+b}2\ge\sqrt{ab}$. \textbf{Der Kniff:} man führt die
+gewünschte Wurzel $2\sqrt{ab}$ als \emph{Mischterm} eines Quadrats ein,
+das man kontrollieren kann. Gleichheit genau dann, wenn
+$\sqrt a=\sqrt b$, d.h. $a=b$.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Voraussetzung $a,b>0$ beachten -- Wurzeln $\sqrt{ab}$ sinnvoll.
-  \item Die Ungleichung wird aus dem nichtnegativen Quadrat
-        $(\sqrt a-\sqrt b)^2$ abgeleitet, nicht durch ``Nachrechnen mit
-        Beispielen''.
-  \item Gleichheit (b) genau für $a=b$; ein Gegenbeispiel $a\neq b$ zeigt
-        das ($\sqrt{ab}<\tfrac{a+b}2$).
+  \item Voraussetzung $a,b>0$ beachten, damit $\sqrt{ab}$ definiert ist.
+  \item Die Ungleichung folgt aus dem nichtnegativen Quadrat, nicht aus
+        ``Beispielen`` --- Beispiele bestätigen, beweisen aber nicht
+        \emph{alte} Behauptung.
+  \item Gleichheit gilt genau für $a=b$; schon ein Gegenbeispiel
+        ($a\neq b$) zeigt die echte Ungleichung.
 \end{itemize}
 \end{achtung}

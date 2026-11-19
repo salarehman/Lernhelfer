@@ -1,5 +1,8 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Kürzen + Symmetrie; "mindestens" = Summe;
+% Säulen-Formel (Kugeln + Trennstriche).
+
 \subsection*{Gegeben und gesucht}
 (a) $\binom{12}{3}$, $\binom{57}{56}$, $\binom{10}{7}$; (b) Anzahl der
 Möglichkeiten, aus $10$ Personen mindestens $7$ auszuwählen; (c) Anzahl der
@@ -8,20 +11,29 @@ Lösungen von $x+y+z=19$ mit $x,y,z\in\mathbb N_0$.
 \subsection*{a) Werte}
 \begin{align}
   \binom{12}{3}&=\frac{12\cdot11\cdot10}{3\cdot2\cdot1}=220,\\
-  \binom{57}{56}&=\binom{57}{1}=57,\\
+  \binom{57}{56}&=\binom{57}{1}=57, \quad\text{(Symmetrie: wähle die
+        ``eine, die nicht in der Teilmenge ist``)}\\
   \binom{10}{7}&=\binom{10}{3}=\frac{10\cdot9\cdot8}{6}=120 .
 \end{align}
 
 \subsection*{b) Mindestens 7 aus 10}
+``Mindestens 7`` schließt 7, 8, 9, 10 ein. Summe über $k=7,\dots,10$:
 \begin{equation}
   \sum_{k=7}^{10}\binom{10}{k}=120+45+10+1=176 .
 \end{equation}
+\textbf{Gedanke:} ``Mindestens`` ist eine \emph{Summe} über alle
+jenseitsliegenden $k$; der Fehler ``nur $\binom{10}{7}$`` würde die drei
+Grob-Mengen auslassen.
 
 \subsection*{c) Zahl der Lösungen $x+y+z=19$, $\mathbb N_0$}
-Säulen-Formel mit $N=19$, $d=3$:
+Säulen-Formel mit $N=19$, $d=3$ (drei Unbekannte):
 \begin{equation}
   \binom{19+3-1}{3-1}=\binom{21}{2}=\frac{21\cdot20}{2}=210 .
 \end{equation}
+\textbf{Warum $\binom{21}{2}$?} Stelle 19 ``Kugeln`` (die Einsen) und 2
+``Trennstriche`` (zwischen $x,y,z$) in einer Reihe von 21 Symbolen an;
+jede Wahl der 2 Strich-Positionen aus 21 gibt eine Lösung
+$x+y+z=19$ mit $x,y,z\ge0$.
 
 \begin{ergebnis}
 \begin{equation*}
@@ -32,12 +44,22 @@ Säulen-Formel mit $N=19$, $d=3$:
 \end{ergebnis}
 
 \begin{kontrolle}
-b) $\binom{10}{8}=45$, $\binom{10}{9}=10$, $\binom{10}{10}=1$, Summe
-$176$; c) bi-$\binom{21}{2}=210$ (auch $\binom{21}{1}21$). Plausibel.
+\textbf{a) Nachrechnen:} $\binom{10}{8}=45$, $\binom{10}{9}=10$,
+$\binom{10}{10}=1$, Summe $120+45+10+1=176$. \checkmark
+
+\textbf{c) Plausibilität:} $\binom{21}{2}=210$; alternativ zählt man
+$y=0,\dots,19$ durch: für festes $y$ ist $x+z=19-y$ mit $20-y$ Lösungen;
+$\sum_{y=0}^{19}(20-y)=20+19+\dots+1=210$. Konsistent.
+
+\textbf{Grenzfall:} W\"aren $x,y,z$\emph{strikt} positiv (alle $\ge1$),
+substituiert man $x'=x-1$ usw. und erhält $x'+y'+z'=16$ mit $x'$
+$\ge0$: $\binom{16+3-1}{2}=\binom{18}{2}=153$. Der Vergleich zeigt, wie
+die Verschiebung die Zahl senkt (weniger ``Boden``-Lösungen).
 \end{kontrolle}
 
 \begin{merksatz}
-Die Symmetrie des Binomialkoeffizienten und die Säulen-Formel
-$\binom{N+d-1}{d-1}$ machen Auswahl- und Lösungszählungen ohne
-Taschenrechner zugänglich.
+$\binom{n}{k}$ z\"ahlt ungeordnete Auswahlmengen (Kern: Reihenfolge
+``wegdividieren`` durch $k!$); ``mindestens`` ist eine Summe, und
+nichtnegative Lösungen einer Summengleichung z\"ahlt die
+S\"aulen-Formel $\binom{N+d-1}{d-1}$.
 \end{merksatz}

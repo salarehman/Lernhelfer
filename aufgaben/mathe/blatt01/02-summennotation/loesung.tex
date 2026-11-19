@@ -1,17 +1,25 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Summanden erkennen, Startwert anpassen; Teleskopsumme
+% nutzen, um große Summen ohne Gliedweise-Berechnung auszuwerten.
+
 \subsection*{Gegeben und gesucht}
 (a) Summe mit $\Sigma$ schreiben; (b) Wert für $n=1,2,3$; (c) Summe
 ausschreiben und Wert berechnen.
 
 \subsection*{a) $2\cdot3+3\cdot4+\dots+n(n+1)$}
-Der $k$-te Summand ist $k(k+1)$ für $k=2,\dots,n$:
+Der $k$-te Summand ist $k(k+1)$. Der erste Term entspricht $k=2$
+(denn $2\cdot3$), der letzte $k=n$:
 \begin{equation}
   2\cdot3+3\cdot4+\dots+n(n+1)=\sum_{k=2}^{n}k(k+1).
 \end{equation}
+\textbf{Gedankenschritt:} Start bei $k=2$, weil $k=1$ den Term $1\cdot2$
+liefern würde, der nicht vorkommt.
 
 \subsection*{b) $\sum_{k=0}^{n}\frac{(3k-1)^2}{(k+1)!}$}
-Mit $(k+1)!=(k+1)k!$:
+Mit $(k+1)!=(k+1)k!$ gliedweise auswerten (für kleine $n$; der
+entscheidende Trick ist die Fakultätsbeziehung, damit man Brüche
+sauber ergänzt):
 \begin{align}
   n=1:&\quad \frac{(-1)^2}{1!}+\frac{2^2}{2!}=1+2=3, \\
   n=2:&\quad 3+\frac{5^2}{3!}=3+\frac{25}{6}=\frac{43}{6}, \\
@@ -24,7 +32,10 @@ Ausschreiben:
 \begin{equation}
   (1^2-0^2)+(2^2-1^2)+(3^2-2^2)+\dots+(1000^2-999^2).
 \end{equation}
-Alle mittleren Terme heben sich (Teleskopsumme):
+\textbf{Der entscheidende Gedankenschritt: Teleskopieren.} Jeder negative
+Term $-i^2$ erscheint als $-(i-1)^2$ im nächsten Glied und hebt sich mit
+dem positiven $i^2$ des Folgeglieds weg. Übrig bleiben nur der erste und
+der letzte "$a$-Wert``:
 \begin{equation}
   =1000^2-0^2=1000000 .
 \end{equation}
@@ -38,11 +49,20 @@ Alle mittleren Terme heben sich (Teleskopsumme):
 \end{ergebnis}
 
 \begin{kontrolle}
-b) $n=2$: $(3k-1)^2/(k+1)!$: $k=0$: $1$, $k=1$: $2$, $k=2$: $25/6$, Summe
-$\frac{43}{6}$; c) Teleskop: erste Summe $1^2$, letzte $1000^2$.
+\textbf{b) nachrechnen über die Summanden:} $n=2$: $(3k-1)^2/(k+1)!$:
+$k=0$: $1$, $k=1$: $2$, $k=2$: $25/6$, Summe $\frac{43}{6}$. \checkmark
+
+\textbf{c) Grenzfall / Generalisierung:} Allgemein hat
+$\sum_{i=1}^{N}(i^2-(i-1)^2)=N^2$ (Teleskop). Der Wert ließe sich auch
+über $\sum(2i-1)=N^2$ bekommen (die Tonglieder $i^2-(i-1)^2=2i-1$).
+Für $N=1000$ ist $N^2=10^6$, plausibel.
+
+\textbf{Stichprobe:} Für $N=4$: $1+3+5+7=16=4^2$; die Teleskopsumme
+liefert $4^1-0=16$. Passt.
 \end{kontrolle}
 
 \begin{merksatz}
-Teleskopsummen kürzen sich fast vollständig -- es bleiben nur erster und
-letzter Term; beim $\Sigma$-Schreiben den passenden Startindex wählen.
+Teleskopsummen kürzen sich fast vollständig --- es bleiben nur der erste
+und der letzte Term; beim $\Sigma$-Schreiben den passenden Startindex
+wählen. Fakultätsummen nutzt man über $(k+1)!=(k+1)k!$.
 \end{merksatz}

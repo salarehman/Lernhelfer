@@ -1,7 +1,16 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Distributivgesetz offen legen, dann die Muster erkennen.
+
 \subsection*{Gegeben und gesucht}
 (a)--(c) Terme ausmultiplizieren, (d)--(g) Terme faktorisieren.
+
+\subsection*{Ansatz}
+\textbf{Ausmultiplizieren}: Distributivgesetz gliedweise --- für jede
+Klammer jeden Term des einen mit jedem des anderen multiplizieren, dann
+gleichnamige Terme zusammenfassen. \textbf{Faktorisieren}: Muster der
+binomischen Formeln rückwärts oder die Nullstellen der quadratischen
+Gleichung suchen.
 
 \subsection*{a) $(x+1)(x-y+3)$}
 \begin{align}
@@ -10,31 +19,43 @@
   &=x^2-xy+3x+x-y+3
   =x^2-xy+4x-y+3 .
 \end{align}
+\textbf{Gedankenschritt:} Der zweite Term $-y$ kommt nach dem
+Distributivgesetz, nicht ``von selbst`` --- er entsteht aus
+$+1\cdot(-y)$. Erst das Zusammenfassen von $3x+x=4x$ vereinfacht.
 
 \subsection*{b) $(a-x)(x+a)$}
 \begin{equation}
   (a-x)(x+a)=(a-x)(a+x)=a^2-x^2 .
 \end{equation}
+Gedanke: Vertauschen der Summanden in der zweiten Klammer macht daraus
+die dritte binomische Formel.
 
 \subsection*{c) $(1-x)(1+x+x^2)$}
 \begin{equation}
   (1-x)(1+x+x^2)=1+x+x^2-x-x^2-x^3=1-x^3 .
 \end{equation}
+Gedanke: Alles hebt sich bis auf $1$ und $-x^3$ --- hier zeigt sich die
+geometrische Summenformel $(1-x)(1+x+\dots+x^{n})=1-x^{n+1}$ für $n=2$.
 
 \subsection*{d) $x^2+2x+1$}
 \begin{equation}
   x^2+2x+1=(x+1)^2 .
 \end{equation}
+Signal: $x^2=(x)^2$, $1=1^2$, Mittelterm $2x=2\cdot x\cdot1$.
 
 \subsection*{e) $x^2-a^2$}
 \begin{equation}
   x^2-a^2=(x-a)(x+a) .
 \end{equation}
+Minus zwischen zwei Quadraten $\Rightarrow$ sofort zerlegbar.
 
 \subsection*{f) $\tfrac14x^2-3x+9$}
 \begin{equation}
   \tfrac14x^2-3x+9=\bigl(\tfrac12x-3\bigr)^2 .
 \end{equation}
+\textbf{Wichtigster Gedanke:} $\tfrac14x^2=(\tfrac12x)^2$ und $9=3^2$;
+der Mittelterm kandidat $-3x$ muss $-2\cdot\tfrac12x\cdot3=-3x$ sein ---
+stimmt! Erst diese drei Proben rechtfertigen ``binomische Formel``.
 
 \subsection*{g) $x^2-8x+15$}
 Nullstellen: $x^2-8x+15=0 \Rightarrow x_{1,2}=\frac{8\pm\sqrt{64-60}}{2}
@@ -56,12 +77,22 @@ Nullstellen: $x^2-8x+15=0 \Rightarrow x_{1,2}=\frac{8\pm\sqrt{64-60}}{2}
 \end{ergebnis}
 
 \begin{kontrolle}
-g) zurückschreiten: $(x-3)(x-5)=x^2-5x-3x+15=x^2-8x+15$; f)
-$(\tfrac12x-3)^2=\tfrac14x^2-3x+9$; c) Probe mit $x=2$:
-$(1-2)(1+2+4)=-7$, rechts $1-8=-7$. Alles passt.
+\textbf{Zurückrechnen (die zuverlässigste Probe):} g) $(x-3)(x-5)
+=x^2-5x-3x+15=x^2-8x+15$; f) $(\tfrac12x-3)^2=\tfrac14x^2-3x+9$. Damit
+ist nicht nur ``ein Wert gestimmt``, sondern die \emph{ganze} Form.
+
+\textbf{Stichprobe mit Zahlen:} c) Probe mit $x=2$: $(1-2)(1+2+4)=-7$,
+rechts $1-8=-7$. Passt.
+
+\textbf{Grenzfall:} Bei f) und g) zeigt die Verifikation der zwei
+Nullstellen ($x=3,5$ bzw. $x=6$), dass die Faktorisierung die Gleichung
+$x=0$ wirklich reproduziert --- die Probe an den Nullstellen ist beim
+Faktorisieren die nat\"urlichste Grenzfall-Kontrolle.
 \end{kontrolle}
 
 \begin{merksatz}
-Ausmultiplizieren = Distributivgesetz; Faktorisieren = binomische Formeln
-rückwärts oder Nullstellen über die $p$-$q$-Formel bestimmen.
+Ausmultiplizieren = Distributivgesetz gliedweise; Faktorisieren =
+binomische Formeln rückwärts (Signal: Quadrate + doppeltes Produkt) oder
+Nullstellen über die Mitternachtsformel. Die Probe ``zurückrechnen``
+bestätigt jeweils die ganze Umformung.
 \end{merksatz}

@@ -1,16 +1,19 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Bild via Monotonie; dann y = f(x) nach x auflösen, mit
+% Definitionsbedingungen; durch Probe f(g(y))=y und g(f(x))=x verifizieren.
+
 \subsection*{Gegeben und gesucht}
-(a) $f\colon[0,\infty)\to\mathbb R$, $f(x)=\frac{x^2-4}{x^2+1}$;
+(a) $f\colon[0,\infty)\to\mathbb R$, $f(x)=\frac{x^2-4}{x^2+1}$;\
 (b) $f\colon\mathbb R\to\mathbb R$, $f(x)=3+\mathrm e^{-x}$.
 Gesucht: Bild $f(D)$, Umkehrfunktion $g$, Grobskizze der Graphen.
 
 \subsection*{a) $f(x)=\frac{x^2-4}{x^2+1}$}
 Umschreiben: $f(x)=\frac{x^2+1-5}{x^2+1}=1-\frac5{x^2+1}$. Ableitung
 \begin{equation}
-  f'(x)=\frac{10x}{(x^2+1)^2}\ge0 \quad (\text{$>0$ für }x>0)
+  f'(x)=\frac{10x}{(x^2+1)^2}\ge0 \quad (\text{$>0$ f\"ur }x>0).
 \end{equation}
-Also streng wachsend, Bild von $x=0$ bis $x\to\infty$:
+Also streng wachsend; Bild von $x=0$ bis $x\to\infty$:
 $f(0)=1-\frac51=-4$, $f(x)\to1-0=1$. Injektiv, Bild $[-4,1)$.
 
 Stelle nach $x$ um:
@@ -18,18 +21,17 @@ Stelle nach $x$ um:
   y=1-\frac5{x^2+1}\ \Longrightarrow\ \frac5{x^2+1}=1-y\ \Longrightarrow\
   x^2=\frac5{1-y}-1=\frac{4+y}{1-y}.
 \end{equation}
-Wegen $x\ge0$:
+Wegen $x\ge0$ (und $1-y>0$, also $y<1$; f\"ur $y\in[-4,1]$):
 \begin{equation}
   g(y)=\sqrt{\frac{4+y}{1-y}},\qquad y\in[-4,1).
 \end{equation}
 
 \subsection*{b) $f(x)=3+\mathrm e^{-x}$}
-$\mathrm e^{-x}\in(0,\infty)$, also $f(x)\in(3,\infty)$; $f$ ist streng
+$\mathrm e^{-x}\in(0,\infty)$, also $f(x)\in(3,\infty)$; $f$ streng
 monoton fallend (Ableitung $f'(x)=-\mathrm e^{-x}<0$), also injektiv.
 Bild $(3,\infty)$.
 
-Stelle um: $y=3+\mathrm e^{-x}\ \Rightarrow\ \mathrm e^{-x}=y-3
-\ \Rightarrow\ x=-\ln(y-3)$:
+Stelle um: $y=3+\mathrm e^{-x}\ \Rightarrow\ \mathrm e^{-x}=y-3\ \Rightarrow\ x=-\ln(y-3)$:
 \begin{equation}
   g(y)=-\ln(y-3),\qquad y\in(3,\infty).
 \end{equation}
@@ -42,13 +44,26 @@ Stelle um: $y=3+\mathrm e^{-x}\ \Rightarrow\ \mathrm e^{-x}=y-3
 \end{ergebnis}
 
 \begin{kontrolle}
-a) Probe $f(g(y))=1-\frac5{1+(4+y)/(1-y)}=1-\frac5{(1-y+4+y)/(1-y)}
-=1-\frac{5(1-y)}5=y$, und $g(f(x))$ gibt $x$ ($x\ge0$).
-b) Probe: $f(-\ln(y-3))=3+\mathrm e^{\ln(y-3)}=y$. Beide rechnen.
+\textbf{a) Probe:}
+$f(g(y))=1-\frac5{1+(4+y)/(1-y)}=1-\frac5{(1-y+4+y)/(1-y)}
+=1-\frac{5(1-y)}5=y$, und $g(f(x))=x$ ($x\ge0$). Beide Verkn\"upfungen
+stimmen.
+
+\textbf{b) Probe:} $f(-\ln(y-3))=3+\mathrm e^{\ln(y-3)}=y$, und
+$g(f(x))=-\ln(\mathrm e^{-x})=x$. Stimmen.
+
+\textbf{Grenzfall / Randwerte:} a) $y\to-4^+$: $g(y)
+=\sqrt{\frac{0}{5}}\to0=f^{-1}(-4)$ (der linke Bildrand geh\"ort dazu);
+$y\to1^-$: $g(y)=\sqrt{\frac{5}{0}}\to\infty$ (der rechte Bildrand ist
+offen). b) $y\to3^+$: $g(y)=-\ln(0)\to+\infty$; $y\to\infty$:
+$g(y)\to-\infty$. Die Randwerte best\"atigen, dass die offenen Endpunkte
+des Bildes zum Grenzfall $x\to\infty$ bzw.\ $-\infty$ geh\"oren.
 \end{kontrolle}
 
 \begin{merksatz}
-Bild und Injektivität kommen aus Monotonie; man stellt $y=f(x)$ nach $x$
-um und beachtet die Definitionsbedingungen (Wurzel, $\ln$), um die
-Umkehrfunktion samt Bildbereich anzugeben.
+Bild und Injektivit\"at kommen aus Monotonie; man stellt $y=f(x)$ nach
+$x$ um und beachtet die Definitionsbedingungen (Wurzel radikand $\ge0$,
+Logarithmusargument $>0$), um die Umkehrfunktion samt Bildbereich
+anzugeben. Die Probe $f(g(y))=y$ und $g(f(x))=x$ ist die sichere
+Kontrolle.
 \end{merksatz}

@@ -2,40 +2,59 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Ausdrücke mit Potenzen und Wurzeln ohne Taschenrechner bestimmen bzw.
-vereinfachen.
+% Grundidee: Potenzen = verlängertes Multiplizieren; negative Exponenten
+% sind Kehrwerte, gebrochene Exponenten Wurzeln, und die Potenzgesetze
+% sind nichts anderes als die Übersetzung der Multiplikation in Addition.
 
-\begin{werkzeugkasten}[Potenzgesetze]
+Eine Potenz $a^n$ ist zuerst ``$a$ mit sich selbst $n$-mal
+multiplizieren``. Aus dieser einfachen Idee entwickeln sich konsistent
+die Derivationen für negative und gebrochene Exponenten --- nicht
+als neue bizarre Zusatzoperationen, sondern als \emph{die einzige sinnvolle
+Möglichkeit}, das Potenz-Konzept so zu erweitern, dass die Regeln
+weiter gelten.
+
+\begin{werkzeugkasten}[Warum $a^{-n}=1/a^n$?]
+Wir wollen, dass $a^r a^s=a^{r+s}$ auch für negative $r$ gilt. Damit
+$a^n\cdot a^{-n}=a^{n-n}=a^0=1$ sein kann, muss $a^{-n}$ der Kehrwert von
+$a^n$ sein. Der negative Exponent ist also \emph{nicht} ``negativ
+multiplizieren``, sondern ``in den Nenner wechseln``.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Warum $a^{m/n}$ eine Wurzel ist?]
+Auch $\sqrt[n]{a}$ soll ``Wurzel ziehen und potenzieren`` als
+Umkehroperation konsistent machen. Mit $(a^{1/n})^n=a^{1/n\cdot n}=a^1=a$
+muss $a^{1/n}$ die Zahl sein, deren $n$-te Potenz $a$ ist --- genau die
+Definition der $n$-ten Wurzel. Daher:
+\begin{equation}
+  a^{\frac mn}=\sqrt[n]{a^m}.
+\end{equation}
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Potenzgesetze als Werkzeug]
 Für $a>0$ und rationale Exponenten:
 \begin{align}
   a^{-n}&=\frac1{a^n}, &
-  a^{\frac mn}&=\sqrt[n]{a^m}, \quad a>0, \\
-  a^r a^s&=a^{r+s}, &
-  \frac{a^r}{a^s}&=a^{r-s}, &
-  (a^r)^s&=a^{rs}, &
-  \Bigl(\frac ab\Bigr)^r&=\frac{a^r}{b^r} .
+  a^{r} a^{s}&=a^{r+s}, &
+  \frac{a^{r}}{a^{s}}&=a^{r-s}, \\
+  (a^{r})^{s}&=a^{rs}, &
+  \Bigl(\frac ab\Bigr)^{r}&=\frac{a^{r}}{b^{r}} .
 \end{align}
-Eine Wurzel ist eine Potenz mit gebrochenem Exponenten;
-$\sqrt a=a^{1/2}$, $\sqrt[n]a=a^{1/n}$.
+\textbf{Anschaulich:} ``Multiplikation wird im Exponenten zur Addition``
+-- weil $n$-maliges Multiplizieren von $a$ und $m$-maliges Multiplizieren
+zusammen $n+m$ Multiplikationen sind.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Gebrochene und negative Exponenten]
-Umkehren und Wurzel ziehen statt ``im Kopf'' rechnen:
-\begin{equation}
-  27^{-1/3}=\frac1{27^{1/3}}=\frac13,\qquad
-  \Bigl(\frac49\Bigr)^{-1/2}=\Bigl(\frac94\Bigr)^{1/2}=\frac32 .
-\end{equation}
-Negative Exponenten wechseln in den Nenner; eine Potenz mit
-`${}^{-1/2}$` kehrt den Bruch um und zieht die Wurzel.
-\end{werkzeugkasten}
-
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item $a^{-n}\neq -a^n$. Der Minus-Exponent bedeutet Kehrwert.
-  \item Beim Vereinfachen von $a^5 a^{-2}/a^3$ die Exponenten addieren bzw. subtrahieren.
-  \item Bruch-Hochzahlen: erst Wurzel (oder umgekehrt), z. B.
-        $\bigl(x^{2/3}\bigr)^{-3}=x^{-2}=\tfrac1{x^2}$ -- das Ergebnis ohne
-        negativen Exponenten schreiben.
-  \item $a^{3/4}$ als Wurzel: $a^{3/4}=\sqrt[4]{a^3}$.
+  \item \textbf{$a^{-n}\neq -a^n$:} Der Minus-Exponent bedeutet
+        \emph{Kehrwert}, nicht ``negatives Ergebnis``. $2^{-3}=\tfrac18$,
+        nicht $-8$.
+  \item Beim Vereinfachen von $a^5 a^{-2}/a^3$ die Exponenten addieren
+        bzw. subtrahieren: $5+(-2)-3=0$, also $a^0=1$.
+  \item Bruch-Hochzahlen: erst Wurzel oder umgekehrt, z.\,B.
+        $\bigl(x^{2/3}\bigr)^{-3}=x^{2/3\cdot(-3)}=x^{-2}=\tfrac1{x^2}$ ---
+        das Ergebnis ohne negativen Exponenten schreiben.
+  \item $a^{3/4}$ als Wurzel: $a^{3/4}=\sqrt[4]{a^3}$ (kann aber auch
+        als $(\sqrt[4]{a})^3$ interpretiert werden).
 \end{itemize}
 \end{achtung}

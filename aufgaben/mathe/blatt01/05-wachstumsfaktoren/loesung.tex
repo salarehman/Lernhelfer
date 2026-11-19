@@ -1,11 +1,20 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: die gewünschte Wurzel taucht als Mischterm eines
+% Quadrats (sqrt a - sqrt b)^2 auf; das Quadrat ist nie negativ.
+
 \subsection*{Gegeben und gesucht}
 $a,b>0$. (a) $\sqrt{ab}\le\tfrac{a+b}2$ zeigen; (b) die Fälle mit
 $\sqrt{ab}=\tfrac12(a+b)$ bestimmen.
 
+\subsection*{Ansatz und der entscheidende Gedankenschritt}
+Wir wollen $\sqrt{ab}$ mit $\frac{a+b}2$ vergleichen. Die passende
+Maschinerie ist ein \emph{Quadrat}, weil ein Quadrat immer
+$\ge0$ ist und beim Ausmultiplizieren das Mischprodukt $2\sqrt{ab}$
+\emph{genau} unseren Vergleichsterm erzeugt. Also w\"ahlen wir
+$(\sqrt a-\sqrt b)^2$.
+
 \subsection*{a) Ungleichung $\sqrt{ab}\le\frac{a+b}2$}
-Für alle reellen Zahlen ist das Quadrat nichtnegativ:
 \begin{equation}
   0\le\bigl(\sqrt a-\sqrt b\bigr)^2 = a-2\sqrt{ab}+b .
 \end{equation}
@@ -16,8 +25,8 @@ Damit
 \end{equation}
 
 \subsection*{b) Gleichheitsfall}
-Gleichheit in der obigen Abschätzung genau dann, wenn
-$\sqrt a-\sqrt b=0$, d.h. $\sqrt a=\sqrt b$, also $a=b$.
+Gleichheit in der obigen Abschätzung genau dann, wenn das Quadrat $0$
+ist, also $\sqrt a-\sqrt b=0$, d.h. $a=b$.
 
 \begin{ergebnis}
 \begin{equation*}
@@ -27,11 +36,24 @@ $\sqrt a-\sqrt b=0$, d.h. $\sqrt a=\sqrt b$, also $a=b$.
 \end{ergebnis}
 
 \begin{kontrolle}
-Gegenprobe: $a=1,b=9$: $\sqrt{9}=3$, Durchschnitt $\frac{10}2=5$, es gilt
-$3\le5$ (echt); $a=b=4$: $\sqrt{16}=4$, Durchschnitt $4$, Gleichheit. Passt.
+\textbf{Gegenprobe:} $a=1,b=9$: $\sqrt{9}=3$, Durchschnitt
+$\frac{10}2=5$, es gilt $3\le5$ (echt); $a=b=4$: $\sqrt{16}=4$,
+Durchschnitt $4$, Gleichheit. Passt.
+
+\textbf{Plausibilität geometrisch:} F\"ur sehr ungleiche $a,b$
+(hier $1$ und $9$) liegt das geometrische Mittel deutlich unter dem
+arithmetischen (das von der gr\"oßeren Zahl ``gezogen`` wird). F\"ur
+gleiche Zahlen fallen beide zusammen.
+
+\textbf{Grenzfall:} $a\to0$ (bei festem $b$) ginge $\sqrt{ab}\to0$
+w\"ahrend $\frac{a+b}2\to\frac b2$ --- die Ungleichung bleibt mit
+großer Marge wahr. Das bestätigt die Struktur ``geometrisch $\le$
+arithmetisch``.
 \end{kontrolle}
 
 \begin{merksatz}
-Der mittlere Wachstumsfaktor liegt nie über dem arithmetischen Mittel;
-Gleichheit nur bei gleichen Faktoren -- folgt aus $(\sqrt a-\sqrt b)^2\ge0$.
+Der mittlere Wachstumsfaktor (geometrisches Mittel $\sqrt{ab}$) liegt nie
+über dem arithmetischen Mittel; Gleichheit nur bei gleichen Faktoren.
+Der Schlüssel ist $( \sqrt a-\sqrt b)^2\ge0$ --- ein Quadrat, das beim
+Ausmultiplizieren genau den Mischterm $2\sqrt{ab}$ liefert.
 \end{merksatz}

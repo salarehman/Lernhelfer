@@ -1,18 +1,26 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: jeder Quantor wird - bei gleicher Reihenfolge -
+% umgedreht; das Prädikat verneint man. Kein Wahrheitsurteil.
+
 \subsection*{Gegeben und gesucht}
 Aussage: ``Zu jeder beliebigen Zahl gibt es eine natürliche Zahl, die
 größer ist.'' Gesucht: die Negation aus den vier vorgegebenen Aussagen.
 
-\subsection*{Ansatz}
-Negieren der Quantoren ``zu jeder'' $\rightarrow$ ``es gibt eine'', ``es
-gibt eine ($> x$)'' $\rightarrow$ ``keine ($> x$)''.
+\subsection*{Ansatz und der entscheidende Gedankenschritt}
+Formal heißt die Aussage $\forall x\,\exists n\in\mathbb N:\ n>x$. Die
+Negation entsteht durch \emph{drei gleichzeitige Handgriffe}:
+\begin{enumerate}
+  \item den externen Allquantor ``zu jeder $x$`` zu $\exists x$ drehen,
+  \item den internen Existenzquantor ``es gibt ein $n$`` zu
+        $\forall n$ drehen (\emph{in gleicher Reihenfolge $x$, dann $n$}),
+  \item das Prädikat $n>x$ zu $n\le x$ verneinen.
+\end{enumerate}
+Das ergibt $\exists x\,\forall n\in\mathbb N:\ n\le x$.
 
 \subsection*{Rechnung}
-Formal: $\bigl(\forall x\,\exists n\in\mathbb N:\ n>x\bigr)$. Die Negation:
-$\exists x$ so, dass $\forall n\in\mathbb N:\ n\not>x$, d.h. $n\leq x$.
-In Worten: \emph{Es gibt mindestens eine Zahl, die von keiner natürlichen
-Zahl übertroffen wird.} Das trifft auf Aussage b) zu.
+In Worten: \emph{Es gibt mindestens eine Zahl, die von keiner
+natürlichen Zahl übertroffen wird.} Das trifft auf Aussage b) zu.
 
 \begin{ergebnis}
 Die Negation ist \textbf{b)}: ``Es gibt mindestens eine Zahl, die von
@@ -20,14 +28,25 @@ keiner natürlichen Zahl übertroffen wird.''
 \end{ergebnis}
 
 \begin{kontrolle}
-Aussage a) ``keine einzige Zahl wird von jeder übertroffen'' ist zu stark
-(verneint nur den Allquantor, nicht den Existenzquantor); c) ersetzt
-``größer'' durch ``kleiner''; d) verneint den Existenzteil falsch. Nur b)
-entspricht der formalen Negation.
+\textbf{Warum die anderen nicht:}
+\begin{itemize}
+  \item a) ``keine einzige Zahl wird von jeder übertroffen`` verneint nur
+        den äußeren Allquantor und lässt den Existenzquantor unangetastet
+        --- falsche Negation.
+  \item c) ersetzt ``größer`` durch ``kleiner`` statt $n>x$ zu $n\le x$
+        zu verneinen.
+  \item d) ändert die Reihenfolge oder verneint den Existenzteil falsch.
+\end{itemize}
+\textbf{Gegenprobe an der Semantik:} Man prüft, ob Aussage und Negation
+einander ausschließen und zusammen alle Fälle abdecken. Würde man z.\,B.
+als Negation ``alle Zahlen werden von keiner natürlichen Zahl
+übertroffen`` verwenden, wären sowohl Aussage als auch Negation falsch
+--- ein sicheres Zeichen für einen Negationsfehler.
 \end{kontrolle}
 
 \begin{merksatz}
-Die Negation dreht jeden Quantor um (``jede'' $\leftrightarrow$
-``mindestens eine'', ``es gibt'' $\leftrightarrow$ ``keine''); der
-Wahrheitsgehalt spielt keine Rolle.
+Die Negation dreht jeden Quantor um (``jede`` $\leftrightarrow$
+``mindestens eine'', ``es gibt`` $\leftrightarrow$ ``keine'') und
+verneint das Prädikat, wobei die \emph{Reihenfolge der Quantoren erhalten
+bleibt}; der Wahrheitsgehalt spielt keine Rolle.
 \end{merksatz}

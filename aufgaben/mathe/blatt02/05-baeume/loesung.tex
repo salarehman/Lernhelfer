@@ -1,26 +1,38 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Die Eckenbilanz verknüpft lokale Grade mit globaler
+% Knotenzahl; sie liefert die Blattzahl in einer Zeile.
+
 \subsection*{Gegeben und gesucht}
 Baum mit $n\ge2$ Knoten; jeder Knoten, der kein freies Ende ist, hat genau
 $3$ Nachbarn. Zu zeigen: $n$ gerade und die Zahl $L$ der freien Enden ist
 $\tfrac n2+1$.
 
 \subsection*{Ansatz}
-Erst über die Gradsumme (Handschlaglemma), dann der Induktionsbeweis mit
-dem Entfernen zweier freier Enden.
+\textbf{Warum die Eckenbilanz?} Die Aufgabe kennt nur lokale Grade
+(Blätter haben Grad 1, alle anderen Grad 3). Das Handschlaglemma ist die
+einzige globale Aussage, die die Grade \emph{aller} Knoten mit der
+Kantenzahl verbindet --- und in einem Baum ist die Kantenzahl $n-1$
+bekannt. Damit haben wir ``eine Unbekannte ($L$) und eine Gleichung``.
+Wir stellen sie auf und lösen.
 
 \subsection*{Rechnung}
 Sei $L$ die Zahl der freien Enden (Grad $1$), $n-L$ die der Grad-3-Knoten.
 Der Baum hat $n-1$ Kanten, also
 \begin{align}
-  L\cdot1+(n-L)\cdot3 &= 2(n-1), \\
+  \underbrace{L\cdot1}_{=L} + \underbrace{(n-L)\cdot3}_{=3n-3L} &= 2(n-1), \\
   L+3n-3L &= 2n-2, \\
   3n-2L &= 2n-2, \\
   n+2 &= 2L,
   \qquad L=\frac{n+2}2=\frac n2+1 .
 \end{align}
-Da $2L=n+2$ und $L$ eine ganze Zahl (Knotenzahl) ist, folgt $n=2L-2$
-gerade. Damit sind beide Teile der Behauptung bewiesen.
+Da $L$ eine \emph{ganze Zahl} (Knotenzahl) ist, folgt aus $2L=n+2$:
+$n=2L-2$ ist gerade. Damit sind beide Teile der Behauptung bewiesen.
+
+\textbf{Der entscheidende Gedanke:} Es braucht gar keine Fallunterscheidung
+oder Graph-Theorie --- die eine Bilanz über die Grade liefert die
+Blattzahl \emph{direkt}. (Der alternative Induktionsbeweis kommt zu
+demselben Ergebnis.)
 
 \begin{ergebnis}
 \begin{equation*}
@@ -29,12 +41,28 @@ gerade. Damit sind beide Teile der Behauptung bewiesen.
 \end{ergebnis}
 
 \begin{kontrolle}
-kleine Bäume: $n=2$ (zwei Knoten, beide freie Enden): $L=2=\frac22+1$;
-$n=4$: $L=3=\frac42+1$; Baum mit $n=6$: $L=4$. Passt.
+\textbf{Kleine Bäume von Hand:}
+\begin{itemize}
+  \item $n=2$ (zwei Knoten, beide Blätter): $L=2=\frac22+1$. \checkmark
+  \item $n=4$: ein Mittelknoten mit drei Blättern, $L=3=\frac42+1$.
+        \checkmark
+  \item $n=6$: $L=4$. Ein ``Y``-Muster plus Verlängerung: stimmt.
+\end{itemize}
+
+\textbf{Plausibilität:} Je größer $n$, desto mehr ``Verlängerungen`` einer
+Kette, pro hinzugefügten inneren Knoten (der wieder ein Blatt trägt)
+kommt ein neues Blatt dazu. Die Formel $L=\frac n2+1$ deckt sich mit
+dieser bildhaften Zählung.
+
+\textbf{Grenzfall:} Der kleinste Fall $n=2$ ist die entartete ``zwei
+Knoten``-Struktur, ein einzelner Blattknoten $n=1$ wäre von der
+Voraussetzung ``jeder Nicht-Blatt hat Grad 3`` gar nicht betroffen;
+der sinnvolle Gültigkeitsbereich ist $n\ge2$ mit der konsistenten
+Randlösung.
 \end{kontrolle}
 
 \begin{merksatz}
-Gradsumme $=$ doppelte Kantenzahl macht $n$ und die Blattzahl direkt
-hart; die induktive Entfernung zweier freier Enden liefert dasselbe
-dank der invarianten Differenz ($n\mapsto n-2$, $L\mapsto L-1$).
+Gradsumme $=$ doppelte Kantenzahl macht aus lokalen Grad-Angaben eine
+globale Aussage; das liefert $n$ gerade und die Blattzahl
+$L=\frac n2+1$ in einem Schritt.
 \end{merksatz}

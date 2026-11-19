@@ -2,67 +2,88 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-Lösungsmenge von $|z-1+i|>1$ (a), alle $z$ mit $|z+i|=1$ und $|z-i|=\sqrt3$
-(b), Nachweis von $|zw|=|z||w|$ für alle $z,w\in\mathbb C$ (c).
+Lösungsmenge von $|z-1+i|>1$ (a), alle $z$ mit $|z+i|=1$ und
+$|z-i|=\sqrt3$ (b), Nachweis von $|zw|=|z||w|$ für alle $z,w\in\mathbb C$
+(c).
 
 \subsection*{a) $|z-1+i|>1$}
+\emph{Gedankenschritt:} Zuerst in die Form \emph{Abstand zu einem Punkt}
+bringen: $1-i$ ist der Mittelpunkt.
 \begin{equation*}
-  |z-1+i|=|z-(1-i)|.
+  |z-1+i|=|z-(1-i)| .
 \end{equation*}
-Das ist der Abstand von $z$ zum Punkt $1-i$. Die Ungleichung $>1$ beschreibt
-das \textbf{komplementäre Gebiet außerhalb der offenen Kreisscheibe} um
-$1-i$ mit Radius $1$ (ohne Rand).
+Das ist der Abstand von $z$ zum Punkt $1-i$. Die Ungleichung $>1$
+beschreibt das \textbf{komplementäre Gebiet außerhalb der offenen
+Kreisscheibe} um $1-i$ mit Radius $1$, ohne den Rand selbst.
 
 \subsection*{b) Schnitt zweier Kreise}
-Sei $z=x+iy$. Die Bedingungen quadrieren:
+\emph{Gedankenschritt:} Mit $z=x+iy$ sind die Bedingungen Kreise um
+$(-i)$ mit Radius $1$ und um $(i)$ mit Radius $\sqrt3$. Quadrieren macht
+sie algebraisch; Subtraktion entfernt die $x^2$-Terme und liefert eine
+lineare Bedingung an $y$.
 \begin{align*}
   |z+i|^2&=x^2+(y+1)^2=1,\\
-  |z-i|^2&=x^2+(y-1)^2=3.
+  |z-i|^2&=x^2+(y-1)^2=3 .
 \end{align*}
-Subtraktion der ersten von der zweiten Zeile:
+Subtraktion der ersten von der zweiten Gleichung:
 \begin{equation*}
-  x^2+(y-1)^2-\bigl[x^2+(y+1)^2\bigr]=3-1
+  (y-1)^2-(y+1)^2=3-1
   \;\Longrightarrow\;
-  (y-1)^2-(y+1)^2=2
+  -4y=2
   \;\Longrightarrow\;
-  -4y=2,\quad y=-\tfrac12.
+  y=-\tfrac12 .
 \end{equation*}
-Einsetzen in $x^2+(y+1)^2=1$ mit $y+1=\tfrac12$:
+Einsetzen in die erste Gleichung ($y+1=\tfrac12$):
 \begin{equation*}
-  x^2+\tfrac14=1 \;\Longrightarrow\; x^2=\tfrac34
-  \;\Longrightarrow\; x=\pm\tfrac{\sqrt3}{2}.
+  x^2+\tfrac14=1 \;\Longrightarrow\;
+  x^2=\tfrac34 \;\Longrightarrow\;
+  x=\pm\tfrac{\sqrt3}{2} .
 \end{equation*}
-Es gibt \textbf{zwei} Lösungen: $z=\pm\frac{\sqrt3}{2}-\frac12i$.
+Die beiden Kreise schneiden sich also in \emph{zwei} Punkten:
+\begin{equation*}
+  z=\pm\tfrac{\sqrt3}{2}-\tfrac12\,i .
+\end{equation*}
 
 \subsection*{c) $|zw|=|z||w|$}
-Mit $|u|^2=u\bar u$:
+\emph{Gedankenschritt:} Statt den Betrag direkt auszuwerten, nutzt man
+die Identität $|u|^2=u\bar u$, weil Konjugation \emph{durch Faktoren
+durchgeht} ($\overline{z w}=\bar z\,\bar w$), und vergleicht quadrat
+mit quadrat:
 \begin{equation*}
-  |zw|^2=(zw)\overline{(zw)}=zw\,\bar z\,\bar w=(z\bar z)(w\bar w)
-  =|z|^2\,|w|^2.
+  |zw|^2=(zw)\overline{(zw)}=zw\,\bar z\,\bar w
+  =(z\bar z)(w\bar w)=|z|^2\,|w|^2 .
 \end{equation*}
-Da der Betrag nichtnegativ ist, folgt $|zw|=|z||w|$.
+Da Beträge nichtnegativ sind, folgt die Quadratwurzel beider Seiten:
+$|zw|=|z||w|$. Geometrisch plausibel: Multiplizieren multipliziert die
+Abstände vom Ursprung.
 
 \begin{ergebnis}
 \begin{equation*}
-  \text{a)}\ |z-(1-i)|>1\ \text{(äußerer Bereich um }1-i); \qquad
-  \text{b)}\ z=\pm\tfrac{\sqrt3}{2}-\tfrac12i; \qquad
-  \text{c)}\ |zw|=|z||w|.
+  \text{a) } |z-(1-i)|>1\ \text{(Äußeres um }1-i);\qquad
+  \text{b) } z=\pm\tfrac{\sqrt3}{2}-\tfrac12 i;\qquad
+  \text{c) } |zw|=|z||w|.
 \end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Probe b):} Für $z=\frac{\sqrt3}{2}-\frac12i$ ist
-$|z+i|=|\frac{\sqrt3}{2}+\frac12i|=\sqrt{\frac34+\frac14}=1$; deutlich
-$|z-i|=|\frac{\sqrt3}{2}-\frac32i|=\sqrt{\frac34+\frac94}=\sqrt3$. Beide
-Bedingungen erfüllt, ebenso für das Minus-Vorzeichen.
+\textbf{Probe (b):} Für $z=\frac{\sqrt3}{2}-\frac12 i$:
+$|z+i|=|\frac{\sqrt3}{2}+\frac12 i|=\sqrt{\frac34+\frac14}=1$;
+$|z-i|=|\frac{\sqrt3}{2}-\frac32 i|=\sqrt{\frac34+\frac94}=\sqrt3$.
+Beide Bedingungen erfüllt, ebenso beim Minus-Vorzeichen. \checkmark
 
-\textbf{Beispiel c):} $z=i$, $w=1+i$: $|zw|=|i-1|=\sqrt2$,
-$|i||1+i|=1\cdot\sqrt2$ -- passt.
+\textbf{Beispiel (c):} $z=i$, $w=1+i$: $|zw|=|-1+i|=\sqrt2$,
+$|i|\,|1+i|=1\cdot\sqrt2$. \checkmark
+
+\textbf{Grenzfall:} Hätten wir nur eine Betragsbedingung (nicht zwei),
+gäbe es einen ganzen Kreis unendlich vieler Lösungen; erst der Schnitt
+zweier Kreise erzwingt endlich zwei. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-$|z-z_0|$ zeichnet sich als Kreis; Ungleichungen mit $<$/$>$ trennen Innen
-und Außen. Schnitt zweier Betragsbedingungen: quadrieren, subtrahieren
-(dadurch linear), auflösen -- jeder Schnittkreispartner gibt eine Lösung.
-$|zw|=|z||w|$ folgt aus $|u|^2=u\bar u$.
+$|z-z_0|$ ist der Abstand zu $z_0$; Ungleichungen mit $<$ bzw.\ $>$
+trennen Innen und Außen der Kreisscheibe. Beim Schnitt zweier
+Betragsbedingungen quadrieren, subtrahieren (das macht die Bedingung
+linear), dann auflösen -- jeder Schnittpunkt ist eine Lösung.
+$|zw|=|z||w|$ folgt aus $|u|^2=u\bar u$ und
+$\overline{zw}=\bar z\,\bar w$.
 \end{merksatz}

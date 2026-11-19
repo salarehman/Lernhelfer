@@ -1,5 +1,8 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Faktoren so wählen, dass beim Addieren eine Variable
+% verschwindet; dann zurücksetzen und beide Gleichungen als Probe prüfen.
+
 \subsection*{Gegeben und gesucht}
 \begin{equation}
   -3x+4y=-1 \tag{I}
@@ -9,9 +12,14 @@
 \end{equation}
 gesucht: Lösungspaar $(x,y)$.
 
-\subsection*{Ansatz}
-Additionsverfahren: (I) mit $2$, (II) mit $3$ multiplizieren, addieren --
-$y$ wird eliminiert.
+\subsection*{Ansatz und der entscheidende Gedankenschritt}
+\textbf{Warum das Additionsverfahren?} Wir wollen $x$ loswerden. Die
+$x$-Koeffizienten sind $-3$ und $2$; das kleinste gemeinsame Vielfache
+ist $6$ (mit entgegengesetztem Vorzeichen). Multiplizieren wir (I) mit
+$2\to -6x$ und (II) mit $3\to 6x$, so hebt sich beim Addieren $x$ auf:
+$-6x+6x=0$. Es bleibt eine Gleichung nur in $y$.
+Alternativ könnte man $y$ eliminieren (kgV der $y$-Koeffizienten $4$ und
+$-5$ ist $20$); wir wählen die $x$-Variante.
 
 \subsection*{Rechnung}
 \begin{align}
@@ -25,6 +33,11 @@ Addieren:
 In (II) einsetzen: $2x-5\cdot2=-4 \Rightarrow 2x-10=-4\Rightarrow 2x=6
 \Rightarrow x=3$.
 
+\textbf{Gedanke beim Rücksetzen:} Wir setzen $y=2$ in eine der
+ursprünglich gegebenen Gleichungen (hier II), nicht in eine der
+multiplizierten --- so bleibt die Rechnung direkt an der Ausgangslage
+geankert.
+
 \begin{ergebnis}
 \begin{equation*}
   x=3,\qquad y=2 .
@@ -32,11 +45,23 @@ In (II) einsetzen: $2x-5\cdot2=-4 \Rightarrow 2x-10=-4\Rightarrow 2x=6
 \end{ergebnis}
 
 \begin{kontrolle}
-In (I): $-3\cdot3+4\cdot2=-9+8=-1$; in (II): $2\cdot3-5\cdot2=6-10=-4$.
-Beide Gleichungen erfüllt.
+\textbf{Probe in beiden Gleichungen:} (I): $-3\cdot3+4\cdot2=-9+8=-1$;
+(II): $2\cdot3-5\cdot2=6-10=-4$. Beide Gleichungen erfüllt.
+
+\textbf{Plausibilität:} Eingesetzt in die $-y$-Zeilengleichung
+$-7y=-14$ stimmt $y=2$; die rechte Seite von (I), $-1$, wird mit dem
+Paar $(3,2)$ exakt $-1$. Da der Schnittpunkt beide Geraden trifft, ist
+das Paar eindeutig.
+
+\textbf{Grenzfall/Idee:} Wäre die $x$-Elimination fehlgeschlagen (weil die
+Gleichungen linear abhängig wären, also parallele Geraden), w\"are über das
+Additionsverfahren $0=0$ (unendlich viele L\"osungen) bzw. $0=\text{Konst}$
+(keine Lösung) herausgekommen. Dass wir einen eindeutigen Schnittpunkt
+erhalten, bestätigt die Unabh\"angigkeit der beiden Geraden.
 \end{kontrolle}
 
 \begin{merksatz}
-Beim Additionsverfahren systematisch eine Variable eliminieren und die
-Lösung in beide Gleichungen zurückprüfen.
+Beim Additionsverfahren systematisch eine Variable eliminieren (Faktoren
+so, dass die Koeffizienten ein negatives Vielfachen-Paar bilden), lösen,
+rücksetzen und die Lösung in \emph{beide} Gleichungen zur\"uckpr\"ufen.
 \end{merksatz}

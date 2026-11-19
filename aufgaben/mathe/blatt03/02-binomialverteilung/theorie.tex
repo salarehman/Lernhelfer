@@ -2,8 +2,15 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Zwei konkrete Wahrscheinlichkeiten mit der Binomialverteilung bestimmen:
-verspätete Zugfahrten und herausspringende Fische.
+% Grundidee: n unabhängige Versuche, Erfolgswahrscheinlichkeit p; die
+% Wahrscheinlichkeit für genau k Erfolge ist binom(n,k) p^k (1-p)^{n-k}.
+% "Mindestens" = Summe; "mindestens einer" = Komplement.
+
+Die Binomialverteilung beschreibt die Zahl der Erfolge in $n$
+unabhängigen Wiederholungen desselben Experiments. Sie kombiniert zwei
+Ideen, die wir schon kennen: \emph{Kombinatorik} (auf wie viele Arten für
+man die $k$ erfolgreichen Versuche aus) und \emph{Multiplikativität}
+(jeder einzelne Versuchs-Ausgang hat seine Wahrscheinlichkeit).
 
 \begin{werkzeugkasten}[Binomialverteilung]
 Bei $n$ unabhängigen Versuchen mit Erfolgswahrscheinlichkeit $p$ ist die
@@ -11,20 +18,32 @@ Wahrscheinlichkeit für genau $k$ Erfolge
 \begin{equation}
   \mathrm P(k)=\binom{n}{k}p^k(1-p)^{n-k}.
 \end{equation}
+\textbf{Warum genau diese Form?} (1) $p^k$: die $k$ Erfolge \emph{einzeln};
+(2) $(1-p)^{n-k}$: die $n-k$ Misserfolge; (3) $\binom{n}{k}$: \emph{auf
+wie viele Positionen} die $k$ Erfolge in den $n$ Versuchen liegen k\"onnen.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Mindestens-Umformung]
 \begin{itemize}
-  \item ``Mindestens $4$ von $5$ verspätet'' (Erfolg $=$ Verspätung,
-        $p=\tfrac15$): $\mathrm P(4)+\mathrm P(5)$.
-  \item ``Mindestens einer von $n$'': Komplement
-        $1-\mathrm P(\text{keiner})=1-(1-p)^n$.
+  \item ``Mindestens $4$ von $5$ versp\"atet`` (Erfolg $=$ Versp\"atung,
+        $p=\tfrac15$): $k\ge4$, also $P(4)+P(5)$ (Summe über $k=4,5$).
+  \item ``Mindestens einer von $n$``: bequemer über das
+        \emph{Gegenereignis} ``keiner``
+        \begin{equation}
+          1-\mathrm P(\text{keiner})=1-(1-p)^n .
+        \end{equation}
+        Das ist oft \emph{viel} schneller als $\sum_{k=1}^{n}\binom nk
+        p^k(1-p)^{n-k}$.
 \end{itemize}
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item ``Mindestens $4$ von $5$'' heißt $4$ \emph{oder} $5$ -- beide Fälle
-        addieren ($k=4$ und $k=5$).
-  \item ``Mindestens ein Fisch springt hinaus'' bequemer über das
-        Gegenereignis ``keiner springt hinaus'' $=(1-p)^n$.
-  \item $p$ und $\binom{n}{k}$ korrekt einsetzen: $\mathrm P(5)=\binom55 p^5 (1-p)^0=p^5$.
+  \item ``Mindestens $4$ von $5$`` heißt $4$ \emph{oder} $5$ --- beide
+        F\"alle addieren ($k=4$ und $k=5$).
+  \item ``Mindestens ein Fisch springt hinaus` bequemer über das
+        Gegenereignis ``keiner springt hinaus`` $=(1-p)^n$.
+  \item $p$ und $\binom{n}{k}$ korrekt einsetzen:
+        $P(5)=\binom55 p^5(1-p)^0=p^5$.
 \end{itemize}
 \end{achtung}

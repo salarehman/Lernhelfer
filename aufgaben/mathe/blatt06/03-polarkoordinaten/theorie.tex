@@ -7,43 +7,58 @@ Zahlen in Polarkoordinaten umrechnen, Potenzen mit der Moivre-Formel
 berechnen, komplexe Gleichungen wie $z^4=-1$ lösen und eine Drehung am
 Ortsvektor durchführen.
 
-\begin{werkzeugkasten}[Polarkoordinaten und de Moivre]
-Jede Zahl $z=r(\cos\varphi+i\sin\varphi)=r\mathrm e^{i\varphi}$ mit
+\begin{werkzeugkasten}[Polarkoordinaten und de Moivre -- Potenzieren als Drehen]
+Jede Zahl $z=a+ib$ lässt sich als Punkt lesen, der durch Abstand $r$ und
+Winkel $\varphi$ bestimmt ist:
 \begin{equation*}
   r=|z|=\sqrt{a^2+b^2},\qquad
-  \varphi=\arg(z)\ \text{im passenden Quadranten}.
+  \varphi=\arg z \ \text{im passenden Quadranten},\qquad
+  z=r(\cos\varphi+i\sin\varphi)=r\,\mathrm e^{i\varphi}.
 \end{equation*}
-Für Potenzen und Wurzeln gilt die Moivre-Formel
+Der Gewinn der Polardarstellung ist die \textbf{Multiplikation als
+Drehung}: Mal $n$-mal dieselbe Zahl bedeutet $n$-mal dasselbe Drehen, also
+Winkel $n\varphi$ und Radius $r^n$. Genau das besagt die
+\textbf{Moivre-Formel}
 \begin{equation*}
-  z^n=r^n(\cos(n\varphi)+i\sin(n\varphi)),\qquad
-  z^{1/n}=r^{1/n}\Bigl(\cos\frac{\varphi+2\pi k}{n}
-  +i\sin\frac{\varphi+2\pi k}{n}\Bigr),\ k=0,\dots,n-1.
+  z^n=r^n(\cos n\varphi+i\sin n\varphi)=r^n\,\mathrm e^{in\varphi}.
 \end{equation*}
+Ebenso entsteht die $n$-te Wurzel dadurch, dass man \emph{rückwärts dreht}
+und alle $n$ Stellungen auf dem Kreis nimmt:
+\begin{equation*}
+  z^{1/n}=r^{1/n}\,\mathrm e^{i(\varphi+2\pi k)/n},\qquad k=0,1,\ldots,n-1 .
+\end{equation*}
+Die $+2\pi k$ stehen für die $n$ Winkel, die äquivalent zum selben Ort
+sind; $z^n=w$ hat deshalb $n$ Lösungen.
 
-\textit{Skript:} Kap. 1 (Moivre).
+\textit{Skript:} Kap. 1 (Polarkoordinaten, de Moivre).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Kurze Umrechnungen]
+\begin{werkzeugkasten}[Kurze Umrechnungen -- Worauf zu achten ist]
 \begin{itemize}
-  \item $-5=-5+0i$: $r=5$, $\varphi=\pi$.
-  \item $-3i+3=3-3i$: $r=3\sqrt2$, $\varphi=-\frac\pi4$.
-  \item $\frac1i=-i$: $r=1$, $\varphi=-\frac\pi2$.
-  \item $1+i\tan\alpha$: $r=\sec\alpha=\frac{1}{\cos\alpha}$,
-        $\varphi=\alpha$ (da $\cos\alpha>0$ für
-        $-\frac\pi2<\alpha<\frac\pi2$).
+  \item $-5=-5+0i$: $r=5$, $\varphi=\pi$ (negative reelle Achse).
+  \item $-3i+3=3-3i$: $r=\sqrt{9+9}=3\sqrt2$, $\varphi=-\tfrac\pi4$ (4.
+        Quadrant).
+  \item $\frac1i=\frac{i}{i^2}=-i$: $r=1$, $\varphi=-\tfrac\pi2$.
+  \item $1+i\tan\alpha$: Realteil $\cos\alpha$, Imaginärteil $\sin\alpha$
+        über die Skalierung $r=\sec\alpha=\frac1{\cos\alpha}$; es gilt
+        $1+i\tan\alpha=\sec\alpha(\cos\alpha+i\sin\alpha)$, also
+        $r=\sec\alpha$, $\varphi=\alpha$ (für $-\tfrac\pi2<\alpha<
+        \tfrac\pi2$, wo $\cos\alpha>0$).
 \end{itemize}
 \textit{Skript:} Kap. 1 (Polarkoordinaten).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Den Quadranten beim Argument nicht übersehen: $1-i\sqrt3$ liegt im
-        \emph{vierten} Quadranten, $\varphi=-\frac\pi3$.
-  \item Bei $z^n$ mit großem $n$ zuerst in Polarkoordinaten umrechnen, dann
-        de Moivre anwenden -- nicht ausmultiplizieren.
-  \item $z^4=-1$ hat \emph{vier} Lösungen, gleichmäßig auf dem Einheitskreis
-        (Richtungen $\pi/4$, $3\pi/4$, $5\pi/4$, $7\pi/4$).
-  \item Eine Drehung um $\theta$ multipliziert mit
-        $e^{i\theta}$: $\varphi\mapsto\varphi+\theta$; Radius bleibt gleich.
+  \item \textbf{Quadrant des Arguments:} $1-i\sqrt3$ liegt im 4. Quadranten,
+        $\varphi=-\tfrac\pi3$ (nicht $+\tfrac\pi3$). Den Winkel nie blind
+        vom $\arctan$ übernehmen.
+  \item \textbf{Bei $z^n$ IMMER erst in Polarkoordinaten umrechnen:}
+        Potenzieren in $a+ib$-Form ist mühsam und fehleranfällig; de Moivre
+        macht es zum Drehen.
+  \item \textbf{$z^4=-1$ hat vier Lösungen} (nicht zwei): die vier Punkte
+        $\mathrm e^{i\pi k/4}$ auf dem Einheitskreis.
+  \item \textbf{Drehung um $\theta$ heißt Mal $\mathrm e^{i\theta}$:} der
+        Radius bleibt, nur der Winkel $\varphi$ wird zu $\varphi+\theta$.
 \end{itemize}
 \end{achtung}

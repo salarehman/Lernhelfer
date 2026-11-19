@@ -2,44 +2,52 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Konvergenz einer Wurzelfolge mit explizitem $N$ (je nach $\varepsilon$),
-Nichtkonvergenz einer alternierenden Folge und eine konkrete Reihe.
+% Grundidee: Konvergenz heißt "bleibt ab irgendeinem N in jeder
+% epsilon-Umgebung". Man löst die Ungleichung nach n auf, um N zu finden.
+% Alternierende Folgen und Reihen brauchen besondere Behandlung.
+
+Der Begriff der Konvergenz wird durch $\varepsilon$-Umgebungen
+\emph{verteidigt}: Die Folge $a_n$ konvergiert gegen $a$, wenn man sie ab
+einem Index $N$ in jedes noch so kleine Fenster der Breite $2\varepsilon$
+um $a$ einsperren kann. Konkretes $N$ auszurechnen heißt: die Ungleichung
+$|a_n-a|<\varepsilon$ nach $n$ aufl\"osen.
 
 \begin{werkzeugkasten}[Definition Konvergenz]
 $a_n\to a$: zu jedem $\varepsilon>0$ existiert $N$ mit $|a_n-a|<\varepsilon$
-für alle $n>N$. Für $a_n=\frac1{\sqrt{n^3+2}}\to0$ löst man
+f\"ur alle $n>N$. F\"ur $a_n=\frac1{\sqrt{n^3+2}}\to0$ l\"ost man
 \begin{equation}
   \frac1{\sqrt{n^3+2}}<\varepsilon\ \Longleftrightarrow\ n^3+2>\frac1{\varepsilon^2}
 \end{equation}
-und wählt $N$ entsprechend der linken Seite von $\varepsilon$ (und damit
-auch für $\varepsilon=10^{-3}$ konkret $N=99$).
+und w\"ahlt $N$ aus der linken Seite von $\varepsilon$. (F\"ur das
+konkrete $\varepsilon=10^{-3}$: $N\approx99$.)
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Keine Konvergenz bei alternierenden Folgen]
-Eine Folge $b_n=(-1)^n$ konvergiert nicht: die Teilfolge
-$b_{2k}=1$ und $b_{2k+1}=-1$ hätten verschiedene Grenzwerte, was eine
-eindeutiger Konvergenz ausschließt. Eine konvergente Folge hat genau einen
-Grenzwert.
+\begin{werkzeugkasten}[Nichtkonvergenz einer alternierenden Folge]
+$b_n=(-1)^n$ konvergiert nicht: Die Teilfolgen $b_{2k}=1$ und
+$b_{2k+1}=-1$ hätten unterschiedliche Grenzwerte, was ein eindeutiger
+Grenzwert ausschließt. \textbf{Aussage:} Eine konvergente Folge hat
+genau \emph{einen} Grenzwert; jede Teilfolge muss ebenfalls dorthin
+konvergieren.
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Geometrische Reihe]
 \begin{equation}
   \sum_{k=0}^{\infty}q^k=\frac1{1-q}\quad(|q|<1).
 \end{equation}
-Für $\sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}$ klammert man
-$\frac14$ aus und summiert die geometrische Reihe mit
-$q=-\frac34$; dabei die fehlenden Glieder $k=0,1$ wieder abziehen.
+F\"ur $\sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}$ klammert man
+$\frac14$ aus ($4^{k+1}=4\cdot4^k$) und erh\"alt eine geometrische Reihe
+mit $q=-\frac34$; die fehlenden Glieder $k=0,1$ zieht man wieder ab.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
   \item Das $N$ muss zu $\varepsilon$ passen: aus
-        $n^3+2>\frac1{\varepsilon^2}$ folgt ein $N(\varepsilon)$; für das
-        konkrete $\varepsilon=10^{-3}$ gibt das $N\ge100$.
-  \item ``$n>N$'' und ``$n\ge N$'' nicht verwechseln -- entsprechend wählen.
-  \item $(-1)^n$ hat keine Grenzwert-Eigenschaft; der Vergleich zweier
-        Teilfolgen zeigt die Nichtkonvergenz.
-  \item Bei der Reihe zuerst die Indizes $k=0,1$ vom Rest trennen, dann
-        geometrisch aufsummieren.
+        $n^3+2>\frac1{\varepsilon^2}$ folgt $n>\sqrt[3]{1/\varepsilon^2-2}$.
+  \item ``$n>N$`` und ``$n\ge N$`` nicht verwechseln --- entsprechend
+        w\"ahlen.
+  \item $(-1)^n$ hat keinen Grenzwert; den Vergleich zweier Teilfolgen
+        verwenden.
+  \item Bei der Reihe zuerst $k=0,1$ vom Rest trennen, dann geometrisch
+        aufsummieren.
 \end{itemize}
 \end{achtung}

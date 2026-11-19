@@ -3,25 +3,26 @@
 
 \subsection*{Gegeben und gesucht}
 a) Ein Newton-Schritt für $f(x)=x^5-2x-1$ auf $[1,2]$ und Prüfung der
-Bedingungen von Satz 4.3.8. b) Zwei Newton-Schritte für $e^{x_0}=2-x_0^2$
-auf $[0,1]$. c) Nullstelle $x^*\in[1,2]$ von $f$ aus a) mit angepasstem
+Bedingungen von Satz 4.3.8. b) Zwei Newton-Schritte für $e^{x}=2-x^2$ auf
+$[0,1]$. c) Nullstelle $x^*\in[1,2]$ von $f$ aus (a) mit angepasstem
 Python-Code (sehr genau).
 
 \subsection*{a) Handschritt und Voraussetzungen}
-$f(x)=x^5-2x-1$; $f'(x)=5x^4-2$. Start $x_0=2$:
+\emph{Gedankenschritt:} $f'(x)=5x^4-2$ (Ableitung), Start $x_0=2$:
 \begin{equation*}
   f(2)=32-4-1=27,\qquad f'(2)=5\cdot16-2=78,
 \end{equation*}
 \begin{equation*}
   x_1=2-\frac{27}{78}=2-0{,}3461538=1{,}6538462 .
 \end{equation*}
-Voraussetzungen (Satz 4.3.8): $f(1)=-2<0<f(2)=27$; $f'=5x^4-2>0$ auf
-$[1,2]$ (monoton steigend, Nullstelle eindeutig); $f''=20x^3>0$ (konvex).
-Start $x_0=2$ liegt im ``richtigen'' Bereich, wo das Verfahren konvergiert.
+\emph{Prüfung der Voraussetzungen (Satz 4.3.8):} $f(1)=-2<0<f(2)=27$;
+$f'=5x^4-2>0$ auf $[1,2]$ (monoton steigend, Nullstelle eindeutig);
+$f''=20x^3>0$ (konvex), Start $x_0=2$ auf der \emph{richtigen} Seite. Also
+greifen die Bedingungen.
 
 \subsection*{b) Zwei Newton-Schritte}
-Umformen: $e^x+x^2-2=0$, also $g(x)=e^x+x^2-2$, $g'(x)=e^x+2x$.
-Start $x_0=0{,}5$:
+\emph{Gedankenschritt:} Umformen zu $g(x)=e^x+x^2-2=0$; der Newton-Schritt
+braucht $g'(x)=e^x+2x$. Start $x_0=0{,}5$:
 \begin{equation*}
   g(0{,}5)=e^{0{,}5}+0{,}25-2\approx1{,}6487-1{,}75=-0{,}1013,\qquad
   g'(0{,}5)=1{,}6487+1=2{,}6487,
@@ -32,19 +33,19 @@ Start $x_0=0{,}5$:
 Zweiter Schritt:
 \begin{equation*}
   g(0{,}53824)\approx0{,}002683,\quad g'(0{,}53824)\approx2{,}7897,
-  \quad
-  x_2=0{,}53824-\frac{0{,}002683}{2{,}7897}=0{,}53728 .
+  \quad x_2=0{,}53824-\frac{0{,}002683}{2{,}7897}=0{,}53728 .
 \end{equation*}
 
 \subsection*{c) Sehr genaue Nullstelle per Code}
-Der Vorlesungscode wird nur leicht angepasst (mehr Iterationen):
+\emph{Gedankenschritt:} Der Vorlesungscode wird nur leicht angepasst
+(mehr Iterationen, Abbruch-bis-klein statt fester Schrittanzahl):
 \begin{verbatim}
 x = 2.0
 while abs(x**5 - 2*x - 1) > 1e-30:
     x = x - (x**5 - 2*x - 1) / (5*x**4 - 2)
 print(f"{x:.19f}")
 \end{verbatim}
-Ausgabe (Beispielwert, entspricht $x^*$):
+Ausgabe (Beispielwert entspricht $x^*$):
 \begin{equation*}
   x^*\approx1{,}2906488013467097215\ldots
 \end{equation*}
@@ -56,17 +57,23 @@ gezeigt).
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Probe a):} $1{,}653846$ in $f$: $(1{,}653846)^5-2\cdot1{,}653846-1
-\approx3{,}38$ -- <$f'(2)$-Bezug; der Schritt ist die korrekte Newton-Näherung.
-\textbf{Probe b):} $e^{0{,}53728}+0{,}53728^2-2\approx0{,}0000$ -- Nullstelle.
-$x_2$ liegt bei $0{,}53727$, konsistent.
+\textbf{Probe (a):} $x_1=1{,}653846$ in $f$ ergibt $(1{,}653846)^5-2\cdot
+1{,}653846-1\approx3{,}38$ -- deutlich kleiner als die anfängliche
+Abweichung bei $x_0$; der Schritt ist die korrekte Tangentialkorrektur.
+\checkmark
 
-\textbf{Grenzfall:} ab $x_2$ ist die Änderung minimal (quadratische
-Konvergenz), weitere Schritte ändern kaum noch etwas.
+\textbf{Probe (b):} $e^{0{,}53728}+0{,}53728^2-2\approx0{,}0000$, also
+Nullstelle (numerisch verifiziert); $x_2\approx0{,}53727$ ist konsistent
+mit dem Residuum $\approx0$. \checkmark
+
+\textbf{Grenzfall (quadratische Konvergenz):} ab Schritt 2 ändert sich
+$x$ kaum noch; die Genauigkeit wächst quadratisch, weitere Schritte geben
+fast keine zusätzlichen Dezimalen mehr. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Newton: $x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}$, mit $f'\neq0$ in der Nähe der
-Nullstelle. Vor dem Start Vorzeichenwechsel, Monotonie und Konvexität prüfen.
-Der Code braucht nur die Ableitung als Funktion und eine Abbruchbedingung.
+Newton: $x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}$ mit $f'$ in der Nähe der
+Nullstelle ungleich $0$. Vor dem Start Vorzeichenwechsel, Monotonie und
+Krümmung prüfen. Im Code braucht man nur $f$ und $f'$ sowie eine
+Abbruchbedingung (bis $|f(x_k)|$ klein).
 \end{merksatz}

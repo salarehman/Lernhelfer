@@ -2,38 +2,51 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Grenzwertrechenregeln direkt mit den $\varepsilon$-Definitionen beweisen
-(ohne den Grenzwertsatz 2.1.6 zu verwenden).
+% Grundidee: Beweisheuristik "zu jedem epsilon existiert N". Für c*a_n
+% transportiert man die Schranke; für c*b_n Nicht konvergieren; für den
+% Quotienten nutzt man Beschränktheit des Zählers + Divergenz des Nenners.
 
-\begin{werkzeugkasten}[Definitionen]
+Diese Aufgabe trainiert das eigentliche Handwerkszeug der Analysis: die
+$\varepsilon$-$N$-Definition \emph{selbst} zu benutzen, statt sich auf
+fertige Grenzwerts\"atze zu verlassen. Die K\"unst ist, die Definition
+strategisch \emph{umzudrehen}: Man fragt ``welches $N$ brauche ich, damit
+$|(...)|<\varepsilon$ gilt?`` und liest es aus der Voraussetzung ab.
+
+\begin{werkzeugkasten}[Die drei Definitionen als Werkzeug]
 \begin{itemize}
-  \item Konvergenz $a_n\to a$: zu jedem $\varepsilon>0$ existiert
-        $N\in\mathbb N$ mit $|a_n-a|<\varepsilon$ für alle $n>N$.
+  \item Konvergenz $a_n\to a$: zu jedem $\varepsilon>0$ existiert $N$ mit
+        $|a_n-a|<\varepsilon$ f\"ur alle $n>N$.
   \item Divergenz $b_n\to\infty$: zu jedem $M>0$ existiert $N$ mit
-        $b_n>M$ für alle $n>N$.
-  \item Konvergenz gegen $0$: zu jedem $\varepsilon>0$ existiert $N$ mit
-        $|c_n/b_n|<\varepsilon$ für alle $n>N$.
+        $b_n>M$ f\"ur alle $n>N$.
+  \item Konvergenz gegen $0$, Quotient: zu jedem $\varepsilon>0$
+        existiert $N$ mit $|c_n/b_n|<\varepsilon$ f\"ur alle $n>N$.
 \end{itemize}
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Strategie]
-\begin{itemize}
-  \item $\lim(c\,a_n)=c\,a$: Skizze
-        $|c\,a_n-c\,a|=|c|\,|a_n-a|$; wähle $N$ für $\varepsilon/|c|$.
-  \item $\lim(c\,b_n)=\infty$ ($c>0$): $|c|\,b_n>M$ für $b_n>M/|c|$.
-  \item $\lim c_n/b_n=0$: nutze Beschränktheit $c_n\le S$ und
-        $b_n\to\infty$, also $|c_n/b_n|\le S/b_n\to0$.
-\end{itemize}
+\begin{werkzeugkasten}[Die Strategie hinter allen drei Beweisen]
+\textbf{(1) $c\,a_n$:} Der Faktor $c$ vor der Differenz ist die
+\emph{einzige} St\"orung. Wegen $|c\,a_n-c\,a|=|c|\,|a_n-a|$ gen\"ugt es,
+$N$ so zu w\"ahlen, dass $|a_n-a|<\varepsilon/|c|$ --- dann ist die
+Differenz $<|c|\cdot\varepsilon/|c|=\varepsilon$. Man ``teilt`` die
+Schranke also vorab durch $|c|$.
+
+\textbf{(2) $c\,b_n$.} Analog: Aus $b_n>M/|c|$ (mit $c>0$: $b_n>M/c$)
+folgt $c\,b_n>c\cdot M/c=M$.
+
+\textbf{(3) $c_n/b_n$.} Aus der \emph{Beschr\"anktheit} $|c_n|\le S$
+und dem \emph{Anwachsen} $b_n\to\infty$ folgt
+$|c_n/b_n|\le S/b_n\to0$. Man w\"ahlt $N$ mit $b_n>S/\varepsilon$.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Aus $c>0$ folgt $|c|=c$; nur mit $c>0$ ist $c\,b_n\to\infty$ (bei
-        $c<0$ wäre es $-\infty$).
-  \item Beim ersten Beweis $N$ für $\tfrac{\varepsilon}{|c|}$ wählen und
-        sauber abschließen, nicht nur ``trivial'' schreiben.
-  \item Beim dritten Beweis beide Voraussetzungen ($c_n\le S$,
-        $b_n\to\infty$) gleichzeitig nutzen; das kleine $N$ ergibt sich aus
+  \item Aus $c>0$ folgt $|c|=c$; nur mit $c>0$ ist $c\,b_n\to\infty$
+        (bei $c<0$ h\"atte man $-\infty$ bzw. muss das Vorzeichen
+        separat behandeln).
+  \item Beim ersten Beweis $N$ f\"ur $\tfrac{\varepsilon}{|c|}$ w\"ahlen
+        und sauber abschlie\"ssen, nicht blo\ss{} ``trivial`` schreiben.
+  \item Beim dritten beide Voraussetzungen ($c_n\le S$, $b_n\to\infty$)
+        \emph{gleichzeitig} benutzen; das $N$ ergibt sich aus
         $b_n>S/\varepsilon$.
 \end{itemize}
 \end{achtung}

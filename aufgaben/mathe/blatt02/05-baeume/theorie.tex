@@ -2,37 +2,56 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Für einen Baum, in dem jeder Knoten, der kein freies Ende ist, genau drei
-benachbarte Kanten hat, zeigen: $n$ ist gerade und der Baum hat genau
-$\tfrac n2+1$ freie Enden.
+% Grundidee: Das Handschlaglemma (Summe der Grade = doppelte Kantenzahl)
+% macht aus lokalen Grad-Angaben (Blätter Grad 1, innere Grad 3) eine
+% globale Aussage (n gerade, Zahl der Blätter = n/2+1).
 
-\begin{werkzeugkasten}[Begriffe und Handschlaglemma]
-Ein \emph{Baum} ist ein zusammenhängender kreisfreier Graph. Ein
-\emph{freies Ende} ist ein Knoten vom Grad $1$ (Blatt); die übrigen Knoten
-haben Grad $3$. In jedem Baum gilt \emph{Eckenbilanz}:
+Ein \emph{Baum} ist ein zusammenhängender kreisfreier Graph. Die Aufgabe
+gibt lokale Informationen (die meisten Knoten haben genau 3 Nachbarn,
+nur die ``freien Enden``/Blätter haben Grad 1) und verlangt eine globale
+Konsequenz (die Zahl der Knoten und die Zahl der Blätter sind fest
+verknüpft). Der Schlüssel ist das \emph{Handschlaglemma}.
+
+\begin{werkzeugkasten}[Handschlaglemma (Eckenbilanz)]
+In jedem Graphen zählt jede Kante \emph{zwei} Knoten-Endpunkte. Summiert
+man die Grade aller Knoten, zählt man also jede Kante zweimal:
 \begin{equation}
-  \sum_{\text{Knoten }v}\deg(v)=2\cdot(\text{Anzahl Kanten})=2(n-1).
+  \sum_{\text{Knoten }v}\deg(v)=2\cdot(\text{Anzahl Kanten}).
 \end{equation}
-Diese Bilanz liefert bereits $n$ gerade und $\tfrac n2+1$ freie Enden.
+In einem Baum mit $n$ Knoten gibt es genau $n-1$ Kanten (Baum = ohne
+Kreis, zusammenhängend), also gilt für einen Baum:
+\begin{equation}
+  \sum_v \deg(v)=2(n-1).
+\end{equation}
+Das ist eine sehr starke algebraische Beziehung: Sie hängt die ``lokalen``
+Grad-Angaben (Blätter haben Grad $1$, innere Knoten Grad $3$) mit der
+globalen Knotenzahl $n$ und der Blattzahl zusammen.
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Induktionsschritt mit freien Enden]
-Per Induktion über $n$. Für $n>2$ gibt es einen Knoten, der zu
-\emph{mindestens} zwei freien Enden benachbart ist. Entfernt man diese
-beiden freien Enden zusammen mit den angrenzenden Kanten, wird der nun
-freie Knoten selbst ein freies Ende: $n$ sinkt um $2$, die Zahl der freien
-Enden um $1$. Damit ist die Zahl $\tfrac n2+1$ invariante:
-$(n-2)/2+1=n/2$.
+\begin{werkzeugkasten}[Zwei Wege zur Blattzahl]
+\textbf{Weg A (Eckenbilanz, der schnellste):} Sei $L$ die Zahl der
+Blätter (Grad 1), dann haben $n-L$ Knoten Grad 3. Die Bilanz
+\begin{equation}
+  L\cdot1+(n-L)\cdot3=2(n-1)
+\end{equation}
+ist eine lineare Gleichung in $L$ --- man löst sie direkt nach $L$ auf
+und findet $L=\tfrac n2+1$ und damit auch, dass $n$ gerade sein muss.
+
+\textbf{Weg B (Induktion):} Entfernt man \emph{zwei freie Enden} samt
+der anliegenden Kanten, sinkt $n$ um $2$ und die Blattzahl um $1$;
+die Differenz $n-2L$ bleibt invariant, man beweist die Relation
+induktiv. (Dazu: es gibt einen Knoten, der zu mindestens zwei Blättern
+benachbart ist.)
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Grad-Zusammenhang: zweimal Kanten zählen (jede Kante hat zwei
-        Enden) -- daraus das ``gerade $n$''-Argument ableiten.
+  \item Immer ``zweimal Kanten zählen`` (jede Kante hat zwei Enden) ---
+        das ``gerade $n$``-Argument kommt genau daraus.
   \item Beim induktiven Entfernen \emph{beide} freien Enden samt des
-        Zwischenknotens nehmen, sonst zerstört man die ``nur Grad 3''-
-        Bedingung der inneren Knoten.
-  \item Nicht nur $n$ gerade zeigen, sondern auch die Anzahl der freien
-        Enden ($\tfrac n2+1$) -- beides gehört zur Behauptung.
+        Zwischenknotens nehmen, sonst zerstört man die ``nur Grad 3``-
+        Bedingung.
+  \item Beide Teile der Behauptung zeigen: nicht nur `$n$ gerade`, sondern
+        auch ``Zahl der freien Enden $=\tfrac n2+1$``.
 \end{itemize}
 \end{achtung}

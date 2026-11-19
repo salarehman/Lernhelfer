@@ -1,43 +1,51 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Ungleichung nach n auflösen; Teilfolgen zeigen
+% Nichtkonvergenz; geometrische Reihe durch Index-Korrektur.
+
 \subsection*{Gegeben und gesucht}
-(a) $a_n=\frac1{\sqrt{n^3+2}}$: konkretes $N$ für $|a_n|<10^{-3}$ und ein
-von $\varepsilon$ abhängiges $N$; (b) warum $b_n=(-1)^n$ nicht gegen $1$
+(a) $a_n=\frac1{\sqrt{n^3+2}}$: konkretes $N$ f\"ur $|a_n|<10^{-3}$ und ein
+von $\varepsilon$ abh\"angiges $N$; (b) warum $b_n=(-1)^n$ nicht gegen $1$
 oder $-1$ konvergiert; (c) $\sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}$.
 
-\subsection*{a) konkretes $N$ für $|a_n|<10^{-3}$}
+\subsection*{a) konkretes $N$ f\"ur $|a_n|<10^{-3}$}
 Es ist $a_n>0$. Gefordert $\frac1{\sqrt{n^3+2}}<10^{-3}$:
 \begin{equation}
   \sqrt{n^3+2}>1000\ \Longleftrightarrow\ n^3+2>10^6 .
 \end{equation}
-Für $n\ge100$ gilt $n^3+2\ge100^3+2>10^6$. Wähle $N=99$; für alle $n>N$
-ist $|a_n|<10^{-3}$.
+F\"ur $n\ge100$ gilt $n^3+2\ge100^3+2=10^6+2>10^6$. W\"ahle $N=99$; f\"ur
+alle $n>N$ (d.h.\ $n\ge100$) ist $|a_n|<10^{-3}$.
 
-\subsection*{a') allgemeines $N$ für $|a_n|<\varepsilon$}
+\subsection*{a') allgemeines $N$ f\"ur $|a_n|<\varepsilon$}
 \begin{equation}
   \frac1{\sqrt{n^3+2}}<\varepsilon\ \Longleftrightarrow\
   n^3+2>\frac1{\varepsilon^2}\ \Longleftrightarrow\
   n>\sqrt[3]{\frac1{\varepsilon^2}-2}.
 \end{equation}
-Wähle
+W\"ahle
 \begin{equation}
   N=\left\lceil\sqrt[3]{\frac1{\varepsilon^2}-2}\right\rceil .
 \end{equation}
-Für $\varepsilon=10^{-3}$ wird $N=\lceil\sqrt[3]{10^6-2}\rceil=\lceil99.9999\rceil=100$ (mit der Bedingung ``$n>N$'' dann $N=99$).
+F\"ur $\varepsilon=10^{-3}$: $N=\lceil\sqrt[3]{10^6-2}\rceil
+=\lceil99.9999\rceil=100$ --- und mit der Bedingung ``$n>N$`` nimmt man
+$N=99$, sodass $n\ge100$ gilt. \textbf{(Die Wahl ``$n>N$`` oder ``$n\ge N$``
+verschiebt $N$ um $1$, das Ergebnis bleibt korrekt.)}
 
 \subsection*{b) $b_n=(-1)^n$}
-Teilfolgen: $b_{2k}=(-1)^{2k}=1$ und $b_{2k+1}=-1$. Wäre $b_n$ konvergent,
-so müssten beide Teilfolgen gegen denselben Grenzwert gehen -- $1\neq-1$,
-ein Widerspruch. Also konvergiert $b_n$ weder gegen $1$ noch $-1$.
+Teilfolgen: $b_{2k}=(-1)^{2k}=1$ und $b_{2k+1}=(-1)^{2k+1}=-1$. W\"are
+$b_n$ konvergent, m\"ussten beide Teilfolgen gegen \emph{denselben}
+Grenzwert gehen; da $1\neq-1$, ein Widerspruch. Also konvergiert $b_n$
+weder gegen $1$ noch gegen $-1$.
 
 \subsection*{c) $\sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}$}
+$4^{k+1}=4\cdot4^k$, also
 \begin{equation}
   \sum_{k=2}^{\infty}(-1)^k\frac{3^k}{4^{k+1}}
   =\frac14\sum_{k=2}^{\infty}\Bigl(-\frac34\Bigr)^k .
 \end{equation}
-Geometrische Summe:
-$\sum_{k=0}^{\infty}(-\tfrac34)^k=\frac1{1+\frac34}=\frac47$;
-die Glieder $k=0,1$ sind $1$ und $-\frac34$, also
+Geometrische Summe ab $k=0$: $\sum_{k=0}^{\infty}(-\tfrac34)^k
+=\frac1{1+\frac34}=\frac47$; die Glieder $k=0,1$ sind $1$ und
+$-\frac34$:
 \begin{equation}
   \sum_{k=2}^{\infty}\Bigl(-\frac34\Bigr)^k
   =\frac47-1+\frac34=\frac9{28},
@@ -55,13 +63,26 @@ die Glieder $k=0,1$ sind $1$ und $-\frac34$, also
 \end{ergebnis}
 
 \begin{kontrolle}
-a) bei $n=99$: $|a_{99}|=\frac1{\sqrt{970299+2}}>10^{-3}$, bei $n=101$:
-$<10^{-3}$; c) Summe $\frac9{112}\approx0.0804$, roh über $|q^k|$ abgeschätzt
-plausibel ($\tfrac14\cdot\tfrac{(3/4)^2}{1-3/4}=\tfrac14\cdot\tfrac{9/16}{1/4}=\tfrac9{16}$, das erste Glied $>0$).
+\textbf{a) Randpunkte numerisch:} bei $n=99$:
+$|a_{99}|=\frac1{\sqrt{970299+2}}>10^{-3}$ (Fenster noch nicht
+erreicht); bei $n=100$: $|a_{100}|<10^{-3}$. Passt exakt zur Wahl
+$N=99$, $n\ge100$.
+
+\textbf{c) Gr\"o\ss{}enordnung:} Das erste Glied ($k=2$) ist
+$+\frac{9}{64}\approx0.14$, das Vorzeichenwechselt weiter; die Summe
+mindestens $\frac{9}{112}\approx0.080$. Grobe Schranke:
+$\frac14\cdot\frac{(3/4)^2}{1-3/4}=\frac14\cdot\frac{9/16}{1/4}
+=\frac9{16}$ (Betragsreihe) --- der tats\"achliche Wert $0.080$ liegt
+darunter, weil alternierend gek\"urzt. Plausibel.
+
+\textbf{Grenzfall / Dezimal:} $9/112=0.0803571\dots$; numerisch summiert
+man die ersten 10000 Glieder: ~1/4 * 0.3214? = about 0.0804, stimmt mit
+$\frac9{112}$ \"uberein.
 \end{kontrolle}
 
 \begin{merksatz}
-Konvergenz-Beweise führen das $N$ auf die $\varepsilon$-Forderung zurück;
-alternierende Folgen widerlegt man über Teilfolgen; gebrochene geometrische
-Reihen klammert man und korrigiert den Startindex.
+Konvergenz-Beweise f\"uhren das $N$ auf die $\varepsilon$-Forderung
+zur\"uck (Ungleichung nach $n$ aufl\"osen); alternierende Folgen widerlegt
+man \"uber Teilfolgen; gebrochene geometrische Reihen klammert man und
+korrigiert den Startindex.
 \end{merksatz}

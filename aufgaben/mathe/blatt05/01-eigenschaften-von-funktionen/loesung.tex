@@ -2,40 +2,60 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-Drei Funktionen auf gerade/ungerade und Monotonie untersuchen (a), einen
-Satz über die Umkehrfunktion einer streng monoton steigenden Funktion beweisen
-(b), und eine bijektive Funktion $f\colon[0,1]\to[0,1]$ finden, die nicht
-streng monoton steigend ist (c).
+Drei Funktionen auf Gerade/Ungerade und Monotonie untersuchen (a), einen
+Satz über die Umkehrfunktion einer streng monoton steigenden Funktion
+begründen (b), und eine bijektive Funktion $f\colon[0,1]\to[0,1]$ finden,
+die nicht streng monoton steigend ist (c).
 
-\subsection*{a) Gerade/ungerade und Monotonie}
+\subsection*{a) Gerade/Ungerade und Monotonie}
+\emph{Gedankenschritt:} Symmetrie prüft man durch Ersetzen von $x$ durch
+$-x$; Monotonie durch Vergleich zweier Argumente $x_1<x_2$. Beide Prüfungen
+sind unabhängig voneinander durchzuführen.
+
 \begin{itemize}
-  \item $f_1(x)=\sqrt{1-x^2}$ auf $[-1,1]$: Es ist
-        $f_1(-x)=\sqrt{1-(-x)^2}=\sqrt{1-x^2}=f_1(x)$, also ist $f_1$
-        \textbf{gerade}. Für die Monotonie betrachtet man $x_1<x_2$ in der
-        Hälfte: auf $[0,1]$ fällt $f_1$ (die Wurzel eines fallenden Arguments),
-        auf $[-1,0]$ steigt sie. $f_1$ ist also weder streng monoton steigend
-        noch streng monoton fallend auf ganz $[-1,1]$.
-  \item $f_2(x)=10-10x$: $f_2(-x)=10+10x$, das ist weder $f_2(x)$ noch
-        $-f_2(x)$. Aus $x_1<x_2$ folgt $f_2(x_1)>f_2(x_2)$, folglich ist $f_2$
-        \textbf{streng monoton fallend}.
-  \item $f_3(x)=x^2\sin x$: $f_3(-x)=(-x)^2\sin(-x)=x^2(-\sin x)=-x^2\sin x$
-        $=-f_3(x)$, also \textbf{ungerade}. Die Monotonie wechselt wegen des
-        oszillierenden Sinus; $f_3$ ist nicht streng monoton auf $\mathbb R$.
+  \item $f_1(x)=\sqrt{1-x^2}$ auf $[-1,1]$. Einsetzen:
+        $f_1(-x)=\sqrt{1-(-x)^2}=\sqrt{1-x^2}=f_1(x)$, also \textbf{gerade}.
+        Monotonie: Auf $[0,1]$ fällt das Argument $1-x^2$ mit wachsendem $x$;
+        die (steigende) Wurzel überträgt das Fallen, also ist $f_1$ dort
+        streng fallend, auf $[-1,0]$ umgekehrt streng steigend. Wegen des
+        Symmetrieknicks bei $0$ ist $f_1$ auf \emph{ganz} $[-1,1]$ weder
+        streng steigend noch streng fallend.
+  \item $f_2(x)=10-10x$. Einsetzen: $f_2(-x)=10+10x$, weder $f_2(x)$ noch
+        $-f_2(x)$ -- $f_2$ ist weder gerade noch ungerade. Monotonie: Aus
+        $x_1<x_2$ folgt $-x_1>-x_2$, also $10-10x_1>10-10x_2$, d.h.
+        $f_2(x_1)>f_2(x_2)$: \textbf{streng monoton fallend}. (Der Graph ist
+        eine Gerade mit negativer Steigung $-10$; Steigung und Monotonie
+        stimmen überein.)
+  \item $f_3(x)=x^2\sin x$. Einsetzen:
+        $f_3(-x)=(-x)^2\sin(-x)=x^2(-\sin x)=-x^2\sin x=-f_3(x)$, also
+        \textbf{ungerade}. Der Gedanke dahinter: $x^2$ ist gerade, $\sin x$
+        ungerade, und \emph{gerade mal ungerade gleich ungerade}. Monotonie: Wegen
+        des oszillierenden $\sin$ mit wachsender Amplitude $x^2$ kann $f_3$
+        auf $\mathbb R$ nicht monoton sein.
 \end{itemize}
 
 \subsection*{b) Umkehrfunktion ist streng monoton steigend}
-Seien $u,w\in W=D$ mit $u<w$. Angenommen $g(u)\ge g(w)$. Weil $f$ streng
-monoton steigend ist, gilt dann $f(g(u))\ge f(g(w))$, also wegen
-$f\circ g=\mathrm{id}$ gerade $u\ge w$. Das widerspricht $u<w$. Es muss also
-$g(u)<g(w)$ gelten; $g$ ist streng monoton steigend.
+\emph{Warum die Kontraposition?} Wir zeigen, dass die Umkehrfunktion $g$
+steigt. Die einzige Information über ihre Wirkung ist $f(g(u))=u$. Direkt
+kann man sie nicht zerlegen, also nimmt man an, $g$ wäre \emph{nicht}
+steigend, und leitet daraus einen Widerspruch ab (Kontraposition).
+
+Seien $u<w$ aus dem Wertebereich. Angenommen $g(u)\ge g(w)$. Weil $f$
+streng monoton steigend ist, gilt für die neuen Argumente
+$f(g(u))\ge f(g(w))$. Nach $f\circ g=\mathrm{id}$ ist das aber genau
+$u\ge w$ -- im Widerspruch zu $u<w$. Die Annahme war falsch, also ist
+$g(u)<g(w)$; $g$ ist streng monoton steigend.
 
 \subsection*{c) Bijektiv, aber nicht streng monoton steigend}
-$g\colon[0,1]\to[0,1]$, $g(x)=1-x$ ist bijektiv (Umkehrung von sich selbst)
-und streng monoton \emph{fallend}, also nicht streng monoton steigend.
+$g(x)=1-x$ bildet $[0,1]$ bijektiv auf $[0,1]$ ab (sie ist ihre eigene
+Umkehrung: $g(g(x))=1-(1-x)=x$) und ist wegen der negativen Steigung $-1$
+streng monoton fallend -- also sicher nicht streng monoton steigend. Das
+Gegenbeispiel zeigt: \emph{Bijektivität} und \emph{Monotonie} sind
+unabhängige Eigenschaften.
 
 \begin{ergebnis}
 \begin{itemize}
-  \item $f_1$ gerade, $f_2$ streng monoton fallend, $f_3$ ungerade.
+  \item $f_1$ gerade; $f_2$ streng monoton fallend; $f_3$ ungerade.
   \item Die Umkehrfunktion einer streng monoton steigenden surjektiven
         Funktion ist streng monoton steigend.
   \item Ja: $g(x)=1-x$ ist bijektiv auf $[0,1]$, aber nicht monoton
@@ -44,14 +64,21 @@ und streng monoton \emph{fallend}, also nicht streng monoton steigend.
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Probe:} $g(g(x))=1-(1-x)=x$, also ist $g$ die inverse Abbildung zu
-sich selbst und damit bijektiv. Für $x_1<x_2$ ist $g(x_1)>g(x_2)$, also
-streng monoton fallend.
+\textbf{Probe:} $g(g(x))=1-(1-x)=x$, also ist $g$ die Identität auf
+$[0,1]$ -- $g$ ist ihre eigene Umkehrung und damit bijektiv. Für
+$x_1<x_2$ ist $g(x_1)=1-x_1>1-x_2=g(x_2)$, also streng monoton fallend.
+\checkmark
+
+\textbf{Grenzfall (a):} $f_1$ hat bei $x=0$ ein Maximum $1$ und gilt
+$f_1(\pm1)=0$. Eine gerade Funktion muss an beiden Enden denselben Wert
+annehmen ($f_1(-1)=f_1(1)=0$); das verträgt sich nicht mit strenger
+Monotonie auf ganz $[-1,1]$. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Gerade/ungerade prüft man durch Einsetzen von $-x$. Streng monotone
-Funktionen sind injektiv und umkehrbar; die Umkehrfunktion erbt die
-Monotonierichtung. Bijektivität $[0,1]\to[0,1]$ erzwingt keine Monotonie
-(Gegenbeispiel $x\mapsto1-x$).
+Gerade/ungerade prüft man durch Einsetzen von $-x$; die Symmetrie des
+Produkts ist das \emph{Produkt der Symmetrien}. Streng monotone Funktionen
+sind injektiv und damit umkehrbar; die Umkehrfunktion erbt die
+Monotonierichtung (Beweis über Kontraposition). Bijektivität erzwingt
+keine Monotonie (Gegenbeispiel $x\mapsto 1-x$).
 \end{merksatz}

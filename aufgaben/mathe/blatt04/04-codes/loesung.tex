@@ -1,13 +1,16 @@
 % Teil II: der durchgerechnete Weg.
 
-\subsection*{Gegeben und gesucht}
-(a) Verschiebecode $f(x)=(x+3)\bmod26$: MATHE verschlüsseln, Bijektivität
-zeigen, $f^{-1}$ angeben; (b) $g(x)=2x\bmod26$ vs. $h(x)=3x\bmod26$:
-welche ist bijektiv, bei der anderen zwei Kollisionen und einen ungetroffenen
-Wert finden.
+% Gedankenschritt: MOD-Rechnen; Bijektivität = injektiv + surjektiv;
+% modular inverses statt Division verwenden.
 
-\subsection*{a) Verschlüsseln von MATHE}
-M$=12$, A$=0$, T$=19$, H$=7$, E$=4$; Sender addiert $3$,
+\subsection*{Gegeben und gesucht}
+(a) Verschiebecode $f(x)=(x+3)\bmod26$: MATHE verschl\"usseln,
+Bijektivit\"at zeigen, $f^{-1}$ angeben; (b) $g(x)=2x\bmod26$ vs.\
+$h(x)=3x\bmod26$: welche ist bijektiv, bei der anderen zwei Kollisionen
+und einen ungetroffenen Wert finden.
+
+\subsection*{a) Verschl\"usseln von MATHE}
+M$=12$, A$=0$, T$=19$, H$=7$, E$=4$; Sender addiert $3$:
 \begin{equation}
   \begin{array}{c|ccccc}
    &\mathrm M&\!\mathrm A&\!\mathrm T&\!\mathrm H&\!\mathrm E\\[-1pt]
@@ -16,21 +19,26 @@ M$=12$, A$=0$, T$=19$, H$=7$, E$=4$; Sender addiert $3$,
    \text{Buchstabe} & \mathrm P&\mathrm D&\mathrm W&\mathrm K&\mathrm H
   \end{array}
 \end{equation}
-Also \textbf{MATHE} $\to$ \textbf{PDWKH}. Es ist eine Verschiebung, damit
-bijektiv (Permutation von $\mathbb Z_{26}$); das modulare Inverse
-$(+3)^{-1}=-3$:
+Also \textbf{MATHE} $\to$ \textbf{PDWKH}.
+
+\textbf{Warum bijektiv?} Auf $\mathbb Z_{26}$ ist die Abbildung
+$x\mapsto x+3$ eine feste Verschiebung: jedes $y$ wird von genau einem
+$x=y-3$ erreicht, und es gibt keine zwei $x$ (unterschiedliche Reste)
+mit demselben Bild. Das modulare ``Inverse`` von $+3$ ist $-3$:
 \begin{equation}
   f^{-1}(y)=(y-3)\bmod26 .
 \end{equation}
 
 \subsection*{b) $g(x)=2x\bmod26$ und $h(x)=3x\bmod26$}
 $g$: $2x$ ist stets gerade, also sind alle ungeraden Reste
-($1,3,5,\dots,25$) nie erreichbar -- \emph{nicht surjektiv}, damit nicht
-bijektiv. Außerdem ist $g(0)=0$ und $g(13)=0$, also $0$ und $13$ zwei
-verschiedene Ursprünge mit demselben Code (nicht injektiv).
+($1,3,5,\dots,25$) nie erreichbar --- \emph{nicht surjektiv}, damit
+nicht bijektiv (und w\"are es surjektiv, fehlte auch die Injektivit\"at:
+$g(0)=0$ und $g(13)=0$, also $0$ und $13$ zwei verschiedene Urspr\"unge
+mit demselben Code).
 
-$h$: $\mathrm{ggT}(3,26)=1$, daher liefert $3x\bmod26$ alle $26$ Reste --
-\emph{bijektiv}.
+$h$: $\mathrm{ggT}(3,26)=1$, daher liefert $3x\bmod26$ alle $26$ Reste
+jeweils genau einmal --- \emph{bijektiv}. Die Umkehrung ist
+$h^{-1}(y)=9y\bmod26$, weil $9\cdot3=27\equiv1\pmod{26}$.
 
 \begin{ergebnis}
 \begin{equation*}
@@ -41,14 +49,25 @@ $h$: $\mathrm{ggT}(3,26)=1$, daher liefert $3x\bmod26$ alle $26$ Reste --
 \end{ergebnis}
 
 \begin{kontrolle}
-Entschlüsseln von PDWKH mit $(y-3)\bmod26$: $15\to12=\mathrm M$,
+\textbf{Entschl\"usseln:} PDWKH mit $(y-3)\bmod26$: $15\to12=\mathrm M$,
 $3\to0=\mathrm A$, $22\to19=\mathrm T$, $10\to7=\mathrm H$,
-$7\to4=\mathrm E$ -- MATHE zurück. Für $g$: $1$ wird
-nie getroffen; $0$ und $13$ beide $=0$. Passt.
+$7\to4=\mathrm E$ --- MATHE zur\"uck. \checkmark
+
+\textbf{Kollisions- und Surjektivit\"atsprobe:} F\"ur $g$: $1$ wird nie
+getroffen (nur gerade Reste); $0$ und $13$ beide $\to0$. Zwei unabh\"angige
+Gr\"unde, warum $g$ nicht bijektiv ist.
+
+\textbf{Grenzfall:} $\mathrm{ggT}(a,26)=1$ und die Teilerfremdheit ist das
+entscheidende Kriterium. Beispiele: $a=2$ ($\mathrm{ggT}=2$) nicht
+bijektiv, $a=3$ ($\mathrm{ggT}=1$) bijektiv; wäre $a$ gerade oder durch
+$13$ teilbar, wieder nicht bijektiv. Der modulare Invers-Test
+($a\cdot b\equiv1$) best\"atigt: f\"ur $3$ gibt es $9$; f\"ur $2$ existiert
+kein solches $b$ (da $2$ und $26$ nicht teilerfremd).
 \end{kontrolle}
 
 \begin{merksatz}
-Modulare Multiplikationen sind genau dann bijektiv, wenn der Faktor teilerfremd
-zur Modulzahl ist; Verschiebungen sind immer Permutationen mit der
-Umkehrung $-a$.
+Modulare Verschiebungen sind immer bijektiv mit $f^{-1}(x-c)$;
+modulare Multiplikationen nur, wenn der Faktor teilerfremd zur Modulzahl
+ist (dann existiert ein modulares Inverses, mit dem man ``teilt`` statt
+durch $x/a$ zu rechnen).
 \end{merksatz}

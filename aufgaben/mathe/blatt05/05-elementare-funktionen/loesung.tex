@@ -6,71 +6,80 @@ Zu drei Vorgaben je eine elementare Funktion mit passendem
 Definitionsbereich.
 
 \subsection*{a) Maximum bei 2, Grenzwert 1}
-Eine Glocke um $x=2$ mit Höhe $10$ und asymptotischem Niveau $1$:
+\emph{Gedankenschritt / Ansatz:} Eine \emph{Glocke} $9\mathrm e^{-(x-2)^2}$
+hat ihr Maximum bei $x=2$, und die additive Konstante $1$ setzt das
+asymptotische Niveau. Die Höhe $10$ ergibt sich aus $1+9$.
 \begin{equation*}
   f(x)=1+9\,\mathrm e^{-(x-2)^2}.
 \end{equation*}
-Prüfung: $f(2)=1+9=10$; für $x\to\pm\infty$ gilt $\mathrm e^{-(x-2)^2}\to0$,
-also $f(x)\to1$. Ableitung $f'(x)=-18(x-2)\mathrm e^{-(x-2)^2}$: für $x<2$
-ist $f'>0$ (wachsend), für $x>2$ ist $f'<0$ (fallend).
+Prüfung: $f(2)=1+9=10$; für $x\to\pm\infty$ ist
+$\mathrm e^{-(x-2)^2}\to0$, also $f(x)\to1$. Ableitung
+$f'(x)=-18(x-2)\mathrm e^{-(x-2)^2}$: Für $x<2$ ist $f'(x)>0$ (steigend),
+für $x>2$ ist $f'(x)<0$ (fallend) -- ein echtes Maximum bei $x=2$.
 
-\subsection*{b) Auf $R_{>1}$, Werte 0 und $-1$, Pole und $-\infty$}
-Gesucht $f(2)=0$, $f(3)=-1$, $\lim_{x\searrow1}f(x)=\infty$,
-$\lim_{x\to\infty}f(x)=-\infty$. Nützlicher Baustein: ein Pol bei $1$ mit
-$+\infty$ und ein Abfall nach $-\infty$. Passt
-\begin{equation*}
-  f(x)=\ln\frac{1}{x-1}=\; -\ln(x-1).
-\end{equation*}
-Es gilt $\lim_{x\searrow1}f(x)=+\infty$ und $\lim_{x\to\infty}=-\infty$. Die
-Werte lassen sich nachregulieren: $g(x)=f(x)+cx+d$ mit $g(2)=0$, $g(3)=-1$
-löst
+\subsection*{b) Auf $R_{>1}$, Werte $0$ und $-1$, Pol und $-\infty$}
+\emph{Gedankenschritt / Ansatz:} Gefordert $f(2)=0$, $f(3)=-1$,
+$\lim_{x\searrow1}f(x)=\infty$, $\lim_{x\to\infty}f(x)=-\infty$. Unter den
+einfachen elementaren Funktionen leistet $-\ln(x-1)$ den Pol bei $1$ nach
+$+\infty$ und den Abfall nach $-\infty$; durch einen linearen Zusatz
+$cx+d$ regulieren wir die geforderten Werte, ohne die Grenzverhaltenstypen
+zu zerstören (ein linearer Term ändert die Pole/Grenzwerte nicht in ihrer
+\emph{Art}).
 \begin{align*}
-  0&=\;\;-\ln(1)+2c+d=2c+d,\\
-  -1&=-\ln2+3c+d.
+  g(x)=-\ln(x-1)+cx+d, \qquad
+  0&=g(2)=2c+d,\\
+  -1&=g(3)=-\ln 2+3c+d .
 \end{align*}
-Aus der ersten Zeile $d=-2c$; in die zweite eingesetzt
-$-1=-\ln2+c$, also $c=\ln2-1$, $d=2-2\ln2$. Damit
+Aus $d=-2c$ und $-1=-\ln2+c$ folgt $c=\ln2-1$, $d=2-2\ln2$:
 \begin{equation*}
-  g(x)=-\ln(x-1)+(\ln2-1)x+2-2\ln2
+  g(x)=-\ln(x-1)+(\ln2-1)\,x+2-2\ln2 .
 \end{equation*}
-erfüllt alle vier Bedingungen; $g(2)=0$, $g(3)=-1$, Pole bei $1$ vom Typ
-$+\infty$, Grenzwert $-\infty$ am Unendlichen.
+Die vier geforderten Eigenschaften (Werte, Pol $+\infty$ bei $1$,
+Grenzwert $-\infty$ am Unendlichen) sind erfüllt; der Definitionsbereich
+$R_{>1}$ wird von der $-1$ im $\ln$-Argument erzwungen.
 
 \subsection*{c) Auf $R\setminus\{-1,1\}$, fallend, Pole}
-Gesucht $f(0)=0$, $\lim_{x\to1}f(x)=\infty$, $\lim_{x\nearrow-1}f(x)=-\infty$,
-streng monoton fallend auf $R_{>1}$. Das gebrochen-rationale
-\begin{equation*}
-  f(x)=\frac{2x}{x^2-1}
-\end{equation*}
-hat Pole bei $\pm1$ und $f(0)=0$. Ableitung
+\emph{Gedankenschritt / Ansatz:} Gefordert $f(0)=0$,
+$\lim_{x\to1}f(x)=\infty$, $\lim_{x\nearrow-1}f(x)=-\infty$ und streng
+monoton fallend auf $R_{>1}$. Ein Nenner $x^2-1$ erzeugt die Pole bei
+$\pm1$ und den Definitionsbereich; ein Zähler sollte $f(0)=0$ liefern und
+das Vorzeichen über der rechten Hälfte konstant negativ machen. Kandidat
+$f(x)=2x/(x^2-1)$:
 \begin{equation*}
   f'(x)=\frac{2(x^2-1)-2x(2x)}{(x^2-1)^2}
-  =\frac{2x^2-2-4x^2}{(x^2-1)^2}
-  =\frac{-2x^2-2}{(x^2-1)^2}<0
+  =\frac{-2x^2-2}{(x^2-1)^2}<0 \quad\text{auf }R_{>1},
 \end{equation*}
-auf $R_{>1}$, also streng monoton fallend. Grenzwerte: für $x\nearrow1$ geht
-$x^2-1$ nach $0^+$ mit positivem Zähler $\to\infty$; für $x\nearrow-1$ geht
-$x^2-1$ nach $0^+$, aber der Zähler $2x\to-2<0$, also $\to-\infty$.
+also streng monoton fallend. Grenzwerte: für $x\nearrow1$ geht $x^2-1\to
+0^+$ mit Zähler $2x\to2>0$, also $f\to+\infty$; für $x\nearrow-1$ geht
+$x^2-1\to0^+$, Zähler $2x\to-2<0$, also $f\to-\infty$. Und $f(0)=0$.
 
 \begin{ergebnis}
 \begin{equation*}
-  \text{a)}\ f(x)=1+9\mathrm e^{-(x-2)^2}; \qquad
-  \text{b)}\ g(x)=-\ln(x-1)+(\ln2-1)x+2-2\ln2; \qquad
-  \text{c)}\ f(x)=\frac{2x}{x^2-1}.
+  \text{a) } f(x)=1+9\mathrm e^{-(x-2)^2};\qquad
+  \text{b) } g(x)=-\ln(x-1)+(\ln2-1)\,x+2-2\ln2;\qquad
+  \text{c) } f(x)=\frac{2x}{x^2-1}.
 \end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Probe a):} $1+9\mathrm e^{0}=10$, asymptotisch $1$ -- passt.
-\textbf{Probe b):} $g(2)=2(\ln2-1)+2-2\ln2=0$; und
-$g(3)=3(\ln2-1)-\ln2+2-2\ln2=-1$ -- beide Werte richtig, Pole und
-Grenzwert wegen $-\ln(x-1)$.
-\textbf{Probe c):} $f(0)=0$; $f'(x)<0$ auf $R_{>1}$, Pole wie gefordert.
+\textbf{Probe (a):} $1+9\mathrm e^0=10$; beide Grenzwerte $1$ wegen
+$\mathrm e^{-(x-2)^2}\to0$. \checkmark
+
+\textbf{Probe (b):} $g(2)=2(\ln2-1)+2-2\ln2=0$;
+$g(3)=3(\ln2-1)-\ln2+2-2\ln2=-1$. Die Pole: $-\ln(x-1)\to+\infty$ bei
+$x\searrow1$; der Grenzwert $-\infty$ kommt von $-(\ln2-1)\,x\to-\infty$
+plus $-\ln(x-1)\to-\infty$. \checkmark
+
+\textbf{Probe (c):} $f(0)=0$; $f'(x)<0$ auf $R_{>1}$; Pole wie gefordert.
+Zahlencheck: für $x=2$ ist $f(2)=4/3>0$ und für $x\to1^+$ unendlich
+positiv, für große $x$ geht $f\to0^+$ -- eine stetig fallende, positive
+Kurve ohne Extremum. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Eine elementare Funktion baut man aus Grundbausteinen (Pol, Glocke, $\ln$,
-lineare Anpassung), die man additiv kombiniert, um mehrere Bedingungen
-(Wert, Monotonie, Grenzwert, Definitionsbereich) gleichzeitig zu erfüllen.
-Jede Bedingung separat nachrechnen.
+Eine elementare Funktion baut man aus Grundbausteinen (Pol, Glocke,
+$\ln$, lineare Anpassung), die man additiv kombiniert, um mehrere
+Bedingungen gleichzeitig zu erfüllen. Jede Bedingung einzeln nachrechnen;
+Dynamik-Baustein (Pol) und Wert-Anpassung (lineare Funktion) getrennt
+halten.
 \end{merksatz}

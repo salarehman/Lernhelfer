@@ -3,41 +3,66 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Aus der Halbwertszeit die Zerfallskonstante $\lambda$ bestimmen und damit das
-Alter einer Probe aus der verbliebenen Konzentration.
+Aus der Halbwertszeit die Zerfallskonstante $\lambda$ bestimmen und damit
+das Alter einer Probe aus der verbliebenen Konzentration.
 
-\begin{werkzeugkasten}[Zerfallsgesetz]
-Der Anteil radioaktiven Materials nimmt exponentiell ab:
+\begin{werkzeugkasten}[Warum ist der Zerfall exponentiell?]
+\emph{Worum es geht:} Ein einzelner Atomkern \emph{vergisst} seine
+Vorgeschichte: Zu jedem Zeitpunkt ist die Zerfallswahrscheinlichkeit pro
+Zeiteinheit eine feste Konstante. Damit ist die \emph{Zerfallsrate}
+proportional zur Zahl der noch vorhandenen Kerne $N$:
+\begin{equation*}
+  \frac{\dd N}{\dd t}=-\lambda N .
+\end{equation*}
+Das Minus zeigt (abnehmende Menge), $\lambda$ (die Zerfallskonstante) misst,
+wie schnell. Die Differentialgleichung sagt: \emph{Änderung proportional zum
+Bestand} -- und die einzige Funktion mit dieser Eigenschaft ist die
+Exponentialfunktion. Über je ein gleiches Zeitintervall $\Delta t$ bleibt
+derselbe Faktor $\mathrm e^{-\lambda\Delta t}$ übrig (gleiches
+Wahrscheinlichkeitsgesetz). Deshalb:
 \begin{equation*}
   N(t)=N_0\,\mathrm e^{-\lambda t}, \qquad \lambda>0 .
 \end{equation*}
-$\lambda$ ist die Zerfallskonstante mit Einheit $\mathrm{a}^{-1}$. Die
-Halbwertszeit $T$ erfüllt $N(T)=\tfrac12 N_0$, also
-$\mathrm e^{-\lambda T}=\tfrac12$.
+Die Halbwertszeit $T$ ist die Zeit, nach der die Hälfte übrig ist:
+$N(T)=\tfrac12 N_0$, also $\mathrm e^{-\lambda T}=\tfrac12$, und damit
+\begin{equation*}
+  \lambda=\frac{\ln 2}{T}.
+\end{equation*}
+$\lambda$ hat die Einheit einer inversen Zeit (z. B. $\mathrm{1\,s^{-1}}$
+bzw.\ eine inverse Jahres-Skala hier); $T$ eine Zeit.
 
 \textit{Skript:} Kap. 2 (Exponentialfunktion).
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Vorgehen bei zwei Unbekannten]
-\begin{enumerate}
-  \item $\lambda$ aus der Halbwertszeit bestimmen:
-        $\lambda=\dfrac{\ln 2}{T}$.
-  \item Gemessen ist der Restanteil $q=\frac{N(t)}{N_0}$. Aus
-        $q=\mathrm e^{-\lambda t}$ folgt
-        $t=\dfrac{\ln(1/q)}{\lambda}=\dfrac{\ln(1/q)\cdot T}{\ln 2}$.
-        Alternativ $\ln q=-\lambda t$.
-\end{enumerate}
-Für $q<1$ ist $\ln(1/q)>0$, das Alter ist positiv.
+Wir kennen $\lambda$ (aus $T$) und messen den Restanteil $q=N(t)/N_0$. Aus
+$q=\mathrm e^{-\lambda t}$ folgt durch Logarithmieren (die \emph{Umkehrung}
+der Exponentialfunktion \emph{löst} das $t$ aus dem Exponenten):
+\begin{equation*}
+  \ln q=-\lambda t
+  \;\Rightarrow\;
+  t=\frac{-\ln q}{\lambda}
+  =\frac{\ln(1/q)}{\lambda}
+  =\frac{T\,\ln(1/q)}{\ln 2}.
+\end{equation*}
+Für $q<1$ ist $\ln(1/q)>0$: das Alter kommt positiv heraus. Da sich $N_0$
+im Quotienten $q$ weggekürzt hat, spielt die ursprüngliche Menge keine
+Rolle -- es zählt nur der \emph{Anteil}, der noch da ist.
+
+\textit{Skript:} Kap. 2, Kap. 3 (Stetigkeit von $\ln$).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item $\lambda$ und die Zeit im \emph{gleichen} Zeitsystem (Jahre) angeben.
-  \item Nicht $N_0$ verwechseln: es kürzt sich heraus, nur der gemessene
-        Anteil $q$ zählt.
-  \item $q$ als Zahl zwischen $0$ und $1$ einsetzen ($53\,\%=0{,}53$), nicht
-        als Prozentzahl $53$.
-  \item Mit dem Logarithmus isolieren: $\ln(q)=\ln(\mathrm e^{-\lambda t})
-        =-\lambda t$ und nach $t$ auflösen.
+  \item \textbf{Einheitensystem:} $\lambda$ und die Zeit müssen im selben
+        Zeitsystem stehen (hier Jahre), sonst kommt ein unsinniges Alter
+        heraus.
+  \item \textbf{Prozentzahl statt Anteil:} $53\,\%$ ist $q=0{,}53$, nicht
+        $q=53$. Das ist der Klassiker.
+  \item \textbf{$\ln$ nicht vergessen:} Aus $q=\mathrm e^{-\lambda t}$
+        wird $t$ durch $\ln$ isoliert; ohne $\ln$ bleibt die Zeit \emph{im
+        Exponenten gefangen}.
+  \item \textbf{$N_0$ verwechseln:} Es kürzt sich heraus; es zählt nur der
+        gemessene Anteil $q$.
 \end{itemize}
 \end{achtung}

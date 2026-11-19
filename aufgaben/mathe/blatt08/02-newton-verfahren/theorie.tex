@@ -4,44 +4,58 @@
 % Teil I: Werkzeuge, kein Lösungsweg.
 
 Das Newton-Verfahren von Hand und per Code anwenden, die
-Konvergenz-Voraussetzungen (Satz 4.3.8) prüfen und eine Nullstelle mit hoher
-Genauigkeit berechnen.
+Konvergenz-Voraussetzungen (Satz 4.3.8) prüfen und eine Nullstelle mit
+hoher Genauigkeit berechnen.
 
-\begin{werkzeugkasten}[Newton-Iteration]
-Für eine differenzierbare Funktion $f$ mit Nullstelle $x^*$: Start $x_0$
-nahe der Nullstelle, dann wiederholt
+\begin{werkzeugkasten}[Warum funktioniert das Newton-Verfahren?]
+Gesucht ist $x^*$ mit $f(x^*)=0$. Idee: Man kennt $x^*$ nicht, aber man
+kann die Funktion an einer Näherung $x_k$ auswerten. Ersetzt man $f$ in
+kleiner Umgebung von $x_k$ durch seine \textbf{Tangente} (die lineare
+Näherung $f(x)\approx f(x_k)+f'(x_k)(x-x_k)$), so findet man deren
+Nullstelle als nächsten Kandidaten $x_{k+1}$:
 \begin{equation*}
+  0=f(x_k)+f'(x_k)(x_{k+1}-x_k)
+  \;\Longrightarrow\;
   x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)}.
 \end{equation*}
-Die Linearisierung von $f$ bei $x_k$ wird auf $0$ gelesen. Unter den
-Voraussetzungen von Satz 4.3.8 (Start im ``Anziehungskegel'', passende
-Monotonie/Konvexität) konvergiert die Folge quadratisch gegen $x^*$.
+Anschaulich: Startet man nahe der Nullstelle, zeigt die Tangente dorthin,
+und der Schritt bringt einen näher heran. In der Nähe einer einfachen
+Nullstelle ist die Tangente eine sehr gute Näherung, deshalb verdoppelt
+sich die Zahl korrekter Nachkommastellen je Schritt -- das ist die
+\textbf{quadratische Konvergenz}.
 
-\textit{Skript:} Kap. 4.3 (Satz 4.3.8).
+\textit{Skript:} Kap. 4.3 (Newton-Verfahren).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Voraussetzungen von Satz 4.3.8 prüfen]
-Für $f(x)=x^5-2x-1$ auf $[1,2]$:
+\begin{werkzeugkasten}[Voraussetzungen von Satz 4.3.8 -- wodurch Konvergenz gesichert wird]
+Quadratische Konvergenz ist nicht automatisch; der Satz verlangt, dass
+\emph{nahe genug} gestartet wird und die Funktion in einer Umgebung
+\emph{einfach} ist. Konkret zu prüfen:
 \begin{itemize}
-  \item $f(1)=-2<0$, $f(2)=27>0$: Vorzeichenwechsel, Nullstelle vorhanden.
-  \item $f'(x)=5x^4-2>0$ auf $[1,2]$ (strict wachsend): Nullstelle
-        \emph{eindeutig}.
-  \item $f''(x)=20x^3>0$ auf $[1,2]$: konvex; für Start $x_0=2$ (auf der
-        ``steigenden'' Seite) greifen die Bedingungen.
+  \item \textbf{Vorzeichenwechsel} $f(1)<0<f(2)$: es gibt eine Nullstelle
+        im Intervall (Zwischenwertsatz).
+  \item \textbf{Strikte Monotonie} ($f'=5x^4-2>0$ auf $[1,2]$): die
+        Nullstelle ist \emph{eindeutig}.
+  \item \textbf{Passende Krümmung/Konvexität} ($f''=20x^3>0$): startet man
+        auf der \emph{richtigen} Seite, greift die Abschätzung und die
+        Konvergenz.
 \end{itemize}
+Diese Prüfung rettet vor dem Fehlschlagen, wenn man \emph{blind} weit weg
+startet oder $f$ dort ein Extremum hat.
+
 \textit{Skript:} Kap. 4.3, Satz 4.3.8.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Beim Handschritt die Ableitung korrekt bilden
-        ($f'=5x^4-2$), nicht nur $f$ auswerten.
-  \item $f'(x)\ne0$ in der Nähe der Nullstelle prüfen, sonst teilt man
-        durch Null.
-  \item Bei der Ex-Gleichung $e^x=2-x^2$ als $g(x)=e^x+x^2-2$ umformen und
-        auf $[0,1]$ starten.
-  \item Beim Code: die Iteration in eine Schleife, Abbruch nach genügend
-        vielen Schritten (Genauigkeit steigt quadratisch); Werte stimmen,
-        wenn $|f(x_k)|$ klein wird.
+  \item \textbf{Ableitung nicht vergessen:} Im Schritt steht $f'(x_k)$ im
+        Nenner; für $f(x)=x^5-2x-1$ ist $f'(x)=5x^4-2$, nicht nur $f$.
+  \item \textbf{$f'(x)=0$ vermeiden:} In der Nähe der Nullstelle darf die
+        Ableitung nicht verschwinden, sonst teilt man durch null (tangente
+        waagerecht).
+  \item \textbf{Exponentialgleichung umformen:} $e^x=2-x^2$ wird zu
+        $g(x)=e^x+x^2-2=0$ mit $g'(x)=e^x+2x$; Start sinnvoll auf $[0,1]$.
+  \item \textbf{Abbruchbedingung im Code:} iterieren, bis $|f(x_k)|$ klein
+        (nicht eine feste, zu kleine Schrittzahl bei hoher Genauigkeit).
 \end{itemize}
 \end{achtung}

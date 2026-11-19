@@ -6,38 +6,55 @@
 Eine Nullstelle eines Polynoms $p$ durch fortgesetztes Halbieren eines
 Intervalls approximieren.
 
-\begin{werkzeugkasten}[Intervallhalbierung (Bisektion)]
-Für stetiges $p$ mit $p(a)\cdot p(b)<0$ liegt (nach Zwischenwertsatz) eine
-Nullstelle in $[a,b]$:
-\begin{enumerate}
-  \item Mittelpunkt $m=\frac{a+b}{2}$.
-  \item Ist $p(a)\cdot p(m)<0$, ist die Nullstelle in $[a,m]$; sonst in
-        $[m,b]$.
-  \item Intervall ersetzen und wiederholen.
-\end{enumerate}
-Nach $n$ Schritten ist die Fehlerbreite $(b-a)/2^n$; schon wenige Schritte
-verkleinern das Suchfenster drastisch.
+\begin{werkzeugkasten}[Warum funktioniert Halbieren? (Zwischenwertsatz)]
+Eine stetige Funktion, die an $a$ negativ und an $b$ positiv ist, muss
+\emph{irgendwo zwischen} $a$ und $b$ durch $0$ gehen -- sie kann nicht
+\emph{von negativ nach positiv springen}, ohne auf dem Weg $0$ zu berühren.
+Das ist der \textbf{Zwischenwertsatz}, und er garantiert hier: Mit
+$p(a)\cdot p(b)<0$ (genau ein Vorzeichenwechsel am Einschlusspunkt) gibt es
+\emph{mindestens eine} Nullstelle in $[a,b]$.
+
+Das Halbieren nutzt diese Idee direkt aus: Im Mittelpunkt $m=\frac{a+b}{2}$
+muss $p(m)$ entweder dasselbe Vorzeichen wie $p(a)$ haben (dann liegt die
+Nullstelle in $[m,b]$) oder dasselbe wie $p(b)$ (dann in $[a,m]$). Das
+Prüfzeichen ist das \emph{Produkt} $p(a)\cdot p(m)<0$. In jedem Fall wird
+das Intervall vertauscht mit einem halb so langen, das die Nullstelle weiter
+einschließt.
 
 \textit{Skript:} Kap. 3 (Zwischenwertsatz).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Konvergenzgeschwindigkeit]
-Jeder Schritt halbiert die Länge: nach $k$ Schritten ist das Intervall
-$\dfrac{b-a}{2^k}$ lang. Für $[0,2]$ und $k=20$ ist die Breite
-$\dfrac{2}{2^{20}}\approx2\cdot10^{-6}$, die Nullstelle liegt also auf
-mindestens 5 nachkommastellen genau fest.
+\begin{werkzeugkasten}[Wie schnell wird es genau?]
+Jeder Schritt halbiert die Länge. Nach $k$ Schritten ist das einschließende
+Intervall $\dfrac{b-a}{2^k}$ lang; die Nullstelle $x^*$ ist bis auf die
+halbe Intervallbreite bestimmt. Der entscheidende Punkt: Die Genauigkeit
+wächst \emph{exponentiell mit der Zahl der Schritte}. Schon
+\begin{itemize}
+  \item $k=10$ Schritte: Breite $\tfrac{2}{2^{10}}\approx2\cdot10^{-3}$
+        (etwa zwei Nachkommastellen),
+  \item $k=20$ Schritte: Breite $\tfrac{2}{2^{20}}\approx2\cdot10^{-6}$
+        (etwa fünf Nachkommastellen).
+\end{itemize}
+Jeweils 3 weitere Schritte liefern eine Nachkommastelle mehr. Das
+Verfahren braucht keinen Ableitungsblick, nur Stetigkeit und einen
+Vorzeichenwechsel -- deshalb ist es sehr robust.
+
+\textit{Skript:} Kap. 3 (numerische Verfahren).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Vorbedingung prüfen: $p$ stetig und $p(a)\,p(b)<0$. Für $p(x)=x^5-2x-1$
-        ist $p(0)=-1$, $p(2)=32-4-1>0$ -- Vorbedingung erfüllt.
-  \item Das Vorzeichen \emph{des Produkts} entscheidet, nicht das von $p(m)$
-        allein.
-  \item Den Schritt sauber protokollieren (linke/rechte Grenze und $p(m)$),
-        auch bei ``von Hand''.
-  \item Beim Python-Code: Iterationsschleife in die Funktion stecken und den
-        Zähler korrekt hochzählen; die 5-Nachkommastellen-Genauigkeit erst
-        nach ausreichend vielen Schritten angeben.
+  \item \textbf{Vorbedingung prüfen:} $p$ stetig \emph{und}
+        $p(a)\cdot p(b)<0$ als erster Schritt. Für $p(x)=x^5-2x-1$:
+        $p(0)=-1<0$, $p(2)=27>0$ -- erfüllt.
+  \item \textbf{Das Vorzeichen des Produkts} $p(a)\cdot p(m)$ entscheidet,
+        nicht das von $p(m)$ allein (ein einziges Vorzeichen reicht nicht,
+        man braucht den Vergleich mit dem linken Rand).
+  \item \textbf{Sauber protokollieren:} linke/rechte Grenze und $p(m)$ bei
+        jedem Schritt festhalten, dann bleibt nachvollziehbar, welches
+        Teilintervall gewählt wurde.
+  \item \textbf{Beim Code:} die Schleife verwaltet die Grenzen; der Zähler
+        und der Produkt-Test $p(a)\cdot p(m)<0$ müssen stimmen, sonst
+        konvergiert die Folge in ein falsches Intervall.
 \end{itemize}
 \end{achtung}

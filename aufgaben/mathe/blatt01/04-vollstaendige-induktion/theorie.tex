@@ -2,24 +2,38 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Beweis per vollständiger Induktion, dass die Summe der ersten $n$ geraden
-Zahlen $n(n+1)$ ist.
+% Grundidee: Das Bild der fallenden Dominokette: Anfang stoßt den ersten
+% Stein, der Schritt "n -> n+1" kettet alle weiteren. Die Summe gerader
+% Zahlen folgt aus der Gaußschen Dreieckszahl.
 
-\begin{werkzeugkasten}[Vollständige Induktion]
-Eine Aussage $A(n)$ für alle $n\ge1$:
-\begin{enumerate}
-  \item \textbf{Induktionsanfang} (IA): $A(1)$ prüfen.
-  \item \textbf{Induktionsschritt} (IS): unter der Induktionsannahme
-        $A(n)$ gilt $A(n+1)$.
-\end{enumerate}
-Dann gilt $A(n)$ für alle $n\ge1$.
+Die vollständige Induktion ist ein Beweisverfahren, das unendlich viele
+Einzelfälle $A(1),A(2),A(3),\dots$ in \emph{zwei} Schritten abdeckt. Das
+Bild, das dabei hilft, ist eine \emph{fallende Dominokette}:
+
+\begin{werkzeugkasten}[Das Dominoketten-Bild der Induktion]
+Stell dir eine unendlich lange Reihe von Dominosteinen vor, die alle in
+gleichem Abstand aufgestellt sind. Um alle umzuwerfen, brauchst du genau
+zweierlei:
+\begin{itemize}
+  \item \textbf{Induktionsanfang (IA):} Du stößt den \emph{ersten} Stein
+        um (er muss wirklich fallen, sonst passiert nichts).
+  \item \textbf{Induktionsschritt (IS):} Es ist konstruktionsbedingt
+        gesichert, dass wenn Stein $n$ fällt, er den Stein $n+1$ mit
+        umstoßt.
+\end{itemize}
+Dann fallen \emph{alle} Steine. Auf Aussagen übertragen: $A(1)$ ist wahr
+(IA), und aus ``$A(n)$ wahr`` folgt ``$A(n+1)$ wahr`` (IS, unter der
+sog. Induktionsannahme). Damit ist $A(n)$ für jedes $n\ge1$ wahr.
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Summe gerader Zahlen]
+Die Summe der ersten $n$ geraden Zahlen:
 \begin{equation}
   2+4+6+\dots+2n = 2(1+2+\dots+n)=2\cdot\frac{n(n+1)}2=n(n+1).
 \end{equation}
-Im Induktionsschritt zerlegt man
+\textbf{Warum?} Ausklammern des Faktors $2$ führt sie auf die
+Gaußsche Summe $\frac{n(n+1)}2$ zurück; die Verdopplung hebt das
+$\tfrac12$ auf. Im Induktionsschritt zerlegt man
 \begin{equation}
   \text{(Summe bis } n+1)=\text{(Summe bis } n)+ 2(n+1)
 \end{equation}
@@ -28,10 +42,12 @@ und setzt die Induktionsannahme ein.
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Im IS den \emph{neuen} Summanden $2(n+1)$ korrekt ans Ende der
-        Summe stellen (nicht mit dem $n$-ten Summanden $2n$ verwechseln).
-  \item Den gemeinsamen Faktor $2$ vor dem Klammern sum auf den neuen
-        Summanden abschätzen: $n(n+1)+2(n+1)=(n+1)(n+2)$.
+  \item Im IS den \emph{neuen} Summanden $2(n+1)$ korrekt ans Ende
+        stellen (nicht mit dem $n$-ten Summanden $2n$ verwechseln).
+  \item Den gemeinsamen Faktor $n+1$ ausklammern:
+        $n(n+1)+2(n+1)=(n+1)(n+2)$.
   \item Anfang bei $n=1$: $2=1\cdot2$.
+  \item Der IS allein ohne IA beweist nichts; die Kette braucht den
+        Startpunkt.
 \end{itemize}
 \end{achtung}

@@ -7,43 +7,53 @@ Zeigen, dass eine differenzierbare Funktion $L\colon(0,\infty)\to\mathbb R$
 mit den drei Eigenschaften $L(1)=0$, $L'(1)=1$, $L(xy)=L(x)+L(y)$ bereits
 der natürliche Logarithmus ist.
 
-\begin{werkzeugkasten}[Funktionalgleichung und Ableiten]
-Die Multiplikativität
+\begin{werkzeugkasten}[Was die Funktionalgleichung wirklich bedeutet]
+Die Gleichung
 \begin{equation*}
-  L(xy)=L(x)+L(y)\qquad \forall x,y>0
+  L(xy)=L(x)+L(y)\qquad\forall x,y>0
 \end{equation*}
-ist die zentrale Charakterisierung des Logarithmus. Leitet man sie nach
-einer Variablen (z.B.\ $y$ mit festem $x$) ab, erhält man eine
-Differentialgleichung für $L'$:
+ist die zentrale \emph{Charakterisierung} des Logarithmus: Er verwandelt
+Multiplikation in Addition. Genau deshalb kann man sie ableiten: Wenn
+$L$ differenzierbar ist, liefert das Differenzieren \emph{einer} Variablen
+(feste $x$, nach $y$) eine Aussage über $L'$. Links steht dann eine
+Kettenregel ($\frac d{dy}L(xy)=L'(xy)\cdot x$, weil die innere Ableitung
+von $xy$ gleich $x$ ist), rechts $L'(y)$:
 \begin{equation*}
-  x\,L'(xy)=L'(y).
+  L'(xy)\cdot x=L'(y).
 \end{equation*}
-Diese Identität für alle $y>0$ aufschreiben und mit geeigneter Wahl (z.B.\
-$y=1$) nach $L'(x)$ auflösen.
+Diese Identität für alle $x,y>0$ ist eine starke Zusatzbedingung; die
+spezielle Wahl $y=1$ (erlaubt, weil sie für alle $y>0$ gilt) macht daraus
+eine Differenzialgleichung für $L'$.
 
 \textit{Skript:} Kap. 1.2 (Logarithmus), Kap. 4 (Ableitungen).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Schlussfolge zu $\ln x$]
+\begin{werkzeugkasten}[Die Schlussfolge kompakt]
 \begin{enumerate}
-  \item $L(xy)=L(x)+L(y)$ nach $y$ ableiten (Kettenregel links): 
+  \item $L(xy)=L(x)+L(y)$ nach $y$ ableiten (Kettenregel links):
         $L'(xy)\cdot x=L'(y)$.
-  \item $y=1$ einsetzen: $xL'(x)=L'(1)=1$, also $L'(x)=\frac1x$.
-  \item Integration mit $L(1)=0$: $L(x)=\ln x$ ($\ln 1=0$).
+  \item Mit $y=1$: $xL'(x)=L'(1)=1$, also $L'(x)=\frac1x$.
+  \item Integration mit $L(1)=0$: Da $(\ln x)'=\frac1x$ und $\ln 1=0$,
+        folgt $L(x)=\ln x$.
 \end{enumerate}
+Warum der dritte Schritt eindeutig ist: Zwei Stammfunktionen von
+$\frac1x$ unterscheiden sich nur um eine Konstante; die Bedingung
+$L(1)=0$ wählt unter ihnen genau $\ln x$.
 
 \textit{Skript:} Kap. 4 (Ableitung von $\ln$).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Die Funktionalgleichung nach \emph{beiden} Variablen gilt; man darf
-        $y=1$ spezialisieren, weil sie für alle $y>0$ gefordert ist.
-  \item Bei der Kettenregel links fehlt der Faktor $x$: 
-        $\frac d{dy}L(xy)=L'(xy)\cdot x$ (innere Ableitung $=x$).
-  \item $L'(1)=1$ liefert erst die Integrationskonstante und so
-        $L(x)=\ln x$, nicht eine um $\ln x$ verschobene Funktion.
-  \item Nicht voraussetzen, dass $L(x)=\ln(x)$ bereits bekannt ist; man
-        \emph{zeigt} es aus den Axiomen.
+  \item \textbf{Die Funktionalgleichung gilt für beide Variablen}, also
+        darf man $y=1$ spezialisieren (sie gilt für alle $y>0$).
+  \item \textbf{Kettenregel nicht vergessen:}
+        $\frac d{dy}L(xy)=L'(xy)\cdot x$; der Faktor $x$ (die innere
+        Ableitung) fehlt sonst.
+  \item \textbf{$L'(1)=1$ ist die Normierung:} erst sie legt die
+        Integrationskonstante fest und erzwingt $L(x)=\ln x$; ohne sie
+        ginge auch $L(x)=c\ln x$ für jede Konstante $c$.
+  \item \textbf{Nicht voraussetzen, dass $L=\ln$ schon bekannt ist:} wir
+        \emph{zeigen} es aus den drei Axiomen.
 \end{itemize}
 \end{achtung}

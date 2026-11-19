@@ -1,18 +1,24 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Fakultät mit 2^{n-1} vergleichen, dann die Reihe als
+% Teil + geometrische Reihe abschätzen.
+
 \subsection*{Gegeben und gesucht}
-(a) $n!>2^{n-1}$ für $n>2$; (b) $\sum_{n=2}^{\infty}1/n!<1$; (c) $2<e<3$;
-(d) Python-Code für $s_n=\sum_{k=0}^{n}1/k!$ ($n=0,\dots,20$) und $e$ auf
+(a) $n!>2^{n-1}$ f\"ur $n>2$; (b) $\sum_{n=2}^{\infty}1/n!<1$; (c) $2<e<3$;
+(d) Python-Code f\"ur $s_n=\sum_{k=0}^{n}1/k!$ ($n=0,\dots,20$) und $e$ auf
 12 Nachkommastellen.
 
-\subsection*{a) $n!>2^{n-1}$ für $n>2$}
-Induktion. IA ($n=3$): $3!=6>4=2^{2}$. IS: Ist $n!>2^{n-1}$, so
+\subsection*{a) $n!>2^{n-1}$ f\"ur $n>2$}
+Induktion. IA ($n=3$): $3!=6>4=2^{2}$. \checkmark
+IS: Ist $n!>2^{n-1}$, so
 \begin{equation}
   (n+1)!=(n+1)\,n!>(n+1)\,2^{n-1}>2\cdot2^{n-1}=2^{n}.
 \end{equation}
-Für $n+1\ge4$ ist $n+1>2$. Damit gilt die Ungleichung für alle $n>2$.
+F\"ur $n+1\ge4$ gilt $n+1>2$. Damit gilt die Ungleichung f\"ur alle
+$n>2$.
 
 \subsection*{b) $\sum_{n=2}^{\infty}1/n!<1$}
+F\"ur $n\ge3$ ist $1/n!<1/2^{n-1}$ (aus a)). Daher:
 \begin{align}
   \sum_{n=2}^{\infty}\frac1{n!}
   &=\frac1{2!}+\sum_{n=3}^{\infty}\frac1{n!}
@@ -20,14 +26,14 @@ Für $n+1\ge4$ ist $n+1>2$. Damit gilt die Ungleichung für alle $n>2$.
   &=\frac12+\Bigl(\frac14+\frac18+\cdots\Bigr)
   =\frac12+\frac12=1 .
 \end{align}
-Wegen der strikten Ungleichung für alle $n\ge3$ ist die Summe strikt $<1$.
+Wegen strikt $<$ f\"ur alle $n\ge3$ ist die Summe strikt $<1$.
 
 \subsection*{c) $2<e<3$}
 Untere Schranke:
 \begin{equation}
-  e=1+1+\frac1{2!}+\frac1{3!}+\dots>1+1=2 .
+  e=1+1+\frac1{2!}+\frac1{3!}+\dots>2 .
 \end{equation}
-Obere Schranke: für $n\ge3$ ist $1/n!<1/2^{n-1}$ (aus a)), also
+Obere Schranke: aus $e=2+\sum_{n=2}^\infty\frac1{n!}$ und b):
 \begin{equation}
   e=2+\sum_{n=2}^{\infty}\frac1{n!}<2+1=3 .
 \end{equation}
@@ -56,13 +62,23 @@ Nachkommastellen
 \end{ergebnis}
 
 \begin{kontrolle}
-b) Bricht man bei $n=5$ ab: $1/2+1/6+1/24=0.7083<1$; c) mit
-$m=\texttt{range(21)}$ liefert $s_{20}=2.\!718281828459$, was in der Mitte
-von $(2,3)$ liegt; a) direkt: $4!=24>8=2^3$, $5!=120>16$.
+\textbf{Teilsummen:} Bricht man bei $n=5$ ab: $\sum_{n=2}^5 1/n! =
+\frac12+\frac16+\frac1{24}+\frac1{120}=0.7083<1$; die Konvergenz ist
+weiter klar.
+
+\textbf{e-Wert plausibilisieren:} $s_{20}=2.718281828459$ liegt im
+Intervall $(2,3)$ wie in c) gezeigt; bekannte Dezimalentwicklung
+$2.71828\dots$ stimmt \"uberein.
+
+\textbf{Grenzfall/Laufzeit der Reihe:} $1/n!$ f\"allt riesigsteun schnell
+(Im Nenner $n!$ w\"achst superlinear), deshalb konvergieren schon die
+ersten 20 Glieder auf 12 Nachkommastellen. Das ist konsistent damit,
+dass $e$ als Reihe \emph{schnell} konvergiert --- im Gegensatz zur
+langsamen $1/k^2$-Reihe.
 \end{kontrolle}
 
 \begin{merksatz}
-$e$ ist eine absolut konvergente Reihe; die Abschätzung über
-$n!>2^{n-1}$ liefert Konvergenz $(<1)$ und die Schranken $2<e<3$; in
-Python zählt `math.factorial` die Reihe.
+$e$ ist eine absolut (sogar superlinear) konvergente Reihe; die
+Absch\"atzung \"uber $n!>2^{n-1}$ liefert Konvergenz und die Schranken
+$2<e<3$. In Python z\"ahlt \texttt{math.factorial} die Reihe.
 \end{merksatz}

@@ -1,23 +1,32 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Induktion als Dominokette; im IS den letzten Summanden
+% abspalten und in die Induktionsannahme einsetzen.
+
 \subsection*{Gegeben und gesucht}
 Beweisen: $2+4+6+\dots+2n=n(n+1)$ für alle $n\ge1$.
 
 \subsection*{Ansatz}
-Vollständige Induktion; im IS den letzten Summanden abspalten.
+Vollständige Induktion (Bild der fallenden Dominokette): zuerst der
+erste Stein (IA, $n=1$), dann die Koppelung ``$n$ f\"allt $\Rightarrow$
+$n+1$ f\"allt`` (IS). Struktur des Schritts: \emph{alte Summe durch neue
+Summe ausdr\"ucken}.
 
-\subsection*{Induktionsanfang}
-$n=1$: links $2$, rechts $1\cdot2=2$. Stimmt.
+\subsection*{Induktionsanfang (``den ersten Stein umstoßen'')}
+$n=1$: links $2$, rechts $1\cdot2=2$. Stimmt. \checkmark
 
-\subsection*{Induktionsschritt}
-Annahme: $2+4+\dots+2n=n(n+1)$. Zu zeigen für $n+1$:
+\subsection*{Induktionsschritt (``wenn $n$ f\"allt, dann auch $n+1$'')}
+Annahme: $2+4+\dots+2n=n(n+1)$. Zu zeigen für $n+1$: Wir hängen den
+neuen Summanden $2(n+1)$ an die bereits summierte Strecke:
 \begin{align}
-  2+4+\dots+2n+2(n+1)
+  \underbrace{2+4+\dots+2n}_{=n(n+1)}+2(n+1)
   &=n(n+1)+2(n+1) \\
   &=(n+1)(n+2). \tag*{$\checkmark$}
 \end{align}
-Das ist $n(n+1)$ mit $n$ durch $n+1$ ersetzt. Aus IA und IS folgt die
-Behauptung für alle $n\ge1$.
+\textbf{Der entscheidende algebraische Gedanke:} $n+1$ in beiden Termen
+ausklammern --- so entsteht $(n+1)(n+2)$, was genau $n(n+1)$ mit $n$
+durch $n+1$ ersetzt ist. Aus IA und IS folgt die Behauptung für alle
+$n\ge1$.
 
 \begin{ergebnis}
 \begin{equation*}
@@ -28,9 +37,16 @@ Behauptung für alle $n\ge1$.
 \begin{kontrolle}
 $n=3$: $2+4+6=12$, $3\cdot4=12$; $n=5$: $2+4+6+8+10=30$, $5\cdot6=30$.
 Passt.
+
+\textbf{Grenzfall / Alternative:} Ohne Induktion folgt die Formel direkt
+aus $=\ 2\cdot(1+2+\dots+n)=2\cdot\frac{n(n+1)}2=n(n+1)$ (Gauß). Beide
+Wege geben denselben Wert --- die Probe mit der Gauß-Formel ist die
+sauberste unabh\"angige Kontrolle.
 \end{kontrolle}
 
 \begin{merksatz}
-Induktionsschritt: neuen letzten Summanden abspalten, Voraussetzung
-einsetzen und den gemeinsamen Faktor $n+1$ ausklammern.
+Induktionsschritt: den neuen letzten Summanden abspalten, die
+Induktionsannahme einsetzen und den gemeinsamen Faktor $n+1$
+ausklammern --- das Dominoketten-Prinzip (Anfang + Kopplung) macht daraus
+einen Beweis für alle $n$.
 \end{merksatz}

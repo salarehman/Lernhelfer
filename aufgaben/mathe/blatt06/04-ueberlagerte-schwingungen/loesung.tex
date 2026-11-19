@@ -4,44 +4,64 @@
 \subsection*{Gegeben und gesucht}
 $A>0$, $\varphi\in[0,2\pi)$ finden mit
 \begin{equation*}
-  \cos(\omega t)+2\cos\Bigl(\omega t+\frac{2\pi}{3}\Bigr)
+  \cos(\omega t)+2\cos\!\Bigl(\omega t+\frac{2\pi}{3}\Bigr)
   =A\cos(\omega t+\varphi).
 \end{equation*}
 
-\subsection*{Zeigermethode}
-Die beiden Schwingungen als komplexe Amplituden:
-\begin{equation*}
-  z_1=1\cdot\mathrm e^{i0}=1,\qquad
-  z_2=2\,\mathrm e^{i\frac{2\pi}{3}}
-  =2\Bigl(-\frac12+i\frac{\sqrt3}{2}\Bigr)=-1+i\sqrt3.
-\end{equation*}
-Die Zeigersumme
-\begin{equation*}
-  z=z_1+z_2=1+(-1+i\sqrt3)=i\sqrt3.
-\end{equation*}
-Also $A=|z|=\sqrt3$ und $\varphi=\arg(z)=\frac\pi2$.
+\subsection*{Ansatz und Gedankenschritt}
+\emph{Warum Zeiger?} Beide Schwingungen haben dieselbe Kreisfrequenz
+$\omega$; der gemeinsame Faktor $\mathrm e^{i\omega t}$ ist überall
+gleich. Es bleibt, die beiden (fixen) komplexen Amplituden zu addieren und
+das Ergebnis in Polarkoordinaten zu lesen -- kein mühsames
+Trigonometrie-Umrechnen nötig.
 
-\subsection*{Ergebnis}
+\subsection*{Zeigersumme}
+Die Schwingungen als komplexe Amplituden:
 \begin{equation*}
-  \cos(\omega t)+2\cos\Bigl(\omega t+\frac{2\pi}{3}\Bigr)
-  =\sqrt3\cos\Bigl(\omega t+\frac\pi2\Bigr).
+  z_1=\mathrm e^{i0}=1,\qquad
+  z_2=2\,\mathrm e^{i\frac{2\pi}{3}}
+  =2\Bigl(-\frac12+i\frac{\sqrt3}{2}\Bigr)=-1+i\sqrt3 .
+\end{equation*}
+\emph{Gedankenschritt:} Der Zeiger $z_2$ zeigt vom Ursprung in Richtung
+$120^\circ$ mit Länge $2$; in Komponenten heißt das $(-1,+\sqrt3)$. Der
+erste Zeiger ist der Einheitszeiger längs der positiven $x$-Achse, die
+sich mit $z_2$ zu \emph{genau} $i\sqrt3$ addieren (die $x$-Komponenten
+heben sich auf).
+\begin{equation*}
+  z=z_1+z_2=1+(-1+i\sqrt3)=i\sqrt3 .
+\end{equation*}
+In Polarkoordinaten: $A=|z|=\sqrt3$ und $\varphi=\arg(z)=\frac\pi2$.
+
+\subsection*{Rückübersetzung}
+Die Zeigersumme $i\sqrt3$ zurück in einen Kosinus:
+\begin{equation*}
+  \cos(\omega t)+2\cos\!\Bigl(\omega t+\frac{2\pi}{3}\Bigr)
+  =\sqrt3\,\cos\!\Bigl(\omega t+\frac\pi2\Bigr).
 \end{equation*}
 
 \begin{ergebnis}
-$A=\sqrt3$, $\varphi=\frac\pi2$.
+\begin{equation*}
+  A=\sqrt3,\qquad \varphi=\frac\pi2 .
+\end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
 \textbf{Probe (Zeitachse):} Für $\omega t=-\frac\pi2$ ist die rechte Seite
-$\sqrt3\cos(0)=\sqrt3$. Linke Seite:
-$\cos(-\frac\pi2)+2\cos(\frac\pi6)=0+2\cdot\frac{\sqrt3}{2}=\sqrt3$ -- passt.
-Für $\omega t=0$: links $\cos0+2\cos\frac{2\pi}{3}=1-1=0$; rechts
-$\sqrt3\cos\frac\pi2=0$ -- passt.
+$\sqrt3\cos(0)=\sqrt3$; links:
+$\cos(-\frac\pi2)+2\cos(\frac\pi6)=0+2\cdot\frac{\sqrt3}{2}=\sqrt3$.
+\checkmark Für $\omega t=0$: links $1+2\cos\frac{2\pi}{3}=1-1=0$, rechts
+$\sqrt3\cos\frac\pi2=0$. \checkmark
+
+\textbf{Grenzfall:} Wären beide Zeiger in dieselbe Richtung gerichtet
+(gleiche Phase), ergäbe sich $A=1+2=3$ (konstruktive Interferenz); hier
+heben sich die $x$-Anteile weg (Phasendifferenz wirkt), daher die kleinere
+Amplitude $\sqrt3$ bei $90^\circ$ Phasenverschiebung. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Gleichfrequente Schwingungen addieren sich über die komplexen Amplituden
-(Zeiger): Summe $=\sum a_j e^{i\varphi_j}$, dann $A=|z|$,
-$\varphi=\arg z$. Das Ergebnis ist wieder eine Kosinus-Schwingung derselben
-Frequenz.
+Gleichfrequente Kosinus-Schwingungen addieren sich über ihre komplexen
+Amplituden (Zeiger): Summe der Zeiger $\sum a_j\mathrm e^{i\varphi_j}$
+bilden, dann $A$ (Betrag der Zeigersumme), $\varphi$ (deren Argument) ablesen. Das Ergebnis ist
+wieder ein Kosinus \emph{derselben} Frequenz. Verschiedene Phasen
+verstärken oder abschwächen die resultierende Amplitude.
 \end{merksatz}

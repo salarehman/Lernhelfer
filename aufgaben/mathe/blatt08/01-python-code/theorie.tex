@@ -12,12 +12,23 @@ Der Ausdruck
 \begin{verbatim}
 sum([1/(k**p) for k in range(1, n+1)])
 \end{verbatim}
-summiert über $k=1,\dots,n$ jeweils den Term $1/k^p$:
+ist eine \emph{Abkürzung für eine Summe}. Die Liste läuft die Laufindizes
+$k=1,2,\ldots,n$ durch (deshalb $k\in\{1,\ldots,n\}$, `range(1,n+1)`) und
+addiert den Term $1/k^p$ auf:
 \begin{equation*}
   \sum_{k=1}^{n}\frac{1}{k^p}.
 \end{equation*}
-Für $p=1$ handelt es sich um die (partielle) harmonische Reihe, die langsam
-gegen $\infty$ wächst; für $p>1$ konvergiert die Reihe (Zeta-Funktion).
+Der $p$-Parameter steckt im Nenner. Für verschiedene $p$ ändert sich das
+Verhalten dramatisch:
+\begin{itemize}
+  \item $p=1$: die \emph{harmonische} Reihe $1+\tfrac12+\tfrac13+\cdots$,
+        die nur sehr langsam wächst und für $n\to\infty$ divergiert;
+  \item $p>1$: die Reihe konvergiert (Summe $=\zeta(p)$, der
+        Zeta-Funktion).
+\end{itemize}
+Intuition: Bei $p=1$ schrumpfen die Terme zwar, aber zu langsam (jeweils nur
+wie $\tfrac1k$); bei $p>1$ schrumpfen sie schneller als $1/k$ und damit
+schnell genug, dass die Gesamtsumme endlich bleibt.
 
 \textit{Skript:} Kap. 5 (Summen).
 \end{werkzeugkasten}
@@ -29,27 +40,32 @@ for n in range(11):
     print(x)
     x = x - (x**3 - 3) / (3*x**2)
 \end{verbatim}
-Der Code startet bei $x=3$ und wendet $11$-mal die Newton-Iteration für
-$f(x)=x^3-3$ mit $f'(x)=3x^2$ an:
+Der Code sucht eine Nullstelle von $f(x)=x^3-3$, also die Lösung von
+$x^3=3$, d.h.\ die reelle Kubikwurzel $\sqrt[3]{3}\approx1{,}442$. Die
+Iteration
 \begin{equation*}
-  x_{k+1}=x_k-\frac{x_k^3-3}{3x_k^2}.
+  x_{k+1}=x_k-\frac{x_k^3-3}{3x_k^2}
+  =x_k-\frac{f(x_k)}{f'(x_k)}
 \end{equation*}
-Dabei ist $x_k^3-3$ der Fehler zu $f(x)=x^3-3=0$, gesucht ist die reelle
-Lösung $x=\sqrt[3]{3}\approx1{,}442$.
+ist das \textbf{Newton-Verfahren}: Die Ableitung $f'(x)=3x^2$ steht im
+Nenner. Der Sinn der Korrektur: Ein zu großes $x$ macht $x^3-3>0$, also
+zieht der Schritt $(x_k^3-3)/(3x_k^2)>0$ von $x_k$ ab und verkleinert es.
+Gestartet wird bei $x_0=3$; `print(x)` zeigt jeweils den Wert vor der
+Korrektur.
 
 \textit{Skript:} Kap. 4.3 (Newton-Verfahren).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item \texttt{range(1,n+1)} läuft von $1$ bis $n$ (den Endwert
-        $n$ inklusive), \texttt{range(n)} von $0$ bis $n-1$ -- zählen
-        unterscheidet die beiden.
-  \item \texttt{k**p} ist Potenz, nicht $k$ mal $p$.
-  \item Die Newton-Formel muss mit der Ableitung
-        $f'(x)=3x^2$ übereinstimmen; sie ist korrekt, wenn
-        $\frac{x_k^3-3}{3x_k^2}$ gegen $0$ strebt (dann konvergiert $x_k$).
-  \item \texttt{print(x)} vor der Aktualisierung druckt das $x$, \emph{bevor}
-        es verändert wird.
+  \item \texttt{range(1,n+1)} läuft von $1$ bis $n$ inklusive;
+        \texttt{range(n)} von $0$ bis $n-1$. Das \emph{$+1$} im Endwert ist
+        entscheidend.
+  \item \texttt{k**p} ist Potenz $k^p$, nicht $k\cdot p$.
+  \item Beim Newton-Schritt muss der Nenner die Ableitung $f'(x)=3x^2$
+        sein; dann strebt $f(x_k)\to0$ und $x_k$ konvergiert (hier
+        quadratisch).
+  \item \texttt{print(x)} vor der Aktualisierung druckt den alten Wert,
+        wie er im Laufe der Iteration angenommen wird.
 \end{itemize}
 \end{achtung}

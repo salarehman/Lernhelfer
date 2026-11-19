@@ -1,23 +1,36 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Definitionsbereich zuerst, dann über Kreuz, zum Schluss
+% prüfen, ob die Lösung die Nenner nicht aufhebt.
+
 \subsection*{Gegeben und gesucht}
 Bruchgleichungen (a)--(c) nach $x$ auflösen; Definitionsbereich beachten.
 
-\subsection*{a) $\frac1{x+2}=\frac9x$, mit $x\neq0$, $x\neq-2$} 
+\subsection*{Ansatz}
+Jede Gleichung formen wir zu ``Bruch = Bruch`` um, multiplizieren über
+Kreuz und lösen. Vorab notieren wir die Nennerbedingungen ($x\ne a$);
+nach dem Lösen kontrollieren wir, ob die erhaltenen $x$ keinen Nenner
+vernichtet haben.
+
+\subsection*{a) $\frac1{x+2}=\frac9x$, mit $x\neq0$, $x\neq-2$}
 Über Kreuz:
 \begin{equation}
   x=9(x+2)=9x+18\;\Longrightarrow\;-8x=18\;\Longrightarrow\;x=-\frac94 .
 \end{equation}
-liegt im Definitionsbereich.
+Definitionsprüfung: $x=-\tfrac94$ macht keinen der Nenner $x$, $x+2$
+zu $0$ ($x+2=-\tfrac14\neq0$). Liegt im Definitionsbereich. \checkmark
 
 \subsection*{b) $\frac3{2x+1}-\frac2{2-x}=0$, mit $x\neq-\frac12$, $x\neq2$}
+Die Differenz auf eine Seite bringen ($=0$ l"osen):
 \begin{equation}
   \frac3{2x+1}=\frac2{2-x}\;\Longrightarrow\;3(2-x)=2(2x+1)
   \;\Longrightarrow\;6-3x=4x+2\;\Longrightarrow\;x=\frac47 .
 \end{equation}
-liegt im Definitionsbereich.
+Definitionsprüfung: $x=\tfrac47$ macht $2x+1=\tfrac{15}7\neq0$ und
+$2-x=\tfrac{10}7\neq0$. \checkmark
 
 \subsection*{c) $\frac{x-2}{3+x}=\frac{2x}{2x-3}$, mit $x\neq-3$, $x\neq\frac32$}
+Über Kreuz:
 \begin{equation}
   (x-2)(2x-3)=2x(3+x)
 \end{equation}
@@ -26,7 +39,11 @@ liegt im Definitionsbereich.
   2x^2-7x+6&=6x+2x^2 \;\Longrightarrow\; -13x+6=0
   \;\Longrightarrow\; x=\frac6{13} .
 \end{align}
-liegt im Definitionsbereich.
+\textbf{Wichtiger Gedanke:} Die $x^2$-Terme beider Seiten ($2x^2$)
+kürzen sich weg, deshalb bleibt eine \emph{lineare} Gleichung ---
+sonst wäre eine quadratische Lösung (evtl. mit zwei Werten) zu prüfen.
+Definitionsprüfung: $x=\tfrac6{13}$ macht $3+x\neq0$ und
+$2x-3\neq0$. \checkmark
 
 \begin{ergebnis}
 \begin{equation*}
@@ -37,13 +54,27 @@ liegt im Definitionsbereich.
 \end{ergebnis}
 
 \begin{kontrolle}
-a) $\frac{1}{-9/4+2}=\frac{1}{-1/4}=-4$, rechts $\frac{9}{-9/4}=-4$;
-b) $\frac3{2\cdot4/7+1}=\frac3{15/7}=\frac75$, $\frac2{2-4/7}=\frac2{10/7}=\frac75$;
-c) $\frac{6/13-2}{3+6/13}=\frac{-20/13}{45/13}=-\frac49$,
-$\frac{2\cdot6/13}{12/13-3}=\frac{12/13}{-27/13}=-\frac49$. Alle stimmen.
+\textbf{Einsetzprobe in der ursprünglichen Gleichung (die stärkste
+Kontrolle):}
+\begin{itemize}
+  \item a) $\frac{1}{-9/4+2}=\frac{1}{-1/4}=-4$, rechts
+        $\frac{9}{-9/4}=-4$. \checkmark
+  \item b) $\frac3{2\cdot4/7+1}=\frac3{15/7}=\frac75$,
+        $\frac2{2-4/7}=\frac2{10/7}=\frac75$. \checkmark
+  \item c) $\frac{6/13-2}{3+6/13}=\frac{-20/13}{45/13}=-\frac49$,
+        $\frac{2\cdot6/13}{12/13-3}=\frac{12/13}{-27/13}=-\frac49$.
+        \checkmark
+\end{itemize}
+
+\textbf{Grenzfall:} Hätte eine ``L\"osung`` einen Nenner zu $0$ gemacht,
+so wäre sie trotz korrektem über-Kreuz-Multiplizieren \emph{ung"ultig}:
+Die Multiplikation mit $0$ hatte sie eingeschleppt. Dieser Ausschluss ist
+der eigentliche Kontroll-Zweck der Def-Bereich-Pr\u00effung.
 \end{kontrolle}
 
 \begin{merksatz}
-Bei Bruchgleichungen zuerst Nenner $\neq0$ notieren, über Kreuz
-multiplizieren, lösen und die Definitionsbedingungen zum Schluss prüfen.
+Bei Bruchgleichungen zuerst die Nennerbedingungen ($\neq0$) notieren,
+über Kreuz multiplizieren, lösen und schließlich prüfen, dass die Lösung
+keinen Nenner aufhebt. Die Einsetzprobe in der Originalgleichung ist der
+sichere Abschluss.
 \end{merksatz}

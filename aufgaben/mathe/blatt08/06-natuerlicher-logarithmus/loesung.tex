@@ -2,47 +2,56 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-$L\colon(0,\infty)\to\mathbb R$ differenzierbar mit
-$L(1)=0$, $L'(1)=1$ und $L(xy)=L(x)+L(y)$ für alle $x,y>0$. Zeige:
-$L=\ln$.
+$L\colon(0,\infty)\to\mathbb R$ differenzierbar mit $L(1)=0$, $L'(1)=1$
+und $L(xy)=L(x)+L(y)$ für alle $x,y>0$. Zeige: $L=\ln$.
 
-\subsection*{Differentialgleichung aus der Funktionalgleichung}
-Differenziere $L(xy)=L(x)+L(y)$ nach $y$; dabei ist $x$ fest, links wendet
-man die Kettenregel an ($\frac d{dy}(xy)=x$):
+\subsection*{Differenzialgleichung aus der Funktionalgleichung}
+\emph{Gedankenschritt:} Die einzige \emph{rechenbare} Eigenschaft von $L$ ist
+die Additivität; um $L$ zu bestimmen, brauchen wir mehr als einen
+Funktionswert. Differenzieren liefert aus der Funktionalgleichung eine
+Aussage über $L'$. Wir halten $x$ fest und leiten nach $y$ ab;
+links wenden wir die Kettenregel an ($\frac d{dy}(xy)=x$):
 \begin{equation*}
   L'(xy)\cdot x=L'(y).
 \end{equation*}
-Setze nun $y=1$:
+\emph{Gedankenschritt:} Diese Identität gilt für alle $x,y>0$. Setzen wir
+$y=1$, bleibt $L'(x)\cdot x=L'(1)=1$, also
 \begin{equation*}
-  x\,L'(x)=L'(1)=1\;\Longrightarrow\;
-  L'(x)=\frac1x\qquad\forall x>0 .
+  L'(x)=\frac1x\qquad\forall x>0.
 \end{equation*}
 
-\subsection*{Integration}
-Eine Stammfunktion von $\frac1x$ ist $\ln x$, und $L(1)=0=\ln1$. Aus
-$L'=\ln'=\frac1x$ und $L(1)=\ln1=0$ folgt
+\subsection*{Integration und Eindeutigkeit}
+\emph{Gedankenschritt:} Eine Funktion mit $L'(x)=\frac1x$ ist eine
+Stammfunktion von $\frac1x$; zwei solche unterscheiden sich nur um eine
+Konstante. Da $(\ln x)'=\frac1x$ für $x>0$ und $\ln 1=0$ gilt, stimmt die
+Stammfunktion $L$ mit der Konstante $L(1)-\ln 1=0$ überein mit $\ln x$:
 \begin{equation*}
-  L(x)=\ln x\qquad\forall x>0 .
+  L(x)=\ln x\qquad\forall x>0.
 \end{equation*}
 
 \begin{ergebnis}
-$L(x)=\ln x$ für alle $x>0$. Der drei Eigenschaften genügen nur genau die
-Logarithmusfunktion.
+$L(x)=\ln x$ für alle $x>0$. Genau der natürliche Logarithmus erfüllt die
+drei geforderten Eigenschaften.
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Probe:} $\ln(xy)=\ln x+\ln y$, $\ln 1=0$, $\ln'1=\frac11=1$ -- die
-drei axiomatischen Eigenschaften sind für $\ln$ erfüllt, und die Herleitung
-zeigt, dass es keine anderen Funktionen gibt. $\ln'(x)=\frac1x$ ist die
-einzige Lösung mit $\ln 1=0$.
+\textbf{Probe:} $\ln(xy)=\ln x+\ln y$, $\ln 1=0$, $\ln'(1)=\frac11=1$ --
+die drei axiomatischen Eigenschaften sind für $\ln$ erfüllt, und die
+Herleitung zeigt, dass es keine anderen Funktionen mit diesen
+Eigenschaften gibt. \checkmark
 
-\textbf{Grenzfall:} Ohne $L'(1)=1$ wäre jede Konstante $c$ möglich und
-$L(x)=c\ln x$; die Bedingung $L'(1)=1$ legt $c=1$ fest.
+\textbf{Grenzfall:} Ohne $L'(1)=1$ wäre jede Konstante $c$ erlaubt und
+$L(x)=c\ln x$; die Bedingung $L'(1)=1$ fixiert $c=1$ und damit die Basis
+$e$. Das erklärt, warum der \emph{natürliche} Logarithmus die Funktion mit
+$L'(1)=1$ ist. \checkmark
+
+\textbf{Probe der Herleitung:} Aus $L(xy)=L(x)+L(y)$ für $x=2,y=3$:
+$L(6)=L(2)+L(3)$; mit $L=\ln$ stimmt das ($\ln6=\ln2+\ln3$). \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Die Additionseigenschaft $L(xy)=L(x)+L(y)$ ist die definierende Identität
+Die Funktionalgleichung $L(xy)=L(x)+L(y)$ ist die definierende Identität
 des Logarithmus. Ableiten nach $y$ gibt $xL'(xy)=L'(y)$; mit $y=1$
 entsteht $L'(x)=1/x$; mit $L(1)=0$ folgt $L(x)=\ln x$. Die Bedingung
-$L'(1)=1$ fixiert die Normierung.
+$L'(1)=1$ fixiert die Basis (Normierung).
 \end{merksatz}

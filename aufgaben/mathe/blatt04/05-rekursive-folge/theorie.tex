@@ -2,17 +2,26 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Eine rekursiv definierte Folge $(a_n)$ mit $a_1=1$, $a_{n+1}=\frac{1+a_n}{2+a_n}$
-untersuchen: Anfangswerte, eine Ungleichung per Induktion, Monotonie/Konvergenz
-und Grenzwert.
+% Grundidee: Rekursion a_{n+1} = f(a_n); Anfangswerte; Ungleichung per
+% Induktion; Monotonie über Differenz; Konvergenz; Grenzwert als
+% Fixpunktgleichung L=f(L).
+
+Eine rekursiv definierte Folge ``erzeugt sich selbst``: jedes Glied aus
+dem vorigen. Um Konvergenz und Grenzwert zu finden, gehen wir in
+Sch\"ritten vor: (1) erste Glieder, um ein Muster zu sehen, (2) eine
+Ungleichung per Induktion, die Monotonie und Beschr\"anktheit liefert,
+(3) den Grenzwert als \emph{Fixpunkt} der Rekursionsfunktion.
 
 \begin{werkzeugkasten}[Nachrechnen der ersten Glieder]
-Die Folge ist eine rationale Iteration (Bruchrechnung):
+Die Folge $a_1=1$, $a_{n+1}=\frac{1+a_n}{2+a_n}$:
 \begin{equation}
   a_2=\frac2 3,\ a_3=\frac5 8,\ a_4=\frac{13}{21},\ a_5=\frac{34}{55}.
 \end{equation}
-Das sind Verhältnisse aufeinanderfolgender Fibonacci-Zahlen
-($\frac{1}{1},\frac2 3,\frac5 8,\frac{13}{21},\frac{34}{55},\dots$).
+Das sind Ver\"altnisse aufeinanderfolgender Fibonacci-Zahlen
+$(\tfrac{1}{1},\tfrac2 3,\tfrac5 8,\tfrac{13}{21},\dots)$ --- ein
+deutliches Signal, dass die Folge gegen einen festen Wert strebt
+(das Verh\"altnis zweier aufeinanderfolgender Fibonacci-Zahlen strebt
+gegen $\frac{\sqrt5-1}2\approx0.618$).
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Differenz und Monotonie]
@@ -21,28 +30,31 @@ Die Differenz zweier Folgeglieder:
   a_{n+1}-a_n=\frac{1+a_n}{2+a_n}-a_n
   =\frac{1-a_n-a_n^2}{2+a_n}.
 \end{equation}
-Ist $a_n^2+a_n>1$ und $2+a_n>0$, so ist $a_{n+1}-a_n<0$: die Folge ist
-streng monoton fallend.
+Ist $a_n^2+a_n>1$ (und $2+a_n>0$), so ist $a_{n+1}-a_n<0$: die Folge ist
+streng monoton fallend. Da alle $a_n>0$, ist sie nach unten beschr\"ankt,
+also konvergent (Monotonie- und Beschr\"anktheits-Kriterium).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Grenzwert einer Iteration]
-Konvergente rekursive Folgen: der Grenzwert $L$ erfüllt die
-Fixpunktgleichung
+\begin{werkzeugkasten}[Grenzwert als Fixpunkt]
+Konvergiert die rekursive Folge (d.h.\ $a_n\to L$ mit stetiger
+Rekursionsfunktion), so geht die Rekursion im Grenzteil in die
+\emph{Fixpunktgleichung} \"uber --- im Grenzwert wird $a_{n+1}=a_n=L$:
 \begin{equation}
   L=\frac{1+L}{2+L}\ \Longleftrightarrow\ L^2+L-1=0\ \Longrightarrow\
-  L=\frac{\sqrt5-1}2 .
+  L=\frac{-1\pm\sqrt5}2 .
 \end{equation}
-Nur die positive Lösung kommt (alle $a_n>0$) als $L=\Phi-1=\frac1{\Phi}$.
+Nur die positive L\"osung kommt in Frage (alle $a_n>0$ und fallend),
+also $L=\frac{\sqrt5-1}2=\frac1{\Phi}$ (Kehrwert des goldenen Schnitts).
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Beim Induktions-Beweis von $a_n^2+a_n>1$ die Rekursion so umbauen,
-        dass Zähler/Nenner rational zeigen, dass die Ungleichheit bestehen
-        bleibt; Start $a_1$ prüfen.
-  \item Monotonie nicht nur ``anschaulich'': aus $a_{n+1}-a_n<0$ und
-        Beschränktheit (untere Schranke $0$) folgt Konvergenz.
-  \item Die Fixpunktgleichung hat zwei Lösungen; nur die positive ist
-        zulässig ($a_n>0$).
+  \item Beim Induktions-Beweis von $a_n^2+a_n>1$ die Rekursion so
+        umbauen, dass Z\"ahler/Nenner rational zeigen, dass die
+        Ungleichung bestehen bleibt; den Start $a_1$ pr\"ufen.
+  \item Monotonie nicht nur ``anschaulich``: aus $a_{n+1}-a_n<0$ und
+        Beschr\"anktheit (untere Schranke $0$) folgt Konvergenz.
+  \item Die Fixpunktgleichung hat zwei L\"osungen; nur die positive ist
+        zul\"assig ($a_n>0$).
 \end{itemize}
 \end{achtung}

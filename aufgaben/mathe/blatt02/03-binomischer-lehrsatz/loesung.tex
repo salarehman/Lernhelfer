@@ -1,34 +1,46 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: a und b frei wählbar; die Kombinatorik hinter den
+% Koeffizienten erklärt die Struktur.
+
 \subsection*{Gegeben und gesucht}
 (a) $\sum_{k=0}^{n}\binom{n}{k}(-2)^k$ auswerten; (b) DNA-Replikation mit
 $n$ Basen, Mutationswahrscheinlichkeit $p$ je Base: keine bzw. genau $k$
 Mutationen, und $\sum\binom{n}{k}p^k(1-p)^{n-k}=1$.
 
 \subsection*{a) Wert der Summe}
-Nach dem binomischen Lehrsatz mit $a=-2$, $b=1$:
+Nach dem binomischen Lehrsatz mit $a=-2$, $b=1$ (der erste Plus-Term der
+Klammer wird $a$, der zweite steht für $b$):
 \begin{equation}
   \sum_{k=0}^{n}\binom{n}{k}(-2)^k=\bigl((-2)+1\bigr)^n=(-1)^n .
 \end{equation}
 \begin{ergebnis}
 $1$ für gerade $n$, $-1$ für ungerade $n$.
 \end{ergebnis}
+\textbf{Gedanke:} Die Summe ist gerade $(a+b)^n$ mit $a=-2,b=1$. Der
+Koeffizient $\binom{n}{k}$ ``zählt``, wie oft der Term $(-2)^k\cdot1^{n-k}$
+auftritt.
 
 \subsection*{b) Mutationen}
-i) Keine Mutation ($k=0$):
+i) Keine Mutation ($k=0$): genau eine Möglichkeit (alle $n$ Basen
+unverändert), und der Term ist
 \begin{equation}
   \mathrm P=\binom{n}{0}p^0(1-p)^n=(1-p)^n .
 \end{equation}
 
-ii) Genau $k$ Mutationen:
+ii) Genau $k$ Mutationen: $k$ Basen mutieren (je mit $p$), $n-k$ nicht
+(je mit $1-p$); es gibt $\binom{n}{k}$ Auswahlen, \emph{welche}:
 \begin{equation}
   \mathrm P(\text{genau }k)=\binom{n}{k}p^k(1-p)^{n-k}.
 \end{equation}
 
-iii) Mit dem Lehrsatz für $a=p$, $b=1-p$:
+iii) Der Lehrsatz für $a=p$, $b=1-p$ (beachte $p+(1-p)=1$):
 \begin{equation}
   \sum_{k=0}^{n}\binom{n}{k}p^k(1-p)^{n-k}=(p+(1-p))^n=1 .
 \end{equation}
+Das \emph{beweist}, dass die einzelnen ``genau-$k$``-Wahrscheinlichkeiten
+sich zu $1$ summieren --- sie bilden eine plausibilisierende
+Wahrscheinlichkeitsverteilung.
 
 \begin{ergebnis}
 \begin{align*}
@@ -40,13 +52,22 @@ iii) Mit dem Lehrsatz für $a=p$, $b=1-p$:
 \end{ergebnis}
 
 \begin{kontrolle}
-$a$: für $n=2$: $1-4+4=1$; für $n=3$: $1-6+12-8=-1$. Passt. b): Für $n=2$,
-$p=\tfrac12$ ist $\sum_{k=0}^{2}\binom2k\tfrac1{2^k}\tfrac1{2^{2-k}}
-=\tfrac14(1+2+1)=1$.
+\textbf{a) kleiner Fall:} für $n=2$: $\binom20(-2)^0+\binom21(-2)^1+
+\binom22(-2)^2=1-4+4=1$; für $n=3$: $1-6+12-8=-1$. Passt zu $(-1)^n$.
+
+\textbf{b) n=2, p=1/2:} $\sum_{k=0}^{2}\binom2k(\tfrac12)^k
+(\tfrac12)^{2-k}=(\tfrac12+\tfrac12)^2=1$; konkret
+$\tfrac14(1+2+1)=1$. Die Verteilung ``trägt`` ihre Gesamtmasse 1.
+
+\textbf{Grenzfall:} $p\to0$ (keine Mutation): $P(\text{genau }k)\to0$
+für $k>0$, $P(k=0)\to1$; $p\to1$ (jede Base mutiert sicher): die Masse
+sammelt sich bei $k=n$. Beides ist intuitiv und wird von der Formel
+korrekt reproduziert.
 \end{kontrolle}
 
 \begin{merksatz}
 Der binomische Lehrsatz liefert sowohl den Wert von $\sum\binom nk(-2)^k$
-als auch den Nachweis, dass die einzelnen
-``genau-$k$-Mutationen''-Wahrscheinlichkeiten sich zu $1$ summieren.
+(gleich $(-1)^n$) als auch den Nachweis, dass die
+``genau-$k$-Mutationen``-Wahrscheinlichkeiten sich zu $1$ summieren ---
+ein einziges algebraisches Resultat, das zwei Anwendungen trägt.
 \end{merksatz}

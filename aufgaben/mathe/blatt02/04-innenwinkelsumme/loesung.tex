@@ -1,25 +1,30 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Diagonale zerlegt in Dreieck + n-Eck; +180° pro Schritt.
+
 \subsection*{Gegeben und gesucht}
 Beweisen: Die Summe der Innenwinkel eines $n$-Ecks ($n\ge3$, Eckpunkte
 auf einer gemeinsamen Kreislinie) ist $(n-2)\cdot180^\circ$.
 
 \subsection*{Ansatz}
-Vollständige Induktion über die Eckenzahl $n$, im Schritt per Diagonale
-zerlegen.
+Vollständige Induktion über die Eckenzahl $n$. Der Kern: ein Polygon um
+eine Ecke zu vergrößern ist dasselbe wie ein Dreieck ``anzufügen``,
+das $180^\circ$ an Summe beiträgt. Im Schritt zerlegt man per Diagonale.
 
 \subsection*{Induktionsanfang}
-$n=3$: Dreieckssumme ist $180^\circ=(3-2)\cdot180^\circ$. \checkmark
+$n=3$: ein Dreieck hat Innenwinkelsumme $180^\circ$, und
+$180^\circ=(3-2)180^\circ$. \checkmark
 
 \subsection*{Induktionsschritt}
-Sei die Aussage für ein $n$-Eck bewiesen. Ein $(n+1)$-Eck (konvex) wird
-durch eine Diagonale in ein Dreieck und ein $n$-Eck zerlegt. Die
-Innenwinkelsumme des $(n+1)$-Ecks ist die des $n$-Ecks plus die des
-Dreiecks:
+Sei die Aussage für ein $n$-Eck bewiesen (d.h. $S(n)=(n-2)180^\circ$).
+Ein konvexes $(n+1)$-Eck wird durch eine Diagonale in ein Dreieck und ein
+$n$-Eck zerlegt. Die Innenwinkelsumme des $(n+1)$-Ecks ist die des
+$n$-Ecks plus die des Dreiecks (die Diagonale addiert ja keine Ecke:
+die anliegenden Winkel trennen sich nur):
 \begin{equation}
   S(n+1)=S(n)+180^\circ=(n-2)180^\circ+180^\circ=(n-1)180^\circ .
 \end{equation}
-Wegen $n-1=(n+1)-2$ ist das die Behauptung für $n+1$.
+Wegen $n-1=(n+1)-2$ ist das genau die Behauptung für $n+1$. \checkmark
 
 \begin{ergebnis}
 \begin{equation*}
@@ -28,12 +33,19 @@ Wegen $n-1=(n+1)-2$ ist das die Behauptung für $n+1$.
 \end{ergebnis}
 
 \begin{kontrolle}
-$n=4$: Viereck hat $\text{360}^\circ=(4-2)180^\circ$; $n=5$: Fünfeck
-$\text{540}^\circ=(5-2)180^\circ$. Vertraut und plausibel.
+$n=4$: Quadrat hat $360^\circ=(4-2)180^\circ$; $n=5$: Fünfeck
+$540^\circ=(5-2)180^\circ$. Vertraut und plausibel.
+
+\textbf{Grenzfall (der $n\to\infty$-Sinn):} Je größer $n$, desto mehr
+nähert sich das Polygon einem Kreis; die Innenwinkelsumme wächst linear
+mit $(n-2)\cdot180^\circ$ und geht für $n\to\infty$ gegen $\infty$.
+Ein reguläres $n$-Eck hat dann pro Innenwinkel
+$\frac{(n-2)180^\circ}{n}\to180^\circ$ (fast flach) --- geometrisch
+sinnvoll, weil die Kanten des fast-Kreises fast parallel sind.
 \end{kontrolle}
 
 \begin{merksatz}
 Ein konvexes Polygon zerlegt man in Dreieck plus kleineres Polygon; jede
 Zerlegung addiert $180^\circ$, was auf die Formel $(n-2)\cdot180^\circ$
-führt.
+führt (Induktion: $S(n+1)=S(n)+180^\circ$).
 \end{merksatz}

@@ -1,14 +1,22 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Engpass = Fünfen; jede 25/125... liefert eine weitere
+% Fünf. Legendre-Rechnung + Kontrolle durch gegenrechnen.
+
 \subsection*{Gegeben und gesucht}
 $10!=3628800$ endet mit zwei Nullen; gesucht: mit wie vielen Nullen endet
 $100!$?
 
-\subsection*{Ansatz}
-Endnullen = Primfaktoren $5$ in $100!$ (Fünfen sind der limitierende
-Faktor, da Zweien reichlich vorhanden).
+\subsection*{Ansatz und der entscheidende Gedankenschritt}
+Jede Endnull braucht den Faktor $10=2\cdot5$. Da in $100!$ insbesondere
+die 50 geraden Zahlen schon mindestens eine $2$ liefern, sind die Zweien
+sicherlich reichlicher als die Fünfen.  Also z\"ahlen wir nur die
+\emph{Fünfen}: die Zahl der Endnullen ist die Zahl der Primfaktoren
+$5$ in $100!$. Das ist der Kern der Aufgabe.
 
 \subsection*{Rechnung}
+Gemäß Legendre (Vielfache von 5, plus eine weitere Fünf je Vielfachem
+von 25, ...):
 \begin{align}
   &\left\lfloor\frac{100}{5}\right\rfloor = 20 &&\text{(Vielfache von 5)}\\
   &\left\lfloor\frac{100}{25}\right\rfloor = 4 &&\text{(Vielfache von 25 geben je eine Fünf extra)}\\
@@ -21,12 +29,20 @@ $100!$ endet mit \textbf{24} Nullen.
 \end{ergebnis}
 
 \begin{kontrolle}
-Schätzung: $5,10,\dots,100$ sind 20 Vielfache; davon $25,50,75,100$ je eine
-zusätzliche Fünf ($4$), Summe $24$. Die $2$er-Potenz in $100!$ ist deutlich
-größer ($\ge 24$), also limitiert allein die Fünf.
+\textbf{Hand-Nachprüfung:} Die Zahlen $5,10,\dots,100$ sind 20
+Vielfache; davon $25,50,75,100$ je eine zusätzliche Fünf ($4$), Summe
+$24$. Die $2$er-Potenz in $100!$ ist deutlich gr\"oßer als $24$ (durch
+die geraden Zahlen plus die Vielfachen von $4,8,16,32,64$), also
+limitiert wirklich nur die Fünf.
+
+\textbf{Grenzfall:} F\"ur $125$ (ein Vielfaches von $125$) h\"atte man
+eine weitere Stufe: $\lfloor125/5\rfloor+\lfloor125/25\rfloor+
+\lfloor125/125\rfloor=25+5+1=31$, weil $125=5^3$ drei Fünfen tr\"agt.
+Das zeigt, wie die Potenzen-Stufen einzelne Zusatz-F\"unfen abgreifen.
 \end{kontrolle}
 
 \begin{merksatz}
-Endnullen von $n!$ = Anzahl der $5$er inklusive derer aus $25,125,\dots$;
-Zwei Faktoren sind nie der Engpass.
+Endnullen von $n!$ = Anzahl der Primfaktoren $5$ (Legendre: $\lfloor
+n/5\rfloor+\lfloor n/25\rfloor+\dots$), weil die Zweien nie der Engpass
+sind.
 \end{merksatz}

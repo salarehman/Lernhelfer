@@ -1,5 +1,8 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Warum der Quotient die entscheidende Probe ist und wie
+% man die Rückrechnung als Kontrolle einsetzt.
+
 \subsection*{Gegeben und gesucht}
 Zwei Größen mit den Wertepaaren
 
@@ -10,16 +13,25 @@ $X$: $4,\ 8,\ 10,\ 12$ \quad und \quad $Y$: $6,\ 12,\ 15,\ 18$.
 Gesucht: Ist $Y$ direkt proportional zu $X$? Gegebenenfalls die
 Proportionalitätskonstante angeben.
 
-\subsection*{Ansatz}
-Direkte Proportionalität genau dann, wenn $k=\tfrac{Y}{X}$ für alle Paare
-denselben Wert hat.
+\subsection*{Ansatz und der entscheidende Gedankenschritt}
+Direkte Proportionalität bedeutet: Es gibt eine Zahl $k$ mit $Y=kX$ für
+alle Paare. Die Frage ``ist das so?`` übersetzt sich also in die
+Rechenprobe ``sind alle Quotienten $k_i=Y_i/X_i$ gleich?``
+
+\textbf{Warum der Quotient und nicht der Unterschied?} Zwei Größen mit
+konstantem \emph{Unterschied} (z.\,B. $Y=X+3$) wären additiv verknüpft,
+nicht multiplikativ. Proportionalität ist eine Frage nach einem
+\emph{Faktor}, und den extrahiert genau die Division. Der Quotient prüft
+also gezielt die Vermutung ``Mal-Faktor statt Plus-Konstante``.
 
 \subsection*{Rechnung}
 \begin{align}
   \frac{6}{4}&=\frac32,\qquad \frac{12}{8}=\frac32,\qquad
   \frac{15}{10}=\frac32,\qquad \frac{18}{12}=\frac32 .
 \end{align}
-Alle vier Quotienten sind gleich $k=\tfrac32$.
+Alle vier Quotienten sind gleich $k=\tfrac32$. (Beachte: Das war vorab
+nicht sicher --- z.\,B. ist $10/4=\tfrac52$, aber wir testen ja
+$Y/X=15/10$, nicht $X/Y$.)
 
 \begin{ergebnis}
 $Y$ ist direkt proportional zu $X$ mit der Proportionalitätskonstante
@@ -27,12 +39,21 @@ $k=\dfrac32$, d.h. $Y=\tfrac32\,X$.
 \end{ergebnis}
 
 \begin{kontrolle}
-Stimmen die erzeugten Werte? $k\cdot X$: $\tfrac32\cdot4=6$,
+\textbf{Rückrechnung (eine starke Probe):} $k\cdot X$: $\tfrac32\cdot4=6$,
 $\tfrac32\cdot8=12$, $\tfrac32\cdot10=15$, $\tfrac32\cdot12=18$ -- alle
-gegebenen $Y$-Werte werden reproduziert.
+gegebenen $Y$-Werte werden reproduziert. Damit ist die Aussage nicht nur
+``plausibel``, sondern \emph{bewiesen} an allen Daten.
+
+\textbf{Grenzfall (was wäre, wenn $\neq$):} Hätte eines der Paare, etwa
+$(10,16)$, den Quotienten $16/10=8/5\neq3/2$, so wäre die direkte
+Proportionalität \emph{sofort} zu verwerfen --- ein Gegenpaar genügt.
+Genau dieser ``minimale Widerlegungstest`` steckt hinter der Regel ``alle
+Paare prüfen``. Auch der Fall $X=0$ mit $Y\neq0$ würde die Aussage
+unmöglich machen (keine Ursprungsgerade).
 \end{kontrolle}
 
 \begin{merksatz}
-Proportionalität erkennt man am konstanten Quotienten $Y/X$; der gemeinsame
-Quotient ist die Proportionalitätskonstante.
+Proportionalität erkennt man am konstanten Quotienten $Y/X$;
+der gemeinsame Quotient ist die Proportionalitätskonstante. Die
+Rückrechnung $kX=Y$ an jedem Paar ist der zuverlässige Abschluss.
 \end{merksatz}

@@ -1,39 +1,48 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Parität via 2R-n; Symmetrie nutzen, Gleichstand bei 0
+% abspalten.
+
 \subsection*{Gegeben und gesucht}
 Start bei $0$, pro Sekunde $\pm1$ mit Wahrscheinlichkeit je $\tfrac12$.
 Nach $n$ Sekunden: (a) mögliche Positionen für gerade $n$; (b) für
-ungerade $n$; (c) Wahrscheinlichkeit für ``echt rechts von $0$''.
+ungerade $n$; (c) Wahrscheinlichkeit für ``echt rechts von $0$``.
 
 \subsection*{Ansatz}
 Mit $R$ = Anzahl Rechtschritte, $L=n-R$ ist die Position $R-L=2R-n$.
-Mögliche Positionen: $2R-n$ für $R=0,\dots,n$.
+Mögliche Positionen: $2R-n$ für $R=0,\dots,n$. Das ist eine reine
+Linearkombination --- daher die Parität.
 
 \subsection*{a) $n$ gerade}
-Zahlwerte $2R-n$ sind gerade; alle geraden Zahlen zwischen $-n$ und $n$:
+Zahlwerte $2R-n$ sind gerade (gerade minus gerade). Alle geraden Zahlen
+zwischen $-n$ und $n$:
 \begin{equation}
   \{-n,\,-n+2,\dots,-2,\,0,\,2,\dots,n\} .
 \end{equation}
-Rückkehr zu $0$ ist möglich (nur für gerade $n$).
+Rückkehr zu $0$ ist möglich --- $R=\tfrac n2$ gibt $2\cdot\tfrac n2-n=0$.
+\checkmark
 
 \subsection*{b) $n$ ungerade}
 Alle Positionen sind ungerade:
 \begin{equation}
   \{-n,\,-n+2,\dots,-1,\,1,\dots,n\} .
 \end{equation}
+Hier ist $0$ \emph{nicht} erreichbar (kein ganzzahliges $R$ mit
+$2R-n=0$).
 
-\subsection*{c) Wahrscheinlichkeit ``echt rechts''}
+\subsection*{c) Wahrscheinlichkeit ``echt rechts``}
 $\mathrm P(R=r)=\binom{n}{r}2^{-n}$.
 \begin{itemize}
-  \item $n$ \emph{ungerade}: durch Symmetrie ($R\leftrightarrow L$) ist
-        $\mathrm P(R>n/2)=\mathrm P(R<n/2)$ und es gibt keinen Gleichstand,
-        also
+  \item $n$ \emph{ungerade}: Symmetrie ($R\leftrightarrow L$) macht
+        $P(\text{rechts})=P(\text{links})$, und es gibt keinen
+        Gleichstand, die beiden decken also zusammen alle $n$-Schritt-
+        Ergebnisse ab:
         \begin{equation}
           \mathrm P(\text{rechts})=\tfrac12 .
         \end{equation}
-  \item $n$ \emph{gerade}: Gleichstand $R=n/2$ hat $\mathrm P(0)=\binom{n}{n/2}2^{-n}$, 
-        und die Symmetrie gibt $P(\text{rechts})=P(\text{links})$; mit
-        $P(\text{rechts})+P(\text{links})+P(0)=1$:
+  \item $n$ \emph{gerade}: Der Gleichstand $R=n/2$ hat
+        $\mathrm P(0)=\binom{n}{n/2}2^{-n}$. Über die Normierung
+        $P(\text{rechts})+P(\text{links})+P(0)=1$ und die Symmetrie:
         \begin{equation}
           \mathrm P(\text{rechts})=\frac12\Bigl(1-\binom{n}{n/2}2^{-n}\Bigr).
         \end{equation}
@@ -50,13 +59,21 @@ $\mathrm P(R=r)=\binom{n}{r}2^{-n}$.
 \end{ergebnis}
 
 \begin{kontrolle}
-Beispiele: $n=10$: $\binom{10}{5}2^{-10}=\frac{252}{1024}=0.246$, also
-$P(\text{rechts})=\frac12(1-0.246)=0.377$; $n=11$: $P(\text{rechts})=0.5$.
-Für kleine $n$ direkt über $\binom{n}{r}$ nachprüfbar.
+\textbf{Numerische Stichprobe:} $n=10$: $\binom{10}{5}2^{-10}
+=\frac{252}{1024}=0.246$, also $P(\text{rechts})=\frac12(1-0.246)
+=0.377\approx0.377$; $n=11$: $P(\text{rechts})=0.5$. Für kleine $n$ direkt
+über $\binom{n}{r}$ nachprüfbar.
+
+\textbf{Grenzfall:} Für $n\to\infty$ geht $\binom{n}{n/2}2^{-n}\to0$
+(Du Moivre-Laplace: der Gleichstands-Term verschwindet wie
+$1/\sqrt{n}$), und beide Formeln laufen auf $\tfrac12$ zu --- der
+Walk ``verliert`` keine systematische Drift. Das ist eine schöne
+Konsistenz zwischen dem diskreten Zählergebnis und der großen-$n$-
+Intuition.
 \end{kontrolle}
 
 \begin{merksatz}
-Die erreichbaren Positionen haben die Parität von $n$; die
-Rechts-Wahrscheinlichkeit ist bei ungeradem $n$ genau $\tfrac12$, bei
-geradem $n$ um den Gleichstandsanteil $\mathrm P(0)$ gedrückt.
+Die erreichbaren Positionen haben die Parität von $n$ (Position $=2R-n$);
+die Rechts-Wahrscheinlichkeit ist bei ungeradem $n$ genau $\tfrac12$, bei
+geradem $n$ um den Gleichstandsanteil $P(0)$ gedrückt.
 \end{merksatz}

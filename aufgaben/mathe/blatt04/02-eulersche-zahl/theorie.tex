@@ -2,37 +2,52 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Die Ungleichung $n!>2^{n-1}$ zeigen, daraus $\sum 1/n!<1$ folgern, $2<e<3$
-beweisen und $e$ per Python annähern.
+% Grundidee: e als Reihe sum 1/n!. Die Abschätzung n!>2^{n-1} vergleicht
+% die Fakultäts-Reihe mit einer geometrischen Reihe und liefert so
+% Konvergenz (< 1) und Schranken 2<e<3.
+
+Die Eulersche Zahl ist auf \emph{mehrfache Weise} definierbar; die
+bequemste f\"ur diesen Kontext ist die Reihe
+$e=\sum 1/n!$. Um einzusehen, dass diese Reihe konvergiert (und wo), 
+vergleicht man sie mit einer bekannten geometrischen Reihe --- das ist 
+der Kern.
 
 \begin{werkzeugkasten}[$n!$ gegen $2^{n-1}$]
-Für $n>2$: Induktion bzw. trivial über die ersten Faktoren
-$n!=n(n-1)\cdots2\cdot1$. Ab $n=3$ sind die Faktoren $\ge2$, viele
-strikt größer, sodass $n!>2^{n-1}$. Nutzt man das für teilsummierten
-Summanden $\frac1{n!}<\frac1{2^{n-1}}$ ($n\ge3$), konvergiert
-$\sum_{n=2}^\infty\frac1{n!}$ gegen eine Zahl unter $1$, weil die
-verbleibende geometrische Reihe von $n=3$ an $\frac12$ liefert.
+F\"ur $n>2$ gilt $n!>2^{n-1}$. \textbf{Warum?} Schreibt man
+$n!=n(n-1)\cdots2\cdot1$ aus, stehen ab $n=3$ Faktoren $\ge2$; genau
+$n-1$ solcher Faktoren bilden $2^{n-1}$, und da manche Faktoren strikt
+gr\"o\ss{}er sind, ist das Produkt gr\"o\ss{}er. Formal beweist man es per
+Induktion $\bigl((n+1)!=(n+1)n!>(n+1)2^{n-1}>2\cdot2^{n-1}=2^n\bigr)$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Warum hilft das bei $e$?]
+Konvergenz und obere Schranke gewinnt man durch Vergleich mit der
+geometrischen Reihe: F\"ur $n\ge2$ ist $n!\ge2^{n-1}$, also
+\begin{equation}
+  \frac1{n!}\le\frac1{2^{n-1}},
+\end{equation}
+und $\sum 1/2^{n-1}$ konvergiert. Damit konvergiert auch die
+Fakult\"ats-Reihe und $e$ ist endlich. Die untere Schranke $e>2$ ist
+trivial ($e=1+1+\tfrac12+\dots>2$).
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Euler-Zahl als Reihe]
 \begin{equation}
   e=\sum_{n=0}^{\infty}\frac1{n!}.
 \end{equation}
-Untere Schranke: Reihe ab einschließlich $n=2$ ist $e-2>0$; obere
-Schranke: für $n\ge2$ ist $n!\ge2^{n-1}$, also
-$\sum_{n=2}^{\infty}\frac1{n!}\le\sum_{n=2}^{\infty}\frac1{2^{n-1}}=1$,
-damit $e\le3$ (strikt $<3$ wegen echter Ungleichheit für $n\ge3$);
-untere: $e=2+\tfrac12+\dots>2$.
+Untere Schranke: $e=2+\frac12+\dots>2$. Obere Schranke: f\"ur $n\ge3$
+ist $1/n!<1/2^{n-1}$, also
+$\sum_{n=3}^\infty 1/n!<\sum_{n=3}^\infty 1/2^{n-1}=\frac12$, und
+$\sum_{n=2}^\infty 1/n!<1$, also $e<3$.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Die Ungleichung $n!>2^{n-1}$ gilt \emph{erst ab} $n=3$;
-        für $n=2$ ist $2! =2^{1}$ (Gleichheit).
-  \item Beim Folgern von $\sum 1/n!<1$ die Indexgrenzen sauber trennen
+  \item Die Ungleichung $n!>2^{n-1}$ gilt \emph{erst ab} $n=3$; f\"ur
+        $n=2$ ist $2!=2^{1}$ (Gleichheit).
+  \item Beim Folgerns von $\sum 1/n!<1$ die Indexgrenzen sauber trennen
         ($n=2$ separat, ab $n=3$ mit der Ungleichung).
-  \item $e$ in Python: \texttt{sum([1/math.factorial(k) for k in range(11)])};
-        ``12 Nachkommastellen'' über ausreichend viele Glieder, z.B.
-        $\texttt{range(21)}$.
+  \item $e$ in Python: \texttt{sum([1/math.factorial(k) for k in range(21)])}.
+        F\"ur ``12 Nachkommastellen`` nimmt man ausreichend viele Glieder.
 \end{itemize}
 \end{achtung}

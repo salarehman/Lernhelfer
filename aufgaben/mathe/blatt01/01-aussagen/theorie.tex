@@ -2,29 +2,47 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Von einer Aussage das Gegenteil (die Negation) unter den vorgegebenen
-Möglichkeiten erkennen; nicht über den Wahrheitsgehalt entscheiden.
+% Grundidee: Negation = Quantoren umdrehen + Prädikat verneinen; Reihenfolge
+% von All- und Existenzquantor beachten. Kein Wahrheitsurteil.
 
-\begin{werkzeugkasten}[Negation]
-Die Negation einer Aussage mit Allquantor ``zu jeder Zahl gibt es eine
-natürliche Zahl, die größer ist'' ist die Aussage: \emph{Es gibt eine Zahl,
-die von keiner natürlichen Zahl übertroffen wird.}
+Eine Aussage mit \emph{mehreren} Quantoren negiert man, indem man jeden
+Quantor umdreht \emph{und dabei ihre Reihenfolge beibehält}. Das ist der
+häufigste Fehlerpunkt: Wer ``zu jeder`` und ``es gibt`` nur einzeln
+umdreht, aber die Reihenfolge ändert, bekommt eine völlig andere Aussage.
+
+\begin{werkzeugkasten}[Negieren von $\forall$ und $\exists$]
+Die Negation von ``zu jeder Zahl gibt es eine natürliche Zahl, die
+größer ist`` ist:
+\emph{``Es gibt eine Zahl, die von keiner natürlichen Zahl übertroffen
+wird.``}
 Formal:
 \begin{equation}
   \neg\bigl(\forall x\,\exists n\in\mathbb N:\ n>x\bigr)\;\Longleftrightarrow\;
   \exists x\,\forall n\in\mathbb N:\ n\leq x .
 \end{equation}
-``Zu jeder'' wird zu ``es gibt eine'', ``es gibt eine'' wird zu ``zu keiner''.
+\textbf{Der Handgriff:} ``zu jeder`` ($\forall$) wird ``es gibt``
+($\exists$), ``es gibt eine`` ($\exists$) wird ``zu keiner`` ($\forall$),
+und die \emph{Reihenfolge der Quantoren bleibt}: über $x$, dann über $n$.
+Das Prädikat $n>x$ wird zu $\neg(n>x)$, also $n\le x$.
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Warum Reihenfolge zählt]
+Die Aussage \emph{``zu jeder Zahl gibt es eine größere natürliche
+Zahl``} ist wahr. Vertauscht man die Quantoren --- ``es gibt eine
+natürliche Zahl, die zu jeder Zahl größer ist`` --- ist sie falsch (keine
+einzige Zahl ist größer als alle). Die Negation darf diese Reihenfolge
+\emph{nicht} ändern, sonst negiert man eine andere Aussage.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Die Negation von ``es gibt eine natürliche Zahl, die größer ist''
-        ist ``es gibt keine natürliche Zahl, die größer ist'', nicht
-        ``kleiner''.
-  \item Aussagen wie ``Keine einzige Zahl wird von jeder natürlichen Zahl
-        übertroffen'' (Variante a) sind \emph{nicht} die Negation, weil sie
-        die Reihenfolge der Quantoren falsch drehen.
-  \item Nicht bewerten ob die Aussage wahr oder falsch ist.
+  \item Die Negation von ``es gibt eine natürliche Zahl, die größer
+        ist`` ist ``es gibt \emph{keine} natürliche Zahl, die größer
+        ist``, nicht ``kleiner``.
+  \item Aussagen, die die Reihenfolge der Quantoren falsch drehen (z.\,B.
+        ``keine einzige Zahl wird von jeder natürlichen Zahl
+        übertroffen`` als Negation) sind \emph{nicht} die korrekte
+        Negation.
+  \item Nicht bewerten, ob die Aussage wahr oder falsch ist.
 \end{itemize}
 \end{achtung}

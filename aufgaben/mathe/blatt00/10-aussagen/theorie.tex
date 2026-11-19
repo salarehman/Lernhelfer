@@ -2,39 +2,52 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Das Gegenteil (die Negation) von Aussagen bestimmen; nicht auswerten, ob
-die Aussage wahr oder falsch ist.
+% Grundidee: Negation = "Umdrehen" der Quantoren und des Prädikats. Ein
+% Allquantor ("alle") wird zur Existenzaussage, eine Existenzaussage
+% ("es gibt") zu "keine". Nicht über Wahrheit entscheiden.
+
+Die Negation einer Aussage ist die Aussage, die \emph{genau dann wahr}
+ist, wenn die ursprüngliche falsch ist. Ihre Konstruktion folgt festen
+Mustern, die nichts mit dem Wahrheitsgehalt zu tun haben --- es geht
+darum, die Aussage ``\emph{umzudrehen}``.
 
 \begin{werkzeugkasten}[Negation von Quantoren]
-Für eine Aussage ``alle'': das Gegenteil ist ``mindestens eine (die
-nicht)''. Für ``es gibt eine'': das Gegenteil ist ``keine''.
+Die beiden wichtigsten Regeln:
 \begin{align}
   \neg\bigl(\forall x: P(x)\bigr) &\Longleftrightarrow \exists x:
   \neg P(x),\\
   \neg\bigl(\exists x:P(x)\bigr) &\Longleftrightarrow \forall x:\neg P(x).
 \end{align}
-Allquantor und Existenzquantor ``drehen sich um'' und das Prädikat wird
-verneint; weitere logische Verknüpfungen (und/oder) werden ebenfalls negiert.
+\textbf{Warum ``alle'' zu ``mindestens eine Gegenbeispiel`` wird:} Um eine
+``alle''-Aussage zu widerlegen, genügt \emph{ein} Gegenbeispiel. Das
+Gegenteil von ``jedes Tier ist grau`` ist also ``\emph{es gibt} ein Tier,
+das nicht grau ist`` --- nicht ``kein Tier ist grau`` (viel zu stark).
+Umgekehrt: ``es gibt eine`` wird zu ``\emph{keine}``.
+
+\subsection*{Also: Allquantor $\leftrightarrow$ Existenzquantor, Prädikat
+verneint.}
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Negation von Prädikaten]
-\begin{itemize}
-  \item Gegenteil von ``jeder Morgen: die Sonne geht auf'' ist ``es gibt
-        einen Morgen, an dem die Sonne nicht aufgeht''.
-  \item Gegenteil von ``jedes Tier ist grau'' ist ``es gibt ein Tier, das
-        nicht grau ist''.
-  \item Gegenteil von ``es gibt eine Pflanze mit P'' ist ``alle Pflanzen
-        erfüllen $\neg P$''.
-\end{itemize}
+\begin{werkzeugkasten}[Negation von Verknüpfungen (De Morgan)]
+Logische ``und``/``oder`` werden beim Negieren ebenfalls umgedreht:
+\begin{equation}
+  \neg(P \text{ und } Q) \Longleftrightarrow (\neg P)\ \text{oder}\ (\neg Q).
+\end{equation}
+Beispiel: ``Es gibt eine Pflanze, die weder grün noch gelb ist`` ist
+$\exists x:\ \neg(\text{grün }\text{oder}\ \text{gelb})$; die Negation
+ist $\forall x:\ \neg\neg(\text{grün oder gelb}) =
+\text{`jede Pflanze ist grün oder gelb'}$.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Die Negation einer ``alle''-Aussage ist \emph{ein} Gegenbeispiel,
-        nicht ``keine''. Die Negation einer ``es gibt''-Aussage ist
-        ``keine''.
-  \item Die Aussage ``$P$ und $Q$'' negiert man als ``$\neg P$ oder
-        $\neg Q$''.
-  \item Nicht nach Wahrheit entscheiden -- nur die Negation bilden.
+  \item \textbf{Negation einer ``alle``-Aussage} ist ``\emph{ein}
+        Gegenbeispiel``, nicht ``keine``. ``Kein Tier ist grau`` ist nicht
+        das Gegenteil von ``jedes Tier ist grau``.
+  \item \textbf{Negation einer ``es gibt``-Aussage} ist ``keine``, nicht
+        ``alle außer...``.
+  \item `P und Q` negiert man zu `$\neg P$ oder $\neg Q$` (nicht zu
+        `$\neg P$ und $\neg Q$``).
+  \item Nicht über Wahrheit entscheiden --- nur die Negation bilden.
 \end{itemize}
 \end{achtung}

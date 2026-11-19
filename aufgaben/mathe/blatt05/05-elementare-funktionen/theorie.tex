@@ -3,49 +3,61 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Zu gegebenen Vorgaben (Monotonie, Funktionswerte, Grenzverhalten) jeweils ein
-elementares $f$ mit passendem Definitionsbereich finden.
+Zu gegebenen Vorgaben (Monotonie, Funktionswerte, Grenzverhalten) jeweils
+ein elementares $f$ mit passendem Definitionsbereich finden.
 
-\begin{werkzeugkasten}[Bauplan: Maxima und Grenzwerte kontrollieren]
-Um eine Funktion zu bauen, steuert man zwei Aspekte getrennt:
+\begin{werkzeugkasten}[Bauplan: Qualität kontrollieren mit einer \emph{Glocke}]
+Um eine Funktion mit gewünschter Lage des Maximums und gewünschtem
+Grenzwert-Niveau zu bauen, trennt man zwei Einflüsse:
 \begin{itemize}
-  \item \textbf{Lage von Maximum/Minimum:} eine um $x_0$ zentrierte
-        ``Glocke'' wie $-\tfrac12(x-x_0)^2$ im Exponenten verschiebt ein
-        Maximum/Minnimum nach $x_0$.
-  \item \textbf{Niveau des Grenzwerts:} eine additive Konstante (bzw.\ einer
-        Ausdruck, der am Rand gegen einen festen Wert strebt) setzt das
-        asymptotische Niveau.
+  \item \textbf{Lage von Maximum/Minimum:} Im Exponenten sitzt eine um $x_0$
+        zentrierte \emph{Glocke} $-\tfrac12(x-x_0)^2$. Erklärt wird das
+        durch die Ableitung: $f'(x)$ verschwindet am Glockenmaximum $x=x_0$
+        und hat dort einen Vorzeichenwechsel (links steigend, rechts
+        fallend) -- eine echte, \emph{isolierte} Extremstelle.
+  \item \textbf{Niveau des Grenzwerts:} Eine \emph{additive Konstante}
+        verschiebt den Graph vertikal und setzt das asymptotische Niveau.
 \end{itemize}
-Beispiel (a): $f(x)=1+9\,\mathrm e^{-(x-2)^2}$ hat im Grenzwert $1$, den
-Maximalwert $10$ bei $x=2$ und wächst/fällt entsprechend.
+Beispiel zu (a): $f(x)=1+9\mathrm e^{-(x-2)^2}$. Die Konstante $1$ ist das
+Niveau für $|x|\to\infty$ (die Glocke klingt nach außen ab), die $9$
+ist die Höhe über dem Niveau, und $x=2$ das Zentrum des Maximums.
 
 \textit{Skript:} Kap. 2 (Grenzwerte, Exponentialfunktion).
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Bauplan: Pole und asymptotisches Verhalten]
 \begin{itemize}
-  \item Ein \textbf{Pol} bei $x=a$ mit Grenzwert $\infty$ entsteht durch
-        einen Nenner $(x-a)^k$ (mit passendem Vorzeichen des Zählers).
-  \item Ein \textbf{Grenzwert} $-\infty$ für $x\to\infty$ erreicht man z.B.
-        über $-\ln(x-1)$ oder $-x$. Kombinationen erfüllen mehrere
-        Bedingungen zugleich.
-  \item Der Definitionsbereich ist vorgegeben ($R_{>1}$ bzw.
-        $R\setminus\{-1,1\}$) -- die Funktion darf nur dort definiert
-        sein.
+  \item \textbf{Ein Pol bei $x=a$} mit Grenzwert $+\infty$ (bzw.\ $-\infty$)
+        entsteht, wenn der Nenner gegen $0$ geht und der Zähler endlich
+        bleibt: ein Term mit $(x-a)$ im Nenner. Das Vorzeichen des
+        Zählers und die Seitenwahl steuern, ob es $\pm\infty$ ist.
+  \item \textbf{Grenzwert $-\infty$ für $x\to\infty$} erreicht man etwa über
+        $-\ln(x-1)$ oder $-x$: Alle diese Funktionen fallen nach links-unten
+        \emph{weg}.
+  \item \textbf{Der Definitionsbereich ist vorgegeben.} Eine Funktion mit
+        $\ln(x-1)$ darf nur auf $R_{>1}$ stehen; ein Nenner $(x^2-1)$
+        erzwingt $R\setminus\{-1,1\}$.
 \end{itemize}
+Welche Kombination gewählt wird, ergibt sich aus den Vorgaben; oft
+kombiniert man einen \emph{Pol-Baustein} additiv mit einer linearen Funktion,
+um zusätzlich vorgegebene Funktionswerte zu treffen.
+
 \textit{Skript:} Kap. 2 (Definitionsbereich, Grenzwerte).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Jede Vorgabe einzeln prüfen: Monotonie \emph{und} Wert $f(2)=0$
-        \emph{und} beide Grenzwerte -- eine Bedingung zu verlieren ist der
-        häufigste Fehler.
-  \item ``Monoton wachsend für $x<2$ und fallend für $x>2$'' heißt im
-        Maximum bei $x=2$, nicht an einer zufälligen Stelle.
-  \item Den Definitionsbereich einhalten: Funktionen mit $\ln(x-1)$ sind nur
-        auf $R_{>1}$ sinnvoll.
-  \item Der Hinweis in (a): ``Grenzwert $1$ für $\pm\infty$'' heißt, dass
-        beide einseitigen Grenzwerte existieren und gleich $1$ sind.
+  \item \textbf{Jede Bedingung einzeln prüfen:} Monotonie \emph{und} Wert
+        $f(2)=0$ \emph{und} beide Grenzwerte. Eine vergessene Bedingung ist
+        der häufigste Fehler.
+  \item \textbf{Grenzwerte nicht verwechseln:} \emph{Grenzwert $1$ für
+        $\pm\infty$} heißt, beide einseitigen Grenzwerte existieren und
+        sind gleich $1$; das ist nicht dasselbe wie \emph{Wert $1$ an einer
+        Stelle}.
+  \item \textbf{Definitionsbereich einhalten:} $\ln(x-1)$ ist nur auf
+        $R_{>1}$ sinnvoll; einen Pol bestimmt der Nenner, nicht der Zähler.
+  \item \textbf{Maximum \emph{sitzen lassen}:} \emph{Monoton wachsend für $x<2$,
+        fallend für $x>2$} bedeutet \emph{Maximum bei $x=2$}, nicht bei
+        irgendeiner Stelle.
 \end{itemize}
 \end{achtung}

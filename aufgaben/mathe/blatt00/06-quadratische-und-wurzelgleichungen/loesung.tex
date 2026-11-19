@@ -1,19 +1,29 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Quadratische Gleichungen über Faktorisierung oder
+% Formel; Wurzelgleichungen quadrieren und zwingend zurücksetzen (Probe).
+
 \subsection*{Gegeben und gesucht}
 Quadratische Gleichungen (a)--(c) und Wurzelgleichungen (d)--(g) nach der
 reellen Zahl $x$ auflösen.
+
+\subsection*{Ansatz}
+Quadratische: auf die Form $=0$ bringen, dann faktorisieren oder Formel.
+Wurzelgleichungen: Wurzel isolieren, quadrieren, lösen und
+\emph{immer} die ursprüngliche Gleichung als Probe rechnen.
 
 \subsection*{a) $x^2+4x=5$}
 \begin{equation}
   x^2+4x-5=0 \Rightarrow (x+5)(x-1)=0 \Rightarrow x=-5 \text{ oder } x=1.
 \end{equation}
+Nullstellen-Suche: Membran der Faktorisierung ist $(x+5)(x-1)=x^2-x+5x-5$.
 
 \subsection*{b) $2x^2+8x-10=32$}
 \begin{equation}
   2x^2+8x-42=0 \Rightarrow x^2+4x-21=0\Rightarrow (x+7)(x-3)=0
   \Rightarrow x=-7 \text{ oder } x=3.
 \end{equation}
+(Nach Division durch $2$ gilt die Faktorisierung weiter.)
 
 \subsection*{c) $x^2+3x=4$}
 \begin{equation}
@@ -21,14 +31,18 @@ reellen Zahl $x$ auflösen.
 \end{equation}
 
 \subsection*{d) $\sqrt{x+2}=3$}
+Hier ist das Quadrieren \emph{unbedingt} legitim, weil beide Seiten der
+Gleichung offensichtlich $\ge0$ sind:
 \begin{equation}
   x+2=9\Rightarrow x=7.
 \end{equation}
+Probe: $\sqrt{7+2}=\sqrt9=3$. \checkmark
 
 \subsection*{e) $\sqrt{x+1}=x-5$}
 Quadratieren: $x+1=(x-5)^2=x^2-10x+25$, also $x^2-11x+24=0$, d.h.
-$x=3$ oder $x=8$. Probe: $x=3$: $\sqrt4=2$, rechts $-2$ -- \emph{verwerfen};
-$x=8$: $\sqrt9=3$, rechts $3$ -- \emph{gültig}.
+$x=3$ oder $x=8$. \textbf{Probe:} $x=3$: $\sqrt4=2$, rechts $-2$ --
+eine Wurzel ist niemals negativ, deshalb \emph{verwerfen};  $x=8$:
+$\sqrt9=3$, rechts $3$ -- \emph{gültig}.
 \begin{equation}
   x=8 .
 \end{equation}
@@ -37,14 +51,17 @@ $x=8$: $\sqrt9=3$, rechts $3$ -- \emph{gültig}.
 Quadratieren: $x+4=2x+3\Rightarrow x=1$. Probe: $\sqrt5=\sqrt5$. \emph{gültig}.
 
 \subsection*{g) $\sqrt{x+1}+\sqrt{x+5}=4$}
-Mit $a=\sqrt{x+1}$, $b=\sqrt{x+5}$ ist $a+b=4$ und $b^2-a^2=4$, also
-$(b-a)(b+a)=4\Rightarrow b-a=1$. Zusammen $a+b=4$ folgt $a=\tfrac32$,
-$b=\tfrac52$, damit $x+1=\tfrac94$, also
+\textbf{Gedankenschritt:} Hier reicht ein einfaches Quadrieren nicht, es
+bleiben Wurzeln übrig. Statt stumpf weiterzuquadrieren, setzen wir
+$a=\sqrt{x+1}$, $b=\sqrt{x+5}$. Dann ist $a+b=4$ und
+$b^2-a^2=(x+5)-(x+1)=4$; die dritte binomische Formel gibt
+$(b-a)(b+a)=4\Rightarrow b-a=1$. Zusammen $a+b=4$ und $b-a=1$:
+$a=\tfrac32$, $b=\tfrac52$, damit $x+1=\tfrac94$, also
 \begin{equation}
   x=\frac54 .
 \end{equation}
-Probe: $\sqrt{\tfrac54+1}=\sqrt{\tfrac94}=\tfrac32$, $\sqrt{\tfrac54+5}
-=\sqrt{\tfrac{25}{4}}=\tfrac52$, Summe $4$. \emph{gültig}.
+Probe: $\sqrt{\tfrac54+1}=\sqrt{\tfrac94}=\tfrac32$,
+$\sqrt{\tfrac54+5}=\sqrt{\tfrac{25}{4}}=\tfrac52$, Summe $4$. \emph{gültig}.
 
 \begin{ergebnis}
 \begin{align*}
@@ -59,13 +76,21 @@ Probe: $\sqrt{\tfrac54+1}=\sqrt{\tfrac94}=\tfrac32$, $\sqrt{\tfrac54+5}
 \end{ergebnis}
 
 \begin{kontrolle}
-Alle $\{x_{1},x_2\}$, die die Quadrierung zusätzlich liefert, im Original
-nachgerechnet: nur $x=8$ (e) bleibt übrig, $x=3$ fällt weg; die übrigen
-lösen die Gleichung durch Einsetzen.
+\textbf{Probe in der Originalgleichung (zwingend):} Die Quadrierung
+lieferte bei e) zusätzlich $x=3$; die Rückprobe zeigt $2\neq-2$ und
+verwirft sie --- \emph{nur} so bleibt $x=8$ übrig. In d), f), g) ist die
+Probe ebenfalls erfolgreich.
+
+\textbf{Grenzfall / Plausibilität:} g) Annäherung $x=\tfrac54=1{,}25$ ist
+im Definitionsbereich ($x\ge-1$ und $x\ge-5$), die Wurzeln sind
+$\tfrac32$ und $\tfrac52$, Summe $4$, weiter nichts. Wäre das errechnete
+$a$ negativ gewesen, hätte man es verworfen, weil die Wurzel nicht negativ
+sein kann.
 \end{kontrolle}
 
 \begin{merksatz}
 Quadratische Gleichungen per Faktorisierung oder Formel; Wurzelgleichungen
 immer quadrieren und \emph{proben}, weil das Quadrieren Scheinlösungen
-erzeugen kann.
+erzeugen kann. Bei zwei Wurzeln: Substitution $a,b$ + Differenz der
+Wurzelquadrate (dritte binomische Formel) ist oft der pfiffige Weg.
 \end{merksatz}

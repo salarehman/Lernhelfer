@@ -3,45 +3,64 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Mit der Eulerschen Formel $e^{it}=\cos t+i\sin t$ wichtige
-Eigenschaften der komplexen Exponentialfunktion herleiten und daraus die
+Mit der Eulerschen Formel $e^{it}=\cos t+i\sin t$ wichtige Eigenschaften
+der komplexen Exponentialfunktion herleiten und daraus die
 Doppelwinkelformeln ableiten.
 
-\begin{werkzeugkasten}[Eulersche Formel und Betrag]
-Für alle $t\in\mathbb R$:
+\begin{werkzeugkasten}[Woher kommt $e^{it}=\cos t+i\sin t$?]
+Die reelle Exponentialfunktion $e^x$ ist über ihre Potenzreihe definiert
+($e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots$). Setzt man darin $x=it$
+ein, so trennen sich die Terme mit und ohne $i$:
 \begin{equation*}
-  e^{it}=\cos t+i\sin t,\qquad |e^{it}|=\sqrt{\cos^2t+\sin^2t}=1 .
+  e^{it}
+  =\Bigl(1-\frac{t^2}{2!}+\frac{t^4}{4!}-\cdots\Bigr)
+  +i\Bigl(t-\frac{t^3}{3!}+\frac{t^5}{5!}-\cdots\Bigr)
+  =\cos t+i\sin t .
 \end{equation*}
-Der Zeiger $e^{it}$ läuft also auf dem Einheitskreis. Für das Konjugierte
-gilt
-\begin{equation*}
-  \overline{e^{it}}=\cos t-i\sin t=e^{-it},
-\end{equation*}
-also ist $e^{-it}$ das Spiegelbild von $e^{it}$ an der reellen Achse.
+Die Reihe von $\cos$ bzw.\ $\sin$ taucht \emph{automatisch} auf. Das ist
+kein Zufall, sondern der Grund der Formel: Die komplexe Exponentialfunktion
+\emph{erbt} gleichsam beide reellen Reihen. Der Name \emph{Eulersche Formel} ist
+ehrend; geometrisch sagt sie genau: \textbf{$e^{it}$ läuft auf dem
+Einheitskreis}, Speichen mit Winkel $t$.
+
+Daraus folgt sofort $|e^{it}|=\sqrt{\cos^2t+\sin^2t}=1$: alle $e^{it}$
+liegen auf dem Kreis um $0$ mit Radius $1$. Und das Konjugierte
+$\overline{e^{it}}=\cos t-i\sin t=e^{-it}$ ist der zum Winkel $-t$
+gehörige Punkt -- die Spiegelung an der reellen Achse.
 
 \textit{Skript:} Kap. 1 (Eulersche Formel).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Induktion und Real-/Imaginärteil]
+\begin{werkzeugkasten}[Was die Aufgabe zeigt: Potenz- und Additionsregel]
 \begin{itemize}
-  \item $(e^{it})^n=e^{int}$ folgt per vollständiger Induktion aus den
-        Rechenregeln $e^{ia}e^{ib}=e^{i(a+b)}$ der Exponentialfunktion.
-  \item Aus $(e^{it})^2=e^{i2t}$ erhält man durch Ausmultiplizieren der
-        linken Seite eine Identität; Vergleich von Real- und Imaginärteil
-        liefert die Doppelwinkelformeln.
+  \item \textbf{$(e^{it})^n=e^{int}$:} Wegen $e^{a}e^{b}=e^{a+b}$ (für
+        komplexe Exponenten gültig) folgt das Potenzgesetz durch
+        $n$-maliges Anwenden bzw.\ per Induktion. Geometrisch ist es
+        selbstverständlich: $n$-mal den Winkel um $t$ drehen = einmal um
+        $nt$ drehen.
+  \item \textbf{$e^{it}$ und Doppelwinkel:} Aus $(e^{it})^2=e^{i2t}$.
+        Links verrechnet man $(\cos t+i\sin t)^2$, rechts schreibt man
+        $e^{i2t}=\cos 2t+i\sin 2t$; ein Vergleich der Real- bzw.\
+        Imaginärteile liefert zwei Formeln auf einmal:
+        \begin{equation*}
+          \cos 2t=\cos^2t-\sin^2t,\qquad \sin 2t=2\sin t\cos t .
+        \end{equation*}
+        Genau das ist der Kern der Übung: eine komplexe Rechnung \emph{abrollen}
+        und Real-/Imaginärteil getrennt lesen.
 \end{itemize}
 \textit{Skript:} Kap. 1, Satz 3.1.4.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item $|e^{it}|=1$ gilt für \emph{reelle} $t$; für komplexe Argumente
-        gilt das nicht mehr so einfach (dort wächst das Argumentmodul).
-  \item Beim Spiegeln: Konjugation entspricht dem Ersetzen $i\to-i$,
-        im reellen Ausdruck ergibt sich $\cos t-i\sin t=e^{-it}$.
-  \item Beim Ausmultiplizieren von $(\cos t+i\sin t)^2$ beide Terme
-        (Realteil aus $i^2=-1$) korrekt sammeln.
-  \item Nur gleiche Frequenzen kombinieren; $n=2$ ergibt genau
-        $\cos2t$ und $\sin2t$.
+  \item $|e^{it}|=1$ gilt nur für \emph{reelle} $t$. Für komplexe
+        Argumente $z$ wächst $|e^z|$ i.\,A. (das \emph{Argumentmodul}), die
+        einfache Kreis-Aussage stimmt dann nicht mehr.
+  \item Konjugation ersetzt $i$ durch $-i$: $\overline{e^{it}}=
+        \cos t-i\sin t=e^{-it}$.
+  \item Beim Quadrieren die $i^2=-1$ in $(\cos t+i\sin t)^2$ korrekt
+        einsetzen: der Realteil ist $\cos^2t-\sin^2t$, nicht nur $\cos^2t$.
+  \item Nur gleiche Frequenzen in $e^{int}$ vergleichen; $n=2$ ergibt die
+        Doppelwinkel, nicht die halben.
 \end{itemize}
 \end{achtung}

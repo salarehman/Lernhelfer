@@ -2,37 +2,47 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-Mit $e^{it}=\cos t+i\sin t$ zeigen: (i) $|e^{it}|=1$, (ii) $e^{-it}$ ist das
-Spiegelbild von $e^{it}$ an der $x$-Achse, (iii) $(e^{it})^n=e^{int}$
+Mit $e^{it}=\cos t+i\sin t$ zeigen: (i) $|e^{it}|=1$, (ii) $e^{-it}$ ist
+das Spiegelbild von $e^{it}$ an der $x$-Achse, (iii) $(e^{it})^n=e^{int}$
 (Induktion). Danach aus $n=2$ die Doppelwinkelformeln folgern.
 
 \subsection*{a) Eigenschaften}
 \begin{itemize}
-  \item[(i)] $|e^{it}|^2=e^{it}\overline{e^{it}}=e^{it}e^{-it}=e^{0}=1$,
-        also $|e^{it}|=1$.
-  \item[(ii)] $\overline{e^{it}}=\cos t-i\sin t$ und zugleich
-        $\cos t-i\sin t=e^{-it}$, also ist $e^{-it}$ das
-        Spiegelbild (komplex Konjugiertes) von $e^{it}$ an der reellen
-        Achse.
-  \item[(iii)] Induktion über $n$. Induktionsanfang $n=1$ trivial.
-        Induktionsschritt $n\to n+1$:
+  \item[(i)] \emph{Gedankenschritt:} Betrag aus $|z|^2=z\bar z$ und der
+        Kreisfunktionsidentität. Wegen $\overline{e^{it}}=\cos t-i\sin t$:
+        \begin{equation*}
+          |e^{it}|^2=e^{it}\overline{e^{it}}
+          =(\cos t+i\sin t)(\cos t-i\sin t)
+          =\cos^2t+\sin^2t=1,
+        \end{equation*}
+        also $|e^{it}|=1$. (Man kann auch $e^{it}e^{-it}=e^0=1$ nutzen.)
+  \item[(ii)] \emph{Gedankenschritt:} Konjugation ersetzt $i$ durch $-i$:
+        \begin{equation*}
+          \overline{e^{it}}=\cos t-i\sin t=e^{-it} .
+        \end{equation*}
+        Geometrisch: Der Punkt zum Winkel $t$ gespiegelt an der $x$-Achse
+        ist der Punkt zum Winkel $-t$.
+  \item[(iii)] \emph{Gedankenschritt:} Induktion über $n$, mit der
+        Additionsregel $e^{a}e^{b}=e^{a+b}$. Induktionsanfang $n=1$
+        trivial; Induktionsschritt $n\to n+1$:
         \begin{equation*}
           (e^{it})^{n+1}=(e^{it})^n\,e^{it}=e^{int}\,e^{it}
-          =e^{int+it}=e^{i(n+1)t}.
+          =e^{i(n+1)t}.
         \end{equation*}
-        Damit gilt $(e^{it})^n=e^{int}$ für alle $n\in\mathbb N$
-        (die Rechenregel $e^{a}e^{b}=e^{a+b}$ ist nach Satz 3.1.4 gegeben).
+        Damit gilt $(e^{it})^n=e^{int}$ für alle $n\in\mathbb N$.
 \end{itemize}
 
 \subsection*{b) Doppelwinkelformeln aus $n=2$}
-Mit $n=2$: $(e^{it})^2=e^{i2t}$. Linke Seite ausmultiplizieren,
-rechte Seite in $\cos$/$\sin$:
+\emph{Gedankenschritt:} Zwei Darstellungen derselben Zahl gleichsetzen und
+Real-/Imaginärteil getrennt lesen. Aus dem Potenzgesetz $(e^{it})^2=e^{i2t}$:
 \begin{align*}
-  (\cos t+i\sin t)^2&=\cos^2t+2i\sin t\cos t-\sin^2t
+  (\cos t+i\sin t)^2
+  &=\cos^2t+2i\sin t\cos t-\sin^2t
   =\cos^2t-\sin^2t+2i\sin t\cos t,\\
-  e^{i2t}&=\cos 2t+i\sin 2t.
+  e^{i2t}&=\cos 2t+i\sin 2t .
 \end{align*}
-Gleichsetzen von Real- und Imaginärteil:
+Vergleich der Realteile: $\cos 2t=\cos^2t-\sin^2t$. Vergleich der
+Imaginärteile:
 \begin{equation*}
   \boxed{\cos 2t=\cos^2t-\sin^2t},\qquad
   \boxed{\sin 2t=2\sin t\cos t}.
@@ -40,23 +50,26 @@ Gleichsetzen von Real- und Imaginärteil:
 
 \begin{ergebnis}
 \begin{equation*}
-  |e^{it}|=1,\quad \overline{e^{it}}=e^{-it},\quad
-  (e^{it})^n=e^{int},\quad
-  \cos2t=\cos^2t-\sin^2t,\quad \sin2t=2\sin t\cos t.
+  |e^{it}|=1,\quad \overline{e^{it}}=e^{-it},\quad (e^{it})^n=e^{int},\quad
+  \cos2t=\cos^2t-\sin^2t,\quad \sin2t=2\sin t\cos t .
 \end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Beispieldaten:} $t=\frac\pi4$:
-$\sin\frac\pi2=1$, rechts $2\sin\frac\pi4\cos\frac\pi4
-=2\frac{\sqrt2}{2}\frac{\sqrt2}{2}=1$ -- passt. \\
-$\cos\pi=-1$, rechts
-$\cos^2\frac\pi2-\sin^2\frac\pi2=0-1=-1$ -- passt.
+\textbf{Beispieldaten:} $t=\frac\pi4$: $\sin\frac\pi2=1$, rechts
+$2\sin\frac\pi4\cos\frac\pi4=2\cdot\frac{\sqrt2}{2}\cdot\frac{\sqrt2}{2}=1$.
+\checkmark $t=\frac\pi2$: $\cos\pi=-1$, rechts
+$\cos^2\frac\pi2-\sin^2\frac\pi2=0-1=-1$. \checkmark
+
+\textbf{Grenzfall:} $|e^{it}|=1$ für alle reellen $t$ -- selbst für
+riesiges $t$ bleibt $e^{it}$ auf dem Einheitskreis (kein Wachstum über
+$1$). Das illustriert den Unterschied zur reellen Funktion $e^x$, die
+stark wächst. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Die Eulersche Formel beantwortet Potenz- und Winkelprobleme in einem Zug:
-$e^{it}$ hat Betrag $1$; Konjugation spiegelt an der reellen Achse;
-$(e^{it})^n=e^{int}$. Aus dem Vergleich von Real- und Imaginärteil eines
-Quadrats erhält man die Doppelwinkelformeln.
+Die Eulersche Formel verbindet Potenzieren und Winkeldrehen: $e^{it}$ hat
+Betrag $1$ und liegt auf dem Einheitskreis; Konjugation spiegelt an der
+reellen Achse und liefert $e^{-it}$; $(e^{it})^n=e^{int}$. Setzt man das
+Quadrat in Real-/Imaginärteile um, erhält man die Doppelwinkelformeln.
 \end{merksatz}

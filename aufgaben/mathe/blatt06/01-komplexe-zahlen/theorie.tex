@@ -7,42 +7,90 @@ Polarkoordinaten einer komplexen Zahl bestimmen, eine Kreisscheibe in der
 komplexen Ebene charakterisieren und den dritten Eckpunkt eines
 gleichseitigen Dreiecks finden.
 
-\begin{werkzeugkasten}[Polarkoordinaten]
-Eine komplexe Zahl $z=a+ib$ schreibt sich mit Radius $r$ und Winkel $\varphi$
-als $z=r(\cos\varphi+i\sin\varphi)$ mit
+\begin{werkzeugkasten}[Was steckt hinter $i$? Eine Drehung um $90^\circ$]
+Auf der Zahlengeraden hat \emph{$-1$} nur eine Bedeutung: das Additive
+Gegenstück zu $1$. Aber eine Quadratwurzel aus $-1$ gibt es dort nicht.
+Die Idee der komplexen Zahlen: Wir \emph{erfinden} eine Zahl $i$ mit
+\[
+  i^2=-1,
+\]
+und betrachten die Ebene mit $x$-Achse (Realteil) und $y$-Achse
+(Imaginärteil) -- die \emph{Gauß'sche Zahlenebene}. Jede komplexe Zahl
+$z=a+ib$ ist dann einfach ein Punkt $(a,b)$ der Ebene.
+
+Der entscheidende Blickwinkel: \textbf{Multiplikation mit $i$ ist eine
+Drehung um $90^\circ$}. Denn $i(a+ib)=ia+i^2b=-b+ia$: Aus dem Punkt
+$(a,b)$ wird $(-b,a)$, genau die Drehung um den Ursprung um $90^\circ$
+gegen den Uhrzeigersinn. Zwei solcher Drehungen geben eine Drehung um
+$180^\circ$, also
+\[
+  i\cdot i\cdot z=i^2 z=-z .
+\]
+Genau deshalb ist $i^2=-1$: Zwei Rechtsdrehungen um $90^\circ$ drehen um
+$180^\circ$, was $z$ auf $-z$ wirft. Diese Geometrie macht die komplexen
+Zahlen natürlich.
+
+\textit{Skript:} Kap. 1 (komplexe Zahlen).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Polarkoordinaten: Radius und Argument]
+Einen Punkt $(a,b)$ kann man statt durch die zwei kartesischen Koordinaten
+auch durch \textbf{Radius} (Abstand vom Ursprung) und \textbf{Winkel}
+(Blickrichtung) beschreiben:
 \begin{equation*}
   r=|z|=\sqrt{a^2+b^2}, \qquad
-  \tan\varphi=\frac{b}{a}\ \text{(im richtigen Quadranten)}.
+  \tan\varphi=\frac{b}{a},\qquad
+  z=r(\cos\varphi+i\sin\varphi) .
 \end{equation*}
-Arithmetik wird im Polarbild einfach:
+\begin{itemize}
+  \item $r$ ist der euklidische Abstand vom Nullpunkt (die Formel ist der
+        Satz des Pythagoras in der Ebene).
+  \item $\varphi=\arg(z)$ ist das \textbf{Argument}, der Winkel zur
+        positiven $x$-Achse. Wichtig: $\arctan(b/a)$ gibt den Winkel nur im
+        Intervall $(-90^\circ,90^\circ)$ an; man muss den Quadranten von $z$
+        selbst beachten.
+\end{itemize}
+Der Gewinn: \textbf{Multiplikation und Potenzen werden zu Drehungen}.
+Zwei Zahlen zu multiplizieren heißt, Radien zu multiplizieren und Winkel
+zu addieren; $n$-maliges Multiplizieren dreht den Winkel $n$-mal:
 \begin{equation*}
-  z_1\cdot z_2=r_1r_2\,\mathrm e^{i(\varphi_1+\varphi_2)},\qquad
+  z_1z_2=r_1r_2\,\mathrm e^{i(\varphi_1+\varphi_2)},\qquad
   z^n=r^n\,\mathrm e^{in\varphi}.
 \end{equation*}
-Für $z=1+i\sqrt3$: $r=\sqrt{1+3}=2$, $\varphi=\arctan(\sqrt3)=\frac\pi3$.
+Die Schreibweise $z=r\,\mathrm e^{i\varphi}$ mit
+$\mathrm e^{i\varphi}=\cos\varphi+i\sin\varphi$ (Euler) ist nur eine
+Kurzform der Polarkoordinaten.
 
 \textit{Skript:} Kap. 1 (Polarkoordinaten).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Mengen und Abstände in $\mathbb C$]
-$|z-z_0|$ ist der Abstand von $z$ zum Punkt $z_0$. Daher beschreibt
+\begin{werkzeugkasten}[Kreise und die dritte Ecke eines Dreiecks]
+$|z-z_0|$ ist der Abstand von $z$ zum Punkt $z_0$. Daher ist
 \begin{itemize}
-  \item $|z-z_0|=r$ den Kreis um $z_0$ mit Radius $r$,
-  \item $|z-z_0|<r$ den offenen Kreis~\emph{innen} (ohne Rand),
-  \item $|z-z_0|>r$ das Gebiet~\emph{au{\ss}erhalb} des Kreises.
+  \item $|z-z_0|=r$ der Kreis um $z_0$ mit Radius $r$,
+  \item $|z-z_0|<r$ die offene Kreisscheibe (innen, ohne Rand),
+  \item $|z-z_0|>r$ das Außengebiet.
 \end{itemize}
+Bei einem gleichseitigen Dreieck hilft die Dreh-Geometrie: Ausgehend von
+einer Seite (den beiden Punkten $z_1,z_2$) erhält man die dritte Ecke,
+indem man den Vektor von $z_1$ nach $z_2$ um $\pm60^\circ$ dreht. Das
+Verschieben und Drehen ist in Polarkoordinaten besonders transparent.
 
-\textit{Skript:} Kap. 1 (Komplexe Zahlen).
+\textit{Skript:} Kap. 1 (komplexe Zahlen, Drehung).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item $\arctan(b/a)$ liefert den Winkel nur in $(-90^\circ,90^\circ)$;
-        den Quadranten von $z$ separat beachten (hier liegt $1+i\sqrt3$ im
-        ersten Quadranten, $\varphi=\pi/3$ bleibt).
-  \item $|z-2i|<2$ ist ein \emph{offener} Kreis: der Rand
-        ($|z-2i|=2$) gehört nicht dazu.
-  \item Bei zwei gegebenen Eckpunkten eines gleichseitigen Dreiecks gibt es
-        zwei mögliche dritte Punkte (die beiden Seiten-Einheits-Richtungen).
+  \item \textbf{Quadrant beachten:} $\arctan(b/a)$ liefert nur den
+        Referenzwinkel; $1+i\sqrt3$ liegt im 1. Quadranten, also bleibt
+        $\varphi=\pi/3$ (hier ok), aber $1-i\sqrt3$ läge im 4. Quadranten
+        mit $\varphi=-\pi/3$.
+  \item \textbf{Offene vs.\ abgeschlossene Scheibe:} $|z-2i|<2$ enthält den
+        Rand $|z-2i|=2$ \emph{nicht}; die Lösung ist die innere Scheibe.
+  \item \textbf{Zwei dritte Ecken:} Ein gleichseitiges Dreieck hat auf einer
+        gegebenen Seite \emph{zwei} mögliche dritte Punkte (Drehung um
+        $\pm60^\circ$); beide angeben.
+  \item \textbf{$i^2=-1$ nicht vergessen} beim Multiplizieren in kartesischen
+        Koordinaten: $ib\cdot ia=i^2 ba=-ba$.
 \end{itemize}
 \end{achtung}

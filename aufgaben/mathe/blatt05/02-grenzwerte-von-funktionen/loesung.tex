@@ -2,66 +2,86 @@
 % Teil II: der durchgerechnete Weg.
 
 \subsection*{Gegeben und gesucht}
-Fünf Grenzwerte. Höchste Potenz ausklammern bzw. konjugierte Wurzel
-verwenden.
+Fünf Grenzwerte, die die drei Typen (Polynomverhältnis am Unendlichen,
+einseitiger Grenzwert, $\infty-\infty$-Differenz) abdecken.
 
 \subsection*{a) $\displaystyle\lim_{x\to\infty}\frac{-2x-3}{1+2x}$}
-Zähler und Nenner sind Grad $1$. Durch $x$ kürzen:
+\emph{Gedankenschritt:} Zähler und Nenner sind beide Grad $1$. Wir kürzen
+durch die höchste Potenz $x$; die konstanten Restterme $\tfrac3x$ bzw.
+$\tfrac1x$ streben gegen $0$ und bleiben nur als Störung stehen.
 \begin{equation*}
   \frac{-2x-3}{1+2x}=\frac{-2-\frac3x}{\frac1x+2}
-  \;\underset{x\to\infty}{\longrightarrow}\;\frac{-2}{2}=-1.
+\;\Rightarrow\;\frac{-2}{2}=-1.
 \end{equation*}
+Plausibel: Für sehr große $x$ ist der Bruch $-2x/(2x)=-1$; die kleinen
+Korrekturen verschwinden.
 
 \subsection*{b) $\displaystyle\lim_{x\to\infty}\sqrt{\frac{2x^2-x}{3x+8x^2}}$}
-$2x^2$ und $8x^2$ sind die höchsten Terme; durch $x^2$ kürzen:
+\emph{Gedankenschritt:} Innerhalb der Wurzel liegt ein Quotient vom Typ
+\emph{gleicher Grad} ($2x^2$ zu $8x^2$). Erst den Bruch vereinfachen, dann die
+(stetige) Wurzel ziehen.
 \begin{equation*}
   \frac{2x^2-x}{3x+8x^2}=\frac{2-\frac1x}{\frac3x+8}
-  \;\underset{x\to\infty}{\longrightarrow}\;\frac{2}{8}=\frac14.
+  \;\Rightarrow\;\frac{2}{8}=\frac14 .
 \end{equation*}
-Die Wurzel ist stetig, also ist der Grenzwert $\sqrt{\frac14}=\frac12$.
+Wegen der Stetigkeit von $\sqrt{\cdot}$:
+$\lim\sqrt{(\cdot)}\ =\ \sqrt{\lim(\cdot)}\ =\ \sqrt{\frac14}=\frac12$.
 
 \subsection*{c) $\displaystyle\lim_{x\to\infty}\ln\!\frac{2x^2-1}{2x+2x^2}$}
-Durch $2x^2$ kürzen (höchste
-Potenzen $2x^2$ und $2x^2$):
+\emph{Gedankenschritt:} Man darf die Argumente von $\ln$ erst vereinfachen.
+Kürzen durch die höchste Potenz $2x^2$ (Zähler und Nenner vom Grad $2$):
 \begin{equation*}
   \frac{2x^2-1}{2x+2x^2}=\frac{2-\frac1{x^2}}{\frac1x+2}
-  \;\underset{x\to\infty}{\longrightarrow}\;\frac{2}{2}=1.
+  \;\Rightarrow\;\frac{2}{2}=1 .
 \end{equation*}
-Wegen Stetigkeit von $\ln$ ist der Grenzwert $\ln 1=0$.
+Nun $\ln$ auf den Grenzwert anwenden (Stetigkeit): $\ln 1=0$.
 
-\subsection*{d) $\displaystyle\lim_{x\searrow1}\frac{2-(x+1)^3}{(x-1)^3}$}
-Einsetzen $x=1$: Zähler $2-8=-6\ne0$, Nenner $(0)^3=0$. Für $x\searrow1$ ist
-$(x-1)^3>0$, der Zähler bleibt $-6<0$. Der Bruch geht also gegen $-\infty$.
+\subsection*{d) $\displaystyle\lim_{x\searrow 1}\frac{2-(x+1)^3}{(x-1)^3}$}
+\emph{Gedankenschritt:} Einsetzen $x=1$: Zähler $=2-8=-6$, Nenner $=0$.
+Das ist ein Quotient \emph{endlich durch Null}, also divergiert er; das
+Vorzeichen entscheidet die Richtung. Für $x\searrow 1$ (von rechts) ist
+$x-1>0$, also $(x-1)^3>0$, der Zähler bleibt $-6<0$: Der Bruch geht gegen
+$-\infty$.
+\begin{equation*}
+  \lim_{x\searrow 1}\frac{2-(x+1)^3}{(x-1)^3}=-\infty .
+\end{equation*}
 
 \subsection*{e) $\displaystyle\lim_{x\to\infty}\left(x-\sqrt{x^2-1}\right)$}
-Der Ausdruck ist von der Form $\infty-\infty$; mit der konjugierten
-Wurzel erweitern:
+\emph{Gedankenschritt:} Es ist von der Form $\infty-\infty$, was
+unbestimmt ist. Die Wurzel lässt sich durch Erweitern mit der konjugierten
+Wurzel eliminieren:
 \begin{equation*}
   x-\sqrt{x^2-1}
+  =\frac{(x-\sqrt{x^2-1})(x+\sqrt{x^2-1})}{x+\sqrt{x^2-1}}
   =\frac{x^2-(x^2-1)}{x+\sqrt{x^2-1}}
-  =\frac{1}{x+\sqrt{x^2-1}}
-  \;\underset{x\to\infty}{\longrightarrow}\;0.
+  =\frac{1}{x+\sqrt{x^2-1}}\;\Rightarrow\;0 .
 \end{equation*}
+Plausibel: Für große $x$ ist $\sqrt{x^2-1}$ fast so groß wie $x$, und die
+Differenz schrumpft auf den Wert $0$ (der Restterm ist $\frac{1}{2x}$).
 
 \begin{ergebnis}
 \begin{equation*}
-  \text{a)}\ -1,\quad \text{b)}\ \tfrac12,\quad \text{c)}\ 0,\quad
-  \text{d)}\ -\infty,\quad \text{e)}\ 0 .
+  \text{a) } -1\;,\quad \text{b) } \tfrac12\;,\quad \text{c) } 0\;,\quad
+  \text{d) } -\infty\;,\quad \text{e) } 0 .
 \end{equation*}
 \end{ergebnis}
 
 \begin{kontrolle}
-\textbf{Numerische Probe:} für $x=10^6$ ist a) $-1{,}000003$, b)
-$0{,}4999992$, c) $-0{,}000001$, d) für $x=1{,}001$ riesig negativ, e)
-$\approx 5\cdot10^{-7}$ -- alle plausibel.
+\textbf{Numerische Probe:} Für $x=10^6$ liefert a) $-1{,}000003$, b)
+$0{,}4999992$, c) $-0{,}000001$, e) $1/(10^6+10^6)\approx5\cdot10^{-7}$ --
+alles plausibel. Für d) mit $x=1{,}001$: Nenner $=10^{-9}$, Zähler $-6$,
+Quotient $\approx -6\cdot10^9$, also \emph{riesig negativ}. \checkmark
 
-\textbf{Grenzfall d:} für $x\swarrow1$ (von links, $(x-1)^3<0$) ginge der Bruch
-gegen $+\infty$; die Richtung hängt vom Vorzeichen ab.
+\textbf{Grenzfall d:} Für $x\swarrow 1$ (von links) ist
+$(x-1)^3<0$, also ginge der Bruch gegen $+\infty$; die Richtung hängt vom
+Vorzeichen des Nenners ab. Dieses Umschlagen der Richtung ist typisch für
+einseitige Grenzwerte. \checkmark
 \end{kontrolle}
 
 \begin{merksatz}
-Am Unendlichen dominiert der höchste Grad; Zähler und Nenner durch die höchste
-Potenz kürzen. Für $\infty-\infty$-Wurzeln mit der konjugierten Wurzel
-erweitern. Stetige Funktionen wie $\sqrt{\cdot}$ und $\ln$ vertauschen mit dem
-Grenzwert, falls das Argument konvergiert.
+Am Unendlichen dominiert der höchste Grad; Zähler und Nenner durch die
+höchste Potenz kürzen. Für $\infty-\infty$ mit Wurzeln mit der konjugierten
+Wurzel erweitern. Stetige Funktionen wie $\sqrt{\cdot}$ und $\ln$
+vertauschen mit dem Grenzwert, sobald das Argument konvergiert. Einseitige
+Grenzwerte hängen getrennt vom Vorzeichen der Umgebung ab.
 \end{merksatz}

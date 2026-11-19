@@ -1,35 +1,53 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Kürzen durch die führende Potenz/Basis ist der Schlüssel;
+% die kleineren Terme sterben für n->infty ab.
+
 \subsection*{Gegeben und gesucht}
-Grenzwerte der Folgen $a_n,b_n,c_n,d_n$ für $n\to\infty$.
+Grenzwerte der Folgen $a_n,b_n,c_n,d_n$ f\"ur $n\to\infty$.
+
+\subsection*{Ansatz}
+F\"ur jeden Quotienten: die \emph{gemeinsame f\"uhrende Ordnung} im
+Z\"ahler und Nenner finden und durch sie k\"urzen. Damit bleiben nur
+Terme, deren Grenzwert man direkt (zu $0$ oder zu einer Konstante) sieht.
 
 \subsection*{a) $a_n=\frac{3n^3-2n^2+1}{n^2-2n^3-3}$}
-Mit der höchsten Potenz $n^3$ kürzen:
+Die h\"ochste Potenz ist $n^3$, im Z\"ahler wie Nenner. K\"urzen durch
+$n^3$:
 \begin{equation}
   a_n=\frac{3-\frac2n+\frac1{n^3}}{\frac1n-2-\frac3{n^3}}
   \;\to\; \frac{3-0+0}{0-2-0}=-\frac32 .
 \end{equation}
+Gedanke: $\tfrac1n,\tfrac1{n^3}\to0$; \"uberleben nur $3$ und $-2$.
 
 \subsection*{b) $b_n=\frac{\sqrt n+2}{\sqrt{n+1}-1}$}
-Durch $\sqrt n$ kürzen ($\tfrac{1}{\sqrt n}\to0$):
+Die f\"uhrende Ordnung ist $\sqrt n$. Durch $\sqrt n$ k\"urzen
+($\tfrac{1}{\sqrt n},\tfrac1n\to0$):
 \begin{equation}
   b_n=\frac{1+\frac2{\sqrt n}}{\sqrt{1+\frac1n}-\frac1{\sqrt n}}
   \;\to\;\frac{1+0}{1-0}=1 .
 \end{equation}
+Gedanke: $\sqrt{n+1}=\sqrt{n}\sqrt{1+\tfrac1n}\approx\sqrt n$ f\"ur
+gro\ss{}e $n$.
 
 \subsection*{c) $c_n=\frac{-2\cdot3^n+(-1)^n}{5\cdot2^n-4\cdot3^{n+1}}$}
-Mit $3^n$ kürzen, da $3^n$ die größte Basis dominiert und
-$3^{n+1}=3\cdot3^n$:
+$3^n$ w\"achst schneller als $2^n$, und $3^{n+1}=3\cdot3^n$; die gr\"o\ss{}te
+Basis ist also $3^n$. K\"urzen durch $3^n$:
 \begin{equation}
   c_n=\frac{-2+\frac{(-1)^n}{3^n}}{5\cdot\bigl(\frac23\bigr)^n-12}
   \;\to\;\frac{-2+0}{0-12}=\frac16 .
 \end{equation}
+Gedanken: $\frac{(-1)^n}{3^n}\to0$ (beschr\"ankter Z\"ahler, explodierender
+Nenner), $(\tfrac23)^n\to0$, $-4\cdot3^{n+1}/3^n=-12$.
 
 \subsection*{d) $d_n=\frac{n^2}{(n+1)!}$}
-Es ist $(n+1)!=(n+1)\,n!$; die Fakultät dominiert jede feste Potenz:
+Es ist $(n+1)!=(n+1)\,n!$; die Fakult\"at w\"achst schneller als jede
+feste Potenz:
 \begin{equation}
-  d_n=\frac{n^2}{(n+1)\,n!}\;\to\;0 .
+  d_n=\frac{n^2}{(n+1)\,(n!)}\;\to\;0 .
 \end{equation}
+Gedanke: Schreibt man $(n+1)!$ aus, steht $n!$ im Nenner und der Z\"ahler
+ist eine fixe Potenz --- der Quotient schrumpft gegen $0$.
 
 \begin{ergebnis}
 \begin{equation*}
@@ -41,13 +59,23 @@ Es ist $(n+1)!=(n+1)\,n!$; die Fakultät dominiert jede feste Potenz:
 \end{ergebnis}
 
 \begin{kontrolle}
-Zu jedem Wert die führende Ordnung: $a_n\!\to\!-\tfrac32$,
-$b_n\!\to\!1$, $c_n\!\to\!\tfrac1{6}$, $d_n\!\to\!0$. Für große $n$ zeigen
-$a_n\approx-1.5$, $b_n\approx1$, $c_n\approx\frac16$, $d_n\ll1$ --
-plausibel.
+\textbf{Numerisch (f\"ur gro\ss{}e $n$):} $n=10^6$: $a_n\approx-1.5$,
+$b_n\approx1$, $c_n\approx\frac16$, $d_n$ winzig. Die f\"uhrenden
+Ordnungen best\"atigen die Werte:
+$a_n\sim\frac{3n^3}{-2n^3}$, $b_n\sim\frac{\sqrt n}{\sqrt n}$, $c_n\sim
+\frac{-2\cdot3^n}{-12\cdot3^n}$, $d_n\sim\frac{n^2}{n!}$.
+
+\textbf{Grenzfall:} W\"urde man in a) durch $n^2$ statt $n^3$ k\"urzen,
+w\"urde der Nenner $\frac1n-2-\dots$ zwar nach $-2$ gehen, aber der
+Z\"ahler $\to\infty$ --- man m\"usste erst die h\"ochste Potenz statt
+einer beliebigen w\"ahlen. Genau das ist der Kern der f\"uhrenden
+Ordnung: Das Verfahren liefert sinnvolle Werte nur mit der gr\"o\ss{}ten
+Ordnung.
 \end{kontrolle}
 
 \begin{merksatz}
-Mit der führenden Potenz bzw. der größten Basis kürzen; Potenzen-,
-Wurzel- und Fakultätsangaben dabei sauber umschreiben.
+Mit der f\"uhrenden Potenz bzw. der gr\"o\ss{}ten Basis k\"urzen;
+Potenzen-, Wurzel- und Fakult\"atsangaben dabei sauber umschreiben
+($\sqrt{n+1}\approx\sqrt n$, $3^{n+1}=3\cdot3^n$). Die kleineren Terme
+sterben f\"ur $n\to\infty$ ab.
 \end{merksatz}

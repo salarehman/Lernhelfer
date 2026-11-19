@@ -1,8 +1,11 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: Rekursion ausrechnen -> Mustersicht -> Ungleichung per
+% Induktion -> Monotonie/Beschraenktheit -> Fixpunkt gleichung (nur pos.
+
 \subsection*{Gegeben und gesucht}
 $a_1=1$, $a_{n+1}=\frac{1+a_n}{2+a_n}$. (a) $a_2,\dots,a_5$; (b) Beweis
-$a_n^2+a_n>1$ für alle $n$; (c) monoton fallend, Konvergenz, Grenzwert.
+$a_n^2+a_n>1$ f\"ur alle $n$; (c) monoton fallend, Konvergenz, Grenzwert.
 
 \subsection*{a) Anfangswerte}
 \begin{align}
@@ -11,35 +14,37 @@ $a_n^2+a_n>1$ für alle $n$; (c) monoton fallend, Konvergenz, Grenzwert.
   a_4&=\frac{1+\frac58}{2+\frac58}=\frac{13/8}{21/8}=\frac{13}{21}, &
   a_5&=\frac{1+\frac{13}{21}}{2+\frac{13}{21}}=\frac{34/21}{55/21}=\frac{34}{55}.
 \end{align}
+Muster: Fibonacci-Quotienten, strebef zu $\approx0.618$.
 
 \subsection*{b) Beweis $a_n^2+a_n>1$}
 Induktion. IA ($n=1$): $1^2+1=2>1$. \checkmark
-IS: Angenommen $a_n^2+a_n>1$. Mit der Rekursion multipliziert man um:
+IS: Angenommen $a_n^2+a_n>1$. Mit der Rekursion:
 \begin{align}
   a_{n+1}^2+a_{n+1}-1
   &=\frac{(1+a_n)^2}{(2+a_n)^2}+\frac{1+a_n}{2+a_n}-1 \\
   &=\frac{(1+a_n)^2+(1+a_n)(2+a_n)-(2+a_n)^2}{(2+a_n)^2} \\
   &=\frac{a_n^2+a_n-1}{(2+a_n)^2}.
 \end{align}
-Nenner $>0$ und Zähler $a_n^2+a_n-1>0$ (Induktionsannahme), also
-$a_{n+1}^2+a_{n+1}-1>0$, d.h. die Behauptung für $n+1$. Aus IA und IS folgt
-$ a_n^2+a_n>1$ für alle $n$.
+Nenner $>0$ und Z\"ahler $a_n^2+a_n-1>0$ (Induktionsannahme), also
+$a_{n+1}^2+a_{n+1}-1>0$, d.h.\ die Behauptung f\"ur $n+1$. Aus IA und IS
+folgt $a_n^2+a_n>1$ f\"ur alle $n$.
 
 \subsection*{c) Monotonie und Grenzwert}
 \begin{equation}
   a_{n+1}-a_n=\frac{1+a_n}{2+a_n}-a_n
   =\frac{1-a_n-a_n^2}{2+a_n}.
 \end{equation}
-Wegen $a_n^2+a_n>1$ ist der Zähler negativ, $2+a_n>0$; also
+Wegen $a_n^2+a_n>1$ ist der Z\"ahler negativ, $2+a_n>0$; also
 $a_{n+1}<a_n$: streng monoton fallend. Mit $a_n>0$ (untere Schranke) ist
-$(a_n)$ nach unten beschränkt, also konvergent gegen $L$. Fixpunkt:
+$(a_n)$ nach unten beschr\"ankt, also konvergent gegen $L$. Fixpunkt:
 \begin{equation}
   L=\frac{1+L}{2+L}\ \Longrightarrow\ L^2+L-1=0\ \Longrightarrow\
   L=\frac{-1\pm\sqrt5}2 .
 \end{equation}
-Alle $a_n>0$ und fallend mit $L\ge0$, also
+Alle $a_n>0$ und fallend mit $L\ge0$; die negative L\"osung
+$\frac{-1-\sqrt5}2\approx-1.618$ scheidet aus:
 \begin{equation}
-  L=\frac{\sqrt5-1}2 .
+  L=\frac{\sqrt5-1}2 \approx0.618 .
 \end{equation}
 
 \begin{ergebnis}
@@ -51,13 +56,22 @@ Alle $a_n>0$ und fallend mit $L\ge0$, also
 \end{ergebnis}
 
 \begin{kontrolle}
-b) mit $a_2=\frac23$: $\frac49+\frac23=\frac{10}9>1$; c) Grenzwert
-$\frac{\sqrt5-1}2\approx0.618$, die Folge fällt von $1$ zu diesem Wert --
-passt zu $a_{n+1}<a_n$ und $L>0$.
+\textbf{b) Stichprobe:} mit $a_2=\frac23$: $\frac49+\frac23
+=\frac{10}9>1$. Die Ungleichung bleibt bei den Zahlen erhalten.
+
+\textbf{c) plausibel:} $L\approx0.618$; die Folge f\"allt von $1$ zu diesem
+Wert (die a5-Werte $34/55\approx0.61818\approx L$). Die Differenz wird
+immer kleiner, das spricht f\"ur Konvergenz.
+
+\textbf{Grenzfall/Iteration:} Setzt man $L=\frac{\sqrt5-1}2$ in die
+Rekursionsfunktion ein, sieht man $f(L)=L$: der Fixpunkt ist tats\"achlich
+ein station\"arer Punkt. Ein naher Start $a_1$ nahe $L$ liefert dieselbe
+Konvergenz.
 \end{kontrolle}
 
 \begin{merksatz}
-Bei rekursiven Folgen: Glieder mit Brüchen ausrechnen, Ungleichungen per
-Induktion, Monotonie über die Differenz, Grenzwert über die
-Fixpunktgleichung -- die positive Lösung nehmen.
+Bei rekursiven Folgen: Glieder ausrechnen (Muster sehen), Ungleichungen
+per Induktion, Monotonie \"uber die Differenz, Konvergenz \"uber Monotonie +
+Beschr\"anktheit, Grenzwert \"uber die Fixpunktgleichung --- die positive
+L\"osung nehmen.
 \end{merksatz}

@@ -6,41 +6,72 @@
 Zwei gleichfrequente Kosinus-Schwingungen zu einer Schwingung
 $A\cos(\omega t+\varphi)$ zusammenfassen.
 
-\begin{werkzeugkasten}[Phasor/Zeiger-Methode]
-Einen Kosinus $a\cos(\omega t+\varphi)$ deutet man als Realteil des
-Zeigers $a\mathrm e^{i\varphi}\cdot\mathrm e^{i\omega t}$. Die Überlagerung
-gleicher Frequenz ist die Summe der Zeiger (eine komplexe Zahl):
+\begin{werkzeugkasten}[Warum das Zeigerbild funktioniert]
+Ein Kosinus $a\cos(\omega t+\varphi)$ lässt sich als \emph{Realteil eines
+Zeigers} schreiben: Der Radius $a$, der mit der festen Kreisfrequenz
+$\omega$ umläuft, seine momentane Phasenlage ist $\omega t+\varphi$,
+\begin{equation*}
+  a\cos(\omega t+\varphi)
+  =\operatorname{Re}\!\Bigl(a\,\mathrm e^{i\varphi}\,\mathrm e^{i\omega t}\Bigr).
+\end{equation*}
+Der Faktor $\mathrm e^{i\omega t}$ (der gemeinsamen Umlauf) ist für alle
+Schwingungen \emph{dieselbe} -- er beschreibt nur den Takt, nicht die
+individuelle Schwingung. Die Information jeder Schwingung steckt komplett
+in der komplexen Konstante $a\,\mathrm e^{i\varphi}$ (Amplitude und
+Phase). Deshalb sind die Anzahlen \emph{Phasor} oder \emph{komplexe Amplitude}
+sinnvoll: Der Umlauf ist überall gleich, und es bleibt eine Summe von
+\emph{Zeigern}.
+
+Gleichfrequente Kosinuswerte zu addieren heißt dann: komplexe Amplituden
+(bzw.\ Zeiger im Polarbild) \emph{addieren}, und das Ergebnis in
+Polarkoordinaten lesen:
 \begin{equation*}
   \sum_j a_j\cos(\omega t+\varphi_j)
-  =\operatorname{Re}\Bigl[\Bigl(\sum_j a_j\mathrm e^{i\varphi_j}\Bigr)
+  =\operatorname{Re}\!\Bigl[\Bigl(\sum_j a_j\,\mathrm e^{i\varphi_j}\Bigr)
   \mathrm e^{i\omega t}\Bigr]
   =A\cos(\omega t+\varphi),
 \end{equation*}
-wobei $A$ der Betrag und $\varphi$ das Argument der Zeigersumme ist.
+wobei $A=\bigl|\sum_j a_j\mathrm e^{i\varphi_j}\bigr|$ und
+$\varphi=\arg\!\bigl(\sum_j a_j\mathrm e^{i\varphi_j}\bigr)$.
 
 \textit{Skript:} Kap. 1 (komplexe Zahlen in Schwingungen).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Schrittfolge]
+\begin{werkzeugkasten}[Schrittfolge in der Aufgabe]
 \begin{enumerate}
-  \item Jede Schwingung als Zeiger schreiben:
-        $\cos(\omega t)\mapsto 1\cdot e^{i0}$, $2\cos(\omega t+2\pi/3)
-        \mapsto2\,e^{i2\pi/3}$.
-  \item Zeiger addieren und in Polarkoordinaten umrechnen
-        (hier Ergebnis $i\sqrt3=\sqrt3\,e^{i\pi/2}$).
-  \item Ablesen: $A=\sqrt3$, $\varphi=\pi/2$.
+  \item Jede Schwingung als Zeiger: $\cos(\omega t)\mapsto 1\cdot
+        \mathrm e^{i0}$, $2\cos(\omega t+\frac{2\pi}{3})\mapsto
+        2\,\mathrm e^{i2\pi/3}$.
+  \item Zeiger addieren (Kartesisch oder im Polarbild; hier ergibt die
+        Summe $i\sqrt3$).
+  \item Umrechnen in Polarkoordinaten: $A=\bigl|\sum_j a_j\mathrm e^{i\varphi_j}\bigr|=\sqrt3$,
+        $\varphi=\arg\bigl(\sum_j a_j\mathrm e^{i\varphi_j}\bigr)=\pi/2$.
 \end{enumerate}
+Das Ergebnis $A\cos(\omega t+\varphi)$ mit $A>0$ und
+$\varphi\in[0,2\pi)$ aufschreiben.
+
+\textit{Skript:} Kap. 1 (komplexe Zahlen in Schwingungen).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
   \item Der Zeiger erfasst nur Amplitude und Phase; die gemeinsame
-        $e^{i\omega t}$-Zeitabhängigkeit wird ausgeklammert.
-  \item Das Ergebnis $i\sqrt3$ hat Realteil $0$: die Phasenverschiebung ist
-        $\varphi=\pi/2$, die Amplitude $\sqrt3$, \emph{nicht} $0$.
-  \item Nach dem Umrechnen die Form $A\cos(\omega t+\varphi)$ mit $A>0$
-        und $\varphi\in[0,2\pi)$ aufschreiben.
-  \item Verifikation an einer Zeitachse (z.B.\ $\omega t=0$) hilft, das
-        Vorzeichen der Phase zu prüfen.
+        $\mathrm e^{i\omega t}$-Abhängigkeit wird ausgeklammert und ist im
+        Ergebnis \emph{drinnen}.
+  \item Ein rein imaginäres Ergebnis ($i\sqrt3$) bedeutet $A=\sqrt3$ und
+        $\varphi=\pi/2$, also eine Phasenverschiebung um
+        $90^\circ$ -- nicht $A=0$.
+  \item Nach der Umrechnung die Phase in $[0,2\pi)$ und $A>0$ festlegen.
+  \item Verifikation an einer Zeitachse (etwa $\omega t=0$ oder
+        $\omega t=-\pi/2$) fängt Vorzeichenfehler bei $\varphi$ ab.
 \end{itemize}
 \end{achtung}
+
+\begin{werkzeugkasten}[Pixelseitiger Gedanke: was steckt physikalisch drin?]
+Das Überlagern zweier gleicher Frequenz ist das Grundprinzip der
+\emph{Interferenz} (zwei Wellen gleicher Frequenz am selben Ort): Je nach
+Phasendifferenz verstärken (konstruktiv) oder auslöschen (destruktiv) sie
+sich. Der Zeiger macht genau diese Abhängigkeit sichtbar -- die Summe
+der Amplituden ist nur dann einfach die Summe der Beträge, wenn beide
+Zeiger in dieselbe Richtung zeigen.
+\end{werkzeugkasten}

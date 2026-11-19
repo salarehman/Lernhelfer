@@ -4,46 +4,63 @@
 % Teil I: Werkzeuge, kein Lösungsweg.
 
 Fünf einseitige bzw. unendliche Grenzwerte bestimmen; dabei treten
-Polynomverhältnisse, Wurzeln, Logarithmen und gebrochene rationale Ausdrücke
+Polynomverhältnisse, Wurzeln, Logarithmen und gebrochen-rationale Ausdrücke
 auf.
 
-\begin{werkzeugkasten}[Grenzwert am Unendlichen von Polynomverhältnissen]
-Für $x\to\infty$ zählt der höchste Grad von Zähler und Nenner:
+\begin{werkzeugkasten}[Grenzwert am Unendlichen -- was bedeutet Konvergenz?]
+\emph{Worum es geht:} \emph{$\lim_{x\to\infty} f(x)=L$} heißt: Wählt man $x$
+riesig groß, so kommt $f(x)$ der Zahl $L$ beliebig nahe und bleibt dort.
+Man darf nicht \emph{$f(\infty)$} lesen -- das gibt es nicht. Es ist eine
+Aussage über das Verhalten \emph{für immer größere} $x$.
+
+Für ein Polynomverhältnis gilt: Im Unendlichen zählt nur der höchste Grad,
+weil $x^k$ für wachsendes $x$ jede feste Potenz $x^{k-1}$ weit überholt
+(konkret: $x^2$ ist bei $x=1000$ das Millionfache von $x$). Deshalb klammern
+wir die höchste Potenz aus und kürzen. Drei Fälle:
 \begin{itemize}
-  \item $\displaystyle\lim_{x\to\infty}\frac{a_kx^k+\dots}{b_mx^m+\dots}$ mit
-        gleichem Grad $k=m$ ist
-        $\frac{a_k}{b_m}$ (Verhältnis der Leitkoeffizienten).
-  \item Höherer Nennergrad gibt $0$, höherer Zählergrad gibt $\pm\infty$.
+  \item gleicher Grad ($k=m$): Grenzwert ist das Verhältnis der
+        Leitkoeffizienten $a_k/b_m$,
+  \item höherer Nennergrad: der Nenner \emph{gewinnt} ($\to 0$),
+  \item höherer Zählergrad: der Zähler \emph{gewinnt} ($\to \pm\infty$).
 \end{itemize}
-Der Schlüssel ist, $x$ mit der höchsten Potenz auszuklammern und zu kürzen.
+Das Verhältnis der Leitkoeffizienten ist plausibel: Für große $x$ verhalten
+sich beide Nenner/Zähler nur noch wie ihre höchsten Terme, und deren
+Quotient ist der Quotient der Leitkoeffizienten.
 
 \textit{Skript:} Kap. 3 (Grenzwerte im Unendlichen).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Tricks für Wurzel- und Logarithmus-Ausdrücke]
+\begin{werkzeugkasten}[Tricks für Wurzel-, Quotienten- und Logarithmus-Ausdrücke]
 \begin{itemize}
-  \item \textbf{Wurzeln:} Bei Ausdrücken wie $x-\sqrt{x^2-1}$ erweitert man
-        mit der konjugierten Wurzel:
-        $x-\sqrt{x^2-1}=\dfrac{(x-\sqrt{x^2-1})(x+\sqrt{x^2-1})}{x+\sqrt{x^2-1}}
-        =\dfrac{1}{x+\sqrt{x^2-1}}$.
-  \item \textbf{Brüche unter der Wurzel:} höchste Potenz ausklammern, dann die
-        Wurzel durch die Potenz ziehen.
-  \item \textbf{Logarithmen:} den Grenzwert des Argumentes bilden, dann
-        $\ln$ anwenden (Stetigkeit von $\ln$).
+  \item \textbf{Differenz von Wurzeln / $\infty-\infty$:} Ausdrücke wie
+        $x-\sqrt{x^2-1}$ sind von der Form $\infty-\infty$, die
+        unbestimmt ist. Erweitern mit der \emph{konjugierten} Wurzel macht
+        daraus einen Bruch, dessen Grenzwert man sieht:
+        $x-\sqrt{x^2-1}=\frac{1}{x+\sqrt{x^2-1}}$.
+        Der Schlüssel: $(A-B)(A+B)=A^2-B^2$ eliminiert die Wurzel.
+  \item \textbf{Brüche unter einer Wurzel:} höchste Potenz ausklammern und
+        durch die Potenz \emph{durch die Wurzel} ziehen.
+  \item \textbf{Logarithmen:} $\ln$ ist stetig; der Grenzwert von
+        $\ln f(x)$ ist $\ln\lim f(x)$, sobald $\lim f(x)>0$ existiert. Man
+        bildet also den Grenzwert des Arguments und wendet dann $\ln$ an --
+        nicht umgekehrt.
 \end{itemize}
 
 \textit{Skript:} Kap. 3 (Rechnen mit Grenzwerten).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item Bei $x\to-\infty$ sauber ausklammern: $\sqrt{x^2}=|x|$, nicht $x$.
-  \item Einen einseitigen Grenzwert ($x\searrow1$) getrennt vom anderen
-        Vorzeichen behandeln; hier kürzt das Vorzeichen des Nenners die
-        Divergenzrichtung.
-  \item $\ln(A/B)$ erst auf den Quotienten vereinfachen, bevor der Grenzwert
-        genommen wird (Argument gegen $1$, nicht gegen $0$).
-  \item Für $\frac{\pm\infty}{\pm\infty}$ immer durch die höchste Potenz
-        dividieren statt direkt zu ``kürzen''.
+  \item \textbf{Bei $x\to-\infty$:} $\sqrt{x^2}=|x|$, nicht $x$. Wer $x$
+        einfach \emph{herauszieht}, erhält ein falsches Vorzeichen.
+  \item \textbf{Einseitige Grenzwerte ($x\searrow 1$) getrennt behandeln:}
+        Das Vorzeichen des Nenners (hier $(x-1)^3$) bestimmt, ob der Bruch
+        gegen $+\infty$ oder $-\infty$ geht.
+  \item \textbf{$\ln(A/B)$ erst vereinfachen:} den Quotienten $A/B$
+        zuerst auf seinen Grenzwert $\to 1$ bringen, dann $\ln$; sonst
+        steht man vor $\ln 1=0$ mit falschem Zwischenschritt.
+  \item \textbf{Bei $\frac{\pm\infty}{\pm\infty}$ immer durch die höchste
+        Potenz dividieren}, statt \emph{blind zu kürzen} (das erhält die
+        Information über die Leitkoeffizienten).
 \end{itemize}
 \end{achtung}

@@ -1,15 +1,18 @@
 % Teil II: der durchgerechnete Weg.
 
+% Gedankenschritt: "mindestens 4 von 5" = Summe der Einzelpfade;
+% "mindestens einer" = 1 minus Gegenereignis (keiner).
+
 \subsection*{Gegeben und gesucht}
-(a) Zugverspätung mit $p=\tfrac15$ je Fahrt; gesucht:
-$\mathrm P(\text{mindestens 4 von 5 verspätet})$.
+(a) Zugversp\"atung mit $p=\tfrac15$ je Fahrt; gesucht:
+$\mathrm P(\text{mindestens 4 von 5 versp\"atet})$.
 (b) Aquarium mit $9$ Fischen, je $p=\tfrac1{10}$ pro Nacht;
 gesucht: $\mathrm P(\text{mindestens einer springt hinaus})$.
 
-\subsection*{a) Mindestens 4 von 5 verspätet}
-$k=4$ oder $k=5$:
+\subsection*{a) Mindestens 4 von 5 versp\"atet}
+``Mindestens 4`` schlie\ss{}t $k=4$ oder $k=5$ ein (nicht $k=3$):
 \begin{align}
-  \mathrm P &= \binom54\Bigl(\frac15\Bigr)^4\frac45
+  \mathrm P &= \binom54\Bigl(\frac15\Bigr)^4\Bigl(\frac45\Bigr)
      +\binom55\Bigl(\frac15\Bigr)^5 \\
   &=5\cdot\frac{1}{625}\cdot\frac45+\frac1{3125}
    =\frac{20}{3125}+\frac1{3125}=\frac{21}{3125}.
@@ -17,9 +20,13 @@ $k=4$ oder $k=5$:
 \begin{ergebnis}
 $\mathrm P=\dfrac{21}{3125}\approx0.0067$.
 \end{ergebnis}
+Gedanke $k=5$: alle 5 F\"ahrten versp\"atet, keine pünktliche
+$(1-p)^0=1$.
 
 \subsection*{b) Mindestens einer von 9 springt hinaus}
-Gegenereignis ``keiner springt hinaus'':
+\textbf{Der Trick: Gegenereignis.} ``Mindestens einer`` ist das
+Komplement von ``gar keiner``. Einer springt mit $p$, also bleibt er mit
+$1-p$:
 \begin{equation}
   \mathrm P=1-\Bigl(1-\frac1{10}\Bigr)^9
   =1-\Bigl(\frac9{10}\Bigr)^9 .
@@ -30,12 +37,21 @@ $\mathrm P=1-\bigl(\tfrac9{10}\bigr)^9
 \end{ergebnis}
 
 \begin{kontrolle}
-a) $p$ klein, $k\ge4$: Ergebnis $~0.0067$ ist klein aber positiv;
-b) $\bigl(\tfrac9{10}\bigr)^9\approx0.387$, also $P\approx0.613<1$ -- plausibel.
+a) $p=\tfrac15$ klein, $k\ge4$: Ergebnis $0.0067$ klein aber positiv;
+plausibel (4 oder 5 Versp\"atungen bei kleinen $p$ sind selten).
+
+b) $(\tfrac9{10})^9\approx0.387$, also $P\approx0.613<1$; und intuitive
+Kontrolle ``überlebt kein Fisch`` wäre winzig, also ``mindestens einer
+springt`` nahe $1$ mit langer Marge --- $0.61$ ist eine sinnvolle
+Mittelgr\"o\ss{}e.
+
+\textbf{Grenzfall:} W\"aren alle 9 sicher am Springen ($p=1$): $1-(0)^9=1$.
+W\"arte man auf ``mindestens einen`` bei $p\to0$: $1-(1-p)^9\approx9p\to0$.
+Beide R\"ander sind sinnvoll.
 \end{kontrolle}
 
 \begin{merksatz}
-Bei ``mindestens $c$'' summiert man die Binomialwahrscheinlichkeiten ab
-$c$; bei ``mindestens einer'' ist das Gegenereignis ``keiner'' meist
-schneller.
+Bei ``mindestens $c$`` summiert man die Binomialwahrscheinlichkeiten ab
+$c$; bei ``mindestens einer`` ist das Gegenereignis ``keiner`` meist
+sehr viel schneller ($1-(1-p)^n$).
 \end{merksatz}

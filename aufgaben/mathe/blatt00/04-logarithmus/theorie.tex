@@ -2,40 +2,60 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Logarithmusgleichungen nach $x$ auflösen sowie Aussagen über
-Logarithmusregeln als wahr oder falsch beurteilen.
+% Grundidee: Der Logarithmus ist die Umkehrfrage zur Potenz:
+% "Welcher Exponent gehört zur Basis a, damit a^v = u herauskommt?"
+
+Der Logarithmus beantwortet eine Frage, die die Potenz offen lässt: Ist
+$a^v=u$, so fragt der Logarithmus ``\emph{mit welchem Exponenten} $v$
+erreicht die Basis $a$ den Wert $u$?`` Er ist also die
+\emph{Umkehroperation} zum Potenzieren --- genauso wie die Wurzel die
+Umkehrung ist, nur dass die Wurzel die \emph{Basis} sucht und der
+Logarithmus den \emph{Exponenten}.
 
 \begin{werkzeugkasten}[Definition und Regeln]
-$\log_a(u)=v \ \Longleftrightarrow\ a^v=u$ für $a>0$,
-$a\neq1$, $u>0$; es gilt $\log_a(a)=1$.
+$\log_a(u)=v \ \Longleftrightarrow\ a^v=u$ für $a>0$, $a\neq1$, $u>0$.
+Grundaussagen: $\log_a(a)=1$ (denn $a^1=a$) und $\log_a(1)=0$ (denn
+$a^0=1$).
 
+Die entscheidenden Rechenregeln folgen \emph{direkt aus den
+Potenzgesetzen}:
 \begin{align}
   \log_a(u\,v)&=\log_a u+\log_a v, &
   \log_a\frac{u}{v}&=\log_a u-\log_a v,\\
   \log_a(u^r)&=r\log_a u, &
   \log_a a^r&=r .
 \end{align}
+\textbf{Warum die Produktregel?} Multiplizieren zweier Zahlen $u=a^p$ und
+$v=a^q$ entspricht dem Addieren ihrer Exponenten $p+q$ (Potenzgesetz
+$a^pa^q=a^{p+q}$). Der Logarithmus ``übersetzt`` Multiplikation in
+Addition.
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Exponentialgleichung lösen]
-Gleichungen der Form $a^x=b$ ($a>0$, $a\neq1$, $b>0$) löst man über den
-Logarithmus:
+Gleichungen der Form $a^x=b$ ($a>0$, $a\neq1$, $b>0$) löst man, indem man
+auf beiden Seiten den Logarithmus zur Basis $a$ anwendet:
 \begin{equation}
   x=\log_a b .
 \end{equation}
-Steht der Exponent komplizierter, etwa $a^{x^2}=b$, so gilt
-$x^2=\log_a b$, und evtl. sind beide Vorzeichenlösungen zu beachten.
+\textbf{Logischer Kern:} Da $\log_a$ die Umkehrung von ``Potenz zu Basis
+$a$`` ist, heben $\log_a(a^x)=x$ und der Logarithmus den Exponenten aus
+der Gleichung. Steht der Exponent komplizierter, etwa $a^{x^2}=b$, so gilt
+$x^2=\log_a b$, und evtl. sind \emph{beide} Vorzeichenlösungen zu
+beachten.
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fehler]
 \begin{itemize}
-  \item Logarithmen sind nur für positive Argumente definiert; Definitionsbedingungen beachten.
-  \item $\log_a(2a)=2$ gilt \emph{nicht} für alle $a$: es ist
-        $\log_a(2a)=\log_a 2+1$, also $=2$ nur, wenn $\log_a 2=1$, d.h.
-        $a=2$.
-  \item Aussagen mit ``für alle'' sind bereits falsch, wenn \emph{ein}
-        Gegenbeispiel existiert.
-  \item Beim Auflösen von $10^{x^2}=100$ beide Lösungen $x=\pm\sqrt2$
-        berücksichtigen.
+  \item \textbf{Definitionsbereiche:} Logarithmen sind nur für $u>0$
+        definiert; der Logarithmus einer negativen Zahl oder von $0$ ist
+        in $\mathbb R$ undefiniert.
+  \item \textbf{``für alle``-Aussagen:} Eine Aussage ``für alle $a$`` ist
+        bereits \emph{falsch}, wenn ein einziges Gegenbeispiel existiert.
+        Ein bewährtes Beispiel ist $\log_a(2a)=2$: Es gilt $=\log_a2+1$,
+        also nur, wenn $\log_a2=1$, d.h. $a=2$ --- nicht ``für alle``.
+  \item \textbf{Beide Vorzeichen:} $10^{x^2}=100$ hat zwei Lösungen
+        $x=\pm\sqrt2$. Den Minus-$\sqrt2$ vergisst man leicht.
+  \item Nicht ``$a^x=a$`` verwechseln mit ``$x=1$``: Der Logarithmus zieht
+        den Exponenten, ändert aber die Basis nicht nach Laune.
 \end{itemize}
 \end{achtung}

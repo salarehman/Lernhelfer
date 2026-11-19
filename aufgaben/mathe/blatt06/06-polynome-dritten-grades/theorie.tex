@@ -7,44 +7,64 @@ Mit der Cardano-Formel eine reelle Nullstelle kubischer Polynome der Form
 $z^3+3pz+2q$ konstruieren und alle Nullstellen eines konkreten Polynoms
 bestimmen.
 
-\begin{werkzeugkasten}[Cardano-Formel für $z^3+3pz+2q$]
-Unter der Voraussetzung $D:=q^2+p^3>0$ setzt man
+\begin{werkzeugkasten}[Die Grundidee hinter Cardano -- ein Trick mit dem Binom]
+Für eine quadratische Gleichung gab es eine fertige Lösungsformel. Für die
+kubische Gleichung $z^3+3pz+2q=0$ (schon von der $z^2$-Form befreit, was
+so eine Verschiebung der Unbestimmten bewirkt) rät man eine Struktur: Eine
+Summe $x=\sqrt[3]{u}+\sqrt[3]{v}$ mit \emph{passend} gewählten $u,v$.
+Warum gerade diese? Weil das Binom $(a+b)^3=a^3+b^3+3ab(a+b)$ die Summe
+$(\sqrt[3]{u}+\sqrt[3]{v})^3$ so zurückführt, dass genau der lineare Term
+$3ab\,x$ entsteht -- und der Term $3px$ in der Gleichung genau dazu passt.
+
+Konkret: setzt man $a=\sqrt[3]{u},\ b=\sqrt[3]{v}$, dann ist
 \begin{equation*}
-  u=-q+\sqrt{D},\qquad v=-q-\sqrt{D},\qquad
-  x=\sqrt[3]{u}+\sqrt[3]{v},
+  x^3=u+v+3\underbrace{\sqrt[3]{uv}}_{\mathstrut -p}\,x .
 \end{equation*}
-wobei $\sqrt[3]{\,}$ die reelle dritte Wurzel ist (Umkehrfunktion von
-$t\mapsto t^3$). Der entscheidende Baustein ist
+Ordnet man $u+v=-2q$ und $\sqrt[3]{uv}=-p$, so ist $x$ automatisch eine
+Lösung. Die Cardano-Wahlen
 \begin{equation*}
-  uv=q^2-D=q^2-(q^2+p^3)=-p^3
-  \;\Longrightarrow\;
-  \sqrt[3]{uv}=-p .
+  u=-q+\sqrt{D},\qquad v=-q-\sqrt{D},\qquad D:=q^2+p^3
 \end{equation*}
-Mit dem Binom $(a+b)^3=a^3+b^3+3ab(a+b)$ folgt
-$x^3=-2q+3\sqrt[3]{uv}\,x=-2q-3px$, also $x^3+3px+2q=0$.
+machen genau das: $u+v=-2q$, und $uv=q^2-D=-p^3$, also
+$\sqrt[3]{uv}=-p$. Der wichtige Einzelschritt ist, zuerst
+$\sqrt[3]{uv}=-p$ zu berechnen -- er \emph{entschärft} den $3px$-Term.
 
 \textit{Skript:} Kap. 1 (komplexe Wurzeln), Kap. 3 (Polynome).
 \end{werkzeugkasten}
 
-\begin{werkzeugkasten}[Alle Nullstellen]
-Hat man eine reelle Nullstelle $x$, so faktorisiert man:
+\begin{werkzeugkasten}[Die reelle dritte Wurzel]
+\emph{$\sqrt[3]{\cdot}$} meint hier die \emph{reelle} Kubikwurzel: die
+Umkehrung von $t\mapsto t^3$. Sie existiert immer, auch für negative
+Argumente ($\sqrt[3]{-9}=-\sqrt[3]{9}$), denn jede reelle Zahl hat genau
+eine reelle dritte Potenz/Wurzel. Für die Cardano-Voraussetzung
+$D=q^2+p^3>0$ bleibt man im Reellen; der Fall $D<0$ (drei reelle
+Nullstellen, \emph{casus irreducibilis}) führt über die komplexen Zahlen.
+
+\textit{Skript:} Kap. 1 (Wurzeln).
+\end{werkzeugkasten}
+
+\begin{werkzeugkasten}[Alle Nullstellen durch Faktorisieren]
+Hat man eine reelle Nullstelle $x$, faktorisiert man das kubische Polynom:
 \begin{equation*}
   z^3+3pz+2q=(z-x)\bigl(z^2+xz+(x^2+3p)\bigr).
 \end{equation*}
-Die quadratische Gleichung liefert die restlichen zwei (ggf.\ konjugiert
-komplexen) Nullstellen.
+Die Verifikation durch Ausmultiplizieren: $(z-x)(z^2+xz+(x^2+3p))$ liefert
+$z^3+3pz-x^3-3px$; wegen $x^3+3px=-2q$ ist das $z^3+3pz+2q$. Die
+quadratische Gleichung $z^2+xz+(x^2+3p)=0$ liefert die restlichen zwei
+(ggf. konjugiert komplexen) Nullstellen.
 
 \textit{Skript:} Kap. 3 (Nullstellen von Polynomen).
 \end{werkzeugkasten}
 
-\begin{achtung}[Darauf achten]
+\begin{achtung}[Typische Fallen]
 \begin{itemize}
-  \item $\sqrt[3]{\,}$ ist die \emph{reelle} dritte Wurzel; sie existiert
-        immer, auch für negative Argumente ($\sqrt[3]{-9}=-\sqrt[3]{9}$).
-  \item Erster Schritt nach dem Hinweis: $\sqrt[3]{uv}$ berechnen -- das
-        ist der Schlüssel zur Vereinfachung.
-  \item Beim konkreten Polynom (b) zuerst $p$ und $q$ identifizieren
-        ($3p=3\sqrt[3]{9}$, $2q=8$), dann $D$, $u$, $v$ bestimmen.
-  \item Am Ende alle drei Nullstellen angeben, nicht nur die reelle.
+  \item \textbf{Reelle Kubikwurzel nicht verwechseln} mit der (mehrdeutigen)
+        komplexen: $\sqrt[3]{-9}=-(\sqrt[3]{9})$, nicht $2{,}080\,\mathrm e^{i\pi/3}$.
+  \item \textbf{Zuerst $\sqrt[3]{uv}$ berechnen:} Der schnelle Weg nutzt
+        $uv=-p^3$, nicht ein Ausmultiplizieren von $(a+b)^3$.
+  \item \textbf{Beim konkreten Polynom $p$ und $q$ erkennen:}
+        $3z\sqrt[3]{9}$ heißt $3p=3\sqrt[3]{9}$ und $2q=8$; nicht $p$ mit
+        $3p$ verwechseln.
+  \item \textbf{Alle drei Nullstellen angeben}, nicht nur die reelle.
 \end{itemize}
 \end{achtung}

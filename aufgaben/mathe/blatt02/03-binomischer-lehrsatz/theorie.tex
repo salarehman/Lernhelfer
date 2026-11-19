@@ -2,16 +2,29 @@
 
 % Teil I: Werkzeuge, kein Lösungsweg.
 
-Auswerten einer Binomialsumme, Wahrscheinlichkeiten bei DNA-Replikation
-und Nachweis, dass die Mutationswahrscheinlichkeiten zusammen $1$ ergeben.
+% Grundidee: (a+b)^n ist das Produkt von n Klammern; jeder Term wählt aus
+% jeder Klammer a oder b. Das ist die Geburtsstunde der Binomialkoeffizienten.
+
+Der binomische Lehrsatz \emph{erklärt}, woher die Binomialkoeffizienten
+kommen: $(a+b)^n$ ist das $n$-fache Produkt $(a+b)(a+b)\cdots(a+b)$. Beim
+Ausmultiplizieren muss man aus \emph{jeder} der $n$ Klammern genau ein
+Glied wählen ($a$ oder $b$); um $a^k b^{n-k}$ zu erhalten, sucht man die
+$k$ Klammern, die den $a$-Beitrag liefern --- das sind
+$\binom{n}{k}$ Möglichkeiten. Multiplikation ``übersetzt`` sich also in
+\emph{Kombinatorik}.
 
 \begin{werkzeugkasten}[Binomischer Lehrsatz]
 \begin{equation}
   (a+b)^n=\sum_{k=0}^{n}\binom{n}{k}a^k b^{n-k}.
 \end{equation}
-Setzt man $a=-2$, $b=1$: $\sum_{k=0}^{n}\binom{n}{k}(-2)^k$
-$=(-2+1)^n=(-1)^n$, also $1$ bzw. $-1$ je nach Parität von $n$.
-Setzt man $a=p$, $b=1-p$: $\sum_{k=0}^{n}\binom{n}{k}p^k (1-p)^{n-k}=1$.
+\textbf{Der Kern-Trick der Aufgabe:} Man darf für $a$ und $b$
+\emph{beliebige} Zahlen setzen, solange die algebraische Struktur stimmt.
+So liefert der Satz \emph{aus einer einzigen Formel} zwei verschiedene
+Aussagen:
+\begin{itemize}
+  \item $a=-2$, $b=1$: $\sum_{k=0}^{n}\binom{n}{k}(-2)^k=(-1)^n$.
+  \item $a=p$, $b=1-p$: $\sum_{k=0}^{n}\binom{n}{k}p^k (1-p)^{n-k}=1$.
+\end{itemize}
 \end{werkzeugkasten}
 
 \begin{werkzeugkasten}[Binomialverteilung]
@@ -19,17 +32,19 @@ Bei $n$ unabhängigen Versuchen mit Erfolgswahrscheinlichkeit $p$:
 \begin{equation}
   \mathrm P(\text{genau }k\text{ Erfolge})=\binom{n}{k}p^k(1-p)^{n-k}.
 \end{equation}
-``Keine Mutation'' entspricht $k=0$: $\,(1-p)^{n}$. Der Lehrsatz mit
-$a=p,b=1-p$ zeigt, dass alle $\binom{n}{k}p^k(1-p)^{n-k}$ zusammen $1$
-ergeben -- sie bilden eine echte Wahrscheinlichkeitsverteilung.
+``Keine Mutation`` entspricht $k=0$: $\,(1-p)^{n}$. Dass die Summe über
+alle $k$ genau $1$ ist, folgt aus dem Lehrsatz ($a=p$, $b=1-p$, denn
+$p+(1-p)=1$) --- das ist der Nachweis, dass es sich um eine echte
+Wahrscheinlichkeitsverteilung handelt.
 \end{werkzeugkasten}
 
 \begin{achtung}[Darauf achten]
 \begin{itemize}
-  \item Den Vorzeichen-Fall: $(-2)^k$ wechselt das Vorzeichen mit der
-        Parität; das Gesamtergebnis $(-1)^n$ hängt nur von $n\bmod2$ ab.
+  \item Bei $(-2)^k$ wechselt das Vorzeichen mit der Parität von $k$;
+        das Gesamtergebnis $(-1)^n$ hängt nur von $n\bmod2$ ab.
   \item ``Keine Mutation'': genau $k=0$ einsetzen, nicht $1-p^n$.
-  \item Beim Lehrsatz-Beweis die richtigen $a,b$ wählen: für
-        $\sum p^k(1-p)^{n-k}$ braucht man $a=p$, $b=1-p$, da $p+(1-p)=1$.
+  \item Beim Einsetzen die richtigen $a,b$ wählen: für
+        $\sum p^k(1-p)^{n-k}$ braucht man $a=p$, $b=1-p$, damit
+        $a+b=1$.
 \end{itemize}
 \end{achtung}
