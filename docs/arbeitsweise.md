@@ -30,11 +30,11 @@ Aufbau, in dieser Reihenfolge, nur die Punkte, die die Aufgabe wirklich braucht:
 2. **Werkzeuge.** Die Gesetze und Gleichungen in allgemeiner Form, mit den
    Gültigkeitsgrenzen („nur für kleine Auslenkungen“, „nur im Vakuum“).
    Herkunft nennen, wenn sie im Skript hergeleitet werden (Kapitel/Abschnitt).
-3. **Vorgehen in allgemeiner Form.** Welche Größen sind gegeben, welche
+3. **Vorgehen in allgemeiner Form.** Welche Grössen sind gegeben, welche
    gesucht, welche Beziehung verbindet sie. Als Landkarte, nicht als Rezept.
 4. **Einheiten und Plausibilität.** Erwartete Einheit des Ergebnisses,
-   typische Größenordnung, Grenzfälle, an denen man die Formel testen kann.
-5. **Typische Fallen.** Vorzeichen, Bezugssystem, Winkel vs. Bogenmaß,
+   typische Grössenordnung, Grenzfälle, an denen man die Formel testen kann.
+5. **Typische Fallen.** Vorzeichen, Bezugssystem, Winkel vs. Bogenmass,
    Masse vs. Gewichtskraft, gerundete Zwischenergebnisse.
 
 Länge: eine gute halbe bis eine Seite pro Aufgabe. Wird es deutlich mehr,
@@ -44,7 +44,7 @@ gehört ein Teil davon in eine Grundlagen-Sektion oder ist zu weit vom Thema weg
 
 - **Gegeben / Gesucht** zuerst, mit Einheiten und mit dem benutzten Bezugssystem.
 - **Ansatz** mit einem Satz Begründung, warum dieser Weg: welches Gesetz,
-  welche Symmetrie, welche Erhaltungsgröße.
+  welche Symmetrie, welche Erhaltungsgrösse.
 - **Rechnung** in Zeilen, die man nachvollziehen kann. Symbolisch bis zum
   Schluss, Zahlen erst im letzten Schritt.
 - **Kontrolle**: Einheit, Grenzfall oder Plausibilität der Zahl. Wenn eine

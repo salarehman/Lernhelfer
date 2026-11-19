@@ -6,7 +6,7 @@ die relevanten Quellen und ggf. [docs/adam-sync.md](docs/adam-sync.md) lesen.
 ## Zweck
 
 Ein Lernwerkzeug für universitäre Aufgaben (Physik, Mathematik, Chemie …),
-nicht das bloße Produzieren von Musterlösungen. Jede Aufgabe erscheint als
+nicht das blosse Produzieren von Musterlösungen. Jede Aufgabe erscheint als
 **Lernhelfer-PDF** mit zwei getrennten Teilen (Theorie, dann Lösung), die dem
 Nutzer helfen, selbst auf den Rechenweg zu kommen.
 
@@ -65,7 +65,7 @@ Prüfe die Trennung inhaltlich, nicht nur anhand der Dateinamen
 ## Übungsblätter → Lernhelfer
 
 - **Ein Blatt, ein eigener Lernhelfer.** Keine Aufgaben verschiedener Blätter
-  oder Fächer mischen, außer der Nutzer verlangt ausdrücklich eine Sammlung.
+  oder Fächer mischen, ausser der Nutzer verlangt ausdrücklich eine Sammlung.
 - Bearbeite grundsätzlich alle Aufgaben und Teilaufgaben eines Blatts.
 - Kennzeichne jede Aufgabe durch **Fach, Blatt und Aufgabennummer**, z. B.
   `Physik Blatt 7, A1` (Metadaten `% titel:` in `theorie.tex`).
@@ -96,7 +96,7 @@ Material-Repo; der Agent übernimmt Einordnung und Build:
 5. **Commit + Push.** Skripte/Blätter bleiben im privaten Repo.
 
 **Ein Lernhelfer pro Fach und Woche:** pro Fach genau einer (physik, mathe,
-chemie), jeder mit zwei Teilen. Ein Fach ohne Blatt diese Woche bleibt außen
+chemie), jeder mit zwei Teilen. Ein Fach ohne Blatt diese Woche bleibt aussen
 vor.
 
 ## Chemie
@@ -134,7 +134,7 @@ relativ zur Repo-Wurzel (tectonic-Auflösung) angeben. `--dpi N` zum Nachschärf
 ## Paralleles Arbeiten (Standard: Issue + Worktree + Merge)
 
 Für parallele (Agenten-)Aufträge gilt ein fester Ablauf, damit kein zweiter
-Lauf auf die vom ersten veränderten Dateien stößt (geteilte `generated/`,
+Lauf auf die vom ersten veränderten Dateien stösst (geteilte `generated/`,
 `_bm.tex`): **ein Auftrag → eine Issue → ein Worktree → ein Merge (+ ein
 Commit).**
 
@@ -142,7 +142,7 @@ Commit).**
   guter Name z. B. `physik/blatt10`, `docs/upgrade` — eindeutig und
   nachvollziehbar.
 - **Separates Worktree** für jede Issue: `git worktree add ../<name> -b
-  issue/<name>`. Dort arbeitet der Agent ausschließlich — nie im Haupt-Checkout
+  issue/<name>`. Dort arbeitet der Agent ausschliesslich — nie im Haupt-Checkout
   und nie parallel in mehreren Worktrees, die dieselben Dateien berühren.
 - **Merge** zurück zu `main` (PR oder `git merge issue/<name> --no-ff`),
   danach Worktree entfernen (`git worktree remove`) und Branch löschen.
@@ -161,7 +161,7 @@ isolierte Worktrees verhindern das (siehe docs/adam-sync.md, Abschnitt
 ## Quellen und fachliche Qualität
 
 - Aktuelles Skript des Fachs (privat, `Lernhelfer-Material/skript/<fach>/`)
-  und den vollständigen Aufgabentext als maßgebliche Quellen nutzen. Kapitel
+  und den vollständigen Aufgabentext als massgebliche Quellen nutzen. Kapitel
   und Seiten nennen, soweit sicher bekannt.
 - Nichts erfinden: keine Aufgaben, Werte, Sätze, Abbildungen oder Fundstellen.
   Ergänzende Annahmen als solche kennzeichnen. Bei fehlenden Daten oder
@@ -186,7 +186,7 @@ isolierte Worktrees verhindern das (siehe docs/adam-sync.md, Abschnitt
 
 - Deutsch, verständlich, knapp, fachlich genau. Keine Emojis, keine KI- oder
   Werkzeug-Bylines im Dokument oder in Commits.
-- Größen mit `siunitx` (`\qty{}{}`); dimensionslose Zahlen und rein
+- Grössen mit `siunitx` (`\qty{}{}`); dimensionslose Zahlen und rein
   symbolische Gleichungen brauchen keine erfundene Einheit.
 - **Vor dem Teilen** von Vorlesungsunterlagen Nutzungsrechte und Privatsphäre
   beachten. Keine Zugangsdaten einchecken, nichts Geschütztes ins öffentliche

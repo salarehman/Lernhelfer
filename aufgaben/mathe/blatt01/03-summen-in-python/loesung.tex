@@ -1,7 +1,7 @@
 % Teil II: der durchgerechnete Weg.
 
 % Gedankenschritt: range halb-offen beachten; die Differenz sum(range..)
-% minus Formel = 0 ist das numerische Bild der Gauß-Formel, die durch
+% minus Formel = 0 ist das numerische Bild der Gauss-Formel, die durch
 % Induktion bewiesen wird.
 
 \subsection*{Gegeben und gesucht}
@@ -30,11 +30,11 @@ $n$ & \texttt{sum(range(n+1))} & $n(n+1)/2$ & Differenz\\
 \end{center}
 Das Ergebnis ist für jedes $n$ \emph{stets $0$}, denn beide Terme
 stimmen überein --- das ist das numerische \"Affall-Muster, das auf die
-Gauß-Formel hinweist (die gezählte Summe w\"achst $0,1,3,6,10,\dots$,
+Gauss-Formel hinweist (die gezählte Summe w\"achst $0,1,3,6,10,\dots$,
 nämlich $\frac{n(n+1)}2$).
 
 \subsection*{c) Beweis per vollständiger Induktion}
-\textbf{(Das Bild: eine fallende Dominokette.} Induktionsanfang stoßt den
+\textbf{(Das Bild: eine fallende Dominokette.} Induktionsanfang stosst den
 ersten Stein um, der Induktionsschritt ``wenn Stein $n$ umf\"allt, f\"allt
 auch Stein $n+1$ um``.)
 \emph{Induktionsanfang} ($n=1$): $\sum_{k=0}^{1}k=0+1=1=\frac{1\cdot2}2$. \\
@@ -66,7 +66,7 @@ geschlossene Summenformel.
 \end{kontrolle}
 
 \begin{merksatz}
-``Bis $n$`` heißt \texttt{range(n+1)} (halb-offen!); die Gauß-Formel
+``Bis $n$`` heisst \texttt{range(n+1)} (halb-offen!); die Gauss-Formel
 beweist man, indem man im Induktionsschritt den letzten Summanden
 $(n+1)$ abspaltet und auf den gemeinsamen Nenner bringt.
 \end{merksatz}
